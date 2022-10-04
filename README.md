@@ -1,5 +1,5 @@
 <h1 align="center">Đồ án tốt nghiệp - Học viện Công nghệ Bưu chính viễn thông <br/>
-    Ứng dụng thương mại điện tử trên nền tảng thiết bị di động Android 
+    Ứng dụng Android hỗ trợ bệnh nhân đăng ký khám và điều trị bệnh 
 </h1>
 
 <p align="center">
@@ -10,6 +10,7 @@
 # [**Table Of Content**](#table-of-content)
 - [**Table Of Content**](#table-of-content)
 - [**Introduction**](#introduction)
+- [**Topic**](#topic)
 - [**Database**](#database)
 - [**Timeline**](#timeline)
   - [**Phase 1: 19-09-2022 to xx-xx-2022**](#phase-1-19-09-2022-to-xx-xx-2022)
@@ -18,17 +19,15 @@
 
 # [**Introduction**](#introduction)
 
-Lời đầu tiên mình xin chào các bạn và cảm ơn tất cả các bạn đang ở đây. Trong tài liệu này mình sẽ chia sẻ tất cả những gì các bạn cần biết khi làm đồ án 
+Chào các bạn, mình tên là Nguyễn Thành Phong. Mã số N18DCCN147. Niên khóa 2018-2023. Lời đầu tiên mình xin chào các bạn và cảm ơn tất cả các bạn đang ở đây. Trong tài liệu này mình sẽ chia sẻ tất cả những gì các bạn cần biết khi làm đồ án 
 tốt nghiệp và đề tài do mình thực hiện để các bạn có thể tham khảo. Mình hi vọng phần tài liệu mình viết tiếp theo đây 
 sẽ hỗ trợ phần nào cho các bạn khi bước tới ngưỡng cửa quan trọng của cuộc đời mình - tốt nghiệp đại học.
 
-<p align="center">
-    <img src="./photo/cover1.jpg" />
-</p>
-<h3 align="center">
+# [**Topic**](#topic)
 
-***HEAR ME ROAR***
-</h3>
+<p align="center">
+    <img src="./photo/topic.png" />
+</p>
 
 
 # [**Database**](#database)
