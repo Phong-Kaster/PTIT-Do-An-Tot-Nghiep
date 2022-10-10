@@ -1,0 +1,258 @@
+/* TopBar */
+#topbar{
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    z-index: 500;
+    
+    width: 100%;
+    background-color: inherit;
+
+    @include transform(rotateX(0deg));
+    @include transition($transition);
+
+    >div {
+        position: relative;        
+        padding: 0 30px 0 100px;
+
+        border-bottom: 1px solid $section-border-color;
+    }
+}
+
+.topbar-mobile-menu-icon {
+    display: none;
+    float: left;
+    margin: 15px 15px 15px 0;
+
+    color: $color-dark;
+    font-size: 24px;
+    line-height: 30px;
+}
+
+.topbar-title {
+    float: left;
+    margin: 19px 0;
+
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: normal;
+}
+
+.topbar-subtitle {
+    float: left;
+    margin: 23px 0 0 16px;
+
+    color: $color-mid;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.topbar-special-link {
+    float: left;
+    margin: 20px 0 0 29px;
+
+    font-size: 14px;
+    line-height: 20px;
+
+
+    .icon {
+        display: inline-block;
+        margin-right: 3px;
+
+        font-size: 18px;
+        vertical-align: -2px;
+
+        @include transition($transition);
+    }
+
+    #{&}:hover .icon {
+        margin-right: 7px;
+        @include transform(scale(1.3));
+    }
+}
+
+.topbar-actions{
+    float: right; 
+
+    color: $color-mid;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.topbar-actions .item {
+    float: left;
+    height: 60px;
+    padding: 0 13px;
+
+    border-left: 1px solid $section-border-color;
+
+    &:last-child {
+        padding-right: 0;
+    }
+}
+
+.topbar-actions .link {
+    display: block;
+    margin-top: 18px;
+
+    color: inherit;
+    @include transition($transition);
+
+    &:hover {
+        color: $color-dark;
+    }
+}
+
+.topbar-actions .icon {
+    display: block;
+    font-size: 24px;
+    line-height: 1;
+}
+
+
+// Search
+.topbar-search form {
+    position: relative;
+    margin-top: 18px;
+}
+.topbar-search .icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    color: inherit;
+    pointer-events: none;
+}
+.topbar-search .search-box {
+    @include box-sizing(border-box);
+    width: 220px;
+    height: 24px;
+    padding: 2px 0 2px 34px;
+
+    font-family: inherit;
+    color: inherit;
+    line-height: 20px;
+
+    background-color: transparent;
+    border: none;
+    outline: none;
+
+}
+
+
+// Profile
+.topbar-profile {
+    margin-top: 12px;
+}
+.topbar-profile .greeting {
+    float: left;
+    margin: 8px 15px 0 5px;
+}
+
+.topbar-profile .circle {
+    float: left;
+    display: block;
+    padding: 2px;
+
+    border-radius: 50%;
+    border: 1px solid $color-mid;
+
+    span {
+        display: block;
+        width: 20px;
+        height: 20px;
+        padding: 5px;
+
+        font-size: 13px;
+        line-height: 20px;
+        text-align: center;
+
+        border-radius: inherit;
+        background-color: $color-dark;
+        color: #fff;
+
+        overflow: hidden;
+    }
+}
+
+.topbar-profile .arrow{
+    margin: 8px 0 0px 1px; 
+    
+    float: left; 
+
+    font-size: 20px;
+    line-height: 1;
+    color: $color-mid;
+}
+
+
+@media screen and (max-width: 992px) {
+    body.mobile-menu-open #topbar {
+        left: 220px;
+    }
+
+    #topbar {
+        position: absolute;
+    }
+
+    #topbar>div {
+        padding: 0 10px 0 20px;
+    }
+
+    .topbar-mobile-menu-icon {
+        display: block;
+    }
+
+
+    .topbar-search .search-box {
+        display: none;
+    }    
+    .topbar-search .icon {
+        position: relative;
+        pointer-events: all;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .topbar-title {
+        margin: 21px 0;
+
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .topbar-subtitle {
+        font-size: 10px;
+        margin-left: 10px;
+    }
+    
+    .topbar-special-link {
+        font-size: 12px;
+        margin-left: 15px;
+
+        .icon {
+            font-size: 14px;
+        }
+    }
+
+
+    .topbar-search {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .topbar-profile .greeting {
+        display: none;
+    }
+}
+
+
+@media screen and (max-width: 425px) { 
+    .topbar-title,
+    .topbar-subtitle { display: none; }
+
+    .topbar-special-link {
+        margin-left: 0;
+    }
+}

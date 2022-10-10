@@ -1,0 +1,178 @@
+/**
+ * Responsive Grid
+ * (c) Onelab <hello@onelab.co>
+ */
+
+$small: 600px !default;
+$small-up: 601px !default;
+
+$medium: 992px !default;
+$medium-up: 993px !default;
+
+
+$numcols: 12 !default;
+$gutter-width: 3%;
+$row-padding: "20px";
+$containers: (
+    "800": "840px",
+    "900": "940px",
+    "1000": "1040px",
+    "1100": "1140px",
+    "1200": "1240px",
+    "1600": "1640px",
+    "fluid": "100%"
+);
+
+
+
+@each $key,  $value in $containers {
+    .container-#{$key} {
+        margin-left: auto;
+        margin-right: auto;
+
+        @if $key == "fluid" {
+            width: #{$value}
+        } @else {
+            max-width: #{$value}
+        }
+    }
+}
+
+.row {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: #{$row-padding};
+    padding-right: #{$row-padding};
+}
+
+.col {
+  float: left;
+  min-height: 1px;
+
+  $unitperc: (100 - ($numcols - 1)*$gutter-width) / $numcols;
+  
+  // Small
+  $i: 1;
+  @while $i <= $numcols {
+    $width: floor(100 * ($unitperc * $i + ($i - 1) * $gutter-width)) / 100;
+    &.s#{$i} {
+      width: $width;
+      @if $i != $numcols {
+        margin-right: $gutter-width;
+      }
+    }
+    @if $i != $numcols {
+      &.offset-s#{$i} {
+        margin-left: $unitperc * $i + $i * $gutter-width;
+        margin-right: $gutter-width;
+      }
+    }
+    $i: $i + 1;
+  }
+  @media only screen and (max-width : #{$small}) {
+      &.s-last {
+          margin-right: 0;
+      }
+  }
+  
+  // Medium
+  @media only screen and (min-width : #{$small-up}) {
+    $i: 1;
+    @while $i <= $numcols {
+      $width: floor(100 * ($unitperc * $i + ($i - 1) * $gutter-width)) / 100;
+      &.m#{$i} {
+        width: $width;
+        @if $i != $numcols {
+          margin-right: $gutter-width;
+        }
+      }
+      @if $i != $numcols {
+        &.offset-m#{$i} {
+          margin-left: $unitperc * $i + $i * $gutter-width;
+          margin-right: $gutter-width;
+        }
+      }
+      $i: $i + 1;
+    }
+
+    &.m-last {
+        margin-right: 0;
+    }
+  }
+
+
+  // Large
+  @media only screen and (min-width : #{$medium-up}) {
+    $i: 1;
+    @while $i <= $numcols {
+      $width: floor(100 * ($unitperc * $i + ($i - 1) * $gutter-width)) / 100;
+      &.l#{$i} {
+        width: $width;
+        @if $i != $numcols {
+          margin-right: $gutter-width;
+        }
+      }
+      @if $i != $numcols {
+        &.offset-l#{$i} {
+          margin-left: $unitperc * $i + $i * $gutter-width;
+          margin-right: $gutter-width;
+        }
+      }
+      $i: $i + 1;
+    }
+
+    &.l-last {
+        margin-right: 0;
+    }
+  }
+}
+
+
+/* Helpers */
+@media only screen and (max-width : #{$small}) {
+    .hide-on-small-only,
+    .hide-on-small-and-down {
+        display: none !important;
+    }
+
+    .show-on-small {
+        display: initial !important;
+    }
+}
+
+@media only screen and (max-width : #{$medium}) {
+    .hide-on-medium-and-down {
+        display: none !important;
+    }
+
+    .show-on-medium-and-down {
+        display: initial !important;
+    }
+}
+@media only screen and (min-width : #{$small-up}) {
+    .hide-on-medium-and-up {
+        display: none !important;
+    }
+
+    .show-on-medium-and-up {
+        display: initial !important;
+    }
+}
+@media only screen and (min-width : #{$small-up}) and (max-width : #{$medium}) {
+    .hide-on-medium-only {
+        display: none !important;
+    }
+
+    .show-on-medium {
+        display: initial !important;
+    }
+}
+@media only screen and (min-width : #{$medium-up}) {
+    .hide-on-large-only {
+        display: none !important;
+    }
+
+    .show-on-large {
+        display: initial !important;
+    }
+}

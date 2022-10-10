@@ -1,0 +1,308 @@
+/* Main Navigation */
+nav {
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    z-index: 501; 
+
+    width: 69px; 
+    height: 100%; 
+
+    border-right: 1px solid $section-border-color; 
+    background-color: $color-light;
+
+    @include transition($transition);
+    @include transform(rotateX(0deg));
+}
+
+.nav-logo-wrapper {
+    position: relative;
+    z-index: 10;
+    
+    margin-top: 15px;
+}
+.nav-logo-wrapper a {
+    display: block;
+    height: 30px;
+    width: 30px;
+    margin: 0 auto;
+}
+
+.nav-logo-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    display: block;
+    margin: auto;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.nav-menu {
+    position: absolute; 
+    top: 0px; 
+    left: 0; 
+    z-index: 1; 
+
+    @include box-sizing(border-box);
+    width: 100%; 
+    height: 100%; 
+    padding: 90px 0 20px;     
+
+    font-size: 14px;
+    line-height: 30px;
+
+    &>div {
+        max-height: 100%;
+        overflow-x: visible;
+        overflow-y: hidden;
+
+        &:hover {
+            overflow-y: auto;
+        }
+    }
+}
+
+.nav-menu ul {
+    margin: 0; 
+    padding: 0; 
+
+    list-style: none;
+
+    &:first-child {
+        border-top: none;
+    }
+}
+.nav-menu li {
+    position: relative;
+
+    margin: 0; 
+    padding: 0; 
+
+    overflow: hidden;
+    @include transition($transition);
+}
+
+.nav-menu li:first-child { 
+    border-top: 1px solid $section-border-color;
+}
+.nav-menu ul:first-child li:first-child { 
+    border-top: none;
+}
+
+
+.nav-menu a{
+    position: relative;
+
+    display: block; 
+    width: 30px;
+    height: 30px;
+    padding: 10px 20px;
+
+    text-align: center;
+    color: inherit;
+}
+
+.nav-menu li.active a,
+.nav-menu a:hover { 
+    background-color: rgba($color-primary, 0.2); 
+    color: $color-primary;
+}
+
+.nav-menu li.active a:after {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    right: 0px;
+
+    width: 5px;
+    height: 100%;
+
+    background-color: $color-primary;
+}
+
+.nav-menu .menu-icon {
+    font-size: 22px;
+    line-height: 30px;
+    width: 30px;
+    text-align: center;
+    display: inline-block;
+}
+
+.nav-menu .special-menu-icon {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    padding: 7px 6px 5px;
+    
+    text-align: center;
+    font-size: 14px;
+    line-height: 18px;
+    text-transform: uppercase;
+    @include ellipsis;
+
+    border-radius: 5px;
+}
+
+.nav-menu .label {
+    margin-left: 10px;
+    display: none;
+
+    font-size: 14px; 
+    line-height: 17px;
+    vertical-align: 3px;
+}
+
+.nav-menu .special-menu-icon+.label {
+    vertical-align: 9px;
+}
+
+.nav-menu .tooltip {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+
+// Featured menu
+.nav-menu li.featured {
+    position: absolute;
+    bottom: 30px;
+    left: 0px;
+
+    color: $color-mid;
+
+    .menu-icon {
+        font-size: 30px;
+    }
+}
+
+
+@media screen and (max-width: 992px) {
+    nav {
+        width: 219px;
+        overflow: auto;
+        left: -250px;
+    }
+
+    body.mobile-menu-open nav {
+        left: 0;
+    }
+
+    .nav-menu {
+        position: relative;
+        padding: 0;
+        margin-top: 15px;
+        height: auto;
+
+        &>div {
+            max-height: auto;
+            overflow: visible !important;
+        }
+    }
+
+    .nav-menu a {
+        width: auto;
+        text-align: left;
+    }
+    
+    .nav-menu li.active a:after {
+        content: none;
+    }
+    
+    .nav-menu .label {
+        display: inline;
+    }
+
+    .nav-menu .tooltip {
+        display: none;
+    }
+
+
+    .nav-menu li.featured {
+        position: relative;
+        bottom: auto;
+        left: auto;
+
+        color: inherit;
+
+        .menu-icon {
+            font-size: 24px;
+        }
+    }
+}
+
+
+
+
+
+
+/* Aside Navigation */
+.asidenav {
+    margin: 71px 44px;
+
+    font-size: 16px;
+    line-height: 32px;
+
+    @include transition(all ease .2s);
+}
+
+.asidenav-group {
+    margin-top: 39px;
+
+    #{&}:first-child {
+        margin-top: 0;
+    }
+}
+
+.asidenav-title {
+}
+
+.asidenav ul {
+    margin: 0;
+    padding: 0;
+
+    color: $color-mid;
+    font-size: 14px;
+
+    list-style: none;
+}
+.asidenav li {
+    margin: 0;
+    padding: 0;
+}
+
+.asidenav li a {
+    color: inherit;
+
+    #{&}:hover {
+        color: $color-primary;
+    }
+}
+.asidenav li.active a {
+    color: $color-primary;
+    font-weight: bold;
+}
+
+
+@media screen and (max-width: 992px) {
+    .asidenav { 
+        margin: 0px 25px;
+        max-height: 0;
+
+        overflow: hidden;
+
+    }
+
+    .asidenav.mobile-visible {
+        max-height: 1000px;
+        padding: 30px 0;
+    }
+}

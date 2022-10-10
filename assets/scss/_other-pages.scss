@@ -1,0 +1,27 @@
+/* New|Edit Caption */
+.caption-input {
+    height: auto;
+    min-height: 132px;
+}
+.emojionearea.input {
+    padding: 0;
+}
+
+
+
+/**
+ * Account Page
+ */
+#account {
+    .resend-btn {
+        &.inactive {
+            cursor: default;
+
+            color: $color-mid;
+        }
+
+        .timer {
+            font-size: 10px;
+        }
+    }
+}

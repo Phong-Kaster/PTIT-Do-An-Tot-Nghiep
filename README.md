@@ -99,6 +99,15 @@ Sau đó thì thay đổi suy nghĩ để chuyển qua làm học thay thế t�
 
 - **05-10-2022**: Tối ưu cơ sở dữ liệu và tìm hiểu kĩ các trường hợp đặc biệt của đề tài.
 
+- **06-10-2022 -> 09-10-2022**: Làm một số việc vặt và chủ yếu là ăn chơi, nghỉ việc thấy hụt hẫng quá, hic hic 😥
+
+- **10-10-2022**: 
+
+1. Xây dựng chương trình để viết API
+
+2. Chức năng đăng nhập cho bác sĩ 
+
+3. Đọc thông tin tất cả các chuyên khoa
 # [**Special Thanks**](#special-thanks)
 
 <table>

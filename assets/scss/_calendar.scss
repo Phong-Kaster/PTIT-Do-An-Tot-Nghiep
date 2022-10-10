@@ -1,0 +1,537 @@
+/**
+ * Calendar month switch
+ */
+.calendar-month-switch {
+    text-align: center;
+
+    .month {
+        height: 22px;
+
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .year {
+        height: 15px;
+        margin-top: 1px;
+
+        font-size: 13px;
+        line-height: 15px;
+
+        color: $color-mid;
+    }
+
+    .nav {
+        font-size: 14px;
+
+        color: $color-mid;
+
+        &:hover {
+            color: $color-dark;
+        }
+    }
+
+    .nav.left {
+        margin-right: 5px;
+    }
+    .nav.right {
+        margin-left: 5px;
+    }
+}
+
+
+/**
+ * Calendar
+ */
+.calendar {
+    border-width: 1px 0 0 1px;
+    border-style: solid;
+    border-color: $section-border-color;
+
+    .head {
+        font-size: 16px;
+        line-height: 19px;
+
+        text-align: center;
+
+        color: $color-dark;
+
+        .cell {
+            padding: 24px 10px 22px;
+
+            @include ellipsis;
+        }
+    }
+
+    .cell {
+        float: left;
+        width: 14.28%;
+
+        border-width: 0 1px 1px 0;
+        border-style: solid;
+        border-color: $section-border-color;
+        background-color: #fff;
+
+        @include box-sizing(border-box);
+
+        &.in-other-month {
+            background-color: $color-light;
+        }
+    }
+
+    .cell-inner {
+        position: relative;
+
+        padding-top: 75.27%;
+    }
+
+    .day-name {
+        position: absolute;
+        top: 21px;
+        left: 50px;
+        z-index: 10;
+
+        display: none;
+        height: 14px;
+
+        font-size: 10px;
+        line-height: 14px;
+
+        color: $color-mid;
+    }
+
+    .day-number {
+        position: absolute;
+        top: 13px;
+        right: 13px;
+        z-index: 10;
+
+        width: 28px;
+        height: 19px;
+        padding: 5px 0 4px;
+
+        font-size: 14px;
+        line-height: 19px;
+
+        text-align: center;
+
+        color: $color-mid;
+        border-radius: 50%;
+    }
+
+    .cell.today .day-number {
+        color: #fff;
+        background-color: $color-danger;
+    }
+
+    .add-post {
+        position: absolute;
+        top: 18px;
+        left: 13px;
+        z-index: 10;
+
+        visibility: hidden;
+        height: 18px;
+
+        font-size: 10px;
+        line-height: 18px;
+
+        opacity: 0;
+        color: $color-mid;
+
+        @include transition($transition);
+        @include transform(translateY(5px));
+
+        .icon {
+            font-size: 14px;
+
+            vertical-align: -2px;
+        }
+
+        &:hover {
+            color: $color-dark;
+        }
+    }
+
+    .cell:hover .add-post {
+        visibility: visible;
+
+        opacity: 1;
+
+        @include transform(translateY(0px));
+    }
+}
+
+
+
+.calendar .count {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    font-size: 12px;
+    line-height: 14px;
+
+    .bg {
+        position: absolute;
+        bottom: 18px;
+        left: 10%;
+
+        width: 80%;
+        height: 32px;
+
+        content: "";
+
+        border-radius: 100px;
+        background: linear-gradient(134.72deg, #47f15a 0%, #0de8e8 100%);
+        background-color: #47f15a;
+
+        @include transition($transition);
+
+        &.medium {
+            background: linear-gradient(134.72deg, #00eaf8 0%, #6d42ef 100%);
+            background-color: #00eaf8;
+        }
+
+        &.high {
+            background: linear-gradient(134.72deg, #eb4b92 0%, #ca76e3 100%);
+            background-color: #eb4b92;
+        }
+    }
+
+    .intro {
+        position: absolute;
+        bottom: 18px;
+        left: 10%;
+
+        width: 80%;
+        height: 32px;
+        padding: 9px 10px;
+
+        text-align: center;
+        overflow: hidden;
+
+        color: #fff;
+
+        @include box-sizing(border-box);
+        @include ellipsis;
+        @include transition($transition);
+        @include transform(rotateX(0deg));
+
+        .full-link { display: none; }
+    }
+
+    .details {
+        position: absolute;
+        bottom: 13px;
+        left: 13px;
+
+        visibility: hidden;
+
+        > div {
+            visibility: hidden;
+            padding-left: 7px;
+            margin-top: 5px;
+
+            opacity: 0;
+            border-left: 2px solid $color-mid;
+
+            @include transform(translateX(20px));
+            @include transition(all ease .2s 0s);
+
+            &:first-child {
+                margin-top: 0;
+            }
+
+            &.published {
+                border-left-color: #47f15a;
+            }
+
+            &.failed {
+                border-left-color: #eb4b92;
+            }
+
+            &.scheduled {
+                border-left-color: #f8ce00;
+            }
+
+            &.delayed {
+                border-left-color: #0de8e8;
+            }
+        }
+
+        .label {
+            display: inline-block;
+            width: 60px;
+            margin-right: 5px;
+
+            font-size: 10px;
+
+            text-transform: uppercase;
+
+            color: $color-mid;
+        }
+
+        .value {
+            display: inline-block;
+
+            font-size: 14px;
+            font-weight: bold;
+
+            vertical-align: -1px;
+        }
+    }
+
+    .full-link {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .calendar .cell:hover .count {
+        .bg {
+            bottom: 3px;
+            left: 3px;
+
+            width: calc(100% - 6px);
+            height: calc(100% - 6px);
+
+            opacity: .1;
+            border-radius: 0;
+
+            &.medium {
+                background: linear-gradient(72.72deg, #00eaf8 0%, #6d42ef 100%);
+            }
+
+            &.high {
+                background: linear-gradient(72.72deg, #eb4b92 0%, #ca76e3 100%);
+            }
+        }
+
+        .intro {
+            visibility: hidden;
+
+            opacity: 0;
+            color: inherit;
+
+            @include transform(translateX(-40px));
+        }
+
+        .details {
+            visibility: visible;
+
+            > div {
+                visibility: visible;
+
+                opacity: 1;
+
+                @include transform(translateX(0px));
+
+                &:nth-child(1) {
+                    transition-delay: .2s;
+                }
+
+                &:nth-child(2) {
+                    transition-delay: .1s;
+                }
+
+                &:nth-child(3) {
+                    transition-delay: .0s;
+                }
+            }
+        }
+
+        .full-link {
+    display: block;
+}
+
+    }
+}
+
+
+@media screen and (max-width: 992px) {
+    .calendar .head {
+        display: none;
+    }
+
+    .calendar .cell {
+        width: 20%;
+
+        &.in-other-month {
+            display: none;
+        }
+    }
+
+    .calendar .day-name {
+        display: block;
+    }
+
+    .calendar .day-number {
+        right: auto;
+        left: 17px;
+    }
+
+    .calendar .add-post {
+        right: 17px;
+        left: auto;
+    }
+
+    .calendar .add-post {
+        visibility: visible;
+
+        opacity: 1;
+
+        @include transform(translateY(0px));
+
+        .icon {
+            font-size: 20px;
+
+            vertical-align: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .calendar .cell {
+        width: 33.33%;
+    }
+
+    .calendar .count .intro .full-link {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .calendar .cell {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .calendar .cell {
+        float: none;
+        width: auto;
+    }
+}
+
+
+
+/* Calendar (Month) */
+#calendar-month {
+    .account-selector {
+        position: absolute;
+        top: 0;
+        right: 20px;
+    }
+
+    .calendar {
+        margin-top: 27px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    #calendar-month {
+        .account-selector {
+            position: static;
+            top: auto;
+            right: auto;
+
+            float: left;
+        }
+
+        .calendar-month-switch {
+            float: right;
+        }
+
+        .calendar {
+            margin-top: 20px;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #calendar-month {
+        .account-selector {
+            float: none;
+            max-width: 160px;
+            margin: 0 auto 30px;
+
+            text-align: center;
+
+            .label {
+                display: block;
+                float: none;
+                margin: 0 0 5px;
+            }
+        }
+
+        .calendar-month-switch {
+            float: none;
+        }
+
+        .calendar {
+            margin-top: 10px;
+        }
+    }
+}
+
+
+
+/* Calendar (Day) */
+#calendar-day {
+    .account-selector {
+        position: absolute;
+        top: -5px;
+        right: 0;
+    }
+
+    .list-wrapper {
+        margin-bottom: 24px;
+        padding-bottom: 30px;
+        border-bottom: 1px solid $field-border-color;
+
+        &:last-child { 
+            margin-bottom: 0; 
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+    }
+
+    .page-secondary-title {
+        margin-bottom: 10px;
+
+        .badge {
+            margin-left: 13px;
+            vertical-align: 1px;
+        }
+    }
+
+    .nopost {
+        margin: 0;
+
+        color: $color-mid;
+        font-size: 14px;
+        line-height: 20px;
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    #calendar-day {
+        .account-selector {
+            float: none;
+            margin-bottom: 30px;
+            position: static;
+
+            .label {
+                display: block;
+                float: none;
+                margin: 0 0 5px;
+            }
+        }
+    }
+
+}

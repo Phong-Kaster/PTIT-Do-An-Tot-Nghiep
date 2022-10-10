@@ -1,0 +1,47 @@
+/**
+ * Mini page (expired, checkout result)
+ */
+.minipage{
+    .inner {
+        max-width: 400px;
+        margin: 80px auto;
+        padding: 0 20px;
+
+        text-align: center;
+    }
+
+    .icon {
+        display: block;
+        margin-bottom: 24px;
+        
+        font-size: 50px;
+        color: $color-primary;
+    }
+
+    .page-secondary-title {
+        margin: 0px 0 20px;
+    }
+
+    p {
+        margin: 0 0 20px;
+
+        color: $color-mid;
+        font-size: 18px;
+        line-height: 25px;
+    }
+
+    .small-text  {
+        font-size: 12px;
+        line-height: 17px;
+    }
+
+    .system-error {
+        padding: 10px;
+        margin-bottom: 20px;
+        
+        font-family: monospace;
+        
+        background-color: $color-light; 
+        border: 1px solid $section-border-color;
+    }
+}

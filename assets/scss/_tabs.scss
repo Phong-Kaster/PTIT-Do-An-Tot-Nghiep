@@ -1,0 +1,38 @@
+.tabheads {
+    a {
+        display: block;
+        float: left;
+        height: 30px;
+        padding: 6px 5px 4px;
+
+        font-size: 10px;
+        line-height: 18px;
+
+        text-align: center;
+        text-transform: uppercase;
+
+        color: $color-dark;
+        border: 1px solid $field-border-color;
+        border-right: none;
+
+        @include box-sizing(border-box);
+
+        &:last-child {
+            border-right: 1px solid $field-border-color;
+        }
+
+        &.active {
+            background-color: $color-light;
+        }
+    }
+}
+
+
+.tabcontents {
+    & > div {
+        display: none;
+    }
+    & > div.active {
+        display: block;
+    }
+}

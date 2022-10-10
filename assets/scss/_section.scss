@@ -1,0 +1,178 @@
+/* Section */
+.section {
+    background-color: #fff;
+    box-shadow: $section-box-shadow;
+}
+
+.section-header {
+    padding: 25px;
+
+    border-bottom: 1px solid $field-border-color;
+}
+
+.section-title {
+    float: left;
+    height: 20px;
+    margin: 0;
+
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 20px;
+}
+
+.section-actions {
+    float: right;
+    height: 20px;
+
+    .icon {
+        float: left;
+        height: 20px;
+        margin-top: -1px;
+        margin-left: 10px;
+
+        font-size: 20px;
+
+        color: $color-mid;
+
+        @include transition($transition);
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &:hover {
+            color: $color-dark;
+        }
+
+        &.active {
+            color: $color-primary;
+
+            &:hover {
+                color: $color-primary-hover;
+            }
+        }
+    }
+
+    .dropdown {
+        position: relative;
+
+        margin-top: -4px;
+
+        select {
+            width: auto;
+            height: 28px;
+            padding: 4px 20px 4px 30px;
+
+            font-size: 12px;
+            line-height: 18px;
+
+            cursor: pointer;
+
+            border: 1px solid transparent;
+            border-radius: 0;
+            outline: none;
+            background-color: transparent;
+
+            @include box-sizing(border-box);
+            @include appearance(none);
+
+            &.error {
+                background-color: rgba($color-danger, .1);
+                border-color: rgba($color-danger, .2);
+            }
+
+            &:hover {
+                border-color: $field-border-color;
+                background-color: $color-light;
+            }
+
+            &:disabled {
+                cursor: default;
+
+                opacity: .5;
+            }
+        }
+
+        .icon {
+            position: absolute;
+            top: 5px;
+            left: 8px;
+
+            height: 16px;
+            margin: 0;
+
+            font-size: 16px;
+        }
+        &.onprogress .icon {
+            display: none;
+        }
+
+        .caret {
+            position: absolute;
+            top: 5px;
+            right: 4px;
+
+            height: 16px;
+
+            font-size: 16px;
+        }
+
+        .loading {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+
+            display: none;
+            width: 14px;
+            height: 14px;
+        }
+        &.onprogress .loading {
+            display: block;
+        }
+    }
+
+    .btn {
+        width: auto;
+        height: 20px;
+
+        font-size: 12px;
+        line-height: 18px;
+
+        cursor: pointer;
+
+        outline: none;
+
+        @include box-sizing(border-box);
+    }
+
+    .more {
+        visibility: hidden;
+        float: left;
+        height: 20px;
+        max-width: 0;
+        overflow: hidden;
+
+        opacity: 0;
+        border-left: 1px solid transparent;
+
+        @include transition($transition);
+    }
+}
+
+.section:hover .section-actions .more,
+.section .section-actions .more.visible {
+    visibility: visible;
+    max-width: 200px;
+    padding-left: 15px;
+    margin-left: 20px;
+
+    opacity: 1;
+    border-color: $field-border-color;
+}
+
+.section-content {
+    padding: 25px;
+
+    font-size: 14px;
+    line-height: 20px;
+}

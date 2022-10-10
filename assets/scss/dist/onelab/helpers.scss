@@ -1,0 +1,158 @@
+/**
+ * Helpers
+ * (c) Onelab <hello@onelab.co>
+ */
+.clearfix { 
+    *zoom: 1; 
+
+    &:before,
+    &:after {
+        display: table; 
+        content: ""; 
+        line-height: 0;
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+
+// Margin - Padding offsets
+$offset-sizes: (
+    "0": "0px",
+    "5": "5px",
+    "10": "10px",
+    "15": "15px",
+    "20": "20px",
+    "25": "25px",
+    "30": "30px",
+    "35": "35px",
+    "40": "40px",
+    "45": "45px",
+    "50": "50px",
+    "60": "60px",
+    "70": "70px",
+    "80": "80px",
+    "90": "90px",
+    "100": "100px"
+);
+$offset-directions: (
+  "t": "top",
+  "b": "bottom",
+  "l": "left",
+  "r": "right"
+);
+@each $key, $val in $offset-sizes {
+  @each $class, $dir in $offset-directions {
+    .m#{$class}-#{$key} {
+      margin-#{$dir}: #{$val} !important;
+    }
+
+    .p#{$class}-#{$key} {
+      padding-#{$dir}: #{$val} !important;
+    }
+  }
+
+  .m-#{$key} {
+    margin: #{$val} !important;
+  }
+
+  .p-#{$key} {
+    padding: #{$val} !important;
+  }
+}
+
+
+
+// Font weights
+$fw: 100;
+@while $fw <= 900 {
+  .fw-#{$fw} {
+    font-weight: #{$fw} !important;
+  }
+
+  $fw: $fw + 100;
+}
+
+
+// Font sizes
+$fz: 10;
+@while $fz <= 30 {
+  .fz-#{$fz} {
+    font-size: #{$fz}px !important;
+  }
+
+  $fz: $fz + 1;
+}
+
+
+.pull-left { 
+  float: left !important;
+} 
+.pull-right{ 
+  float: right !important;
+}
+
+.block{
+  display: block !important;
+} 
+.inline-block{
+  display: inline-block !important;
+} 
+.none{
+  display: none !important;
+}
+
+.pos-r{
+  position: relative !important;
+} 
+.pos-a{
+  position: absolute !important;
+} 
+.pos-f{
+  position: fixed !important;
+} 
+.pos-s{
+  position: static !important;
+}
+
+.of-hidden{
+  overflow: hidden !important;
+}
+
+.text-c{ 
+  text-align: center !important;
+} 
+.text-l{ 
+  text-align: left !important;
+} 
+.text-r{ 
+  text-align: right !important;
+} 
+.text-j{ 
+  text-align: justify !important;
+}
+
+.tt-upper{
+  text-transform: uppercase !important;
+} 
+.tt-lower{
+  text-transform: lowercase !important;
+} 
+.tt-none{
+  text-transform: none !important;
+}
+
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.pe-none{
+  pointer-events: none !important;
+}
+.pe-all {
+  pointer-events: all !important;
+}

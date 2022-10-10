@@ -1,0 +1,238 @@
+/* Text colors */
+.color-primary { color: $color-primary; }
+.color-primary-hover { color: $color-primary-hover; }
+.color-danger { color: $color-danger; }
+.color-success { color: $color-success; }
+.color-info { color: $color-info; }
+.color-light { color: $color-light; }
+.color-mid { color: $color-mid; }
+.color-dark { color: $color-dark; }
+
+
+/* General */
+.scrollbar-measure {
+    position: absolute; 
+    top: -9999px;
+
+    width: 100px; 
+    height: 100px; 
+    
+    overflow: scroll; 
+}
+
+/* Scrollbars */
+::-webkit-scrollbar{width: 5px; height: 0;}
+::-webkit-scrollbar-thumb{background-color: #b7b7b7;}
+::-webkit-scrollbar-track{background-color: #f0f0f0;}
+
+
+body{
+    font-family: $primary-font-family; 
+    font-size: 100%; 
+    width: 100%;
+    
+    margin:0; 
+    padding: 0; 
+
+    background-color: #fafafa; 
+    color: $color-dark; 
+
+    @include transition($transition);
+
+    &.onprogress:after{
+        content: ""; 
+        
+        position: fixed; 
+        z-index: 999999;
+        top: 0; 
+        left: 0; 
+
+        width: 100%; 
+        height: 100%;
+        
+        background: rgba(255,255,255,0.95) url("../img/round-loading.svg") center no-repeat;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    body.mobile-menu-open {
+        overflow: hidden;
+        margin-left: 220px;
+    }
+}
+
+a{
+    text-decoration: none; 
+    outline: none; 
+    color: $color-primary;
+}
+a.full-link{
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+
+    width: 100%; 
+    height: 100%;
+
+    border-radius: inherit;
+}
+
+
+
+
+/* NoData */
+.no-data {
+    margin: 200px auto 100px;
+    max-width: 400px;
+    padding: 0 20px;
+
+    text-align: center;
+    color: $color-mid;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.no-data-icon {
+    display: block;
+    margin-bottom: 20px;
+
+    font-size: 40px;
+}
+
+
+
+/**
+ * Titles
+ */
+.page-primary-title {
+    margin: 0 0 14px;
+
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 41px;
+}
+
+.page-secondary-title {
+    margin: 0;
+
+    color: $color-dark;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: normal;
+}
+
+
+
+/* Account Selector */
+.account-selector {
+    .label {
+        float: left;
+        margin-right: 21px;
+        margin-top: 13px;
+
+        color: $color-mid;
+        font-size: 12px;
+        line-height: 14px;
+    }
+
+    .input {
+        float: left;
+        width: 180px;
+
+        box-shadow: $section-box-shadow;
+    }
+}
+
+
+
+/* Badges */
+.badge {
+    display: inline-block;
+    padding: 7px 19px 6px;
+
+    color: #fff;
+    font-size: 14px;
+    line-height: 17px;
+    background-color: $color-dark;
+
+    border-radius: 100px;
+}
+
+
+/* Tags */
+.tag {
+    position: relative;
+    display: inline-block;
+    padding: 2px 20px 2px 5px;
+    max-width: 120px;
+    height: 20px;
+    
+    font-size: 12px;
+    line-height: 20px;
+    background-color: $color-dark;
+    color: #fff;
+    @include ellipsis;
+
+
+    border-radius: 2px;
+    @include transition($transition);
+
+    &.preadd {
+        opacity: 0;
+        visibility: hidden;
+        @include transform(scale(0.3));
+    }
+
+    .icon {
+        margin-right: 3px;
+    }
+
+    .remove {
+        position: absolute;
+        top: 2px;
+        right: 5px;
+
+        font-size: 10px;
+        cursor: pointer;
+    }
+}
+
+
+
+
+/* AUTOCOMPLETE */
+.autocomplete-suggestions {
+    font-size: 14px; 
+    line-height: 17px; 
+
+    border: 1px solid $color-light;
+    
+    box-shadow: $dropdown-box-shadow;
+    background: #fff; 
+
+    overflow: auto; 
+}
+.autocomplete-suggestion {
+    position: relative;
+    padding: 15px; 
+    overflow: hidden; 
+    cursor: pointer; 
+    border-bottom: 1px solid $color-light;
+
+    &:last-child {
+        border-bottom: none;
+    }
+
+    .sub {
+        margin-top: 3px;
+        display: block;
+
+        color: $color-mid;
+        font-size: 12px;
+    }
+}
+
+.autocomplete-selected {
+    background: $color-dark; 
+    color: #fff;
+}

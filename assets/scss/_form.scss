@@ -1,0 +1,509 @@
+/* Form */
+.fluid {
+    display: block !important;
+    width: 100% !important;
+}
+
+
+// Form results
+.form-result {
+    font-size: 14px;
+    line-height: 20px;
+
+    a {
+        text-decoration: underline;
+    }
+
+    > div {
+        position: relative;
+
+        padding-left: 28px;
+    }
+
+    > div:last-child {
+        margin-bottom: 17px;
+    }
+
+    .icon {
+        position: absolute;
+        top: -1px;
+        left: 0;
+
+        font-size: 18px;
+    }
+
+    > .error .icon {
+        color: $color-danger;
+    }
+
+    > .success .icon {
+        color: $color-success;
+    }
+
+    > .info .icon {
+        color: $color-info;
+    }
+}
+
+
+
+// Field icons
+.field-icon--left,
+.field-icon--right {
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+
+    width: 50px;
+    height: 20px;
+    padding: 15px 0;
+
+    font-size: 20px;
+    line-height: 1;
+
+    text-align: center;
+
+    color: $color-mid;
+
+    &.small {
+        padding: 10px 0;
+    }
+
+    &.processing {
+        visibility: hidden;
+
+        opacity: 0;
+
+        @include transition($transition);
+    }
+
+    img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        max-width: 100%;
+        max-height: 20px;
+        margin: auto;
+    }
+}
+
+.field-icon--left {
+    left: 0;
+}
+.field-icon--right {
+    right: 0;
+}
+
+a.field-icon--left:hover,
+a.field-icon--right:hover {
+    color: $color-dark;
+}
+
+.input.onprogress + .field-icon--left.processing,
+.input.onprogress + .field-icon--right.processing {
+    visibility: visible;
+
+    opacity: 1;
+}
+// Labels
+.form-label {
+    display: block;
+    margin-bottom: 5px;
+
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.form-label--secondary {
+    font-size: 13px;
+
+    color: $color-mid;
+}
+
+.compulsory-field-indicator {
+    color: $color-danger;
+}
+
+
+// Field tips
+.field-tips {
+    padding: 0 0 0 20px;
+    margin: 10px 0 0;
+
+    font-size: 12px;
+    line-height: 14px;
+    list-style: disc;
+
+    color: $color-mid;
+
+    li {
+        padding: 0;
+        margin: 6px 0;
+    }
+}
+
+
+// Inputs
+@include placeholder-color($section-border-color);
+/* input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px white inset !important;
+} */
+
+.input {
+    display: block;
+    width: 100%;
+    height: 50px;
+    padding: 15px 12px;
+
+    font-family: $primary-font-family;
+    font-size: 14px;
+    line-height: 18px;
+
+    color: $color-mid;
+    border: 1px solid $field-border-color;
+    outline: none;
+    background-color: #fff;
+
+    @include box-sizing(border-box);
+    @include transition(border-color $transition-ease $transition-duration);
+
+    &:focus {
+        border-color: $color-primary;
+    }
+    &:disabled {
+        background-color: #fafafa;
+    }
+
+    &.leftpad {
+        padding-left: 50px;
+    }
+    &.rightpad {
+        padding-right: 50px;
+    }
+
+    &.error {
+        border-color: $color-danger;
+    }
+}
+
+textarea.input {
+    height: auto;
+
+    resize: vertical;
+}
+
+
+.input--small {
+    height: 40px;
+    padding: 10px 12px;
+}
+
+
+
+// Buttons
+.button {
+    display: inline-block;
+    height: 50px;
+    padding: 15px 12px;
+
+    font-family: $primary-font-family;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 18px;
+
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    color: #fff;
+    border: 1px solid $color-primary;
+    border-radius: 0;
+    outline: none;
+    background-color: $color-primary;
+
+    @include box-sizing(border-box);
+    @include transition($transition);
+
+    &:hover {
+        border-color: $color-primary-hover;
+        background-color: $color-primary-hover;
+    }
+
+    &.disabled,
+    &:disabled {
+        cursor: default;
+
+        color: $color-mid !important;
+        border: 1px solid $field-border-color !important;
+        background-color: $color-light !important;
+    }
+}
+
+.button.small {
+    height: 30px;
+    padding: 5px 10px;
+
+    text-transform: none;
+}
+.button.large {
+    height: 60px;
+    padding: 20px 15px;
+}
+
+.button--danger {
+    border-color: $color-danger;
+    background-color: $color-danger;
+
+    &:hover {
+        border-color: darken($color-danger, 10%);
+        background-color: darken($color-danger, 10%);
+    }
+}
+
+.button--dark {
+    border-color: $color-dark;
+    background-color: $color-dark;
+
+    &:hover {
+        border-color: darken($color-dark, 10%);
+        background-color: darken($color-dark, 10%);
+    }
+}
+
+.button--oval {
+    border-radius: 100px;
+}
+
+.button--simple {
+    color: $color-primary;
+    border-color: transparent;
+    background-color: transparent;
+
+    &:hover {
+        color: $color-primary-hover;
+        border-color: transparent;
+        background-color: transparent;
+    }
+}
+
+.button--simple-danger {
+    color: $color-danger;
+
+    &:hover {
+        color: darken($color-danger, 10%);
+    }
+}
+
+
+.button--light-outline {
+    font-weight: normal;
+
+    color: $color-mid;
+    border-color: $section-border-color;
+    background-color: transparent;
+
+    &:hover {
+        color: $color-primary;
+        border-color: $color-primary;
+        background-color: rgba($color-primary, .05);
+    }
+}
+
+
+.button--footer {
+    font-weight: normal;
+
+    text-transform: uppercase;
+
+    color: $color-mid;
+    border: none;
+    border-top: 1px solid $field-border-color;
+    background-color: transparent;
+
+    &:hover {
+        color: $color-primary;
+        border-color: $color-primary;
+        background-color: rgba($color-primary, .05);
+    }
+}
+
+
+
+
+// Checkboxes
+.checkbox {
+    display: none;
+}
+
+.checkbox + span {
+    position: relative;
+
+    display: inline-block;
+    padding: 2px 0 2px 32px;
+
+    font-size: 12px;
+    line-height: 20px;
+
+    cursor: pointer;
+
+    color: $color-mid;
+
+    @include transition($transition);
+    @include user-select(none);
+}
+.checkbox:checked + span {
+    color: $color-dark;
+}
+.checkbox:disabled + span {
+    cursor: default;
+
+    opacity: .5;
+}
+
+.checkbox + span .icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 20px;
+    height: 20px;
+
+    border: 1px solid $color-mid;
+    border-radius: 4px;
+
+    @include transition(border-color $transition-ease $transition-duration);
+}
+.checkbox:checked + span .icon {
+    color: $color-primary;
+    border-color: $color-primary;
+}
+.checkbox:disabled + span .icon {
+    background-color: #fafafa;
+}
+
+.checkbox + span .icon span {
+    position: absolute;
+    top: 1px;
+    left: 0;
+
+    visibility: hidden;
+    width: 100%;
+
+    font-size: 20px;
+    line-height: 1;
+
+    text-align: center;
+
+    opacity: 0;
+
+    @include transition($transition);
+}
+.checkbox:checked + span .icon span {
+    visibility: visible;
+
+    opacity: 1;
+}
+
+
+
+// Radio
+.radio {
+    display: none;
+}
+.radio + span {
+    position: relative;
+
+    display: inline-block;
+    padding-left: 38px;
+
+    font-size: 14px;
+    line-height: 17px;
+
+    cursor: pointer;
+
+    @include user-select(none);
+}
+
+.radio + span .icon {
+    position: absolute;
+    top: -4px;
+    left: 0;
+
+    width: 22px;
+    height: 22px;
+
+    border: 1px solid $color-primary;
+    border-radius: 50%;
+}
+.radio + span .icon:after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    visibility: hidden;
+    width: 14px;
+    height: 14px;
+    margin: -7px 0 0 -7px;
+
+    content: "";
+
+    opacity: 0;
+    border-radius: 50%;
+    background-color: $color-primary;
+
+    @include transition($transition);
+    @include transform(scale(.5));
+}
+.radio:checked + span .icon:after {
+    visibility: visible;
+
+    opacity: 1;
+
+    @include transform(scale(1));
+}
+
+
+
+
+// File inputs
+.fileinp {
+    display: none;
+}
+.fileinp + div {
+    display: block;
+    width: 100%;
+    height: 50px;
+    padding: 15px 12px;
+
+    font-family: $primary-font-family;
+    font-size: 12px;
+    line-height: 18px;
+
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    color: $color-mid;
+    border: 1px solid $section-border-color;
+    outline: none;
+    background-color: transparent;
+
+    @include transition($transition);
+    @include box-sizing(border-box);
+    @include ellipsis;
+
+    &:hover {
+        color: $color-primary;
+        border-color: $color-primary;
+        background-color: rgba($color-primary, .05);
+    }
+}
+
+.fileinp.error + div {
+    border-color: $color-danger;
+}

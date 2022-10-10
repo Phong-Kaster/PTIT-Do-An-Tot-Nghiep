@@ -1,22 +1,22 @@
-create table `specialities`
+create table `tn_specialities`
 (
-	id int primary key,
+	id int primary key AUTO_INCREMENT,
 	name varchar(30),
 	description varchar(255)
 );
 
 
-create table `clinic`
+create table `tn_clinic`
 (
-	id int primary key,
+	id int primary key AUTO_INCREMENT,
 	name varchar(255),
 	address varchar(255)
 );
 
 
-create table `doctors`
+create table `tn_doctors`
 (
-	id int,
+	id int AUTO_INCREMENT,
 	email varchar(255),
 	phone varchar(15),
 	password varchar(255),
@@ -30,13 +30,13 @@ create table `doctors`
 	speciality_id int,
 	clinic_id int,
 	PRIMARY KEY(id),
-	FOREIGN KEY (speciality_id) REFERENCES specialities(id),
-	FOREIGN KEY (clinic_id) REFERENCES clinic(id)
+	FOREIGN KEY (speciality_id) REFERENCES tn_specialities(id),
+	FOREIGN KEY (clinic_id) REFERENCES tn_clinic(id)
 );
 
-create table `patients`
+create table `tn_patients`
 (
-	id int,
+	id int AUTO_INCREMENT,
 	email varchar(255),
 	phone varchar(15),
 	password varchar(255),
@@ -49,9 +49,9 @@ create table `patients`
 	PRIMARY KEY(id)
 );
 
-create table `medical_records`
+create table `tn_medical_records`
 (
-	id int,
+	id int AUTO_INCREMENT,
 	patient_id int,
 	reason varchar(100),
 	description text,
@@ -60,12 +60,12 @@ create table `medical_records`
 	create_at datetime,
 	update_at datetime,
 	PRIMARY KEY(id),
-	FOREIGN KEY (patient_id) REFERENCES patients(id)
+	FOREIGN KEY (patient_id) REFERENCES tn_patients(id)
 );
 
-create table `booking`
+create table `tn_booking`
 (
-	id int,
+	id int AUTO_INCREMENT,
 	patient_id int,
 	doctor_id int,
 	booking_name varchar(50),
@@ -80,13 +80,13 @@ create table `booking`
 	create_at datetime,
 	update_at datetime,
 	PRIMARY KEY(id),
-	FOREIGN KEY (patient_id) REFERENCES patients(id),
-	FOREIGN KEY (doctor_id) REFERENCES doctors(id)
+	FOREIGN KEY (patient_id) REFERENCES tn_patients(id),
+	FOREIGN KEY (doctor_id) REFERENCES tn_doctors(id)
 );
 
-create table `appointment_orders`
+create table `tn_appointment_orders`
 (
-	id int,
+	id int AUTO_INCREMENT,
 	doctor_id int,
     patient_id int,
 	patient_name varchar(50),
@@ -99,14 +99,14 @@ create table `appointment_orders`
 	create_at datetime,
 	update_at datetime,
 	PRIMARY KEY(id),
-	FOREIGN KEY (doctor_id) REFERENCES doctors(id),
-    FOREIGN KEY (patient_id) REFERENCES patients(id)
+	FOREIGN KEY (doctor_id) REFERENCES tn_doctors(id),
+    FOREIGN KEY (patient_id) REFERENCES tn_patients(id)
 );
 
 
-create table `treatments`
+create table `tn_treatments`
 (
-	id int,
+	id int AUTO_INCREMENT,
 	patient_id int,
 	name varchar(50),
 	type varchar(20),
@@ -114,5 +114,5 @@ create table `treatments`
 	purpose varchar(50),
 	instruction varchar(255),
 	PRIMARY KEY(id),
-	FOREIGN KEY (patient_id) REFERENCES patients(id)
+	FOREIGN KEY (patient_id) REFERENCES tn_patients(id)
 );

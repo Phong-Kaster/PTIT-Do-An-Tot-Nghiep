@@ -1,0 +1,132 @@
+/* Skeleton */
+.skeleton {
+    position: relative;
+
+    padding: 90px 10px 30px 80px;
+}
+
+.skeleton--full {
+    display: none; // will be faded in after height calculation
+    padding: 61px 0 0 70px;
+}
+
+.skeleton-aside,
+.skeleton-content {
+    position: relative;
+
+    overflow: auto;
+
+    background-color: #fff;
+    box-shadow: $section-box-shadow;
+
+    @include box-sizing(border-box);
+
+    &.onprogress:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+
+        width: 100%;
+        height: 100%;
+
+        content: "";
+
+        background: rgba(255,255,255,.95) url("../img/round-loading.svg") center no-repeat;
+        -webkit-background-size: 32px auto;
+                background-size: 32px auto;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: transparent;
+    }
+
+    &:hover::-webkit-scrollbar-thumb {
+        background-color: #b7b7b7;
+    }
+}
+
+
+.skeleton-aside {
+    float: left;
+    width: 30%;
+}
+
+
+.skeleton-content {
+    float: right;
+    width: 67%;
+
+    .section-content {
+        max-width: 900px;
+    }
+}
+
+.skeleton-aside .search-box {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+
+    padding: 10px 20px;
+
+    background-color: $color-light;
+
+    .search-icon {
+        @include transition($transition);
+    }
+
+    .cancel-icon {
+        visibility: hidden;
+
+        opacity: 0;
+
+        @include transition($transition);
+        @include transform(rotateZ(60deg));
+    }
+}
+
+.skeleton-aside .search-box.search-performed {
+    .search-icon {
+        visibility: hidden;
+
+        opacity: 0;
+
+        @include transform(rotateZ(-60deg));
+    }
+
+    .cancel-icon {
+        visibility: visible;
+
+        opacity: 1;
+
+        @include transform(rotateZ(0deg));
+    }
+}
+
+.skeleton-aside .search-no-result {
+    font-size: 12px;
+    line-height: 20px;
+
+    text-align: center;
+
+    color: $color-mid;
+}
+
+
+
+@media screen and (max-width: 992px) {
+    .skeleton {
+        padding: 80px 0 20px;
+    }
+
+    .skeleton--full {
+        padding: 61px 0 0;
+    }
+
+    .skeleton-aside,
+    .skeleton-content {
+        float: none;
+        width: auto;
+        height: auto !important;
+    }
+}

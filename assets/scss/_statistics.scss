@@ -1,0 +1,128 @@
+.chart-legends {
+    margin: 20px 0 0px;
+    min-height: 54px;
+
+    color: $color-mid;
+    text-align: center;
+    font-size: 14px;
+    line-height: 17px;
+
+    .legend {
+        display: inline-block;
+        margin: 0 15px 10px;
+
+        span {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin-right: 5px;
+
+            border-radius: 50%;
+            vertical-align: -1px;
+        }
+    }
+}
+
+.statistics-numeric {
+    float: left;
+    margin-right: 40px;
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    .number {
+        display: block;
+
+        font-size: 40px;
+        line-height: 48px;
+    }
+
+    .label {
+        display: block;
+        margin-top: 8px;
+
+        color: $color-mid;
+        font-size: 14px;
+        line-height: 17px;
+    }
+}
+
+
+@media screen and (max-width: 992px) {
+    .statistics-numeric {
+        margin-right: 30px;
+
+        .number {
+            font-size: 30px;
+            line-height: 36px;
+        }
+
+        .label {
+            font-size: 12px;
+            margin-top: 3px;
+        }
+    }
+}
+
+
+
+/* Statistics */
+#statistics {}
+
+#statistics .account-summary{
+    position: relative;
+
+    &.onprogress:after {
+        content: ""; 
+        
+        position: absolute; 
+        z-index: 10;
+        top: 0; 
+        left: 0; 
+
+        width: 100%; 
+        height: 100%;
+        
+        background: rgba(255,255,255,0.95) url("../img/round-loading.svg") center no-repeat;
+    }
+
+    .numbers {
+        min-height: 73px;
+    }
+
+    .error {
+        font-size: 16px;
+        line-height: 20px;
+        margin: 26px 0 27px;
+    }
+}
+
+
+#statistics .chart-container {
+    position: relative;
+    height: 280px;
+    margin: 30px auto;
+
+    canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+#statistics .doughnut-chart-container {
+    max-width: 280px;
+}
+
+
+
+@media screen and (max-width: 992px) {
+    #statistics .account-summary .numbers{
+        min-height: 56px;
+    }
+}

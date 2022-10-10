@@ -1,0 +1,30 @@
+# Glue terminal files
+**/terminal.glue
+
+# OS X Desktop Services Store files
+**/.DS_Store
+
+# Plugins
+inc/plugins/*
+!inc/plugins/index.php
+
+# Themes
+inc/themes/*
+!inc/themes/default/*
+!inc/themes/index.php
+
+# Dev config files
+**/*-dev.php
+
+# Sessions directory
+app/sessions/*
+!app/sessions/.gitkeep
+
+# Uploads directory
+assets/uploads/*
+assets/uploads/temp/*
+!assets/uploads/**/.gitkeep
+!assets/uploads/temp/
+
+# License file
+app/inc/license
