@@ -1,69 +1,37 @@
-[10-Oct-2022 04:13:22 UTC] PHP Fatal error:  Uncaught Error: Call to a member function isAvailable() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\helpers\common.helper.php:486
+[10-Oct-2022 10:04:00 UTC] PHP Fatal error:  Uncaught Error: Call to a member function where() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\IndexController.php:14
 Stack trace:
-#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\helpers\theme.helper.php(16): get_option('np_active_theme...')
-#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(259): active_theme('idname')
-#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(507): App->loadTheme()
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(582): IndexController->process()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#2 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\IndexController.php on line 14
+[10-Oct-2022 10:04:31 UTC] PHP Fatal error:  Uncaught Error: Call to a member function where() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\IndexController.php:14
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(582): IndexController->process()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#2 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\IndexController.php on line 14
+[10-Oct-2022 10:05:37 UTC] PHP Fatal error:  Uncaught Error: Call to a member function where() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\IndexController.php:14
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(582): IndexController->process()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#2 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\IndexController.php on line 14
+[10-Oct-2022 10:05:44 UTC] PHP Fatal error:  Uncaught Error: Call to a member function where() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\IndexController.php:20
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(582): IndexController->process()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#2 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\IndexController.php on line 20
+[10-Oct-2022 10:06:56 UTC] PHP Warning:  mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\SignupController.php on line 45
+[10-Oct-2022 10:10:18 UTC] PHP Warning:  mail(): Failed to connect to mailserver at &quot;server.com&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\SignupController.php on line 45
+[10-Oct-2022 10:11:49 UTC] PHP Warning:  mail(): Failed to connect to mailserver at &quot;server.com&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\SignupController.php on line 46
+[10-Oct-2022 10:35:20 UTC] PHP Warning:  mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\SignupController.php on line 40
+[10-Oct-2022 10:42:13 UTC] PHP Warning:  mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\SignupController.php on line 40
+[10-Oct-2022 11:19:49 UTC] PHP Fatal error:  Uncaught PHPMailer\PHPMailer\Exception: SMTP Error: Could not connect to SMTP host. Failed to connect to server in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\vendor\phpmailer\phpmailer\src\PHPMailer.php:2217
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\SignupController.php(66): PHPMailer\PHPMailer\PHPMailer->smtpConnect(Array)
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\SignupController.php(31): SignupController->sendEmail()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(582): SignupController->process()
 #3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
 #4 {main}
-  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\helpers\common.helper.php on line 486
-[10-Oct-2022 04:13:35 UTC] PHP Notice:  Undefined variable: opt in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\helpers\common.helper.php on line 491
-[10-Oct-2022 04:13:35 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\helpers\common.helper.php:491
-Stack trace:
-#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\helpers\theme.helper.php(16): get_option('np_active_theme...')
-#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(259): active_theme('idname')
-#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(507): App->loadTheme()
-#3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
-#4 {main}
-  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\helpers\common.helper.php on line 491
-[10-Oct-2022 04:14:11 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_option() in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\helpers\theme.helper.php:16
-Stack trace:
-#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(259): active_theme('idname')
-#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(507): App->loadTheme()
-#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
-#3 {main}
-  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\helpers\theme.helper.php on line 16
-[10-Oct-2022 04:14:26 UTC] PHP Notice:  Undefined index: _PLUGINS_ in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php on line 389
-[10-Oct-2022 04:14:26 UTC] PHP Warning:  Invalid argument supplied for foreach() in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php on line 389
-[10-Oct-2022 04:15:58 UTC] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\SpecialitiesController.php on line 29
-[10-Oct-2022 04:51:46 UTC] PHP Parse error:  syntax error, unexpected '}' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\LoginController.php on line 22
-[10-Oct-2022 04:52:53 UTC] PHP Notice:  Undefined variable: User in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\LoginController.php on line 62
-[10-Oct-2022 04:52:53 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\LoginController.php:62
-Stack trace:
-#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\LoginController.php(21): LoginController->login()
-#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(581): LoginController->process()
-#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
-#3 {main}
-  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\LoginController.php on line 62
-[10-Oct-2022 04:53:19 UTC] PHP Fatal error:  Uncaught Error: Class 'Firebase\JWT\JWT' not found in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\LoginController.php:65
-Stack trace:
-#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\LoginController.php(21): LoginController->login()
-#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(581): LoginController->process()
-#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
-#3 {main}
-  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\LoginController.php on line 65
-[10-Oct-2022 04:55:21 UTC] PHP Fatal error:  Uncaught Error: Class 'Firebase\JWT\JWT' not found in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\LoginController.php:65
-Stack trace:
-#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\LoginController.php(21): LoginController->login()
-#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(581): LoginController->process()
-#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
-#3 {main}
-  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\LoginController.php on line 65
-[10-Oct-2022 04:55:47 UTC] PHP Warning:  Use of undefined constant EC_SALT - assumed 'EC_SALT' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\LoginController.php on line 65
-[10-Oct-2022 05:04:32 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\SpecialitiesController.php:15
-Stack trace:
-#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(583): SpecialitiesController->process()
-#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
-#2 {main}
-  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\SpecialitiesController.php on line 15
-[10-Oct-2022 05:05:11 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\SpecialitiesController.php:15
-Stack trace:
-#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(583): SpecialitiesController->process()
-#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
-#2 {main}
-  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\SpecialitiesController.php on line 15
-[10-Oct-2022 05:06:05 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\SpecialitiesController.php:15
-Stack trace:
-#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(582): SpecialitiesController->process()
-#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
-#2 {main}
-  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\SpecialitiesController.php on line 15
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\vendor\phpmailer\phpmailer\src\PHPMailer.php on line 2217

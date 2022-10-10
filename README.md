@@ -107,7 +107,10 @@ Sau đó thì thay đổi suy nghĩ để chuyển qua làm học thay thế t�
 
 2. Chức năng đăng nhập cho bác sĩ 
 
-3. Đọc thông tin tất cả các chuyên khoa
+3. Specialities Controller & Speciality Controller - Đọc thông tin tất cả các chuyên khoa
+
+4. Nghiên cứu cách gửi email với PHP Mailer.
+
 # [**Special Thanks**](#special-thanks)
 
 <table>

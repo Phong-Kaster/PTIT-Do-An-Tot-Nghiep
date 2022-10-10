@@ -22,12 +22,4 @@ return array(
     'Defuse\\Crypto\\KeyOrPassword' => $vendorDir . '/defuse/php-encryption/src/KeyOrPassword.php',
     'Defuse\\Crypto\\KeyProtectedByPassword' => $vendorDir . '/defuse/php-encryption/src/KeyProtectedByPassword.php',
     'Defuse\\Crypto\\RuntimeTests' => $vendorDir . '/defuse/php-encryption/src/RuntimeTests.php',
-    'EasyPeasyICS' => $vendorDir . '/phpmailer/phpmailer/extras/EasyPeasyICS.php',
-    'PHPMailer' => $vendorDir . '/phpmailer/phpmailer/class.phpmailer.php',
-    'PHPMailerOAuth' => $vendorDir . '/phpmailer/phpmailer/class.phpmaileroauth.php',
-    'PHPMailerOAuthGoogle' => $vendorDir . '/phpmailer/phpmailer/class.phpmaileroauthgoogle.php',
-    'POP3' => $vendorDir . '/phpmailer/phpmailer/class.pop3.php',
-    'SMTP' => $vendorDir . '/phpmailer/phpmailer/class.smtp.php',
-    'ntlm_sasl_client_class' => $vendorDir . '/phpmailer/phpmailer/extras/ntlm_sasl_client.php',
-    'phpmailerException' => $vendorDir . '/phpmailer/phpmailer/class.phpmailer.php',
 );

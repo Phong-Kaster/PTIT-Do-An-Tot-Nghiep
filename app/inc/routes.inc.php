@@ -54,14 +54,4 @@ App::addRoute("GET|POST", "/".$langslug."?/recovery/[i:id].[a:hash]/?", "Passwor
  */
 
 App::addRoute("GET|POST", "/specialities", "Specialities");
-
-
-// Settings
-$settings_pages = [
-  "site", "logotype", "other", "experimental",
-  "google-analytics", "google-drive", "dropbox", "onedrive", "paypal", "stripe", "facebook", "recaptcha",
-  "proxy",
-
-  "notifications", "smtp"
-];
-App::addRoute("GET|POST", "/settings/[".implode("|", $settings_pages).":page]?/?", "Settings");
+App::addRoute("GET|PUT|DELETE", "/specialities/[i:id]", "Speciality");

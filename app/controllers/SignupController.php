@@ -2,6 +2,11 @@
 /**
  * Signup Controller
  */
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require_once "vendor/autoload.php";
+
 class SignupController extends Controller
 {
     /**
@@ -12,33 +17,63 @@ class SignupController extends Controller
         $AuthUser = $this->getVariable("AuthUser");
 
         if ($AuthUser) {
-            header("Location: ".APPURL."/post");
-            exit;
+            $this->resp->msg = "You logged in !";
+            $this->jsonecho();
         }
 
-        $recaptcha_enabled = false;
-        if (get_option("np_recaptcha_site_key") && 
-            get_option("np_recaptcha_secret_key") && 
-            get_option("np_signup_recaptcha_verification")
-        ) {
-            $recaptcha_enabled = true;
-        }
-
-        $Integrations = Controller::model("GeneralData", "integrations");
-        $Package = Controller::model("Package", Input::get("package"));
-
-        $this->setVariable("TimeZones", getTimezones())
-             ->setVariable("Package", $Package)
-             ->setVariable("recaptcha_enabled", $recaptcha_enabled)
-             ->setVariable("Integrations", $Integrations);
-
-        if (Input::post("action") == "signup") {
+        $request_method = Input::method();
+        if( $request_method === 'POST')
+        {
             $this->signup();
         }
-
-        $this->view("signup", "site");
+        else if( $request_method === 'GET')
+        {
+            $this->sendEmail();
+        }
     }
 
+    private function sendEmail()
+    {
+
+        $this->resp->result = 0;
+        
+        //PHPMailer Object
+        $mail = new PHPMailer(true); //Argument true in constructor enables exceptions
+
+        //From email address and name
+        $mail->From = "phongkaster@gmail.com";
+        $mail->FromName = "Phong Kaster";
+
+        //To address and name
+        $mail->addAddress("n18dccn147@student.ptithcm.edu.vn", "N18DCCN147");
+
+        //Address to which recipient will reply
+        $mail->addReplyTo("phongkaster@gmail.com", "Reply");
+
+        //CC and BCC
+        // $mail->addCC("cc@example.com");
+        // $mail->addBCC("bcc@example.com");
+
+        //Send HTML or Plain Text email
+        $mail->isHTML(true);
+
+        $mail->Subject = "Subject Text";
+        $mail->Body = "<i>Mail body in HTML</i>";
+        $mail->AltBody = "This is the plain text version of the email content";
+        try 
+        {
+            $mail->send();
+            echo "Message has been sent successfully";
+
+            $this->resp->result = 1;
+            $this->resp->msg = "Email sent !";
+        } 
+        catch (\Exception $ex) 
+        {
+            $this->resp->msg = $ex->getMessage();
+        }
+        $this->jsonecho();
+    }
 
     /**
      * Signup
@@ -46,165 +81,139 @@ class SignupController extends Controller
      */
     private function signup()
     {
-        $recaptcha_enabled = $this->getVariable("recaptcha_enabled");
-        $errors = [];
+        /**Step 1 - required_fields */
+        $this->resp->result = 0;
 
         $required_fields  = [
-            "firstname", "lastname", "email", 
-            "password", "password-confirm", "timezone"
+            "email", 
+            "phone", 
+            "password", 
+            "password-confirm", 
+            "name",
+            "price",
+
         ];
-
-        $required_ok = true;
-        foreach ($required_fields as $field) {
-            if (!Input::post($field)) {
-                $required_ok = false;
+        foreach ($required_fields as $field) 
+        {
+            if (!Input::post($field)) 
+            {
+                $this->resp->msg = "Missing field: ".$field;
+                $this->jsonecho();
             }
         }
 
-        if (!$required_ok) {
-            $errors[] = __("All fields are required");
+        $email = Input::post("email");
+        $phone = Input::post("phone");
+        $password = Input::post("password");
+        $passwordConfirm = Input::post("password-confirm");
+        $name = Input::post("name");
+        $description = Input::post("description");
+        $price = Input::post("price") ? (int)Input::post("price") : 100000 ;
+        $role = "member"; // default
+        $avatar = Input::post("avatar") ? Input::post("avatar") : "";
+        $specialityId = 1;
+        $clinicId = 1;
+
+
+
+        /**Step 2 - check input data  */
+        /**Step 2.1 - FILTER_VALIDATE_EMAIL */
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $this->resp->msg = "Email is not valid. Try again !";
+            $this->jsonecho();
         }
 
 
-        if (empty($errors)) {
-            if (!filter_var(Input::post("email"), FILTER_VALIDATE_EMAIL)) {
-                $errors[] = __("Email is not valid!");
-            } else {
-                $User = Controller::model("User", Input::post("email"));
-                if ($User->isAvailable()) {
-                    $errors[] = __("Email is not available!");
-                }
-            }
-
-            if (mb_strlen(Input::post("password")) < 6) {
-                $errors[] = __("Password must be at least 6 character length!");
-            } else if (Input::post("password-confirm") != Input::post("password")) {
-                $errors[] = __("Password confirmation didn't match!");
-            }
+        /**Step 2.2 - email duplication */
+        $Doctor = Controller::model("Doctor", $email);
+        if( $Doctor->isAvailable() )
+        {
+            $this->resp->msg = "This email is used by someone. Try another !";
+            $this->jsonecho();
         }
 
 
-        // Check recaptcha
-        if ($recaptcha_enabled && Input::post("recaptcha")) {
-            if (empty($errors)) {
-                if (!Input::post("g-recaptcha-response")) {
-                    $errors[] = __("Please verify the reCaptcha.");
-                } 
-            }
-
-            if (empty($errors)) {
-                try {
-                    $client = new GuzzleHttp\Client();
-                    $recaptcha_resp = $client->request('POST', 'https://www.google.com/recaptcha/api/siteverify', [
-                        'form_params' => [
-                            'secret' => get_option("np_recaptcha_secret_key"), 
-                            'response' => Input::post("g-recaptcha-response")
-                        ]
-                    ]);
-                    $recaptcha_resp = @json_decode($recaptcha_resp->getBody());
-                } catch (\Exception $e) {
-                    $errors[] = $e->getMessage();
-                }
-
-
-                if (empty($recaptcha_resp->success)) {
-                    if (isset($recaptcha_resp->{"error-codes"})) {
-                        foreach ($recaptcha_resp->{"error-codes"} as $error_code) {
-                            switch ($error_code) {
-                                case 'missing-input-secret':
-                                case 'invalid-input-secret':
-                                    $errors[] = __("Missing or invalid secret key for the reCaptcha.");
-                                    break;
-
-                                case 'timeout-or-duplicate':
-                                    $errors[] = __("Recaptcha is timedout or duplicate.");
-                                    break;
-                                
-                                default:
-                                    $errors[] = __("Recaptcha error: ".$error_code);
-                                    break;
-                            }
-                        }
-                    } else {
-                        $errors[] = __("Couldn't verify the recaptcha");
-                    }
-                }
-            }
+        /**Step 2.3 - password filter */
+        if (mb_strlen($password) < 6) 
+        {
+            $this->resp->msg = __("Password must be at least 6 character length!");
+            $this->jsonecho();
+        } 
+        else if ($password != $passwordConfirm) 
+        {
+            $this->resp->msg = __("Password confirmation didn't match!");
+            $this->jsonecho();
         }
 
-        if (empty($errors)) {
-            $timezone = Input::post("timezone");
-            if (!in_array(Input::post("timezone"), DateTimeZone::listIdentifiers())) {
-                $timezone = "UTC";
-            }
 
-            $trial = Controller::model("GeneralData", "free-trial");
-            $trial_size = (int)$trial->get("data.size");
-            if ($trial_size == "-1") {
-                $expire_date = "2050-12-12 23:59:59";
-            } else if ($trial_size > 0) {
-                $expire_date = date("Y-m-d H:i:s", time() + $trial_size * 86400);
-            } else {
-                $expire_date = date("Y-m-d H:i:s", time());
-            }
-
-            $settings = json_decode($trial->get("data"));
-            unset($settings->size);
-
-            $preferences = [
-                "timezone" => $timezone,
-                "dateformat" => "Y-m-d",
-                "timeformat" => "24"
-            ];
-
-            $User->set("email", strtolower(Input::post("email")))
-                 ->set("password", 
-                       password_hash(Input::post("password"), PASSWORD_DEFAULT))
-                 ->set("firstname", Input::post("firstname"))
-                 ->set("lastname", Input::post("lastname"))
-                 ->set("settings", json_encode($settings))
-                 ->set("preferences", json_encode($preferences))
-                 ->set("is_active", 1)
-                 ->set("expire_date", $expire_date)
-                 ->save();
-
-            // Check is email verification setting is ON
-            $EmailSettings = \Controller::model("GeneralData", "email-settings");
-            if ($EmailSettings->get("data.email_verification")) {
-                // Send verification email to this new user
-                $User->sendVerificationEmail();
-            }
-            
-            try {
-                // Send notification emails to admins
-                \Email::sendNotification("new-user", ["user" => $User]);
-            } catch (\Exception $e) {
-                // Failed to send notification email to admins
-                // Do nothing here, it's not critical error
-            }
-
-
-            // Fire user.signup event
-            Event::trigger("user.signup", $User);
-
-
-            $Package = Controller::model("Package", Input::post("package"));
-            if ($Package->isAvailable()) {
-                $continue = APPURL . "/renew?package=" . $Package->get("id");
-            } else {
-                $continue = APPURL . "/post";
-            }
-
-            // Logging in
-            setcookie("nplh", $User->get("id").".".md5($User->get("password")), 0, "/");
-
-
-            header("Location: ".$continue);
-            exit;
+        /**Step 2.4 - name validation*/
+        $name_validation = isVietnameseName($name);
+        if( $name_validation != 1 ){
+            $this->resp->msg = "Vietnamese name only has letters and space";
+            $this->jsonecho();
         }
-
-        $this->setVariable("FormErrors", $errors);
         
-        return $this;
+
+        /**Step 2.5 - phone validation */
+        if( strlen($phone) < 10 ){
+            $this->resp->msg = "Phone number has at least 10 number !";
+            $this->jsonecho();
+        }
+
+        $phone_number_validation = isNumber($phone);
+        if( !$phone_number_validation ){
+            $this->resp->msg = "This is not a valid phone number. Please, try again !";
+            $this->jsonecho();
+        }
+
+
+
+        /**Step 2.6 - price */
+        if( $price < 100000 )
+        {
+            $this->resp->msg = "Price must greater than 100.000 !";
+            $this->jsonecho();
+        }
+
+        
+        /**Step 3 - save */
+        try 
+        {
+            $Doctor = Controller::model("Doctor");
+            $Doctor->set("email", strtolower($email))
+                    ->set("phone", $phone)
+                    ->set("password", password_hash($password, PASSWORD_DEFAULT))
+                    ->set("name", $name)
+                    ->set("description", $description)
+                    ->set("price", $price)
+                    ->set("role", $role)
+                    ->set("avatar", $avatar)
+                    ->set("create_at", date("Y-m-d H:i:s"))
+                    ->set("update_at", date("Y-m-d H:i:s"))
+                    ->set("speciality_id", $specialityId)
+                    ->set("clinic_id", $clinicId)
+                    ->save();
+
+            $this->resp->result = 1;
+            $this->resp->msg = "Doctor account is created successfully !";
+            $this->resp->data = array(
+                "email" => $Doctor->get("email"),
+                "phone" => $Doctor->get("phone"),
+                "name" => $Doctor->get("name"),
+                "description" => $Doctor->get("description"),
+                "price" => $Doctor->get("price"),
+                "role" => $Doctor->get("role"),
+                "avatar" => $Doctor->get("avatar"),
+                "create_at" => $Doctor->get("create_at"),
+                "update_at" => $Doctor->get("update_at"),
+                "speciality_id" => $Doctor->get("speciality_id"),
+                "clinic_id" => $Doctor->get("clinic_id")
+            );
+        } 
+        catch (\Exception $ex) 
+        {
+            $this->resp->msg = $ex->getMessage();
+        }
+        $this->jsonecho();
     }
 }

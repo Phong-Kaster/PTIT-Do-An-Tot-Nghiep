@@ -28,10 +28,11 @@
 	     */
 	    public function select($uniqid)
 	    {
-	    	if ( !is_int($uniqid) && !ctype_digit($uniqid)) {
-	    		$col = "id";
+	    	if (is_int($uniqid) || ctype_digit($uniqid)) {
+	    		$col = $uniqid > 0 ? "id" : null;
+	    	} else {
+	    		$col = "name";
 	    	}
-			// $col = "id";
 
 
 	    	if ($col) {

@@ -539,3 +539,51 @@ function active_lang($option, $value = null)
         return Config::get("active_lang_".$option);
     }
 }
+
+/**
+ * Check json is invalid
+ * @param $str is json string
+ * @return boolean
+ */
+function isValidJSON($str) {
+    json_decode($str);
+    return json_last_error() == JSON_ERROR_NONE;
+ }
+
+ /**
+ * @author Phong-Kaster
+ * check if a string has only numbers
+ * return 1 if correct
+ * return 0 if incorrect
+ */
+function isNumber($number){
+    $result = preg_match("/^\\d+$/", $number);
+    return $result;
+}
+
+/**
+ * @author Phong-Kaster
+ * check if a string can be vietnamese name or not ?
+ * Only accept letters & space
+ * return 1 if correct
+ * return 0 if incorrect
+ */
+function isVietnameseName($name){
+    $regex = "/[a-zA-Z_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễếệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\s]+$/u";
+    $result = preg_match($regex, $name);
+    return $result;
+}
+
+
+/**
+ * @author Phong-Kaster
+ * check if a string can be address or not ?
+ * Only accept letters & space, common
+ * return 1 if correct
+ * return 0 if incorrect
+ */
+function isAddress($address){
+    $regex = "/[a-zA-Z0-9_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễếệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\s,]+$/u";
+    $result = preg_match($regex, $address);
+    return $result;
+}

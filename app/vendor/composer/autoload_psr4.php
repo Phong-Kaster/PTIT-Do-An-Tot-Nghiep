@@ -20,6 +20,7 @@ return array(
     'React\\Cache\\' => array($vendorDir . '/react/cache/src'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
     'Psr\\Http\\Message\\' => array($vendorDir . '/psr/http-message/src'),
+    'PHPMailer\\PHPMailer\\' => array($vendorDir . '/phpmailer/phpmailer/src'),
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
     'Moment\\' => array($vendorDir . '/fightbulc/moment/src'),
     'LazyJsonMapper\\' => array($vendorDir . '/lazyjsonmapper/lazyjsonmapper/src'),

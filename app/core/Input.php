@@ -38,7 +38,7 @@
 		 */
 		public static function getInput($method, $input_name, $index = true, $trim = true)
 		{
-			if(!in_array($method, array("get", "post", "request", "cookie", "session")))
+			if(!in_array($method, array("get", "post", "request", "cookie", "session", "put", "delete")))
 				throw new \Exception('Invalid method!');
 
 			$input = null;
@@ -79,7 +79,7 @@
 			if($name == "req")
 				$name = "request";
 
-	        if (in_array($name, array("get", "post", "request", "cookie", "session"))) {
+	        if (in_array($name, array("get", "post", "request", "cookie", "session", "put", "delete"))) {
 	        	array_unshift($arguments, $name);
 	            return call_user_func_array(array('Input', 'getInput'), $arguments);
 	        } else {
@@ -95,7 +95,7 @@
 			if($name == "req")
 				$name = "request";
 
-	        if (in_array($name, array("get", "post", "request", "cookie", "session"))) {
+	        if (in_array($name, array("get", "post", "request", "cookie", "session", "put", "delete"))) {
 	        	array_unshift($arguments, $name);
 	            return call_user_func_array(array('Input', 'getInput'), $arguments);
 	        } else {
