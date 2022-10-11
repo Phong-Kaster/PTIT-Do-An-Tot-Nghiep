@@ -9,30 +9,99 @@ class PasswordResetController extends Controller
      */
     public function process()
     {
-        $AuthUser = $this->getVariable("AuthUser");
-        $Route = $this->getVariable("Route");
-
-        if ($AuthUser) {
-            header("Location: ".APPURL."/post");
-            exit;
-        }
-
-        $User = Controller::model("User", $Route->params->id);
-        if (!$User->isAvailable() ||
-            !$User->get("is_active") || 
-            $User->get("data.recoveryhash") != $Route->params->hash) 
+        $request_method = Input::method();
+        if( $request_method === 'POST')
         {
-            header("Location: ".APPURL);
-            exit;
+            $this->resetPassword();
         }
-        $this->setVariable("User", $User);
-
-        if (Input::post("action") == "reset") {
-            $this->resetpass();
-        }
-        $this->view("password-reset", "site");
     }
 
+
+    /**
+     * @author Phong-Kaster
+     * @since 11-10-2022
+     * reset password with verified recovery token
+     */
+    private function resetPassword()
+    {
+        /**Step 1 - declare */
+        $this->resp->result = 0;
+        $Route = $this->getVariable("Route");
+
+
+        /**Step 2 - check input data */
+        if( !isset($Route->params->id) )
+        {
+            $this->resp->msg = "ID is required !";
+            $this->jsonecho();
+        }
+
+        $requiredFields = ["recovery_token", "password", "passwordConfirm"];
+        foreach($requiredFields as $field)
+        {
+            if( !Input::post($field) )
+            {
+                $this->resp->msg = "Missing field: ".$field;
+                $this->jsonecho();
+            }
+        }
+
+
+        $recoveryToken = Input::post("recovery_token");
+        $password = Input::post("password");
+        $passwordConfirm = Input::post("passwordConfirm");
+        $id = $Route->params->id;
+
+
+        $Doctor = Controller::model("Doctor", $id );
+        if( !$Doctor->isAvailable() )
+        {
+            $this->resp->msg = "This account is not available ";
+            $this->jsonecho();
+        }
+
+        /**Step 2 - password filter */
+        if( mb_strlen($password) < 6 )
+        {
+            $this->resp->msg = "Password must have at least 6 characters !";
+            $this->jsonecho();
+        }
+        if( $password != $passwordConfirm )
+        {
+            $this->resp->msg = "Confirmation password is not equal to password !";
+            $this->jsonecho();
+        }
+
+        /**Step 3 - recovery token compare*/
+        $original_recovery_token = $Doctor->get("recovery_token");
+        if( empty( $original_recovery_token) == 1 )
+        {
+            $this->resp->msg = "Recovery token is not valid. Try again !";
+            $this->jsonecho();
+        }
+        if( $original_recovery_token != $recoveryToken )
+        {
+            $this->resp->msg = "Recovery token is not correct. Try again !";
+            $this->jsonecho();
+        }
+
+        /**Step 4 - change password */
+        try 
+        {
+            $Doctor->set("password", password_hash($password, PASSWORD_DEFAULT))
+                    ->save();
+            
+            $this->resp->result = 1;
+            $this->resp->msg = "Password is recovered successfully !";
+        } 
+        catch (\Exception $ex) 
+        {
+            $this->resp->msg = $ex->getMessage();
+        }
+        $this->jsonecho();
+
+
+    }
 
     /**
      * Reset

@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">
-    <img src="./photo/cover2.jpg" />
+    <img src="./photo/umbrella-corporation-black-donnell-rose.jpg" />
 </p>
 
 
@@ -12,11 +12,13 @@
 - [**Introduction**](#introduction)
 - [**Topic**](#topic)
 - [**Database**](#database)
+- [**Milestone**](#milestone)
 - [**Post Script**](#post-script)
 - [**Bonus**](#bonus)
 - [**Timeline**](#timeline)
   - [**Phase 0: 01-09-2022 to 28-09-2022**](#phase-0-01-09-2022-to-28-09-2022)
   - [**Phase 1: 19-09-2022 to xx-xx-2022**](#phase-1-19-09-2022-to-xx-xx-2022)
+- [**Controller Timeline**](#controller-timeline)
 - [**Special Thanks**](#special-thanks)
 - [**Made with 💘 and PHP <img src="https://www.vectorlogo.zone/logos/php/php-horizontal.svg" width="60">**](#made-with--and-php-)
 
@@ -43,7 +45,54 @@ sẽ hỗ trợ phần nào cho các bạn khi bước tới ngưỡng cửa qua
 ***Sơ đồ cơ sở dữ liệu***
 </h3>
 
+# [**Milestone**](#milestone)
 
+Phần này mình ghi lại những mốc thời gian quan trọng mà mình đã trải qua trong quá trình làm đồ án. 
+Những mốc thời gian dưới đây là của mình & có thể khi các bạn đọc thì các mốc thời gian sẽ khác đi 3-4 ngày. 
+Tuy nhiên, Napoleon đã từng nói: 
+
+<p align="center">
+    <img src="./photo/napoleon.jpg" width="400px" />
+</p>
+<h3 align="center">
+
+***"90% sự thành bại của một trận đánh phụ thuộc vào thông tin" - Napoleon***
+</h3>
+
+Đối với mình thì câu nói trên chưa bao giờ lại đúng đến vậy. Trong 4 năm rưỡi mài đít quần trên giảng đường,
+mình thấy cực kì thiệt thòi vì không ở kí túc xá hoặc ở gần trường học. Trước mỗi kì thi, những sinh viên 
+ở kí túc xá thường sẽ biết rất nhiều những thông tin có giá trị trước mỗi kì thi😫😫. Rất nhiều lần do mình không
+biết thông tin sớm hơn mà dẫn tới thiệt thòi so với bạn bè. 
+
+Ví dụ: sau kì thi môn Lập trình mạng ở năm 4, thầy Phan Thanh Hy cho phép sinh viên được quyền khiếu nại nếu bị 
+điểm thấp do là ông thầy này thường lười & để sinh viên năm 2-3 chấm bài thi cuối kì của lớp mình. Điều này 
+dẫn tới hậu quả là nhiều bạn bị điểm thấp hơn so với mong muốn. Và để sửa sai, thầy cho phép sinh viên được quyền khiếu nại về 
+điểm số. Thường thì ông thầy sẽ kiểm tra kĩ 1-2 đứa đầu tiên khiếu nại, còn tất cả những sinh viên sau 
+đó khiếu nại thì auto là được nâng lên 1-2 điểm. Là đứa ở xa trường, dĩ nhiên là mình biết thông tin 
+này quá muộn và không kịp thời gian để khiếu nại rồi.😀 Chán vl!
+
+Lòng vòng như vậy là đủ rồi. Ví dụ bên trên mình chỉ muốn nói là rất nhiều môn thi có thể dễ thở hơn
+nếu biết trước được đề thi - thường đề thi hàng năm không bao giờ đổi cả. Nếu có đổi thì chỉ đổi mỗi số thôi, các thầy cô cũng lười đổi đề lắm.😏
+
+Giờ chúng ta sẽ đi vào các mốc thời gian quan trọng mà mình đã trải qua nha
+
+- **28-09-2022**: Công bố danh sách giao nhiệm vụ đề tài & kết quả việc nộp đơn chuyển từ làm Đồ án tốt nghiệp sang học Môn thay thế.
+
+- **01-10-2022**: Sinh viên được liên hệ với giáo viên hướng dẫn để hiệu chỉnh, bổ sung nội dung đề tài đồ án tốt nghiệp đến ngày 01/10/2022.
+
+- **11-10-2022**: Nhà trường công bố lại danh sách giao đồ án tốt nghiệp Đại Học Chính Quy khóa 2018-2023
+
+- **26-10-2022**: Nộp báo cáo đồ án tốt nghiệp lần 1
+
+- **11-11-2022**: Nộp báo cáo đồ án tốt nghiệp lần 2
+
+- **30-11-2022**: Nộp báo cáo đồ án tốt nghiệp lần 3
+
+> Quy tắc đặt tên áp dụng cho cả 3 lần - Lớp (mã chữ)_Mã sinh viên(3 số cuối)_Họ và tên _BCDK1
+> 
+> VD: CP_147_NguyenThanhPhong_BCĐK1
+>
+> Lưu ý: đặt tên file giống hướng dẫn, đặt sai sẽ bị thống kê không nộp báo cáo định kỳ, cấm nộp cuốn báo cáo cuối kỳ.
 # [**Post Script**](#post-script)
 
 **05-10-2022**
@@ -80,7 +129,6 @@ Sau đó thì thay đổi suy nghĩ để chuyển qua làm học thay thế t�
 <h3 align="center">
 
 
-
 # [**Timeline**](#timeline)
 
 ## [**Phase 0: 01-09-2022 to 28-09-2022**](#phase-0-01-09-2022-to-28-09-2022)
@@ -93,9 +141,9 @@ Sau đó thì thay đổi suy nghĩ để chuyển qua làm học thay thế t�
 
 ## [**Phase 1: 19-09-2022 to xx-xx-2022**](#phase-1-xx-xx-2022-to-xx-xx-2022)
 
-- Thiết kế cơ sở dữ liệu với nhiều bảng nhằm triển khai các chức năng phức tạp hơn
+- **19-09-2022**: Thiết kế cơ sở dữ liệu với nhiều bảng nhằm triển khai các chức năng phức tạp hơn
 
-- **04-10-2022**: Thiết kế cơ sở dữ liệu 
+- **04-10-2022**: Thiết kế cơ sở dữ liệu theo đề tài nhà trường giao.
 
 - **05-10-2022**: Tối ưu cơ sở dữ liệu và tìm hiểu kĩ các trường hợp đặc biệt của đề tài.
 
@@ -111,18 +159,39 @@ Sau đó thì thay đổi suy nghĩ để chuyển qua làm học thay thế t�
 
 4. Nghiên cứu cách gửi email với PHP Mailer.
 
+- **11-10-2022**:
+
+1. Hoàn thiện tính năng gửi email khi có tài khoản mới đăng kí - Sign Up Controller 
+
+2. Hoàn thiện tính năng khôi phục mật khẩu với mã xác thực được gửi qua email - Recovery Controller & Password Reset Controller
+
+# [**Controller Timeline**](#controller-timeline)
+
+Phần này mình lưu lại trình tự mình viết đồ án này. Nếu các bạn có nhu cầu tham khảo cách xử lý của mình. Các bạn có thể đọc code theo trình tự 
+đang được viết theo số thứ tự ở bên dưới.
+
+1. Index Controller
+
+2. Login Controller
+
+3. Sign Up Controller
+
+4. Recovery Controller
+
+5. Password Reset Controller
+
 # [**Special Thanks**](#special-thanks)
 
 <table>
         <tr>
             <td align="center">
-                <a href="https://github.com/Phong-Kaster">
-                    <img src="./photo/Blue.jpg" width="100px;" alt=""/>
+                <a href="https://github.com/ngdanghau">
+                    <img src="./photo/Hau.jpg" width="100px;" alt=""/>
                     <br />
-                    <sub><b>Phong Kaster</b></sub>
+                    <sub><b>Nguyễn Đăng Hậu</b></sub>
                 </a>
             </td>
-        </tr>
+        </tr>    
 </table>
  
 # [**Made with 💘 and PHP <img src="https://www.vectorlogo.zone/logos/php/php-horizontal.svg" width="60">**](#made-with-love-and-php)

@@ -1,37 +1,160 @@
-[10-Oct-2022 10:04:00 UTC] PHP Fatal error:  Uncaught Error: Call to a member function where() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\IndexController.php:14
+[11-Oct-2022 05:32:10 UTC] PHP Parse error:  syntax error, unexpected ':' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\RecoveryController.php on line 43
+[11-Oct-2022 05:33:59 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method MyEmail::recoveryPassword() in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\RecoveryController.php:55
 Stack trace:
-#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(582): IndexController->process()
-#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
-#2 {main}
-  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\IndexController.php on line 14
-[10-Oct-2022 10:04:31 UTC] PHP Fatal error:  Uncaught Error: Call to a member function where() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\IndexController.php:14
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\RecoveryController.php(27): RecoveryController->sendRecoveryEmail()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(582): RecoveryController->process()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#3 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\RecoveryController.php on line 55
+[11-Oct-2022 08:41:39 UTC] PHP Notice:  Undefined variable: recoveryToken in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\helpers\email.helper.php on line 194
+[11-Oct-2022 08:46:37 UTC] PHP Fatal error:  Uncaught Error: Object of class DoctorModel could not be converted to string in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\helpers\email.helper.php:167
 Stack trace:
-#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(582): IndexController->process()
-#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
-#2 {main}
-  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\IndexController.php on line 14
-[10-Oct-2022 10:05:37 UTC] PHP Fatal error:  Uncaught Error: Call to a member function where() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\IndexController.php:14
-Stack trace:
-#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(582): IndexController->process()
-#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
-#2 {main}
-  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\IndexController.php on line 14
-[10-Oct-2022 10:05:44 UTC] PHP Fatal error:  Uncaught Error: Call to a member function where() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\IndexController.php:20
-Stack trace:
-#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(582): IndexController->process()
-#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
-#2 {main}
-  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\IndexController.php on line 20
-[10-Oct-2022 10:06:56 UTC] PHP Warning:  mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\SignupController.php on line 45
-[10-Oct-2022 10:10:18 UTC] PHP Warning:  mail(): Failed to connect to mailserver at &quot;server.com&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\SignupController.php on line 45
-[10-Oct-2022 10:11:49 UTC] PHP Warning:  mail(): Failed to connect to mailserver at &quot;server.com&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\SignupController.php on line 46
-[10-Oct-2022 10:35:20 UTC] PHP Warning:  mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\SignupController.php on line 40
-[10-Oct-2022 10:42:13 UTC] PHP Warning:  mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\SignupController.php on line 40
-[10-Oct-2022 11:19:49 UTC] PHP Fatal error:  Uncaught PHPMailer\PHPMailer\Exception: SMTP Error: Could not connect to SMTP host. Failed to connect to server in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\vendor\phpmailer\phpmailer\src\PHPMailer.php:2217
-Stack trace:
-#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\SignupController.php(66): PHPMailer\PHPMailer\PHPMailer->smtpConnect(Array)
-#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\SignupController.php(31): SignupController->sendEmail()
-#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(582): SignupController->process()
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\RecoveryController.php(55): MyEmail::recoveryPassword(Array)
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\RecoveryController.php(27): RecoveryController->sendRecoveryEmail()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(582): RecoveryController->process()
 #3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
 #4 {main}
-  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\vendor\phpmailer\phpmailer\src\PHPMailer.php on line 2217
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\helpers\email.helper.php on line 167
+[11-Oct-2022 08:53:43 UTC] PHP Parse error:  syntax error, unexpected '.' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\RecoveryController.php on line 45
+[11-Oct-2022 08:57:55 UTC] PHP Notice:  Undefined variable: recoveryToken in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\helpers\email.helper.php on line 148
+[11-Oct-2022 08:58:09 UTC] PHP Notice:  Undefined variable: recoveryToken in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\helpers\email.helper.php on line 148
+[11-Oct-2022 08:58:20 UTC] PHP Notice:  Undefined variable: recoveryToken in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\helpers\email.helper.php on line 148
+[11-Oct-2022 09:01:26 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function generateRandomString() in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\helpers\email.helper.php:162
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\RecoveryController.php(55): MyEmail::recoveryPassword(Array)
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\RecoveryController.php(27): RecoveryController->sendRecoveryEmail()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(582): RecoveryController->process()
+#3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#4 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\helpers\email.helper.php on line 162
+[11-Oct-2022 09:01:40 UTC] PHP Fatal error:  Uncaught Error: Using $this when not in object context in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\helpers\email.helper.php:162
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\RecoveryController.php(55): MyEmail::recoveryPassword(Array)
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\RecoveryController.php(27): RecoveryController->sendRecoveryEmail()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(582): RecoveryController->process()
+#3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#4 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\helpers\email.helper.php on line 162
+[11-Oct-2022 09:01:58 UTC] PHP Deprecated:  Non-static method MyEmail::generateRandomString() should not be called statically in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\helpers\email.helper.php on line 162
+[11-Oct-2022 09:02:31 UTC] PHP Deprecated:  Non-static method MyEmail::generateRandomString() should not be called statically in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\helpers\email.helper.php on line 162
+[11-Oct-2022 09:10:08 UTC] PHP Warning:  Use of undefined constant original_recovery_token - assumed 'original_recovery_token' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\helpers\email.helper.php on line 157
+[11-Oct-2022 10:29:34 UTC] PHP Fatal error:  Uncaught Error: Class 'TOTP' not found in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\helpers\email.helper.php:149
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\RecoveryController.php(55): MyEmail::recoveryPassword(Array)
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\RecoveryController.php(27): RecoveryController->sendRecoveryEmail()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(582): RecoveryController->process()
+#3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#4 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\helpers\email.helper.php on line 149
+[11-Oct-2022 10:30:14 UTC] PHP Fatal error:  Uncaught Error: Class 'TOTP' not found in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\helpers\email.helper.php:149
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\RecoveryController.php(55): MyEmail::recoveryPassword(Array)
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\RecoveryController.php(27): RecoveryController->sendRecoveryEmail()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(582): RecoveryController->process()
+#3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#4 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\helpers\email.helper.php on line 149
+[11-Oct-2022 10:30:46 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method OTPHP\TOTP::create() in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\helpers\email.helper.php:149
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\RecoveryController.php(55): MyEmail::recoveryPassword(Array)
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\RecoveryController.php(27): RecoveryController->sendRecoveryEmail()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(582): RecoveryController->process()
+#3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#4 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\helpers\email.helper.php on line 149
+[11-Oct-2022 10:31:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method OTPHP\TOTP::create() in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\helpers\email.helper.php:149
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\RecoveryController.php(55): MyEmail::recoveryPassword(Array)
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\RecoveryController.php(27): RecoveryController->sendRecoveryEmail()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(582): RecoveryController->process()
+#3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#4 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\helpers\email.helper.php on line 149
+[11-Oct-2022 10:32:42 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method OTPHP\TOTP::create() in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\helpers\email.helper.php:149
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\RecoveryController.php(55): MyEmail::recoveryPassword(Array)
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\RecoveryController.php(27): RecoveryController->sendRecoveryEmail()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(582): RecoveryController->process()
+#3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#4 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\helpers\email.helper.php on line 149
+[11-Oct-2022 10:32:52 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method OTPHP\TOTP::create() in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\helpers\email.helper.php:150
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\RecoveryController.php(55): MyEmail::recoveryPassword(Array)
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\RecoveryController.php(27): RecoveryController->sendRecoveryEmail()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(582): RecoveryController->process()
+#3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#4 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\helpers\email.helper.php on line 150
+[11-Oct-2022 10:33:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method OTPHP\TOTP::create() in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\helpers\email.helper.php:150
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\RecoveryController.php(55): MyEmail::recoveryPassword(Array)
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\RecoveryController.php(27): RecoveryController->sendRecoveryEmail()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(582): RecoveryController->process()
+#3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#4 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\helpers\email.helper.php on line 150
+[11-Oct-2022 10:34:04 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method OTPHP\TOTP::create() in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\helpers\email.helper.php:150
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\RecoveryController.php(55): MyEmail::recoveryPassword(Array)
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\RecoveryController.php(27): RecoveryController->sendRecoveryEmail()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(582): RecoveryController->process()
+#3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#4 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\helpers\email.helper.php on line 150
+[11-Oct-2022 10:34:58 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method OTPHP\TOTP::create() in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\helpers\email.helper.php:150
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\RecoveryController.php(55): MyEmail::recoveryPassword(Array)
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\RecoveryController.php(27): RecoveryController->sendRecoveryEmail()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(582): RecoveryController->process()
+#3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#4 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\helpers\email.helper.php on line 150
+[11-Oct-2022 10:36:01 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method OTPHP\TOTP::create() in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\helpers\email.helper.php:150
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\RecoveryController.php(55): MyEmail::recoveryPassword(Array)
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\RecoveryController.php(27): RecoveryController->sendRecoveryEmail()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(582): RecoveryController->process()
+#3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#4 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\helpers\email.helper.php on line 150
+[11-Oct-2022 10:37:54 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method OTPHP\TOTP::create() in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\helpers\email.helper.php:150
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\RecoveryController.php(55): MyEmail::recoveryPassword(Array)
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\RecoveryController.php(27): RecoveryController->sendRecoveryEmail()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(582): RecoveryController->process()
+#3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#4 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\helpers\email.helper.php on line 150
+[11-Oct-2022 10:38:44 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method OTPHP\TOTP::create() in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\helpers\email.helper.php:151
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\RecoveryController.php(55): MyEmail::recoveryPassword(Array)
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\RecoveryController.php(27): RecoveryController->sendRecoveryEmail()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(582): RecoveryController->process()
+#3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#4 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\helpers\email.helper.php on line 151
+[11-Oct-2022 10:39:24 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method OTPHP\TOTP::create() in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\helpers\email.helper.php:150
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\RecoveryController.php(55): MyEmail::recoveryPassword(Array)
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\RecoveryController.php(27): RecoveryController->sendRecoveryEmail()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(582): RecoveryController->process()
+#3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#4 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\helpers\email.helper.php on line 150
+[11-Oct-2022 10:39:45 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method OTPHP\TOTP::create() in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\helpers\email.helper.php:150
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\RecoveryController.php(55): MyEmail::recoveryPassword(Array)
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\RecoveryController.php(27): RecoveryController->sendRecoveryEmail()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(582): RecoveryController->process()
+#3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#4 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\helpers\email.helper.php on line 150
+[11-Oct-2022 10:39:46 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method OTPHP\TOTP::create() in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\helpers\email.helper.php:150
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\RecoveryController.php(55): MyEmail::recoveryPassword(Array)
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\RecoveryController.php(27): RecoveryController->sendRecoveryEmail()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(582): RecoveryController->process()
+#3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#4 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\helpers\email.helper.php on line 150

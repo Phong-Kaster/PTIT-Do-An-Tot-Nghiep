@@ -23,7 +23,7 @@
             <table style="border: none; border-collapse: collapse; width: 100%; table-layout: fixed; font-size: 12px; color: #9b9b9b;">
                 <tr>
                     <td style="vertical-align: top; text-align: left;">
-                        <a href="{{appurl}}" style="color: #3b7cff; text-decoration: none; font-weight: bold;">{{site_name}}</a>
+                        <a href="{{appurl}}" style="color: #3b7cff; text-decoration: none; font-weight: bold;">{{title}}</a>
                     </td>
 
                     <td style="vertical-align: top; text-align: right;">

@@ -44,8 +44,8 @@ App::addRoute("GET|POST", "/".$langslug."?/signup/?", "Signup");
 App::addRoute("GET", "/".$langslug."?/logout/?", "Logout");
 
 // Recovery
-App::addRoute("GET|POST", "/".$langslug."?/recovery/?", "Recovery");
-App::addRoute("GET|POST", "/".$langslug."?/recovery/[i:id].[a:hash]/?", "PasswordReset");
+App::addRoute("POST", "/recovery/?", "Recovery");
+App::addRoute("GET|POST", "/password-reset/[i:id]?", "PasswordReset");
 
 
 

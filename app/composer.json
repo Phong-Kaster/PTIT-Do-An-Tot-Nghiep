@@ -14,7 +14,8 @@
         "php-ffmpeg/php-ffmpeg": "^0.11.1",
         "fightbulc/moment": "dev-master",
         "mgp25/instagram-php": "dev-master",
-        "firebase/php-jwt": "^6.0"
+        "firebase/php-jwt": "^6.0",
+        "spomky-labs/otphp": "~8.3"
     },
 
     "config": {

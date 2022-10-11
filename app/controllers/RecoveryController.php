@@ -9,18 +9,66 @@ class RecoveryController extends Controller
      */
     public function process()
     {
-        $AuthUser = $this->getVariable("AuthUser");
-        if ($AuthUser) {
-            header("Location: ".APPURL."/post");
-            exit;
-        }
+        // $AuthUser = $this->getVariable("AuthUser");
+        // if ($AuthUser) {
+        //     header("Location: ".APPURL."/post");
+        //     exit;
+        // }
 
-        if (Input::post("action") == "recover") {
-            $this->recover();
+        // if (Input::post("action") == "recover") {
+        //     $this->recover();
+        // }
+        // $this->view("recovery", "site");
+
+        $request_method = Input::method();
+        if( $request_method === 'POST')
+        {
+            $this->recoveryPassword();
         }
-        $this->view("recovery", "site");
     }
 
+    /**
+     * @author Phong-Kaster
+     * @since 11-10-2022
+     * send email to user with 15-digit number - recovery code which is used to verify users
+     */
+    private function recoveryPassword()
+    {
+        $this->resp->result = 0;
+        if( !Input::post("email") )
+        {
+            $this->resp->msg = "Email is required to recovery your password !";
+            $this->jsonecho();
+        }
+
+        $email = Input::post("email");
+        $Doctor = Controller::model("Doctor", $email);
+        if( !$Doctor->isAvailable() )
+        {
+            $this->resp->msg = "There is no account registered with this email !";
+            $this->jsonecho();
+        }
+        if( $Doctor->get("active") != 1)
+        {
+            $this->resp->msg = "This account is deactivated !";
+            $this->jsonecho();
+        }
+
+        try 
+        {
+            $this->resp->result = 1;
+            $this->resp->msg = "Email with recovery code is being sent. Let's check your Gmail !";
+            $this->resp->id = (int)$Doctor->get("id");
+
+            $data["doctor"] = $Doctor;
+            MyEmail::recoveryPassword($data);
+        } 
+        catch (\Exception $ex) {
+            $this->resp->msg = $ex->getMessage();
+        }
+        $this->jsonecho();
+
+    }
 
     /**
      * Recover

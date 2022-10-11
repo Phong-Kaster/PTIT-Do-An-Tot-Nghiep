@@ -38,3 +38,8 @@ define("FFMPEGBIN", NULL);
 // If you set the value other than null, then it will only be 
 // validated during posting the videos
 define("FFPROBEBIN", NULL);
+
+// information
+define("TITLE", "UMBRELLA CORPORATION");
+define("VIDEO", "https://www.youtube.com/watch?v=lcSPUceWcGg&ab_channel=GalaxyStudio");
+define("COPYRIGHT", htmlspecialchars("© 2022 ".TITLE.", Heinzstraße 8, Berlin, Germany"));

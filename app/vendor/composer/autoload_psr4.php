@@ -7,6 +7,9 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Winbox\\' => array($vendorDir . '/winbox/args/src'),
+    'Symfony\\Polyfill\\Util\\' => array($vendorDir . '/symfony/polyfill-util'),
+    'Symfony\\Polyfill\\Php56\\' => array($vendorDir . '/symfony/polyfill-php56'),
+    'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
     'Symfony\\Component\\Process\\' => array($vendorDir . '/symfony/process'),
     'Symfony\\Component\\Filesystem\\' => array($vendorDir . '/symfony/filesystem'),
     'Stripe\\' => array($vendorDir . '/stripe/stripe-php/lib'),
@@ -20,7 +23,9 @@ return array(
     'React\\Cache\\' => array($vendorDir . '/react/cache/src'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
     'Psr\\Http\\Message\\' => array($vendorDir . '/psr/http-message/src'),
+    'ParagonIE\\ConstantTime\\' => array($vendorDir . '/paragonie/constant_time_encoding/src'),
     'PHPMailer\\PHPMailer\\' => array($vendorDir . '/phpmailer/phpmailer/src'),
+    'OTPHP\\' => array($vendorDir . '/spomky-labs/otphp/src'),
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
     'Moment\\' => array($vendorDir . '/fightbulc/moment/src'),
     'LazyJsonMapper\\' => array($vendorDir . '/lazyjsonmapper/lazyjsonmapper/src'),
@@ -39,5 +44,6 @@ return array(
     'Clue\\React\\HttpProxy\\' => array($vendorDir . '/clue/http-proxy-react/src'),
     'BinSoul\\Net\\Mqtt\\Client\\React\\' => array($vendorDir . '/binsoul/net-mqtt-client-react/src'),
     'BinSoul\\Net\\Mqtt\\' => array($vendorDir . '/binsoul/net-mqtt/src'),
+    'Assert\\' => array($vendorDir . '/beberlei/assert/lib/Assert'),
     '' => array($vendorDir . '/league/color-extractor/src'),
 );

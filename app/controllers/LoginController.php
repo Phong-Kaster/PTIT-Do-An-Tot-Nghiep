@@ -53,7 +53,8 @@ class LoginController extends Controller
                     "create_at" => $Doctor->get("create_at"),
                     "update_at" => $Doctor->get("update_at"),
                     "speciality_id" => (int)$Doctor->get("speciality_id"),
-                    "clinic_id" => (int)$Doctor->get("clinic_id")
+                    "clinic_id" => (int)$Doctor->get("clinic_id"),
+                    "recovery_token" => $Doctor->get("recovery_token")
                 );
 
                 $payload = $data;
