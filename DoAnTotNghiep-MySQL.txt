@@ -24,11 +24,13 @@ create table `tn_doctors`
 	description varchar(255),
 	price int,
 	role varchar(10),
+	active int,
 	avatar varchar(255),
 	create_at datetime,
 	update_at datetime,
 	speciality_id int,
 	clinic_id int,
+	recovery_token varchar(255),
 	PRIMARY KEY(id),
 	FOREIGN KEY (speciality_id) REFERENCES tn_specialities(id),
 	FOREIGN KEY (clinic_id) REFERENCES tn_clinic(id)

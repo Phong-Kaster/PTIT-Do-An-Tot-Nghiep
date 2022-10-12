@@ -81,7 +81,7 @@
          * @since 11-10-2022
          * send email with new registration
          */
-        public static function newRegistration($data = [])
+        public static function signup($data = [])
         {
             /**Step 1 - get input data */
             $email = $data["email"];
@@ -119,7 +119,7 @@
             {
                 if (!$mail->send()) 
                 {
-                    print_r("New Registration Email Error: ".$mail->ErrorInfo);
+                    print_r("Signup Email Error: ".$mail->ErrorInfo);
                 }
                 else 
                 {
@@ -128,7 +128,7 @@
             }
             catch(Exception $ex)
             {
-                print_r("New Registration Email: ".$ex->getMessage);
+                print_r("Signup Email: ".$ex->getMessage);
             }
         }
 
@@ -146,7 +146,7 @@
             $id = $Doctor->get("id");
 
             /**Step 2 - always create a 15-digit number to be recovery token */
-            $recovery_token = self::generateRandomString();
+            $recovery_token = generateRandomString();
             $Doctor->set("recovery_token", $recovery_token)
                 ->save();
 
@@ -182,22 +182,6 @@
             {
                 print_r("Recovery Password Email: ".$ex->getMessage);
             }
-        }
-
-        /**
-         * @author Phong-Kaster
-         * @since 11-10-2022
-         * create a random 15-digit number from 0 to 9
-         * for instance, 01478 78321 09123
-         */
-        private static function generateRandomString($length = 15) {
-            $characters = '0123456789';
-            $charactersLength = strlen($characters);
-            $randomString = '';
-            for ($i = 0; $i < $length; $i++) {
-                $randomString .= $characters[rand(0, $charactersLength - 1)];
-            }
-            return $randomString;
         }
     }
 ?>

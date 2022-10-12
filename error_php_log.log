@@ -158,3 +158,22 @@ Stack trace:
 #3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
 #4 {main}
   thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\helpers\email.helper.php on line 150
+[12-Oct-2022 08:07:59 UTC] PHP Warning:  Use of undefined constant TABLE_ORDERS - assumed 'TABLE_ORDERS' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\ClinicsController.php on line 62
+[12-Oct-2022 08:07:59 UTC] PHP Warning:  Use of undefined constant TABLE_ORDERS - assumed 'TABLE_ORDERS' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\ClinicsController.php on line 63
+[12-Oct-2022 08:23:43 UTC] PHP Notice:  Undefined variable: description in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\ClinicsController.php on line 186
+[12-Oct-2022 09:35:24 UTC] PHP Fatal error:  Uncaught Error: Class 'DoctorsController' not found in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorsController.php:2
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\Autoloader.php(118): require_once()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\Autoloader.php(100): Autoloader->requireFile('D:\\xampp\\htdocs...')
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\Autoloader.php(73): Autoloader->loadMappedFile('D:\\xampp\\htdocs...', 'DoctorsControll...')
+#3 [internal function]: Autoloader->loadClass('DoctorsControll...')
+#4 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(509): spl_autoload_call('DoctorsControll...')
+#5 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(571): App->route()
+#6 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#7 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorsController.php on line 2
+[12-Oct-2022 09:59:35 UTC] PHP Parse error:  syntax error, unexpected '$AuthUser' (T_VARIABLE), expecting function (T_FUNCTION) or const (T_CONST) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorController.php on line 4
+[12-Oct-2022 14:34:09 UTC] PHP Parse error:  syntax error, unexpected ';' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorsController.php on line 190
+[12-Oct-2022 14:45:36 UTC] PHP Notice:  Undefined variable: password in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorsController.php on line 218
+[12-Oct-2022 14:48:54 UTC] PHP Notice:  Undefined variable: password in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorsController.php on line 292
+[12-Oct-2022 14:48:54 UTC] PHP Notice:  Undefined variable: password in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorsController.php on line 325

@@ -12,6 +12,10 @@
 - [**Introduction**](#introduction)
 - [**Topic**](#topic)
 - [**Database**](#database)
+- [**Features**](#features)
+  - [**1. Login**](#1-login)
+  - [**2. Sign Up**](#2-sign-up)
+  - [**3. Recovery Password**](#3-recovery-password)
 - [**Milestone**](#milestone)
 - [**Post Script**](#post-script)
 - [**Bonus**](#bonus)
@@ -43,6 +47,51 @@ sẽ hỗ trợ phần nào cho các bạn khi bước tới ngưỡng cửa qua
 <h3 align="center">
 
 ***Sơ đồ cơ sở dữ liệu***
+</h3>
+
+# [**Features**](#features)
+
+Phần này mình sẽ liệt kê các tính năng chính và quan trọng mà API này có thể thực hiện.
+
+## [**1. Login**](#login)
+
+Đầu tiên dĩ nhiên luôn là tính năng đăng nhập rồi. Với tính năng cơ bản nhất và quan trọng này thì mình vẫn sử dụng JWT Token như ở 
+[**Đồ án thực tập**](https://github.com/Phong-Kaster/PTIT-Do-An-Thuc-Tap). Còn các thông tin còn lại thì có bao nhiêu thì in ra hết( Dĩ nhiên là trừ cái mật khẩu rồi 😅😅).
+
+<p align="center">
+    <img src="./photo/image3.png" />
+</p>
+<h3 align="center">
+
+***Dữ liệu trả về khi đăng nhập thành công***
+</h3>
+
+## [**2. Sign Up**](#2-sign-up)
+
+Có đăng nhập thì dĩ nhiên là phải có đăng ký rồi. Tính năng này thì chẳng có gì lạ lẫm với các bạn cả. Ngoài các thông tin người dùng nhập vào và sau khi kiểm tra hợp lệ
+thì họ sẽ được nhận một email thông báo gửi tới email mà được sử dụng để tài khoản như sau:
+
+<p align="center">
+    <img src="./photo/image1.png" />
+</p>
+<h3 align="center">
+
+**Chúc mừng bạn đã trở thành thành viên của tập đoàn Umbrella Corporation 🎇**
+</h3>
+
+## [**3. Recovery Password**](#3-recovery-password)
+
+Bạn bị bệnh não cá vàng 🐠🐠? Bạn hay làm trước quên sau ? Lần này thì quên cmn luôn mật khẩu mình vừa mới tạo. 
+Đừng lo ! API này hỗ trợ luôn trường hợp bạn quên mật khẩu. Chỉ cần nhập đúng email bạn đã đăng kí tài khoản tại **UMBRELLA CORPORATION** 
+
+BÙM 🔥🔥🔥 Ngạc nhiên chưa !! Nhập cái mã bên dưới và tạo lại mật khẩu nào 
+
+<p align="center">
+    <img src="./photo/image2.png" />
+</p>
+<h3 align="center">
+
+**Lần sau đừng quên mật khẩu nữa nha 😅😅**
 </h3>
 
 # [**Milestone**](#milestone)
@@ -165,6 +214,14 @@ Sau đó thì thay đổi suy nghĩ để chuyển qua làm học thay thế t�
 
 2. Hoàn thiện tính năng khôi phục mật khẩu với mã xác thực được gửi qua email - Recovery Controller & Password Reset Controller
 
+- **12-10-2022**:
+
+1. Hoàn thiện tính năng quản lí các địa chỉ phòng khám - Clinics Controller & Clinic Controller
+
+2. Đọc toàn bộ thông tin các bác sĩ và tạo tài khoản mới với mật khẩu được gửi về bằng Email - Doctors Controller 
+
+3. Đọc thông tin chi tiết của một bác sĩ - R của Doctor Controller.
+
 # [**Controller Timeline**](#controller-timeline)
 
 Phần này mình lưu lại trình tự mình viết đồ án này. Nếu các bạn có nhu cầu tham khảo cách xử lý của mình. Các bạn có thể đọc code theo trình tự 
@@ -174,11 +231,23 @@ Phần này mình lưu lại trình tự mình viết đồ án này. Nếu các
 
 2. Login Controller
 
-3. Sign Up Controller
+3. Specialities Controller
 
-4. Recovery Controller
+4. Speciality Controller
 
-5. Password Reset Controller
+5. Sign Up Controller
+
+6. Recovery Controller
+
+7. Password Reset Controller
+
+8. Clinics Controller
+
+9. Clinic Controller
+
+10. Doctors Controller 
+
+11. Doctor Controller
 
 # [**Special Thanks**](#special-thanks)
 

@@ -17,3 +17,4 @@ define("TABLE_PREFIX", "tn_");
 // Set table names without prefix
 define("TABLE_SPECIALITIES", "specialities");
 define("TABLE_DOCTORS", "doctors");
+define("TABLE_CLINICS", "clinic");

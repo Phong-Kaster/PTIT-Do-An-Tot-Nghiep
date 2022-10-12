@@ -134,6 +134,7 @@ class SignupController extends Controller
         $description = Input::post("description");
         $price = Input::post("price") ? (int)Input::post("price") : 100000 ;
         $role = "member"; // default
+        $active = 1;
         $avatar = Input::post("avatar") ? Input::post("avatar") : "";
         $specialityId = 1;
         $clinicId = 1;
@@ -143,7 +144,7 @@ class SignupController extends Controller
         /**Step 2 - check input data  */
         /**Step 2.1 - FILTER_VALIDATE_EMAIL */
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $this->resp->msg = "Email is not valid. Try again !";
+            $this->resp->msg = "Email is not correct format. Try again !";
             $this->jsonecho();
         }
 
@@ -165,14 +166,14 @@ class SignupController extends Controller
         } 
         else if ($password != $passwordConfirm) 
         {
-            $this->resp->msg = __("Password confirmation didn't match!");
+            $this->resp->msg = __("Password confirmation does not equal to password !");
             $this->jsonecho();
         }
 
 
         /**Step 2.4 - name validation*/
         $name_validation = isVietnameseName($name);
-        if( $name_validation != 1 ){
+        if( $name_validation == 0 ){
             $this->resp->msg = "Vietnamese name only has letters and space";
             $this->jsonecho();
         }
@@ -211,6 +212,7 @@ class SignupController extends Controller
                     ->set("description", $description)
                     ->set("price", $price)
                     ->set("role", $role)
+                    ->set("active", $active)
                     ->set("avatar", $avatar)
                     ->set("create_at", date("Y-m-d H:i:s"))
                     ->set("update_at", date("Y-m-d H:i:s"))
@@ -219,7 +221,7 @@ class SignupController extends Controller
                     ->save();
 
             $this->resp->result = 1;
-            $this->resp->msg = "Doctor account is created successfully !";
+            $this->resp->msg = "Doctor account is created successfully. Don't forget to check Gmail to get password !";
             $this->resp->data = array(
                 "email" => $Doctor->get("email"),
                 "phone" => $Doctor->get("phone"),
@@ -227,6 +229,7 @@ class SignupController extends Controller
                 "description" => $Doctor->get("description"),
                 "price" => $Doctor->get("price"),
                 "role" => $Doctor->get("role"),
+                "active" => $Doctor->get("active"),
                 "avatar" => $Doctor->get("avatar"),
                 "create_at" => $Doctor->get("create_at"),
                 "update_at" => $Doctor->get("update_at"),
@@ -241,7 +244,7 @@ class SignupController extends Controller
                 "password" => $password
             ];
 
-            MyEmail::newRegistration($data);
+            MyEmail::signup($data);
         } 
         catch (\Exception $ex) 
         {

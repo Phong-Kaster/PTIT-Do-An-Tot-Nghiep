@@ -1,6 +1,6 @@
 <?php
 /**
- * Profile Controller
+ * SpecialitiesController
  */
 class SpecialitiesController extends Controller
 {
@@ -65,8 +65,8 @@ class SpecialitiesController extends Controller
             if($search_query){
                 $query->where(function($q) use($search_query)
                 {
-                    $q->where(TABLE_PREFIX.TABLE_ORDERS.".name", 'LIKE', $search_query.'%')
-                    ->orWhere(TABLE_PREFIX.TABLE_ORDERS.".description", 'LIKE', $search_query.'%');
+                    $q->where(TABLE_PREFIX.TABLE_SPECIALITIES.".name", 'LIKE', $search_query.'%')
+                    ->orWhere(TABLE_PREFIX.TABLE_SPECIALITIES.".description", 'LIKE', $search_query.'%');
                 }); 
             }
             

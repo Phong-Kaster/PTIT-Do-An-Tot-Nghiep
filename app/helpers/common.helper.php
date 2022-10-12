@@ -563,13 +563,14 @@ function isNumber($number){
 
 /**
  * @author Phong-Kaster
+ * @since 10-10-2022
  * check if a string can be vietnamese name or not ?
  * Only accept letters & space
  * return 1 if correct
  * return 0 if incorrect
  */
 function isVietnameseName($name){
-    $regex = "/[a-zA-Z_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễếệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\s]+$/u";
+    $regex = "/^[a-zA-Z_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễếệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\s]+$/u";
     $result = preg_match($regex, $name);
     return $result;
 }
@@ -577,13 +578,45 @@ function isVietnameseName($name){
 
 /**
  * @author Phong-Kaster
+ * @since 10-10-2022
  * check if a string can be address or not ?
  * Only accept letters & space, common
  * return 1 if correct
  * return 0 if incorrect
  */
 function isAddress($address){
-    $regex = "/[a-zA-Z0-9_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễếệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\s,]+$/u";
+    $regex = "/^[a-zA-Z0-9_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễếệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\s,-]+$/u";
     $result = preg_match($regex, $address);
     return $result;
+}
+
+
+/**
+ * @author Phong-Kaster
+ * @since 10-10-2022
+ * check if a string can be hospital's vietnamese name or not ?
+ * Only accept letters & space
+ * return 1 if correct
+ * return 0 if incorrect
+ */
+function isVietnameseHospital($name){
+    $regex = "/^[a-zA-Z0-9_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễếệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\s]+$/u";
+    $result = preg_match($regex, $name);
+    return $result;
+}
+
+/**
+ * @author Phong-Kaster
+ * @since 11-10-2022
+ * create a random 15-digit number from 0 to 9
+ * for instance, 01478 78321 09123
+ */
+function generateRandomString($length = 15) {
+    $characters = '0123456789';
+    $charactersLength = strlen($characters);
+    $randomString = '';
+    for ($i = 0; $i < $length; $i++) {
+        $randomString .= $characters[rand(0, $charactersLength - 1)];
+    }
+    return $randomString;
 }
