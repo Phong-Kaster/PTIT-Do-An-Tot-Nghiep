@@ -223,6 +223,7 @@ class SignupController extends Controller
             $this->resp->result = 1;
             $this->resp->msg = "Doctor account is created successfully. Don't forget to check Gmail to get password !";
             $this->resp->data = array(
+                "id" => (int)$Doctor->get("id"),
                 "email" => $Doctor->get("email"),
                 "phone" => $Doctor->get("phone"),
                 "name" => $Doctor->get("name"),

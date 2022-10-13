@@ -220,7 +220,15 @@ Sau đó thì thay đổi suy nghĩ để chuyển qua làm học thay thế t�
 
 2. Đọc toàn bộ thông tin các bác sĩ và tạo tài khoản mới với mật khẩu được gửi về bằng Email - Doctors Controller 
 
-3. Đọc thông tin chi tiết của một bác sĩ - R của Doctor Controller.
+3. Đọc thông tin chi tiết của một bác sĩ - Read của Doctor Controller.
+
+- **13-10-2022**:
+
+1. Hoàn thiện tính năng thêm - sửa - xóa thông tin bác sĩ - Create Update Delete của Doctor Controller. 
+
+2. Khai báo đầu đủ toàn bộ các model của đồ án.
+
+3. Sửa lại phần Login Controller để xử lý đăng nhập của bệnh nhân bằng OTP gửi tới số điện thoại.
 
 # [**Controller Timeline**](#controller-timeline)
 

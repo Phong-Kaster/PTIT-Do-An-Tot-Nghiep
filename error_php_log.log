@@ -177,3 +177,41 @@ Stack trace:
 [12-Oct-2022 14:45:36 UTC] PHP Notice:  Undefined variable: password in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorsController.php on line 218
 [12-Oct-2022 14:48:54 UTC] PHP Notice:  Undefined variable: password in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorsController.php on line 292
 [12-Oct-2022 14:48:54 UTC] PHP Notice:  Undefined variable: password in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorsController.php on line 325
+[13-Oct-2022 04:31:12 UTC] PHP Parse error:  syntax error, unexpected '}' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorController.php on line 347
+[13-Oct-2022 08:42:37 UTC] PHP Notice:  Undefined variable: Doctor in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorsController.php on line 129
+[13-Oct-2022 08:42:37 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorsController.php:129
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorsController.php(23): DoctorsController->getAll()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(582): DoctorsController->process()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#3 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorsController.php on line 129
+[13-Oct-2022 08:42:50 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method stdClass::get() in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorsController.php:129
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorsController.php(23): DoctorsController->getAll()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(582): DoctorsController->process()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#3 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorsController.php on line 129
+[13-Oct-2022 14:50:22 UTC] PHP Parse error:  syntax error, unexpected '}' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\LoginController.php on line 103
+[13-Oct-2022 14:53:04 UTC] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\LoginController.php on line 118
+[13-Oct-2022 14:53:26 UTC] PHP Parse error:  syntax error, unexpected '$jwt' (T_VARIABLE), expecting function (T_FUNCTION) or const (T_CONST) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\LoginController.php on line 162
+[13-Oct-2022 14:54:32 UTC] PHP Parse error:  syntax error, unexpected ';', expecting ')' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\LoginController.php on line 161
+[13-Oct-2022 15:18:37 UTC] PHP Notice:  Undefined variable: Doctor in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\LoginController.php on line 201
+[13-Oct-2022 15:18:37 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\LoginController.php:201
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\LoginController.php(56): LoginController->loginByPatient()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\LoginController.php(21): LoginController->login()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(582): LoginController->process()
+#3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#4 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\LoginController.php on line 201
+[13-Oct-2022 15:27:52 UTC] PHP Notice:  Undefined variable: Patient in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\LoginController.php on line 214
+[13-Oct-2022 15:27:52 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\LoginController.php:214
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\LoginController.php(56): LoginController->loginByPatient()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\LoginController.php(21): LoginController->login()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(582): LoginController->process()
+#3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#4 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\LoginController.php on line 214

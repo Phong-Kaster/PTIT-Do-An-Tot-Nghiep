@@ -23,60 +23,209 @@ class LoginController extends Controller
 
 
     /**
-     * Login
+     * @author Phong-Kaster
+     * @since 13-10-2022
+     * Case 1 : if type equals to "patient"
+     * => patient is logging by PHONE OTP and PASSWORD is a unique ID
+     * 
+     * 
+     * Case 2 : if type does not equals to "patient" 
+     * => doctor is logging by EMAIL and PASSWORD is a normal password
      * @return void
      */
     private function login()
     {
         $this->resp->result = 0;
-        $email = Input::post("email");
+        $type = Input::post("type");
         $password = Input::post("password");
-        // $remember = Input::post("remember");
+        $data = [];
+        $payload = [];
+        $msg = [];
+        $jwt = "";
 
-        if ($email && $password) {
-            $Doctor = Controller::model("Doctor", $email);
-
-            if ($Doctor->isAvailable() &&
-                $Doctor->get("active") == 1 &&
-                password_verify($password, $Doctor->get("password"))) 
-            {
-                $data = array(
-                    "id"    => (int)$Doctor->get("id"),
-                    "email" => $Doctor->get("email"),
-		    		"phone" => $Doctor->get("phone"),
-                    "name" => $Doctor->get("name"),
-                    "description" => $Doctor->get("description"),
-                    "price" => (int)$Doctor->get("price"),
-                    "role" => $Doctor->get("role"),
-                    "active" => (int)$Doctor->get("active"),
-                    "avatar" => $Doctor->get("avatar"),
-                    "create_at" => $Doctor->get("create_at"),
-                    "update_at" => $Doctor->get("update_at"),
-                    "speciality_id" => (int)$Doctor->get("speciality_id"),
-                    "clinic_id" => (int)$Doctor->get("clinic_id"),
-                    "recovery_token" => $Doctor->get("recovery_token")
-                );
-
-                $payload = $data;
-
-                $payload["hashPass"] = md5($Doctor->get("password"));
-                $payload["iat"] = time();
-
-                $jwt = Firebase\JWT\JWT::encode($payload, EC_SALT, 'HS256');
-
-                $this->resp->result = 1;
-                $this->resp->msg = __("Log in successfully");
-                $this->resp->accessToken = $jwt;
-                $this->resp->data = $data;
-
-                $this->jsonecho();
-            }
+        if( !$password )
+        {
+            $this->resp->msg = "Password can not be empty !";
+            $this->jsonecho();
         }
 
-        $this->resp->msg = __("Email or password is not correct !");
+
+        /**Case 1 : if type equals to "patient" => patient is logging */
+        if( $type == "patient" )
+        {
+            $this->loginByPatient();
+        }
+        /**Case 2 : if type does not equals to "patient" => doctor is logging */
+        else
+        {
+            $this->loginByDoctor();
+        }
+    }
+
+    /**
+     * @author Phong-Kaster
+     * @since 13-10-2022
+     * this function handles the process of logging executed by a DOCTOR
+     * email is individual address. For instance, phongkaster@gmail.
+     * password is a secret keyword which is set by ADMIN or this DOCTOR.
+     */
+    private function loginByDoctor()
+    {
+        /**Step 1 - declare */
+        $this->resp->result = 0;
+        $password = Input::post("password");
+        $email = Input::post("email");
+
+        /**Step 2 - is email empty ? */
+        if( !$email )
+        {
+            $this->resp->msg = "Email can not be empty !";
+            $this->jsonecho();
+        }
+
+        /**Step 3 - does the doctor exist? */
+        $Doctor = Controller::model("Doctor", $email);
+        if( !$Doctor->isAvailable() || $Doctor->get("active") != 1 || 
+                password_verify($password, $Doctor->get("password")) )
+        {
+            $this->resp->msg = __("The email or password you entered is incorrect !");
+            $this->jsonecho();
+        }
+
+
+        $data = array(
+            "id"    => (int)$Doctor->get("id"),
+            "email" => $Doctor->get("email"),
+            "phone" => $Doctor->get("phone"),
+            "name" => $Doctor->get("name"),
+            "description" => $Doctor->get("description"),
+            "price" => (int)$Doctor->get("price"),
+            "role" => $Doctor->get("role"),
+            "active" => (int)$Doctor->get("active"),
+            "avatar" => $Doctor->get("avatar"),
+            "create_at" => $Doctor->get("create_at"),
+            "update_at" => $Doctor->get("update_at"),
+            "speciality_id" => (int)$Doctor->get("speciality_id"),
+            "clinic_id" => (int)$Doctor->get("clinic_id"),
+            "recovery_token" => $Doctor->get("recovery_token")
+        );
+
+        $payload = $data;
+        $payload["hashPass"] = md5($Doctor->get("password"));
+        $payload["iat"] = time();
+        $jwt = Firebase\JWT\JWT::encode($payload, EC_SALT, 'HS256');
+
+        $this->resp->result = 1;
+        $this->resp->msg = __("Congratulations, doctor ".$Doctor->get("name")." ! You have been logged in successfully.");
+        $this->resp->accessToken = $jwt;
+        $this->resp->data = $data;
         $this->jsonecho();
     }
 
+
+    /**
+     * @author Phong-Kaster
+     * @since 13-10-2022
+     * this function handles the process of logging executed by a PATIENT
+     * phone is personal phone number. For instance, 079.410.4124.
+     * password is a unique ID which is returned by firebase phone OTP.
+     * 
+     * Case 1 - if this patient does not exist in the database, we will create a new account for this patient
+     * Case 2 - if this patient logins again, we will return JWT token & his/her information except password
+     */
+    private function loginByPatient()
+    {
+        /**Step 1 - declare */
+        $this->resp->result = 0;
+        $password = Input::post("password");
+        $phone = Input::post("phone");
+        $data = [];
+
+        /**Step 2 - is phone number correct format ? */
+        if( !$phone )
+        {
+            $this->resp->msg = "Phone number can not be empty !";
+            $this->jsonecho();
+        }
+        if( strlen($phone) < 10 ){
+            $this->resp->msg = "Phone number has at least 10 number !";
+            $this->jsonecho();
+        }
+        $phone_number_validation = isNumber($phone);
+        if( !$phone_number_validation ){
+            $this->resp->msg = "This is not a valid phone number. Please, try again !";
+            $this->jsonecho();
+        }
+
+        /**Step 3 - does the patient exist? */
+        $query = DB::table(TABLE_PREFIX.TABLE_PATIENTS)
+                    ->where(TABLE_PREFIX.TABLE_PATIENTS.".phone" , "=" , $phone);
+        $result = $query->get();
+
+        /*Step 3 - Case 1 - if this patient does not exist in the database, we will create a new account for this patient*/
+        if( count($result) == 0 )
+        {
+            $Patient = Controller::model("Patient");
+            $Patient->set("email", "")
+                ->set("phone", $phone)
+                ->set("password", password_hash($password, PASSWORD_DEFAULT) )
+                ->set("name", $phone)
+                ->set("birthday", "")
+                ->set("address", "")
+                ->set("avatar", "")
+                ->set("create_at", date("Y-m-d H:i:s"))
+                ->set("update_at", date("Y-m-d H:i:s"))
+                ->save();
+
+            $msg = "Welcome to UMBRELLA CORPORATION, ".$Patient->get("name")." !";
+            $data = array(
+                "id"    => (int)$Patient->get("id"),
+                "email" => $Patient->get("email"),
+                "phone" => $Patient->get("phone"),
+                "name" => $Patient->get("name"),
+                "birthday" => $Patient->get("birthday"),
+                "address" => $Patient->get("address"),
+                "avatar" => $Patient->get("avatar"),
+                "create_at" => $Patient->get("create_at"),
+                "update_at" => $Patient->get("update_at")
+            );
+
+            // don't need update $password again
+        }
+        /**Step 3 - Case 2 - if this patient logins again, we will return JWT token & his/her information except password */
+        else 
+        {
+            $msg = "Welcome back to UMBRELLA CORPORATION, ".$result[0]->name." !";
+            $data = array(
+                "id"    => (int)$result[0]->id,
+                "email" => $result[0]->email,
+                "phone" => $result[0]->phone,
+                "name" => $result[0]->name,
+                "birthday" => $result[0]->birthday,
+                "address" => $result[0]->address,
+                "avatar" => $result[0]->avatar,
+                "create_at" => $result[0]->create_at,
+                "update_at" => $result[0]->update_at
+            );
+
+            // need update $password again
+            $password = $result[0]->password;
+        }
+
+
+
+
+        $payload = $data;
+        $payload["hashPass"] = md5($password);
+        $payload["iat"] = time();
+        $jwt = Firebase\JWT\JWT::encode($payload, EC_SALT, 'HS256');
+
+        $this->resp->result = 1;
+        $this->resp->msg = $msg;
+        $this->resp->accessToken = $jwt;
+        $this->resp->data = $data;
+        $this->jsonecho();
+    }
 
     /**
      * Login with Facebook
