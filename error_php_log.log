@@ -17,3 +17,25 @@
 [14-Oct-2022 09:38:22 UTC] PHP Warning:  move_uploaded_file(http://192.168.1.221:8080/PTIT-Do-An-Tot-Nghiep/assets/uploads/avatar_1_1665740302.jpg): failed to open stream: HTTP wrapper does not support writeable connections in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorProfileController.php on line 325
 [14-Oct-2022 09:38:22 UTC] PHP Warning:  move_uploaded_file(): Unable to move 'D:\xampp\tmp\php1E1D.tmp' to 'http://192.168.1.221:8080/PTIT-Do-An-Tot-Nghiep/assets/uploads/avatar_1_1665740302.jpg' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorProfileController.php on line 325
 [14-Oct-2022 09:44:25 UTC] PHP Parse error:  syntax error, unexpected ';', expecting ')' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorProfileController.php on line 330
+[14-Oct-2022 14:15:19 UTC] PHP Parse error:  syntax error, unexpected 'default' (T_DEFAULT) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorProfileController.php on line 46
+[14-Oct-2022 14:16:47 UTC] PHP Notice:  Undefined variable: Doctor in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorProfileController.php on line 456
+[14-Oct-2022 14:16:47 UTC] PHP Fatal error:  Uncaught Error: Call to a member function set() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorProfileController.php:456
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorProfileController.php(38): DoctorProfileController->changeInformation()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(582): DoctorProfileController->process()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#3 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorProfileController.php on line 456
+[14-Oct-2022 15:19:03 UTC] PHP Parse error:  syntax error, unexpected '$birthyear' (T_VARIABLE) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientController.php on line 190
+[14-Oct-2022 15:21:41 UTC] PHP Fatal error:  Uncaught Error: Class 'Date' not found in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientController.php:193
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientController.php(25): PatientController->update()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(582): PatientController->process()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#3 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientController.php on line 193
+[14-Oct-2022 15:39:37 UTC] PHP Notice:  Undefined variable: year in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientController.php on line 207
+[14-Oct-2022 15:39:37 UTC] PHP Notice:  Undefined variable: difference in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientController.php on line 210
+[14-Oct-2022 15:40:54 UTC] PHP Notice:  Undefined variable: currentYear in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientController.php on line 207
+[14-Oct-2022 15:40:54 UTC] PHP Notice:  Undefined variable: difference in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientController.php on line 210
+[14-Oct-2022 15:42:29 UTC] PHP Notice:  Undefined variable: difference in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientController.php on line 214

@@ -35,7 +35,7 @@
                 $action = Input::post("action");
                 switch ($action) {
                     case "personal":
-                        echo $action;
+                        $this->changeInformation();
                         break;
                     case "password":
                         $this->changePassword();
@@ -43,6 +43,10 @@
                     case "avatar":
                         $this->changeAvatar();
                         break;
+                    default:
+                        $this->resp->result = 0;
+                        $this->resp->msg = "You action is not valid. There are valid actions: personal, password & avatar ";
+                        $this->jsonecho();
                 }
             }
         }
@@ -60,7 +64,7 @@
 
 
             /**Step 2 - is the doctor active ? */
-            if( !$AuthUser )
+            if( !$AuthUser || $AuthUser->get("active") != 1 )
             {
                 $this->resp->msg = "You does not log in !";
                 $this->jsonecho();
@@ -167,7 +171,7 @@
             $this->resp->result = 0;
             $AuthUser = $this->getVariable("AuthUser");
 
-            if( !$AuthUser )
+            if( !$AuthUser || $AuthUser->get("active") != 1 )
             {
                 $this->resp->msg = "You does not log in !";
                 $this->jsonecho();
@@ -270,7 +274,7 @@
 
 
             /**Step 2 - is the doctor active ? */
-            if( !$AuthUser )
+            if( !$AuthUser || $AuthUser->get("active") != 1 )
             {
                 $this->resp->msg = "You does not log in !";
                 $this->jsonecho();
@@ -340,6 +344,146 @@
                 $this->resp->msg = $ex->getMessage();
             }
 
+            $this->jsonecho();
+        }
+
+
+
+        /**
+         * @author Phong-Kaster
+         * @since 14-10-2022
+         * update personal information
+         */
+        private function changeInformation()
+        {
+            /**Step 1 */
+            $this->resp->result = 0;
+            $AuthUser = $this->getVariable("AuthUser");
+
+            if( !$AuthUser || $AuthUser->get("active") != 1)
+            {
+                $this->resp->msg = "You does not log in !";
+                $this->jsonecho();
+            }
+
+
+
+            /**Step 2 - get required field */
+            $required_field = ["phone", "name", "price", "speciality_id", "clinic_id"];
+            foreach($required_field as $field)
+            {
+                if( !Input::post($field) )
+                {
+                    $this->resp->msg = "Missing field: ".$field;
+                    $this->jsonecho();
+                }
+            }
+
+            //$email = Input::post("email");
+            $phone = Input::post("phone");
+
+            // $password = generateRandomString();
+            // $passwordConfirm = Input::post("passwordConfirm");
+
+            $name = Input::post("name");
+            $description = Input::post("description") ? Input::post("description") : "Bác sĩ ".$name;
+
+            $price = Input::post("price") ? Input::post("price") : 100000 ;
+            //$role = Input::post("role") ? Input::post("role") : "member";
+
+            //$avatar = "default_avatar.jpg"; $this->changeAvatar();
+            //$active = 1;
+            
+            //$create_at = date("Y-m-d H:i:s");
+            $update_at = date("Y-m-d H:i:s");
+
+            $speciality_id = Input::post("speciality_id");
+            $clinic_id = Input::post("clinic_id");
+
+
+            /**Step 3 - validation */
+            /**Step 3.1 - name  validation*/
+            $name_validation = isVietnameseName($name);
+            if( $name_validation == 0 ){
+                $this->resp->msg = "Vietnamese name only has letters and space";
+                $this->jsonecho();
+            }
+
+            /**Step 3.2 - phone validation */
+            if( strlen($phone) < 10 ){
+                $this->resp->msg = "Phone number has at least 10 number !";
+                $this->jsonecho();
+            }
+    
+            $phone_number_validation = isNumber($phone);
+            if( !$phone_number_validation ){
+                $this->resp->msg = "This is not a valid phone number. Please, try again !";
+                $this->jsonecho();
+            }
+
+            /**Step 3.3 -  price validation */
+            $price_validation = isNumber($price);
+            if( !$price_validation )
+            {
+                $this->resp->msg = "This is not a valid price. Please, try again !";
+                $this->jsonecho();
+            }
+            if( $price < 100000 )
+            {
+                $this->resp->msg = "Price must greater than 100.000 !";
+                $this->jsonecho();
+            }
+
+            /**Step 3.8 - speciality validation */
+            $Speciality = Controller::model("Speciality", $speciality_id);
+            if( !$Speciality->isAvailable() )
+            {
+                $this->resp->msg = "Speciality is not available.";
+                $this->jsonecho();
+            }
+
+            /**Step 3.9 - clinic validation */
+            $Clinic = Controller::model("Clinic", $clinic_id);
+            if( !$Clinic->isAvailable() )
+            {
+                $this->resp->msg = "Clinic is not available.";
+                $this->jsonecho();
+            }
+
+            /**Step 4 - save*/
+            try 
+            {
+                $AuthUser->set("phone", $phone)
+                        ->set("name", $name)
+                        ->set("description", $description)
+                        ->set("price", $price)
+                        ->set("update_at", $update_at)
+                        ->set("speciality_id", $speciality_id)
+                        ->set("clinic_id", $clinic_id)
+                        ->save();
+
+                $this->resp->result = 1;
+                $this->resp->msg = "Your personal information has been updated successfully !";
+                $this->resp->data = array(
+                    "id" => (int)$AuthUser->get("id"),
+                    "email" => $AuthUser->get("email"),
+                    "phone" => $AuthUser->get("phone"),
+                    "name" => $AuthUser->get("name"),
+                    "description" => $AuthUser->get("description"),
+                    "price" => $AuthUser->get("price"),
+                    "role" => $AuthUser->get("role"),
+                    "avatar" => $AuthUser->get("avatar"),
+                    "active" => (int)$AuthUser->get("active"),
+                    "create_at" => $AuthUser->get("create_at"),
+                    "update_at" => $AuthUser->get("update_at"),
+                    "speciality_id" => (int)$AuthUser->get("speciality_id"),
+                    "clinic_id" => (int)$AuthUser->get("clinic_id")
+                );
+            } 
+            catch (\Exception $ex) 
+            {
+                $this->resp->msg = $ex->getMessage();
+            }
             $this->jsonecho();
         }
     }
