@@ -42,7 +42,7 @@ sẽ hỗ trợ phần nào cho các bạn khi bước tới ngưỡng cửa qua
 # [**Database**](#database)
 
 <p align="center">
-    <img src="./photo/do-an-tot-nghiep.png" />
+    <img src="./photo/database.png" />
 </p>
 <h3 align="center">
 
