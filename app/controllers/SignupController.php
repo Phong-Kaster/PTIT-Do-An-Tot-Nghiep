@@ -230,12 +230,12 @@ class SignupController extends Controller
                 "description" => $Doctor->get("description"),
                 "price" => $Doctor->get("price"),
                 "role" => $Doctor->get("role"),
-                "active" => $Doctor->get("active"),
+                "active" => (int)$Doctor->get("active"),
                 "avatar" => $Doctor->get("avatar"),
                 "create_at" => $Doctor->get("create_at"),
                 "update_at" => $Doctor->get("update_at"),
-                "speciality_id" => $Doctor->get("speciality_id"),
-                "clinic_id" => $Doctor->get("clinic_id")
+                "speciality_id" => (int)$Doctor->get("speciality_id"),
+                "clinic_id" => (int)$Doctor->get("clinic_id")
             );
 
             $data = [

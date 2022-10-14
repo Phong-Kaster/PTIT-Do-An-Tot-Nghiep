@@ -85,8 +85,9 @@ class LoginController extends Controller
 
         /**Step 3 - does the doctor exist? */
         $Doctor = Controller::model("Doctor", $email);
-        if( !$Doctor->isAvailable() || $Doctor->get("active") != 1 || 
-                password_verify($password, $Doctor->get("password")) )
+        if( !$Doctor->isAvailable() || 
+            $Doctor->get("active") != 1 || 
+            !password_verify($password, $Doctor->get("password")) )
         {
             $this->resp->msg = __("The email or password you entered is incorrect !");
             $this->jsonecho();

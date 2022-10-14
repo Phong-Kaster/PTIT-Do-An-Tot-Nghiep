@@ -43,3 +43,5 @@ define("FFPROBEBIN", NULL);
 define("TITLE", "UMBRELLA CORPORATION");
 define("VIDEO", "https://www.youtube.com/watch?v=lcSPUceWcGg&ab_channel=GalaxyStudio");
 define("COPYRIGHT", htmlspecialchars("© 2022 ".TITLE.", Heinzstraße 8, Berlin, Germany"));
+
+define("UPLOAD_PATH", ROOTPATH . "/assets/uploads");

@@ -230,6 +230,10 @@ Sau đó thì thay đổi suy nghĩ để chuyển qua làm học thay thế t�
 
 3. Sửa lại phần Login Controller để xử lý đăng nhập của bệnh nhân bằng OTP gửi tới số điện thoại.
 
+- **14-10-2022**:
+
+1. Các chức năng cập nhật thông tin cá nhân, mật khẩu và ảnh đại diện dành cho bác sĩ - Doctor Profile Controller
+
 # [**Controller Timeline**](#controller-timeline)
 
 Phần này mình lưu lại trình tự mình viết đồ án này. Nếu các bạn có nhu cầu tham khảo cách xử lý của mình. Các bạn có thể đọc code theo trình tự 
@@ -257,6 +261,7 @@ Phần này mình lưu lại trình tự mình viết đồ án này. Nếu các
 
 11. Doctor Controller
 
+12. Doctor Profile Controller 
 # [**Special Thanks**](#special-thanks)
 
 <table>
