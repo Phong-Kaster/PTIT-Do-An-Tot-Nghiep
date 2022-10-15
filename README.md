@@ -13,6 +13,7 @@
 - [**Topic**](#topic)
 - [**Database**](#database)
 - [**API Document**](#api-document)
+- [**Document**](#document)
 - [**Features**](#features)
   - [**1. Login**](#1-login)
   - [**2. Sign Up**](#2-sign-up)
@@ -57,7 +58,21 @@ sẽ hỗ trợ phần nào cho các bạn khi bước tới ngưỡng cửa qua
 # [**API Document**](#api-document)
 
 Mình có soạn thảo và liệt kê chi tiết cách sử dụng các chức năng mà mình đã xây dựng thành tài liệu.
-Nếu các bạn có nhu cầu muốn tham khảo, hãy ấn vào [**đây**](#) để đọc chi tiết cách sử dụng API này.
+Nếu các bạn có nhu cầu muốn tham khảo, hãy ấn vào [**đây**](https://github.com/Phong-Kaster/PTIT-Do-An-Tot-Nghiep/tree/main/document#readme) để đọc chi tiết cách sử dụng API này.
+
+# [**Document**](#document)
+
+Khi tải repository này về, bạn sẽ thấy một thư mục tên `document`. Trong thư mục này, mình 
+để lại cho các bạn một số tài liệu quan trọng
+
+- **Danh-sach-de-tai-tot-nghiep** - là tệp tin excel tổng hợp lại toàn bộ các đề tài của từng sinh khóa D18
+
+- **Tập hợp các tệp tin có tiền tố eshop** - là database mình mở rộng ra từ đồ án thực tập( Rất tiếc là không có cơ hội sử dụng 😥)
+
+- **Noi-dung-quyen-bao-cao** - là các yêu cầu chung để làm báo cáo tốt nghiệp. Tuy nhiên thì tệp tin này do thầy **Nguyễn Anh Hào** soạn 
+và gửi cho các sinh viên thầy hướng dẫn. Không biết các giáo viên khác có gửi không nữa😅😅
+
+- **README.md** - là một tệp tin markdown khác, mình tạo ra nó để mô tả cách đọc và sử dụng API do mình viết.
 
 # [**Features**](#features)
 
