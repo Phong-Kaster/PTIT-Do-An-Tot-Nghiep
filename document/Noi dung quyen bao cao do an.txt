@@ -1,0 +1,61 @@
+						
+						BÁO CÁO ĐỒ ÁN
+						
+(Trang bìa: định dạng theo quy định của Học viện)
+(Phiếu giao nhiệm vụ làm đồ án tốt nghiệp)
+
+I.MỤC LỤC
+	1.Nội dung (table of content)
+	2.Hình (figures)
+	3.Bảng số liệu (data sheet)
+	4.Từ chuyên môn viết tắt
+
+II.GIỚI THIỆU ĐỀ TÀI
+	1.Sự cần thiết của đề tài
+	(nhu cầu của xã hội đ/v đề tài)
+	2.Mục tiêu của đề tài
+	(những vấn đề mà đề tài muốn giải quyết)
+	3.Kết quả phải đạt
+	(yêu cầu đ/v sản phẩm của đề tài - lấy theo đề cương)
+	
+III.NỘI DUNG THỰC HIỆN
+	1. Hiện trạng thực tế: 
+	Mô tả (bằng lời - không dùng lược đồ mô hình hóa, có thể kèm hình vẽ/ảnh chụp minh họa) các công việc/nhiệm vụ/nhu cầu của một số người trong tổ chức và xã hội (gọi tên bằng vai trò trong tổ chức hoặc xã hội), và nhu cầu sử dụng phần mềm cho công việc của những user tiềm năng này. Đây là bối cảnh phát sinh phần mềm của đề tài như một công cụ hỗ trợ.
+	
+	2. Giải pháp đề xuất của đề tài
+	  a) Dùng lược đồ cộng tác để diễn tả cách hỗ trợ từ phần mềm cho những user ở trên.
+		Trong lược đồ này, phần mềm là một ý niệm ("hộp đen"). Các thông điệp chưa cần có thông số, nhưng tên thông điệp phải phù hợp với các tình huống cần dùng phần mềm.
+		Một số thiết bị phần cứng cần thêm vào hiện trạng trên để chạy phần mềm =>cần có mục b.
+	  b) Kiến trúc vật lý của hệ thống:
+		Vẽ mô hình liên kết thông tin giữa các thiết bị cần thêm vào để chạy phần mềm (đtdđ/máy tính/máy POS...) và các actors (user và services trên intenet như email)
+		Đây là cấu hình tổng quát của hệ thống mà các xử lý (của phần mềm) sẽ được cài đặt trên các thiết bị này.
+
+	3. Yêu cầu đối với phần mềm
+	  a) Lược đồ usecase trong bối cảnh sử dụng phần mềm
+	  Lược đồ chỉ gồm những actors cần sự trợ giúp từ phần mềm (customer, supplier, sales manager, shipper, teller,...), không có usecase "login", không có user "admin", không có thiết bị hỗ trợ (server, máy POS, máy đọc mã vạch, payment gateway/ngân hàng,...).
+	  b) Usecase của phần mềm
+	  Phần mềm hỗ trợ người sử dụng, nhưng đôi khi nó cũng có những tình huống cần actor khác => với mỗi usecase từ lược đồ trên:
+	  - Thêm các usecase (login, phân quyền, kiểm tra dữ liệu,...) và các actor (Admin, máy in, máy POS, payment gateway,..) được đòi hỏi từ phần mềm, để hỗ trợ nó xử lý từng usecase cho người sử dụng.
+	  - Diễn tả sự tương tác giữa phần mềm với các actor bằng lược đồ tuần tự. Thông điệp của lược đồ này cần có đủ thông số (là bộ dữ liệu vào/ra phần mềm)
+	  
+	4. Thiết kế phần mềm
+		a) Front-end (FORM)
+		** Với mỗi Usecase của phần mềm:
+		- Tên Form và hình của nó.
+		- Mô tả chức năng của form (ie, cách xử lý của form cho USER)
+		- Mô tả cách tạo ra form (cho người lập trình viên): cách kiểm tra dữ liệu, cách xử lý trên các button có hỗ trợ từ các API của back-end
+		b) Back-end (API)
+		- Tên, nhiệm vụ, input, output của Api (cho các form:..)
+		- Cách truy xuất csdl và thiết bị
+		- Các công nghệ/gói phần mềm hỗ trợ cho nó nếu có.
+		c) Thiết kế cơ sở dữ liệu
+		- Thiết kế bảng và constraints
+		- Các stored procedures, triggers, roles, rights,...
+	
+	5. Tài liệu tham khảo
+	(dùng để minh chứng cho các yêu cầu nghiệp vụ, và các phương pháp, kỹ thuật, công nghệ được áp dụng trong đề tài)
+
+IV.KẾT QUẢ & HƯỚNG PHÁT TRIỂN
+	1.Những yêu cầu đã thực hiện được (theo đề cương)
+	2.Những yêu cầu chưa thực hiện được, và giải pháp dự kiến
+	

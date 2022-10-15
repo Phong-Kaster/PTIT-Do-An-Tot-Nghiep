@@ -231,3 +231,22 @@ Stack trace:
 #1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
 #2 {main}
   thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientProfileController.php on line 33
+[15-Oct-2022 13:47:30 UTC] PHP Notice:  Undefined variable: Patient in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientProfileController.php on line 218
+[15-Oct-2022 13:47:30 UTC] PHP Fatal error:  Uncaught Error: Call to a member function set() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientProfileController.php:218
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientProfileController.php(40): PatientProfileController->changeInformation()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(614): PatientProfileController->process()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#3 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientProfileController.php on line 218
+[15-Oct-2022 13:48:04 UTC] PHP Notice:  Undefined variable: phone in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientProfileController.php on line 218
+[15-Oct-2022 13:48:04 UTC] PHP Notice:  Undefined variable: Patient in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientProfileController.php on line 228
+[15-Oct-2022 13:48:04 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientProfileController.php:228
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientProfileController.php(40): PatientProfileController->changeInformation()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(614): PatientProfileController->process()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#3 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientProfileController.php on line 228
+[15-Oct-2022 13:48:28 UTC] PHP Notice:  Undefined variable: phone in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientProfileController.php on line 218
+[15-Oct-2022 13:54:57 UTC] PHP Parse error:  syntax error, unexpected '(' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientProfileController.php on line 118

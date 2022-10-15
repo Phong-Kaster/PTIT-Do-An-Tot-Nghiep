@@ -12,6 +12,7 @@
 - [**Introduction**](#introduction)
 - [**Topic**](#topic)
 - [**Database**](#database)
+- [**API Document**](#api-document)
 - [**Features**](#features)
   - [**1. Login**](#1-login)
   - [**2. Sign Up**](#2-sign-up)
@@ -28,7 +29,11 @@
 
 # [**Introduction**](#introduction)
 
-Chào các bạn, mình tên là Nguyễn Thành Phong. Mã số N18DCCN147. Niên khóa 2018-2023. Lời đầu tiên mình xin chào các bạn và cảm ơn tất cả các bạn đang ở đây. Trong tài liệu này mình sẽ chia sẻ tất cả những gì các bạn cần biết khi làm đồ án 
+Chào các bạn, mình tên là Nguyễn Thành Phong. 
+Mã số N18DCCN147. 
+Niên khóa 2018-2023. 
+
+Lời đầu tiên mình xin chào các bạn và cảm ơn tất cả các bạn đang ở đây. Trong tài liệu này mình sẽ chia sẻ tất cả những gì các bạn cần biết khi làm đồ án 
 tốt nghiệp và đề tài do mình thực hiện để các bạn có thể tham khảo. Mình hi vọng phần tài liệu mình viết tiếp theo đây 
 sẽ hỗ trợ phần nào cho các bạn khi bước tới ngưỡng cửa quan trọng của cuộc đời mình - tốt nghiệp đại học.
 
@@ -48,6 +53,11 @@ sẽ hỗ trợ phần nào cho các bạn khi bước tới ngưỡng cửa qua
 
 ***Sơ đồ cơ sở dữ liệu***
 </h3>
+
+# [**API Document**](#api-document)
+
+Mình có soạn thảo và liệt kê chi tiết cách sử dụng các chức năng mà mình đã xây dựng thành tài liệu.
+Nếu các bạn có nhu cầu muốn tham khảo, hãy ấn vào [**đây**](#) để đọc chi tiết cách sử dụng API này.
 
 # [**Features**](#features)
 
@@ -136,6 +146,8 @@ Giờ chúng ta sẽ đi vào các mốc thời gian quan trọng mà mình đã
 - **11-11-2022**: Nộp báo cáo đồ án tốt nghiệp lần 2
 
 - **30-11-2022**: Nộp báo cáo đồ án tốt nghiệp lần 3
+
+- **09-12-2022**: Nộp đồ án tốt nghiệp
 
 > Quy tắc đặt tên áp dụng cho cả 3 lần - Lớp (mã chữ)_Mã sinh viên(3 số cuối)_Họ và tên _BCDK1
 > 
@@ -236,27 +248,19 @@ Sau đó thì thay đổi suy nghĩ để chuyển qua làm học thay thế t�
 
 2. Quản lý thông tin bệnh nhân
 
-Read All - xem toàn bộ thông tin bệnh nhân 
-
-Create - không làm vì bệnh nhân đăng nhập bằng PHONE NUMBER và GOOGLE
-
-Read By ID - đọc thông tin của 1 bệnh nhân 
-
-Update - cập nhật thông tin của 1 bệnh nhân 
-
-Delete - không làm vì có thể đem thông tin bệnh nhân đi bán kiếm tiền 🤑🤑🤑. Kiếm tiền là dễ
+| Tên        | Chức năng                                                                         |
+|------------|-----------------------------------------------------------------------------------|
+| Read All   | Xem toàn bộ thông tin bệnh nhân                                                   |
+| Read By ID | Cập nhật thông tin của 1 bệnh nhân                                                |
+| Create     | Không làm vì bệnh nhân đăng nhập bằng PHONE NUMBER và GOOGLE                      |
+| Update     | Cập nhật thông tin của 1 bệnh nhân                                                |
+| Delete     | Không làm vì có thể đem thông tin bệnh nhân đi bán kiếm tiền 🤑🤑🤑. Kiếm tiền là dễ |
 
 - **15-10-2022**:
 
 1. Sửa lại chỗ tạo JWT token để phân biệt yêu cầu đăng nhập giữa BÁC SĨ và BỆNH NHÂN.
 
-2. Bệnh nhân quản lý thông tin cá nhân 
-
-getInformation - đọc thông tin tài khoản 
-
-change Avatar - thay đổi ảnh đại diện
-
-
+2. Các chức năng cập nhật thông tin cá nhân, mật khẩu và ảnh đại diện dành cho bệnh nhân - Doctor Profile Controller
 
 # [**Controller Timeline**](#controller-timeline)
 

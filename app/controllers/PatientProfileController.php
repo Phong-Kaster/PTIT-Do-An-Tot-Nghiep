@@ -10,8 +10,6 @@
         public function process()
         {
             $AuthUser = $this->getVariable("AuthUser");
-
-
             if (!$AuthUser)
             {
                 header("Location: ".APPURL."/login");
@@ -26,7 +24,6 @@
                 $this->jsonecho();
             }
 
-            
             $request_method = Input::method();
             if($request_method === 'GET')
             {
@@ -103,9 +100,8 @@
             $this->resp->result = 0;
             $AuthUser = $this->getVariable("AuthUser");
 
-
             /**Step 2 - get required fields */
-            $required_fields = ["name", "birthday","gender" , "address"];
+            $required_fields = ["name", "birthday" , "address"];
             foreach( $required_fields as $field )
             {
                 if( !Input::post($field))
@@ -115,10 +111,11 @@
                 }
             }
 
-            $name = Input::put("name");
-            $gender = Input::put("gender");
-            $birthday = Input::put("birthday");
-            $address = Input::put("address");
+            $name = Input::post("name");
+            $gender = Input::post("gender") ? Input::post("gender") : 0;
+
+            $birthday = Input::post("birthday");
+            $address = Input::post("address");
             $update_at = date("Y-m-d H:i:s");
             
 
@@ -214,8 +211,7 @@
             /**Step 4 - save */
             try 
             {
-                $Patient->set("phone",$phone)
-                        ->set("name", $name)
+                $AuthUser->set("name", $name)
                         ->set("birthday", $birthday)
                         ->set("address", $address)
                         ->set("update_at", $update_at)
@@ -224,16 +220,16 @@
                 $this->resp->result = 1;
                 $this->resp->msg = "Your personal information has been updated successfully !";
                 $this->resp->data = array(
-                    "id" => (int)$Patient->get("id"),
-                    "email" => $Patient->get("email"),
-                    "phone" => $Patient->get("phone"),
-                    "name" => $Patient->get("name"),
-                    "gender" => (int)$Patient->get("gender"),
-                    "birthday" => $Patient->get("birthday"),
-                    "address" => $Patient->get("address"),
-                    "avatar" => $Patient->get("avatar"),
-                    "create_at" => $Patient->get("create_at"),
-                    "update_at" => $Patient->get("update_at")
+                    "id" => (int)$AuthUser->get("id"),
+                    "email" => $AuthUser->get("email"),
+                    "phone" => $AuthUser->get("phone"),
+                    "name" => $AuthUser->get("name"),
+                    "gender" => (int)$AuthUser->get("gender"),
+                    "birthday" => $AuthUser->get("birthday"),
+                    "address" => $AuthUser->get("address"),
+                    "avatar" => $AuthUser->get("avatar"),
+                    "create_at" => $AuthUser->get("create_at"),
+                    "update_at" => $AuthUser->get("update_at")
                 );
             } 
             catch (\Exception $ex)
@@ -252,7 +248,87 @@
          */
         private function changePassword()
         {
+            /**Step 1 */
+            $this->resp->result = 0;
+            $AuthUser = $this->getVariable("AuthUser");
 
+            if( !$AuthUser )
+            {
+                $this->resp->msg = "You does not log in !";
+                $this->jsonecho();
+            }
+
+
+
+            /**Step 2 - get required field */
+            $required_field = ["currentPassword", "newPassword", "confirmPassword"];
+            foreach($required_field as $field)
+            {
+                if( !Input::post($field) )
+                {
+                    $this->resp->msg = "Missing field: ".$field;
+                    $this->jsonecho();
+                }
+            }
+
+            $id = $AuthUser->get("id");
+            $currentPassword = Input::post("currentPassword");
+            $newPassword     = Input::post("newPassword");
+            $confirmPassword = Input::post("confirmPassword");
+
+            /**Step 3 - is the Patient active ? */
+            $Patient = Controller::model("Patient", $id);
+            if( !$Patient->isAvailable() )
+            {
+                $this->resp->msg = "This account is not available !";
+                $this->jsonecho();
+            }
+
+
+            /**Step 4 - validation */
+            $hash = $Patient->get("password");
+            if(  !password_verify( $currentPassword, $hash ) )
+            {
+                $this->resp->msg = "Your current password is incorrect. Try again !";
+                $this->jsonecho();
+            }
+            if (mb_strlen($newPassword) < 6) 
+            {
+                $this->resp->msg = __("Password must be at least 6 character length!");
+                $this->jsonecho();
+            } 
+            if ($newPassword != $confirmPassword) 
+            {
+                $this->resp->msg = __("Password confirmation does not equal to new password !");
+                $this->jsonecho();
+            }
+
+            /**Step 5 - save */
+            try 
+            {
+                $Patient->set("password", password_hash($newPassword, PASSWORD_DEFAULT))
+                    ->save();
+
+                $this->resp->result = 1;
+                $this->resp->msg = "New password has been updated successfully. Don't forget to login again !";
+                $this->resp->data = array(
+                    "id" => (int)$AuthUser->get("id"),
+                    "email" => $AuthUser->get("email"),
+                    "phone" => $AuthUser->get("phone"),
+                    "name" => $AuthUser->get("name"),
+                    "gender" => (int)$AuthUser->get("gender"),
+                    "birthday" => $AuthUser->get("birthday"),
+                    "address" => $AuthUser->get("address"),
+                    "avatar" => $AuthUser->get("avatar"),
+                    "create_at" => $AuthUser->get("create_at"),
+                    "update_at" => $AuthUser->get("update_at")
+                );
+            } 
+            catch (\Exception $ex) 
+            {
+                $this->resp->msg = $ex->getMessage();
+            }
+            $this->jsonecho();
         }
 
 
