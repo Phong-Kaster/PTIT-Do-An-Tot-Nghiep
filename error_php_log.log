@@ -39,3 +39,195 @@ Stack trace:
 [14-Oct-2022 15:40:54 UTC] PHP Notice:  Undefined variable: currentYear in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientController.php on line 207
 [14-Oct-2022 15:40:54 UTC] PHP Notice:  Undefined variable: difference in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientController.php on line 210
 [14-Oct-2022 15:42:29 UTC] PHP Notice:  Undefined variable: difference in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientController.php on line 214
+[15-Oct-2022 03:12:28 UTC] PHP Parse error:  syntax error, unexpected '$this' (T_VARIABLE) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientsController.php on line 39
+[15-Oct-2022 03:28:56 UTC] PHP Parse error:  syntax error, unexpected '=', expecting ')' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\models\PatientModel.php on line 75
+[15-Oct-2022 03:29:06 UTC] PHP Parse error:  syntax error, unexpected '=', expecting ')' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\models\PatientModel.php on line 75
+[15-Oct-2022 03:39:34 UTC] PHP Notice:  Undefined variable: element in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientController.php on line 285
+[15-Oct-2022 03:39:34 UTC] PHP Notice:  Trying to get property 'id' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientController.php on line 285
+[15-Oct-2022 03:39:34 UTC] PHP Notice:  Undefined variable: element in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientController.php on line 286
+[15-Oct-2022 03:39:34 UTC] PHP Notice:  Trying to get property 'email' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientController.php on line 286
+[15-Oct-2022 03:39:34 UTC] PHP Notice:  Undefined variable: element in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientController.php on line 287
+[15-Oct-2022 03:39:34 UTC] PHP Notice:  Trying to get property 'phone' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientController.php on line 287
+[15-Oct-2022 03:39:34 UTC] PHP Notice:  Undefined variable: element in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientController.php on line 288
+[15-Oct-2022 03:39:34 UTC] PHP Notice:  Trying to get property 'name' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientController.php on line 288
+[15-Oct-2022 03:39:34 UTC] PHP Notice:  Undefined variable: element in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientController.php on line 289
+[15-Oct-2022 03:39:34 UTC] PHP Notice:  Trying to get property 'gender' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientController.php on line 289
+[15-Oct-2022 03:39:34 UTC] PHP Notice:  Undefined variable: element in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientController.php on line 290
+[15-Oct-2022 03:39:34 UTC] PHP Notice:  Trying to get property 'birthday' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientController.php on line 290
+[15-Oct-2022 03:39:34 UTC] PHP Notice:  Undefined variable: element in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientController.php on line 291
+[15-Oct-2022 03:39:34 UTC] PHP Notice:  Trying to get property 'address' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientController.php on line 291
+[15-Oct-2022 03:39:34 UTC] PHP Notice:  Undefined variable: element in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientController.php on line 292
+[15-Oct-2022 03:39:34 UTC] PHP Notice:  Trying to get property 'avatar' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientController.php on line 292
+[15-Oct-2022 03:39:34 UTC] PHP Notice:  Undefined variable: element in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientController.php on line 293
+[15-Oct-2022 03:39:34 UTC] PHP Notice:  Trying to get property 'create_at' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientController.php on line 293
+[15-Oct-2022 03:39:34 UTC] PHP Notice:  Undefined variable: element in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientController.php on line 294
+[15-Oct-2022 03:39:34 UTC] PHP Notice:  Trying to get property 'update_at' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientController.php on line 294
+[15-Oct-2022 03:39:50 UTC] PHP Notice:  Undefined property: PatientModel::$id in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientController.php on line 285
+[15-Oct-2022 03:39:50 UTC] PHP Notice:  Undefined property: PatientModel::$email in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientController.php on line 286
+[15-Oct-2022 03:39:50 UTC] PHP Notice:  Undefined property: PatientModel::$phone in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientController.php on line 287
+[15-Oct-2022 03:39:50 UTC] PHP Notice:  Undefined property: PatientModel::$name in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientController.php on line 288
+[15-Oct-2022 03:39:50 UTC] PHP Notice:  Undefined property: PatientModel::$gender in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientController.php on line 289
+[15-Oct-2022 03:39:50 UTC] PHP Notice:  Undefined property: PatientModel::$birthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientController.php on line 290
+[15-Oct-2022 03:39:50 UTC] PHP Notice:  Undefined property: PatientModel::$address in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientController.php on line 291
+[15-Oct-2022 03:39:50 UTC] PHP Notice:  Undefined property: PatientModel::$avatar in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientController.php on line 292
+[15-Oct-2022 03:39:50 UTC] PHP Notice:  Undefined property: PatientModel::$create_at in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientController.php on line 293
+[15-Oct-2022 03:39:50 UTC] PHP Notice:  Undefined property: PatientModel::$update_at in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientController.php on line 294
+[15-Oct-2022 03:49:28 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientProfileController.php:14
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(582): PatientProfileController->process()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#2 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientProfileController.php on line 14
+[15-Oct-2022 03:50:39 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientProfileController.php:14
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(582): PatientProfileController->process()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#2 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientProfileController.php on line 14
+[15-Oct-2022 03:51:09 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientProfileController.php:14
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(582): PatientProfileController->process()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#2 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientProfileController.php on line 14
+[15-Oct-2022 03:53:40 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientProfileController.php:14
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(582): PatientProfileController->process()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#2 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientProfileController.php on line 14
+[15-Oct-2022 03:56:39 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientProfileController.php:14
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(587): PatientProfileController->process()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#2 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientProfileController.php on line 14
+[15-Oct-2022 03:56:57 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientProfileController.php:14
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(588): PatientProfileController->process()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#2 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientProfileController.php on line 14
+[15-Oct-2022 03:58:11 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientProfileController.php:14
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(588): PatientProfileController->process()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#2 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientProfileController.php on line 14
+[15-Oct-2022 03:59:12 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientProfileController.php:14
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(592): PatientProfileController->process()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#2 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientProfileController.php on line 14
+[15-Oct-2022 03:59:40 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientProfileController.php:14
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(592): PatientProfileController->process()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#2 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientProfileController.php on line 14
+[15-Oct-2022 03:59:59 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientProfileController.php:14
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(592): PatientProfileController->process()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#2 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientProfileController.php on line 14
+[15-Oct-2022 04:00:15 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientProfileController.php:14
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(592): PatientProfileController->process()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#2 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientProfileController.php on line 14
+[15-Oct-2022 04:01:44 UTC] PHP Notice:  Undefined offset: 0 in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\LoginController.php on line 188
+[15-Oct-2022 04:01:44 UTC] PHP Notice:  Trying to get property 'gender' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\LoginController.php on line 188
+[15-Oct-2022 04:02:37 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientProfileController.php:14
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(592): PatientProfileController->process()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#2 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientProfileController.php on line 14
+[15-Oct-2022 04:03:06 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientProfileController.php:14
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(592): PatientProfileController->process()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#2 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientProfileController.php on line 14
+[15-Oct-2022 04:03:34 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientProfileController.php:14
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(593): PatientProfileController->process()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#2 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientProfileController.php on line 14
+[15-Oct-2022 04:03:47 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientProfileController.php:14
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(593): PatientProfileController->process()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#2 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientProfileController.php on line 14
+[15-Oct-2022 04:03:54 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientProfileController.php:14
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(594): PatientProfileController->process()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#2 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientProfileController.php on line 14
+[15-Oct-2022 04:11:19 UTC] PHP Notice:  Undefined variable: AuthenticatedUser in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php on line 245
+[15-Oct-2022 04:11:19 UTC] PHP Fatal error:  Uncaught Error: Call to a member function isAvailable() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php:245
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(585): App->auth()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#2 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php on line 245
+[15-Oct-2022 04:22:15 UTC] PHP Parse error:  syntax error, unexpected 'print_r' (T_STRING) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php on line 222
+[15-Oct-2022 04:34:24 UTC] PHP Parse error:  syntax error, unexpected '$AuthenticatedUser' (T_VARIABLE) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php on line 256
+[15-Oct-2022 04:35:26 UTC] PHP Fatal error:  Uncaught Error: Call to a member function isAvailable() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php:262
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(580): App->auth()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#2 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php on line 262
+[15-Oct-2022 04:35:52 UTC] PHP Fatal error:  Uncaught Error: Call to a member function isAvailable() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php:263
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(581): App->auth()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#2 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php on line 263
+[15-Oct-2022 04:36:25 UTC] PHP Fatal error:  Uncaught Error: Call to a member function isAvailable() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php:265
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(583): App->auth()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#2 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php on line 265
+[15-Oct-2022 04:37:15 UTC] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php on line 244
+[15-Oct-2022 04:37:22 UTC] PHP Notice:  Undefined variable: type in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php on line 243
+[15-Oct-2022 04:37:22 UTC] PHP Fatal error:  Uncaught Error: Call to a member function isAvailable() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php:265
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(583): App->auth()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#2 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php on line 265
+[15-Oct-2022 04:37:31 UTC] PHP Fatal error:  Uncaught Error: Call to a member function isAvailable() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php:265
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(583): App->auth()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#2 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php on line 265
+[15-Oct-2022 09:46:16 UTC] PHP Fatal error:  Uncaught Error: Call to a member function isAvailable() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php:266
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(584): App->auth()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#2 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php on line 266
+[15-Oct-2022 09:47:01 UTC] PHP Fatal error:  Uncaught Error: Call to a member function isAvailable() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php:266
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(584): App->auth()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#2 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php on line 266
+[15-Oct-2022 09:48:18 UTC] PHP Notice:  Undefined index: type in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php on line 229
+[15-Oct-2022 09:48:18 UTC] PHP Notice:  Undefined index: type in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php on line 229
+[15-Oct-2022 09:49:19 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method PatientProfileController::getInformation() in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientProfileController.php:33
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(610): PatientProfileController->process()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#2 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientProfileController.php on line 33

@@ -208,7 +208,13 @@ class App
     //     return $AuthUser;
     // }
 
-         /**
+    /**
+     * @author Phong-Kaster
+     * @since 15-10-2022
+     * 
+     * If keyword = Patient then it is a PATIENT are trying to logging
+     * If keyword = null then it is a DOCTOR are trying to logging
+     * 
      * Check and get authorized user data
      * Define $AuthUser variable
      */
@@ -218,19 +224,30 @@ class App
         $headers = apache_request_headers();
         $Authorization = null;
 
-        
-
-        if(isset($headers['authorization'])){
-            $Authorization = $headers['authorization'];
+        /**Step 2 - what is type of logging request */
+        $keyword = "Doctor";//default
+        if(isset($headers['type']))
+        {
+            $keyword = $headers['type'] ? $headers['type'] : "Doctor";
+        }
+        if(isset($headers['Type']))
+        {
+            $keyword = $headers['Type']  ? $headers['Type'] : "Doctor";
         }
 
-
-        if(isset($headers['Authorization'])){
+        /**Step 3 - Is authorization passed with HTTP request ? */
+        if(isset($headers['authorization']))
+        {
+            $Authorization = $headers['authorization'];
+        }
+        if(isset($headers['Authorization']))
+        {
             $Authorization = $headers['Authorization'];
         }
 
-
-        if(isset($Authorization)){
+        /**Step 4 - verify token */
+        if(isset($Authorization) && isset($keyword))
+        {
             $matches = array();
             preg_match('/JWT (.*)/', $Authorization, $matches);
     
@@ -240,11 +257,18 @@ class App
                 try {
                     // $decoded = Firebase\JWT\JWT::decode($accessToken, EC_SALT, array('HS256'));
                     $decoded = Firebase\JWT\JWT::decode($accessToken, new Firebase\JWT\Key(EC_SALT, 'HS256'));
-                    $Doctor = Controller::Model("Doctor", $decoded->id);
+                    $AuthenticatedUser = Controller::Model($keyword, $decoded->id);
 
-                    if (isset($decoded->hashPass) && $Doctor->isAvailable() 
-                    && $Doctor->get("active") == 1 && md5($Doctor->get("password")) == $decoded->hashPass){
-                        $AuthUser = $Doctor;
+
+                    if( $keyword == "Doctor" && $AuthenticatedUser->get("active") != 1 )
+                    {
+                        return null;
+                    }    
+
+                    if (isset($decoded->hashPass) && 
+                        $AuthenticatedUser->isAvailable() && 
+                        md5($AuthenticatedUser->get("password")) == $decoded->hashPass){
+                        $AuthUser = $AuthenticatedUser;
                     }
                 } catch (\Exception $th) {
                     return $AuthUser;
@@ -254,10 +278,18 @@ class App
         if (Input::cookie("accessToken")) {
             try {
                 $decoded = Firebase\JWT\JWT::decode(Input::cookie("accessToken"), EC_SALT, array('HS256'));
-                $Doctor = Controller::Model("Doctor", $decoded->id);
+                $AuthenticatedUser = Controller::Model($keyword, $decoded->id);
 
-                if (isset($decoded->hashPass) && $Doctor->isAvailable() && $Doctor->get("active") == 1 && md5($Doctor->get("password")) == $decoded->hashPass){
-                    $AuthUser = $Doctor;
+
+                if( $keyword == "Doctor" && $AuthenticatedUser->get("active") != 1 )
+                {
+                    return null;
+                }    
+
+                if (isset($decoded->hashPass) && 
+                    $AuthenticatedUser->isAvailable() && 
+                    md5($AuthenticatedUser->get("password")) == $decoded->hashPass){
+                    $AuthUser = $AuthenticatedUser;
                 }
             } catch (\Exception $th) {
                 return $AuthUser;

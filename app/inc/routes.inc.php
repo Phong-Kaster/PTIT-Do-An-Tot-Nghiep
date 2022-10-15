@@ -78,4 +78,4 @@ App::addRoute("GET|PUT|DELETE", "/api/patients/[i:id]", "Patient");
 
 /************************** PATIENT PROFILE ******************************/
 // this controller is used by patient to update personal information.
-App::addRoute("GET|POST", "/api/patient/profile", "DoctorProfile");
+App::addRoute("GET|POST", "/api/patient/profile", "PatientProfile");

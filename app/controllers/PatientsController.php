@@ -35,7 +35,7 @@
                 * $this->save();
                 */
                 $this->resp->result = 0;
-                $this->resp->msg = "We can't create patient information because they create account by PHONE NUMBER or GOOGLE."
+                $this->resp->msg = "We can't create patient information because they create account by PHONE NUMBER or GOOGLE.";
                 $this->jsonecho();
             }
         }
@@ -122,6 +122,7 @@
                         "email" => $element->email,
                         "phone" => $element->phone,
                         "name" => $element->name,
+                        "gender" => (int)$element->gender,
                         "birthday" => $element->birthday,
                         "address" => $element->address,
                         "avatar" => $element->avatar,

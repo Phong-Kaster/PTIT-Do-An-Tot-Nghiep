@@ -89,6 +89,7 @@
                     "email" => $result[0]->email,
                     "phone" => $result[0]->phone,
                     "name" => $result[0]->name,
+                    "gender" => (int)$result[0]->gender,
                     "birthday" => $result[0]->birthday,
                     "address" => $result[0]->address,
                     "avatar" => $result[0]->avatar,
@@ -150,7 +151,7 @@
 
 
             /**Step 3 - required fields */
-            $required_fields = ["name", "phone", "birthday"];
+            $required_fields = ["name", "phone", "birthday","gender"];
             foreach( $required_fields as $field )
             {
                 if( !Input::put($field))
@@ -168,7 +169,7 @@
             //$avatar = Input::put("avatar");
             //$create_at = date("Y-m-d H:i:s");
             $update_at = date("Y-m-d H:i:s");
-
+            $gender = Input::put("gender");
 
             /**Step 4 - validation*/
             /**Step 3.1 - name validation */
@@ -259,6 +260,15 @@
                 $this->jsonecho();
             }
 
+            /**Step 3.5 - gender validation*/
+            $valid_gender = [0,1];
+            $gender_validation = in_array($gender, $valid_gender);
+            if( !$gender_validation )
+            {
+                $this->resp->msg = "Gender value is not correct. There are 2 values: 0 is female & 1 is man";
+                $this->jsonecho();
+            }
+
             /**Step 4 - save */
             try 
             {
@@ -271,6 +281,18 @@
                     
                 $this->resp->result = 1;
                 $this->resp->msg = "Patient personal information has been updated successfully !";
+                $this->resp->data = array(
+                    "id" => (int)$Patient->get("id"),
+                    "email" => $Patient->get("email"),
+                    "phone" => $Patient->get("phone"),
+                    "name" => $Patient->get("name"),
+                    "gender" => (int)$Patient->get("gender"),
+                    "birthday" => $Patient->get("birthday"),
+                    "address" => $Patient->get("address"),
+                    "avatar" => $Patient->get("avatar"),
+                    "create_at" => $Patient->get("create_at"),
+                    "update_at" => $Patient->get("update_at")
+                );
             } 
             catch (\Exception $ex)
             {
@@ -289,6 +311,9 @@
         private function delete()
         {
             // chắc không xóa thông tin bệnh nhân => sau này bán thông tin bệnh nhân kiếm tiền
+            $this->resp->result = 0;
+            $this->resp->msg = "This action is not allowed !";
+            $this->jsonecho();
         }
     }
 ?>

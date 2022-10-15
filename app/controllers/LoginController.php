@@ -172,6 +172,7 @@ class LoginController extends Controller
                 ->set("password", password_hash($password, PASSWORD_DEFAULT) )
                 ->set("name", $phone)
                 ->set("birthday", "")
+                ->set("gender", 0)
                 ->set("address", "")
                 ->set("avatar", "")
                 ->set("create_at", date("Y-m-d H:i:s"))
@@ -184,6 +185,7 @@ class LoginController extends Controller
                 "email" => $Patient->get("email"),
                 "phone" => $Patient->get("phone"),
                 "name" => $Patient->get("name"),
+                "gender" => (int)$Patient->get("gender"),
                 "birthday" => $Patient->get("birthday"),
                 "address" => $Patient->get("address"),
                 "avatar" => $Patient->get("avatar"),
@@ -202,6 +204,7 @@ class LoginController extends Controller
                 "email" => $result[0]->email,
                 "phone" => $result[0]->phone,
                 "name" => $result[0]->name,
+                "gender" => (int)$result[0]->gender,
                 "birthday" => $result[0]->birthday,
                 "address" => $result[0]->address,
                 "avatar" => $result[0]->avatar,

@@ -246,6 +246,18 @@ Update - cập nhật thông tin của 1 bệnh nhân
 
 Delete - không làm vì có thể đem thông tin bệnh nhân đi bán kiếm tiền 🤑🤑🤑. Kiếm tiền là dễ
 
+- **15-10-2022**:
+
+1. Sửa lại chỗ tạo JWT token để phân biệt yêu cầu đăng nhập giữa BÁC SĨ và BỆNH NHÂN.
+
+2. Bệnh nhân quản lý thông tin cá nhân 
+
+getInformation - đọc thông tin tài khoản 
+
+change Avatar - thay đổi ảnh đại diện
+
+
+
 # [**Controller Timeline**](#controller-timeline)
 
 Phần này mình lưu lại trình tự mình viết đồ án này. Nếu các bạn có nhu cầu tham khảo cách xử lý của mình. Các bạn có thể đọc code theo trình tự 
@@ -278,6 +290,8 @@ Phần này mình lưu lại trình tự mình viết đồ án này. Nếu các
 13. Patients Controller
 
 14. Patient Controller
+
+15. Patient Profile Controller
 
 # [**Special Thanks**](#special-thanks)
 
