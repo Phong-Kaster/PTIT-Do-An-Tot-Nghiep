@@ -1,37 +1,40 @@
 <?php
-/**
- * SpecialitiesController
- */
-class SpecialitiesController extends Controller
-{
     /**
-     * Process
+     * @author Phong-Kaster
+     * @since 17-10-2022
+     * Supported can use getAll()
+     * Admin can use all functions
      */
-    public function process()
+    class ServicesController extends Controller
     {
-        $AuthUser = $this->getVariable("AuthUser");
-        $Route = $this->getVariable("Route");
-
-        if (!$AuthUser){
-            // Auth
-            header("Location: ".APPURL."/login");
-            exit;
-        }
-        $request_method = Input::method();
-        if($request_method === 'GET')
+        /**
+         * Process
+         */
+        public function process()
         {
-            $this->getAll();
+            $AuthUser = $this->getVariable("AuthUser");
+            $Route = $this->getVariable("Route");
+    
+            if (!$AuthUser){
+                // Auth
+                header("Location: ".APPURL."/login");
+                exit;
+            }
+            $request_method = Input::method();
+            if($request_method === 'GET')
+            {
+                $this->getAll();
+            }
+            else if( $request_method === 'POST')
+            {
+                $this->save();
+            }
         }
-        else if( $request_method === 'POST')
-        {
-            $this->save();
-        }
-    }
 
     /**
      * @author Phong-Kaster
-     * @since 10-10-2022
-     * get all specialities
+     * @since 17-10-2022
+     * get all services
      */
     private function getAll()
     {
@@ -41,9 +44,11 @@ class SpecialitiesController extends Controller
         $data = [];
         
 
-        if( !$AuthUser || $AuthUser->get("role") != "admin" )
+        $valid_roles = ["admin", "supporter"];
+        $role_validation = in_array($AuthUser->get("role"), $valid_roles);
+        if( !$role_validation )
         {
-            $this->resp->msg = "You are not admin & you can't do this action !";
+            $this->resp->msg = "You are not admin or supporter & you can't do this action !";
             $this->jsonecho();
         }
 
@@ -57,7 +62,7 @@ class SpecialitiesController extends Controller
         try
         {
             /**Step 3 - query */
-            $query = DB::table(TABLE_PREFIX.TABLE_SPECIALITIES)
+            $query = DB::table(TABLE_PREFIX.TABLE_SERVICES)
                     ->select("*");
 
             /**Step 3.1 - search filter*/
@@ -65,8 +70,7 @@ class SpecialitiesController extends Controller
             if($search_query){
                 $query->where(function($q) use($search_query)
                 {
-                    $q->where(TABLE_PREFIX.TABLE_SPECIALITIES.".name", 'LIKE', $search_query.'%')
-                    ->orWhere(TABLE_PREFIX.TABLE_SPECIALITIES.".description", 'LIKE', $search_query.'%');
+                    $q->where(TABLE_PREFIX.TABLE_SERVICES.".name", 'LIKE', $search_query.'%');
                 }); 
             }
             
@@ -82,7 +86,7 @@ class SpecialitiesController extends Controller
                 $column_name = str_replace(".", "_", $column_name);
 
 
-                if(in_array($column_name, ["name", "description"])){
+                if(in_array($column_name, ["name"])){
                     $query->orderBy(DB::raw($column_name. " * 1"), $sort);
                 }else{
                     $query->orderBy($column_name, $sort);
@@ -105,8 +109,7 @@ class SpecialitiesController extends Controller
             {
                 $data[] = array(
                     "id" => (int)$element->id,
-                    "name" => $element->name,
-                    "description" => $element->description
+                    "name" => $element->name
                 );
             }
 
@@ -123,10 +126,10 @@ class SpecialitiesController extends Controller
         $this->jsonecho();
     }
 
-
     /**
      * @author Phong-Kaster
      * @since 10-10-2022
+     * only admin can use
      * create new specialities & there is no duplication with the same name
      */
     private function save()
@@ -145,7 +148,7 @@ class SpecialitiesController extends Controller
 
 
         /**Step 2 - get required */
-        $required_fields = ["name", "description"];
+        $required_fields = ["name"];
         foreach( $required_fields as $field)
         {
             if( !Input::post($field) )
@@ -155,36 +158,35 @@ class SpecialitiesController extends Controller
             }
         }
         $name = Input::post("name");
-        $description = Input::post("description");
+
 
 
         /**Step 3 - check duplicate */
-        $query = DB::table(TABLE_PREFIX.TABLE_SPECIALITIES)
-                ->where(TABLE_PREFIX.TABLE_SPECIALITIES.".name", "=", $name);
+        $query = DB::table(TABLE_PREFIX.TABLE_SERVICES)
+                ->where(TABLE_PREFIX.TABLE_SERVICES.".name", "=", $name);
 
         $result = $query->get();
         if( count($result) > 0 )
         {
-            $this->resp->msg = "This speciality exists ! Try another name";
+            $this->resp->msg = "This Service exists ! Try another name";
             $this->jsonecho();
         }
 
 
         /**Step 4 - create*/
-        $Speciality = Controller::model("Speciality");
-        $Speciality->set("name", $name)
-                    ->set("description", $description)
+        $Service = Controller::model("Service");
+        $Service->set("name", $name)
                     ->save();
         
 
         /**Step 5 */
         $this->resp->result = 1;
-        $this->resp->msg = "Speciality is created successfully !";
+        $this->resp->msg = "Service is created successfully !";
         $this->resp->data = array(
-            "id" => (int)$Speciality->get("id"),
-            "name" => $Speciality->get("name"),
-            "description" => $Speciality->get("description")
+            "id" => (int)$Service->get("id"),
+            "name" => $Service->get("name")
         );
         $this->jsonecho();
     }
 }
+?>

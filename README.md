@@ -48,7 +48,7 @@ sẽ hỗ trợ phần nào cho các bạn khi bước tới ngưỡng cửa qua
 # [**Database**](#database)
 
 <p align="center">
-    <img src="./photo/database-new.png" />
+    <img src="./photo/database-version-2.png" />
 </p>
 <h3 align="center">
 
@@ -277,6 +277,18 @@ Sau đó thì thay đổi suy nghĩ để chuyển qua làm học thay thế t�
 
 2. Các chức năng cập nhật thông tin cá nhân, mật khẩu và ảnh đại diện dành cho bệnh nhân - Patient Profile Controller
 
+- **16-10-2022**: Chủ nhật rồi, gác lại âu lo thôi 🎉
+
+- **17-10-2022**:
+
+1. Viết báo cáo phân tích đề tài và mô tả các use-case 
+
+2. Thiết kế và mở rộng database 
+
+3. Mô hiệu hóa bảng Clinic( phòng khám ) vì đây là ứng dụng dành cho một phòng khám độc lập.
+
+4. Tạo mới Service Model và Controller tương ứng.
+
 # [**Controller Timeline**](#controller-timeline)
 
 Phần này mình lưu lại trình tự mình viết đồ án này. Nếu các bạn có nhu cầu tham khảo cách xử lý của mình. Các bạn có thể đọc code theo trình tự 
@@ -312,6 +324,10 @@ Phần này mình lưu lại trình tự mình viết đồ án này. Nếu các
 
 15. Patient Profile Controller
 
+16. Service Controller 
+    
+17. Servives Controller 
+    
 # [**Special Thanks**](#special-thanks)
 
 <table>

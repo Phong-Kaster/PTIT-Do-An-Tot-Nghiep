@@ -18,8 +18,14 @@ define("TABLE_PREFIX", "tn_");
 define("TABLE_SPECIALITIES", "specialities");
 define("TABLE_DOCTORS", "doctors");
 // define("TABLE_CLINICS", "clinic");
+
 define("TABLE_BOOKINGS", "booking");
 define("TABLE_APPOINTMENTS", "appointments");
 define("TABLE_PATIENTS", "patients");
+
 define("TABLE_TREATMENTS", "treatments");
 define("TABLE_APPOINTMENT_RECORDS", "appointment_records");
+define("TABLE_SERVICES", "services");
+
+define("TABLE_DOCTOR_AND_SERVICE", "doctor_and_service");
+define("TABLE_NOTIFICATIONS", "notifications");
