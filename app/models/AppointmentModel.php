@@ -7,7 +7,7 @@
 	 * 
 	 */
 	
-	class AppointmentOrdersModel extends DataEntry
+	class AppointmentsModel extends DataEntry
 	{	
 		/**
 		 * Extend parents constructor and select entry
@@ -32,7 +32,7 @@
 
 
 	    	if ($col) {
-		    	$query = DB::table(TABLE_PREFIX.TABLE_APPOINTMENT_ORDERS)
+		    	$query = DB::table(TABLE_PREFIX.TABLE_APPOINTMENTS)
 			    	      ->where($col, "=", $uniqid)
 			    	      ->limit(1)
 			    	      ->select("*");
@@ -92,7 +92,7 @@
 
 	    	$this->extendDefaults();
 
-	    	$id = DB::table(TABLE_PREFIX.TABLE_APPOINTMENT_ORDERS)
+	    	$id = DB::table(TABLE_PREFIX.TABLE_APPOINTMENTS)
 		    	->insert(array(
 		    		"id" => null,
                     "doctor_id" => $this->get("doctor_id"),
@@ -124,7 +124,7 @@
 
 	    	$this->extendDefaults();
 
-	    	$id = DB::table(TABLE_PREFIX.TABLE_APPOINTMENT_ORDERS)
+	    	$id = DB::table(TABLE_PREFIX.TABLE_APPOINTMENTS)
 	    		->where("id", "=", $this->get("id"))
 		    	->update(array(
                     "doctor_id" => $this->get("doctor_id"),
@@ -152,7 +152,7 @@
 	    	if(!$this->isAvailable())
 	    		return false;
 
-	    	DB::table(TABLE_PREFIX.TABLE_APPOINTMENT_ORDERS)
+	    	DB::table(TABLE_PREFIX.TABLE_APPOINTMENTS)
             ->where("id", "=", $this->get("id"))->delete();
 	    	$this->is_available = false;
 	    	return true;

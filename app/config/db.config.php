@@ -17,9 +17,9 @@ define("TABLE_PREFIX", "tn_");
 // Set table names without prefix
 define("TABLE_SPECIALITIES", "specialities");
 define("TABLE_DOCTORS", "doctors");
-define("TABLE_CLINICS", "clinic");
+// define("TABLE_CLINICS", "clinic");
 define("TABLE_BOOKINGS", "booking");
-define("TABLE_APPOINTMENT_ORDERS", "appointment_orders");
+define("TABLE_APPOINTMENTS", "appointments");
 define("TABLE_PATIENTS", "patients");
 define("TABLE_TREATMENTS", "treatments");
-define("TABLE_MEDICAL_RECORDS", "medical_records");
+define("TABLE_APPOINTMENT_RECORDS", "appointment_records");

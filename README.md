@@ -48,7 +48,7 @@ sẽ hỗ trợ phần nào cho các bạn khi bước tới ngưỡng cửa qua
 # [**Database**](#database)
 
 <p align="center">
-    <img src="./photo/database.png" />
+    <img src="./photo/database-new.png" />
 </p>
 <h3 align="center">
 
@@ -200,7 +200,7 @@ Dưới đây là cơ sở dữ liệu mà mình phát triển lên từ Đồ �
 Sau đó thì thay đổi suy nghĩ để chuyển qua làm học thay thế tốt nghiệp.
 
 <p align="center">
-    <img src="./database/eshop-diagram.png" />
+    <img src="./document/eshop-diagram.png" />
 </p>
 <h3 align="center">
 
@@ -275,7 +275,7 @@ Sau đó thì thay đổi suy nghĩ để chuyển qua làm học thay thế t�
 
 1. Sửa lại chỗ tạo JWT token để phân biệt yêu cầu đăng nhập giữa BÁC SĨ và BỆNH NHÂN.
 
-2. Các chức năng cập nhật thông tin cá nhân, mật khẩu và ảnh đại diện dành cho bệnh nhân - Doctor Profile Controller
+2. Các chức năng cập nhật thông tin cá nhân, mật khẩu và ảnh đại diện dành cho bệnh nhân - Patient Profile Controller
 
 # [**Controller Timeline**](#controller-timeline)
 

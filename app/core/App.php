@@ -244,21 +244,19 @@ class App
         {
             $Authorization = $headers['Authorization'];
         }
-
         /**Step 4 - verify token */
-        if(isset($Authorization) && isset($keyword))
+        if(isset($Authorization))
         {
             $matches = array();
             preg_match('/JWT (.*)/', $Authorization, $matches);
     
             if(isset($matches[1])){
                 $accessToken = $matches[1];
-                
+               
                 try {
                     // $decoded = Firebase\JWT\JWT::decode($accessToken, EC_SALT, array('HS256'));
                     $decoded = Firebase\JWT\JWT::decode($accessToken, new Firebase\JWT\Key(EC_SALT, 'HS256'));
                     $AuthenticatedUser = Controller::Model($keyword, $decoded->id);
-
 
                     if( $keyword == "Doctor" && $AuthenticatedUser->get("active") != 1 )
                     {
@@ -603,7 +601,6 @@ class App
         $this->route();
         $this->controller->setVariable("IpInfo", $IpInfo);
         $this->controller->setVariable("AuthUser", $AuthUser);
-
 
         /**
          * Init. locales

@@ -250,3 +250,47 @@ Stack trace:
   thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientProfileController.php on line 228
 [15-Oct-2022 13:48:28 UTC] PHP Notice:  Undefined variable: phone in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientProfileController.php on line 218
 [15-Oct-2022 13:54:57 UTC] PHP Parse error:  syntax error, unexpected '(' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientProfileController.php on line 118
+[17-Oct-2022 12:46:40 UTC] PHP Notice:  Undefined property: stdClass::$clinic_name in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorsController.php on line 129
+[17-Oct-2022 12:46:40 UTC] PHP Notice:  Undefined property: stdClass::$clinic_name in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorsController.php on line 129
+[17-Oct-2022 12:46:40 UTC] PHP Notice:  Undefined property: stdClass::$clinic_name in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorsController.php on line 129
+[17-Oct-2022 12:46:40 UTC] PHP Notice:  Undefined property: stdClass::$clinic_name in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorsController.php on line 129
+[17-Oct-2022 12:46:40 UTC] PHP Notice:  Undefined property: stdClass::$clinic_name in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorsController.php on line 129
+[17-Oct-2022 12:46:40 UTC] PHP Notice:  Undefined property: stdClass::$clinic_name in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorsController.php on line 129
+[17-Oct-2022 12:47:07 UTC] PHP Notice:  Undefined property: stdClass::$clinic_name in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorsController.php on line 126
+[17-Oct-2022 12:47:07 UTC] PHP Notice:  Undefined property: stdClass::$clinic_name in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorsController.php on line 126
+[17-Oct-2022 12:47:07 UTC] PHP Notice:  Undefined property: stdClass::$clinic_name in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorsController.php on line 126
+[17-Oct-2022 12:47:07 UTC] PHP Notice:  Undefined property: stdClass::$clinic_name in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorsController.php on line 126
+[17-Oct-2022 12:47:07 UTC] PHP Notice:  Undefined property: stdClass::$clinic_name in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorsController.php on line 126
+[17-Oct-2022 12:47:07 UTC] PHP Notice:  Undefined property: stdClass::$clinic_name in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorsController.php on line 126
+[17-Oct-2022 14:03:06 UTC] PHP Warning:  Use of undefined constant TABLE_CLINICS - assumed 'TABLE_CLINICS' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorsController.php on line 63
+[17-Oct-2022 14:03:06 UTC] PHP Warning:  Use of undefined constant TABLE_CLINICS - assumed 'TABLE_CLINICS' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorsController.php on line 64
+[17-Oct-2022 14:08:12 UTC] PHP Warning:  Use of undefined constant TABLE_CLINICS - assumed 'TABLE_CLINICS' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorController.php on line 79
+[17-Oct-2022 14:08:12 UTC] PHP Warning:  Use of undefined constant TABLE_CLINICS - assumed 'TABLE_CLINICS' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorController.php on line 80
+[17-Oct-2022 14:08:12 UTC] PHP Warning:  Use of undefined constant TABLE_CLINICS - assumed 'TABLE_CLINICS' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorController.php on line 86
+[17-Oct-2022 14:08:12 UTC] PHP Warning:  Use of undefined constant TABLE_CLINICS - assumed 'TABLE_CLINICS' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorController.php on line 87
+[17-Oct-2022 14:08:12 UTC] PHP Warning:  Use of undefined constant TABLE_CLINICS - assumed 'TABLE_CLINICS' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorController.php on line 88
+[17-Oct-2022 14:09:10 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'tn_booking.doctor_id' in 'where clause' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php:152
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php(152): PDOStatement->execute()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php(173): Pixie\QueryBuilder\QueryBuilderHandler->statement('SELECT * FROM `...', Array)
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorController.php(345): Pixie\QueryBuilder\QueryBuilderHandler->get()
+#3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorController.php(31): DoctorController->delete()
+#4 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(611): DoctorController->process()
+#5 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#6 {main}
+  thro in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php on line 152
+[17-Oct-2022 14:09:48 UTC] PHP Warning:  Use of undefined constant TABLE_APPOINTMENT_ORDERS - assumed 'TABLE_APPOINTMENT_ORDERS' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorController.php on line 349
+[17-Oct-2022 14:09:48 UTC] PHP Warning:  Use of undefined constant TABLE_APPOINTMENT_ORDERS - assumed 'TABLE_APPOINTMENT_ORDERS' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorController.php on line 350
+[17-Oct-2022 14:09:48 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'doantotnghiep.tn_table_appointment_orders' doesn't exist in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php:152
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php(152): PDOStatement->execute()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php(173): Pixie\QueryBuilder\QueryBuilderHandler->statement('SELECT * FROM `...', Array)
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorController.php(352): Pixie\QueryBuilder\QueryBuilderHandler->get()
+#3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorController.php(31): DoctorController->delete()
+#4 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(611): DoctorController->process()
+#5 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->proces in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php on line 152
+[17-Oct-2022 14:12:28 UTC] PHP Warning:  Use of undefined constant TABLE_CLINICS - assumed 'TABLE_CLINICS' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorProfileController.php on line 104
+[17-Oct-2022 14:12:28 UTC] PHP Warning:  Use of undefined constant TABLE_CLINICS - assumed 'TABLE_CLINICS' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorProfileController.php on line 105
+[17-Oct-2022 14:12:28 UTC] PHP Warning:  Use of undefined constant TABLE_CLINICS - assumed 'TABLE_CLINICS' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorProfileController.php on line 111
+[17-Oct-2022 14:12:28 UTC] PHP Warning:  Use of undefined constant TABLE_CLINICS - assumed 'TABLE_CLINICS' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorProfileController.php on line 112
+[17-Oct-2022 14:12:28 UTC] PHP Warning:  Use of undefined constant TABLE_CLINICS - assumed 'TABLE_CLINICS' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorProfileController.php on line 113

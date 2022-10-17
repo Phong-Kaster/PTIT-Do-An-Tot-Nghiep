@@ -60,16 +60,11 @@
                 $query = DB::table(TABLE_PREFIX.TABLE_DOCTORS)
                         ->leftJoin(TABLE_PREFIX.TABLE_SPECIALITIES, 
                                     TABLE_PREFIX.TABLE_SPECIALITIES.".id","=", TABLE_PREFIX.TABLE_DOCTORS.".speciality_id")
-                        ->leftJoin(TABLE_PREFIX.TABLE_CLINICS, 
-                                    TABLE_PREFIX.TABLE_CLINICS.".id","=", TABLE_PREFIX.TABLE_DOCTORS.".clinic_id")
                         ->select([
                             TABLE_PREFIX.TABLE_DOCTORS.".*",
                             DB::raw(TABLE_PREFIX.TABLE_SPECIALITIES.".id as speciality_id"),
                             DB::raw(TABLE_PREFIX.TABLE_SPECIALITIES.".name as speciality_name"),
                             DB::raw(TABLE_PREFIX.TABLE_SPECIALITIES.".description as speciality_description"),
-                            DB::raw(TABLE_PREFIX.TABLE_CLINICS.".id as clinic_id"),
-                            DB::raw(TABLE_PREFIX.TABLE_CLINICS.".name as clinic_name"),
-                            DB::raw(TABLE_PREFIX.TABLE_CLINICS.".address as clinic_address")
                         ]);
 
                 /**Step 3.1 - search filter*/
@@ -96,7 +91,7 @@
                     $column_name = str_replace(".", "_", $column_name);
 
 
-                    if(in_array($column_name, ["email", "name", "phone", "speciality_id", "clinic_id"])){
+                    if(in_array($column_name, ["email", "name", "phone", "speciality_id"])){
                         $query->orderBy(DB::raw($column_name. " * 1"), $sort);
                     }else{
                         $query->orderBy($column_name, $sort);
@@ -127,19 +122,12 @@
                         "role" => $element->role,
                         "avatar" => $element->avatar,
                         "active" => (int)$element->active,
-                        "speciality_name" => $element->speciality_name,
-                        "clinic_name" => $element->clinic_name,
                         "create_at" => $element->create_at,
                         "update_at" => $element->update_at,
                         "speciality" => array(
                             "id" => (int)$element->speciality_id,
                             "name" => $element->speciality_name,
                             "description" => $element->speciality_description
-                        ),
-                        "clinic"=> array(
-                            "id" => (int)$element->clinic_id,
-                            "name" => $element->clinic_name,
-                            "address" => $element->clinic_address
                         )
                     );
                 }
@@ -198,7 +186,7 @@
             $update_at = date("Y-m-d H:i:s");
 
             $speciality_id = Input::post("speciality_id") ? (int)Input::post("speciality_id") : 1;
-            $clinic_id = Input::post("clinic_id") ? (int)Input::post("clinic_id") : 1;
+            // $clinic_id = Input::post("clinic_id") ? (int)Input::post("clinic_id") : 1;
 
 
             /**Step 3 - validation */
@@ -261,11 +249,11 @@
             }
 
             /**Step 3.7 - role validation */
-            $valid_roles = ["admin", "member"];
+            $valid_roles = ["admin", "member", "supporter"];
             $role_validation = in_array($role, $valid_roles);
             if( !$role_validation )
             {
-                $this->resp->msg = "Role is not valid. There are 2 valid values: admin & member !";
+                $this->resp->msg = "Role is not valid. There are 2 valid values: admin, member & supporter !";
                 $this->jsonecho();
             }
 
@@ -278,12 +266,12 @@
             }
 
             /**Step 3.9 - clinic validation */
-            $Clinic = Controller::model("Clinic", $clinic_id);
-            if( !$Clinic->isAvailable() )
-            {
-                $this->resp->msg = "Clinic is not available.";
-                $this->jsonecho();
-            }
+            // $Clinic = Controller::model("Clinic", $clinic_id);
+            // if( !$Clinic->isAvailable() )
+            // {
+            //     $this->resp->msg = "Clinic is not available.";
+            //     $this->jsonecho();
+            // }
 
 
             /**Step 4 - save*/
@@ -302,7 +290,6 @@
                         ->set("create_at", $create_at)
                         ->set("update_at", $update_at)
                         ->set("speciality_id", $speciality_id)
-                        ->set("clinic_id", $clinic_id)
                         ->save();
 
                 $this->resp->result = 1;
@@ -318,8 +305,7 @@
                     "active" => (int)$Doctor->get("active"),
                     "create_at" => $Doctor->get("create_at"),
                     "update_at" => $Doctor->get("update_at"),
-                    "speciality_id" => $Doctor->get("speciality_id"),
-                    "clinic_id" => $Doctor->get("clinic_id")
+                    "speciality_id" => $Doctor->get("speciality_id")
                 );
 
                 $data = [

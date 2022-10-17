@@ -76,16 +76,11 @@
                         ->where(TABLE_PREFIX.TABLE_DOCTORS.".id", "=", $Route->params->id)
                         ->leftJoin(TABLE_PREFIX.TABLE_SPECIALITIES, 
                                     TABLE_PREFIX.TABLE_SPECIALITIES.".id","=", TABLE_PREFIX.TABLE_DOCTORS.".speciality_id")
-                        ->leftJoin(TABLE_PREFIX.TABLE_CLINICS, 
-                                    TABLE_PREFIX.TABLE_CLINICS.".id","=", TABLE_PREFIX.TABLE_DOCTORS.".clinic_id")
                         ->select([
                             TABLE_PREFIX.TABLE_DOCTORS.".*",
                             DB::raw(TABLE_PREFIX.TABLE_SPECIALITIES.".id as speciality_id"),
                             DB::raw(TABLE_PREFIX.TABLE_SPECIALITIES.".name as speciality_name"),
                             DB::raw(TABLE_PREFIX.TABLE_SPECIALITIES.".description as speciality_description"),
-                            DB::raw(TABLE_PREFIX.TABLE_CLINICS.".id as clinic_id"),
-                            DB::raw(TABLE_PREFIX.TABLE_CLINICS.".name as clinic_name"),
-                            DB::raw(TABLE_PREFIX.TABLE_CLINICS.".address as clinic_address")
                         ]);
 
                 $result = $query->get();
@@ -106,19 +101,12 @@
                     "role" => $result[0]->role,
                     "avatar" => $result[0]->avatar,
                     "active" => (int)$result[0]->active,
-                    "speciality_name" => $result[0]->speciality_name,
-                    "clinic_name" => $result[0]->clinic_name,
                     "create_at" => $result[0]->create_at,
                     "update_at" => $result[0]->update_at,
                     "speciality" => array(
                         "id" => (int)$result[0]->speciality_id,
                         "name" => $result[0]->speciality_name,
                         "description" => $result[0]->speciality_description
-                    ),
-                    "clinic"=> array(
-                        "id" => (int)$result[0]->clinic_id,
-                        "name" => $result[0]->clinic_name,
-                        "address" => $result[0]->clinic_address
                     )
                 );
 
@@ -351,15 +339,15 @@
             }
 
             /**Step 5 ( Case 2a ): can not delete a doctor having booking or appointments */
-            $queryBooking = DB::table(TABLE_PREFIX.TABLE_BOOKINGS)
-                    ->where(TABLE_PREFIX.TABLE_BOOKINGS.".doctor_id", "=", $id)
-                    ->select("*");
-            $quantityBooking = $queryBooking->get();
+            // $queryBooking = DB::table(TABLE_PREFIX.TABLE_BOOKINGS)
+            //         ->where(TABLE_PREFIX.TABLE_BOOKINGS.".doctor_id", "=", $id)
+            //         ->select("*");
+            // $quantityBooking = $queryBooking->get();
 
 
             /**Step 5 ( Case 2b ):: can not delete a doctor having appointments*/
-            $queryAppointment = DB::table(TABLE_PREFIX.TABLE_APPOINTMENT_ORDERS)
-                    ->where(TABLE_PREFIX.TABLE_APPOINTMENT_ORDERS.".doctor_id", "=", $id)
+            $queryAppointment = DB::table(TABLE_PREFIX.TABLE_APPOINTMENTS)
+                    ->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".doctor_id", "=", $id)
                     ->select("*");
             $quantityAppointment = $queryAppointment->get();
 
@@ -367,18 +355,11 @@
             try 
             {
                 /**Step 6 ( Case 1 ): if a doctor does not violate the above, he/she will be deleted*/
-                if( count($quantityAppointment) > 0 || count($quantityBooking) > 0 )
+                if( count($quantityAppointment) > 0 )
                 {
-
-                    /**Cancel all bookings with this doctor */
-                    $queryBooking = DB::table(TABLE_PREFIX.TABLE_BOOKINGS)
-                                    ->where(TABLE_PREFIX.TABLE_BOOKINGS.".doctor_id", "=", $id)
-                                    ->update(array(
-                                        "status" => "cancelled"
-                                    ));
                     /**Cancel all appointments with this doctor */
-                    $queryBooking = DB::table(TABLE_PREFIX.TABLE_APPOINTMENT_ORDERS)
-                                    ->where(TABLE_PREFIX.TABLE_APPOINTMENT_ORDERS.".doctor_id", "=", $id)
+                    $queryBooking = DB::table(TABLE_PREFIX.TABLE_APPOINTMENTS)
+                                    ->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".doctor_id", "=", $id)
                                     ->update(array(
                                         "status" => "cancelled"
                                     ));
