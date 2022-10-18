@@ -210,8 +210,8 @@
 
 
             /**Step 4 - how many booking are there with this Service */
-            $queryBooking = DB::table(TABLE_PREFIX.TABLE_BOOKING)
-                    ->where(TABLE_PREFIX.TABLE_BOOKING.".service_id", "=", $Route->params->id);
+            $queryBooking = DB::table(TABLE_PREFIX.TABLE_BOOKINGS)
+                    ->where(TABLE_PREFIX.TABLE_BOOKINGS.".service_id", "=", $Route->params->id);
             $result = $queryBooking->get();
             if( count($result) > 0)
             {

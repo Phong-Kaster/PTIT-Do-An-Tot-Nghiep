@@ -84,3 +84,16 @@ App::addRoute("GET|POST", "/api/patient/profile", "PatientProfile");
 /************************** SERVICE ******************************/
 App::addRoute("GET|POST", "/api/services", "Services");
 App::addRoute("GET|PUT|DELETE", "/api/services/[i:id]", "Service");
+
+
+/************************** DOCTOR AND SERVICE ******************************/
+App::addRoute("GET|POST", "/api/doctors-and-services/[i:id]", "DoctorsAndServices");
+
+
+/************************** PATIENT BOOKING ******************************/
+App::addRoute("GET|POST", "/api/patient/booking", "PatientBooking");
+
+
+/************************** BOOKING ******************************/
+App::addRoute("GET|POST", "/api/bookings/", "Bookings");
+App::addRoute("GET|POST", "/api/bookings/[i:id]", "Booking");

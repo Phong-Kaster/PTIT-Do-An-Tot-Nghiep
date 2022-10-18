@@ -620,3 +620,323 @@ function generateRandomString($length = 15) {
     }
     return $randomString;
 }
+
+/**
+ * @author Phong-Kaster
+ * @since 18-10-2022
+ * this functions verifies date for birthday 
+ * return String message 
+ * if message is empty, date is valid
+ * if message is not empty, date is invalid
+ */
+function isBirthdayValid($date)
+{
+    $output = "";
+    $year = (int)substr($date, 6);
+    $month = (int)substr($date,3,5);
+    $day = (int)substr($date,0,2);
+
+
+    $yearToday = (int)date("Y");
+    $monthToday = (int)date("m");
+    $dayToday = (int)date("d");
+
+
+    $yearDifference  = $yearToday - $year;
+    $monthDifference = $monthToday - $month;
+    $dayDifference   = $dayToday - $day;
+
+    $today = date("D, d-m-Y");
+
+    /*Step 3.3 - Case 1 -  is not valid*/
+    $date_validation = checkdate($month, $day, $year);
+    if( !$date_validation )
+    {
+        $output = "Your birthday - ".$date." - does not exist in Calendar !";
+        return $output;
+    }
+    /*Step 3.3 - Case 2 - year(2023) > yearToday(2022)*/
+    if( $yearDifference < 0)
+    {
+        $output = "Today is ".$today." so that this birthday is not valid !";
+        return $output;
+    }
+    /*Step 3.3 - Case 3 - year == yearToday*/
+    else if( $yearDifference == 0)
+    {
+        //Case 3.1. month > monthToday
+        if( $monthDifference < 0  )
+        {
+            $output = "Today is ".$today." so that this birthday is not valid !";
+            return $output;
+        }
+        //Case 3.2. month == monthToday
+        else if( $monthDifference == 0)
+        {
+            // day = 15 but dayToday = 13
+            if( $dayDifference < 0)
+            {
+                $output = "Today is ".$today." so that this birthday is not valid !";
+                return $output;
+            }
+        }
+        //Case 3.3. month < monthToday
+        else
+        {
+            // do thing
+        }
+    }
+    /*Step 3.3 - Case 4 - year < yearToday*/
+    else
+    {
+        //always correct
+    }
+    return $output;
+}
+
+/**
+ * @author Phong-Kaster
+ * @since 18-10-2022
+ * this function verifies the time of appointment is valid or not ?
+ * @return String message
+ * if message is empty => it is valid
+ * if message is not empty => it it not valid
+ */
+function isAppointmentTimeValid($date)
+{
+    /**Step 1 */
+    if( !$date )
+    {
+        $output = "Appointment time has incorrect format. Try again !";
+        return $output;
+    }
+    
+    
+    /**Step 2 */
+    $output = "";
+    $appointment_date = substr($date,0, 10 );
+    $appointment_hour = substr($date, 11);
+
+
+    $output = isAppointmentDateValid($appointment_date);
+    /**Step 3 - if appointment date is not valid => return message */
+    if( !empty($output) )
+    {
+        return $output;
+    }
+
+
+    /**Step 4 - verify appointment time*/
+    $output = isAppointmentHourValid($appointment_hour, $appointment_date);
+    return $output;
+}
+
+
+
+/**
+ * @author Phong-Kaster
+ * @since 18-10-2022
+ * this functions verifies the date of appointment
+ * @return String message
+ * if message is empty => it is valid
+ * if message is not empty => it it not valid
+ * 
+ * For instance, today is 18-10-2022 then
+ * 19-10-2022 is valid to create appointments
+ * 17-10-2022 is invalid to create appointments
+ */
+function isAppointmentDateValid($appointment_date)
+{
+    /**Step 1 - check date */
+    if( !$appointment_date )
+    {
+        $output = "Appointment time has incorrect format. Try again !";
+        return $output;
+    }
+
+    $output = "";
+    $year = (int)substr($appointment_date, 6);
+    $month = (int)substr($appointment_date,3,5);
+    $day = (int)substr($appointment_date,0,2);
+
+    $yearToday = (int)date("Y");
+    $monthToday = (int)date("m");
+    $dayToday = (int)date("d");
+
+    $yearDifference  = $year - $yearToday;
+    $monthDifference = $month - $monthToday;
+    $dayDifference   = $day - $dayToday;
+
+    $today = date("D, d-m-Y");
+
+    /*Step 2 - Case 1 - the date does not exist*/
+    $appointment_date_validation = checkdate($month, $day, $year);
+    if( !$appointment_date_validation )
+    {
+        $output = "Your appointment day - ".$appointment_date." - does not exist !";
+        return $output;
+    }
+    /*Step 2 - Case 2 - year(2023) > yearToday(2022)*/
+    if( $yearDifference > 0 )
+    {
+        //always correct
+    }
+    /**Step 2 - Case 3 - year(2022) == yearToday(2022) */ //today is 18-10-2022
+    else if( $yearDifference == 0)
+    {
+        /** Case 3.1 - month(10) == monthToday(10) */
+        if( $monthDifference == 0)
+        {
+            /**Case 3.1.2 - day(17) < dayToday(18) */
+            if( $dayDifference < 0)
+            {
+                $output = "Today is ".$today." so that is not valid !";
+                return $output;
+            }
+            /**Case 3.1.2 - day(19) >= dayToday(18)  */
+            else
+            {
+                //always correct
+            }
+        }
+        /** Case 3.2 - month(09) < monthToday(10) */
+        else if( $monthDifference < 0)
+        {
+            $output = "Today is ".$today." so that is not valid !";
+            return $output;
+        }
+        /** Case 3.3 - month(11) > monthToday(10) */
+        else
+        {
+            //always correct
+        }
+    }
+    /**Step 2 - Case 4 - year(2019) < yearToday (2022) */
+    else
+    {
+        $output = "Today is ".$today." so that is not valid !";
+        return $output;
+    }
+
+    return $output;
+}
+
+
+
+/**
+ * @author Phong-Kaster
+ * @since 18-10-2022
+ * this function verifies the hour of appointment
+ * the working hours is from 7 am to 20 pm.
+ * @return String message
+ * if message is empty => it is valid
+ * if message is not empty => it it not valid
+ * 
+ * For instance, today is 18-10-2022 16h00 then
+ * 19-10-2022 or any date far from today is always valid to create appointments with any hour
+ * 17-10-2022 is invalid to create appointments. Of course
+ * 18-10-2022 10h00 is invalid
+ * 18-10-2022 17h00 is valid
+ */
+function isAppointmentHourValid($appointment_hour, $appointment_date)
+{
+    /**Step 1 declare & get necessary data*/
+    $output = "";
+    $hour = (int)substr($appointment_hour,0,2);
+    $minute = (int)substr($appointment_hour,3);
+
+    date_default_timezone_set('Asia/Ho_Chi_Minh');
+    $currentHour = (int)Date("H");
+    $currentMinute = (int)Date("i");
+
+    if(!$hour || $minute)
+    {
+        $output = "Appointment time has incorrect format. Try again !";
+        return $output;
+    }
+
+
+
+    /**Step 2 - If hour does not greater than 7 am and less than 20 => not valid */
+    if( $hour < 7 || $hour > 20 )
+    {
+        $output = "Our working hours from 7 am to 20 am. Please, try again !";
+        return $output;
+    }
+    //** appointment time is 20:10 pm, it is valid ? NO */
+    else if( $hour == 20 && $minute > 0 )
+    {
+        $output = "Our working hours from 7 am to 20 am. Please, try again !";
+        return $output;
+    }
+
+
+
+    /**Step 3 - minute validation */
+    if( $minute < 0 || $minute > 60 )
+    {
+        $output = "Minute value is not valid - 0 <= minute <= 60";
+        return $output;
+    }
+
+
+
+    /**Step 4 - compare with current time */
+    /**Step 4 - Case 1 - appointment hour < currentHour */
+    if( $hour < $currentHour )
+    {
+
+        $year = (int)substr($appointment_date, 6);
+        $month = (int)substr($appointment_date,3,5);
+        $day = (int)substr($appointment_date,0,2);
+
+        $yearToday = (int)date("Y");
+        $monthToday = (int)date("m");
+        $dayToday = (int)date("d");
+
+        $yearDifference  = $year - $yearToday;
+        $monthDifference = $month - $monthToday;
+        $dayDifference   = $day - $dayToday;
+
+        /**Step 4 - Case 1.1 - Appointment date is today or tomorrow? If tomorrow, hour is still valid */
+        if( $yearDifference >= 0 && $monthDifference >= 0 )
+        {
+            /**(current)18-10-2022 17:15pm VS (appointment)18-10-2022 16:00pm => CORRECT  */
+            if( $dayDifference == 0 && $currentHour < $hour)
+            {
+                # always correct
+            }
+            /**(current)18-10-2022 17:15pm VS (appointment)19-10-2022 16:00pm => CORRECT  */
+            else if( $dayDifference > 0 )
+            {
+                # always correct
+            }
+        }
+        /**Step 4 - Case 1.2 - Appointment date is previous days => INCORRECT */
+        else
+        {
+            $output = "Now is ".date("H:i")." so that appointment hour is not valid. Try again !";
+            return $output;
+        }
+        
+    }
+    /**Step 4 - Case 2 - appointment hour == currentHour */
+    else if( $hour == $currentHour )
+    {
+        if( $minute <= $currentMinute )
+        {
+            $output = "Now is ".date("H:i")." so that appointment hour is not valid. Try again !";
+            return $output;
+        }
+        else 
+        {
+            # always correct
+        }
+    }
+    /**$hour > $currentHour */
+    else
+    {
+        # always correct
+    }
+    return $output;
+}

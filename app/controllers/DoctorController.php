@@ -80,7 +80,7 @@
                             TABLE_PREFIX.TABLE_DOCTORS.".*",
                             DB::raw(TABLE_PREFIX.TABLE_SPECIALITIES.".id as speciality_id"),
                             DB::raw(TABLE_PREFIX.TABLE_SPECIALITIES.".name as speciality_name"),
-                            DB::raw(TABLE_PREFIX.TABLE_SPECIALITIES.".description as speciality_description"),
+                            DB::raw(TABLE_PREFIX.TABLE_SPECIALITIES.".description as speciality_description")
                         ]);
 
                 $result = $query->get();

@@ -289,28 +289,35 @@ Sau đó thì thay đổi suy nghĩ để chuyển qua làm học thay thế t�
 
 4. Tạo mới Service Model và Controller tương ứng.
 
+- **18-10-2022**:
+
+1. Quản lý các dịch vụ mà một bác sĩ hỗ trợ - Doctors And Services Controller 
+
+2. Chức năng tạo lịch khám bệnh cho phía bênh nhân - Patient Booking Controller - kiểm 
+tra dữ liệu đầu vào lâu vl, nhất là thời gian đặt lịch khám.
+
 # [**Controller Timeline**](#controller-timeline)
 
 Phần này mình lưu lại trình tự mình viết đồ án này. Nếu các bạn có nhu cầu tham khảo cách xử lý của mình. Các bạn có thể đọc code theo trình tự 
 đang được viết theo số thứ tự ở bên dưới.
 
-1. Index Controller
+01. Index Controller
 
-2. Login Controller
+02. Login Controller
 
-3. Specialities Controller
+03. Specialities Controller
 
-4. Speciality Controller
+04. Speciality Controller
 
-5. Sign Up Controller
+05. Sign Up Controller
 
-6. Recovery Controller
+06. Recovery Controller
 
-7. Password Reset Controller
+07. Password Reset Controller
 
-8. Clinics Controller
+08. Clinics Controller
 
-9. Clinic Controller
+09. Clinic Controller
 
 10. Doctors Controller 
 
@@ -327,7 +334,11 @@ Phần này mình lưu lại trình tự mình viết đồ án này. Nếu các
 16. Service Controller 
     
 17. Servives Controller 
-    
+
+18. Doctors And Services Controller
+
+19. Patient Booking Controller 
+     
 # [**Special Thanks**](#special-thanks)
 
 <table>
