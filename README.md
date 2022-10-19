@@ -45,6 +45,14 @@ sẽ hỗ trợ phần nào cho các bạn khi bước tới ngưỡng cửa qua
 </p>
 
 
+Có thể giải thích yêu cầu đề tài ngắn gọn như sau:
+
+**Website** - Đóng vai trò là ứng dụng quản trị viên. Hỗ trợ bệnh viện quản lý thông tin bác sĩ & bệnh nhân,
+sắp xếp lịch khám bệnh giữa bác sĩ và bệnh nhân.
+
+**Android** - Ứng dụng để bệnh nhân đặt lịch khám bệnh, theo dõi phác đồ điều trị và bệnh án của mình. Có thể đặt lịch khám bệnh
+cho người thân trong gia đình như ông, bà, bố, mẹ & không nhất thiết người khám bệnh phải là bản thân mình.
+
 # [**Database**](#database)
 
 <p align="center">
@@ -54,6 +62,32 @@ sẽ hỗ trợ phần nào cho các bạn khi bước tới ngưỡng cửa qua
 
 ***Sơ đồ cơ sở dữ liệu***
 </h3>
+
+Tớ sẽ giải thích qua về ý nghĩa các bảng xuất hiện trong database nha
+
+**BẢNG PATIENTS** - bảng này chứa thông tin của bệnh nhân.
+
+**BẢNG BOOKING** - bảng này chứa các lịch hẹn mà bệnh nhân đăng ký khám bệnh.
+
+**BẢNG APPOINTMENTS** - bảng này chứa lịch hẹn thực tế với bác sĩ. Bảng Booking mới chỉ là cuộc hẹn của bệnh 
+nhân & họ hoàn toàn có thể hủy lịch hẹn. Nhưng bản Appointment thì sẽ lưu thứ tự khám thực tế của các bệnh nhân với số thứ tự.
+
+**BẢNG TREATMENTS** - bảng này chứa phác đồ điều trị sau khi đã khám xong. Phác đồ điều trị là hướng
+dẫn mà bệnh nhân phải tuân thủ như: lịch uống thuốc, lịch tái khám,.....
+
+**BẢNG APPOINTMENTS RECORDS** - lưu trữ bệnh án của bệnh nhân. Mỗi bệnh án đi kèm với một lịch khám thực tế ( tức appointment )
+
+**BẢNG DOCTORS** - lưu trữ thông tin của các bác sĩ.
+
+**BẢNG SPECIALITIES** - bảng này thể hiện tên chuyên khoa của bác sĩ. Ví dụ: Nội khoa, Răng - hàm - mặt,..
+
+**BẢNG NOTIFICATIONS** - mỗi khi một lịch khám thực tế được thực hiện với bác sĩ. Bảng này sẽ chứa thông báo cho bác sĩ đó. 
+
+**BẢNG SERVICES** - chứa tên các dịch vụ mà ứng dụng hỗ trợ. Ví dụ: Khám sức khỏe tổng quát,
+khám thai, xét nghiệm PCR COVID-19,...
+
+**BẢNG DOCTOR AND SERVICE** - thể hiện mối quan hệ một nhiều. Khi một bác sĩ có thể phục vụ nhiều 
+loại hình dịch vụ khác nhau. Ví dụ, một bác sĩ chuyên khoa Nội tổng hợp thì vẫn có thể khám về Da liệu.
 
 # [**API Document**](#api-document)
 
