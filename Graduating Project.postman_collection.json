@@ -1,0 +1,1898 @@
+{
+	"info": {
+		"_postman_id": "4c1339ec-122a-4df9-a4fa-5a3b7c1c48ed",
+		"name": "Graduating Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18964045"
+	},
+	"item": [
+		{
+			"name": "ABANDONED - Clinics",
+			"item": [
+				{
+					"name": "Read All",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ACCESS_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{ENDPOINT_URL}}/api/clinics?order[column]=id&order[dir]=&start=&length=&search=",
+							"host": [
+								"{{ENDPOINT_URL}}"
+							],
+							"path": [
+								"api",
+								"clinics"
+							],
+							"query": [
+								{
+									"key": "order[column]",
+									"value": "id"
+								},
+								{
+									"key": "order[dir]",
+									"value": ""
+								},
+								{
+									"key": "start",
+									"value": "",
+									"description": "the position begins to be returned"
+								},
+								{
+									"key": "length",
+									"value": "",
+									"description": "the number of records are returned"
+								},
+								{
+									"key": "search",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ACCESS_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Bệnh viện Việt Pháp",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "số 4 Nhà Thương, Cát Dài, Lê Chân, Hải Phòng",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ENDPOINT_URL}}/api/clinics",
+							"host": [
+								"{{ENDPOINT_URL}}"
+							],
+							"path": [
+								"api",
+								"clinics"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ACCESS_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{ENDPOINT_URL}}/api/clinics/3",
+							"host": [
+								"{{ENDPOINT_URL}}"
+							],
+							"path": [
+								"api",
+								"clinics",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ACCESS_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Bệnh viện Hữu nghị Việt Đức",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Số 16-18 Phủ Doãn - Hoàn Kiếm - Hà Nội",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ENDPOINT_URL}}/api/clinics/2",
+							"host": [
+								"{{ENDPOINT_URL}}"
+							],
+							"path": [
+								"api",
+								"clinics",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ACCESS_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{ENDPOINT_URL}}/api/clinics/2",
+							"host": [
+								"{{ENDPOINT_URL}}"
+							],
+							"path": [
+								"api",
+								"clinics",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Login Patient",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "type",
+									"value": "patient",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "0366253623",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "111111",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ENDPOINT_URL}}/api/login",
+							"host": [
+								"{{ENDPOINT_URL}}"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Doctor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "n18dccn147@student.ptithcm.edu.vn",
+									"description": "n18dccn147@student.ptithcm.edu.vn",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"description": "phongkaster@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ENDPOINT_URL}}/api/login",
+							"host": [
+								"{{ENDPOINT_URL}}"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sign Up",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "n18dccn147@student.ptithcm.edu.vn",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "0766335563",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "password-confirm",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Thành Phong",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "",
+									"description": "No mandatory",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "150000",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "admin",
+									"description": "Not set",
+									"type": "text"
+								},
+								{
+									"key": "avatar",
+									"value": "",
+									"description": "Not set",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ENDPOINT_URL}}/api/signup",
+							"host": [
+								"{{ENDPOINT_URL}}"
+							],
+							"path": [
+								"api",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Recovery",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "n18dccn147@student.ptithcm.edu.vn",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ENDPOINT_URL}}/api/recovery",
+							"host": [
+								"{{ENDPOINT_URL}}"
+							],
+							"path": [
+								"api",
+								"recovery"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Password Reset",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "recovery_token",
+									"value": "667903262161800",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "passwordConfirm",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ENDPOINT_URL}}/api/password-reset/2",
+							"host": [
+								"{{ENDPOINT_URL}}"
+							],
+							"path": [
+								"api",
+								"password-reset",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Patients",
+			"item": [
+				{
+					"name": "Read All",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ACCESS_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{ENDPOINT_URL}}/api/patients?order[dir]=desc&order[column]&search&length&start=",
+							"host": [
+								"{{ENDPOINT_URL}}"
+							],
+							"path": [
+								"api",
+								"patients"
+							],
+							"query": [
+								{
+									"key": "order[dir]",
+									"value": "desc"
+								},
+								{
+									"key": "order[column]",
+									"value": null
+								},
+								{
+									"key": "search",
+									"value": null
+								},
+								{
+									"key": "length",
+									"value": null
+								},
+								{
+									"key": "start",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ACCESS_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{ENDPOINT_URL}}/api/patients/1",
+							"host": [
+								"{{ENDPOINT_URL}}"
+							],
+							"path": [
+								"api",
+								"patients",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ACCESS_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Emma",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "0123456789",
+									"type": "text"
+								},
+								{
+									"key": "birthday",
+									"value": "13-10-2022",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Vietnam",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ENDPOINT_URL}}/api/patients/1",
+							"host": [
+								"{{ENDPOINT_URL}}"
+							],
+							"path": [
+								"api",
+								"patients",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ACCESS_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{ENDPOINT_URL}}/api/patients/2",
+							"host": [
+								"{{ENDPOINT_URL}}"
+							],
+							"path": [
+								"api",
+								"patients",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Patient Profile",
+			"item": [
+				{
+					"name": "Read Personal Information",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ACCESS_TOKEN_PATIENT}}",
+								"description": "{{ACCESS_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "Type",
+								"value": "Patient",
+								"description": "{{ACCESS_TOKEN_PATIENT}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{ENDPOINT_URL}}/api/patient/profile",
+							"host": [
+								"{{ENDPOINT_URL}}"
+							],
+							"path": [
+								"api",
+								"patient",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Avatar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ACCESS_TOKEN_PATIENT}}",
+								"description": "{{ACCESS_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "Type",
+								"value": "Patient",
+								"description": "{{ACCESS_TOKEN_PATIENT}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/D:/xampp/htdocs/PTIT-Do-An-Thuc-Tap/photo/Blue.jpg"
+								},
+								{
+									"key": "action",
+									"value": "avatar",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ENDPOINT_URL}}/api/patient/profile",
+							"host": [
+								"{{ENDPOINT_URL}}"
+							],
+							"path": [
+								"api",
+								"patient",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Personal Information",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ACCESS_TOKEN_PATIENT}}",
+								"type": "text"
+							},
+							{
+								"key": "Type",
+								"value": "Patient",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "action",
+									"value": "personal",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Phong",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "birthday",
+									"value": "16-10-2021",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Đông Lào - Vietnam",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ENDPOINT_URL}}/api/patient/profile",
+							"host": [
+								"{{ENDPOINT_URL}}"
+							],
+							"path": [
+								"api",
+								"patient",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ACCESS_TOKEN_PATIENT}}",
+								"type": "text"
+							},
+							{
+								"key": "Type",
+								"value": "Patient",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "action",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "currentPassword",
+									"value": "111111",
+									"type": "text"
+								},
+								{
+									"key": "newPassword",
+									"value": "111111",
+									"type": "text"
+								},
+								{
+									"key": "confirmPassword",
+									"value": "111111",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ENDPOINT_URL}}/api/patient/profile",
+							"host": [
+								"{{ENDPOINT_URL}}"
+							],
+							"path": [
+								"api",
+								"patient",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Patient Booking",
+			"item": [
+				{
+					"name": "Read All",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ACCESS_TOKEN_PATIENT}}",
+								"type": "text"
+							},
+							{
+								"key": "Type",
+								"value": "Patient",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{ENDPOINT_URL}}/api/patient/booking?order[column]&order[dir]&search&length&start",
+							"host": [
+								"{{ENDPOINT_URL}}"
+							],
+							"path": [
+								"api",
+								"patient",
+								"booking"
+							],
+							"query": [
+								{
+									"key": "order[column]",
+									"value": null
+								},
+								{
+									"key": "order[dir]",
+									"value": null,
+									"description": "asc,desc"
+								},
+								{
+									"key": "search",
+									"value": null
+								},
+								{
+									"key": "length",
+									"value": null,
+									"description": "1"
+								},
+								{
+									"key": "start",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ACCESS_TOKEN_PATIENT}}",
+								"type": "text"
+							},
+							{
+								"key": "Type",
+								"value": "Patient",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "service_id",
+									"value": "1",
+									"description": "mandatory",
+									"type": "text"
+								},
+								{
+									"key": "booking_name",
+									"value": "Emma Stone",
+									"description": "mandatory",
+									"type": "text"
+								},
+								{
+									"key": "booking_phone",
+									"value": "0971234567",
+									"description": "mandatory",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Phong",
+									"description": "mandatory",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "1",
+									"description": "no mandatory",
+									"type": "text"
+								},
+								{
+									"key": "birthday",
+									"value": "18-10-2022",
+									"description": "no mandatory",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Vietnam",
+									"description": "no mandatory",
+									"type": "text"
+								},
+								{
+									"key": "reason",
+									"value": "",
+									"description": "no mandatory",
+									"type": "text"
+								},
+								{
+									"key": "appointment_time",
+									"value": "18-10-2022 14:00",
+									"description": "mandatory",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "ádf",
+									"description": "no mandatory - processing, verified, cancelled",
+									"type": "text"
+								},
+								{
+									"key": "create_at",
+									"value": "",
+									"description": "no mandatory",
+									"type": "text"
+								},
+								{
+									"key": "update_at",
+									"value": "",
+									"description": "no mandatory",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ENDPOINT_URL}}/api/patient/booking",
+							"host": [
+								"{{ENDPOINT_URL}}"
+							],
+							"path": [
+								"api",
+								"patient",
+								"booking"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Doctors",
+			"item": [
+				{
+					"name": "Read All",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ACCESS_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{ENDPOINT_URL}}/api/doctors",
+							"host": [
+								"{{ENDPOINT_URL}}"
+							],
+							"path": [
+								"api",
+								"doctors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ACCESS_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{ENDPOINT_URL}}/api/doctors/2",
+							"host": [
+								"{{ENDPOINT_URL}}"
+							],
+							"path": [
+								"api",
+								"doctors",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ACCESS_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "n18dccn147@student.ptithcm.edu.vn",
+									"description": "mandatory",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "0912309097",
+									"description": "mandatory",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Martin Tungevaag",
+									"description": "mandatory",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Wicked wonderland",
+									"description": "no mandatory",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "259000",
+									"description": "no mandatory",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "member",
+									"description": "mandatory",
+									"type": "text"
+								},
+								{
+									"key": "speciality_id",
+									"value": "1",
+									"description": "no mandatory",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ENDPOINT_URL}}/api/doctors",
+							"host": [
+								"{{ENDPOINT_URL}}"
+							],
+							"path": [
+								"api",
+								"doctors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ACCESS_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "phone",
+									"value": "0978246246",
+									"description": "mandatory",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Super Star",
+									"description": "mandatory",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Cry On My Shoulder - Super Star",
+									"description": "no mandatory",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "259000",
+									"description": "no mandatory",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "member",
+									"description": "mandatory",
+									"type": "text"
+								},
+								{
+									"key": "speciality_id",
+									"value": "2",
+									"description": "no mandatory",
+									"type": "text"
+								},
+								{
+									"key": "clinic_id",
+									"value": "2",
+									"description": "no mandatory",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ENDPOINT_URL}}/api/doctors/21",
+							"host": [
+								"{{ENDPOINT_URL}}"
+							],
+							"path": [
+								"api",
+								"doctors",
+								"21"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ACCESS_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{ENDPOINT_URL}}/api/doctors/2",
+							"host": [
+								"{{ENDPOINT_URL}}"
+							],
+							"path": [
+								"api",
+								"doctors",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Doctor Profile",
+			"item": [
+				{
+					"name": "Read Personal Information",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ACCESS_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{ENDPOINT_URL}}/api/doctor/profile",
+							"host": [
+								"{{ENDPOINT_URL}}"
+							],
+							"path": [
+								"api",
+								"doctor",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ACCESS_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "action",
+									"value": "password",
+									"description": "mandatory - personal, avatar, password",
+									"type": "text"
+								},
+								{
+									"key": "currentPassword",
+									"value": "123456",
+									"description": "mandatory",
+									"type": "text"
+								},
+								{
+									"key": "newPassword",
+									"value": "123456",
+									"description": "mandatory",
+									"type": "text"
+								},
+								{
+									"key": "confirmPassword",
+									"value": "123456",
+									"description": "mandatory",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ENDPOINT_URL}}/api/doctor/profile",
+							"host": [
+								"{{ENDPOINT_URL}}"
+							],
+							"path": [
+								"api",
+								"doctor",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Avatar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ACCESS_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/D:/xampp/htdocs/PTIT-Do-An-Thuc-Tap/photo/swastika1.png"
+								},
+								{
+									"key": "action",
+									"value": "avatar",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ENDPOINT_URL}}/api/doctor/profile",
+							"host": [
+								"{{ENDPOINT_URL}}"
+							],
+							"path": [
+								"api",
+								"doctor",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Personal Information",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ACCESS_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "action",
+									"value": "personal",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Brandon Beal",
+									"description": "mandatory",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "0123456789",
+									"description": "mandatory",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "",
+									"description": "not mandatory",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "125000",
+									"description": "mandatory",
+									"type": "text"
+								},
+								{
+									"key": "speciality_id",
+									"value": "1",
+									"description": "mandatory",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ENDPOINT_URL}}/api/doctor/profile",
+							"host": [
+								"{{ENDPOINT_URL}}"
+							],
+							"path": [
+								"api",
+								"doctor",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Speciality",
+			"item": [
+				{
+					"name": "Read All",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ACCESS_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{ENDPOINT_URL}}/api/specialities?order[column]=id&order[dir]=&start=&length=&search=",
+							"host": [
+								"{{ENDPOINT_URL}}"
+							],
+							"path": [
+								"api",
+								"specialities"
+							],
+							"query": [
+								{
+									"key": "order[column]",
+									"value": "id"
+								},
+								{
+									"key": "order[dir]",
+									"value": ""
+								},
+								{
+									"key": "start",
+									"value": "",
+									"description": "the position begins to be returned"
+								},
+								{
+									"key": "length",
+									"value": "",
+									"description": "the number of records are returned"
+								},
+								{
+									"key": "search",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ACCESS_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Nội Tiêu hóa",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Khoa Nội Tiêu hóa là đơn vị chuyên thực hiện nhiệm vụ tầm soát, chẩn đoán, điều trị, đưa ra các giải pháp phòng bệnh các bệnh lý thuộc chuyên khoa Nội Tiêu hóa - Gan mật",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ENDPOINT_URL}}/api/specialities",
+							"host": [
+								"{{ENDPOINT_URL}}"
+							],
+							"path": [
+								"api",
+								"specialities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ACCESS_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{ENDPOINT_URL}}/api/specialities/1",
+							"host": [
+								"{{ENDPOINT_URL}}"
+							],
+							"path": [
+								"api",
+								"specialities",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ACCESS_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Unknown",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "No description",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ENDPOINT_URL}}/api/specialities/1",
+							"host": [
+								"{{ENDPOINT_URL}}"
+							],
+							"path": [
+								"api",
+								"specialities",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ACCESS_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{ENDPOINT_URL}}/api/specialities/2",
+							"host": [
+								"{{ENDPOINT_URL}}"
+							],
+							"path": [
+								"api",
+								"specialities",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Services",
+			"item": [
+				{
+					"name": "Read All",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ACCESS_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{ENDPOINT_URL}}/api/services",
+							"host": [
+								"{{ENDPOINT_URL}}"
+							],
+							"path": [
+								"api",
+								"services"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ACCESS_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{ENDPOINT_URL}}/api/services/1",
+							"host": [
+								"{{ENDPOINT_URL}}"
+							],
+							"path": [
+								"api",
+								"services",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ACCESS_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Khám tổng quát",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ENDPOINT_URL}}/api/services",
+							"host": [
+								"{{ENDPOINT_URL}}"
+							],
+							"path": [
+								"api",
+								"services"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ACCESS_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							},
+							{
+								"key": "Type",
+								"value": "patient",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Khám sản",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ENDPOINT_URL}}/api/services/1",
+							"host": [
+								"{{ENDPOINT_URL}}"
+							],
+							"path": [
+								"api",
+								"services",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ACCESS_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{ENDPOINT_URL}}/api/services/2",
+							"host": [
+								"{{ENDPOINT_URL}}"
+							],
+							"path": [
+								"api",
+								"services",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Doctors And Services",
+			"item": [
+				{
+					"name": "Read All",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ACCESS_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{ENDPOINT_URL}}/api/doctors-and-services/1",
+							"host": [
+								"{{ENDPOINT_URL}}"
+							],
+							"path": [
+								"api",
+								"doctors-and-services",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create - Update - Delete",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ACCESS_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "services[]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "services[]",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "services[]",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "services[]",
+									"value": "4",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ENDPOINT_URL}}/api/doctors-and-services/1",
+							"host": [
+								"{{ENDPOINT_URL}}"
+							],
+							"path": [
+								"api",
+								"doctors-and-services",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "ENDPOINT_URL",
+			"value": "ENDPOINT_URL",
+			"type": "string"
+		},
+		{
+			"key": "ACCESS_TOKEN",
+			"value": "ACCESS_TOKEN",
+			"type": "string"
+		},
+		{
+			"key": "ACCESS_TOKEN_MEMBER",
+			"value": "ACCESS_TOKEN_MEMBER",
+			"type": "string"
+		},
+		{
+			"key": "ACCESS_TOKEN_PATIENT",
+			"value": "ACCESS_TOKEN_PATIENT",
+			"type": "string"
+		}
+	]
+}

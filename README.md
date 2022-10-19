@@ -11,8 +11,8 @@
 - [**Table Of Content**](#table-of-content)
 - [**Introduction**](#introduction)
 - [**Topic**](#topic)
-- [**Database**](#database)
 - [**API Document**](#api-document)
+- [**Database**](#database)
 - [**Document**](#document)
 - [**Features**](#features)
   - [**1. Login**](#1-login)
@@ -53,6 +53,11 @@ sắp xếp lịch khám bệnh giữa bác sĩ và bệnh nhân.
 **Android** - Ứng dụng để bệnh nhân đặt lịch khám bệnh, theo dõi phác đồ điều trị và bệnh án của mình. Có thể đặt lịch khám bệnh
 cho người thân trong gia đình như ông, bà, bố, mẹ & không nhất thiết người khám bệnh phải là bản thân mình.
 
+# [**API Document**](#api-document)
+
+Mình có soạn thảo và liệt kê chi tiết cách sử dụng các chức năng mà mình đã xây dựng thành tài liệu.
+Nếu các bạn có nhu cầu muốn tham khảo, hãy ấn vào [**đây**](https://github.com/Phong-Kaster/PTIT-Do-An-Tot-Nghiep/tree/main/document#readme) để đọc chi tiết cách sử dụng API này.
+
 # [**Database**](#database)
 
 <p align="center">
@@ -88,11 +93,6 @@ khám thai, xét nghiệm PCR COVID-19,...
 
 **BẢNG DOCTOR AND SERVICE** - thể hiện mối quan hệ một nhiều. Khi một bác sĩ có thể phục vụ nhiều 
 loại hình dịch vụ khác nhau. Ví dụ, một bác sĩ chuyên khoa Nội tổng hợp thì vẫn có thể khám về Da liệu.
-
-# [**API Document**](#api-document)
-
-Mình có soạn thảo và liệt kê chi tiết cách sử dụng các chức năng mà mình đã xây dựng thành tài liệu.
-Nếu các bạn có nhu cầu muốn tham khảo, hãy ấn vào [**đây**](https://github.com/Phong-Kaster/PTIT-Do-An-Tot-Nghiep/tree/main/document#readme) để đọc chi tiết cách sử dụng API này.
 
 # [**Document**](#document)
 

@@ -16,21 +16,21 @@
 - [**Document**](#document)
   - [**1. Authentication**](#1-authentication)
     - [**0. Pattern**](#0-pattern)
-    - [**Login Patient**](#login-patient)
-    - [**Login Doctor**](#login-doctor)
-    - [**Sign Up**](#sign-up)
-    - [**Recovery**](#recovery)
-    - [**Password Reset**](#password-reset)
+    - [**1.1. Login Patient**](#11-login-patient)
+    - [**1.2. Login Doctor**](#12-login-doctor)
+    - [**1.3. Sign Up**](#13-sign-up)
+    - [**1.4. Recovery**](#14-recovery)
+    - [**1.5. Password Reset**](#15-password-reset)
   - [**2. Patients**](#2-patients)
-    - [**Read All**](#read-all)
-    - [**Read By ID**](#read-by-id)
-    - [**Update**](#update)
-    - [**Delete**](#delete)
+    - [**2.1. Read All**](#21-read-all)
+    - [**2.2. Read By ID**](#22-read-by-id)
+    - [**2.3. Update**](#23-update)
+    - [**2.4. Delete**](#24-delete)
   - [**3. Patient Profile**](#3-patient-profile)
-    - [**Read Personal Information**](#read-personal-information)
-    - [**Change Personal Information**](#change-personal-information)
-    - [**Change Avatar**](#change-avatar)
-    - [**Change Password**](#change-password)
+    - [**3.1. Read Personal Information**](#31-read-personal-information)
+    - [**3.2. Change Personal Information**](#32-change-personal-information)
+    - [**3.3. Change Avatar**](#33-change-avatar)
+    - [**3.4. Change Password**](#34-change-password)
 
 # [**Introduction**](#introduction)
 
@@ -154,7 +154,7 @@ Trong API mình có sử dụng chức năng Variable của POSTMAN để tiết
 
 ## [**1. Authentication**](#1-authentication)
 
-Mục đích chung là phục vụ chức năng đăng nhập & xác thực danh tính người dùng.
+Mục đích chung là phục vụ chức năng đăng nhập & xác thực danh tính người dùng. Bất kì ai cũng có thể sử dụng API này.
 
 <p align="center">
     <img src="./photo/document04.png" />
@@ -184,7 +184,7 @@ Mục đích chung là phục vụ chức năng đăng nhập & xác thực danh
 </p>
 <h3 align="center">
 
-### [**Login Patient**](#11-login-patient)
+### [**1.1. Login Patient**](#11-login-patient)
 
 - **Purpose**: Xử lý yêu cầu đăng nhập của bệnh nhân từ Android gửi tới.
 
@@ -209,7 +209,7 @@ Mục đích chung là phục vụ chức năng đăng nhập & xác thực danh
 </p>
 <h3 align="center">
 
-### [**Login Doctor**](#12-login-doctor)
+### [**1.2. Login Doctor**](#12-login-doctor)
 
 - **Purpose**: Xử lý yêu cầu đăng nhập của bác sĩ 
 
@@ -234,7 +234,7 @@ Mục đích chung là phục vụ chức năng đăng nhập & xác thực danh
 </p>
 <h3 align="center">
 
-### [**Sign Up**](#13-sign-up)
+### [**1.3. Sign Up**](#13-sign-up)
 
 - **Purpose**: đăng ký tài khoản mới
 
@@ -274,7 +274,7 @@ Mục đích chung là phục vụ chức năng đăng nhập & xác thực danh
     <img src="../photo/image1.png" width=800 />
 </p>
 
-### [**Recovery**](#14-recovery)
+### [**1.4. Recovery**](#14-recovery)
 
 - **Purpose**: Gửi email để lấy mã xác thực nhằm khôi phục mật khẩu
 
@@ -300,7 +300,7 @@ Mục đích chung là phục vụ chức năng đăng nhập & xác thực danh
     <img src="./photo/document08.png" width=800 />
 </p>
 
-### [**Password Reset**](#15-password-reset)
+### [**1.5. Password Reset**](#15-password-reset)
 
 - **Purpose**: Đặt lại mật khẩu mới với mã xác thực nhận từ Email
 
@@ -331,13 +331,126 @@ Mục đích chung là phục vụ chức năng đăng nhập & xác thực danh
 </p>
 
 ## [**2. Patients**](#2-patients)
-### [**Read All**](#21-read-all)
-### [**Read By ID**](#22-read-all)
-### [**Update**](#23-read-all)
-### [**Delete**](#24-read-all)
+
+Đây là các API dành cho bác sĩ phải có vai trò ADMIN mới có quyền sử dụng
+
+### [**2.1. Read All**](#21-read-all)
+
+- **Purpose**: Đọc thông tin của tất cả bệnh nhân
+
+- **Method**: 🟢 GET
+
+- **URL**: {{ENDPOINT_URL}}/api/patients
+
+- **Headers**: 
+
+    | Tên                  | Giá Trị                                                                   |
+    |----------------------|---------------------------------------------------------------------------|
+    |Authorization         | ACCESS_TOKEN                                                              |
+    |Content-Type          | application/x-www-form-urlencoded                                         |
+
+- **Body**:
+  
+- **Params**:
+
+    | Tên                   |  Ý nghĩa                                                                          |
+    |-----------------------|-----------------------------------------------------------------------------------|
+    |search                |Từ khóa tìm kiếm                                                                  |           
+    |order[dir]            |Chiều sắp xếp kết quả. Nhận 2 giá trị asc(tăng dần) & desc(giảm dần)              |
+    |order[column]         |Cột được sử dụng để sắp xếp kết quả. Mặc định là ID                               |
+    |length                |Số lượng kết quả trả về. Mặc định là không giới hạn                               |
+    |start                 |Kết quả tìm kiếm bắt đầu từ vị trí thứ mấy. Ví dụ nhập 1 thì kết quả đầu tiên bị bỏ qua| 
+- **Respone**:
+
+<p align="center">
+    <img src="./photo/document10.png" width=800 />
+</p>
+
+### [**2.2. Read By ID**](#22-read-all)
+
+- **Purpose**: Đọc thông tin của một bệnh nhân cụ thể
+
+- **Method**: 🟢 GET
+
+- **URL**: {{ENDPOINT_URL}}/api/patients/1
+
+> 1 là ID của bệnh nhân
+
+- **Headers**: 
+
+    | Tên                  | Giá Trị                                                                   |
+    |----------------------|---------------------------------------------------------------------------|
+    |Authorization         | ACCESS_TOKEN                                                              |
+    |Content-Type          | application/x-www-form-urlencoded                                         |
+
+- **Body**: bỏ trống 
+
+- **Respone**:
+
+<p align="center">
+    <img src="./photo/document11.png" width=800 />
+</p>
+
+### [**2.3. Update**](#23-read-all)
+
+- **Purpose**: Cập nhật thông tin của một bệnh nhân
+
+- **Method**: 🔵 PUT
+
+- **URL**: {{ENDPOINT_URL}}/api/patients/1
+
+> 1 là ID của bệnh nhân
+
+- **Headers**: 
+
+    | Tên                  | Giá Trị                                                                   |
+    |----------------------|---------------------------------------------------------------------------|
+    |Authorization         | ACCESS_TOKEN                                                              |
+    |Content-Type          | application/x-www-form-urlencoded                                         |
+
+- **Body**:
+  
+    | Tên                   | Tùy chọn | Ý nghĩa                                                                           |
+    |-----------------------|----------|-----------------------------------------------------------------------------------|
+    |Name        |Bắt buộc  |Họ tên bệnh nhân                                           |
+    |Phone       |Bắt buộc  |Số điện thoại                                              |
+    |Birthday    |Bắt buộc  |Ngày sinh                                                  |
+    |Gender      |Bắt buộc  |Giới tính. Có 2 giá trị được chấp nhận: 0 là nữ & 1 là nam |
+    |Address     |Tùy chọn  |Địa chỉ                                                    |
+
+- **Respone**:
+
+<p align="center">
+    <img src="./photo/document12.png" width=800 />
+</p>
+
+### [**2.4. Delete**](#24-read-all)
+
+- **Purpose**: Xóa một người bệnh. Tuy nhiên, xóa thông tin của bệnh nhân là điều không nên làm bởi chúng ta có thể
+đem thông tin của bệnh nhân để bán cho các bên khác có nhu cầu sử dụng.
+
+- **Method**: 🔴 DELETE
+> 1 là ID của bệnh nhân
+
+- **URL**: {{ENDPOINT_URL}}/api/patients/1
+
+- **Headers**: 
+
+    | Tên                  | Giá Trị                                                                   |
+    |----------------------|---------------------------------------------------------------------------|
+    |Authorization         | ACCESS_TOKEN                                                              |
+    |Content-Type          | application/x-www-form-urlencoded                                         |
+
+- **Body**: bỏ trống
+
+- **Respone**:
+
+<p align="center">
+    <img src="./photo/document13.png" width=800 />
+</p>
 
 ## [**3. Patient Profile**](#3-patient-profile)
-### [**Read Personal Information**](#31-read-personal-information)
-### [**Change Personal Information**](#32-change-personal-information)
-### [**Change Avatar**](#33-change-avatar)
-### [**Change Password**](#34-change-password)
+### [**3.1. Read Personal Information**](#31-read-personal-information)
+### [**3.2. Change Personal Information**](#32-change-personal-information)
+### [**3.3. Change Avatar**](#33-change-avatar)
+### [**3.4. Change Password**](#34-change-password)
