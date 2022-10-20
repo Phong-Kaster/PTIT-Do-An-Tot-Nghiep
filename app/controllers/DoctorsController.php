@@ -182,6 +182,7 @@
             $avatar = "default_avatar.jpg";
             $active = 1;
             
+            date_default_timezone_set('Asia/Ho_Chi_Minh');
             $create_at = date("Y-m-d H:i:s");
             $update_at = date("Y-m-d H:i:s");
 

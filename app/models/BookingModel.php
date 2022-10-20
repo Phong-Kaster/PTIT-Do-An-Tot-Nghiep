@@ -62,6 +62,7 @@
 	    {
 	    	$defaults = array(
                 "patient_id" => "",
+				"service_id" => "",
 				"booking_name" => "",
 				"booking_phone" => "",
 				"name" => "",
@@ -97,6 +98,7 @@
 		    	->insert(array(
 		    		"id" => null,
 		    		"patient_id" => $this->get("patient_id"),
+					"service_id" => $this->get("service_id"),
 					"booking_name" => $this->get("booking_name"),
 					"booking_phone" => $this->get("booking_phone"),
 					"name" => $this->get("name"),
@@ -130,6 +132,7 @@
 	    		->where("id", "=", $this->get("id"))
 		    	->update(array(
 					"patient_id" => $this->get("patient_id"),
+					"service_id" => $this->get("service_id"),
 					"booking_name" => $this->get("booking_name"),
 					"booking_phone" => $this->get("booking_phone"),
 					"name" => $this->get("name"),

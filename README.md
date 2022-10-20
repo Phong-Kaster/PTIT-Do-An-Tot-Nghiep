@@ -330,6 +330,24 @@ Sau đó thì thay đổi suy nghĩ để chuyển qua làm học thay thế t�
 2. Chức năng tạo lịch khám bệnh cho phía bênh nhân - Patient Booking Controller - kiểm 
 tra dữ liệu đầu vào lâu vl, nhất là thời gian đặt lịch khám.
 
+- **19-10-2022*:
+
+1. Viết tài liệu API phần Authentication và Patients
+
+- **20-10-2022**:
+
+1. Thêm Patient Booking Controller để hỗ trợ bệnh nhân xem chi tiết một booking, hỗ trợ hủy booking.
+
+2. Quản lý các Booking cho bác sĩ vai trò ADMIN và SUPPORTER
+
+| Tên        | Chức năng                                                                                                                                                           |
+|------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Read All   | Xem toàn bộ thông tin các lịch hẹn                                                                                                                                  |
+| Read By ID | Đọc thông tin chi tiết của 1 lịch hẹn                                                                                                                               |
+| Create     | Tạo mới 1 lịch hẹn nhưng KHÔNG KHUYẾN KHÍCH. Thay vào đó tạo thẳng lịch khám bệnh luôn                                                                              |
+| Update     | Thay đổi thông tin của 1 lịch hẹn với điều kiện trạng thái phải là processing                                                                                       |
+| Confirm    | Trả lời lịch hẹn của bệnh nhân. Nếu CANCELLED thì cập nhật trạng thái, nếu VERIFIED thì ngoài cập nhật trạng thái sẽ tiến hành tạo mới lịch khám bệnh(appointment)  |
+
 # [**Controller Timeline**](#controller-timeline)
 
 Phần này mình lưu lại trình tự mình viết đồ án này. Nếu các bạn có nhu cầu tham khảo cách xử lý của mình. Các bạn có thể đọc code theo trình tự 
@@ -373,6 +391,12 @@ Phần này mình lưu lại trình tự mình viết đồ án này. Nếu các
 
 19. Patient Booking Controller 
      
+20. Bookings Controller 
+
+21. Booking Controller
+
+22. Patient Bookings Controller
+
 # [**Special Thanks**](#special-thanks)
 
 <table>

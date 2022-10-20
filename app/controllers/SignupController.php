@@ -22,82 +22,8 @@ class SignupController extends Controller
         {
             $this->signup();
         }
-        // else if( $request_method === 'GET')
-        // {
-        //     $this->sendEmail();
-        // }
     }
 
-    private function sendEmail()
-    {
-
-        //Create a new PHPMailer instance
-        $mail = new PHPMailer();
-        //Tell PHPMailer to use SMTP
-        $mail->isSMTP();
-        //Enable SMTP debugging
-        //SMTP::DEBUG_OFF = off (for production use)
-        //SMTP::DEBUG_CLIENT = client messages
-        //SMTP::DEBUG_SERVER = client and server messages
-        // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
-        //Set the hostname of the mail server
-        $mail->SMTPSecure = 'ssl'; 
-        $mail->Host = "smtp.gmail.com";
-        $mail->Port = 465; 
-        //Whether to use SMTP authentication
-        $mail->SMTPAuth = true;
-        //Username to use for SMTP authentication
-        $mail->Username = 'phongkaster@gmail.com';
-        //Password to use for SMTP authentication
-        $mail->Password = 'pmyicteoyfutbgzz';
-        //Set who the message is to be sent from
-        $mail->setFrom('phongkaster@gmail.com', 'Phong Kaster');
-        //Set an alternative reply-to address
-        $mail->addReplyTo('phongkaster@gmail.com', 'Phong Kaster');
-        //Set who the message is to be sent to
-        $mail->addAddress('n18dccn147@student.ptithcm.edu.vn', 'John Doe');
-        //Set the subject line
-        $mail->Subject = 'Registration';
-        $mail->isHTML();
-        $mail->CharSet = "UTF-8";
-
-        $html = file_get_contents(APPPATH."/inc/email-template.inc.php");
-        $html = str_replace("{{site_name}}","Phong-Kaster", $html);
-        $html = str_replace("{{foot_note}}", "Thanks for using ". htmlspecialchars("Phong-Kaster"), $html);
-        $html = str_replace("{{appurl}}",APPURL, $html);
-        $html = str_replace("{{copyright}}","All rights reserved.", $html);
-
-        $app_url = str_replace("/api", "", APPURL);
-        $body = "<p>Xin chào, </p>"
-                . "<p>Ai đó đã đăng kí tài khoản Bác sĩ tại <a href='".$app_url."'>".htmlspecialchars("Phong-Kaster")."</a> với thông tin sau:</p>"
-                . "<div style='margin-top: 30px; font-size: 14px; color: #9b9b9b'>"
-                . "<div><strong>Name:</strong> ".htmlspecialchars("John Doe")."</div>"
-                . "<div><strong>Phone:</strong> ".htmlspecialchars("0794104124")."</div>"
-                . "<div><strong>Email:</strong> ".htmlspecialchars("n18dccn147@student.ptithcm.edu.vn")."</div>"
-                . "<div><strong>Password:</strong> ".htmlspecialchars("123456")."</div>"
-                . "</div>";
-        $html = str_replace("{{email_content}}",$body, $html);
-        $mail->Body = $html;
-        //Read an HTML message body from an external file, convert referenced images to embedded,
-        //convert HTML into a basic plain-text alternative body
-        // $mail->msgHTML(file_get_contents('contents.html'), __DIR__);
-        //Replace the plain text body with one created manually
-        $mail->AltBody = 'This is a plain-text message body';
-        //Attach an image file
-        // $mail->addAttachment('images/phpmailer_mini.png');
-
-        //send the message, check for errors
-        if (!$mail->send()) {
-            echo 'Mailer Error: ' . $mail->ErrorInfo;
-        } else {
-            echo 'Message sent!';
-        }
-    }
-
-    private function sendEmail2()
-    {
-
-    }
 
     /**
      * Signup
@@ -137,8 +63,7 @@ class SignupController extends Controller
         $active = 1;
         $avatar = Input::post("avatar") ? Input::post("avatar") : "";
         $specialityId = 1;
-        $clinicId = 1;
-
+        date_default_timezone_set('Asia/Ho_Chi_Minh');
 
 
         /**Step 2 - check input data  */
@@ -217,7 +142,6 @@ class SignupController extends Controller
                     ->set("create_at", date("Y-m-d H:i:s"))
                     ->set("update_at", date("Y-m-d H:i:s"))
                     ->set("speciality_id", $specialityId)
-                    ->set("clinic_id", $clinicId)
                     ->save();
 
             $this->resp->result = 1;
@@ -234,8 +158,7 @@ class SignupController extends Controller
                 "avatar" => $Doctor->get("avatar"),
                 "create_at" => $Doctor->get("create_at"),
                 "update_at" => $Doctor->get("update_at"),
-                "speciality_id" => (int)$Doctor->get("speciality_id"),
-                "clinic_id" => (int)$Doctor->get("clinic_id")
+                "speciality_id" => (int)$Doctor->get("speciality_id")
             );
 
             $data = [

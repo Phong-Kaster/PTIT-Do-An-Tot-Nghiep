@@ -91,9 +91,9 @@ App::addRoute("GET|POST", "/api/doctors-and-services/[i:id]", "DoctorsAndService
 
 
 /************************** PATIENT BOOKING ******************************/
-App::addRoute("GET|POST", "/api/patient/booking", "PatientBooking");
-
+App::addRoute("GET|POST", "/api/patient/booking/?", "PatientBookings");
+App::addRoute("GET|DELETE", "/api/patient/booking/[i:id]/?", "PatientBooking");
 
 /************************** BOOKING ******************************/
-App::addRoute("GET|POST", "/api/bookings/", "Bookings");
-App::addRoute("GET|POST", "/api/bookings/[i:id]", "Booking");
+App::addRoute("GET|POST", "/api/bookings/?", "Bookings");
+App::addRoute("GET|PUT|PATCH", "/api/bookings/[i:id]/?", "Booking");

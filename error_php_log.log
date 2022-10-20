@@ -69,3 +69,62 @@ Stack trace:
 [18-Oct-2022 16:21:03 UTC] PHP Deprecated:  The behavior of unparenthesized expressions containing both '.' and '+'/'-' will change in PHP 8: '+'/'-' will take a higher precedence in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientBookingController.php on line 275
 [18-Oct-2022 16:21:19 UTC] PHP Parse error:  syntax error, unexpected '\' (T_NS_SEPARATOR) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientBookingController.php on line 277
 [18-Oct-2022 23:21:35 Asia/Ho_Chi_Minh] PHP Notice:  Array to string conversion in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientBookingController.php on line 277
+[20-Oct-2022 01:26:22 UTC] PHP Notice:  Undefined variable: valid_status in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorController.php on line 223
+[20-Oct-2022 01:26:22 UTC] PHP Warning:  implode(): Invalid arguments passed in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorController.php on line 223
+[20-Oct-2022 01:26:54 UTC] PHP Warning:  Use of undefined constant TABLE_CLINICS - assumed 'TABLE_CLINICS' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\models\ClinicModel.php on line 39
+[20-Oct-2022 01:26:54 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'doantotnghiep.tn_table_clinics' doesn't exist in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php:152
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php(152): PDOStatement->execute()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php(173): Pixie\QueryBuilder\QueryBuilderHandler->statement('SELECT count(*)...', Array)
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php(252): Pixie\QueryBuilder\QueryBuilderHandler->get()
+#3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php(235): Pixie\QueryBuilder\QueryBuilderHandler->aggregate('count')
+#4 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\models\Clini in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php on line 152
+[20-Oct-2022 01:31:04 UTC] PHP Notice:  Undefined variable: valid_status in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\BookingsController.php on line 30
+[20-Oct-2022 01:31:04 UTC] PHP Warning:  implode(): Invalid arguments passed in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\BookingsController.php on line 30
+[20-Oct-2022 01:31:41 UTC] PHP Notice:  Undefined variable: valid_status in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\BookingsController.php on line 31
+[20-Oct-2022 01:31:41 UTC] PHP Warning:  implode(): Invalid arguments passed in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\BookingsController.php on line 31
+[20-Oct-2022 01:46:44 UTC] PHP Notice:  Undefined property: stdClass::$booing_phone in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\BookingsController.php on line 120
+[20-Oct-2022 01:46:44 UTC] PHP Notice:  Undefined property: stdClass::$booing_phone in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\BookingsController.php on line 120
+[20-Oct-2022 02:00:28 UTC] PHP Notice:  Undefined variable: Route in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientController.php on line 314
+[20-Oct-2022 02:00:28 UTC] PHP Notice:  Trying to get property 'params' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientController.php on line 314
+[20-Oct-2022 02:00:28 UTC] PHP Notice:  Trying to get property 'id' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientController.php on line 314
+[20-Oct-2022 10:08:52 Asia/Ho_Chi_Minh] PHP Notice:  Undefined variable: patient_id in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\BookingController.php on line 190
+[20-Oct-2022 10:09:42 Asia/Ho_Chi_Minh] PHP Notice:  Undefined variable: AuthUser in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\BookingController.php on line 300
+[20-Oct-2022 10:09:42 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\BookingController.php:300
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\BookingController.php(37): BookingController->update()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(611): BookingController->process()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#3 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\BookingController.php on line 300
+[20-Oct-2022 10:43:23 Asia/Ho_Chi_Minh] PHP Notice:  Undefined variable: Booking in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientBookingController.php on line 290
+[20-Oct-2022 10:43:23 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Call to a member function set() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientBookingController.php:290
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientBookingController.php(34): PatientBookingController->save()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(611): PatientBookingController->process()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#3 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientBookingController.php on line 290
+[20-Oct-2022 03:49:28 UTC] PHP Fatal error:  Uncaught Error: Class 'PatientBookingController' not found in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php:539
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(601): App->route()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#2 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php on line 539
+[20-Oct-2022 03:58:06 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method PatientBookingController::readById() in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientBookingController.php:29
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(611): PatientBookingController->process()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#2 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientBookingController.php on line 29
+[20-Oct-2022 03:59:57 UTC] PHP Notice:  Undefined variable: data in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\PatientBookingController.php on line 79
+[20-Oct-2022 11:37:38 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Exception: Invalid method in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\Input.php:86
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\BookingController.php(363): Input::__callStatic('patch', Array)
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\BookingController.php(41): BookingController->confirm()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(611): BookingController->process()
+#3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#4 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\Input.php on line 86
+[20-Oct-2022 11:38:15 Asia/Ho_Chi_Minh] PHP Notice:  Undefined variable: status in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\BookingController.php on line 369
+[20-Oct-2022 04:41:16 UTC] PHP Parse error:  syntax error, unexpected ')' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\BookingController.php on line 380

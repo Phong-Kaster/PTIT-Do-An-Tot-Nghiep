@@ -168,6 +168,7 @@
             $address = Input::put("address");
             //$avatar = Input::put("avatar");
             //$create_at = date("Y-m-d H:i:s");
+            date_default_timezone_set('Asia/Ho_Chi_Minh');
             $update_at = date("Y-m-d H:i:s");
             $gender = Input::put("gender");
 
@@ -310,8 +311,16 @@
          */
         private function delete()
         {
-            // chắc không xóa thông tin bệnh nhân => sau này bán thông tin bệnh nhân kiếm tiền
             $this->resp->result = 0;
+            $Route = $this->getVariable("Route");
+
+            if( isset($Route->params->id) && $Route->params->id == 1 )
+            {
+                $this->resp->msg = "This patient is an example & can be deleted !";
+                $this->jsonecho();
+            }
+
+            // chắc không xóa thông tin bệnh nhân => sau này bán thông tin bệnh nhân kiếm tiền
             $this->resp->msg = "This action is not allowed !";
             $this->jsonecho();
         }

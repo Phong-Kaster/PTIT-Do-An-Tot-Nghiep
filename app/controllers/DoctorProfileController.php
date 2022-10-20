@@ -182,6 +182,9 @@
             $currentPassword = Input::post("currentPassword");
             $newPassword     = Input::post("newPassword");
             $confirmPassword = Input::post("confirmPassword");
+            date_default_timezone_set('Asia/Ho_Chi_Minh');
+            $update_at = date("Y-m-d H:i:s");
+
 
             /**Step 3 - is the doctor active ? */
             $Doctor = Controller::model("Doctor", $id);
@@ -220,6 +223,7 @@
             try 
             {
                 $Doctor->set("password", password_hash($newPassword, PASSWORD_DEFAULT))
+                    ->set("update_at", $update_at)
                     ->save();
 
                 $this->resp->result = 1;
@@ -260,6 +264,8 @@
             $this->resp->result = 0;
             $AuthUser = $this->getVariable("AuthUser");
 
+            date_default_timezone_set('Asia/Ho_Chi_Minh');
+            $update_at = date("Y-m-d H:i:s");
 
             /**Step 2 - is the doctor active ? */
             if( !$AuthUser || $AuthUser->get("active") != 1 )
@@ -320,6 +326,7 @@
             try 
             {
                 $AuthUser->set("avatar", $name . "." .$ext)
+                        ->set("update_at", $update_at)
                         ->save();
 
                 $this->resp->result = 1;
@@ -383,6 +390,7 @@
             //$active = 1;
             
             //$create_at = date("Y-m-d H:i:s");
+            date_default_timezone_set('Asia/Ho_Chi_Minh');
             $update_at = date("Y-m-d H:i:s");
 
             $speciality_id = Input::post("speciality_id");
@@ -447,6 +455,7 @@
                         ->set("price", $price)
                         ->set("update_at", $update_at)
                         ->set("speciality_id", $speciality_id)
+                        ->set("update_at", $update_at)
                         ->save();
 
                 $this->resp->result = 1;

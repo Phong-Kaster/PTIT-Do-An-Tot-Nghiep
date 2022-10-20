@@ -51,7 +51,8 @@ class PasswordResetController extends Controller
         $password = Input::post("password");
         $passwordConfirm = Input::post("passwordConfirm");
         $id = $Route->params->id;
-
+        date_default_timezone_set('Asia/Ho_Chi_Minh');
+        $update_at = date("Y-m-d H:i:s");
 
         $Doctor = Controller::model("Doctor", $id );
         if( !$Doctor->isAvailable() )
@@ -89,6 +90,7 @@ class PasswordResetController extends Controller
         try 
         {
             $Doctor->set("password", password_hash($password, PASSWORD_DEFAULT))
+                    ->set("update_at", $update_at)
                     ->save();
             
             $this->resp->result = 1;

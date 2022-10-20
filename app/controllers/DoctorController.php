@@ -175,6 +175,7 @@
             $active = Input::put("active");
             
             //$create_at = date("Y-m-d H:i:s");
+            date_default_timezone_set('Asia/Ho_Chi_Minh');
             $update_at = date("Y-m-d H:i:s");
 
             $speciality_id = Input::put("speciality_id") ? (int)Input::put("speciality_id") : 1;
@@ -216,11 +217,11 @@
             }
 
             /**Step 3.4 - role validation */
-            $valid_roles = ["admin", "member"];
+            $valid_roles = ["admin", "member", "supporter"];
             $role_validation = in_array($role, $valid_roles);
             if( !$role_validation )
             {
-                $this->resp->msg = "Role is not valid. There are 2 valid values: admin & member !";
+                $this->resp->msg = "Role is not valid. There are 2 valid values: ".implode(', ',$valid_roles)." !";
                 $this->jsonecho();
             }
 
@@ -233,12 +234,12 @@
             }
 
             /**Step 3.6 - clinic validation */
-            $Clinic = Controller::model("Clinic", $clinic_id);
-            if( !$Clinic->isAvailable() )
-            {
-                $this->resp->msg = "Clinic is not available.";
-                $this->jsonecho();
-            }
+            // $Clinic = Controller::model("Clinic", $clinic_id);
+            // if( !$Clinic->isAvailable() )
+            // {
+            //     $this->resp->msg = "Clinic is not available.";
+            //     $this->jsonecho();
+            // }
 
 
             /**Step 4 - save*/
@@ -253,7 +254,6 @@
                         ->set("avatar", $avatar)
                         ->set("update_at", $update_at)
                         ->set("speciality_id", $speciality_id)
-                        ->set("clinic_id", $clinic_id)
                         ->save();
 
                 $this->resp->result = 1;
@@ -270,8 +270,7 @@
                     "active" => (int)$Doctor->get("active"),
                     "create_at" => $Doctor->get("create_at"),
                     "update_at" => $Doctor->get("update_at"),
-                    "speciality_id" => (int)$Doctor->get("speciality_id"),
-                    "clinic_id" => (int)$Doctor->get("clinic_id")
+                    "speciality_id" => (int)$Doctor->get("speciality_id")
                 );
             } 
             catch (\Exception $ex) 
