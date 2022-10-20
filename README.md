@@ -228,6 +228,31 @@ Vậy mà đùng một cái, nhà trường **từ chối hết tất cả đơn
 Mình đã đánh đổi bằng việc kết thúc sớm chương trình thực tập tại GeoComply ngày 03/10/2022 để đánh đổi bằng việc học thay thế cho khỏe thân.
  Ai dè giờ vẫn phải làm đồ án tốt nghiệp. Chán thực sự chán 😣😣
 
+**20-10-2022**
+
+Chúc mừng ngày Phụ nữ Việt Nam 2022 
+
+Yeah, hôm qua là lần cuối cùng mình nộp tiền học phí cho trường 😂😁😂. Thế là hết nợ rồi.
+
+Nếu chỉ vậy thì mình sẽ không viết những dòng này. Trường mình có một hệ thống làm việc rất quan liêu và hết sức vớ vẩn.
+Làm đồ án tốt nghiệp hay học môn thay thế các bạn đều **PHẢI ĐÓNG HỌC PHÍ** với niên khóa của mình - 2018-2023 - thì số tiền là 
+**3.300.000 đồng**. Tuy nhiên đó chưa phải là điều mình bức xúc nhất. 
+
+Điều bức xúc ở đây là sự quan liệu tới mức vô tổ chức. Nhà trường không hề viết một công văn, một thông báo chính thức gì để gửi tới
+sinh viên cả 😤😤😤😤😤( điên máu thực sự). Rất may mắn là bạn lớp trưởng lớp mình chủ động hỏi phòng tài chính về thời hạn đóng 
+học phí thì....
+
+**ỐI GIỜI ƠI ! Hạn đóng học phí là từ ngày 14-10-2022 đến ngày 19-10-2022** nhưng tụi mình chỉ mới nắm thông tin ngày 18-10-2022.
+Chán thực sự chán luôn ạ. Làm ăn vớ va vớ vẩn.
+
+Nếu học phí của đồ án( hoặc học thay thế) không nộp đúng hạn thì nhà trường sẽ **cho rằng chúng ta tự ý bỏ học và hủy toàn bộ kết 
+quả học tập trong suốt 4 năm vừa qua**. 
+
+Việc hủy kết quả học tập tưởng chừng chỉ là đòn hù của nhà trường nhưng không nha các bạn. Tớ
+đã chứng kiến việc nộp học phí muộn mà kết quả học tập 1 học kì bị hủy và bạn đó phải học lại những môn của kì đó rồi. Do vậy dĩ nhiên 
+là nộp chậm học phí cho đồ án ( học môn thay thế ) không phải là một lời đe dọa ạ. Méo hiểu sao tiền thì thu nhanh và không bớt 
+một đồng nhưng việc giải nhân tiền học bổng và sửa chữa cơ sở vật chất thì.... Nói chung là chán lắm, không muốn nói nữa🥱🥱🥱🥱
+
 # [**Bonus**](#bonus)
 
 Dưới đây là cơ sở dữ liệu mà mình phát triển lên từ Đồ án thực tập. Cơ sở dữ liệu này mình thiết kế từ trước phải làm đề tài.
@@ -330,7 +355,7 @@ Sau đó thì thay đổi suy nghĩ để chuyển qua làm học thay thế t�
 2. Chức năng tạo lịch khám bệnh cho phía bênh nhân - Patient Booking Controller - kiểm 
 tra dữ liệu đầu vào lâu vl, nhất là thời gian đặt lịch khám.
 
-- **19-10-2022*:
+- **19-10-2022**:
 
 1. Viết tài liệu API phần Authentication và Patients
 
@@ -347,6 +372,15 @@ tra dữ liệu đầu vào lâu vl, nhất là thời gian đặt lịch khám.
 | Create     | Tạo mới 1 lịch hẹn nhưng KHÔNG KHUYẾN KHÍCH. Thay vào đó tạo thẳng lịch khám bệnh luôn                                                                              |
 | Update     | Thay đổi thông tin của 1 lịch hẹn với điều kiện trạng thái phải là processing                                                                                       |
 | Confirm    | Trả lời lịch hẹn của bệnh nhân. Nếu CANCELLED thì cập nhật trạng thái, nếu VERIFIED thì ngoài cập nhật trạng thái sẽ tiến hành tạo mới lịch khám bệnh(appointment)  |
+
+3. Sửa lý phần đặt lịch hẹn cho bệnh nhân.
+
+Tóm tắt:
+
+- **Trường hợp 1** - khách vãng lai không đặt lịch qua Android thì ngày khám mặc định là ngày hôm nay & lấy số thứ tự luôn.
+
+- **Trường hợp 2** - khách đặt qua Android thì ngày khám sẽ là ngày được đặt trong Android và sẽ KHÔNG ĐƯỢC lấy số thự ngay. Chỉ khi họ 
+xuất hiện ở bệnh viện thì mới có số thứ tự.
 
 # [**Controller Timeline**](#controller-timeline)
 

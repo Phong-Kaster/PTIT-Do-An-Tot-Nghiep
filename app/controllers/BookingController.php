@@ -280,7 +280,6 @@
 
             try 
             {
-                //$Booking = Controller::model("Booking");
                 $Booking->set("service_id", $service_id)
                     ->set("booking_name", $booking_name)
                     ->set("booking_phone", $booking_phone)
@@ -400,10 +399,6 @@
             * => booking's status is VERIFIED & create new appointment with doctor_id */
             if( $new_status == "verified" )
             {
-                $Booking->set("status", "verified")
-                    ->update("update_at", $update_at)
-                    ->save();
-
                 $msg = "VERIFIED this booking will create a new appointment. Redirect to CREATE - /api/appointment !";
 
             }
@@ -413,14 +408,13 @@
             * => booking's status is CANCELLED.*/
             if( $new_status == "cancelled")
             {
-                $Booking->set("status", "cancelled")
-                    ->update("update_at", $update_at)
-                    ->save();
-
                 $msg = "Booking has been cancelled successfully !";
             }
+            $Booking->set("status", $new_status)
+            ->update("update_at", $update_at)
+            ->save();
 
-
+            
             /**Step 5 - save change */            
             $this->resp->result = 1;
             $this->resp->msg = $msg;

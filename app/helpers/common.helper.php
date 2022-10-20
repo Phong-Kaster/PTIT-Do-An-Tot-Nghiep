@@ -849,7 +849,15 @@ function isAppointmentHourValid($appointment_hour, $appointment_date)
     $currentHour = (int)Date("H");
     $currentMinute = (int)Date("i");
 
-    if(!$hour || $minute)
+    // print_r("\n now: ".date("Y-m-d H:i:s"));
+    // print_r("\n current hour: ".$currentHour);
+    // print_r("\n current minute: ".$currentMinute);
+    // print_r("\n hour: ".$hour);
+    // print_r("\n minute: ".$minute);
+    // print_r("\n");
+
+
+    if(!$hour || !$minute)
     {
         $output = "Appointment time has incorrect format. Try again !";
         return $output;
@@ -901,8 +909,9 @@ function isAppointmentHourValid($appointment_hour, $appointment_date)
         /**Step 4 - Case 1.1 - Appointment date is today or tomorrow? If tomorrow, hour is still valid */
         if( $yearDifference >= 0 && $monthDifference >= 0 )
         {
-            /**(current)18-10-2022 17:15pm VS (appointment)18-10-2022 16:00pm => CORRECT  */
-            if( $dayDifference == 0 && $currentHour < $hour)
+            /**(current)18-10-2022 17:15pm VS (appointment)18-10-2022 16:00pm & $hour must in working hours
+             * => CORRECT  */
+            if( $dayDifference == 0 && $currentHour < $hour && $currentHour > 7 && $currentHour < 20)
             {
                 # always correct
             }
@@ -910,6 +919,11 @@ function isAppointmentHourValid($appointment_hour, $appointment_date)
             else if( $dayDifference > 0 )
             {
                 # always correct
+            }
+            else 
+            {
+                $output = "Now is ".date("H:i")." so that appointment hour is not valid. Try again !";
+                return $output;
             }
         }
         /**Step 4 - Case 1.2 - Appointment date is previous days => INCORRECT */

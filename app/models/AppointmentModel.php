@@ -7,7 +7,7 @@
 	 * 
 	 */
 	
-	class AppointmentsModel extends DataEntry
+	class AppointmentModel extends DataEntry
 	{	
 		/**
 		 * Extend parents constructor and select entry
@@ -69,6 +69,7 @@
 				"patient_phone" => "",
 				"numerical_order" => "",
 				"appointment_time" => "",
+				"date" => "",
 				"status" => "",
 				"create_at" => "",
 				"update_at" => ""
@@ -102,6 +103,7 @@
 					"patient_reason" => $this->get("patient_reason"),
 					"patient_phone" => $this->get("patient_phone"),
 					"numerical_order" => $this->get("numerical_order"),
+					"date" => $this->get("date"),
                     "appointment_time" => $this->get("appointment_time"),
 					"status" => $this->get("status"),
 					"create_at" => $this->get("create_at"),
@@ -134,6 +136,7 @@
 					"patient_reason" => $this->get("patient_reason"),
 					"patient_phone" => $this->get("patient_phone"),
 					"numerical_order" => $this->get("numerical_order"),
+					"date" => $this->get("date"),
                     "appointment_time" => $this->get("appointment_time"),
 					"status" => $this->get("status"),
 					"create_at" => $this->get("create_at"),

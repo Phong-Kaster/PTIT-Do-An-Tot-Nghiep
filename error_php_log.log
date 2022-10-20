@@ -128,3 +128,55 @@ Stack trace:
   thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\Input.php on line 86
 [20-Oct-2022 11:38:15 Asia/Ho_Chi_Minh] PHP Notice:  Undefined variable: status in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\BookingController.php on line 369
 [20-Oct-2022 04:41:16 UTC] PHP Parse error:  syntax error, unexpected ')' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\BookingController.php on line 380
+[20-Oct-2022 08:36:07 UTC] PHP Parse error:  syntax error, unexpected '$AuthUser' (T_VARIABLE), expecting function (T_FUNCTION) or const (T_CONST) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentsController.php on line 9
+[20-Oct-2022 20:21:07 Asia/Ho_Chi_Minh] PHP Notice:  Undefined variable: birthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentsController.php on line 236
+[20-Oct-2022 21:09:42 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Call to undefined method stdClass::get() in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentsController.php:289
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentsController.php(27): AppointmentsController->save()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(611): AppointmentsController->process()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#3 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentsController.php on line 289
+[20-Oct-2022 21:09:51 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Call to a member function get() on array in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentsController.php:289
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentsController.php(27): AppointmentsController->save()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(611): AppointmentsController->process()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#3 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentsController.php on line 289
+[20-Oct-2022 21:12:31 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'tn_appointments.appointment_date' in 'where clause' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php:152
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php(152): PDOStatement->execute()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php(173): Pixie\QueryBuilder\QueryBuilderHandler->statement('SELECT * FROM `...', Array)
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentsController.php(289): Pixie\QueryBuilder\QueryBuilderHandler->get()
+#3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentsController.php(27): AppointmentsController->save()
+#4 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(611): AppointmentsController->process()
+#5 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72 in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php on line 152
+[20-Oct-2022 21:12:40 Asia/Ho_Chi_Minh] PHP Notice:  Undefined offset: 0 in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentsController.php on line 290
+[20-Oct-2022 21:12:40 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'numerical_order' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentsController.php on line 290
+[20-Oct-2022 22:07:01 Asia/Ho_Chi_Minh] PHP Notice:  Undefined property: AppointmentModel::$id in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentsController.php on line 336
+[20-Oct-2022 22:07:01 Asia/Ho_Chi_Minh] PHP Notice:  Undefined property: AppointmentModel::$doctor_id in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentsController.php on line 337
+[20-Oct-2022 22:07:01 Asia/Ho_Chi_Minh] PHP Notice:  Undefined property: AppointmentModel::$patient_id in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentsController.php on line 338
+[20-Oct-2022 22:07:01 Asia/Ho_Chi_Minh] PHP Notice:  Undefined property: AppointmentModel::$patient_name in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentsController.php on line 339
+[20-Oct-2022 22:07:01 Asia/Ho_Chi_Minh] PHP Notice:  Undefined property: AppointmentModel::$patient_birthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentsController.php on line 340
+[20-Oct-2022 22:07:01 Asia/Ho_Chi_Minh] PHP Notice:  Undefined property: AppointmentModel::$patient_reason in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentsController.php on line 341
+[20-Oct-2022 22:07:01 Asia/Ho_Chi_Minh] PHP Notice:  Undefined property: AppointmentModel::$patient_phone in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentsController.php on line 343
+[20-Oct-2022 22:07:01 Asia/Ho_Chi_Minh] PHP Notice:  Undefined property: AppointmentModel::$numerical_order in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentsController.php on line 344
+[20-Oct-2022 22:07:01 Asia/Ho_Chi_Minh] PHP Notice:  Undefined property: AppointmentModel::$appointment_time in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentsController.php on line 345
+[20-Oct-2022 22:07:01 Asia/Ho_Chi_Minh] PHP Notice:  Undefined property: AppointmentModel::$status in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentsController.php on line 346
+[20-Oct-2022 22:07:01 Asia/Ho_Chi_Minh] PHP Notice:  Undefined property: AppointmentModel::$create_at in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentsController.php on line 347
+[20-Oct-2022 22:07:01 Asia/Ho_Chi_Minh] PHP Notice:  Undefined property: AppointmentModel::$update_at in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentsController.php on line 348
+[20-Oct-2022 22:07:45 Asia/Ho_Chi_Minh] PHP Notice:  Undefined property: AppointmentModel::$id in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentsController.php on line 336
+[20-Oct-2022 22:07:45 Asia/Ho_Chi_Minh] PHP Notice:  Undefined property: AppointmentModel::$doctor_id in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentsController.php on line 337
+[20-Oct-2022 22:07:45 Asia/Ho_Chi_Minh] PHP Notice:  Undefined property: AppointmentModel::$patient_id in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentsController.php on line 338
+[20-Oct-2022 22:07:45 Asia/Ho_Chi_Minh] PHP Notice:  Undefined property: AppointmentModel::$patient_name in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentsController.php on line 339
+[20-Oct-2022 22:07:45 Asia/Ho_Chi_Minh] PHP Notice:  Undefined property: AppointmentModel::$patient_birthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentsController.php on line 340
+[20-Oct-2022 22:07:45 Asia/Ho_Chi_Minh] PHP Notice:  Undefined property: AppointmentModel::$patient_reason in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentsController.php on line 341
+[20-Oct-2022 22:07:45 Asia/Ho_Chi_Minh] PHP Notice:  Undefined property: AppointmentModel::$patient_phone in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentsController.php on line 343
+[20-Oct-2022 22:07:45 Asia/Ho_Chi_Minh] PHP Notice:  Undefined property: AppointmentModel::$numerical_order in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentsController.php on line 344
+[20-Oct-2022 22:07:45 Asia/Ho_Chi_Minh] PHP Notice:  Undefined property: AppointmentModel::$appointment_time in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentsController.php on line 345
+[20-Oct-2022 22:07:45 Asia/Ho_Chi_Minh] PHP Notice:  Undefined property: AppointmentModel::$status in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentsController.php on line 346
+[20-Oct-2022 22:07:45 Asia/Ho_Chi_Minh] PHP Notice:  Undefined property: AppointmentModel::$create_at in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentsController.php on line 347
+[20-Oct-2022 22:07:45 Asia/Ho_Chi_Minh] PHP Notice:  Undefined property: AppointmentModel::$update_at in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentsController.php on line 348
+[20-Oct-2022 22:10:09 Asia/Ho_Chi_Minh] PHP Notice:  Undefined offset: 0 in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentsController.php on line 293
+[20-Oct-2022 22:10:09 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'numerical_order' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentsController.php on line 293
