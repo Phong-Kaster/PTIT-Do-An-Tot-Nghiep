@@ -15,7 +15,6 @@
   - [**3. Code**](#3-code)
 - [**Document**](#document)
   - [**1. Authentication**](#1-authentication)
-    - [**0. Pattern**](#0-pattern)
     - [**1.1. Login Patient**](#11-login-patient)
     - [**1.2. Login Doctor**](#12-login-doctor)
     - [**1.3. Sign Up**](#13-sign-up)
@@ -31,6 +30,11 @@
     - [**3.2. Change Personal Information**](#32-change-personal-information)
     - [**3.3. Change Avatar**](#33-change-avatar)
     - [**3.4. Change Password**](#34-change-password)
+  - [**4. Patient Booking**](#4-patient-booking)
+    - [**4.1. Read All**](#41-read-all)
+    - [**4.2. Read By ID**](#42-read-by-id)
+    - [**4.3. Create**](#43-create)
+    - [**4.4. Cancel**](#44-cancel)
 
 # [**Introduction**](#introduction)
 
@@ -163,32 +167,13 @@ Mục đích chung là phục vụ chức năng đăng nhập & xác thực danh
 
 ***Các API trong mục Authentication***
 
-### [**0. Pattern**](#0-pattern)
-
-- **Purpose**: 
-
-- **Method**: 
-
-- **URL**: 
-
-- **Headers**: 
-
-- **Body**:
-  
-  1. 
-
-- **Respone**:
-
-<p align="center">
-    <img src="" width=400/>
-</p>
-<h3 align="center">
+</h3>
 
 ### [**1.1. Login Patient**](#11-login-patient)
 
 - **Purpose**: Xử lý yêu cầu đăng nhập của bệnh nhân từ Android gửi tới.
 
-- **Method**: 🟡POST
+- **Method**: 🟡 **POST**
 
 - **URL**: {{ENDPOINT_URL}}/api/login
 
@@ -205,7 +190,7 @@ Mục đích chung là phục vụ chức năng đăng nhập & xác thực danh
 - **Respone**:
 
 <p align="center">
-    <img src="./photo/document05.png" width=800 />
+    <img src="./photo/document05.png"/>
 </p>
 <h3 align="center">
 
@@ -213,7 +198,7 @@ Mục đích chung là phục vụ chức năng đăng nhập & xác thực danh
 
 - **Purpose**: Xử lý yêu cầu đăng nhập của bác sĩ 
 
-- **Method**: 🟡 POST
+- **Method**: 🟡 **POST**
 
 - **URL**: {{ENDPOINT_URL}}/api/login
 
@@ -230,7 +215,7 @@ Mục đích chung là phục vụ chức năng đăng nhập & xác thực danh
 - **Respone**:
 
 <p align="center">
-    <img src="./photo/document06.png" width=800 />
+    <img src="./photo/document06.png"/>
 </p>
 <h3 align="center">
 
@@ -238,7 +223,7 @@ Mục đích chung là phục vụ chức năng đăng nhập & xác thực danh
 
 - **Purpose**: đăng ký tài khoản mới
 
-- **Method**: 🟡 POST
+- **Method**: 🟡 **POST**
 
 - **URL**: {{ENDPOINT_URL}}/api/signup
 
@@ -265,20 +250,20 @@ Mục đích chung là phục vụ chức năng đăng nhập & xác thực danh
 - **Respone**:
   
 <p align="center">
-    <img src="./photo/document07.png" width=800 />
+    <img src="./photo/document07.png"/>
 </p>
 
 - **Email**:
 
 <p align="center">
-    <img src="../photo/image1.png" width=800 />
+    <img src="../photo/image1.png"/>
 </p>
 
 ### [**1.4. Recovery**](#14-recovery)
 
 - **Purpose**: Gửi email để lấy mã xác thực nhằm khôi phục mật khẩu
 
-- **Method**: 🟡 POST
+- **Method**: 🟡 **POST**
 
 - **URL**: {{ENDPOINT_URL}}/api/recovery
 
@@ -297,14 +282,14 @@ Mục đích chung là phục vụ chức năng đăng nhập & xác thực danh
 - **Respone**:
 
 <p align="center">
-    <img src="./photo/document08.png" width=800 />
+    <img src="./photo/document08.png"/>
 </p>
 
 ### [**1.5. Password Reset**](#15-password-reset)
 
 - **Purpose**: Đặt lại mật khẩu mới với mã xác thực nhận từ Email
 
-- **Method**: 🟡 POST
+- **Method**: 🟡 **POST**
 
 - **URL**: {{ENDPOINT_URL}}/api/password-reset/12
 
@@ -327,7 +312,7 @@ Mục đích chung là phục vụ chức năng đăng nhập & xác thực danh
 - **Respone**:
 
 <p align="center">
-    <img src="./photo/document09.png" width=800 />
+    <img src="./photo/document09.png"/>
 </p>
 
 ## [**2. Patients**](#2-patients)
@@ -338,7 +323,7 @@ Mục đích chung là phục vụ chức năng đăng nhập & xác thực danh
 
 - **Purpose**: Đọc thông tin của tất cả bệnh nhân
 
-- **Method**: 🟢 GET
+- **Method**: 🟢 **GET**
 
 - **URL**: {{ENDPOINT_URL}}/api/patients
 
@@ -363,14 +348,14 @@ Mục đích chung là phục vụ chức năng đăng nhập & xác thực danh
 - **Respone**:
 
 <p align="center">
-    <img src="./photo/document10.png" width=800 />
+    <img src="./photo/document10.png"/>
 </p>
 
 ### [**2.2. Read By ID**](#22-read-all)
 
 - **Purpose**: Đọc thông tin của một bệnh nhân cụ thể
 
-- **Method**: 🟢 GET
+- **Method**: 🟢 **GET**
 
 - **URL**: {{ENDPOINT_URL}}/api/patients/1
 
@@ -388,14 +373,14 @@ Mục đích chung là phục vụ chức năng đăng nhập & xác thực danh
 - **Respone**:
 
 <p align="center">
-    <img src="./photo/document11.png" width=800 />
+    <img src="./photo/document11.png" />
 </p>
 
 ### [**2.3. Update**](#23-read-all)
 
 - **Purpose**: Cập nhật thông tin của một bệnh nhân
 
-- **Method**: 🔵 PUT
+- **Method**: 🔵 **PUT**
 
 - **URL**: {{ENDPOINT_URL}}/api/patients/1
 
@@ -421,7 +406,7 @@ Mục đích chung là phục vụ chức năng đăng nhập & xác thực danh
 - **Respone**:
 
 <p align="center">
-    <img src="./photo/document12.png" width=800 />
+    <img src="./photo/document12.png"/>
 </p>
 
 ### [**2.4. Delete**](#24-read-all)
@@ -429,7 +414,7 @@ Mục đích chung là phục vụ chức năng đăng nhập & xác thực danh
 - **Purpose**: Xóa một người bệnh. Tuy nhiên, xóa thông tin của bệnh nhân là điều không nên làm bởi chúng ta có thể
 đem thông tin của bệnh nhân để bán cho các bên khác có nhu cầu sử dụng.
 
-- **Method**: 🔴 DELETE
+- **Method**: 🔴 **DELETE**
 > 1 là ID của bệnh nhân
 
 - **URL**: {{ENDPOINT_URL}}/api/patients/1
@@ -446,11 +431,277 @@ Mục đích chung là phục vụ chức năng đăng nhập & xác thực danh
 - **Respone**:
 
 <p align="center">
-    <img src="./photo/document13.png" width=800 />
+    <img src="./photo/document13.png" />
 </p>
 
 ## [**3. Patient Profile**](#3-patient-profile)
+
+Mục đích chung là giúp bệnh nhân cập nhật thông tin cá nhân, thay đổi hình đại diện và thay đổi mật khẩu.
+Không có chức năng khôi phục mật khẩu vì bệnh nhân sẽ đăng nhập bằng 1 trong 2 cách sau:
+
+1. Đăng nhập bằng số điện thoại với mã OTP.
+
+2. Đăng nhập bằng tài khoản Google.
+
+<p align="center">
+    <img src="./photo/document14.png" />
+</p>
+
+<h3 align="center">
+
+***Các API trong mục Patient Profile***
+
+</h3>
+
 ### [**3.1. Read Personal Information**](#31-read-personal-information)
+
+- **Purpose**: Giúp bệnh nhân xem thông tin cá nhân của mình 
+
+- **Method**: 🟢 **GET**
+
+- **URL**: {{ENDPOINT_URL}}/api/patient/profile
+
+- **Headers**: 
+
+    | Tên                  | Giá Trị                                                                   |
+    |----------------------|---------------------------------------------------------------------------|
+    |Authentication        |{{ACCESS_TOKEN_PATIENT}}                                                   |
+    |Type                  |Patient                                                                    |
+
+- **Body**: bỏ trống
+
+- **Respone**:
+
+<p align="center">
+    <img src="./photo/document15.png" />
+</p>
+
 ### [**3.2. Change Personal Information**](#32-change-personal-information)
+
+- **Purpose**: Hỗ trợ bệnh nhân cập nhật thông tin cá nhân
+
+- **Method**: 🟡 **POST**
+
+- **URL**: {{ENDPOINT_URL}}/api/patient/profile
+
+- **Headers**: 
+
+    | Tên                  | Giá Trị                                                                   |
+    |----------------------|---------------------------------------------------------------------------|
+    |Authentication        |{{ACCESS_TOKEN_PATIENT}}                                                   |
+    |Content-Type          |application/x-www-form-urlencoded                                          |
+    |Type                  |Patient                                                                    |
+
+- **Body**:
+  
+    | Tên                   | Tùy chọn | Ý nghĩa                                                                           |
+    |-----------------------|----------|-----------------------------------------------------------------------------------|
+    |Action                 |Bắt buộc  |Thể hiện yêu cầu gửi tới api này làm gì. Có 3 trạng thái hợp lệ: personal, password & avatar. API sử dụng **PERSONAL**|
+    |Name                   |Bắt buộc  |Họ tên bệnh nhân                                                                   |
+    |Gender                 |Tùy chọn  |Giới tính. Có 2 giá trị: 0 là nữ & 1 là nam                                        |
+    |Birthday               |Bắt buộc  |Ngày tháng năm sinh bệnh nhân                                                      |
+    |Address                |Bắt buộc  |Địa chỉ bệnh nhân                                                                  |
+
+- **Respone**:
+
+<p align="center">
+    <img src="./photo/document16.png" />
+</p>
+
 ### [**3.3. Change Avatar**](#33-change-avatar)
+
+- **Purpose**: Hỗ trợ bệnh nhân cập nhật ảnh đại diện
+
+- **Method**: 🟡 **POST**
+
+- **URL**: {{ENDPOINT_URL}}/api/patient/profile
+
+- **Headers**:
+   
+    | Tên                  | Giá Trị                                                                   |
+    |----------------------|---------------------------------------------------------------------------|
+    |Authentication        |{{ACCESS_TOKEN_PATIENT}}                                                           |
+    |Content-Type          |application/x-www-form-urlencoded                                          |
+    |Type                  |Patient                                                                    |
+
+- **Body**:
+  
+    | Tên                   | Tùy chọn | Ý nghĩa                                                                           |
+    |-----------------------|----------|-----------------------------------------------------------------------------------|
+    |Action                 |Bắt buộc  |Thể hiện yêu cầu gửi tới api này làm gì. Có 3 trạng thái hợp lệ: personal, password & avatar. API sử dụng **AVATAR**|
+    |File                   |Bắt buộc  |Ảnh đại diện mà người dùng muốn đăng lên                                           |
+
+- **Respone**:
+
+<p align="center">
+    <img src="./photo/document17.png" />
+</p>
+
 ### [**3.4. Change Password**](#34-change-password)
+
+- **Purpose**: Hỗ trợ bệnh nhân thay đổi mật khẩu
+
+- **Method**: 🟡 **POST**
+
+- **URL**: {{ENDPOINT_URL}}/api/patient/profile
+
+- **Headers**:
+   
+    | Tên                  | Giá Trị                                                                   |
+    |----------------------|---------------------------------------------------------------------------|
+    |Authentication        |{{ACCESS_TOKEN_PATIENT}}                                                   |
+    |Content-Type          |application/x-www-form-urlencoded                                          |
+    |Type                  |Patient                                                                    |
+
+- **Body**:
+  
+    | Tên                   | Tùy chọn | Ý nghĩa                                                                           |
+    |-----------------------|----------|-----------------------------------------------------------------------------------|
+    |Action                 |Bắt buộc  |Thể hiện yêu cầu gửi tới api này làm gì. Có 3 trạng thái hợp lệ: personal, password & avatar. API sử dụng **PASSWORD**|
+    |Current Password       |Bắt buộc  |Mật khẩu hiện tại                                                                  |
+    |New Password           |Bắt buộc  |Mật khẩu mới                                                                       |
+    |Confirm Password       |Bắt buộc  |Mật khẩu xác nhận                                                                  |
+
+- **Respone**:
+
+
+<p align="center">
+    <img src="./photo/document18.png" />
+</p>
+
+## [**4. Patient Booking**](#4-patient-booking)
+
+Mục đích chính là chức năng đặt lịch khám bệnh cho bệnh nhân
+
+### [**4.1. Read All**](#41-read-all)
+
+- **Purpose**: Hỗ trợ bệnh nhân xem lại lịch sử lịch hẹn của mình
+
+- **Method**: 🟢 **GET**
+
+- **URL**: {{ENDPOINT_URL}}/api/patient/booking
+
+- **Headers**:
+   
+    | Tên                  | Giá Trị                                                                   |
+    |----------------------|---------------------------------------------------------------------------|
+    |Authentication        |{{ACCESS_TOKEN_PATIENT}}                                                   |
+    |Content-Type          |application/x-www-form-urlencoded                                          |
+    |Type                  |Patient                                                                    |
+
+- **Body**: bỏ trống
+
+- **Params**:
+
+    | Tên                   |  Ý nghĩa                                                                          |
+    |-----------------------|-----------------------------------------------------------------------------------|
+    |search                |Từ khóa tìm kiếm                                                                    |           
+    |order[dir]            |Chiều sắp xếp kết quả. Nhận 2 giá trị asc(tăng dần) & desc(giảm dần)                |
+    |order[column]         |Cột được sử dụng để sắp xếp kết quả. Mặc định là ID                                 |
+    |length                |Số lượng kết quả trả về. Mặc định là không giới hạn                                 |
+    |start                 |Kết quả tìm kiếm bắt đầu từ vị trí thứ mấy. Ví dụ nhập 1 thì kết quả đầu tiên bị bỏ qua| 
+
+- **Respone**:
+
+<p align="center">
+    <img src="./photo/document19.png" />
+</p>
+
+### [**4.2. Read By ID**](#42-read-by-id)
+
+- **Purpose**: Xem chi tiết một lịch hẹn khám bệnh 
+
+- **Method**: 🟢 **GET**
+
+- **URL**: {{ENDPOINT_URL}}/api/patient/booking/19
+
+> 19 là ID của lịch hẹn
+
+- **Headers**:
+   
+    | Tên                  | Giá Trị                                                                   |
+    |----------------------|---------------------------------------------------------------------------|
+    |Authentication        |{{ACCESS_TOKEN_PATIENT}}                                                   |
+    |Content-Type          |application/x-www-form-urlencoded                                          |
+    |Type                  |Patient                                                                    |
+
+- **Body**: bỏ trống
+
+- **Respone**:
+
+<p align="center">
+    <img src="./photo/document20.png" />
+</p>
+
+### [**4.3. Create**](#43-create)
+
+- **Purpose**: Hỗ trợ bệnh nhân tạo mới một lịch hẹn khám bệnh
+
+- **Method**: 🟡 **POST**
+
+- **URL**: {{ENDPOINT_URL}}/api/patient/booking
+
+- **Headers**:
+   
+    | Tên                  | Giá Trị                                                                   |
+    |----------------------|---------------------------------------------------------------------------|
+    |Authentication        |{{ACCESS_TOKEN_PATIENT}}                                                   |
+    |Content-Type          |application/x-www-form-urlencoded                                          |
+    |Type                  |Patient                                                                    |
+
+- **Body**:
+  
+    | Tên                   | Tùy chọn | Ý nghĩa                                                                           |
+    |-----------------------|----------|-----------------------------------------------------------------------------------|
+    |Service_id             |Bắt buộc  |ID của loại dịch vụ mà lịch hẹn đăng ký                                            |
+    |Booking_name           |Bắt buộc  |Họ tên người đặt lịch hẹn khám bệnh                                                |
+    |Booking_phone          |Bắt buộc  |Số điện thoại người đặt lịch hẹn khám bệnh                                         |
+    |Name                   |Bắt buộc  |Họ tên bệnh nhân                                                                   |
+    |Gender                 |Tùy chọn  |Giới tính bệnh nhân                                                                |
+    |Birthday               |Tùy chọn  |Ngày sinh bệnh nhân                                                                |
+    |Address                |Tùy chọn  |Địa chỉ bệnh nhân                                                                  |
+    |Reason                 |Tùy chọn  |Lý do khám bệnh, mô tả triệu chứng                                                 |
+    |Appointment Time       |Bắt buộc  |Thời gian hẹn khám                                                                 |
+    |Status                 |Tùy chọn  |Trạng thái lịch hẹn. Có 3 trạng thái hợp lệ: processing, verified, cancel. Mặc định lịch hẹn của bệnh nhân là **PROCESSING**|
+    |Create At              |Tùy chọn  |Thời gian tạo ra ra lịch hẹn. Thông tin này do hệ thống tự động tạo                |
+    |Update At              |Tùy chọn  |Thời gian lần cập nhật gần nhất của lịch hẹn. Thông tin này do hệ thống tự động tạo|
+
+- **Respone**:
+
+<p align="center">
+    <img src="./photo/document21.png" />
+</p>
+
+### [**4.4. Cancel**](#44-cancel)
+
+- **Purpose**: Hỗ trợ bệnh nhân hủy bỏ lịch hẹn đã tạo trước đó
+
+- **Method**: 🔴 **DELETE**
+
+- **URL**: {{ENDPOINT_URL}}/api/patient/booking/19
+
+> 19 là ID của lịch hẹn
+
+- **Headers**:
+   
+    | Tên                  | Giá Trị                                                                   |
+    |----------------------|---------------------------------------------------------------------------|
+    |Authentication        |{{ACCESS_TOKEN_PATIENT}}                                                   |
+    |Content-Type          |application/x-www-form-urlencoded                                          |
+    |Type                  |Patient                                                                    |
+
+- **Body**: bỏ trống
+
+- **Respone**:
+
+Nếu lịch hẹn này đã **ở trạng thái HỦY BỎ**
+
+<p align="center">
+    <img src="./photo/document22.png" />
+</p>
+
+Nếu lịch hẹn này đang **ở trạng thái ĐANG XỬ LÝ**
+
+<p align="center">
+    <img src="./photo/document23.png" />
+</p>

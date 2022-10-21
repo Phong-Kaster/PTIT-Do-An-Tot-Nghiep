@@ -20,6 +20,8 @@
   - [**3. Recovery Password**](#3-recovery-password)
 - [**Milestone**](#milestone)
 - [**Post Script**](#post-script)
+    - [**05-10-2022**](#05-10-2022)
+    - [**20-10-2022**](#20-10-2022)
 - [**Bonus**](#bonus)
 - [**Timeline**](#timeline)
   - [**Phase 0: 01-09-2022 to 28-09-2022**](#phase-0-01-09-2022-to-28-09-2022)
@@ -205,7 +207,7 @@ Giờ chúng ta sẽ đi vào các mốc thời gian quan trọng mà mình đã
 > Lưu ý: đặt tên file giống hướng dẫn, đặt sai sẽ bị thống kê không nộp báo cáo định kỳ, cấm nộp cuốn báo cáo cuối kỳ.
 # [**Post Script**](#post-script)
 
-**05-10-2022**
+### [**05-10-2022**](#)
 
 Mình không muốn miệt thị chính mái trường mình đã theo học nhưng thực sự là nhiều cái nó như lìn 😋😋. 
 Các bạn cứ đọc tấm ảnh phía dưới là sẽ hiểu.
@@ -228,7 +230,7 @@ Vậy mà đùng một cái, nhà trường **từ chối hết tất cả đơn
 Mình đã đánh đổi bằng việc kết thúc sớm chương trình thực tập tại GeoComply ngày 03/10/2022 để đánh đổi bằng việc học thay thế cho khỏe thân.
  Ai dè giờ vẫn phải làm đồ án tốt nghiệp. Chán thực sự chán 😣😣
 
-**20-10-2022**
+### [**20-10-2022**](#)
 
 Chúc mừng ngày Phụ nữ Việt Nam 2022 
 
@@ -381,6 +383,12 @@ Tóm tắt:
 
 - **Trường hợp 2** - khách đặt qua Android thì ngày khám sẽ là ngày được đặt trong Android và sẽ KHÔNG ĐƯỢC lấy số thự ngay. Chỉ khi họ 
 xuất hiện ở bệnh viện thì mới có số thứ tự.
+
+- **21-10-2022**:
+
+1. Viết tài liệu cho API Patient Profile 
+
+2. Viết tài liệu cho API Patient Booking
 
 # [**Controller Timeline**](#controller-timeline)
 
