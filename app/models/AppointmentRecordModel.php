@@ -7,7 +7,7 @@
 	 * 
 	 */
 	
-	class MedicalRecordModel extends DataEntry
+	class AppointmentRecordModel extends DataEntry
 	{	
 		/**
 		 * Extend parents constructor and select entry
@@ -31,12 +31,12 @@
 	    	if (is_int($uniqid) || ctype_digit($uniqid)) {
 	    		$col = $uniqid > 0 ? "id" : null;
 	    	} else {
-	    		$col = "patient_id";
+	    		$col = "appointment_id";
 	    	}
 
 
 	    	if ($col) {
-		    	$query = DB::table(TABLE_PREFIX.TABLE_MEDICAL_RECORDS)
+		    	$query = DB::table(TABLE_PREFIX.TABLE_APPOINTMENT_RECORDS)
 			    	      ->where($col, "=", $uniqid)
 			    	      ->limit(1)
 			    	      ->select("*");
@@ -65,7 +65,7 @@
 	    public function extendDefaults()
 	    {
 	    	$defaults = array(
-                "patient_id" => "",
+                "appointment_id" => "",
                 "reason" => "",
                 "description" => "",
                 "status_before" => "",
@@ -92,10 +92,10 @@
 
 	    	$this->extendDefaults();
 
-	    	$id = DB::table(TABLE_PREFIX.TABLE_MEDICAL_RECORDS)
+	    	$id = DB::table(TABLE_PREFIX.TABLE_APPOINTMENT_RECORDS)
 		    	->insert(array(
 		    		"id" => null,
-                    "patient_id" => $this->get("patient_id"),
+                    "appointment_id" => $this->get("appointment_id"),
 		    		"reason" => $this->get("reason"),
                     "description" => $this->get("description"),
                     "status_before" => $this->get("status_before"),
@@ -120,10 +120,10 @@
 
 	    	$this->extendDefaults();
 
-	    	$id = DB::table(TABLE_PREFIX.TABLE_MEDICAL_RECORDS)
+	    	$id = DB::table(TABLE_PREFIX.TABLE_APPOINTMENT_RECORDS)
 	    		->where("id", "=", $this->get("id"))
 		    	->update(array(
-                    "patient_id" => $this->get("patient_id"),
+                    "appointment_id" => $this->get("appointment_id"),
 		    		"reason" => $this->get("reason"),
                     "description" => $this->get("description"),
                     "status_before" => $this->get("status_before"),
@@ -144,7 +144,7 @@
 	    	if(!$this->isAvailable())
 	    		return false;
 
-	    	DB::table(TABLE_PREFIX.TABLE_MEDICAL_RECORDS)
+	    	DB::table(TABLE_PREFIX.TABLE_APPOINTMENT_RECORDS)
             ->where("id", "=", $this->get("id"))->delete();
 	    	$this->is_available = false;
 	    	return true;

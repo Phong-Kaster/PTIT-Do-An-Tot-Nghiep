@@ -1,3 +1,5 @@
+Thêm date trong bảng appointments
+
 create table `tn_specialities`
 (
 	id int primary key AUTO_INCREMENT,
@@ -63,6 +65,7 @@ create table `tn_appointments`
     patient_phone varchar(15),
 	numerical_order int,
 	appointment_time varchar(20),
+    date varchar(10),
 	status varchar(15),
 	create_at datetime,
 	update_at datetime,

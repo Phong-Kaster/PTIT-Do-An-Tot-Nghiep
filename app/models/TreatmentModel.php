@@ -65,7 +65,7 @@
 	    public function extendDefaults()
 	    {
 	    	$defaults = array(
-                "patient_id" => "",
+                "appointment_id" => "",
                 "name" => "",
                 "type" => "",
                 "times" => "",
@@ -94,7 +94,7 @@
 	    	$id = DB::table(TABLE_PREFIX.TABLE_TREATMENTS)
 		    	->insert(array(
 		    		"id" => null,
-                    "patient_id" => $this->get("patient_id"),
+                    "appointment_id" => $this->get("appointment_id"),
 		    		"name" => $this->get("name"),
                     "type" => $this->get("type"),
                     "times" => $this->get("times"),
@@ -121,7 +121,7 @@
 	    	$id = DB::table(TABLE_PREFIX.TABLE_TREATMENTS)
 	    		->where("id", "=", $this->get("id"))
 		    	->update(array(
-                    "patient_id" => $this->get("patient_id"),
+                    "appointment_id" => $this->get("appointment_id"),
 		    		"name" => $this->get("name"),
                     "type" => $this->get("type"),
                     "times" => $this->get("times"),

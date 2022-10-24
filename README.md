@@ -63,7 +63,7 @@ Nếu các bạn có nhu cầu muốn tham khảo, hãy ấn vào [**đây**](ht
 # [**Database**](#database)
 
 <p align="center">
-    <img src="./photo/database-version-2.png" />
+    <img src="./photo/database-version-3.png" />
 </p>
 <h3 align="center">
 
@@ -390,6 +390,17 @@ xuất hiện ở bệnh viện thì mới có số thứ tự.
 
 2. Viết tài liệu cho API Patient Booking
 
+3. Các chức năng chỉnh sửa cho lịch khám bệnh (appointment) - Appoitment Controller
+
+- **22-10-2022**
+
+1. Viết chức năng quản lý phác đồ điều trị và chỉnh sửa thông tin - Treatments Controller và Treatment Controller
+Các đơn thuốc hay hướng dẫn này chỉ được thay đổi khi appointment đang là PROCESSING.
+
+- **23-10-2022**
+
+1. Viết chức năng quản lý bệnh án cho mỗi lịch khám - Appointment Records và Appointment Record.
+
 # [**Controller Timeline**](#controller-timeline)
 
 Phần này mình lưu lại trình tự mình viết đồ án này. Nếu các bạn có nhu cầu tham khảo cách xử lý của mình. Các bạn có thể đọc code theo trình tự 
@@ -438,6 +449,18 @@ Phần này mình lưu lại trình tự mình viết đồ án này. Nếu các
 21. Booking Controller
 
 22. Patient Bookings Controller
+
+23. Appointments Controller 
+
+24. Appointment Controller
+
+25. Treatements Controller 
+
+26. Treatment Controller.
+
+27. Appointment Records Controller.
+
+28. Appointment Records Controller.
 
 # [**Special Thanks**](#special-thanks)
 

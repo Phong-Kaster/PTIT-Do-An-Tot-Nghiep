@@ -35,6 +35,9 @@
          * No matter what role doctors have, all doctors can use this action.
          * Case 1 - However, ADMIN & SUPPORTER can see all appointments
          * Case 2 - MEMBER just see all appointments that doctor_id = $AuthUser->get("id")
+         * 
+         * Only ADMIN & SUPPORTER can filter with doctor_id
+         * The rest of conditions can be used by all roles.
          */
         private function getAll()
         {
@@ -47,6 +50,7 @@
             /**Step 2 - get filters */
             $order          = Input::get("order");
             $search         = Input::get("search");
+            $doctor_id      = Input::get("doctor_id");// Only ADMIN & SUPPORTER can use this filter.
             $length         = Input::get("length") ? (int)Input::get("length") : 10;
             $start          = Input::get("start") ? (int)Input::get("start") : 0;
     
@@ -74,11 +78,21 @@
                         $q->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".patient_name", 'LIKE', $search_query.'%')
                         ->orWhere(TABLE_PREFIX.TABLE_APPOINTMENTS.".patient_phone", 'LIKE', $search_query.'%')
                         ->orWhere(TABLE_PREFIX.TABLE_APPOINTMENTS.".patient_reason", 'LIKE', $search_query.'%')
-                        ->orWhere(TABLE_PREFIX.TABLE_APPOINTMENTS.".doctor_id", 'LIKE', $search_query.'%');
+                        ->orWhere(TABLE_PREFIX.TABLE_APPOINTMENTS.".date", 'LIKE', $search_query.'%');
                     }); 
                 }
+
+
+                /**Step 3.2 - doctor_id filter - only ADMIN and SUPPORTER can use */
+                $valid_roles = ["admin", "supporter"];
+                $role_validation = in_array($AuthUser->get("role"), $valid_roles);
+                if( $doctor_id && $role_validation )
+                {
+                    $query->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".doctor_id", "=", $doctor_id);
+                }
+    
                 
-                /**Step 3.2 - order filter */
+                /**Step 3.3 - order filter */
                 if( $order && isset($order["column"]) && isset($order["dir"]))
                 {
                     $type = $order["dir"];
@@ -101,7 +115,7 @@
                     $query->orderBy("id", "desc");
                 } 
     
-                /**Step 3.3 - length filter * start filter*/
+                /**Step 3.4 - length filter * start filter*/
                 $query->limit($length ? $length : 10)
                     ->offset($start ? $start : 0);
     
@@ -113,15 +127,15 @@
                 {
                     $data[] = array(
                         "id" => (int)$element->id,
+                        "date" => $element->date,
                         "doctor_id" => (int)$element->doctor_id,
+                        "numerical_order" => (int)$element->numerical_order,
                         "patient_id" => (int)$element->patient_id,
                         "patient_name" => $element->patient_name,
                         "patient_phone" => $element->patient_phone,
                         "patient_birthday" => $element->patient_birthday,
-                        "patient_reason" => (int)$element->patient_reason,
+                        "patient_reason" => $element->patient_reason,
                         "patient_phone" => $element->patient_phone,
-                        "numerical_order" => (int)$element->numerical_order,
-                        "date" => $element->date,
                         "appointment_time" => $element->appointment_time,
                         "status" => $element->status,
                         "create_at" => $element->create_at,
@@ -147,6 +161,9 @@
          * @author Phong-Kaster
          * @since 20-10-2022
          * create a new appointment
+         * 
+         * doctor's role as ADMIN or SUPPORTER can see all appointments
+         * doctor's role as MEMBER only can see appointments which was assigned to them.
          * 
          * if guess with no appointment, default date is today & numerical order is set immediately
          * if guess with appointment, numerical order is not set. Only when they come to hospital, they will have it.
@@ -335,15 +352,15 @@
                 $this->resp->msg = "Appointment has been created successfully !";
                 $this->resp->data = array(
                     "id" => (int) $Appointment->get("id"),
+                    "numerical_order" =>  (int)$Appointment->get("numerical_order"),
+                    "date"          => $Appointment->get("date"),
                     "doctor_id" => (int) $Appointment->get("doctor_id"),
                     "patient_id" => (int) $Appointment->get("patient_id"),
                     "patient_name" => $Appointment->get("patient_name"),
                     "patient_birthday" =>  $Appointment->get("patient_birthday"),
                     "patient_reason" =>  $Appointment->get("patient_reason"),
-
                     "patient_phone" =>  $Appointment->get("patient_phone"),
-                    "numerical_order" =>  $Appointment->get("numerical_order"),
-                    "appointment_time" => (int)$Appointment->get("appointment_time"),
+                    "appointment_time" => $Appointment->get("appointment_time"),
                     "status" =>  $Appointment->get("status"),
                     "create_at" =>  $Appointment->get("create_at"),
                     "update_at" =>  $Appointment->get("update_at")

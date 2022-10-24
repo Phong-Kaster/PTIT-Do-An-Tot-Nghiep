@@ -1,3 +1,7 @@
+1. Thêm position để thể hiện thứ tự khám bệnh, còn numerical_order sẽ
+là số định danh của bệnh nhân.
+2. Thêm bảng ROOM để bệnh nhân biết vị trí phòng khám của mình.
+
 create table `tn_specialities`
 (
 	id int primary key AUTO_INCREMENT,
@@ -29,9 +33,11 @@ create table `tn_doctors`
 	create_at datetime,
 	update_at datetime,
 	speciality_id int,
+	room_id int,
 	recovery_token varchar(255),
 	PRIMARY KEY(id),
-	FOREIGN KEY (speciality_id) REFERENCES tn_specialities(id)
+	FOREIGN KEY (speciality_id) REFERENCES tn_specialities(id),
+	FOREIGN KEY (room_id) REFERENCES tn_room(id)
 );
 
 create table `tn_patients`
@@ -62,7 +68,9 @@ create table `tn_appointments`
 	patient_reason varchar(255),
     patient_phone varchar(15),
 	numerical_order int,
+	position int,
 	appointment_time varchar(20),
+    date varchar(10),
 	status varchar(15),
 	create_at datetime,
 	update_at datetime,
@@ -144,4 +152,12 @@ create table `tn_booking`
 	PRIMARY KEY(id),
 	FOREIGN KEY (patient_id) REFERENCES tn_patients(id),
 	FOREIGN KEY (service_id) REFERENCES tn_services(id)
+);
+
+create table `tn_rooms`
+(
+	id int AUTO_INCREMENT,
+	name varchar(15),
+	location varchar(255),
+	PRIMARY KEY(id)
 );

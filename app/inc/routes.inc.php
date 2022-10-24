@@ -101,3 +101,11 @@ App::addRoute("GET|PUT|PATCH", "/api/bookings/[i:id]/?", "Booking");
 /************************** APPOINTMENTS ******************************/
 App::addRoute("GET|POST", "/api/appointments/?", "Appointments");
 App::addRoute("GET|PUT|PATCH", "/api/appointments/[i:id]/?", "Appointment");
+
+/************************** TREATMENT ******************************/
+App::addRoute("GET|POST", "/api/treatments/?", "Treatments");
+App::addRoute("GET|PUT|PATCH|DELETE", "/api/treatments/[i:id]/?", "Treatment");
+
+/************************** APPOINTMENT RECORDS ******************************/
+App::addRoute("GET|POST", "/api/appointment-records/?", "AppointmentRecords");
+App::addRoute("GET|PUT|PATCH|DELETE", "/api/appointment-records/[i:id]/?", "AppointmentRecord");
