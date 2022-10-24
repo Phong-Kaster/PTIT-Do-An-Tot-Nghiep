@@ -50,10 +50,13 @@
             /**Step 2 - get filters */
             $order          = Input::get("order");
             $search         = Input::get("search");
-            $doctor_id      = Input::get("doctor_id");// Only ADMIN & SUPPORTER can use this filter.
             $length         = Input::get("length") ? (int)Input::get("length") : 10;
             $start          = Input::get("start") ? (int)Input::get("start") : 0;
-    
+            $doctor         = Input::get("doctor");// Only ADMIN & SUPPORTER can use this filter.
+            $room           = Input::get("room");// Only ADMIN & SUPPORTER can use this filter.
+            $date           = Input::get("date");
+            $status         = Input::get("status");
+
             try
             {
                 /**Step 3 - query */
@@ -78,6 +81,7 @@
                         $q->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".patient_name", 'LIKE', $search_query.'%')
                         ->orWhere(TABLE_PREFIX.TABLE_APPOINTMENTS.".patient_phone", 'LIKE', $search_query.'%')
                         ->orWhere(TABLE_PREFIX.TABLE_APPOINTMENTS.".patient_reason", 'LIKE', $search_query.'%')
+                        ->orWhere(TABLE_PREFIX.TABLE_APPOINTMENTS.".status", 'LIKE', $search_query.'%')
                         ->orWhere(TABLE_PREFIX.TABLE_APPOINTMENTS.".date", 'LIKE', $search_query.'%');
                     }); 
                 }
@@ -86,13 +90,35 @@
                 /**Step 3.2 - doctor_id filter - only ADMIN and SUPPORTER can use */
                 $valid_roles = ["admin", "supporter"];
                 $role_validation = in_array($AuthUser->get("role"), $valid_roles);
-                if( $doctor_id && $role_validation )
+                if( $doctor && $role_validation )
                 {
-                    $query->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".doctor_id", "=", $doctor_id);
+                    $query->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".doctor_id", "=", $doctor);
                 }
     
+                /**Step 3.3 - date filter*/
+                if( $date )
+                {
+                    $query->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".date", "=", $date);
+                }
+
+                /**Step 3.4 - room filter*/
+                if( $room )
+                {
+                    $query->leftJoin(TABLE_PREFIX.TABLE_DOCTORS,
+                                     TABLE_PREFIX.TABLE_DOCTORS.".id", "=", TABLE_PREFIX.TABLE_APPOINTMENTS.".doctor_id")
+                        ->where(TABLE_PREFIX.TABLE_DOCTORS.".room_id", "=", $room);
+                }
                 
-                /**Step 3.3 - order filter */
+                /**Step 3.5 - date filter*/
+                $valid_status = ["processing", "done", "cancelled"];
+                $status_validation = in_array($status, $valid_status);
+                if( $status && $status_validation )
+                {
+                    $query->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".status", "=", $status);
+                }
+
+
+                /**Step 3.7 - order filter */
                 if( $order && isset($order["column"]) && isset($order["dir"]))
                 {
                     $type = $order["dir"];
@@ -118,8 +144,7 @@
                 /**Step 3.4 - length filter * start filter*/
                 $query->limit($length ? $length : 10)
                     ->offset($start ? $start : 0);
-    
-    
+
     
                 /**Step 4 */
                 $result = $query->get();
@@ -130,6 +155,7 @@
                         "date" => $element->date,
                         "doctor_id" => (int)$element->doctor_id,
                         "numerical_order" => (int)$element->numerical_order,
+                        "position" => (int)$element->position,
                         "patient_id" => (int)$element->patient_id,
                         "patient_name" => $element->patient_name,
                         "patient_phone" => $element->patient_phone,
@@ -165,8 +191,8 @@
          * doctor's role as ADMIN or SUPPORTER can see all appointments
          * doctor's role as MEMBER only can see appointments which was assigned to them.
          * 
-         * if guess with no appointment, default date is today & numerical order is set immediately
-         * if guess with appointment, numerical order is not set. Only when they come to hospital, they will have it.
+         * Case 1 - if guess with no appointment, default date is today & numerical order is set immediately
+         * Case 2 - if guess with appointment, numerical order is not set. Only when they come to hospital, they will have it.
          */
         private function save()
         {
@@ -211,6 +237,7 @@
             $patient_phone = Input::post("patient_phone");
 
             $numerical_order = "";
+            $position = "";
             $appointment_time = Input::post("appointment_time") ? Input::post("appointment_time") : "";
 
             $status = "processing";// default
@@ -280,12 +307,27 @@
                 }
             }
 
-            /**Step 5.7 - numerical order */
-            /**Step 5.7.1 - Case 1 - appointment time is EMPTY so that date is today by default*/
+            /**Step 5.7 - numerical order - is a ID of patient today - 
+             * For example, i go to hospital and i am patient NO.40.
+             * Maybe, i am a booking patient or normal patient.
+             */
             $date = Date("d-m-Y");
+            $queryNumericalOrder = DB::table(TABLE_PREFIX.TABLE_APPOINTMENTS)
+                    ->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".date", "=", $date)
+                    ->orderBy(TABLE_PREFIX.TABLE_APPOINTMENTS.".id", "desc")
+                    ->select("*");
+
+            $result = $queryNumericalOrder->get();
+            $quantity = count($result);
+            $numerical_order = $quantity == 0 ? 1 : $quantity + 1;// because first value = 0
 
 
-            /**Step 5.7.2 -Case 2 - appointment time is not EMPTY => date equals to date of appointment_time */
+            /**Step 5.8 - position */
+            /** We separate patients to 2 types:
+             * 1. Booking patients who have appointment by Android.
+             * 2. Normal patients who go to hospital and wait for queue.
+             */
+            $date = Date("d-m-Y");// appointment time is today
             if( !empty($appointment_time) )
             {
                 $msg = isAppointmentTimeValid($appointment_time);
@@ -295,29 +337,29 @@
                     $this->jsonecho();
                 }
 
-                $date = substr($appointment_time, 0,10);
+                $date = substr($appointment_time, 0,10);// appointment time is set by patient
             }
-
-            /**Step 5.7.3 - if guess with no appointment => get numerical order immediately */
+            $queryPosition = DB::table(TABLE_PREFIX.TABLE_APPOINTMENTS)
+                    ->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".doctor_id", "=", $doctor_id)
+                    ->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".date", "=", $date)
+                    ->orderBy(TABLE_PREFIX.TABLE_APPOINTMENTS.".id", "desc")
+                    ->select("*");
+            
+            /* Case 1 - with no appointment, Normal patients also have their own queue and count from 1.*/
             if( empty($appointment_time) )
             {
-                $query = DB::table(TABLE_PREFIX.TABLE_APPOINTMENTS)
-                ->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".doctor_id", "=", $doctor_id)
-                ->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".date", "=", $date)
-                ->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".appointment_time", "=", "")
-                ->orderBy(TABLE_PREFIX.TABLE_APPOINTMENTS.".id", "desc")
-                ->select("*");
-
-                $result = $query->get();
-                $quantity = count($result);
-                $numerical_order = $quantity == 0 ? 1 : $quantity+ 1;// because first value = 0
+                //do nothing
+                $type = "Normal appointment";
             }
-            /**If  guess with appointment => numerical order is empty, only when they go to hospital, they will have numerical order */
+            /**Case 2 - with appointment, Booking patient have their own queue and also count from 1*/
             else
             {
-                $numerical_order = "";
+                $type = "Booking appointment";
+                $queryPosition->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".appointment_time", "=", $date);
             }
-
+            $result = $queryPosition->get();
+            $quantity = count($result);
+            $position = $quantity == 0 ? 1 : $quantity + 1;// because first value = 0
 
 
             /**Step 5.8 - status */
@@ -342,6 +384,7 @@
                         ->set("patient_reason", $patient_reason)
                         ->set("patient_phone", $patient_phone)
                         ->set("numerical_order", $numerical_order)
+                        ->set("position", $position)
                         ->set("appointment_time", $appointment_time)
                         ->set("date", $date)
                         ->set("status", $status)
@@ -349,12 +392,13 @@
                         ->set("update_at", $update_at)
                         ->save();
                 $this->resp->result = 1;
-                $this->resp->msg = "Appointment has been created successfully !";
+                $this->resp->msg = $type." has been created with patient No.".$numerical_order." with position: ".$position;
                 $this->resp->data = array(
                     "id" => (int) $Appointment->get("id"),
-                    "numerical_order" =>  (int)$Appointment->get("numerical_order"),
                     "date"          => $Appointment->get("date"),
                     "doctor_id" => (int) $Appointment->get("doctor_id"),
+                    "numerical_order" =>  (int)$Appointment->get("numerical_order"),
+                    "position" => (int) $Appointment->get("position"),
                     "patient_id" => (int) $Appointment->get("patient_id"),
                     "patient_name" => $Appointment->get("patient_name"),
                     "patient_birthday" =>  $Appointment->get("patient_birthday"),

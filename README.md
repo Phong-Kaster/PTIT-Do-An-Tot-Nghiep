@@ -401,6 +401,15 @@ Các đơn thuốc hay hướng dẫn này chỉ được thay đổi khi appoin
 
 1. Viết chức năng quản lý bệnh án cho mỗi lịch khám - Appointment Records và Appointment Record.
 
+- **24-10-2022**
+
+1. Tách riêng lịch khám bệnh từ BOOKING và NORMAL thành 2 nhánh riêng biệt.
+
+2. Tạo Appointment Queue để truy vấn các appointment với các thông tin tối giản - Appoitment Queue Controller
+
+3. Tạo Appointment Queue Now để lấy danh sách khám bệnh hiện tại cho cả BOOKING và NORMAL. - Appointment Queue Now Controller
+
+4. Quản lý phòng khám để xác định vị trí bác sĩ làm việc - Rooms Controller và Room Controller.
 # [**Controller Timeline**](#controller-timeline)
 
 Phần này mình lưu lại trình tự mình viết đồ án này. Nếu các bạn có nhu cầu tham khảo cách xử lý của mình. Các bạn có thể đọc code theo trình tự 
@@ -461,6 +470,14 @@ Phần này mình lưu lại trình tự mình viết đồ án này. Nếu các
 27. Appointment Records Controller.
 
 28. Appointment Records Controller.
+
+29. Appoitment Queue Controller.
+
+30. Appoitment Queue Now Controller
+
+31. Rooms Controller 
+
+32. Room Controller
 
 # [**Special Thanks**](#special-thanks)
 

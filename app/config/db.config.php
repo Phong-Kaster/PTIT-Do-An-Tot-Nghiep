@@ -29,3 +29,4 @@ define("TABLE_SERVICES", "services");
 
 define("TABLE_DOCTOR_AND_SERVICE", "doctor_and_service");
 define("TABLE_NOTIFICATIONS", "notifications");
+define("TABLE_ROOMS", "rooms");

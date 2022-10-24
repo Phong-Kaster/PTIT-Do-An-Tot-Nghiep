@@ -53,6 +53,7 @@
             $search         = Input::get("search");
             $length         = Input::get("length") ? (int)Input::get("length") : 10;
             $start          = Input::get("start") ? (int)Input::get("start") : 0;
+            $room           = Input::get("room");// Room_id
 
             try
             {
@@ -60,11 +61,16 @@
                 $query = DB::table(TABLE_PREFIX.TABLE_DOCTORS)
                         ->leftJoin(TABLE_PREFIX.TABLE_SPECIALITIES, 
                                     TABLE_PREFIX.TABLE_SPECIALITIES.".id","=", TABLE_PREFIX.TABLE_DOCTORS.".speciality_id")
+                        ->leftJoin(TABLE_PREFIX.TABLE_ROOMS, 
+                                    TABLE_PREFIX.TABLE_ROOMS.".id","=", TABLE_PREFIX.TABLE_DOCTORS.".room_id")       
                         ->select([
                             TABLE_PREFIX.TABLE_DOCTORS.".*",
                             DB::raw(TABLE_PREFIX.TABLE_SPECIALITIES.".id as speciality_id"),
                             DB::raw(TABLE_PREFIX.TABLE_SPECIALITIES.".name as speciality_name"),
                             DB::raw(TABLE_PREFIX.TABLE_SPECIALITIES.".description as speciality_description"),
+                            DB::raw(TABLE_PREFIX.TABLE_ROOMS.".id as room_id"),
+                            DB::raw(TABLE_PREFIX.TABLE_ROOMS.".name as room_name"),
+                            DB::raw(TABLE_PREFIX.TABLE_ROOMS.".location as room_location")
                         ]);
 
                 /**Step 3.1 - search filter*/
@@ -102,7 +108,12 @@
                     $query->orderBy("id", "desc");
                 } 
 
-                /**Step 3.3 - length filter * start filter*/
+                /**Step 3.3 */
+                if( $room )
+                {
+                    $query->where(TABLE_PREFIX.TABLE_DOCTORS.".room_id", "=", $room);
+                }
+                /**Step 3.4 - length filter * start filter*/
                 $query->limit($length ? $length : 10)
                     ->offset($start ? $start : 0);
 
@@ -128,6 +139,11 @@
                             "id" => (int)$element->speciality_id,
                             "name" => $element->speciality_name,
                             "description" => $element->speciality_description
+                        ),
+                        "room" => array(
+                            "id" => (int)$element->room_id,
+                            "name" => $element->room_name,
+                            "location" => $element->room_location
                         )
                     );
                 }
@@ -187,6 +203,7 @@
             $update_at = date("Y-m-d H:i:s");
 
             $speciality_id = Input::post("speciality_id") ? (int)Input::post("speciality_id") : 1;
+            $room_id = Input::post("room_id") ? (int)Input::post("room_id") : 1;
             // $clinic_id = Input::post("clinic_id") ? (int)Input::post("clinic_id") : 1;
 
 
@@ -274,6 +291,14 @@
             //     $this->jsonecho();
             // }
 
+            /**Step - 3.10 - room validation */
+            $Room = Controller::model("Room", $room_id);
+            if( !$Room->isAvailable() )
+            {
+                $this->resp->msg = "Room is not available.";
+                $this->jsonecho();
+            }
+
 
             /**Step 4 - save*/
             try 
@@ -291,6 +316,7 @@
                         ->set("create_at", $create_at)
                         ->set("update_at", $update_at)
                         ->set("speciality_id", $speciality_id)
+                        ->set("room_id", $room_id)
                         ->save();
 
                 $this->resp->result = 1;
@@ -306,7 +332,8 @@
                     "active" => (int)$Doctor->get("active"),
                     "create_at" => $Doctor->get("create_at"),
                     "update_at" => $Doctor->get("update_at"),
-                    "speciality_id" => $Doctor->get("speciality_id")
+                    "speciality_id" => $Doctor->get("speciality_id"),
+                    "room_id" => $Doctor->get("room_id")
                 );
 
                 $data = [

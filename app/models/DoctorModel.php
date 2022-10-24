@@ -80,6 +80,7 @@
 				"create_at" => date("Y-m-d H:i:s"),
 				"update_at" => date("Y-m-d H:i:s"),
                 "speciality_id" => "",
+				"room_id" => "",
 				"recovery_token" => ""
 	    	);
 
@@ -116,6 +117,7 @@
                     "create_at" => $this->get("create_at"),
                     "update_at" => $this->get("update_at"),
                     "speciality_id" => $this->get("speciality_id"),
+					"room_id" => $this->get("room_id"),
 					"recovery_token" => $this->get("recovery_token")
 		    	));
 
@@ -150,6 +152,7 @@
                     "create_at" => $this->get("create_at"),
                     "update_at" => $this->get("update_at"),
                     "speciality_id" => $this->get("speciality_id"),
+					"room_id" => $this->get("room_id"),
 					"recovery_token" => $this->get("recovery_token")
 		    	));
 

@@ -100,11 +100,16 @@
                         ->where(TABLE_PREFIX.TABLE_DOCTORS.".id", "=", $id)
                         ->leftJoin(TABLE_PREFIX.TABLE_SPECIALITIES, 
                                     TABLE_PREFIX.TABLE_SPECIALITIES.".id","=", TABLE_PREFIX.TABLE_DOCTORS.".speciality_id")
+                        ->leftJoin(TABLE_PREFIX.TABLE_ROOMS, 
+                                    TABLE_PREFIX.TABLE_ROOMS.".id","=", TABLE_PREFIX.TABLE_DOCTORS.".room_id")       
                         ->select([
                             TABLE_PREFIX.TABLE_DOCTORS.".*",
                             DB::raw(TABLE_PREFIX.TABLE_SPECIALITIES.".id as speciality_id"),
                             DB::raw(TABLE_PREFIX.TABLE_SPECIALITIES.".name as speciality_name"),
-                            DB::raw(TABLE_PREFIX.TABLE_SPECIALITIES.".description as speciality_description")
+                            DB::raw(TABLE_PREFIX.TABLE_SPECIALITIES.".description as speciality_description"),
+                            DB::raw(TABLE_PREFIX.TABLE_ROOMS.".id as room_id"),
+                            DB::raw(TABLE_PREFIX.TABLE_ROOMS.".name as room_name"),
+                            DB::raw(TABLE_PREFIX.TABLE_ROOMS.".location as room_location")
                         ]);
 
                 $result = $query->get();
@@ -132,6 +137,11 @@
                         "id" => (int)$result[0]->speciality_id,
                         "name" => $result[0]->speciality_name,
                         "description" => $result[0]->speciality_description
+                    ),
+                    "room" => array(
+                        "id" => (int)$result[0]->room_id,
+                        "name" => $result[0]->room_name,
+                        "location" => $result[0]->room_location
                     )
                 );
 
@@ -364,7 +374,7 @@
 
 
             /**Step 2 - get required field */
-            $required_field = ["phone", "name", "price", "speciality_id"];
+            $required_field = ["phone", "name", "price", "speciality_id", "room_id"];
             foreach($required_field as $field)
             {
                 if( !Input::post($field) )
@@ -395,7 +405,7 @@
 
             $speciality_id = Input::post("speciality_id");
             //$clinic_id = Input::post("clinic_id");
-
+            $room_id = Input::post("room_id");
 
             /**Step 3 - validation */
             /**Step 3.1 - name  validation*/
@@ -446,6 +456,14 @@
             //     $this->jsonecho();
             // }
 
+            /**Step 3.10 - speciality validation */
+            $Room = Controller::model("Room", $room_id);
+            if( !$Room->isAvailable() )
+            {
+                $this->resp->msg = "Room is not available.";
+                $this->jsonecho();
+            }
+
             /**Step 4 - save*/
             try 
             {
@@ -455,6 +473,7 @@
                         ->set("price", $price)
                         ->set("update_at", $update_at)
                         ->set("speciality_id", $speciality_id)
+                        ->set("room_id", $room_id)
                         ->set("update_at", $update_at)
                         ->save();
 
@@ -472,7 +491,8 @@
                     "active" => (int)$AuthUser->get("active"),
                     "create_at" => $AuthUser->get("create_at"),
                     "update_at" => $AuthUser->get("update_at"),
-                    "speciality_id" => (int)$AuthUser->get("speciality_id")
+                    "speciality_id" => (int)$AuthUser->get("speciality_id"),
+                    "room_id" => (int)$AuthUser->get("room_id")
                 );
             } 
             catch (\Exception $ex) 

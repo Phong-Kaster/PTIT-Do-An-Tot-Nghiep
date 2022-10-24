@@ -76,11 +76,16 @@
                         ->where(TABLE_PREFIX.TABLE_DOCTORS.".id", "=", $Route->params->id)
                         ->leftJoin(TABLE_PREFIX.TABLE_SPECIALITIES, 
                                     TABLE_PREFIX.TABLE_SPECIALITIES.".id","=", TABLE_PREFIX.TABLE_DOCTORS.".speciality_id")
+                        ->leftJoin(TABLE_PREFIX.TABLE_ROOMS, 
+                                    TABLE_PREFIX.TABLE_ROOMS.".id","=", TABLE_PREFIX.TABLE_DOCTORS.".room_id")
                         ->select([
                             TABLE_PREFIX.TABLE_DOCTORS.".*",
                             DB::raw(TABLE_PREFIX.TABLE_SPECIALITIES.".id as speciality_id"),
                             DB::raw(TABLE_PREFIX.TABLE_SPECIALITIES.".name as speciality_name"),
-                            DB::raw(TABLE_PREFIX.TABLE_SPECIALITIES.".description as speciality_description")
+                            DB::raw(TABLE_PREFIX.TABLE_SPECIALITIES.".description as speciality_description"),
+                            DB::raw(TABLE_PREFIX.TABLE_ROOMS.".id as room_id"),
+                            DB::raw(TABLE_PREFIX.TABLE_ROOMS.".name as room_name"),
+                            DB::raw(TABLE_PREFIX.TABLE_ROOMS.".location as room_location")
                         ]);
 
                 $result = $query->get();
@@ -107,7 +112,12 @@
                         "id" => (int)$result[0]->speciality_id,
                         "name" => $result[0]->speciality_name,
                         "description" => $result[0]->speciality_description
-                    )
+                    ),
+                    "room" => array(
+                        "id" => (int)$result[0]->room_id,
+                        "name" => $result[0]->room_name,
+                        "location" => $result[0]->room_location
+                    ),
                 );
 
                 $this->resp->result = 1;
@@ -179,7 +189,7 @@
             $update_at = date("Y-m-d H:i:s");
 
             $speciality_id = Input::put("speciality_id") ? (int)Input::put("speciality_id") : 1;
-            $clinic_id = Input::put("clinic_id") ? (int)Input::put("clinic_id") : 1;
+            $room_id = Input::put("room_id") ? (int)Input::put("room_id") : 1;
 
 
 
@@ -241,6 +251,13 @@
             //     $this->jsonecho();
             // }
 
+            /**Step - 3.7 - room validation */
+            $Room = Controller::model("Room", $room_id);
+            if( !$Room->isAvailable() )
+            {
+                $this->resp->msg = "Room is not available.";
+                $this->jsonecho();
+            }
 
             /**Step 4 - save*/
             try 
@@ -254,6 +271,7 @@
                         ->set("avatar", $avatar)
                         ->set("update_at", $update_at)
                         ->set("speciality_id", $speciality_id)
+                        ->set("room_id", $room_id)
                         ->save();
 
                 $this->resp->result = 1;
@@ -270,7 +288,8 @@
                     "active" => (int)$Doctor->get("active"),
                     "create_at" => $Doctor->get("create_at"),
                     "update_at" => $Doctor->get("update_at"),
-                    "speciality_id" => (int)$Doctor->get("speciality_id")
+                    "speciality_id" => (int)$Doctor->get("speciality_id"),
+                    "room_id" => (int)$Doctor->get("room_id")
                 );
             } 
             catch (\Exception $ex) 
