@@ -410,6 +410,17 @@ Các đơn thuốc hay hướng dẫn này chỉ được thay đổi khi appoin
 3. Tạo Appointment Queue Now để lấy danh sách khám bệnh hiện tại cho cả BOOKING và NORMAL. - Appointment Queue Now Controller
 
 4. Quản lý phòng khám để xác định vị trí bác sĩ làm việc - Rooms Controller và Room Controller.
+
+- **25-10-2022**
+
+1. Viết báo cáo định kì lần 1
+
+- **26-10-2022**
+
+1. Hoàn thiện báo cáo định kì lần 1 và nộp 
+
+2. Tìm kiếm Front-end template cho Admin
+
 # [**Controller Timeline**](#controller-timeline)
 
 Phần này mình lưu lại trình tự mình viết đồ án này. Nếu các bạn có nhu cầu tham khảo cách xử lý của mình. Các bạn có thể đọc code theo trình tự 
