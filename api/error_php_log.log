@@ -1,0 +1,140 @@
+[24-Oct-2022 02:23:45 UTC] PHP Notice:  Undefined property: stdClass::$room_description in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorsController.php on line 140
+[24-Oct-2022 02:23:45 UTC] PHP Notice:  Undefined property: stdClass::$room_description in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorsController.php on line 140
+[24-Oct-2022 02:23:45 UTC] PHP Notice:  Undefined property: stdClass::$room_description in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorsController.php on line 140
+[24-Oct-2022 02:23:45 UTC] PHP Notice:  Undefined property: stdClass::$room_description in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorsController.php on line 140
+[24-Oct-2022 02:23:45 UTC] PHP Notice:  Undefined property: stdClass::$room_description in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorsController.php on line 140
+[24-Oct-2022 02:26:07 UTC] PHP Notice:  Undefined property: stdClass::$room_description in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorsController.php on line 140
+[24-Oct-2022 02:26:07 UTC] PHP Notice:  Undefined property: stdClass::$room_description in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorsController.php on line 140
+[24-Oct-2022 02:26:07 UTC] PHP Notice:  Undefined property: stdClass::$room_description in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorsController.php on line 140
+[24-Oct-2022 02:26:07 UTC] PHP Notice:  Undefined property: stdClass::$room_description in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorsController.php on line 140
+[24-Oct-2022 02:26:07 UTC] PHP Notice:  Undefined property: stdClass::$room_description in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\DoctorsController.php on line 140
+[24-Oct-2022 03:45:34 UTC] PHP Parse error:  syntax error, unexpected '}' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentsController.php on line 358
+[24-Oct-2022 10:45:56 Asia/Ho_Chi_Minh] PHP Notice:  Undefined variable: date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentsController.php on line 315
+[24-Oct-2022 10:47:18 Asia/Ho_Chi_Minh] PHP Notice:  Undefined variable: query in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentsController.php on line 358
+[24-Oct-2022 10:47:18 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Call to a member function where() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentsController.php:358
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentsController.php(27): AppointmentsController->save()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(611): AppointmentsController->process()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#3 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentsController.php on line 358
+[24-Oct-2022 10:48:14 Asia/Ho_Chi_Minh] PHP Notice:  Undefined variable: query in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentsController.php on line 358
+[24-Oct-2022 10:48:14 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Call to a member function where() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentsController.php:358
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentsController.php(27): AppointmentsController->save()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(611): AppointmentsController->process()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#3 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentsController.php on line 358
+[24-Oct-2022 10:48:18 Asia/Ho_Chi_Minh] PHP Notice:  Undefined variable: query in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentsController.php on line 358
+[24-Oct-2022 10:48:18 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Call to a member function where() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentsController.php:358
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentsController.php(27): AppointmentsController->save()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(611): AppointmentsController->process()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#3 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentsController.php on line 358
+[24-Oct-2022 10:48:35 Asia/Ho_Chi_Minh] PHP Notice:  Undefined variable: query in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentsController.php on line 358
+[24-Oct-2022 10:48:35 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Call to a member function where() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentsController.php:358
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentsController.php(27): AppointmentsController->save()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(611): AppointmentsController->process()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#3 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentsController.php on line 358
+[24-Oct-2022 10:49:03 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'tn_appointmentsappointment_time' in 'where clause' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php:152
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php(152): PDOStatement->execute()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php(173): Pixie\QueryBuilder\QueryBuilderHandler->statement('SELECT * FROM `...', Array)
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentsController.php(360): Pixie\QueryBuilder\QueryBuilderHandler->get()
+#3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentsController.php(27): AppointmentsController->save()
+#4 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(611): AppointmentsController->process()
+#5 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php on line 152
+[24-Oct-2022 07:52:23 UTC] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentQueueController.php on line 43
+[24-Oct-2022 07:52:50 UTC] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentQueueController.php on line 43
+[24-Oct-2022 07:53:00 UTC] PHP Parse error:  syntax error, unexpected '}', expecting endswitch (T_ENDSWITCH) or case (T_CASE) or default (T_DEFAULT) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentQueueController.php on line 49
+[24-Oct-2022 07:53:27 UTC] PHP Parse error:  syntax error, unexpected '{', expecting endswitch (T_ENDSWITCH) or case (T_CASE) or default (T_DEFAULT) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentQueueController.php on line 36
+[24-Oct-2022 07:53:41 UTC] PHP Parse error:  syntax error, unexpected '}', expecting endswitch (T_ENDSWITCH) or case (T_CASE) or default (T_DEFAULT) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentQueueController.php on line 50
+[24-Oct-2022 07:54:06 UTC] PHP Parse error:  syntax error, unexpected '{', expecting endswitch (T_ENDSWITCH) or case (T_CASE) or default (T_DEFAULT) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentQueueController.php on line 36
+[24-Oct-2022 07:54:17 UTC] PHP Parse error:  syntax error, unexpected '{', expecting endswitch (T_ENDSWITCH) or case (T_CASE) or default (T_DEFAULT) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentQueueController.php on line 36
+[24-Oct-2022 08:08:39 UTC] PHP Notice:  Undefined offset: 0 in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentQueueController.php on line 322
+[24-Oct-2022 08:08:39 UTC] PHP Notice:  Trying to get property 'date' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentQueueController.php on line 322
+[24-Oct-2022 08:08:39 UTC] PHP Notice:  Undefined offset: 0 in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentQueueController.php on line 325
+[24-Oct-2022 08:08:39 UTC] PHP Notice:  Trying to get property 'doctor_id' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentQueueController.php on line 325
+[24-Oct-2022 08:11:38 UTC] PHP Notice:  Undefined offset: 0 in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentQueueController.php on line 173
+[24-Oct-2022 08:11:38 UTC] PHP Notice:  Trying to get property 'date' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentQueueController.php on line 173
+[24-Oct-2022 08:11:38 UTC] PHP Notice:  Undefined offset: 0 in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentQueueController.php on line 176
+[24-Oct-2022 08:11:38 UTC] PHP Notice:  Trying to get property 'doctor_id' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentQueueController.php on line 176
+[24-Oct-2022 08:12:38 UTC] PHP Notice:  Undefined variable: quantity in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentQueueController.php on line 183
+[24-Oct-2022 08:18:58 UTC] PHP Parse error:  syntax error, unexpected '$order' (T_VARIABLE) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentQueueController.php on line 59
+[24-Oct-2022 08:42:00 UTC] PHP Notice:  Undefined variable: AuthUser in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentQueueController.php on line 214
+[24-Oct-2022 08:42:00 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentQueueController.php:214
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentQueueController.php(29): AppointmentQueueController->arrange()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(611): AppointmentQueueController->process()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\index.php(72): App->process()
+#3 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentQueueController.php on line 214
+[24-Oct-2022 08:57:26 UTC] PHP Parse error:  syntax error, unexpected 'break' (T_BREAK) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentQueueController.php on line 276
+[24-Oct-2022 09:06:36 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'tn_appointments.appointment' in 'where clause' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php:152
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php(152): PDOStatement->execute()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php(173): Pixie\QueryBuilder\QueryBuilderHandler->statement('SELECT * FROM `...', Array)
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentQueueController.php(284): Pixie\QueryBuilder\QueryBuilderHandler->get()
+#3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentQueueController.php(29): AppointmentQueueController->arrange()
+#4 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(611): AppointmentQueueController->process()
+#5 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghie in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php on line 152
+[24-Oct-2022 09:06:56 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'tn_appointments.appointment' in 'where clause' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php:152
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php(152): PDOStatement->execute()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php(173): Pixie\QueryBuilder\QueryBuilderHandler->statement('SELECT * FROM `...', Array)
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentQueueController.php(284): Pixie\QueryBuilder\QueryBuilderHandler->get()
+#3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentQueueController.php(29): AppointmentQueueController->arrange()
+#4 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\core\App.php(611): AppointmentQueueController->process()
+#5 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghie in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php on line 152
+[24-Oct-2022 09:12:39 UTC] PHP Parse error:  syntax error, unexpected '$position' (T_VARIABLE) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentQueueController.php on line 300
+[24-Oct-2022 09:47:25 UTC] PHP Notice:  Undefined offset: 0 in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentQueueController.php on line 371
+[24-Oct-2022 09:47:25 UTC] PHP Notice:  Trying to get property 'id' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentQueueController.php on line 371
+[24-Oct-2022 09:47:25 UTC] PHP Notice:  Undefined offset: 1 in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentQueueController.php on line 372
+[24-Oct-2022 09:47:25 UTC] PHP Notice:  Trying to get property 'id' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentQueueController.php on line 372
+[24-Oct-2022 09:47:59 UTC] PHP Notice:  Undefined offset: 0 in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentQueueController.php on line 371
+[24-Oct-2022 09:47:59 UTC] PHP Notice:  Trying to get property 'id' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentQueueController.php on line 371
+[24-Oct-2022 09:47:59 UTC] PHP Notice:  Undefined offset: 1 in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentQueueController.php on line 372
+[24-Oct-2022 09:47:59 UTC] PHP Notice:  Trying to get property 'id' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentQueueController.php on line 372
+[24-Oct-2022 09:52:36 UTC] PHP Notice:  Undefined offset: 0 in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentQueueNowController.php on line 62
+[24-Oct-2022 09:52:36 UTC] PHP Notice:  Trying to get property 'id' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentQueueNowController.php on line 62
+[24-Oct-2022 09:52:36 UTC] PHP Notice:  Undefined offset: 1 in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentQueueNowController.php on line 63
+[24-Oct-2022 09:52:36 UTC] PHP Notice:  Trying to get property 'id' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\app\controllers\AppointmentQueueNowController.php on line 63
+[26-Oct-2022 15:34:52 UTC] PHP Notice:  Undefined variable: accessToken in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php on line 281
+[26-Oct-2022 15:34:52 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Firebase\JWT\JWT::decode() must be of the type string, null given, called in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php on line 281 and defined in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\vendor\firebase\php-jwt\src\JWT.php:90
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php(281): Firebase\JWT\JWT::decode(NULL, Object(Firebase\JWT\Key))
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php(588): App->auth()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\index.php(72): App->process()
+#3 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\vendor\firebase\php-jwt\src\JWT.php on line 90
+[26-Oct-2022 15:35:04 UTC] PHP Notice:  Undefined variable: accessToken in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php on line 281
+[26-Oct-2022 15:35:04 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Firebase\JWT\JWT::decode() must be of the type string, null given, called in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php on line 281 and defined in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\vendor\firebase\php-jwt\src\JWT.php:90
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php(281): Firebase\JWT\JWT::decode(NULL, Object(Firebase\JWT\Key))
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php(588): App->auth()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\index.php(72): App->process()
+#3 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\vendor\firebase\php-jwt\src\JWT.php on line 90
+[26-Oct-2022 15:35:15 UTC] PHP Notice:  Undefined variable: accessToken in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php on line 281
+[26-Oct-2022 15:35:15 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Firebase\JWT\JWT::decode() must be of the type string, null given, called in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php on line 281 and defined in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\vendor\firebase\php-jwt\src\JWT.php:90
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php(281): Firebase\JWT\JWT::decode(NULL, Object(Firebase\JWT\Key))
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php(588): App->auth()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\index.php(72): App->process()
+#3 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\vendor\firebase\php-jwt\src\JWT.php on line 90
+[26-Oct-2022 15:35:30 UTC] PHP Notice:  Undefined variable: accessToken in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php on line 281
+[26-Oct-2022 15:35:30 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Firebase\JWT\JWT::decode() must be of the type string, null given, called in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php on line 281 and defined in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\vendor\firebase\php-jwt\src\JWT.php:90
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php(281): Firebase\JWT\JWT::decode(NULL, Object(Firebase\JWT\Key))
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php(588): App->auth()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\index.php(72): App->process()
+#3 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\vendor\firebase\php-jwt\src\JWT.php on line 90
+[26-Oct-2022 15:36:31 UTC] PHP Parse error:  syntax error, unexpected 'new' (T_NEW), expecting ')' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php on line 281

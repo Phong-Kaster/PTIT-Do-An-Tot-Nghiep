@@ -1,0 +1,2370 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: POEditor.com\n"
+"Project-Id-Version: Nextpost v.3 - Main\n"
+"Language: id\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: 
+msgid "Missing some of required data."
+msgstr "Missing some of required data."
+
+#: 
+msgid "Please include a valid username."
+msgstr "Please include a valid username."
+
+#: 
+msgid "Account is already exists!"
+msgstr "Account is already exists!"
+
+#: 
+msgid "Proxy is not valid or active!"
+msgstr "Proxy is not valid or active!"
+
+#: 
+msgid "Encryption error"
+msgstr "Encryption error"
+
+#: 
+msgid "Enter the code sent to your number ending in %s"
+msgstr "Enter the code sent to your number ending in %s"
+
+#: 
+msgid "Your account has been disabled for violating Instagram terms. <a href='%s'>Click here</a> to learn how you may be able to restore your account."
+msgstr "Your account has been disabled for violating Instagram terms. <a href='%s'>Click here</a> to learn how you may be able to restore your account."
+
+#: 
+msgid "Your account has been banned from Instagram API for spam behaviour or otherwise abusing."
+msgstr "Your account has been banned from Instagram API for spam behaviour or otherwise abusing."
+
+#: 
+msgid "The password you entered is incorrect. Please try again."
+msgstr "The password you entered is incorrect. Please try again."
+
+#: 
+msgid "The username you entered doesn't appear to belong to an account. Please check your username and try again."
+msgstr "The username you entered doesn't appear to belong to an account. Please check your username and try again."
+
+#: 
+msgid "Oops! Something went wrong. Please try again later!"
+msgstr "Oops! Something went wrong. Please try again later!"
+
+#: 
+msgid "Changes saved!"
+msgstr "Changes saved!"
+
+#: 
+msgid "Please check the security code sent you and try again."
+msgstr "Please check the security code sent you and try again."
+
+#: 
+msgid "SMS sent."
+msgstr "SMS sent."
+
+#: 
+msgid "An error occured while verifying the security code."
+msgstr "An error occured while verifying the security code."
+
+#: 
+msgid "Please try again some time later."
+msgstr "Please try again some time later."
+
+#: 
+msgid "Couldn't verify the security code."
+msgstr "Couldn't verify the security code."
+
+#: 
+msgid "Please check the code sent to you and try again."
+msgstr "Please check the code sent to you and try again."
+
+#: 
+msgid "Sorry, we couldn't add this account at the moment."
+msgstr "Sorry, we couldn't add this account at the moment."
+
+#: 
+msgid "Please goto <a href='http://instagram.com' target='_blank'>instagram.com</a> and pass challenge!"
+msgstr "Please goto <a href='http://instagram.com' target='_blank'>instagram.com</a> and pass challenge!"
+
+#: 
+msgid "Enter the 6-digit code sent to the email address %s"
+msgstr "Enter the 6-digit code sent to the email address %s"
+
+#: 
+msgid "Please goto <a href='http://instagram.com' target='_blank'>instagram.com</a> and pass checkpoint!"
+msgstr "Please goto <a href='http://instagram.com' target='_blank'>instagram.com</a> and pass checkpoint!"
+
+#: 
+msgid "ID is requred!"
+msgstr "ID is requred!"
+
+#: 
+msgid "Invalid ID"
+msgstr "Invalid ID"
+
+#: 
+msgid "Account is not available."
+msgstr "Account is not available."
+
+#: 
+msgid "Re-login required for %s"
+msgstr "Re-login required for %s"
+
+#: 
+msgid "Post is not available!"
+msgstr "Post is not available!"
+
+#: 
+msgid "Post status is not valid!"
+msgstr "Post status is not valid!"
+
+#: 
+msgid "Post type is not valid!"
+msgstr "Post type is not valid!"
+
+#: 
+msgid "Your access to the script has been disabled!"
+msgstr "Your access to the script has been disabled!"
+
+#: 
+msgid "At least 2 media file is required for the album post."
+msgstr "At least 2 media file is required for the album post."
+
+#: 
+msgid "Couldn't find selected media for the story"
+msgstr "Couldn't find selected media for the story"
+
+#: 
+msgid "Couldn't find selected media for the post"
+msgstr "Couldn't find selected media for the post"
+
+#: 
+msgid "You don't have a permission for video posts."
+msgstr "You don't have a permission for video posts."
+
+#: 
+msgid "You don't have a permission for story videos."
+msgstr "You don't have a permission for story videos."
+
+#: 
+msgid "You don't have a permission for videos in album."
+msgstr "You don't have a permission for videos in album."
+
+#: 
+msgid "You don't have a permission for photo posts."
+msgstr "You don't have a permission for photo posts."
+
+#: 
+msgid "You don't have a permission for story photos."
+msgstr "You don't have a permission for story photos."
+
+#: 
+msgid "You don't have a permission for photos in album."
+msgstr "You don't have a permission for photos in album."
+
+#: 
+msgid "It's not possible to post video files right now!"
+msgstr "It's not possible to post video files right now!"
+
+#: 
+msgid "Oops! An error occured. Please try again later!"
+msgstr "Oops! An error occured. Please try again later!"
+
+#: 
+msgid "You don't have a permission for this kind of post."
+msgstr "You don't have a permission for this kind of post."
+
+#: 
+msgid "Something went wrong! Couldn't publish the post."
+msgstr "Something went wrong! Couldn't publish the post."
+
+#: 
+msgid "Email is not valid."
+msgstr "Email is not valid."
+
+#: 
+msgid "Invalid token"
+msgstr "Invalid token"
+
+#: 
+msgid "Account is not active"
+msgstr "Account is not active"
+
+#: 
+msgid "Package added successfully! Please refresh the page."
+msgstr "Package added successfully! Please refresh the page."
+
+#: 
+msgid "Changes saved and subscribers updated!"
+msgstr "Changes saved and subscribers updated!"
+
+#: 
+msgid "Package doesn't exist!"
+msgstr "Package doesn't exist!"
+
+#: 
+msgid "Password must be at least 6 character length!"
+msgstr "Password must be at least 6 character length!"
+
+#: 
+msgid "Password confirmation didn't match!"
+msgstr "Password confirmation didn't match!"
+
+#: 
+msgid "All fields are required!"
+msgstr "All fields are required!"
+
+#: 
+msgid "File not received!"
+msgstr "File not received!"
+
+#: 
+msgid "Only zip files are allowed"
+msgstr "Only zip files are allowed"
+
+#: 
+msgid "Please enable PHP ZIP extension (ZipArchive) and try again!"
+msgstr "Please enable PHP ZIP extension (ZipArchive) and try again!"
+
+#: 
+msgid "Plugin is not valid for installation."
+msgstr "Plugin is not valid for installation."
+
+#: 
+msgid "Plugin idname is not valid."
+msgstr "Plugin idname is not valid."
+
+#: 
+msgid "Plugin with same idname is already exists."
+msgstr "Plugin with same idname is already exists."
+
+#: 
+msgid "Plugin is already active!"
+msgstr "Plugin is already active!"
+
+#: 
+msgid "Success!"
+msgstr "Sukses!"
+
+#: 
+msgid "Plugin activated!"
+msgstr "Plugin activated!"
+
+#: 
+msgid "Plugin is already deactive!"
+msgstr "Plugin is already deactive!"
+
+#: 
+msgid "Plugin deactivated!"
+msgstr "Plugin deactivated!"
+
+#: 
+msgid "Please select at least 2 media this album post."
+msgstr "Please select at least 2 media this album post."
+
+#: 
+msgid "Please select one media for this story post."
+msgstr "Please select one media for this story post."
+
+#: 
+msgid "Please select one media for this post."
+msgstr "Please select one media for this post."
+
+#: 
+msgid "Please select an Instagram account to post."
+msgstr "Please select an Instagram account to post."
+
+#: 
+msgid "Post has been scheduled to %s"
+msgstr "Post has been scheduled to %s"
+
+#: 
+msgid "Post has been re-scheduled to %s"
+msgstr "Post has been re-scheduled to %s"
+
+#: 
+msgid "Post published successfully! <a href='%s'>View post</a>"
+msgstr "Post published successfully! <a href='%s'>View post</a>"
+
+#: 
+msgid "Invalid account ID"
+msgstr "Invalid account ID"
+
+#: 
+msgid "%s public post"
+msgid_plural "%s public posts"
+msgstr[0] "%s public post"
+
+#: 
+msgid "Email is not available."
+msgstr "Email is not available."
+
+#: 
+msgid "Email sent!"
+msgstr "Email sent!"
+
+#: 
+msgid "Proxy doesn't exist!"
+msgstr "Proxy doesn't exist!"
+
+#: 
+msgid "Proxy added successfully! Please refresh the page."
+msgstr "Proxy added successfully! Please refresh the page."
+
+#: 
+msgid "Couldn't send recovery email. Please try again later."
+msgstr "Couldn't send recovery email. Please try again later."
+
+#: 
+msgid "We couldn't find your account"
+msgstr "We couldn't find your account"
+
+#: 
+msgid "Invalid package"
+msgstr "Invalid package"
+
+#: 
+msgid "Invalid plan"
+msgstr "Invalid plan"
+
+#: 
+msgid "Invalid payment gateway"
+msgstr "Invalid payment gateway"
+
+#: 
+msgid "Invalid port number"
+msgstr "Invalid port number"
+
+#: 
+msgid "From email is not valid"
+msgstr "From email is not valid"
+
+#: 
+msgid "Connection failed"
+msgstr "Connection failed"
+
+#: 
+msgid "Failed to start encryption"
+msgstr "Failed to start encryption"
+
+#: 
+msgid "Encryption failed"
+msgstr "Encryption failed"
+
+#: 
+msgid "Authentication failed"
+msgstr "Authentication failed"
+
+#: 
+msgid "All fields are required"
+msgstr "All fields are required"
+
+#: 
+msgid "Email is not valid!"
+msgstr "Email is not valid!"
+
+#: 
+msgid "Email is not available!"
+msgstr "Email is not available!"
+
+#: 
+msgid "Jan"
+msgstr "Jan"
+
+#: 
+msgid "Feb"
+msgstr "Feb"
+
+#: 
+msgid "Mar"
+msgstr "Mar"
+
+#: 
+msgid "Apr"
+msgstr "Apr"
+
+#: 
+msgid "May"
+msgstr "May"
+
+#: 
+msgid "Jun"
+msgstr "Jun"
+
+#: 
+msgid "Jul"
+msgstr "Jul"
+
+#: 
+msgid "Aug"
+msgstr "Aug"
+
+#: 
+msgid "Sep"
+msgstr "Sep"
+
+#: 
+msgid "Oct"
+msgstr "Oct"
+
+#: 
+msgid "Nov"
+msgstr "Nov"
+
+#: 
+msgid "Dec"
+msgstr "Dec"
+
+#: 
+msgid "Couldn't get user info."
+msgstr "Couldn't get user info."
+
+#: 
+msgid "User added successfully! Please refresh the page."
+msgstr "User added successfully! Please refresh the page."
+
+#: 
+msgid "User doesn't exist!"
+msgstr "User doesn't exist!"
+
+#: 
+msgid "You don't have a privilage to modify this user's data!"
+msgstr "You don't have a privilage to modify this user's data!"
+
+#: 
+msgid "You can not delete your own account!"
+msgstr "You can not delete your own account!"
+
+#: 
+msgid "Are you sure?"
+msgstr "Are you sure?"
+
+#: 
+msgid "It is not possible to get back removed data!"
+msgstr "It is not possible to get back removed data!"
+
+#: 
+msgid "Yes, Delete"
+msgstr "Yes, Delete"
+
+#: 
+msgid "Cancel"
+msgstr "Batal"
+
+#: 
+msgid "Fill required fields."
+msgstr "Fill required fields."
+
+#: 
+msgid "Please select at least 2 media album post."
+msgstr "Please select at least 2 media album post."
+
+#: 
+msgid "Please select one media for story post."
+msgstr "Please select one media for story post."
+
+#: 
+msgid "Please select one media for post."
+msgstr "Please select one media for post."
+
+#: 
+msgid "Use the TAB key to insert emoji faster"
+msgstr "Use the TAB key to insert emoji faster"
+
+#: 
+msgid "Total Posts"
+msgstr "Total Posts"
+
+#: 
+msgid "Followers"
+msgstr "Followers"
+
+#: 
+msgid "Following"
+msgstr "Following"
+
+#: 
+msgid "Uploading..."
+msgstr "Uploading..."
+
+#: 
+msgid "Do you really want to cancel automatic payments?"
+msgstr "Do you really want to cancel automatic payments?"
+
+#: 
+msgid "Yes, cancel automatic payments"
+msgstr "Yes, cancel automatic payments"
+
+#: 
+msgid "No"
+msgstr "No"
+
+#: 
+msgid "Verification"
+msgstr "Verification"
+
+#: 
+msgid "Searching for %s..."
+msgstr "Searching for %s..."
+
+#: 
+msgid "+%s more"
+msgstr "+%s more"
+
+#: 
+msgid "Sunday"
+msgstr "Sunday"
+
+#: 
+msgid "Monday"
+msgstr "Monday"
+
+#: 
+msgid "Tuesday"
+msgstr "Tuesday"
+
+#: 
+msgid "Wednesday"
+msgstr "Wednesday"
+
+#: 
+msgid "Thursday"
+msgstr "Thursday"
+
+#: 
+msgid "Friday"
+msgstr "Friday"
+
+#: 
+msgid "Saturday"
+msgstr "Saturday"
+
+#: 
+msgid "Sun"
+msgstr "Min"
+
+#: 
+msgid "Mon"
+msgstr "Sen"
+
+#: 
+msgid "Tue"
+msgstr "Sel"
+
+#: 
+msgid "Wed"
+msgstr "Ra"
+
+#: 
+msgid "Thu"
+msgstr "Kam"
+
+#: 
+msgid "Fri"
+msgstr "Jum"
+
+#: 
+msgid "Sat"
+msgstr "Sab"
+
+#: 
+msgid "Su"
+msgstr "Su"
+
+#: 
+msgid "Mo"
+msgstr "Mo"
+
+#: 
+msgid "Tu"
+msgstr "Tu"
+
+#: 
+msgid "We"
+msgstr "We"
+
+#: 
+msgid "Th"
+msgstr "Th"
+
+#: 
+msgid "Fr"
+msgstr "Fr"
+
+#: 
+msgid "Sa"
+msgstr "Sa"
+
+#: 
+msgid "January"
+msgstr "January"
+
+#: 
+msgid "February"
+msgstr "February"
+
+#: 
+msgid "March"
+msgstr "March"
+
+#: 
+msgid "April"
+msgstr "April"
+
+#: 
+msgid "May"
+msgstr "May"
+
+#: 
+msgid "June"
+msgstr "June"
+
+#: 
+msgid "July"
+msgstr "July"
+
+#: 
+msgid "August"
+msgstr "August"
+
+#: 
+msgid "September"
+msgstr "September"
+
+#: 
+msgid "October"
+msgstr "October"
+
+#: 
+msgid "November"
+msgstr "November"
+
+#: 
+msgid "December"
+msgstr "December"
+
+#: 
+msgid "Today"
+msgstr "Today"
+
+#: 
+msgid "Clear"
+msgstr "Clear"
+
+#: 
+msgid "Select files"
+msgstr "Select files"
+
+#: 
+msgid "Load more"
+msgstr "Load more"
+
+#: 
+msgid "View"
+msgstr "View"
+
+#: 
+msgid "Delete"
+msgstr "Hapus"
+
+#: 
+msgid "Paste your link here..."
+msgstr "Paste your link here..."
+
+#: 
+msgid "Your media volume is empty. <br /> Drag some files here."
+msgstr "Your media volume is empty. <br /> Drag some files here."
+
+#: 
+msgid "Drop files here to upload"
+msgstr "Drop files here to upload"
+
+#: 
+msgid "This file and all uncompleted posts which this file is assigned to will be removed. This process cannot be undone. Do you want to proceed?"
+msgstr "This file and all uncompleted posts which this file is assigned to will be removed. This process cannot be undone. Do you want to proceed?"
+
+#: 
+msgid "File size exceeds max allowed file size."
+msgstr "File size exceeds max allowed file size."
+
+#: 
+msgid "File type is not allowed."
+msgstr "File type is not allowed."
+
+#: 
+msgid "There is not enough storage to upload this file"
+msgstr "There is not enough storage to upload this file"
+
+#: 
+msgid "There are so many files in upload queue. Please try again after current upload queue finishes."
+msgstr "There are so many files in upload queue. Please try again after current upload queue finishes."
+
+#: 
+msgid "{count} file(s) selected."
+msgstr "{count} file(s) selected."
+
+#: 
+msgid "Remove?"
+msgstr "Remove?"
+
+#: 
+msgid "Do you want to remove the selected files? This process can not be undone."
+msgstr "Do you want to remove the selected files? This process can not be undone."
+
+#: 
+msgid "Used {used} of {total}"
+msgstr "Used {used} of {total}"
+
+#: 
+msgid "Used {used}"
+msgstr "Used {used}"
+
+#: 
+msgid "Total"
+msgstr "Total"
+
+#: 
+msgid "{count} files"
+msgstr "{count} files"
+
+#: 
+msgid "Remaining storage"
+msgstr "Remaining storage"
+
+#: 
+msgid "Max. file size to upload"
+msgstr "Max. file size to upload"
+
+#: 
+msgid "Unlimited storage"
+msgstr "Unlimited storage"
+
+#: 
+msgid "Thanks for using %s."
+msgstr "Thanks for using %s."
+
+#: 
+msgid "All rights reserved."
+msgstr "All rights reserved."
+
+#: 
+msgid "Password Recovery"
+msgstr "Password Recovery"
+
+#: 
+msgid "Hi %s"
+msgstr "Hi %s"
+
+#: 
+msgid "Someone requested password reset instructions for your account on %s. If this was you, click the button below to set new password for your account. Otherwise you can forget about this email. Your account is still safe."
+msgstr "Someone requested password reset instructions for your account on %s. If this was you, click the button below to set new password for your account. Otherwise you can forget about this email. Your account is still safe."
+
+#: 
+msgid "Reset Password"
+msgstr "Reset Password"
+
+#: 
+msgid "Unlimited"
+msgstr "Unlimited"
+
+#: 
+msgid "Couldn't save uploaded file."
+msgstr "Couldn't save uploaded file."
+
+#: 
+msgid "Couldn't save uploaded file data."
+msgstr "Couldn't save uploaded file data."
+
+#: 
+msgid "Couldn't detect file extension!"
+msgstr "Couldn't detect file extension!"
+
+#: 
+msgid "Image is to small!"
+msgstr "Image is to small!"
+
+#: 
+msgid "Video should be at least 3 seconds length."
+msgstr "Video should be at least 3 seconds length."
+
+#: 
+msgid "Video should be at least 480px wide."
+msgstr "Video should be at least 480px wide."
+
+#: 
+msgid "Aspect ratio of the video file is not accepted by Instagram."
+msgstr "Aspect ratio of the video file is not accepted by Instagram."
+
+#: 
+msgid "Video is too long. Unable to process it. Upload the videos with duration up to %s minutes."
+msgstr "Video is too long. Unable to process it. Upload the videos with duration up to %s minutes."
+
+#: 
+msgid "Aspect ratio of the video is only appropriate for Instagram story. Instagram story video duration might be up to %s seconds."
+msgstr "Aspect ratio of the video is only appropriate for Instagram story. Instagram story video duration might be up to %s seconds."
+
+#: 
+msgid "Video is too long. Maximum 60 seconds videos are accepted."
+msgstr "Video is too long. Maximum 60 seconds videos are accepted."
+
+#: 
+msgid "Video might be up to %spx wide"
+msgstr "Video might be up to %spx wide"
+
+#: 
+msgid "Missing meta data"
+msgstr "Missing meta data"
+
+#: 
+msgid "Invalid meta data"
+msgstr "Invalid meta data"
+
+#: 
+msgid "Couldn't get the file"
+msgstr "Couldn't get the file"
+
+#: 
+msgid "Couldn't download the file"
+msgstr "Couldn't download the file"
+
+#: 
+msgid "Couldn't find the image!"
+msgstr "Couldn't find the image!"
+
+#: 
+msgid "Couldn't get file type!"
+msgstr "Couldn't get file type!"
+
+#: 
+msgid "Annual Plan"
+msgstr "Rencana Tahunan"
+
+#: 
+msgid "Monthly Plan"
+msgstr "Rencana Bulanan"
+
+#: 
+msgid "Payment for Order #%s"
+msgstr "Payment for Order #%s"
+
+#: 
+msgid "System detected logical error"
+msgstr "System detected logical error"
+
+#: 
+msgid "Couldn't get payment information"
+msgstr "Couldn't get payment information"
+
+#: 
+msgid "Couldn't complete the payment!"
+msgstr "Couldn't complete the payment!"
+
+#: 
+msgid "Couldn't approve the payment!"
+msgstr "Couldn't approve the payment!"
+
+#: 
+msgid "This is account will already be active for at least 5 years. <br> It's not possible to create a new payment subscription for this account."
+msgstr "This is account will already be active for at least 5 years. <br> It's not possible to create a new payment subscription for this account."
+
+#: 
+msgid "{site_name} Account Activation"
+msgstr "{site_name} Account Activation"
+
+#: 
+msgid "Please verify the email address {email} belongs to you. To do so, simply click the button below."
+msgstr "Please verify the email address {email} belongs to you. To do so, simply click the button below."
+
+#: 
+msgid "Verify Email"
+msgstr "Verify Email"
+
+#: 
+msgid "New Account"
+msgstr "Akun Baru"
+
+#: 
+msgid "Saved Accounts"
+msgstr "Akun Tersimpan"
+
+#: 
+msgid "Calendar"
+msgstr "Calendar"
+
+#: 
+msgid "New Caption"
+msgstr "Keterangan Baru"
+
+#: 
+msgid "Caption Templates"
+msgstr "Keterangan Template"
+
+#: 
+msgid "Add new"
+msgstr "Tambah baru"
+
+#: 
+msgid "Account Verification"
+msgstr "Account Verification"
+
+#: 
+msgid "Checkout Result"
+msgstr "Melihat Hasil"
+
+#: 
+msgid "Email Verification"
+msgstr "Email Verification"
+
+#: 
+msgid "Account Expired"
+msgstr "Akun Kadaluarsa"
+
+#: 
+msgid "Username"
+msgstr "Nama pengguna"
+
+#: 
+msgid "Enter username"
+msgstr "Masukkan nama pengguna"
+
+#: 
+msgid "Password"
+msgstr "Kata Sandi"
+
+#: 
+msgid "Enter password"
+msgstr "Masukkan kata sandi"
+
+#: 
+msgid "Proxy"
+msgstr "Proxy"
+
+#: 
+msgid "Proxy for your country"
+msgstr "Proxy untuk negara anda"
+
+#: 
+msgid "Proxy should match following pattern: http://ip:port OR http://username:password@ip:port"
+msgstr "Proxy harus cocok dengan pola berikut: http:/ip:port ATAU http:/username:password@ip:port"
+
+#: 
+msgid "It's recommended to to use a proxy belongs to the country where you've logged in this acount in Instagram's official app or website."
+msgstr "Direkomendasikan untuk menggunakan sebuah proxy milik negara dimana anda masukkan akun ini kedalam akun resmi atau situs Instagram."
+
+#: 
+msgid "Security Code"
+msgstr "Security Code"
+
+#: 
+msgid "Enter security code"
+msgstr "Enter security code"
+
+#: 
+msgid "Didn't get a security code?"
+msgstr "Didn't get a security code?"
+
+#: 
+msgid "Resend it"
+msgstr "Resend it"
+
+#: 
+msgid "after %s seconds"
+msgstr "after %s seconds"
+
+#: 
+msgid "If you're unable to receive a security code, use one of your <a href='{url}' target='_blank'>backup codes</a>."
+msgstr "If you're unable to receive a security code, use one of your <a href='{url}' target='_blank'>backup codes</a>."
+
+#: 
+msgid "You should receive the 6 digit security code sent by Instagram to the mail address of this account."
+msgstr "You should receive the 6 digit security code sent by Instagram to the mail address of this account."
+
+#: 
+msgid "Save changes"
+msgstr "Simpan perubahan"
+
+#: 
+msgid "Add account"
+msgstr "Tambah akun"
+
+#: 
+msgid "Confirm"
+msgstr "Confirm"
+
+#: 
+msgid "Added on %s"
+msgstr "Tambahkan %s"
+
+#: 
+msgid "Re-login required!"
+msgstr "Login kembali diperlukan!"
+
+#: 
+msgid "Edit"
+msgstr "Sunting"
+
+#: 
+msgid "View timeline"
+msgstr "Lihat timeline"
+
+#: 
+msgid "Load More"
+msgstr "Muat Lebih banyak"
+
+#: 
+msgid "You haven't add any Instagram account yet. Click the button below to add your first account."
+msgstr "Anda belum menambahkan akun Instagram manapun. Klik tombol dibawah ini untuk menambahkan akun pertama Anda."
+
+#: 
+msgid "You don't have a permission to add any Instagram account."
+msgstr "Anda tidak memiliki sebuah izin untuk menambahkan akun Instagram apapun."
+
+#: 
+msgid "Search..."
+msgstr "Search..."
+
+#: 
+msgid "Select Account"
+msgstr "Pilih Akun"
+
+#: 
+msgid "All accounts"
+msgstr "All accounts"
+
+#: 
+msgid "Submit"
+msgstr "Kirim"
+
+#: 
+msgid "In Progress"
+msgstr "Dalam Proses"
+
+#: 
+msgid "Processing now..."
+msgstr "Sedang memproses..."
+
+#: 
+msgid "In a few moments"
+msgstr "Dalam beberapa saat"
+
+#: 
+msgid "System task error"
+msgstr "Task sistem bermasalah"
+
+#: 
+msgid "Album"
+msgstr "Album"
+
+#: 
+msgid "Story"
+msgstr "Cerita"
+
+#: 
+msgid "Regular Post"
+msgstr "Post Regular"
+
+#: 
+msgid "There is not any scheduled post for {account} on this date."
+msgstr "There is not any scheduled post for {account} on this date."
+
+#: 
+msgid "There is not any scheduled post on this date."
+msgstr "There is not any scheduled post on this date."
+
+#: 
+msgid "Published"
+msgstr "Dipublikasikan"
+
+#: 
+msgid "View on Instagram"
+msgstr "Lihat di Instagram"
+
+#: 
+msgid "There is not any published post for {account} on this date yet."
+msgstr "There is not any published post for {account} on this date yet."
+
+#: 
+msgid "There is not any published post on this date yet."
+msgstr "There is not any published post on this date yet."
+
+#: 
+msgid "Failed"
+msgstr "Gagal"
+
+#: 
+msgid "There is not any failed post for {account} on this date yet."
+msgstr "There is not any failed post for {account} on this date yet."
+
+#: 
+msgid "There is not any failed post on this date yet."
+msgstr "There is not any failed post on this date yet."
+
+#: 
+msgid "Add post"
+msgstr "Tambah post"
+
+#: 
+msgid "%s post"
+msgid_plural "%s posts"
+msgstr[0] "%s post"
+
+#: 
+msgid "Delayed"
+msgstr "Delayed"
+
+#: 
+msgid "Scheduled"
+msgstr "Scheduled"
+
+#: 
+msgid "Title"
+msgstr "Judul"
+
+#: 
+msgid "Enter caption title"
+msgstr "Masukkan keterangan judul"
+
+#: 
+msgid "Caption"
+msgstr "Keterangan"
+
+#: 
+msgid "Write a caption"
+msgstr "Tulis sebuah keterangan"
+
+#: 
+msgid "Save caption"
+msgstr "Simpan keterangan"
+
+#: 
+msgid "Use caption"
+msgstr "Gunakan keterangan"
+
+#: 
+msgid "You haven't add any caption template yet. Click the button below to create your first caption template."
+msgstr "Anda belum menambahkan template keterangan apapun. Klik tombol dibawah ini untuk membuat template keterangan pertama Anda."
+
+#: 
+msgid "Add New"
+msgstr "Tambah Barur"
+
+#: 
+msgid "Enter Your Security Code"
+msgstr "Enter Your Security Code"
+
+#: 
+msgid "Enter the 6-digit code sent to your email/phone"
+msgstr "Enter the 6-digit code sent to your email/phone"
+
+#: 
+msgid "Enter the 6-digit code sent to the number ending in %s"
+msgstr "Enter the 6-digit code sent to the number ending in %s"
+
+#: 
+msgid "Error!"
+msgstr "Error!"
+
+#: 
+msgid "An error occured while sending the verification code! Please try again later!"
+msgstr "An error occured while sending the verification code! Please try again later!"
+
+#: 
+msgid "Try Again"
+msgstr "Coba Lagi"
+
+#: 
+msgid "Payment Error!"
+msgstr "Kesalahan Pembayaran!"
+
+#: 
+msgid "An error occured during the payment process! Please try again later!"
+msgstr "Sebuah kesalahan muncul ketika proses pembayaran! Mohon coba lagi nanti!"
+
+#: 
+msgid "Go to Home"
+msgstr "Pergi ke Menu Utama"
+
+#: 
+msgid "You've successfully activated the Automatic Payment Model for your account."
+msgstr "You've successfully activated the Automatic Payment Model for your account."
+
+#: 
+msgid "We'll renew your account as soon as payment processing finished successfully."
+msgstr "We'll renew your account as soon as payment processing finished successfully."
+
+#: 
+msgid "Payment accepted successfully! Your account will be active until %s"
+msgstr "Pembayaran sukses diterima! Akun Anda akan aktif hingga %s"
+
+#: 
+msgid "Go to Account"
+msgstr "Masuk ke Akun"
+
+#: 
+msgid "You've successfully verified the your email address."
+msgstr "You've successfully verified the your email address."
+
+#: 
+msgid "Login"
+msgstr "Login"
+
+#: 
+msgid "Get Started"
+msgstr "Mulai"
+
+#: 
+msgid "Please click \"View Plans\" button to view pricing packages. After choosing appropriate package you can start to use the app."
+msgstr "Mohon klik tombol \"Lihat Rencana\" untuk melihat paket harga. Setelah memilih paket yang sesuai anda dapat mulai menggunakan aplikasi."
+
+#: 
+msgid "View Plans"
+msgstr "Lihat Rencana"
+
+#: 
+msgid "You've been subscribed to the automatic payment model."
+msgstr "You've been subscribed to the automatic payment model."
+
+#: 
+msgid "As soon as we charge the payment from your credit card to renew the account, your account will be activated automatially."
+msgstr "As soon as we charge the payment from your credit card to renew the account, your account will be activated automatially."
+
+#: 
+msgid "Upcoming Invoice"
+msgstr "Upcoming Invoice"
+
+#: 
+msgid "%s on %s at %s"
+msgstr "%s on %s at %s"
+
+#: 
+msgid "Cancel Automatic Payments"
+msgstr "Cancel Automatic Payments"
+
+#: 
+msgid "Your account has been expired! <br> Please renew your account to use the app."
+msgstr "Akun anda telah kadaluarsa! <br> Mohon perbaharui akun anda untuk menggunakan aplikasi."
+
+#: 
+msgid "Renew Account"
+msgstr "Perbaharui Akun"
+
+#: 
+msgid "Logout"
+msgstr "Keluar"
+
+#: 
+msgid "Upload Media"
+msgstr "Unggah Media"
+
+#: 
+msgid "Your PC"
+msgstr "PC Anda"
+
+#: 
+msgid "URL"
+msgstr "URL"
+
+#: 
+msgid "Add Post"
+msgstr "Tambah post"
+
+#: 
+msgid "Captions"
+msgstr "Keterangan"
+
+#: 
+msgid "Accounts"
+msgstr "Akun"
+
+#: 
+msgid "Statistics"
+msgstr "Statistik"
+
+#: 
+msgid "Modules"
+msgstr "Modul"
+
+#: 
+msgid "Packages"
+msgstr "Paket"
+
+#: 
+msgid "Users"
+msgstr "Pengguna"
+
+#: 
+msgid "Settings"
+msgstr "Pengaturan"
+
+#: 
+msgid "You don't have any Instagram account."
+msgstr "Anda tidak memiliki akun Instagram."
+
+#: 
+msgid "Trial Package"
+msgstr "Paket Percobaan"
+
+#: 
+msgid "Size (days)"
+msgstr "Ukuran (hari)"
+
+#: 
+msgid "Possible values: -1, 0 and any positive integer"
+msgstr "Nilai yang memungkinkan: -1, 0 dan bilangan bulat positif lainnya"
+
+#: 
+msgid "Include -1 for unlimited, 0 to completely disable trial mode"
+msgstr "Tambahkan -1 untuk tidak terbatas, 0 untuk menonaktifkan mode percobaan"
+
+#: 
+msgid "Max. storage size (MB)"
+msgstr "Ukuran ruang maksimum (MB)"
+
+#: 
+msgid "Max. file size (MB)"
+msgstr "Ukuran berkas maksimum (MB)"
+
+#: 
+msgid "Include -1 for unlimted"
+msgstr "Masukkan -1 untuk tidak terbatas"
+
+#: 
+msgid "Number of accounts"
+msgstr "Nomor Akun"
+
+#: 
+msgid "Include -1 for unlimited"
+msgstr "Masukkan -1 untuk tidak terbatas"
+
+#: 
+msgid "File Pickers"
+msgstr "Pengambil berkas"
+
+#: 
+msgid "Dropbox"
+msgstr "Dropbox"
+
+#: 
+msgid "OneDrive"
+msgstr "OneDrive"
+
+#: 
+msgid "Google Drive"
+msgstr "Google Drive"
+
+#: 
+msgid "Post Types"
+msgstr "Tipe Post"
+
+#: 
+msgid "Photo Post"
+msgstr "Post Foto"
+
+#: 
+msgid "Video Post"
+msgstr "Post Video"
+
+#: 
+msgid "Story Photo"
+msgstr "Foto Riwayat"
+
+#: 
+msgid "Story Video"
+msgstr "Video Riwayat"
+
+#: 
+msgid "Album (video)"
+msgstr "Album (video)"
+
+#: 
+msgid "Spintax"
+msgstr "Spintax"
+
+#: 
+msgid "Subscribers with this option enabled, can use spintax syntax in post captions."
+msgstr "Pelanggan dengan opsi yang dinyalakan, dapat menggunakan spintax sintaksis dalam keterangan post."
+
+#: 
+msgid "Save"
+msgstr "Simpan"
+
+#: 
+msgid "Save and update subscribers"
+msgstr "Simpan dan perbaharui pelanggan"
+
+#: 
+msgid "New Package"
+msgstr "Paket Baru"
+
+#: 
+msgid "Package Name"
+msgstr "Nama Paket"
+
+#: 
+msgid "Monthly Price"
+msgstr "Harga Bulanan"
+
+#: 
+msgid "Annual Price"
+msgstr "Harga Tahunan"
+
+#: 
+msgid "Invisible Package"
+msgstr "Paket tidak Terlihat"
+
+#: 
+msgid "Will be visible only by admins inside the app"
+msgstr "Akan terlihat hanya oleh administrators didalam aplikasi"
+
+#: 
+msgid "Free Trial"
+msgstr "Percobaan Gratis"
+
+#: 
+msgid "Trial package for new users"
+msgstr "Paket percobaan untuk pengguna baru"
+
+#: 
+msgid "Public Package"
+msgstr "Paket Publik"
+
+#: 
+msgid "Package for admins only"
+msgstr "Paket hanya untuk administrator"
+
+#: 
+msgid "Please select a package from left side list to view or modify it's details."
+msgstr "Harap pilih sebuah paket dari sisi kiri dari daftar untuk melihat atau memodifikasi detilnya."
+
+#: 
+msgid "Choose your module and click \"Install\" button"
+msgstr "Choose your module and click \"Install\" button"
+
+#: 
+msgid "Choose Zip Archive"
+msgstr "Choose Zip Archive"
+
+#: 
+msgid "Install"
+msgstr "Install"
+
+#: 
+msgid "Module has been installed successfully!"
+msgstr "Module has been installed successfully!"
+
+#: 
+msgid "View Modules"
+msgstr "View Modules"
+
+#: 
+msgid "An error occured during the installation process! Please try again later!"
+msgstr "An error occured during the installation process! Please try again later!"
+
+#: 
+msgid "Version %s"
+msgstr "Version %s"
+
+#: 
+msgid "By %s"
+msgstr "By %s"
+
+#: 
+msgid "Module Settings"
+msgstr "Module Settings"
+
+#: 
+msgid "Deactivate"
+msgstr "Deactivate"
+
+#: 
+msgid "Activate"
+msgstr "Activate"
+
+#: 
+msgid "Invalid module"
+msgstr "Invalid module"
+
+#: 
+msgid "You haven't installed any module yet. Click the button below to install first module."
+msgstr "Anda belum menginstall modul apapun. Klik tombol di bawah ini untuk menginstal modul pertama."
+
+#: 
+msgid "This post has been failed to publish previously because of the following reason:"
+msgstr "Post ini telah gagal untuk mempublikasikan sebelumnya karena alasan berikut:"
+
+#: 
+msgid "Video"
+msgstr "Video"
+
+#: 
+msgid "Photo"
+msgstr "Foto"
+
+#: 
+msgid "Post"
+msgstr "Post"
+
+#: 
+msgid "Add Story"
+msgstr "Tambah Cerita"
+
+#: 
+msgid "Add Album"
+msgstr "Tambah Album"
+
+#: 
+msgid "Pick a file from your device"
+msgstr "Pick a file from your device"
+
+#: 
+msgid "Media"
+msgstr "Media"
+
+#: 
+msgid "Delete Mode"
+msgstr "Delete Mode"
+
+#: 
+msgid "Info"
+msgstr "Info"
+
+#: 
+msgid "Drop here"
+msgstr "Taruh disini"
+
+#: 
+msgid "Drag media here to post"
+msgstr "Tarik media kesini untuk memposting"
+
+#: 
+msgid "First Comment"
+msgstr "First Comment"
+
+#: 
+msgid "Write the first comment"
+msgstr "Write the first comment"
+
+#: 
+msgid "Schedule"
+msgstr "Jadwal"
+
+#: 
+msgid "Advanced Settings"
+msgstr "Advanced Settings"
+
+#: 
+msgid "Location"
+msgstr "Location"
+
+#: 
+msgid "Auto remove media"
+msgstr "Auto remove media"
+
+#: 
+msgid "Remove media files after posting"
+msgstr "Remove media files after posting"
+
+#: 
+msgid "Post now"
+msgstr "Posting sekarang"
+
+#: 
+msgid "Schedule the post"
+msgstr "Jadwalkan untuk posting"
+
+#: 
+msgid "To continue using our services, you need to confirm your email. Check the instruction sent to %s to verify your email."
+msgstr "To continue using our services, you need to confirm your email. Check the instruction sent to %s to verify your email."
+
+#: 
+msgid "Resend email"
+msgstr "Resend email"
+
+#: 
+msgid "Firstname"
+msgstr "Nama depan"
+
+#: 
+msgid "Lastname"
+msgstr "Nama belakang"
+
+#: 
+msgid "Language"
+msgstr "Language"
+
+#: 
+msgid "Timezone"
+msgstr "Zona waktu"
+
+#: 
+msgid "Date format"
+msgstr "Format tanggal"
+
+#: 
+msgid "01 November, 2017"
+msgstr "01 November, 2017"
+
+#: 
+msgid "November 01, 2017"
+msgstr "November 01, 2017"
+
+#: 
+msgid "03 Nov, 2017"
+msgstr "03 Nov, 2017"
+
+#: 
+msgid "Nov 03, 2017"
+msgstr "Nov 03, 2017"
+
+#: 
+msgid "Time format"
+msgstr "Format waktu"
+
+#: 
+msgid "24 hours"
+msgstr "24 jam"
+
+#: 
+msgid "12 hours"
+msgstr "12 jam"
+
+#: 
+msgid "Email"
+msgstr "Email"
+
+#: 
+msgid "New Password"
+msgstr "Kata sandi Baru"
+
+#: 
+msgid "Confirm Password"
+msgstr "Konfirmasi Kata Sandi"
+
+#: 
+msgid "If you don't want to change password then leave these password fields empty!"
+msgstr "Jika anda tidak ingin mengganti kata sandi maka biarkan kolom ini kosong!"
+
+#: 
+msgid "Your Package"
+msgstr "Your Package"
+
+#: 
+msgid "Trial Mode"
+msgstr "Trial Mode"
+
+#: 
+msgid "Unknown Package"
+msgstr "Unknown Package"
+
+#: 
+msgid "Expire Date"
+msgstr "Expire Date"
+
+#: 
+msgid "Payment Model"
+msgstr "Payment Model"
+
+#: 
+msgid "Automatic"
+msgstr "Automatic"
+
+#: 
+msgid "Annual"
+msgstr "Annual"
+
+#: 
+msgid "Monthly"
+msgstr "Monthly"
+
+#: 
+msgid "Manual"
+msgstr "Manual"
+
+#: 
+msgid "Upcoming invoice"
+msgstr "Upcoming invoice"
+
+#: 
+msgid "We'll charge your credit card automatically at the account expire date."
+msgstr "We'll charge your credit card automatically at the account expire date."
+
+#: 
+msgid "After the expire date, your account will be locked until you renew your account."
+msgstr "After the expire date, your account will be locked until you renew your account."
+
+#: 
+msgid "Upgrade Account"
+msgstr "Tingkatkan Akun"
+
+#: 
+msgid "Used once"
+msgid_plural "Used %s times"
+msgstr[0] "Digunakan sekali"
+
+#: 
+msgid "There is not any proxy address yet. Click the button below to add your first proxy address."
+msgstr "Belum ada alamat proxy apapun. Klik tombol dibawah ini untuk menambahkan alamat proxy pertama anda."
+
+#: 
+msgid "Please select a proxy from left side list to view or modify it's details."
+msgstr "Harap pilih sebuah proxy dari sisi kiri daftar untuk melihat atau memodifikasi detilnya."
+
+#: 
+msgid "New Proxy"
+msgstr "Proxy Baru"
+
+#: 
+msgid "Country"
+msgstr "Negara"
+
+#: 
+msgid "Unknown"
+msgstr "Tidak diketahui"
+
+#: 
+msgid "You've already subscribed to %s. <br> Please select package options and payment gateway to renew your account!"
+msgstr "Anda telah berlangganan pada %s. <br> Harap pilih opsi paket dan jalur pembayaran untuk memperbaharui akun anda!"
+
+#: 
+msgid "Great! You've selected %s. <br> Now please select package options and payment gateway to renew your account!"
+msgstr "Bagus! Anda telah memilih %s. <br> Sekarang harap pilih opsi paket dan jalur pembayaran untuk memperbaharui akun anda!"
+
+#: 
+msgid "Pay {{amount}}"
+msgstr "Membayar {{amount}}"
+
+#: 
+msgid "Please select your plan"
+msgstr "Harap pilih rencana anda"
+
+#: 
+msgid "Monthly plan"
+msgstr "Rencana bulanan"
+
+#: 
+msgid "Annual plan"
+msgstr "Rencana tahunan"
+
+#: 
+msgid "Choose a payment method"
+msgstr "Pilih sebuah metode pembayaran"
+
+#: 
+msgid "Payment Cycle"
+msgstr "Payment Cycle"
+
+#: 
+msgid "One time"
+msgstr "One time"
+
+#: 
+msgid "This is one time payment"
+msgstr "This is one time payment"
+
+#: 
+msgid "Recurring Payment"
+msgstr "Recurring Payment"
+
+#: 
+msgid "You'll be charged at the end of each cycle automatically"
+msgstr "You'll be charged at the end of each cycle automatically"
+
+#: 
+msgid "Place Order"
+msgstr "Melakukan Pemesanan"
+
+#: 
+msgid "Please select one of the packages listed below to subscribe!"
+msgstr "Harap pilih satu dari sekian paket yang terdaftar dibawah ini untuk berlangganan!"
+
+#: 
+msgid "per month"
+msgstr "per bulan"
+
+#: 
+msgid "You save %s"
+msgstr "Anda hemat %s"
+
+#: 
+msgid "Only 1 account"
+msgid_plural "Up to %s accounts"
+msgstr[0] "Hingga %s akun"
+
+#: 
+msgid "Unlimited accounts"
+msgstr "Akun tidak terbatas"
+
+#: 
+msgid "Zero accounts"
+msgstr "Akun Kosong"
+
+#: 
+msgid "Photo+Video"
+msgstr "Foto+Video"
+
+#: 
+msgid "Photo only"
+msgstr "Hanya Foto"
+
+#: 
+msgid "Video only"
+msgstr "Hanya Video"
+
+#: 
+msgid "Cloud Import"
+msgstr "Impor dari Cloud"
+
+#: 
+msgid "Not available"
+msgstr "Tidak tersedia"
+
+#: 
+msgid "Spintax Support"
+msgstr "Dukungan Spintax"
+
+#: 
+msgid "Storage"
+msgstr "Penyimpanan"
+
+#: 
+msgid "Select"
+msgstr "Pilih"
+
+#: 
+msgid "Dropbox Chooser"
+msgstr "Dropbox Chooser"
+
+#: 
+msgid "Dropbox API Key"
+msgstr "API Key Dropbox"
+
+#: 
+msgid "Leave this field empty if you don't want to enable Dropbox Chooser."
+msgstr "Biarkan kolom ini kosong jika anda tidak ingin menyalakan Dropbox Chooser."
+
+#: 
+msgid "Experimental Features"
+msgstr "Experimental Features"
+
+#: 
+msgid "Video processing"
+msgstr "Video processing"
+
+#: 
+msgid "Search in post caption and first comment"
+msgstr "Search in post caption and first comment"
+
+#: 
+msgid "Facebook Login"
+msgstr "Masuk ke Facebook"
+
+#: 
+msgid "App ID"
+msgstr "ID Aplikasi"
+
+#: 
+msgid "App Secret"
+msgstr "App Secret"
+
+#: 
+msgid "Google Analytics"
+msgstr "Analisis Google"
+
+#: 
+msgid "Google Analytics Property ID"
+msgstr "Analisis Google ID Properti"
+
+#: 
+msgid "Leave this field empty if you don't want to enable Google Analytics"
+msgstr "Biarkan kolom ini kosong jika anda tidak ingin menyalakan Google Analisis"
+
+#: 
+msgid "Google Drive Picker"
+msgstr "Pemilih Google Drive"
+
+#: 
+msgid "Leave both of these fields empty if you don't want to enable Google Drive file picker."
+msgstr "Biarkan kedua kolom ini kosong jika anda tidak ingin menyalakan pemilih berkas Google Drive."
+
+#: 
+msgid "Google API Key"
+msgstr "API Key Google"
+
+#: 
+msgid "Google Client ID"
+msgstr "ID Klien Google"
+
+#: 
+msgid "Logotype"
+msgstr "Jenis logo"
+
+#: 
+msgid "Logo"
+msgstr "Logo"
+
+#: 
+msgid "Logomark"
+msgstr "Tanda logo"
+
+#: 
+msgid "Will be used as minimized menu and favicon"
+msgstr "Akan digunakan sebagai menu minimal dan icon favorit"
+
+#: 
+msgid "128px x 128px PNG image is recomended"
+msgstr "128px x 128px gambar PNG direkomendasikan"
+
+#: 
+msgid "General Settings"
+msgstr "Pengaturan Umum"
+
+#: 
+msgid "Site Settings"
+msgstr "Pengaturan Situs"
+
+#: 
+msgid "Other Settings"
+msgstr "Pengaturan Lain"
+
+#: 
+msgid "Proxy Addresses"
+msgstr "Alamat-alamat Proxy"
+
+#: 
+msgid "SMTP"
+msgstr "SMTP"
+
+#: 
+msgid "Email Notifications"
+msgstr "Notifikasi Email"
+
+#: 
+msgid "Integrations"
+msgstr "Integrasi"
+
+#: 
+msgid "OneDrive File Picker"
+msgstr "Pemilih Bekas OneDrive"
+
+#: 
+msgid "PayPal Integration"
+msgstr "Integrasi PayPal"
+
+#: 
+msgid "Stripe Integration"
+msgstr "Integrasi Strip"
+
+#: 
+msgid "Email Addresses"
+msgstr "Alamat-alamat Email"
+
+#: 
+msgid "Notification emails will be sent to these email addresses. Separate emails with comma sign."
+msgstr "Notifikasi email akan dikirimkan ke alamat-alamat email ini. Pisahkan email dengan tanda koma."
+
+#: 
+msgid "New User"
+msgstr "Pengguna Baru"
+
+#: 
+msgid "Receive notification when a new user registers to the site"
+msgstr "Terima notifikasi ketika pengguna baru mendaftar ke situs"
+
+#: 
+msgid "Account Renew (New payment)"
+msgstr "Akun Diperbaharui (Pembayaran baru)"
+
+#: 
+msgid "Receive notification when new payment received successfully to renew the user account."
+msgstr "Terima notifikasi ketika pembayaran baru sukses diterima untuk memperbaharui akun pengguna."
+
+#: 
+msgid "OneDrive Client ID"
+msgstr "ID Klien OneDrive"
+
+#: 
+msgid "Leave this field empty if you don't want to enable OneDrive file picker."
+msgstr "Biarkan kolom ini kosong jika anda tidak ingin menyalakan pemilih berkas OneDrive."
+
+#: 
+msgid "SSL certificate is required for OneDrive interation"
+msgstr "Sertifikat SSL dibutuhkan untuk integrasi OneDrive"
+
+#: 
+msgid "Default Currency"
+msgstr "Mata Uang Asal"
+
+#: 
+msgid "Geonames Username"
+msgstr "Nama pengguna Geonames"
+
+#: 
+msgid "Enter your geonames.org username"
+msgstr "Masukkan nama pengguna geonames.org anda"
+
+#: 
+msgid "Required for getting correct data for user's location to use in proxy and timezones detection"
+msgstr "Dibutuhkan untuk mendapatkan data yang benar untuk lokasi pengguna untuk menggunakan dalam proxy dan pendeteksian zona waktu"
+
+#: 
+msgid "Require Email Verification"
+msgstr "Require Email Verification"
+
+#: 
+msgid "Enabling this settings will not affect current users until they update their email address."
+msgstr "Enabling this settings will not affect current users until they update their email address."
+
+#: 
+msgid "Users with unverified email address will not be able to use the app until they verify the email address."
+msgstr "Users with unverified email address will not be able to use the app until they verify the email address."
+
+#: 
+msgid "This setting will not affect admin accounts."
+msgstr "This setting will not affect admin accounts."
+
+#: 
+msgid "Enabling SMTP is highly recommended."
+msgstr "Enabling SMTP is highly recommended."
+
+#: 
+msgid "Environment"
+msgstr "Lingkungan"
+
+#: 
+msgid "Sandbox (Test mode)"
+msgstr "Sandbox (Mode Tes)"
+
+#: 
+msgid "Live"
+msgstr "Live"
+
+#: 
+msgid "PayPal Client ID"
+msgstr "ID Klien PayPal"
+
+#: 
+msgid "PayPal Client Secret"
+msgstr "Client Secret PayPal"
+
+#: 
+msgid "Proxy Settings"
+msgstr "Pengaturan Proxy"
+
+#: 
+msgid "Enable System Proxy"
+msgstr "Menyalakan Sistem Proxy"
+
+#: 
+msgid "If you enable this option, system will try use most appropriate proxy from your proxy list while new acount is being added."
+msgstr "Jika anda menyalakan opsi ini, sistem akan mencoba untuk menggunakan proxy yang paling cocok dari daftar proxy anda ketika akun baru sedang ditambahkan."
+
+#: 
+msgid "Users can add their own proxy address."
+msgstr "Pengguna dapat menambahkan alamat proxy mereka sendiri."
+
+#: 
+msgid "Site name"
+msgstr "Nama Situs"
+
+#: 
+msgid "Enter site name here"
+msgstr "Masukkan nama situs disini"
+
+#: 
+msgid "Site description"
+msgstr "Deskripsi Situs"
+
+#: 
+msgid "Recommended length of the description is 150-160 characters"
+msgstr "Panjang deskripsi yang disarankan adalah 150-160 karakter"
+
+#: 
+msgid "Keywords"
+msgstr "Kata kunci"
+
+#: 
+msgid "SMTP Settings"
+msgstr "Pengaturan SMTP"
+
+#: 
+msgid "SMTP Server"
+msgstr "Server SMTP"
+
+#: 
+msgid "If you left this field empty then other field values will be ignored and server's default configuration will be used."
+msgstr "Jika anda meninggalkan kolom ini kosong, lalu kolom nilai yang lain akan diabaikan dan pengaturan awal server akan digunakan."
+
+#: 
+msgid "Port"
+msgstr "Port"
+
+#: 
+msgid "Encryption"
+msgstr "Enkripsi"
+
+#: 
+msgid "None"
+msgstr "Tidak ada"
+
+#: 
+msgid "SMTP Auth"
+msgstr "SMTP Otentik"
+
+#: 
+msgid "Auth. username"
+msgstr "Nama pengguna yang otentik"
+
+#: 
+msgid "Auth. password"
+msgstr "Kata sandi yang otentik"
+
+#: 
+msgid "From"
+msgstr "Dari"
+
+#: 
+msgid "All emails will be sent from this email address."
+msgstr "Semua email akan dikirimkan dari alamat email ini."
+
+#: 
+msgid "Publishable Key"
+msgstr "Kunci yang dapat dipublikasikan"
+
+#: 
+msgid "Secret Key"
+msgstr "Kunci Rahasia"
+
+#: 
+msgid "Enable Recurring Payments"
+msgstr "Enable Recurring Payments"
+
+#: 
+msgid "User's will have an option to make the recurring payments"
+msgstr "User's will have an option to make the recurring payments"
+
+#: 
+msgid "Webhook Signing Secret Key"
+msgstr "Webhook Signing Secret Key"
+
+#: 
+msgid "Notes"
+msgstr "Notes"
+
+#: 
+msgid "If you're going to enable the recurring payments, you should follow these steps:"
+msgstr "If you're going to enable the recurring payments, you should follow these steps:"
+
+#: 
+msgid "Go to webhook settings at Stripe account dashboard"
+msgstr "Go to webhook settings at Stripe account dashboard"
+
+#: 
+msgid "Click the \"+Add endpoint\" button at \"Endpoints receiving events from your account\" section"
+msgstr "Click the \"+Add endpoint\" button at \"Endpoints receiving events from your account\" section"
+
+#: 
+msgid "Include the following address to the \"URL to be called\" section"
+msgstr "Include the following address to the \"URL to be called\" section"
+
+#: 
+msgid "Select \"Send all event types\" as a value of \"Filter event\""
+msgstr "Select \"Send all event types\" as a value of \"Filter event\""
+
+#: 
+msgid "Account Summary"
+msgstr "Ringkasan Akun"
+
+#: 
+msgid "Post Summary"
+msgstr "Ringkasan Posting"
+
+#: 
+msgid "Last 30 days"
+msgstr "30 Hari terakhir"
+
+#: 
+msgid "Completed"
+msgstr "Selesai"
+
+#: 
+msgid "Posts"
+msgstr "Posting"
+
+#: 
+msgid "Search Modules"
+msgstr "Cari Modul"
+
+#: 
+msgid "Search"
+msgstr "Cari"
+
+#: 
+msgid "Hi, %s!"
+msgstr "Hai, %s!"
+
+#: 
+msgid "Profile"
+msgstr "Profil"
+
+#: 
+msgid "Account Type"
+msgstr "Tipe Akun"
+
+#: 
+msgid "Regular User"
+msgstr "Pengguna Reguler"
+
+#: 
+msgid "Admin"
+msgstr "Admin"
+
+#: 
+msgid "Status"
+msgstr "Status"
+
+#: 
+msgid "Active"
+msgstr "Aktif"
+
+#: 
+msgid "Deactive"
+msgstr "Menonaktifkan"
+
+#: 
+msgid "Expire date"
+msgstr "Tanggal kadaluarsa"
+
+#: 
+msgid "Package"
+msgstr "Paket"
+
+#: 
+msgid "Subscribe to changes in package settings"
+msgstr "Berlangganan untuk perubahan di pengaturan paket"
+
+#: 
+msgid "Users with this option enabled, can use spintax syntax in post captions."
+msgstr "Pengguna dengan opsi ini dinyalakan, dapat menggunakan sintaksis spintax dalam keterangan postingan."
+
+#: 
+msgid "Your account"
+msgstr "Akun anda"
+
+#: 
+msgid "Regular user"
+msgstr "Pengguna reguler"
+
+#: 
+msgid "Expire date: %s"
+msgstr "Tanggal kadaluarsa: %s"
+
+#: 
+msgid "Expired"
+msgstr "Kadaluarsa"
+
+#: 
+msgid "Couldn't find any result for your search query."
+msgstr "Couldn't find any result for your search query."
+
+#: 
+msgid "Please select a user from left side list to view or modify it's details."
+msgstr "Harap pilih seorang pengguna dari sisi kiri daftar untuk melihat atau memodifikasi rinciannya."
+
+#: 
+msgid "Install Module"
+msgstr "Install Module"
+
+#: 
+msgid "Edit Post"
+msgstr "Sunting Post"
+
+#: 
+msgid "New Post"
+msgstr "Posting Baru"
+
+#: 
+msgid "Dashboard"
+msgstr "Papan pedoman"
+
+#: 
+msgid "Proxies"
+msgstr "Proxies"
+
+#: 
+msgid "Account Renewal"
+msgstr "Pembaharuan Akun"
+
+#: 
+msgid "Please verify the reCaptcha."
+msgstr "Please verify the reCaptcha."
+
+#: 
+msgid "Clear storage"
+msgstr "Clear storage"
+
+#: 
+msgid "Do you really want to remove all of your files? Your scheduled posts will not be published. This action not be undone."
+msgstr "Do you really want to remove all of your files? Your scheduled posts will not be published. This action not be undone."
+
+#: 
+msgid "Please verify the reCaptcha."
+msgstr "Please verify the reCaptcha."
+
+#: 
+msgid "Missing or invalid secret key for the reCaptcha."
+msgstr "Missing or invalid secret key for the reCaptcha."
+
+#: 
+msgid "Recaptcha is timedout or duplicate."
+msgstr "Recaptcha is timedout or duplicate."
+
+#: 
+msgid "Couldn't verify the recaptcha"
+msgstr "Couldn't verify the recaptcha"
+
+#: 
+msgid "Site key"
+msgstr "Site key"
+
+#: 
+msgid "Secret key"
+msgstr "Secret key"
+
+#: 
+msgid "Enable Recaptcha in signup page"
+msgstr "Enable Recaptcha in signup page"
+
+#: 
+msgid "Valid site and secret keys are required."
+msgstr "Valid site and secret keys are required."
+
+#: 
+msgid "You should follow these steps to get necessary keys:"
+msgstr "You should follow these steps to get necessary keys:"
+
+#: 
+msgid "Go to Google reCAPTCHA website and find \"Register a new site\" section"
+msgstr "Go to Google reCAPTCHA website and find \"Register a new site\" section"
+
+#: 
+msgid "Include any text in the "Label" field"
+msgstr "Include any text in the "Label" field"
+
+#: 
+msgid "Select "reCAPTCHA v2" as a site key type"
+msgstr "Select "reCAPTCHA v2" as a site key type"
+
+#: 
+msgid "Enter the following address to the "Domains" field in a individual line"
+msgstr "Enter the following address to the "Domains" field in a individual line"
+
+#: 
+msgid "Copy & paste the site and secret keys"
+msgstr "Copy & paste the site and secret keys"
+
+#: 
+msgid "Active Theme"
+msgstr "Active Theme"
+

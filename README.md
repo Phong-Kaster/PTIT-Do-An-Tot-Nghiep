@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">
-    <img src="./photo/umbrella-corporation-black-donnell-rose.jpg" />
+    <img src="./api/photo/umbrella-corporation-black-donnell-rose.jpg" />
 </p>
 
 
@@ -25,7 +25,8 @@
 - [**Bonus**](#bonus)
 - [**Timeline**](#timeline)
   - [**Phase 0: 01-09-2022 to 28-09-2022**](#phase-0-01-09-2022-to-28-09-2022)
-  - [**Phase 1: 19-09-2022 to xx-xx-2022**](#phase-1-19-09-2022-to-xx-xx-2022)
+  - [**Phase 1: 19-09-2022 to 25-10-2022**](#phase-1-19-09-2022-to-25-10-2022)
+  - [**Phase 2: 26-10-2022 to xx-11-2022**](#phase-2-26-10-2022-to-xx-11-2022)
 - [**Controller Timeline**](#controller-timeline)
 - [**Special Thanks**](#special-thanks)
 - [**Made with 💘 and PHP <img src="https://www.vectorlogo.zone/logos/php/php-horizontal.svg" width="60">**](#made-with--and-php-)
@@ -43,7 +44,7 @@ sẽ hỗ trợ phần nào cho các bạn khi bước tới ngưỡng cửa qua
 # [**Topic**](#topic)
 
 <p align="center">
-    <img src="./photo/topic.png" />
+    <img src="./api/photo/topic.png" />
 </p>
 
 
@@ -63,7 +64,7 @@ Nếu các bạn có nhu cầu muốn tham khảo, hãy ấn vào [**đây**](ht
 # [**Database**](#database)
 
 <p align="center">
-    <img src="./photo/database-version-3.png" />
+    <img src="./api/photo/database-version-3.png" />
 </p>
 <h3 align="center">
 
@@ -120,7 +121,7 @@ Phần này mình sẽ liệt kê các tính năng chính và quan trọng mà A
 [**Đồ án thực tập**](https://github.com/Phong-Kaster/PTIT-Do-An-Thuc-Tap). Còn các thông tin còn lại thì có bao nhiêu thì in ra hết( Dĩ nhiên là trừ cái mật khẩu rồi 😅😅).
 
 <p align="center">
-    <img src="./photo/image3.png" />
+    <img src="./api/photo/image3.png" />
 </p>
 <h3 align="center">
 
@@ -133,7 +134,7 @@ Có đăng nhập thì dĩ nhiên là phải có đăng ký rồi. Tính năng n
 thì họ sẽ được nhận một email thông báo gửi tới email mà được sử dụng để tài khoản như sau:
 
 <p align="center">
-    <img src="./photo/image1.png" />
+    <img src="./api/photo/image1.png" />
 </p>
 <h3 align="center">
 
@@ -148,7 +149,7 @@ Bạn bị bệnh não cá vàng 🐠🐠? Bạn hay làm trước quên sau ? L
 BÙM 🔥🔥🔥 Ngạc nhiên chưa !! Nhập cái mã bên dưới và tạo lại mật khẩu nào 
 
 <p align="center">
-    <img src="./photo/image2.png" />
+    <img src="./api/photo/image2.png" />
 </p>
 <h3 align="center">
 
@@ -162,7 +163,7 @@ Những mốc thời gian dưới đây là của mình & có thể khi các b�
 Tuy nhiên, Napoleon đã từng nói: 
 
 <p align="center">
-    <img src="./photo/napoleon.jpg" width="400px" />
+    <img src="./api/photo/napoleon.jpg" width="400px" />
 </p>
 <h3 align="center">
 
@@ -213,7 +214,7 @@ Mình không muốn miệt thị chính mái trường mình đã theo học nh�
 Các bạn cứ đọc tấm ảnh phía dưới là sẽ hiểu.
 
 <p align="center">
-    <img src="./photo/truong-nhu-lon.png" />
+    <img src="./api/photo/truong-nhu-lon.png" />
 </p>
 <h3 align="center">
 
@@ -261,7 +262,7 @@ Dưới đây là cơ sở dữ liệu mà mình phát triển lên từ Đồ �
 Sau đó thì thay đổi suy nghĩ để chuyển qua làm học thay thế tốt nghiệp.
 
 <p align="center">
-    <img src="./document/eshop-diagram.png" />
+    <img src="./api/document/eshop-diagram.png" />
 </p>
 <h3 align="center">
 
@@ -276,7 +277,14 @@ Sau đó thì thay đổi suy nghĩ để chuyển qua làm học thay thế t�
 
 - Thời gian còn lại: đi làm và xả hơi sau thời gian dài làm đồ án thực tập căng thẳng.
 
-## [**Phase 1: 19-09-2022 to xx-xx-2022**](#phase-1-xx-xx-2022-to-xx-xx-2022)
+## [**Phase 1: 19-09-2022 to 25-10-2022**](#phase-1-19-09-2022-to-25-10-2022)
+
+(1) Mục tiêu: Giai đoạn này xây dựng RestfulAPI - là linh hồn của toàn bộ đồ án này.
+
+(2) Uớc tính: 14 ngày 
+
+(3) Thực tế: Bắt đầu ngày 04-10-2022 & kết thúc ngày 27-10-2022. Suy ra, mất 22 ngày để hoàn thiện. 
+Trong đó có một tuần mình chưa làm gì bởi vấn đề tâm lý sau khi nghỉ việc
 
 - **19-09-2022**: Thiết kế cơ sở dữ liệu với nhiều bảng nhằm triển khai các chức năng phức tạp hơn
 
@@ -415,11 +423,30 @@ Các đơn thuốc hay hướng dẫn này chỉ được thay đổi khi appoin
 
 1. Viết báo cáo định kì lần 1
 
+## [**Phase 2: 26-10-2022 to xx-11-2022**](#phase-2-26-10-2022-to-xx-11-2022)
+
 - **26-10-2022**
 
 1. Hoàn thiện báo cáo định kì lần 1 và nộp 
 
 2. Tìm kiếm Front-end template cho Admin
+
+3. Gộp website và api vào chung một dự án này, bao gồm:
+
+| Tên        | Chức năng                               |
+|------------|-----------------------------------------|
+|Thư mục API |Chứa toàn bộ các RestfulAPI của đồ án này|
+|Thư mục Website| Chứa website quản lý dành cho bác sĩ |
+
+4. Dựng giao diện màn hình đăng nhập 
+
+- **27-10-2022**:
+
+1. Dựng giao diện cho chức năng đăng ký 
+
+2. Dựng giao diện cho chức năng đăng nhập
+
+3. Dựng giao diện chưa qua xử lý cho dashboard
 
 # [**Controller Timeline**](#controller-timeline)
 
@@ -496,7 +523,7 @@ Phần này mình lưu lại trình tự mình viết đồ án này. Nếu các
         <tr>
             <td align="center">
                 <a href="https://github.com/ngdanghau">
-                    <img src="./photo/Hau.jpg" width="100px;" alt=""/>
+                    <img src="./api/photo/Hau.jpg" width="100px;" alt=""/>
                     <br />
                     <sub><b>Nguyễn Đăng Hậu</b></sub>
                 </a>

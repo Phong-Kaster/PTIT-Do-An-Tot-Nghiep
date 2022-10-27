@@ -1,0 +1,93 @@
+### xuống dòng trong PHP
+print_r("\n");
+
+
+### Bộ cú pháp gọi trong HTML 
+1. đầu - "<?= APPURL."/assets/
+2. đuôi - ?v=".VERSION ?>"
+
+
+### Gọi fragment vào view - trong đó x là tên của fragment
+<?php require_once(APPPATH.'/views/fragments/x.fragment.php'); ?>
+
+
+### Hiển thị loading nếu yêu cầu cần thời gian để xử lý
+1. Mở:
+    Swal.fire({
+        title: 'Hệ thống đang xử lý yêu cầu của bạn',
+        html: 'Xin vui lòng đợi trong giây lát...',
+        allowEscapeKey: false,
+        allowOutsideClick: false,
+        didOpen: () => {
+        Swal.showLoading()
+        }
+    });
+2. Tắt:
+    Swal.close();
+
+### hiện thị thông báo cho người dùng
+    title = 'error';
+    Swal.fire({
+        position: 'center',
+        icon: title,
+        title: 'Warning',
+        text: msg,
+        showConfirmButton: false,
+        timer: 1500
+    });
+
+### cú pháp AJAX
+$.ajax({
+    type: "POST",
+    url: "<?= API_URL ?>/signup",
+    data: data,
+    dataType: "JSON",
+    success: function(resp) {
+    Swal.close();// close loading screen
+    msg = resp.msg;
+    if(resp.result == 1)
+    {
+        Swal.fire({
+            title: 'Success',
+            text: "Tài khoản đăng kí thành công",
+            icon: 'Success',
+            showCancelButton: true,
+            confirmButtonText: 'Đăng nhập',
+            cancelButtonText: 'Đóng',
+            confirmButtonColor: '#FF0000',
+            cancelButtonColor: '#0000FF',
+            reverseButtons: false
+            }).then((result) => 
+                {
+                if (result.isConfirmed) 
+                {
+                    window.location.replace('<?=APPURL?>/login');
+                } 
+                else
+                {
+                    Swal.close();
+                }
+                });
+    }
+    else
+    {
+        title = 'error';
+        Swal.fire({
+            position: 'center',
+            icon: title,
+            title: 'Warning',
+            text: msg,
+            showConfirmButton: false,
+            timer: 1500
+        });
+    }
+    },
+    error: function(err) {
+    Swal.fire('Oops...', "Oops! An error occured. Please try again later!", 'error');
+    }
+});
+
+
+### thư viện JS riêng cho từng view - x là tên thư viện
+<!-- PRIVATE JS -->
+<script src="<?= APPURL."/assets/js/customized/x.js?v=".VERSION ?>"></script>

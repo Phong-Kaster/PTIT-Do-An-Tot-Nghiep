@@ -1,0 +1,2 @@
+# deny direct access to controller 
+deny from all

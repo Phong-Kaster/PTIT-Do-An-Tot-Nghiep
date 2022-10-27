@@ -1,0 +1,56 @@
+$firasans-filename: "FiraSans" !default;
+$firasans-font-name: "Fira Sans" !default;
+$firasans-font-path: "../fonts/firasans" !default;
+$firasans-fonts: (
+	"Thin": "100",
+	"ExtraLight": "200",
+	"Light": "300",
+	"Regular": "normal",
+	"Medium": "500",
+	"SemiBold": "600",
+	"Bold": "bold",
+	"ExtraBold": "800",
+	"Black": "900"
+);
+
+
+@each $key, $value in $firasans-fonts {
+	@font-face {
+		font-family: $firasans-font-name;
+		src: url('#{$firasans-font-path}/#{$firasans-filename}-#{$key}.eot');
+		src: url('#{$firasans-font-path}/#{$firasans-filename}-#{$key}.eot?#iefix') format('embedded-opentype'),
+			url('#{$firasans-font-path}/#{$firasans-filename}-#{$key}.woff2') format('woff2'),
+			url('#{$firasans-font-path}/#{$firasans-filename}-#{$key}.woff') format('woff'),
+			url('#{$firasans-font-path}/#{$firasans-filename}-#{$key}.ttf') format('truetype'),
+			url('#{$firasans-font-path}/#{$firasans-filename}-#{$key}.svg##{$firasans-filename}-#{$key}') format('svg');
+		font-weight: #{$value};
+		font-style: normal;
+	}
+
+	@if $key == "Regular" {
+		@font-face {
+			font-family: $firasans-font-name;
+			src: url('#{$firasans-font-path}/#{$firasans-filename}-Italic.eot');
+			src: url('#{$firasans-font-path}/#{$firasans-filename}-Italic.eot?#iefix') format('embedded-opentype'),
+				url('#{$firasans-font-path}/#{$firasans-filename}-Italic.woff2') format('woff2'),
+				url('#{$firasans-font-path}/#{$firasans-filename}-Italic.woff') format('woff'),
+				url('#{$firasans-font-path}/#{$firasans-filename}-Italic.ttf') format('truetype'),
+				url('#{$firasans-font-path}/#{$firasans-filename}-Italic.svg##{$firasans-filename}-#{$key}Italic') format('svg');
+			font-weight: #{$value};
+			font-style: italic;
+		}
+	} @else {
+		@font-face {
+			font-family: $firasans-font-name;
+			src: url('#{$firasans-font-path}/#{$firasans-filename}-#{$key}Italic.eot');
+			src: url('#{$firasans-font-path}/#{$firasans-filename}-#{$key}Italic.eot?#iefix') format('embedded-opentype'),
+				url('#{$firasans-font-path}/#{$firasans-filename}-#{$key}Italic.woff2') format('woff2'),
+				url('#{$firasans-font-path}/#{$firasans-filename}-#{$key}Italic.woff') format('woff'),
+				url('#{$firasans-font-path}/#{$firasans-filename}-#{$key}Italic.ttf') format('truetype'),
+				url('#{$firasans-font-path}/#{$firasans-filename}-#{$key}Italic.svg##{$firasans-filename}-#{$key}Italic') format('svg');
+			font-weight: #{$value};
+			font-style: italic;
+		}
+	}
+
+}

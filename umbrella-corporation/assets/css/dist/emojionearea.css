@@ -1,0 +1,657 @@
+.dropdown-menu.textcomplete-dropdown[data-strategy=emojionearea] {
+    position: absolute;
+    z-index: 1000;
+
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+
+    font-size: 14px;
+    list-style: none;
+
+    text-align: left;
+
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, .15);
+    -webkit-border-radius: 4px;
+       -moz-border-radius: 4px;
+            border-radius: 4px;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+            background-clip: padding-box;
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+       -moz-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+}
+.dropdown-menu.textcomplete-dropdown[data-strategy=emojionearea] li.textcomplete-item {
+    padding: 1px 3px;
+
+    font-size: 14px;
+
+    border: 0;
+}
+.dropdown-menu.textcomplete-dropdown[data-strategy=emojionearea] li.textcomplete-item a {
+    display: block;
+    height: 100%;
+    padding: 0 1.54em 0 .615em;
+
+    line-height: 1.8em;
+
+    text-decoration: none;
+
+    color: #4f4f4f;
+}
+.dropdown-menu.textcomplete-dropdown[data-strategy=emojionearea] li.textcomplete-item.active,
+.dropdown-menu.textcomplete-dropdown[data-strategy=emojionearea] li.textcomplete-item:hover {
+    background-color: #e4e4e4;
+}
+.dropdown-menu.textcomplete-dropdown[data-strategy=emojionearea] li.textcomplete-item.active a,
+.dropdown-menu.textcomplete-dropdown[data-strategy=emojionearea] li.textcomplete-item:hover a {
+    color: #333;
+}
+.dropdown-menu.textcomplete-dropdown[data-strategy=emojionearea] li.textcomplete-item .emojioneemoji {
+    top: 0;
+
+    display: inline-block;
+    width: 2.1ex;
+    height: 2ex;
+    max-width: 100%;
+    min-width: 20px;
+    min-height: 20px;
+    margin: 0 5px .2ex 0;
+
+    font-size: inherit;
+    line-height: normal;
+
+    vertical-align: middle;
+}
+.emojionearea,
+.emojionearea * {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+.emojionearea,
+.emojionearea.form-control {
+    position: relative!important;
+
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 0;
+
+    font-size: 14px;
+
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+.emojionearea.focused {
+    border-color: #66afe9;
+    outline: 0;
+}
+.emojionearea .emojionearea-editor {
+    display: block;
+    height: auto;
+    max-height: 15em;
+    min-height: 8em;
+    padding: 10px 32px 10px 20px;
+    overflow: auto;
+
+    font-size: inherit;
+    line-height: 1.42857143;
+
+    cursor: text;
+
+    border: 0;
+    -webkit-border-radius: 0;
+       -moz-border-radius: 0;
+            border-radius: 0;
+    background-color: transparent;
+    -webkit-box-shadow: none;
+       -moz-box-shadow: none;
+            box-shadow: none;
+}
+.emojionearea .emojionearea-editor:empty:before {
+    display: block;
+
+    content: attr(placeholder);
+
+    color: #bbb;
+}
+.emojionearea .emojionearea-editor:focus {
+    border: 0;
+    outline: 0;
+    -webkit-box-shadow: none;
+       -moz-box-shadow: none;
+            box-shadow: none;
+}
+.emojionearea .emojionearea-editor .emojioneemoji,
+.emojionearea .emojionearea-editor [class*=emojione-] {
+    top: 0;
+
+    display: inline-block;
+    width: 2.1ex;
+    height: 2ex;
+    max-width: 100%;
+    min-width: 20px;
+    min-height: 20px;
+    margin: -.2ex .15em .2ex;
+
+    font-size: inherit;
+    line-height: normal;
+
+    vertical-align: middle;
+}
+.emojionearea.emojionearea-inline {
+    height: 34px;
+}
+.emojionearea.emojionearea-inline > .emojionearea-editor {
+    position: absolute;
+    top: 0;
+    right: 24px;
+    left: 12px;
+
+    height: 32px;
+    min-height: 20px;
+    padding: 6px 0;
+    overflow: hidden;
+
+    white-space: nowrap;
+}
+.emojionearea.emojionearea-inline > .emojionearea-button {
+    top: 4px;
+}
+.emojionearea .emojionearea-button {
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    z-index: 5;
+
+    width: 24px;
+    height: 24px;
+
+    cursor: pointer;
+    -webkit-transition: opacity .3s ease-in-out;
+       -moz-transition: opacity .3s ease-in-out;
+         -o-transition: opacity .3s ease-in-out;
+            transition: opacity .3s ease-in-out;
+
+    opacity: .6;
+}
+.emojionearea .emojionearea-button:hover {
+    opacity: 1;
+}
+.emojionearea .emojionearea-button > div {
+    position: absolute;
+
+    display: block;
+    width: 24px;
+    height: 24px;
+
+    -webkit-transition: all .4s ease-in-out;
+       -moz-transition: all .4s ease-in-out;
+         -o-transition: all .4s ease-in-out;
+            transition: all .4s ease-in-out;
+}
+.emojionearea .emojionearea-button > div.emojionearea-button-open {
+    opacity: 1;
+    background-position: 0 -24px;
+
+    filter: alpha(enabled=false);
+}
+.emojionearea .emojionearea-button > div.emojionearea-button-close {
+    -webkit-transform: rotate(-45deg);
+         -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+
+    opacity: 0;
+    background-position: 0 0;
+
+    filter: alpha(Opacity=0);
+}
+.emojionearea .emojionearea-button.active > div.emojionearea-button-open {
+    -webkit-transform: rotate(45deg);
+         -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+
+    opacity: 0;
+
+    filter: alpha(Opacity=0);
+}
+.emojionearea .emojionearea-button.active > div.emojionearea-button-close {
+    -webkit-transform: rotate(0);
+         -o-transform: rotate(0);
+            transform: rotate(0);
+
+    opacity: 1;
+
+    filter: alpha(enabled=false);
+}
+.emojionearea .emojionearea-picker {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    z-index: 90;
+
+    width: 316px;
+    height: 236px;
+
+    -webkit-user-select:      none;
+       -moz-user-select: -moz-none;
+        -ms-user-select:      none;
+            user-select:      none;
+    -webkit-transition: all .25s ease-in-out;
+       -moz-transition: all .25s ease-in-out;
+         -o-transition: all .25s ease-in-out;
+            transition: all .25s ease-in-out;
+
+    opacity: 0;
+    -webkit-border-radius: 5px;
+       -moz-border-radius: 5px;
+            border-radius: 5px;
+    background: #fff;
+    -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, .32);
+       -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, .32);
+            box-shadow: 0 1px 5px rgba(0, 0, 0, .32);
+
+    filter: alpha(Opacity=0);
+}
+.emojionearea .emojionearea-picker.hidden {
+    display: none;
+}
+.emojionearea .emojionearea-picker .emojionearea-wrapper {
+    position: relative;
+
+    width: 316px;
+    height: 236px;
+}
+.emojionearea .emojionearea-picker .emojionearea-wrapper:after {
+    position: absolute;
+    z-index: 91;
+
+    display: block;
+
+    content: "";
+
+    background-repeat: no-repeat;
+}
+.emojionearea .emojionearea-picker .emojionearea-filters {
+    position: absolute;
+    z-index: 95;
+
+    width: 100%;
+    height: 40px;
+    padding: 0 0 0 7px;
+
+    background: #f5f7f9;
+}
+.emojionearea .emojionearea-picker .emojionearea-filters .emojionearea-filter {
+    display: block;
+    float: left;
+    width: 32px;
+    height: 40px;
+    padding: 7px 1px 0;
+
+    cursor: pointer;
+
+    -webkit-filter: grayscale(1);
+            filter: grayscale(1);
+}
+.emojionearea .emojionearea-picker .emojionearea-filters .emojionearea-filter.active {
+    background: #fff;
+}
+.emojionearea .emojionearea-picker .emojionearea-filters .emojionearea-filter.active,
+.emojionearea .emojionearea-picker .emojionearea-filters .emojionearea-filter:hover {
+    -webkit-filter: grayscale(0);
+            filter: grayscale(0);
+}
+.emojionearea .emojionearea-picker .emojionearea-filters .emojionearea-filter > i {
+    top: 0;
+
+    width: 24px;
+    height: 24px;
+}
+.emojionearea .emojionearea-picker .emojionearea-filters .emojionearea-filter > img {
+    width: 24px;
+    height: 24px;
+    margin: 0 3px;
+}
+.emojionearea .emojionearea-picker .emojionearea-scroll-area {
+    position: absolute;
+
+    width: 100%;
+    height: 196px;
+    padding: 0 0 5px;
+    overflow: auto;
+    overflow-x: hidden;
+}
+.emojionearea .emojionearea-picker .emojionearea-scroll-area .emojionearea-emojis-list {
+    z-index: 1;
+}
+.emojionearea .emojionearea-picker .emojionearea-scroll-area .emojionearea-tones {
+    position: absolute;
+    top: 6px;
+    right: 10px;
+    z-index: 2;
+
+    height: 22px;
+}
+.emojionearea .emojionearea-picker .emojionearea-scroll-area .emojionearea-tones > .btn-tone {
+    position: relative;
+
+    display: inline-block;
+    padding: 0;
+
+    cursor: pointer;
+    vertical-align: middle;
+
+    border: 0;
+    outline: 0;
+    background: 0 0;
+}
+.emojionearea .emojionearea-picker .emojionearea-scroll-area .emojionearea-tones > .btn-tone.btn-tone-0,
+.emojionearea .emojionearea-picker .emojionearea-scroll-area .emojionearea-tones > .btn-tone.btn-tone-0:after {
+    background-color: #ffcf3e;
+}
+.emojionearea .emojionearea-picker .emojionearea-scroll-area .emojionearea-tones > .btn-tone.btn-tone-1,
+.emojionearea .emojionearea-picker .emojionearea-scroll-area .emojionearea-tones > .btn-tone.btn-tone-1:after {
+    background-color: #fae3c5;
+}
+.emojionearea .emojionearea-picker .emojionearea-scroll-area .emojionearea-tones > .btn-tone.btn-tone-2,
+.emojionearea .emojionearea-picker .emojionearea-scroll-area .emojionearea-tones > .btn-tone.btn-tone-2:after {
+    background-color: #e2cfa5;
+}
+.emojionearea .emojionearea-picker .emojionearea-scroll-area .emojionearea-tones > .btn-tone.btn-tone-3,
+.emojionearea .emojionearea-picker .emojionearea-scroll-area .emojionearea-tones > .btn-tone.btn-tone-3:after {
+    background-color: #daa478;
+}
+.emojionearea .emojionearea-picker .emojionearea-scroll-area .emojionearea-tones > .btn-tone.btn-tone-4,
+.emojionearea .emojionearea-picker .emojionearea-scroll-area .emojionearea-tones > .btn-tone.btn-tone-4:after {
+    background-color: #a78058;
+}
+.emojionearea .emojionearea-picker .emojionearea-scroll-area .emojionearea-tones > .btn-tone.btn-tone-5,
+.emojionearea .emojionearea-picker .emojionearea-scroll-area .emojionearea-tones > .btn-tone.btn-tone-5:after {
+    background-color: #5e4d43;
+}
+.emojionearea .emojionearea-picker .emojionearea-scroll-area .emojionearea-tones.emojionearea-tones-bullet > .btn-tone,
+.emojionearea .emojionearea-picker .emojionearea-scroll-area .emojionearea-tones.emojionearea-tones-square > .btn-tone {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+
+    background-color: transparent;
+}
+.emojionearea .emojionearea-picker .emojionearea-scroll-area .emojionearea-tones.emojionearea-tones-bullet > .btn-tone:after,
+.emojionearea .emojionearea-picker .emojionearea-scroll-area .emojionearea-tones.emojionearea-tones-square > .btn-tone:after {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+
+    display: block;
+    width: 12px;
+    height: 12px;
+
+    content: "";
+}
+.emojionearea .emojionearea-picker .emojionearea-scroll-area .emojionearea-tones.emojionearea-tones-bullet > .btn-tone.active:after,
+.emojionearea .emojionearea-picker .emojionearea-scroll-area .emojionearea-tones.emojionearea-tones-square > .btn-tone.active:after {
+    top: 0;
+    left: 0;
+
+    width: 20px;
+    height: 20px;
+}
+.emojionearea .emojionearea-picker .emojionearea-scroll-area .emojionearea-tones.emojionearea-tones-checkbox > .btn-tone,
+.emojionearea .emojionearea-picker .emojionearea-scroll-area .emojionearea-tones.emojionearea-tones-radio > .btn-tone {
+    width: 16px;
+    height: 16px;
+    margin: 0 2px;
+}
+.emojionearea .emojionearea-picker .emojionearea-scroll-area .emojionearea-tones.emojionearea-tones-checkbox > .btn-tone.active:after,
+.emojionearea .emojionearea-picker .emojionearea-scroll-area .emojionearea-tones.emojionearea-tones-radio > .btn-tone.active:after {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+
+    display: block;
+    width: 8px;
+    height: 8px;
+
+    content: "";
+
+    border: 2px solid #fff;
+    background-color: transparent;
+}
+.emojionearea .emojionearea-picker .emojionearea-scroll-area .emojionearea-category:after,
+.emojionearea .emojionearea-picker .emojionearea-scroll-area .emojionearea-category:before,
+.emojionearea .emojionearea-picker .emojionearea-scroll-area h1:after,
+.emojionearea .emojionearea-picker .emojionearea-scroll-area h1:before {
+    display: block;
+    clear: both;
+
+    content: " ";
+}
+.emojionearea .emojionearea-picker .emojionearea-scroll-area .emojionearea-tones.emojionearea-tones-bullet > .btn-tone,
+.emojionearea .emojionearea-picker .emojionearea-scroll-area .emojionearea-tones.emojionearea-tones-bullet > .btn-tone:after,
+.emojionearea .emojionearea-picker .emojionearea-scroll-area .emojionearea-tones.emojionearea-tones-radio > .btn-tone,
+.emojionearea .emojionearea-picker .emojionearea-scroll-area .emojionearea-tones.emojionearea-tones-radio > .btn-tone:after {
+    -webkit-border-radius: 100%;
+       -moz-border-radius: 100%;
+            border-radius: 100%;
+}
+.emojionearea .emojionearea-picker .emojionearea-scroll-area .emojionearea-tones.emojionearea-tones-checkbox > .btn-tone,
+.emojionearea .emojionearea-picker .emojionearea-scroll-area .emojionearea-tones.emojionearea-tones-checkbox > .btn-tone:after,
+.emojionearea .emojionearea-picker .emojionearea-scroll-area .emojionearea-tones.emojionearea-tones-square > .btn-tone,
+.emojionearea .emojionearea-picker .emojionearea-scroll-area .emojionearea-tones.emojionearea-tones-square > .btn-tone:after {
+    -webkit-border-radius: 1px;
+       -moz-border-radius: 1px;
+            border-radius: 1px;
+}
+.emojionearea .emojionearea-picker .emojionearea-scroll-area h1 {
+    display: block;
+    padding: 7px 0 5px 6px;
+    margin: 0;
+
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 20px;
+
+    color: #b2b2b2;
+    background: #fff;
+}
+.emojionearea .emojionearea-picker .emojionearea-scroll-area .emojionearea-category {
+    padding: 0 0 0 7px;
+}
+.emojionearea .emojionearea-picker .emojionearea-scroll-area [class*=emojione-] {
+    top: 0;
+
+    width: 24px;
+    height: 24px;
+    margin: 0;
+    -webkit-box-sizing: content-box;
+       -moz-box-sizing: content-box;
+            box-sizing: content-box;
+}
+.emojionearea .emojionearea-picker .emojionearea-scroll-area .emojibtn {
+    display: block;
+    float: left;
+    width: 24px;
+    height: 24px;
+    padding: 3px;
+    margin: 1px;
+    -webkit-box-sizing: content-box;
+       -moz-box-sizing: content-box;
+            box-sizing: content-box;
+}
+.emojionearea .emojionearea-picker .emojionearea-scroll-area .emojibtn:hover {
+    cursor: pointer;
+
+    -webkit-border-radius: 4px;
+       -moz-border-radius: 4px;
+            border-radius: 4px;
+    background-color: #e4e4e4;
+}
+.emojionearea .emojionearea-picker .emojionearea-scroll-area .emojibtn i,
+.emojionearea .emojionearea-picker .emojionearea-scroll-area .emojibtn img {
+    display: block;
+    float: left;
+    width: 24px;
+    height: 24px;
+}
+.emojionearea .emojionearea-picker .emojionearea-scroll-area .emojibtn img.lazy-emoji {
+    opacity: 0;
+
+    filter: alpha(Opacity=0);
+}
+.emojionearea .emojionearea-picker.emojionearea-filters-position-top .emojionearea-filters {
+    top: 0;
+
+    -webkit-border-top-left-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+            border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topright: 5px;
+            border-top-right-radius: 5px;
+}
+.emojionearea .emojionearea-picker.emojionearea-filters-position-top .emojionearea-scroll-area {
+    bottom: 0;
+}
+.emojionearea .emojionearea-picker.emojionearea-filters-position-bottom .emojionearea-filters {
+    bottom: 0;
+
+    -webkit-border-bottom-right-radius: 5px;
+    -moz-border-radius-bottomright: 5px;
+            border-bottom-right-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -moz-border-radius-bottomleft: 5px;
+            border-bottom-left-radius: 5px;
+}
+.emojionearea .emojionearea-picker.emojionearea-filters-position-bottom .emojionearea-scroll-area {
+    top: 0;
+}
+.emojionearea .emojionearea-picker.emojionearea-picker-position-top {
+    right: -14px;
+
+    margin-top: -246px;
+}
+.emojionearea .emojionearea-picker.emojionearea-picker-position-top .emojionearea-wrapper:after {
+    right: 20px;
+    bottom: -10px;
+
+    width: 19px;
+    height: 10px;
+
+    background-position: -2px -49px;
+}
+.emojionearea .emojionearea-picker.emojionearea-picker-position-top.emojionearea-filters-position-bottom .emojionearea-wrapper:after {
+    background-position: -2px -80px;
+}
+.emojionearea .emojionearea-picker.emojionearea-picker-position-left,
+.emojionearea .emojionearea-picker.emojionearea-picker-position-right {
+    top: -8px;
+
+    margin-right: -326px;
+}
+.emojionearea .emojionearea-picker.emojionearea-picker-position-left .emojionearea-wrapper:after,
+.emojionearea .emojionearea-picker.emojionearea-picker-position-right .emojionearea-wrapper:after {
+    top: 13px;
+    left: -10px;
+
+    width: 10px;
+    height: 19px;
+
+    background-position: 0 -60px;
+}
+.emojionearea .emojionearea-picker.emojionearea-picker-position-left.emojionearea-filters-position-bottom .emojionearea-wrapper:after,
+.emojionearea .emojionearea-picker.emojionearea-picker-position-right.emojionearea-filters-position-bottom .emojionearea-wrapper:after {
+    background-position: right -60px;
+}
+.emojionearea .emojionearea-picker.emojionearea-picker-position-bottom {
+    top: 47px;
+    right: -14px;
+
+    margin-top: 10px;
+}
+.emojionearea .emojionearea-picker.emojionearea-picker-position-bottom .emojionearea-wrapper:after {
+    top: -10px;
+    right: 20px;
+
+    width: 19px;
+    height: 10px;
+
+    background-position: -2px -100px;
+}
+.emojionearea .emojionearea-picker.emojionearea-picker-position-bottom.emojionearea-filters-position-bottom .emojionearea-wrapper:after {
+    background-position: -2px -90px;
+}
+.emojionearea .emojionearea-button.active + .emojionearea-picker {
+    opacity: 1;
+
+    filter: alpha(enabled=false);
+}
+.emojionearea .emojionearea-button.active + .emojionearea-picker-position-top {
+    margin-top: -229px;
+}
+.emojionearea .emojionearea-button.active + .emojionearea-picker-position-left,
+.emojionearea .emojionearea-button.active + .emojionearea-picker-position-right {
+    margin-right: -309px;
+}
+.emojionearea .emojionearea-button.active + .emojionearea-picker-position-bottom {
+    margin-top: -7px;
+}
+.emojionearea.emojionearea-standalone {
+    display: inline-block;
+    width: auto;
+
+    box-shadow: none;
+}
+.emojionearea.emojionearea-standalone .emojionearea-editor {
+    position: relative;
+
+    min-height: 33px;
+    padding: 6px 42px 6px 6px;
+}
+.emojionearea.emojionearea-standalone .emojionearea-editor::before {
+    position: absolute;
+    top: 4px;
+    bottom: 4px;
+    left: 50%;
+
+    content: "";
+
+    border-left: 1px solid #e6e6e6;
+}
+.emojionearea.emojionearea-standalone .emojionearea-editor.has-placeholder .emojioneemoji {
+    opacity: .4;
+}
+.emojionearea.emojionearea-standalone .emojionearea-button {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    width: auto;
+    height: auto;
+}
+.emojionearea.emojionearea-standalone .emojionearea-button > div {
+    top: 5px;
+    right: 6px;
+}
+.emojionearea.emojionearea-standalone .emojionearea-picker.emojionearea-picker-position-bottom .emojionearea-wrapper:after,
+.emojionearea.emojionearea-standalone .emojionearea-picker.emojionearea-picker-position-top .emojionearea-wrapper:after {
+    right: 23px;
+}
+.emojionearea.emojionearea-standalone .emojionearea-picker.emojionearea-picker-position-left .emojionearea-wrapper:after,
+.emojionearea.emojionearea-standalone .emojionearea-picker.emojionearea-picker-position-right .emojionearea-wrapper:after {
+    top: 15px;
+}
+.emojionearea .emojionearea-button > div,
+.emojionearea .emojionearea-picker .emojionearea-wrapper:after {
+    background-image: url(data:image/png;base64,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)!important;
+}
+.emojionearea.emojionearea-standalone .emojionearea-editor.has-placeholder {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMAQMAAABsu86kAAAABlBMVEUAAAC/v79T5hyIAAAAAXRSTlMAQObYZgAAABNJREFUCNdjYGNgQEb/P4AQqiAASiUEG6Vit44AAAAASUVORK5CYII=)!important;
+    background-repeat: no-repeat;
+    background-position: 20px 4px;
+}
