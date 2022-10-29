@@ -117,3 +117,6 @@ App::addRoute("GET|PUT|DELETE", "/rooms/[i:id]/?", "Room");
 /************************** APPOINTMENTS ******************************/
 App::addRoute("GET|POST", "/appointment-queue/?", "AppointmentQueue");
 App::addRoute("GET|POST", "/appointment-queue-now/?", "AppointmentQueueNow");
+
+/************************** charts ******************************/
+App::addRoute("GET", "/charts/?", "Charts");

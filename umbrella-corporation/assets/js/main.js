@@ -226,10 +226,10 @@ const cardChart4 = new Chart(document.getElementById('card-chart4'), {
 })
 
 // eslint-disable-next-line no-unused-vars
-const mainChart = new Chart(document.getElementById('main-chart'), {
-  type: 'line',
+const mainChart = new Chart(document.getElementById('mainChart'), {
+  type: 'scatter',
   data: {
-    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+    labels: ['January', 'February', 'March', 'April', 'May - 5', 'June', 'July', 'abc'],
     datasets: [
       {
         label: 'My First dataset',
@@ -238,13 +238,14 @@ const mainChart = new Chart(document.getElementById('main-chart'), {
         pointHoverBackgroundColor: '#fff',
         borderWidth: 2,
         data: [
-          random(50, 200),
-          random(50, 200),
-          random(50, 200),
-          random(50, 200),
-          random(50, 200),
-          random(50, 200),
-          random(50, 200)
+          50,
+          55,
+          60,
+          65,
+          70,
+          75,
+          80,
+          90
         ],
         fill: true
       },
@@ -254,13 +255,14 @@ const mainChart = new Chart(document.getElementById('main-chart'), {
         pointHoverBackgroundColor: '#fff',
         borderWidth: 2,
         data: [
-          random(50, 200),
-          random(50, 200),
-          random(50, 200),
-          random(50, 200),
-          random(50, 200),
-          random(50, 200),
-          random(50, 200)
+          50,
+          55,
+          60,
+          65,
+          70,
+          75,
+          80,
+          90
         ]
       },
       {
@@ -269,7 +271,14 @@ const mainChart = new Chart(document.getElementById('main-chart'), {
         pointHoverBackgroundColor: '#fff',
         borderWidth: 1,
         borderDash: [8, 5],
-        data: [65, 65, 65, 65, 65, 65, 65]
+        data: [50,
+          55,
+          60,
+          65,
+          70,
+          75,
+          80,
+          90]
       }
     ]
   },

@@ -273,7 +273,7 @@
             /**Step 1 */
             $this->resp->result = 0;
             $AuthUser = $this->getVariable("AuthUser");
-
+           
             date_default_timezone_set('Asia/Ho_Chi_Minh');
             $update_at = date("Y-m-d H:i:s");
 

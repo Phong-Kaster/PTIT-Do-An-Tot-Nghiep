@@ -89,5 +89,7 @@ $.ajax({
 
 
 ### thư viện JS riêng cho từng view - x là tên thư viện
+<!-- GENERAL JS -->
+<?php require_once(APPPATH.'/views/fragments/javascript.fragment.php'); ?>
 <!-- PRIVATE JS -->
 <script src="<?= APPURL."/assets/js/customized/x.js?v=".VERSION ?>"></script>

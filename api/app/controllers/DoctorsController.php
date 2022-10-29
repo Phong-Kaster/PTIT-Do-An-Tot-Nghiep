@@ -81,7 +81,8 @@
                         $q->where(TABLE_PREFIX.TABLE_DOCTORS.".email", 'LIKE', $search_query.'%')
                         ->orWhere(TABLE_PREFIX.TABLE_DOCTORS.".phone", 'LIKE', $search_query.'%')
                         ->orWhere(TABLE_PREFIX.TABLE_DOCTORS.".name", 'LIKE', $search_query.'%')
-                        ->orWhere(TABLE_PREFIX.TABLE_DOCTORS.".description", 'LIKE', $search_query.'%');
+                        ->orWhere(TABLE_PREFIX.TABLE_DOCTORS.".description", 'LIKE', $search_query.'%')
+                        ->orWhere(TABLE_PREFIX.TABLE_DOCTORS.".active", 'LIKE', $search_query.'%');
                     }); 
                 }
                 

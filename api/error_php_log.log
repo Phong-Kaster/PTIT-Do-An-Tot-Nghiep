@@ -138,3 +138,178 @@ Stack trace:
 #3 {main}
   thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\vendor\firebase\php-jwt\src\JWT.php on line 90
 [26-Oct-2022 15:36:31 UTC] PHP Parse error:  syntax error, unexpected 'new' (T_NEW), expecting ')' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php on line 281
+[29-Oct-2022 15:21:55 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Exception: DateTimeZone::__construct(): Unknown or bad timezone (1) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\fightbulc\moment\src\Moment.php:1220
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\fightbulc\moment\src\Moment.php(1220): DateTimeZone->__construct('1')
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\fightbulc\moment\src\Moment.php(129): Moment\Moment->getDateTimeZone(true)
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\fightbulc\moment\src\Moment.php(81): Moment\Moment->resetDateTime('now', true)
+#3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php(64): Moment\Moment->__construct('now', true)
+#4 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php(35): ChartsController->appointmentsInLast7Days()
+#5 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php(614): ChartsController->process()
+#6 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\index.php(72): App->process()
+#7 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\fightbulc\moment\src\Moment.php on line 1220
+[29-Oct-2022 15:22:28 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Exception: DateTimeZone::__construct(): Unknown or bad timezone (1) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\fightbulc\moment\src\Moment.php:1220
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\fightbulc\moment\src\Moment.php(1220): DateTimeZone->__construct('1')
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\fightbulc\moment\src\Moment.php(129): Moment\Moment->getDateTimeZone(true)
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\fightbulc\moment\src\Moment.php(81): Moment\Moment->resetDateTime('now', true)
+#3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php(64): Moment\Moment->__construct('now', true)
+#4 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php(35): ChartsController->appointmentsInLast7Days()
+#5 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php(614): ChartsController->process()
+#6 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\index.php(72): App->process()
+#7 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\fightbulc\moment\src\Moment.php on line 1220
+[29-Oct-2022 08:22:40 UTC] PHP Warning:  date_default_timezone_set() expects exactly 1 parameter, 0 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 64
+[29-Oct-2022 08:22:40 UTC] PHP Fatal error:  Uncaught Exception: DateTimeZone::__construct(): Unknown or bad timezone () in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\fightbulc\moment\src\Moment.php:1220
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\fightbulc\moment\src\Moment.php(1220): DateTimeZone->__construct('')
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\fightbulc\moment\src\Moment.php(129): Moment\Moment->getDateTimeZone(false)
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\fightbulc\moment\src\Moment.php(81): Moment\Moment->resetDateTime('now', false)
+#3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php(64): Moment\Moment->__construct('now', false)
+#4 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php(35): ChartsController->appointmentsInLast7Days()
+#5 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php(614): ChartsController->process()
+#6 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\index.php(72): App->process()
+#7 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\fightbulc\moment\src\Moment.php on line 1220
+[29-Oct-2022 15:27:57 Asia/Ho_Chi_Minh] PHP Warning:  Use of undefined constant TABLE_TRANSACTIONS - assumed 'TABLE_TRANSACTIONS' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 81
+[29-Oct-2022 15:27:57 Asia/Ho_Chi_Minh] PHP Warning:  Use of undefined constant TABLE_TRANSACTIONS - assumed 'TABLE_TRANSACTIONS' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 83
+[29-Oct-2022 08:31:12 UTC] PHP Parse error:  syntax error, unexpected ';', expecting ')' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 77
+[29-Oct-2022 15:43:07 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Object of class Moment\Moment could not be converted to string in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php:93
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php(35): ChartsController->appointmentsInLast7Days()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php(614): ChartsController->process()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\index.php(72): App->process()
+#3 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 93
+[29-Oct-2022 15:43:38 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Object of class Moment\Moment could not be converted to string in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php:97
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php(35): ChartsController->appointmentsInLast7Days()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php(614): ChartsController->process()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\index.php(72): App->process()
+#3 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 97
+[29-Oct-2022 15:46:49 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Call to undefined function subtractDays() in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php:91
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php(35): ChartsController->appointmentsInLast7Days()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php(614): ChartsController->process()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\index.php(72): App->process()
+#3 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 91
+[29-Oct-2022 15:49:27 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Call to undefined method Moment\Moment::date() in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php:92
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php(35): ChartsController->appointmentsInLast7Days()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php(614): ChartsController->process()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\index.php(72): App->process()
+#3 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 92
+[29-Oct-2022 08:54:18 UTC] PHP Parse error:  syntax error, unexpected ';', expecting ')' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 106
+[29-Oct-2022 09:12:07 UTC] PHP Parse error:  syntax error, unexpected '$this' (T_VARIABLE) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 38
+[29-Oct-2022 09:12:27 UTC] PHP Parse error:  syntax error, unexpected '$this' (T_VARIABLE) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 38
+[29-Oct-2022 09:12:43 UTC] PHP Parse error:  syntax error, unexpected '$this' (T_VARIABLE) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 38
+[29-Oct-2022 09:18:52 UTC] PHP Parse error:  syntax error, unexpected '$this' (T_VARIABLE) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 38
+[29-Oct-2022 09:18:58 UTC] PHP Parse error:  syntax error, unexpected '$this' (T_VARIABLE) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 38
+[29-Oct-2022 09:19:14 UTC] PHP Parse error:  syntax error, unexpected '$this' (T_VARIABLE) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 38
+[29-Oct-2022 09:19:31 UTC] PHP Parse error:  syntax error, unexpected '$this' (T_VARIABLE) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 38
+[29-Oct-2022 16:33:11 Asia/Ho_Chi_Minh] PHP Notice:  Undefined property: stdClass::$data in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 111
+[29-Oct-2022 16:33:11 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'data' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 111
+[29-Oct-2022 16:33:11 Asia/Ho_Chi_Minh] PHP Warning:  Attempt to assign property 'quantity' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 113
+[29-Oct-2022 16:33:11 Asia/Ho_Chi_Minh] PHP Notice:  Undefined property: stdClass::$data in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 111
+[29-Oct-2022 16:33:11 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'data' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 111
+[29-Oct-2022 16:33:11 Asia/Ho_Chi_Minh] PHP Warning:  Attempt to assign property 'quantity' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 113
+[29-Oct-2022 16:33:11 Asia/Ho_Chi_Minh] PHP Notice:  Undefined property: stdClass::$data in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 111
+[29-Oct-2022 16:33:11 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'data' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 111
+[29-Oct-2022 16:33:11 Asia/Ho_Chi_Minh] PHP Warning:  Attempt to assign property 'quantity' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 113
+[29-Oct-2022 16:33:11 Asia/Ho_Chi_Minh] PHP Notice:  Undefined property: stdClass::$data in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 111
+[29-Oct-2022 16:33:11 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'data' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 111
+[29-Oct-2022 16:33:11 Asia/Ho_Chi_Minh] PHP Warning:  Attempt to assign property 'quantity' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 113
+[29-Oct-2022 16:33:11 Asia/Ho_Chi_Minh] PHP Notice:  Undefined property: stdClass::$data in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 111
+[29-Oct-2022 16:33:11 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'data' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 111
+[29-Oct-2022 16:33:11 Asia/Ho_Chi_Minh] PHP Warning:  Attempt to assign property 'quantity' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 113
+[29-Oct-2022 16:33:11 Asia/Ho_Chi_Minh] PHP Notice:  Undefined property: stdClass::$data in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 111
+[29-Oct-2022 16:33:11 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'data' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 111
+[29-Oct-2022 16:33:11 Asia/Ho_Chi_Minh] PHP Warning:  Attempt to assign property 'quantity' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 113
+[29-Oct-2022 16:33:11 Asia/Ho_Chi_Minh] PHP Notice:  Undefined property: stdClass::$data in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 111
+[29-Oct-2022 16:33:11 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'data' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 111
+[29-Oct-2022 16:33:11 Asia/Ho_Chi_Minh] PHP Warning:  Attempt to assign property 'quantity' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 113
+[29-Oct-2022 16:33:11 Asia/Ho_Chi_Minh] PHP Notice:  Undefined property: stdClass::$data in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 111
+[29-Oct-2022 16:33:11 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'data' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 111
+[29-Oct-2022 16:33:11 Asia/Ho_Chi_Minh] PHP Warning:  Attempt to assign property 'quantity' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 113
+[29-Oct-2022 16:33:11 Asia/Ho_Chi_Minh] PHP Notice:  Undefined property: stdClass::$data in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 111
+[29-Oct-2022 16:33:11 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'data' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 111
+[29-Oct-2022 16:33:11 Asia/Ho_Chi_Minh] PHP Warning:  Attempt to assign property 'quantity' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 113
+[29-Oct-2022 16:33:11 Asia/Ho_Chi_Minh] PHP Notice:  Undefined property: stdClass::$data in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 111
+[29-Oct-2022 16:33:11 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'data' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 111
+[29-Oct-2022 16:33:11 Asia/Ho_Chi_Minh] PHP Warning:  Attempt to assign property 'quantity' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 113
+[29-Oct-2022 16:33:11 Asia/Ho_Chi_Minh] PHP Notice:  Undefined property: stdClass::$data in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 111
+[29-Oct-2022 16:33:11 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'data' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 111
+[29-Oct-2022 16:33:11 Asia/Ho_Chi_Minh] PHP Warning:  Attempt to assign property 'quantity' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 113
+[29-Oct-2022 16:33:11 Asia/Ho_Chi_Minh] PHP Notice:  Undefined property: stdClass::$data in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 111
+[29-Oct-2022 16:33:11 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'data' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 111
+[29-Oct-2022 16:33:11 Asia/Ho_Chi_Minh] PHP Warning:  Attempt to assign property 'quantity' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 113
+[29-Oct-2022 16:33:11 Asia/Ho_Chi_Minh] PHP Notice:  Undefined property: stdClass::$data in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 111
+[29-Oct-2022 16:33:11 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'data' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 111
+[29-Oct-2022 16:33:11 Asia/Ho_Chi_Minh] PHP Warning:  Attempt to assign property 'quantity' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 113
+[29-Oct-2022 16:33:11 Asia/Ho_Chi_Minh] PHP Notice:  Undefined property: stdClass::$data in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 111
+[29-Oct-2022 16:33:11 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'data' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 111
+[29-Oct-2022 16:33:11 Asia/Ho_Chi_Minh] PHP Warning:  Attempt to assign property 'quantity' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 113
+[29-Oct-2022 16:33:24 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'date' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 111
+[29-Oct-2022 16:33:24 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'date' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 111
+[29-Oct-2022 16:33:24 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'date' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 111
+[29-Oct-2022 16:33:24 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'date' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 111
+[29-Oct-2022 16:33:24 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'date' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 111
+[29-Oct-2022 16:33:24 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'date' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 111
+[29-Oct-2022 16:33:24 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'date' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 111
+[29-Oct-2022 16:33:24 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'date' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 111
+[29-Oct-2022 16:33:24 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'date' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 111
+[29-Oct-2022 16:33:24 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'date' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 111
+[29-Oct-2022 16:33:24 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'date' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 111
+[29-Oct-2022 16:33:24 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'date' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 111
+[29-Oct-2022 16:33:24 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'date' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 111
+[29-Oct-2022 16:33:24 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'date' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 111
+[29-Oct-2022 16:33:40 Asia/Ho_Chi_Minh] PHP Warning:  Attempt to assign property 'quantity' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 113
+[29-Oct-2022 16:33:40 Asia/Ho_Chi_Minh] PHP Warning:  Attempt to assign property 'quantity' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 113
+[29-Oct-2022 16:34:51 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'date' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 116
+[29-Oct-2022 16:34:51 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'date' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 116
+[29-Oct-2022 16:34:51 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'date' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 116
+[29-Oct-2022 16:34:51 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'date' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 116
+[29-Oct-2022 16:34:51 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'date' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 116
+[29-Oct-2022 16:34:51 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'date' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 116
+[29-Oct-2022 16:34:51 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'date' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 116
+[29-Oct-2022 16:35:17 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Call to a member function get() on array in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php:116
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php(35): ChartsController->appointmentsInLast7Days()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php(614): ChartsController->process()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\index.php(72): App->process()
+#3 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 116
+[29-Oct-2022 16:35:33 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'date' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 116
+[29-Oct-2022 16:35:33 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'date' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 116
+[29-Oct-2022 16:35:33 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'date' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 116
+[29-Oct-2022 16:35:33 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'date' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 116
+[29-Oct-2022 16:35:33 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'date' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 116
+[29-Oct-2022 16:35:33 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'date' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 116
+[29-Oct-2022 16:35:33 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'date' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 116
+[29-Oct-2022 16:36:15 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'date' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 109
+[29-Oct-2022 16:36:15 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'date' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 109
+[29-Oct-2022 16:36:15 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'date' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 109
+[29-Oct-2022 16:36:15 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'date' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 109
+[29-Oct-2022 16:36:15 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'date' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 109
+[29-Oct-2022 16:36:15 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'date' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 109
+[29-Oct-2022 16:36:15 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'date' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 109
+[29-Oct-2022 09:40:30 UTC] PHP Parse error:  syntax error, unexpected '}' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 196
+[29-Oct-2022 09:49:02 UTC] PHP Parse error:  syntax error, unexpected '$data' (T_VARIABLE) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 161
+[29-Oct-2022 09:49:09 UTC] PHP Parse error:  syntax error, unexpected 'private' (T_PRIVATE) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 188
+[29-Oct-2022 09:49:58 UTC] PHP Parse error:  syntax error, unexpected 'private' (T_PRIVATE) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 188
+[29-Oct-2022 09:50:09 UTC] PHP Parse error:  syntax error, unexpected '?>', expecting function (T_FUNCTION) or const (T_CONST) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 200
+[29-Oct-2022 09:50:44 UTC] PHP Parse error:  syntax error, unexpected 'private' (T_PRIVATE) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 189
+[29-Oct-2022 09:51:37 UTC] PHP Parse error:  syntax error, unexpected 'private' (T_PRIVATE) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 188
+[29-Oct-2022 09:51:51 UTC] PHP Parse error:  syntax error, unexpected 'private' (T_PRIVATE) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 188
+[29-Oct-2022 09:52:20 UTC] PHP Parse error:  syntax error, unexpected 'catch' (T_CATCH) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 186
+[29-Oct-2022 16:52:28 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Call to undefined function quantityBookingInDate() in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php:178
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php(38): ChartsController->appointmentsAndBookingInLast7days()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php(614): ChartsController->process()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\index.php(72): App->process()
+#3 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 178

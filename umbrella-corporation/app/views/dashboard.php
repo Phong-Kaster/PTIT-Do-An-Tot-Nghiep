@@ -99,46 +99,51 @@
     <!-- end CONTENT -->
 
 
-    <!-- CoreUI and necessary plugins-->
-    <script src="<?= APPURL."/assets/vendors/@coreui/coreui/js/coreui.bundle.min.js?v=".VERSION ?>"></script>
-    <script src="<?= APPURL."/assets/vendors/simplebar/js/simplebar.min.js?v=".VERSION ?>"></script>
-    <!-- Plugins and scripts required by this view-->
+    <!-- GENERAL JS -->
+    <?php require_once(APPPATH.'/views/fragments/javascript.fragment.php'); ?>
+    <!-- PRIVATE JS -->
     <script src="<?= APPURL."/assets/vendors/chart.js/js/chart.min.js?v=".VERSION ?>"></script>
     <script src="<?= APPURL."/assets/vendors/@coreui/chartjs/js/coreui-chartjs.js?v=".VERSION ?>"></script>
     <script src="<?= APPURL."/assets/vendors/@coreui/utils/js/coreui-utils.js?v=".VERSION ?>"></script>
-    <script src="<?= APPURL."/assets/js/main.js?v=".VERSION ?>"></script>
+    <script src="<?= APPURL."/assets/js/customized/dashboard.js?v=".VERSION ?>"></script>
     <script>
-      var xyValues = [
-        {x:50, y:7},
-        {x:60, y:8},
-        {x:70, y:8},
-        {x:80, y:9},
-        {x:90, y:9},
-        {x:100, y:9},
-        {x:110, y:10},
-        {x:120, y:11},
-        {x:130, y:14},
-        {x:140, y:14},
-        {x:150, y:15}
-      ];
+        // get number of all appointment include NORMAL and BOOKING 
+        createChartWithAJAX("GET", "<?= API_URL ?>/charts", "appointmentsinlast7days");
+        
 
-      new Chart("myChart", {
-        type: "scatter",
-        data: {
-          datasets: [{
-            pointRadius: 4,
-            pointBackgroundColor: "rgb(0,0,255)",
-            data: xyValues
-          }]
-        },
-        options: {
-          legend: {display: false},
-          scales: {
-            xAxes: [{ticks: {min: 40, max:160}}],
-            yAxes: [{ticks: {min: 6, max:16}}],
-          }
+        //get a comparable chart between BOOKING and ALL APPOINTMENTS
+        createChartWithAJAX("GET", "<?= API_URL ?>/charts", "appointmentandbookinginlast7days");
+
+
+        //get quantity of doctor
+        let doctorParams = {
+           search: 1
         }
-      });
-      </script>
+        getQuantityWithAJAX("doctor-quantity", "<?= API_URL ?>/doctors", doctorParams);
+
+
+        //get the number of appointments today
+        let today = new Date();
+        let appointmentParams = {
+            date: today.getDate() + "-" + (today.getMonth()+1) + "-" + today.getFullYear()
+        }
+        getQuantityWithAJAX("current-appointment-quantity", "<?= API_URL ?>/appointments", appointmentParams);
+
+
+        //get the number of booking appointment today
+        getQuantityWithAJAX("current-booking-quantity", "<?= API_URL ?>/bookings", appointmentParams);
+
+        
+        //get the number of booking appointment today
+        let cancelledAppointmentParams = {
+            status: "cancelled",
+            date: today.getDate() + "-" + (today.getMonth()+1) + "-" + today.getFullYear()
+        }
+        getQuantityWithAJAX("current-cancelled-appointment", "<?= API_URL ?>/appointments", cancelledAppointmentParams);
+
+
+        //get doctor info table
+        getDoctorInfoWithAJAX("<?= API_URL ?>/doctors", doctorParams);
+    </script>
   </body>
 </html>

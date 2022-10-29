@@ -456,6 +456,12 @@ Các đơn thuốc hay hướng dẫn này chỉ được thay đổi khi appoin
 
 3. Dựng thanh điều hướng bên trên
 
+- **29-10-2022**: 
+  
+1. Dựng xong nội dung trang dashboard.
+   
+2. Viết chart controller để tạo ra 2 biểu đồ cho dashboard
+
 # [**Controller Timeline**](#controller-timeline)
 
 Phần này mình lưu lại trình tự mình viết đồ án này. Nếu các bạn có nhu cầu tham khảo cách xử lý của mình. Các bạn có thể đọc code theo trình tự 
@@ -524,6 +530,8 @@ Phần này mình lưu lại trình tự mình viết đồ án này. Nếu các
 31. Rooms Controller 
 
 32. Room Controller
+
+33. Charts Controller
 
 # [**Special Thanks**](#special-thanks)
 
