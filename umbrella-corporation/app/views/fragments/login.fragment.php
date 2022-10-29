@@ -18,17 +18,17 @@
                             <p class="bg-danger text-center" style="padding: 10px"><?= __("Email hoặc mật khẩu chưa chính xác!") ?></p>
                         <?php endif; ?>
 
-                    <div class="input-group mb-3"><span class="input-group-text">
-                        <svg class="icon">
-                          <use xlink:href="<?= APPURL."/assets/vendors/@coreui/icons/svg/free.svg#cil-user?v=".VERSION ?>"></use>
-                        </svg></span>
+                    <div class="input-group mb-3">
+                      <span class="input-group-text">
+                        <i class="icon cil-envelope-letter"></i>
+                      </span>
                       <input class="form-control" type="email" name="email" placeholder="Email" value="phongkaster@gmail.com" required autofocus>
                     </div>
 
-                    <div class="input-group mb-4"><span class="input-group-text">
-                        <svg class="icon">
-                          <use xlink:href="<?= APPURL."/assets/vendors/@coreui/icons/svg/free.svg#cil-lock-locked?v=".VERSION ?>"></use>
-                        </svg></span>
+                    <div class="input-group mb-4">
+                      <span class="input-group-text">
+                          <i class="icon cil-keyboard"></i>
+                      </span>
                       <input class="form-control" type="password" name="password" value="123456" placeholder="Password">
                     </div>
                     <div class="row">

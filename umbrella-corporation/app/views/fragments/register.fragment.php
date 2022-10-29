@@ -19,9 +19,7 @@
 
                 <div class="input-group mb-3">
                   <span class="input-group-text">
-                    <svg class="icon">
-                      <use xlink:href="<?= APPURL."/assets/vendors/@coreui/icons/svg/free.svg#cil-user?v=".VERSION ?>"></use>
-                    </svg>
+                      <i class="icon cil-envelope-letter"></i>
                   </span>
                   <input class="form-control" 
                           type="email" placeholder="Email"
@@ -31,9 +29,7 @@
 
                 <div class="input-group mb-4">
                   <span class="input-group-text">
-                    <svg class="icon">
-                      <use xlink:href="<?= APPURL."/assets/vendors/@coreui/icons/svg/free.svg#cil-lock-locked?v=".VERSION ?>"></use>
-                    </svg>
+                    <i class="cil-phone"></i>
                   </span>
                   <input class="form-control" 
                           type="number" 
@@ -44,9 +40,7 @@
 
                 <div class="input-group mb-4">
                   <span class="input-group-text">
-                    <svg class="icon">
-                      <use xlink:href="<?= APPURL."/assets/vendors/@coreui/icons/svg/free.svg#cil-lock-locked?v=".VERSION ?>"></use>
-                    </svg>
+                      <i class="cil-speak"></i>
                   </span>
                   <input class="form-control" 
                         type="text" 
@@ -56,10 +50,10 @@
                         value="">
                 </div>
 
-                <div class="input-group mb-3"><span class="input-group-text">
-                    <svg class="icon">
-                      <use xlink:href="<?= APPURL."/assets/vendors/@coreui/icons/svg/free.svg#cil-lock-locked?v=".VERSION ?>"></use>
-                    </svg></span>
+                <div class="input-group mb-3">
+                  <span class="input-group-text">
+                    <i class="icon cil-keyboard"></i>
+                  </span>
                   <input class="form-control" 
                         type="password" 
                         placeholder="Mật khẩu" 
@@ -70,9 +64,7 @@
 
                 <div class="input-group mb-4">
                   <span class="input-group-text">
-                    <svg class="icon">
-                      <use xlink:href="<?= APPURL."/assets/vendors/@coreui/icons/svg/free.svg#cil-lock-locked?v=".VERSION ?>"></use>
-                    </svg>
+                      <i class="icon cil-keyboard"></i>
                   </span>
                   <input class="form-control" 
                         type="password" 

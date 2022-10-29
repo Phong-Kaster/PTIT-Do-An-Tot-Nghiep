@@ -44,7 +44,11 @@
     <link href="<?= APPURL."/assets/css/style.css?v=".VERSION ?>" rel="stylesheet">
     <!-- We use those styles to show code examples, you should remove them in your application.-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism.css">
-    <link href="<?= APPURL."/assets/css/examples.css?v=".VERSION ?> rel="stylesheet">
+    <link href="<?= APPURL."/assets/css/examples.css?v=".VERSION ?>" rel="stylesheet">
+
+    <!-- CoreUI icons -->
+    <link rel="stylesheet" href="https://unpkg.com/@coreui/icons/css/all.min.css">
+    
     <!-- Global site tag (gtag.js) - Google Analytics-->
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965717-3"></script>
     <script>

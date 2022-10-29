@@ -1,0 +1,103 @@
+<div class="sidebar sidebar-dark sidebar-fixed" id="sidebar">
+      <div class="sidebar-brand d-none d-md-flex">
+        <img  src="<?= APPURL."/assets/img/umbrella-banner.jpg?v=".VERSION ?>" 
+                        alt="Banner" width="255" height="auto">
+      </div>
+
+      <!-- -->
+      <ul class="sidebar-nav" data-simplebar="">
+
+        <li class="nav-item">
+          <a class="nav-link <?= $Nav->activeMenu == "dashboard" ? "active" : "" ?>" href=""> 
+            <i class="nav-icon cil-home"></i>
+              Dashboard
+          </a>
+        </li>
+
+
+        <!-- BOOKING & APPOINTMENTS -->
+        <li class="nav-title">Lịch khám bệnh</li>
+
+        <li class="nav-item">
+          <a class="nav-link <?= $Nav->activeMenu == "appointment" ? "active" : "" ?>" href="c">
+            <i class="nav-icon cil-calendar"></i> 
+            Thứ tự lịch khám
+          </a>
+        </li>
+            
+        <li class="nav-item">
+          <a class="nav-link <?= $Nav->activeMenu == "booking" ? "active" : "" ?>" href="#">
+            <i class="nav-icon cil-description"></i> 
+            Lịch hẹn
+          </a>
+        </li>
+        <!-- end BOOKING & APPOINTMENTS -->
+
+        <!--ADMIN -->
+        <li class="nav-title">Quản trị viên</li>
+
+        <li class="nav-item">
+          <a class="nav-link <?= $Nav->activeMenu == "speciality" ? "active" : "" ?>" href="#">
+            <i class="nav-icon cil-medical-cross"></i> 
+            Chuyên khoa
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link <?= $Nav->activeMenu == "patient" ? "active" : "" ?>" href="#">
+            <i class="nav-icon cil-disabled"></i> 
+              Bệnh nhân
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link <?= $Nav->activeMenu == "room" ? "active" : "" ?>" href="#">
+          <i class="nav-icon cil-room"></i>
+            Phòng khám
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link <?= $Nav->activeMenu == "treatment" ? "active" : "" ?>" href="#">
+          <i class="nav-icon cil-balance-scale"></i>
+            Phác đồ điều trị
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link <?= $Nav->activeMenu == "record" ? "active" : "" ?>" href="#">
+          <i class="nav-icon cil-shield-alt"></i>
+            Bệnh án
+          </a>
+        </li>
+
+        <!--PERSONAL-->
+        <li class="nav-title">Cá nhân</li>
+
+
+            <li class="nav-item">
+              <a class="nav-link <?= $Nav->activeMenu == "personal" ? "active" : "" ?>" href="" target="_top">
+                <i class="nav-icon cil-dialpad"></i> 
+                Thay đổi thông tin cá nhân
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link <?= $Nav->activeMenu == "password" ? "active" : "" ?>" href="" target="_top">
+                <i class="nav-icon cil-keyboard"></i> 
+                Thay đổi mật khẩu
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link <?= $Nav->activeMenu == "avatar" ? "active" : "" ?>" href="" target="_top">
+                <i class="nav-icon cil-soccer"></i> 
+                Thay đổi ảnh đại diện
+              </a>
+            </li>
+
+        </li>
+
+      </ul>
+      <button class="sidebar-toggler" type="button" data-coreui-toggle="unfoldable"></button>
+    </div>
