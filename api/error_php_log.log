@@ -313,3 +313,34 @@ Stack trace:
 #2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\index.php(72): App->process()
 #3 {main}
   thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 178
+[31-Oct-2022 09:23:47 Asia/Ho_Chi_Minh] PHP Notice:  Undefined variable: fromdate in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 78
+[31-Oct-2022 09:23:47 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Call to a member function addDays() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php:78
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php(35): ChartsController->appointmentsInLast7Days()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php(614): ChartsController->process()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\index.php(72): App->process()
+#3 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 78
+[31-Oct-2022 09:27:58 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Object of class Moment\Moment could not be converted to string in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php:82
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php(35): ChartsController->appointmentsInLast7Days()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php(614): ChartsController->process()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\index.php(72): App->process()
+#3 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 82
+[31-Oct-2022 09:45:16 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Call to a member function format() on string in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php:127
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php(35): ChartsController->appointmentsInLast7Days()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php(614): ChartsController->process()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\index.php(72): App->process()
+#3 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 127
+[31-Oct-2022 02:50:25 UTC] PHP Parse error:  syntax error, unexpected 'try' (T_TRY) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 84
+[31-Oct-2022 02:50:35 UTC] PHP Parse error:  syntax error, unexpected 'try' (T_TRY) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\ChartsController.php on line 84
+[31-Oct-2022 03:38:13 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method AppointmentsController::save() in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php:27
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php(614): AppointmentsController->process()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\index.php(72): App->process()
+#2 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 27
+[31-Oct-2022 10:38:28 Asia/Ho_Chi_Minh] PHP Notice:  Undefined variable: type in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 610

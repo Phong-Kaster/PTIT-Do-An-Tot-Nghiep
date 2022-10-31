@@ -59,7 +59,7 @@
         private function appointmentsInLast7Days()
         {
             /**Step 1 - declare */
-            $this->resp->result = 1;
+            $this->resp->result = 0;
             date_default_timezone_set('Asia/Ho_Chi_Minh');// set timezone
 
             $length   = Input::get("length") ? (int)Input::get("length") : 10;
@@ -68,8 +68,8 @@
 
             /**Step 2 - get first day | finish day of a week */
             $date = new \Moment\Moment("now", date_default_timezone_get());
-            $from = $date->cloning()->startOf("week");
-            $to = $date->cloning()->endOf("week");
+            $from = $date->cloning()->subtractDays(6);
+            $to = $date->cloning();
 
 
             try 
@@ -77,7 +77,7 @@
                 /**Step 3 - get quantity of appointment */
                 $query = DB::table(TABLE_PREFIX.TABLE_APPOINTMENTS)
                         ->whereBetween(TABLE_PREFIX.TABLE_APPOINTMENTS.".date", 
-                                        $from->format("d-m-Y"), $to->format("d-m-Y"))
+                                        $from->format("Y-m-d"), $to->format("Y-m-d"))
                         ->orderBy(TABLE_PREFIX.TABLE_APPOINTMENTS.".date", "desc")
                         ->groupBy(TABLE_PREFIX.TABLE_APPOINTMENTS.".date")
                         ->select([
@@ -86,10 +86,11 @@
                         ]);
 
                 $result = $query->get();
+
                 for($x = 0; $x<7;$x++)
                 {
                     $data[] = array(
-                        "date" => $from->format("d-m-Y"),
+                        "date" => $from->format("Y-m-d"),
                         "appointment" => 0
                     );
                     $from->addDays(1);
@@ -137,8 +138,8 @@
  
              /**Step 2 - get first day | finish day of a week */
              $date = new \Moment\Moment("now", date_default_timezone_get());
-             $from = $date->cloning()->startOf("week");
-             $to = $date->cloning()->endOf("week");
+            $from = $date->cloning()->subtractDays(6);
+            $to = $date->cloning();
  
  
              try 
@@ -146,7 +147,7 @@
                  /**Step 3 - get quantity of appointment */
                  $query = DB::table(TABLE_PREFIX.TABLE_APPOINTMENTS)
                          ->whereBetween(TABLE_PREFIX.TABLE_APPOINTMENTS.".date", 
-                                         $from->format("d-m-Y"), $to->format("d-m-Y"))
+                                        $from->format("Y-m-d"), $to->format("Y-m-d"))
                          ->orderBy(TABLE_PREFIX.TABLE_APPOINTMENTS.".date", "desc")
                          ->groupBy(TABLE_PREFIX.TABLE_APPOINTMENTS.".date")
                          ->select([
@@ -157,7 +158,7 @@
                  $result = $query->get();
                  for($x = 0; $x<7;$x++)
                  {
-                    $date = $from->format("d-m-Y");
+                    $date = $from->format("Y-m-d");
                      $data[] = array(
                          "date" => $date ,
                          "appointment" => 0,
@@ -190,6 +191,7 @@
             }
             $this->jsonecho();
         }
+
         private function quantityBookingInDate($date)
         {
             $query = DB::table(TABLE_PREFIX.TABLE_APPOINTMENTS)

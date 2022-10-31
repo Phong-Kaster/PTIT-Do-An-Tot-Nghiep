@@ -462,6 +462,24 @@ Các đơn thuốc hay hướng dẫn này chỉ được thay đổi khi appoin
    
 2. Viết chart controller để tạo ra 2 biểu đồ cho dashboard
 
+- **30-10-2022**: Chủ nhật rồi, gác lại âu lo thôi 
+
+- **31-10-2022**:
+
+1. Sửa lại câu truy vấn cho Charts Controller lấy đúng số lượt khám trong 7 ngày gần nhất. 
+Tính từ ngày hôm nay
+
+2. Sửa lại luồng xử lý xếp lịch hẹn giống với gợi ý thầy Hào. 
+
+Tức đặt lịch hẹn chỉ là hình thức để bác sĩ biết trước bệnh án và ưu tiên cho những bệnh 
+nhân bị các bệnh đặc biệt mà không thể đợi lâu. Chúng ta sẽ không phát số thứ tự 
+cho những bệnh nhân BOOKING.
+
+Thay vào đó, họ tới bệnh viện thì mới bắt đầu phát số. Nếu họ bị bệnh đặc biệt, ví dụ: bệnh trĩ.... hoặc người 
+bệnh đã đặt thời gian vào khám thích hợp thì HỖ TRỢ VIÊN sẽ tiến hành sắp xếp thứ tự khám cho họ
+
+3. Chỉnh sửa phần top navigation để hiển thị đúng thông tin
+
 # [**Controller Timeline**](#controller-timeline)
 
 Phần này mình lưu lại trình tự mình viết đồ án này. Nếu các bạn có nhu cầu tham khảo cách xử lý của mình. Các bạn có thể đọc code theo trình tự 

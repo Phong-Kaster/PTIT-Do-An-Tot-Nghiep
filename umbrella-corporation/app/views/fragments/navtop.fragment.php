@@ -7,30 +7,30 @@
               <use xlink:href="assets/brand/coreui.svg#full"></use>
             </svg></a>
           <ul class="header-nav d-none d-md-flex">
-            <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Quản lý bác sĩ</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Cá nhân</a></li>
+            <li class="nav-item"><a class="nav-link" href="<?= APPURL."/dashboard" ?>">Dashboard</a></li>
+            <li class="nav-item"><a class="nav-link" href="<?= APPURL."/doctors" ?>"">Quản lý bác sĩ</a></li>
+            <li class="nav-item"><a class="nav-link" href="<?= APPURL."/personal" ?>"">Cá nhân</a></li>
           </ul>
           <ul class="header-nav ms-auto">
             <li class="nav-item">
               <a class="nav-link" href="#">
-                <svg class="icon icon-lg">
-                  <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-bell"></use>
-                </svg>
+                <i class="icon icon-lg cil-bell"></i>
               </a>
             </li>
-            <li class="nav-item"><a class="nav-link" href="#">
-                <svg class="icon icon-lg">
-                  <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-list-rich"></use>
-                </svg></a></li>
-            <li class="nav-item"><a class="nav-link" href="#">
-                <svg class="icon icon-lg">
-                  <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-envelope-open"></use>
-                </svg></a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="icon icon-lg cil-list-rich"></i>
+              </a>
+            </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <i class="icon icon-lg cil-envelope-open"></i>
+                </a>
+              </li>
           </ul>
           <ul class="header-nav ms-3">
             <li class="nav-item dropdown"><a class="nav-link py-0" data-coreui-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                <div class="avatar avatar-md"><img class="avatar-img" src="<?= APPURL."/assets/img/avatars/8.jpg?v=".VERSION ?>" alt="user@email.com"></div>
+                <div class="avatar avatar-md"><img class="avatar-img" src="<?= API_URL."/assets/uploads/".$AuthUser->get("avatar")."?v=".VERSION ?>" alt="user@email.com"></div>
               </a>
               <div class="dropdown-menu dropdown-menu-end pt-0">
                 <div class="dropdown-header bg-light py-2">

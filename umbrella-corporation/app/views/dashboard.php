@@ -125,7 +125,7 @@
         //get the number of appointments today
         let today = new Date();
         let appointmentParams = {
-            date: today.getDate() + "-" + (today.getMonth()+1) + "-" + today.getFullYear()
+            date: today.getFullYear() + "-" + (today.getMonth()+1) + "-" + today.getDate()
         }
         getQuantityWithAJAX("current-appointment-quantity", "<?= API_URL ?>/appointments", appointmentParams);
 
@@ -137,7 +137,7 @@
         //get the number of booking appointment today
         let cancelledAppointmentParams = {
             status: "cancelled",
-            date: today.getDate() + "-" + (today.getMonth()+1) + "-" + today.getFullYear()
+            date: today.getFullYear() + "-" + (today.getMonth()+1) + "-" + today.getDate()
         }
         getQuantityWithAJAX("current-cancelled-appointment", "<?= API_URL ?>/appointments", cancelledAppointmentParams);
 

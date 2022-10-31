@@ -755,9 +755,9 @@ function isAppointmentDateValid($appointment_date)
     }
 
     $output = "";
-    $year = (int)substr($appointment_date, 6);
-    $month = (int)substr($appointment_date,3,5);
-    $day = (int)substr($appointment_date,0,2);
+    $year = (int)substr($appointment_date, 0,4);
+    $month = (int)substr($appointment_date,5,8);
+    $day = (int)substr($appointment_date,8,10);
 
     $yearToday = (int)date("Y");
     $monthToday = (int)date("m");
@@ -843,7 +843,7 @@ function isAppointmentHourValid($appointment_hour, $appointment_date)
     /**Step 1 declare & get necessary data*/
     $output = "";
     $hour = (int)substr($appointment_hour,0,2);
-    $minute = (int)substr($appointment_hour,3);
+    $minute = (int)substr($appointment_hour,3) ? substr($appointment_hour,3) : "00" ;
 
     date_default_timezone_set('Asia/Ho_Chi_Minh');
     $currentHour = (int)Date("H");
@@ -894,9 +894,9 @@ function isAppointmentHourValid($appointment_hour, $appointment_date)
     if( $hour < $currentHour )
     {
 
-        $year = (int)substr($appointment_date, 6);
-        $month = (int)substr($appointment_date,3,5);
-        $day = (int)substr($appointment_date,0,2);
+        $year = (int)substr($appointment_date, 0,4);
+        $month = (int)substr($appointment_date,5,8);
+        $day = (int)substr($appointment_date,8,10);
 
         $yearToday = (int)date("Y");
         $monthToday = (int)date("m");

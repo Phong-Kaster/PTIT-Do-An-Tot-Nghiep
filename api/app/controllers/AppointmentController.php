@@ -129,7 +129,7 @@
             $this->resp->result = 0;
             $AuthUser = $this->getVariable("AuthUser");
             $Route = $this->getVariable("Route");
-            $today = (String)Date("d-m-Y");
+            $today = (String)Date("Y-m-d");
 
 
             /**Step 2 - check the appointment is being changed ! */
@@ -338,7 +338,7 @@
             $this->resp->result = 0;
             $AuthUser = $this->getVariable("AuthUser");
             $Route = $this->getVariable("Route");
-            $today = Date("d-m-Y");
+            $today = Date("Y-m-d");
             date_default_timezone_set('Asia/Ho_Chi_Minh');
             $update_at = date("Y-m-d H:i:s");
 

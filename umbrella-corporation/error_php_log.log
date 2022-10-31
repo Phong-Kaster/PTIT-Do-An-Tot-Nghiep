@@ -640,3 +640,8 @@ Stack trace:
 [28-Oct-2022 05:49:02 UTC] PHP Notice:  Trying to get property 'activeMenu' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\fragments\navleft.fragment.php on line 91
 [28-Oct-2022 05:49:02 UTC] PHP Notice:  Undefined variable: Nav in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\fragments\navleft.fragment.php on line 98
 [28-Oct-2022 05:49:02 UTC] PHP Notice:  Trying to get property 'activeMenu' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\fragments\navleft.fragment.php on line 98
+[31-Oct-2022 04:48:15 UTC] PHP Parse error:  syntax error, unexpected 'avatar' (T_STRING), expecting ';' or ',' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\fragments\navtop.fragment.php on line 33
+[31-Oct-2022 04:48:49 UTC] PHP Parse error:  syntax error, unexpected '?' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\fragments\navtop.fragment.php on line 33
+[31-Oct-2022 04:50:08 UTC] PHP Parse error:  syntax error, unexpected '?' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\fragments\navtop.fragment.php on line 33
+[31-Oct-2022 04:51:37 UTC] PHP Parse error:  syntax error, unexpected '<' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\fragments\navtop.fragment.php on line 33
+[31-Oct-2022 04:51:53 UTC] PHP Parse error:  syntax error, unexpected '?' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\fragments\navtop.fragment.php on line 33

@@ -24,7 +24,7 @@
             }
             else if( $request_method === 'POST')
             {
-                $this->save();
+                $this->newFlow();
             }
         }
 
@@ -193,8 +193,13 @@
          * 
          * Case 1 - if guess with no appointment, default date is today & numerical order is set immediately
          * Case 2 - if guess with appointment, numerical order is not set. Only when they come to hospital, they will have it.
+         * 
+         * Cụ thể, ta chi bệnh nhân thành 2 loại là NORMAL và BOOKING 
+         * 
+         * Bệnh nhân NORMAL là khách không đặt lịch hẹn và tới trực tiếp bệnh viện để khám => nhận số thứ tự ngay lập tức 
+         * Bệnh nhân BOOKING là khách đặt lịch khám qua điện thoại
          */
-        private function save()
+        private function oldFlow()
         {
             /**Step 1 */
             $this->resp->result = 0;
@@ -327,7 +332,7 @@
              * 1. Booking patients who have appointment by Android.
              * 2. Normal patients who go to hospital and wait for queue.
              */
-            $date = Date("d-m-Y");// appointment time is today
+            $date = Date("Y-m-d");// appointment time is today
             if( !empty($appointment_time) )
             {
                 $msg = isAppointmentTimeValid($appointment_time);
@@ -416,5 +421,221 @@
             }
             $this->jsonecho();
         }   
+
+
+        /**
+         * @author Phong-Kaster
+         * @since 31-10-2022
+         * create a new appointment
+         * 
+         * doctor's role as ADMIN or SUPPORTER can see all appointments
+         * doctor's role as MEMBER only can see appointments which was assigned to them.
+         * 
+         * Case 1 - if guess with no appointment, default date is today & numerical order and position are set up immediately 
+         * Case 2 - if guess with appointment, Only when they come to hospital, numerical order is established 
+         * and position is also set immediately.
+         * 
+         * Tức đặt lịch hẹn chỉ là hình thức để bác sĩ biết trước bệnh án và ưu tiên cho những bệnh 
+         * nhân bị các bệnh đặc biệt mà không thể đợi lâu. Chúng ta sẽ không phát số thứ tự 
+         * cho những bệnh nhân BOOKING.
+         *
+         * Thay vào đó, họ tới bệnh viện thì mới bắt đầu phát số. Nếu họ bị bệnh đặc biệt, ví dụ: bệnh trĩ.... hoặc người 
+         * bệnh đã đặt thời gian vào khám thích hợp thì HỖ TRỢ VIÊN sẽ tiến hành sắp xếp thứ tự khám cho họ
+         */
+        private function newFlow()
+        {
+            /**Step 1 */
+            $this->resp->result = 0;
+            $AuthUser = $this->getVariable("AuthUser");
+
+
+            /**Step 2 - verify user's role */
+            $valid_roles = ["admin", "supporter"];
+            $role_validation = in_array($AuthUser->get("role"), $valid_roles);
+            if( !$role_validation )
+            {
+                $this->resp->result = 0;
+                $this->resp->msg = "You don't have permission to do this action. Only "
+                .implode(', ', $valid_roles)." can do this action !";
+                $this->jsonecho();
+            }
+
+
+            /**Step 3 - get required fields*/
+            $required_fields = ["doctor_id", "patient_name", "patient_birthday",
+                                "patient_reason"];
+            foreach($required_fields as $field)
+            {
+                if( !Input::post($field) )
+                {
+                    $this->resp->msg = "Missing field: ".$field;
+                    $this->jsonecho();
+                }
+            }
+
+
+            /**Step 4 - get data */
+            $doctor_id = Input::post("doctor_id");
+            $patient_id = Input::post("patient_id") ? Input::post("patient_id") : 1;
+
+            $patient_name = Input::post("patient_name");
+            $patient_birthday = Input::post("patient_birthday");
+
+            $patient_reason = Input::post("patient_reason");
+            $patient_phone = Input::post("patient_phone");
+
+            $numerical_order = "";
+            $position = "";
+            $appointment_time = Input::post("appointment_time") ? Input::post("appointment_time") : "";
+            $type = $appointment_time ? "BOOKING appointment" : "NORMAL appointment";
+            $status = "processing";// default
+            date_default_timezone_set('Asia/Ho_Chi_Minh');
+
+            $create_at = date("Y-m-d H:i:s");
+            $update_at = date("Y-m-d H:i:s");
+
+            /**Step 5 - validation */
+            /**Step 5.1 - doctor validation */
+            $Doctor = Controller::model("Doctor", $doctor_id);
+            if( !$Doctor->isAvailable() )
+            {
+                $this->resp->msg = "This doctor does not exist !";
+                $this->jsonecho();
+            }
+            if( $Doctor->get("active") != 1)
+            {
+                $this->resp->msg = "This doctor was deactivated !";
+                $this->jsonecho();
+            }
+
+            /**Step 5.2 - patient validation - patient with ID = 1 is default. In case, 
+             * patient have not logged in Android application.
+             */
+            if( $patient_id != 1)
+            {
+                $Patient = Controller::model("Patient", $patient_id);
+                if( !$Patient->isAvailable() )
+                {
+                    $this->resp->msg = "This patient does not exist !";
+                    $this->jsonecho();
+                }
+            }
+
+            /**Step 5.3 - patient name validation */
+            $patient_name_validation = isVietnameseName($patient_name);
+            if( $patient_name_validation == 0 ){
+                $this->resp->msg = "( Booking name ) Vietnamese name only has letters and space";
+                $this->jsonecho();
+            }
+
+            /**Step 5.4 - patient birthday validation */
+            $msg = isBirthdayValid($patient_birthday);
+            if( !empty($msg) )
+            {
+                $this->resp->msg = $msg;
+                $this->jsonecho();
+            }
+            
+            /**Step 5.5 - patient reason */
+
+            /**Step 5.6 - patient phone */
+            if( $patient_phone )
+            {
+                if( strlen($patient_phone) < 10 )
+                {
+                    $this->resp->msg = "Patient phone number has at least 10 number !";
+                    $this->jsonecho();
+                }
+        
+                $patient_phone_validation = isNumber($patient_phone);
+                if( !$patient_phone_validation )
+                {
+                    $this->resp->msg = "Patient phone number is not a valid phone number. Please, try again !";
+                    $this->jsonecho();
+                }
+            }
+
+            /**Step 5.7 - numerical order - is a ID of patient today - 
+             * For example, i go to hospital and i am patient NO.40.
+             * Maybe, i am a booking patient or normal patient.
+             */
+            $date = Date("d-m-Y");
+            $queryNumericalOrder = DB::table(TABLE_PREFIX.TABLE_APPOINTMENTS)
+                    ->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".date", "=", $date)
+                    ->orderBy(TABLE_PREFIX.TABLE_APPOINTMENTS.".id", "desc")
+                    ->select("*");
+
+            $result = $queryNumericalOrder->get();
+            $quantity = count($result);
+            $numerical_order = $quantity == 0 ? 1 : $quantity + 1;// because first value = 0
+
+
+            /**Step 5.8 - position */
+            $date = Date("Y-m-d");
+            $queryPosition = DB::table(TABLE_PREFIX.TABLE_APPOINTMENTS)
+                    ->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".doctor_id", "=", $doctor_id)
+                    ->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".date", "=", $date)
+                    ->orderBy(TABLE_PREFIX.TABLE_APPOINTMENTS.".id", "desc")
+                    ->select("*");
+            $result = $queryPosition->get();
+            $quantity = count($result);
+            $position = $quantity == 0 ? 1 : $quantity + 1;// because first value = 0
+
+
+            /**Step 5.8 - status */
+            $valid_status = ["processing", "done", "cancelled"];
+            $status_validation = in_array($status, $valid_status);
+            if( !$status_validation )
+            {
+                $this->resp->result = 0;
+                $this->resp->msg = "You don't have permission to do this action. Only "
+                .implode(', ', $valid_status)." can do this action !";
+                $this->jsonecho();
+            }
+
+            /**Step 6 - save */
+            try 
+            {
+                $Appointment = Controller::model("Appointment");
+                $Appointment->set("doctor_id", $doctor_id)
+                        ->set("patient_id", $patient_id)
+                        ->set("patient_name", $patient_name)
+                        ->set("patient_birthday", $patient_birthday)
+                        ->set("patient_reason", $patient_reason)
+                        ->set("patient_phone", $patient_phone)
+                        ->set("numerical_order", $numerical_order)
+                        ->set("position", $position)
+                        ->set("appointment_time", $appointment_time)
+                        ->set("date", $date)
+                        ->set("status", $status)
+                        ->set("create_at", $create_at)
+                        ->set("update_at", $update_at)
+                        ->save();
+                $this->resp->result = 1;
+                $this->resp->msg = $type." has been created with patient No.".$numerical_order." with position: ".$position;
+                $this->resp->data = array(
+                    "id" => (int) $Appointment->get("id"),
+                    "date"          => $Appointment->get("date"),
+                    "doctor_id" => (int) $Appointment->get("doctor_id"),
+                    "numerical_order" =>  (int)$Appointment->get("numerical_order"),
+                    "position" => (int) $Appointment->get("position"),
+                    "patient_id" => (int) $Appointment->get("patient_id"),
+                    "patient_name" => $Appointment->get("patient_name"),
+                    "patient_birthday" =>  $Appointment->get("patient_birthday"),
+                    "patient_reason" =>  $Appointment->get("patient_reason"),
+                    "patient_phone" =>  $Appointment->get("patient_phone"),
+                    "appointment_time" => $Appointment->get("appointment_time"),
+                    "status" =>  $Appointment->get("status"),
+                    "create_at" =>  $Appointment->get("create_at"),
+                    "update_at" =>  $Appointment->get("update_at")
+                );
+            } 
+            catch (\Exception $ex) 
+            {
+                $this->resp->result = $ex->getMessage();
+            }
+            $this->jsonecho();
+        }
+
     }
 ?>
