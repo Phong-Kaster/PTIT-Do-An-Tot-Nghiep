@@ -64,7 +64,8 @@
             $search         = Input::get("search");
             $length         = Input::get("length") ? (int)Input::get("length") : 10;
             $start          = Input::get("start") ? (int)Input::get("start") : 0;
-    
+            $date           = Input::get("date");
+
             try
             {
                 /**Step 3 - query */
@@ -113,36 +114,74 @@
                     $query->orderBy("id", "desc");
                 } 
     
+
+
                 /**Step 3.3 - length filter * start filter*/
                 $query->limit($length ? $length : 10)
                     ->offset($start ? $start : 0);
     
+
     
-    
-                /**Step 4 */
+                /**Step 4 - if we have date filter => handle like this, instead create new 
+                 * field in database.
+                 */
                 $result = $query->get();
-                foreach($result as $element)
+                if($date)
                 {
-                    $data[] = array(
-                        "id" => (int)$element->id,
-                        "patient_id" => (int)$element->patient_id,
-                        "booking_name" => $element->booking_name,
-                        "booking_phone" => $element->booking_phone,
-                        "name" => $element->name,
-                        "gender" => (int)$element->gender,
-                        "birthday" => $element->birthday,
-                        "address" => $element->address,
-                        "reason" => $element->reason,
-                        "appointment_time" => $element->appointment_time,
-                        "status" => $element->status,
-                        "create_at" => $element->create_at,
-                        "update_at" => $element->update_at,
-                        "service" => array(
-                            "id" => (int)$element->service_id,
-                            "name" => $element->service_name
-                        )
-                    );
+                    foreach($result as $element)
+                    {
+                        $appointment_date = substr($element->date);
+                        if( $date == $appointment_date )
+                        {
+                            $data[] = array(
+                                "id" => (int)$element->id,
+                                "patient_id" => (int)$element->patient_id,
+                                "booking_name" => $element->booking_name,
+                                "booking_phone" => $element->booking_phone,
+                                "name" => $element->name,
+                                "gender" => (int)$element->gender,
+                                "birthday" => $element->birthday,
+                                "address" => $element->address,
+                                "reason" => $element->reason,
+                                "appointment_time" => $element->appointment_time,
+                                "status" => $element->status,
+                                "create_at" => $element->create_at,
+                                "update_at" => $element->update_at,
+                                "service" => array(
+                                    "id" => (int)$element->service_id,
+                                    "name" => $element->service_name
+                                )
+                            );
+                        }
+                    }
                 }
+                else// if date filter is not set, return immediate.
+                {
+                    foreach($result as $element)
+                    {
+                        $data[] = array(
+                            "id" => (int)$element->id,
+                            "patient_id" => (int)$element->patient_id,
+                            "booking_name" => $element->booking_name,
+                            "booking_phone" => $element->booking_phone,
+                            "name" => $element->name,
+                            "gender" => (int)$element->gender,
+                            "birthday" => $element->birthday,
+                            "address" => $element->address,
+                            "reason" => $element->reason,
+                            "appointment_time" => $element->appointment_time,
+                            "status" => $element->status,
+                            "create_at" => $element->create_at,
+                            "update_at" => $element->update_at,
+                            "service" => array(
+                                "id" => (int)$element->service_id,
+                                "name" => $element->service_name
+                            )
+                        );
+                    }
+                }
+
+                
     
     
                 /**Step 5 - return */

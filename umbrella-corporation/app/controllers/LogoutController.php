@@ -21,6 +21,7 @@ class LogoutController extends Controller
     {
         $AuthUser = $this->getVariable("AuthUser");
 
+        setcookie("accessToken",null,time()-86400*365, "/");
         setcookie("nplh", null, time()-86400*365, "/");
         setcookie("nplrmm", null, time()-86400*365, "/");
 

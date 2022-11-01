@@ -54,7 +54,7 @@
             $length         = Input::get("length") ? (int)Input::get("length") : 10;
             $start          = Input::get("start") ? (int)Input::get("start") : 0;
             $room           = Input::get("room");// Room_id
-
+            $speciality_id  = Input::get("speciality");
             try
             {
                 /**Step 3 - query */
@@ -113,6 +113,10 @@
                 if( $room )
                 {
                     $query->where(TABLE_PREFIX.TABLE_DOCTORS.".room_id", "=", $room);
+                }
+                if( $speciality_id )
+                {
+                    $query->where(TABLE_PREFIX.TABLE_DOCTORS.".speciality_id", "=", $speciality_id);
                 }
                 /**Step 3.4 - length filter * start filter*/
                 $query->limit($length ? $length : 10)

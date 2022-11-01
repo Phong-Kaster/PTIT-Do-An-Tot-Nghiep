@@ -645,3 +645,15 @@ Stack trace:
 [31-Oct-2022 04:50:08 UTC] PHP Parse error:  syntax error, unexpected '?' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\fragments\navtop.fragment.php on line 33
 [31-Oct-2022 04:51:37 UTC] PHP Parse error:  syntax error, unexpected '<' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\fragments\navtop.fragment.php on line 33
 [31-Oct-2022 04:51:53 UTC] PHP Parse error:  syntax error, unexpected '?' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\fragments\navtop.fragment.php on line 33
+[31-Oct-2022 07:56:48 UTC] PHP Fatal error:  Uncaught Error: Class 'AppointmentController' not found in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\App.php:501
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\App.php(563): App->route()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\index.php(93): App->process()
+#2 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\App.php on line 501
+[01-Nov-2022 08:36:41 UTC] PHP Parse error:  syntax error, unexpected '<', expecting '(' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\fragments\appointment.fragment.php on line 17
+[01-Nov-2022 08:36:57 UTC] PHP Parse error:  syntax error, unexpected '<', expecting '(' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\fragments\appointment.fragment.php on line 17
+[01-Nov-2022 08:37:52 UTC] PHP Parse error:  syntax error, unexpected '<', expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\fragments\appointment.fragment.php on line 17
+[01-Nov-2022 08:40:03 UTC] PHP Parse error:  syntax error, unexpected 'mới' (T_STRING), expecting ';' or ',' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\fragments\appointment.fragment.php on line 22
+[01-Nov-2022 08:40:21 UTC] PHP Parse error:  syntax error, unexpected 'mới' (T_STRING), expecting ';' or ',' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\fragments\appointment.fragment.php on line 21
+[01-Nov-2022 08:40:52 UTC] PHP Parse error:  syntax error, unexpected '<' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\fragments\appointment.fragment.php on line 19

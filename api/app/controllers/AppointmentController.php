@@ -21,7 +21,7 @@
             if( !$AuthUser->get("role") || !$role_validation )
             {
                 $this->resp->result = 0;
-                $this->resp->msg = "You don not have permission to do this action !";
+                $this->resp->msg = "You do not have permission to do this action !";
                 $this->jsonecho();
             }
 
@@ -37,6 +37,10 @@
             else if( $request_method === 'PATCH')
             {
                 $this->confirm();
+            }
+            else if( $request_method === 'DELETE')
+            {
+                $this->delete();
             }
         }
 
@@ -419,6 +423,70 @@
 
                 $this->resp->result = 1;
                 $this->resp->msg = "The status of appointment has been updated successfully !";
+            } 
+            catch (\Exception $ex) 
+            {
+                $this->resp->msg = $ex->getMessage();
+            }
+            $this->jsonecho();
+        }
+
+
+        /**
+         * @author Phong-Kaster
+         * @since 01-11-2022
+         * delete appointment
+         * only doctor's role as ADMIN or SUPPORTER can do this function.
+         * appointment's status == DONE => can not deleted
+         * */
+        private function delete()
+        {
+            /**Step 1 */
+            $this->resp->result = 0;
+            $AuthUser = $this->getVariable("AuthUser");
+            $Route = $this->getVariable("Route");
+
+
+            $valid_status = ["admin", "supporter"];
+
+            $status_validation = in_array($AuthUser->get("role"), $valid_status);
+            if( !$status_validation )
+            {
+                $this->resp->msg = "You are ".$AuthUser->get("role")." or supporter & you can't do this action !";
+                $this->jsonecho();
+            }
+
+
+            /**Step 2 - required fields*/
+            if( !isset($Route->params->id) )
+            {
+                $this->resp->msg = "ID is required !";
+                $this->jsonecho();
+            }
+
+
+            /**Step 3 - check exist*/
+            $Appointment = Controller::model("Appointment", $Route->params->id);
+            if( !$Appointment->isAvailable() )
+            {
+                $this->resp->msg = "Appointment is not available";
+                $this->jsonecho();
+            }
+            if($Appointment->get("status") == "done")
+            {
+                $this->resp->msg = "Appointment's status is ".$Appointment->get("status")." now. You can not delete!";
+                $this->jsonecho();
+            }
+
+
+
+            /**Step 4 - how many doctor are there in this Clinic */
+            try 
+            {
+                $Appointment->delete();
+                
+                $this->resp->result = 1;
+                $this->resp->msg = "Appointment is deleted successfully !";
             } 
             catch (\Exception $ex) 
             {

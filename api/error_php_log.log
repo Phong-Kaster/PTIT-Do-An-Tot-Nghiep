@@ -344,3 +344,97 @@ Stack trace:
 #2 {main}
   thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 27
 [31-Oct-2022 10:38:28 Asia/Ho_Chi_Minh] PHP Notice:  Undefined variable: type in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 610
+[31-Oct-2022 13:44:22 UTC] PHP Parse error:  syntax error, unexpected ';', expecting ')' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 217
+[31-Oct-2022 13:44:34 UTC] PHP Warning:  Use of undefined constant TABLE_DOCTOR - assumed 'TABLE_DOCTOR' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 68
+[31-Oct-2022 13:44:34 UTC] PHP Warning:  Use of undefined constant TABLE_DOCTOR - assumed 'TABLE_DOCTOR' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 70
+[31-Oct-2022 13:44:34 UTC] PHP Warning:  Use of undefined constant TABLE_DOCTOR - assumed 'TABLE_DOCTOR' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 74
+[31-Oct-2022 13:44:34 UTC] PHP Warning:  Use of undefined constant TABLE_DOCTOR - assumed 'TABLE_DOCTOR' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 75
+[31-Oct-2022 13:44:34 UTC] PHP Warning:  Use of undefined constant TABLE_DOCTOR - assumed 'TABLE_DOCTOR' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 76
+[31-Oct-2022 13:44:34 UTC] PHP Warning:  Use of undefined constant TABLE_DOCTOR - assumed 'TABLE_DOCTOR' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 77
+[31-Oct-2022 13:44:34 UTC] PHP Warning:  Use of undefined constant TABLE_DOCTOR - assumed 'TABLE_DOCTOR' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 78
+[31-Oct-2022 13:44:34 UTC] PHP Warning:  Use of undefined constant TABLE_DOCTOR - assumed 'TABLE_DOCTOR' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 79
+[31-Oct-2022 13:44:34 UTC] PHP Warning:  Use of undefined constant TABLE_DOCTOR - assumed 'TABLE_DOCTOR' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 80
+[31-Oct-2022 13:44:34 UTC] PHP Warning:  Use of undefined constant TABLE_DOCTOR - assumed 'TABLE_DOCTOR' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 81
+[31-Oct-2022 13:44:34 UTC] PHP Warning:  Use of undefined constant TABLE_DOCTOR - assumed 'TABLE_DOCTOR' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 82
+[31-Oct-2022 13:44:34 UTC] PHP Warning:  Use of undefined constant TABLE_DOCTOR - assumed 'TABLE_DOCTOR' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 83
+[31-Oct-2022 13:44:34 UTC] PHP Warning:  Use of undefined constant TABLE_DOCTOR - assumed 'TABLE_DOCTOR' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 84
+[31-Oct-2022 13:45:32 UTC] PHP Notice:  Undefined property: stdClass::$speciality in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 214
+[31-Oct-2022 13:45:32 UTC] PHP Notice:  Trying to get property 'id' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 214
+[31-Oct-2022 13:45:32 UTC] PHP Notice:  Undefined property: stdClass::$speciality in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 215
+[31-Oct-2022 13:45:32 UTC] PHP Notice:  Trying to get property 'name' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 215
+[31-Oct-2022 13:45:32 UTC] PHP Notice:  Undefined property: stdClass::$speciality in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 216
+[31-Oct-2022 13:45:32 UTC] PHP Notice:  Trying to get property 'description' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 216
+[31-Oct-2022 13:45:32 UTC] PHP Notice:  Undefined property: stdClass::$speciality in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 214
+[31-Oct-2022 13:45:32 UTC] PHP Notice:  Trying to get property 'id' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 214
+[31-Oct-2022 13:45:32 UTC] PHP Notice:  Undefined property: stdClass::$speciality in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 215
+[31-Oct-2022 13:45:32 UTC] PHP Notice:  Trying to get property 'name' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 215
+[31-Oct-2022 13:45:32 UTC] PHP Notice:  Undefined property: stdClass::$speciality in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 216
+[31-Oct-2022 13:45:32 UTC] PHP Notice:  Trying to get property 'description' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 216
+[31-Oct-2022 13:45:32 UTC] PHP Notice:  Undefined property: stdClass::$speciality in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 214
+[31-Oct-2022 13:45:32 UTC] PHP Notice:  Trying to get property 'id' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 214
+[31-Oct-2022 13:45:32 UTC] PHP Notice:  Undefined property: stdClass::$speciality in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 215
+[31-Oct-2022 13:45:32 UTC] PHP Notice:  Trying to get property 'name' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 215
+[31-Oct-2022 13:45:32 UTC] PHP Notice:  Undefined property: stdClass::$speciality in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 216
+[31-Oct-2022 13:45:32 UTC] PHP Notice:  Trying to get property 'description' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 216
+[31-Oct-2022 13:45:32 UTC] PHP Notice:  Undefined property: stdClass::$speciality in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 214
+[31-Oct-2022 13:45:32 UTC] PHP Notice:  Trying to get property 'id' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 214
+[31-Oct-2022 13:45:32 UTC] PHP Notice:  Undefined property: stdClass::$speciality in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 215
+[31-Oct-2022 13:45:32 UTC] PHP Notice:  Trying to get property 'name' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 215
+[31-Oct-2022 13:45:32 UTC] PHP Notice:  Undefined property: stdClass::$speciality in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 216
+[31-Oct-2022 13:45:32 UTC] PHP Notice:  Trying to get property 'description' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 216
+[31-Oct-2022 13:47:49 UTC] PHP Notice:  Undefined property: stdClass::$speciality in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 214
+[31-Oct-2022 13:47:49 UTC] PHP Notice:  Trying to get property 'id' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 214
+[31-Oct-2022 13:47:49 UTC] PHP Notice:  Undefined property: stdClass::$speciality in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 215
+[31-Oct-2022 13:47:49 UTC] PHP Notice:  Trying to get property 'name' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 215
+[31-Oct-2022 13:47:49 UTC] PHP Notice:  Undefined property: stdClass::$speciality in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 216
+[31-Oct-2022 13:47:49 UTC] PHP Notice:  Trying to get property 'description' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 216
+[31-Oct-2022 13:47:49 UTC] PHP Notice:  Undefined property: stdClass::$speciality in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 214
+[31-Oct-2022 13:47:49 UTC] PHP Notice:  Trying to get property 'id' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 214
+[31-Oct-2022 13:47:49 UTC] PHP Notice:  Undefined property: stdClass::$speciality in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 215
+[31-Oct-2022 13:47:49 UTC] PHP Notice:  Trying to get property 'name' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 215
+[31-Oct-2022 13:47:49 UTC] PHP Notice:  Undefined property: stdClass::$speciality in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 216
+[31-Oct-2022 13:47:49 UTC] PHP Notice:  Trying to get property 'description' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 216
+[31-Oct-2022 13:47:49 UTC] PHP Notice:  Undefined property: stdClass::$speciality in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 214
+[31-Oct-2022 13:47:49 UTC] PHP Notice:  Trying to get property 'id' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 214
+[31-Oct-2022 13:47:49 UTC] PHP Notice:  Undefined property: stdClass::$speciality in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 215
+[31-Oct-2022 13:47:49 UTC] PHP Notice:  Trying to get property 'name' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 215
+[31-Oct-2022 13:47:49 UTC] PHP Notice:  Undefined property: stdClass::$speciality in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 216
+[31-Oct-2022 13:47:49 UTC] PHP Notice:  Trying to get property 'description' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 216
+[31-Oct-2022 13:47:49 UTC] PHP Notice:  Undefined property: stdClass::$speciality in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 214
+[31-Oct-2022 13:47:49 UTC] PHP Notice:  Trying to get property 'id' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 214
+[31-Oct-2022 13:47:49 UTC] PHP Notice:  Undefined property: stdClass::$speciality in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 215
+[31-Oct-2022 13:47:49 UTC] PHP Notice:  Trying to get property 'name' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 215
+[31-Oct-2022 13:47:49 UTC] PHP Notice:  Undefined property: stdClass::$speciality in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 216
+[31-Oct-2022 13:47:49 UTC] PHP Notice:  Trying to get property 'description' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 216
+[31-Oct-2022 13:48:35 UTC] PHP Notice:  Undefined property: stdClass::$speciality in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 214
+[31-Oct-2022 13:48:35 UTC] PHP Notice:  Trying to get property 'id' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 214
+[31-Oct-2022 13:48:35 UTC] PHP Notice:  Undefined property: stdClass::$speciality in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 215
+[31-Oct-2022 13:48:35 UTC] PHP Notice:  Trying to get property 'name' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 215
+[31-Oct-2022 13:48:35 UTC] PHP Notice:  Undefined property: stdClass::$speciality in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 216
+[31-Oct-2022 13:48:35 UTC] PHP Notice:  Trying to get property 'description' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 216
+[31-Oct-2022 13:48:35 UTC] PHP Notice:  Undefined property: stdClass::$speciality in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 214
+[31-Oct-2022 13:48:35 UTC] PHP Notice:  Trying to get property 'id' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 214
+[31-Oct-2022 13:48:35 UTC] PHP Notice:  Undefined property: stdClass::$speciality in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 215
+[31-Oct-2022 13:48:35 UTC] PHP Notice:  Trying to get property 'name' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 215
+[31-Oct-2022 13:48:35 UTC] PHP Notice:  Undefined property: stdClass::$speciality in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 216
+[31-Oct-2022 13:48:35 UTC] PHP Notice:  Trying to get property 'description' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 216
+[31-Oct-2022 13:48:35 UTC] PHP Notice:  Undefined property: stdClass::$speciality in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 214
+[31-Oct-2022 13:48:35 UTC] PHP Notice:  Trying to get property 'id' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 214
+[31-Oct-2022 13:48:35 UTC] PHP Notice:  Undefined property: stdClass::$speciality in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 215
+[31-Oct-2022 13:48:35 UTC] PHP Notice:  Trying to get property 'name' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 215
+[31-Oct-2022 13:48:35 UTC] PHP Notice:  Undefined property: stdClass::$speciality in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 216
+[31-Oct-2022 13:48:35 UTC] PHP Notice:  Trying to get property 'description' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 216
+[31-Oct-2022 13:48:35 UTC] PHP Notice:  Undefined property: stdClass::$speciality in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 214
+[31-Oct-2022 13:48:35 UTC] PHP Notice:  Trying to get property 'id' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 214
+[31-Oct-2022 13:48:35 UTC] PHP Notice:  Undefined property: stdClass::$speciality in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 215
+[31-Oct-2022 13:48:35 UTC] PHP Notice:  Trying to get property 'name' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 215
+[31-Oct-2022 13:48:35 UTC] PHP Notice:  Undefined property: stdClass::$speciality in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 216
+[31-Oct-2022 13:48:35 UTC] PHP Notice:  Trying to get property 'description' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 216
+[01-Nov-2022 13:31:54 UTC] PHP Notice:  Undefined variable: invalid_status in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentController.php on line 450
+[01-Nov-2022 13:31:54 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentController.php on line 450
+[01-Nov-2022 16:30:22 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 133
+[01-Nov-2022 16:30:22 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 133
+[01-Nov-2022 16:30:22 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 133
+[01-Nov-2022 16:30:22 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 133
+[01-Nov-2022 16:30:22 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 133
+[01-Nov-2022 16:30:22 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 133

@@ -34,7 +34,8 @@
               </a>
               <div class="dropdown-menu dropdown-menu-end pt-0">
                 <div class="dropdown-header bg-light py-2">
-                  <div class="fw-semibold">Tài khoản</div>
+                  <div class="fw-semibold">Tài khoản: <?= $AuthUser->get("email"); ?></div>
+                  <div class="fw-semibold">Vai trò: <?= $AuthUser->get("role"); ?></div>
                 </div>
                   <a class="dropdown-item" href="#">
 
@@ -56,7 +57,7 @@
                   </a>
 
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="<?= APPURL."/logout" ?>">
                   <i class="nav-icon cil-account-logout"></i> 
                   Logout
                 </a>
@@ -69,9 +70,15 @@
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb my-0 ms-2">
               <li class="breadcrumb-item">
-                <!-- if breadcrumb is single--><span>Home</span>
+                <span>
+                  <?= $Nav->activeMenu ? strtoupper($Nav->activeMenu) : "Dashboard" ?>
+                </span>
               </li>
-              <li class="breadcrumb-item active"><span>Dashboard</span></li>
+              <!-- <li class="breadcrumb-item active">
+                <span>
+
+                </span>
+            </li> -->
             </ol>
           </nav>
         </div>

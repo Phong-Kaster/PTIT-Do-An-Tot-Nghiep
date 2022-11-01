@@ -100,7 +100,7 @@ App::addRoute("GET|PUT|PATCH", "/bookings/[i:id]/?", "Booking");
 
 /************************** APPOINTMENTS ******************************/
 App::addRoute("GET|POST", "/appointments/?", "Appointments");
-App::addRoute("GET|PUT|PATCH", "/appointments/[i:id]/?", "Appointment");
+App::addRoute("GET|PUT|PATCH|DELETE", "/appointments/[i:id]/?", "Appointment");
 
 /************************** TREATMENT ******************************/
 App::addRoute("GET|POST", "/treatments/?", "Treatments");

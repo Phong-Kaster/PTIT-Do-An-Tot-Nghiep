@@ -56,13 +56,41 @@
             $room           = Input::get("room");// Only ADMIN & SUPPORTER can use this filter.
             $date           = Input::get("date");
             $status         = Input::get("status");
+            $speciality     = Input::get("speciality");
 
             try
             {
                 /**Step 3 - query */
                 $query = DB::table(TABLE_PREFIX.TABLE_APPOINTMENTS)
+                        ->leftJoin(TABLE_PREFIX.TABLE_DOCTORS, 
+                                    TABLE_PREFIX.TABLE_DOCTORS.".id", "=", TABLE_PREFIX.TABLE_APPOINTMENTS.".doctor_id")
+                        ->leftJoin(TABLE_PREFIX.TABLE_SPECIALITIES,
+                                    TABLE_PREFIX.TABLE_SPECIALITIES.".id", "=", TABLE_PREFIX.TABLE_DOCTORS.".speciality_id")
+                        ->leftJoin(TABLE_PREFIX.TABLE_ROOMS,
+                                    TABLE_PREFIX.TABLE_ROOMS.".id", "=", TABLE_PREFIX.TABLE_DOCTORS.".room_id")
                         ->select([
-                            TABLE_PREFIX.TABLE_APPOINTMENTS.".*"
+                            TABLE_PREFIX.TABLE_APPOINTMENTS.".*",
+
+                            DB::raw(TABLE_PREFIX.TABLE_DOCTORS.".id as doctor_id"),
+                            DB::raw(TABLE_PREFIX.TABLE_DOCTORS.".email as doctor_email"),
+                            DB::raw(TABLE_PREFIX.TABLE_DOCTORS.".phone as doctor_phone"),
+                            DB::raw(TABLE_PREFIX.TABLE_DOCTORS.".name as doctor_name"),
+                            DB::raw(TABLE_PREFIX.TABLE_DOCTORS.".description as doctor_description"),
+                            DB::raw(TABLE_PREFIX.TABLE_DOCTORS.".price as doctor_price"),
+                            DB::raw(TABLE_PREFIX.TABLE_DOCTORS.".role as doctor_role"),
+                            DB::raw(TABLE_PREFIX.TABLE_DOCTORS.".active as doctor_active"),
+                            DB::raw(TABLE_PREFIX.TABLE_DOCTORS.".avatar as doctor_avatar"),
+                            DB::raw(TABLE_PREFIX.TABLE_DOCTORS.".create_at as doctor_create_at"),
+                            DB::raw(TABLE_PREFIX.TABLE_DOCTORS.".update_at as doctor_update_at"),
+
+                            DB::raw(TABLE_PREFIX.TABLE_ROOMS.".id as room_id"),
+                            DB::raw(TABLE_PREFIX.TABLE_ROOMS.".name as room_name"),
+                            DB::raw(TABLE_PREFIX.TABLE_ROOMS.".location as room_location"),
+
+                            DB::raw(TABLE_PREFIX.TABLE_SPECIALITIES.".id as speciality_id"),
+                            DB::raw(TABLE_PREFIX.TABLE_SPECIALITIES.".name as speciality_name"),
+                            DB::raw(TABLE_PREFIX.TABLE_SPECIALITIES.".description as speciality_description"),
+                            
                         ]);
 
                 /**Step 3.0 - role - as MEMBER, he/she only see appointments that has been assigned to him/her. */
@@ -81,8 +109,8 @@
                         $q->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".patient_name", 'LIKE', $search_query.'%')
                         ->orWhere(TABLE_PREFIX.TABLE_APPOINTMENTS.".patient_phone", 'LIKE', $search_query.'%')
                         ->orWhere(TABLE_PREFIX.TABLE_APPOINTMENTS.".patient_reason", 'LIKE', $search_query.'%')
-                        ->orWhere(TABLE_PREFIX.TABLE_APPOINTMENTS.".status", 'LIKE', $search_query.'%')
-                        ->orWhere(TABLE_PREFIX.TABLE_APPOINTMENTS.".date", 'LIKE', $search_query.'%');
+                        ->orWhere(TABLE_PREFIX.TABLE_DOCTORS.".status", 'LIKE', $search_query.'%')
+                        ->orWhere(TABLE_PREFIX.TABLE_APPOINTMENTS.".status", 'LIKE', $search_query.'%');
                     }); 
                 }
 
@@ -104,9 +132,12 @@
                 /**Step 3.4 - room filter*/
                 if( $room )
                 {
-                    $query->leftJoin(TABLE_PREFIX.TABLE_DOCTORS,
-                                     TABLE_PREFIX.TABLE_DOCTORS.".id", "=", TABLE_PREFIX.TABLE_APPOINTMENTS.".doctor_id")
-                        ->where(TABLE_PREFIX.TABLE_DOCTORS.".room_id", "=", $room);
+                    $query->where(TABLE_PREFIX.TABLE_DOCTORS.".room_id", "=", $room);
+                }
+
+                if( $speciality )
+                {
+                    $query->where(TABLE_PREFIX.TABLE_SPECIALITIES.".id", "=", $speciality);
                 }
                 
                 /**Step 3.5 - date filter*/
@@ -153,7 +184,6 @@
                     $data[] = array(
                         "id" => (int)$element->id,
                         "date" => $element->date,
-                        "doctor_id" => (int)$element->doctor_id,
                         "numerical_order" => (int)$element->numerical_order,
                         "position" => (int)$element->position,
                         "patient_id" => (int)$element->patient_id,
@@ -165,7 +195,30 @@
                         "appointment_time" => $element->appointment_time,
                         "status" => $element->status,
                         "create_at" => $element->create_at,
-                        "update_at" => $element->update_at
+                        "update_at" => $element->update_at,
+                        "doctor" => array(
+                            "id" => (int)$element->doctor_id,
+                            "email" => $element->doctor_email,
+                            "phone" => $element->doctor_phone,
+                            "name" => $element->doctor_name,
+                            "description" => $element->doctor_description,
+                            "price" => $element->doctor_price,
+                            "role" => $element->doctor_role,
+                            "avatar" => $element->doctor_avatar,
+                            "active" => (int)$element->doctor_active,
+                            "create_at" => $element->doctor_create_at,
+                            "update_at" => $element->doctor_update_at,
+                        ),
+                        "speciality" => array(
+                            "id" => (int)$element->speciality_id,
+                            "name" => $element->speciality_name,
+                            "description" => $element->speciality_description
+                        ),
+                        "room" => array(
+                            "id" => (int)$element->room_id,
+                            "name" => $element->room_name,
+                            "location" => $element->room_location
+                        )
                     );
                 }
     
@@ -507,6 +560,11 @@
                 $this->resp->msg = "This doctor was deactivated !";
                 $this->jsonecho();
             }
+            if( $Doctor->get("role") == "supporter")
+            {
+                $this->resp->msg = "The role of doctor ".$Doctor->get("name")." is ".$Doctor->get("role").". You can't assign appointment to SUPPORTER";
+                $this->jsonecho();
+            }
 
             /**Step 5.2 - patient validation - patient with ID = 1 is default. In case, 
              * patient have not logged in Android application.
@@ -559,16 +617,15 @@
              * For example, i go to hospital and i am patient NO.40.
              * Maybe, i am a booking patient or normal patient.
              */
-            $date = Date("d-m-Y");
+            $date = Date("Y-m-d");
             $queryNumericalOrder = DB::table(TABLE_PREFIX.TABLE_APPOINTMENTS)
                     ->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".date", "=", $date)
                     ->orderBy(TABLE_PREFIX.TABLE_APPOINTMENTS.".id", "desc")
                     ->select("*");
 
             $result = $queryNumericalOrder->get();
-            $quantity = count($result);
-            $numerical_order = $quantity == 0 ? 1 : $quantity + 1;// because first value = 0
-
+            $quantityNumericalOrder = count($result);
+            $numerical_order = $quantityNumericalOrder == 0 ? 1 : $quantityNumericalOrder + 1;// because first value = 0
 
             /**Step 5.8 - position */
             $date = Date("Y-m-d");
@@ -578,9 +635,8 @@
                     ->orderBy(TABLE_PREFIX.TABLE_APPOINTMENTS.".id", "desc")
                     ->select("*");
             $result = $queryPosition->get();
-            $quantity = count($result);
-            $position = $quantity == 0 ? 1 : $quantity + 1;// because first value = 0
-
+            $quantityPosition = count($result);
+            $position = $quantityPosition == 0 ? 1 : $quantityPosition + 1;// because first value = 0
 
             /**Step 5.8 - status */
             $valid_status = ["processing", "done", "cancelled"];

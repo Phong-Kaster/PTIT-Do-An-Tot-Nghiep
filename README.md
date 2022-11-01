@@ -480,6 +480,18 @@ bệnh đã đặt thời gian vào khám thích hợp thì HỖ TRỢ VIÊN s�
 
 3. Chỉnh sửa phần top navigation để hiển thị đúng thông tin
 
+4. Xây dựng giao diện THỨ TỰ LỊCH KHÁM
+
+5. Đổ dữ liệu vào bảng THỨ TỰ LỊCH KHÁM
+
+- **01-11-2022**:
+
+1. Xử lý jQuery các nút chức năng trong THỨ TỰ LỊCH KHÁM
+
+2. Đổ dữ liệu vào các bộ lọc tìm kiếm trong THỨ TỰ LỊCH KHÁM
+
+3. Sửa lại chức năng getAll() trong Appointments Controller để nhiều chi tiết dữ liệu hơn
+
 # [**Controller Timeline**](#controller-timeline)
 
 Phần này mình lưu lại trình tự mình viết đồ án này. Nếu các bạn có nhu cầu tham khảo cách xử lý của mình. Các bạn có thể đọc code theo trình tự 

@@ -55,3 +55,6 @@ App::addRoute("GET", "/dashboard/?", "Dashboard");
 
 /******************************** RECOVERY *********************************/
 App::addRoute("GET", "/recovery/?", "Recovery");
+
+/******************************** APPOINTMENT *********************************/
+App::addRoute("GET", "/appointment/?", "Appointment");

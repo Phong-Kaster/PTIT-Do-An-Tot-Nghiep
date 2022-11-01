@@ -5,7 +5,6 @@ Chart.defaults.plugins.tooltip.position = 'nearest'
 Chart.defaults.plugins.tooltip.external = coreui.ChartJS.customTooltips
 Chart.defaults.defaultFontColor = '#646470'
 
-const API_URL = "http://192.168.1.221:8080/PTIT-Do-An-Tot-Nghiep/API";
 const random = (min, max) =>
   // eslint-disable-next-line no-mixed-operators
   Math.floor(Math.random() * (max - min + 1) + min)
@@ -103,8 +102,7 @@ function createChartWithAJAX(type, url, request)
               icon: 'warning',
               title: 'Warning',
               text: msg,
-              showConfirmButton: false,
-              timer: 1500
+              showConfirmButton: true
               });
           }
       },
@@ -428,6 +426,9 @@ options: {
 
 function getQuantityWithAJAX(type, url, params)
 {
+    //console.log(params);
+    // console.log(type);
+    // console.log(url);
     $.ajax({
       type: "GET",
       url: url,
@@ -442,19 +443,23 @@ function getQuantityWithAJAX(type, url, params)
           }
           else// result = 0
           {
-              title = 'error';
-              Swal.fire({
-              position: 'center',
-              icon: 'warning',
-              title: 'Warning',
-              text: msg,
-              showConfirmButton: false,
-              timer: 1500
-              });
+              console.log(resp.msg);
+              // title = 'error';
+              // Swal.fire({
+              // position: 'center',
+              // icon: 'warning',
+              // title: 'Warning',
+              // text: resp.msg,
+              // showConfirmButton: true
+              // });
           }
       },
       error: function(err) {
-          Swal.fire('Oops...', "Oops! An error occured. Please try again later!", 'error');
+          if(err.status != 200)
+          {
+            console.log(err);
+            //Swal.fire('Oops...', "Oops! An error occured. Please try again later!", 'error');
+          }
       }
   });
 }
@@ -474,15 +479,14 @@ function getDoctorInfoWithAJAX(url, params)
           }
           else// result = 0
           {
-              title = 'error';
-              Swal.fire({
-                position: 'center',
-                icon: 'warning',
-                title: 'Warning',
-                text: msg,
-                showConfirmButton: false,
-                timer: 1500
-              });
+              // title = 'error';
+              // Swal.fire({
+              //   position: 'center',
+              //   icon: 'warning',
+              //   title: 'Warning',
+              //   text: msg,
+              //   showConfirmButton: true
+              // });
           }
       },
       error: function(err) {
@@ -493,7 +497,6 @@ function getDoctorInfoWithAJAX(url, params)
 
 function createDoctorTable(resp)
 {
-    
     
     /** loop resp to append into table */
     for(let i=0; i< resp.data.length; i++)
@@ -571,7 +574,3 @@ function createDoctorTable(resp)
         $("div.table-responsive tbody").append(element);
     }
 }
-
-$(document).ready(function() {
-
-});
