@@ -115,5 +115,35 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script src="<?= APPURL."/assets/js/customized/appointment.js?v=".VERSION ?>"></script>
+    <script>
+        /*************************************************************************
+         * ROLE is used in umbrella-corporation/assets/js/customized/appointment.js
+         * it is used to append 2 options when doctor's role is MEMBER
+         */
+        let ROLE = "<?= $AuthUser->get("role") ?>";
+
+
+
+        /******************************************************************/
+        let date = getCurrentDate();
+        let order = {}
+        let role = "<?= $AuthUser->get("role") ?>";
+
+        /**Case 1 - doctor is MEMBER => list appointments by ascending */
+        if( role != "member" )
+        {
+            order = { column: "position", dir: "desc" }
+        }
+        /**Case 2 - doctor is not MEMBER => list appointments by descending */
+        else
+        {
+            order = { column: "position", dir: "asc" }    
+        }
+
+        
+        let params = { date: date, order: order, status:"processing" }
+        let url = API_URL + "/appointments";
+        setupAppointmentTable(url, params);
+    </script>
   </body>
 </html>

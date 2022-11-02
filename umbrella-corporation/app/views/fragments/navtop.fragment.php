@@ -51,10 +51,9 @@
 
                     <i class="icon me-2 cil-keyboard"></i>
                     Thay đổi mật khẩu</a><a class="dropdown-item" href="#">
-
-                    <i class="icon me-2 cil-soccer"></i> 
-                    Thay đổi mật khẩu</a><a class="dropdown-item" href="#">
                   </a>
+
+
 
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="<?= APPURL."/logout" ?>">

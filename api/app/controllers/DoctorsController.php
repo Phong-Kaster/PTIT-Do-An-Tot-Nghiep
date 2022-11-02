@@ -10,12 +10,6 @@
                 header("Location: ".APPURL."/login");
                 exit;
             }
-            if( $AuthUser->get("role") != "admin" )
-            {
-                $this->resp->result = 0;
-                $this->resp->msg = "You are not admin & you can't do this action !";
-                $this->jsonecho();
-            }
             
             $request_method = Input::method();
             if($request_method === 'GET')
@@ -41,9 +35,14 @@
             $data = [];
             
 
-            if( !$AuthUser || $AuthUser->get("role") != "admin" )
+            /**Step 2 - verify user's role */
+            $valid_roles = ["admin", "supporter", "member"];
+            $role_validation = in_array($AuthUser->get("role"), $valid_roles);
+            if( !$role_validation )
             {
-                $this->resp->msg = "You are not admin & you can't do this action !";
+                $this->resp->result = 0;
+                $this->resp->msg = "You don't have permission to do this action. Only "
+                .implode(', ', $valid_roles)." can do this action !";
                 $this->jsonecho();
             }
 
@@ -176,6 +175,19 @@
         {
             /**Step 1 - get input data */
             $this->resp->result = 0;
+            $AuthUser =$this->getVariable("AuthUser");
+
+
+            /**Step 2 - verify user's role */
+            $valid_roles = ["admin"];
+            $role_validation = in_array($AuthUser->get("role"), $valid_roles);
+            if( !$role_validation )
+            {
+                $this->resp->result = 0;
+                $this->resp->msg = "You don't have permission to do this action. Only "
+                .implode(', ', $valid_roles)." can do this action !";
+                $this->jsonecho();
+            }
 
             $required_fields = ["email", "phone", "name", "role"];
             foreach($required_fields as $field)

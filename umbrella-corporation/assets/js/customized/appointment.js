@@ -4,7 +4,7 @@
  * @param {} url is the API_URL to make AJAX
  * this function always get appointments created today
  */
-function setup(url, params)
+function setupAppointmentTable(url, params)
 {
     /**Step 1 - set title for the table */
     setupTitle(params);
@@ -18,7 +18,7 @@ function setup(url, params)
       success: function(resp) {
           if(resp.result == 1)// result = 1
           {
-                setupAppointmentTable(resp);
+                createAppointmentTable(resp);
           }
           else// result = 0
           {
@@ -46,7 +46,7 @@ function setup(url, params)
  * @since 31-10-2022
  * setup date picker
  */
- function setupAppointmentTable(resp)
+ function createAppointmentTable(resp)
  {
     $("tbody").empty();// empty the table
      /** loop resp to append into table */
@@ -54,7 +54,7 @@ function setup(url, params)
      {
          let numericalOrder = resp.data[i].numerical_order;
          let patientName = resp.data[i].patient_name;
-         //let gender = resp.data[i].gender == 1 ? "Nam" : "Nữ";
+         //gender = resp.data[i].gender == 1 ? "Nam" : "Nữ";
          let patientBirthday = resp.data[i].patient_birthday;
          let appointmentID = resp.data[i].id;
          let specialityName = resp.data[i].speciality.name;
@@ -67,7 +67,24 @@ function setup(url, params)
          let position = resp.data[i].position;
          let createAt = resp.data[i].create_at;
          let updateAt = resp.data[i].update_at;
-         let element = `
+         let status = resp.data[i].status;
+         let statusValue;
+         switch(status)
+         {
+            case "processing":
+                statusValue = "Đang xử lý";
+                break;
+            case "done":
+                statusValue = "Hoàn thành";
+                break;
+            case "cancelled":
+                statusValue = "Hủy bỏ";
+                break;
+            default:
+                statusValue = "Đang xử lý";
+                break;
+         }
+         element1 = `
                  <!-- EXAMPLE 2 -->
                  <tr data-id=${appointmentID} class="align-middle">
                      <td class="text-center" id="numerical-order">
@@ -100,28 +117,25 @@ function setup(url, params)
                      <!-- UPDATE AT -->
                      <td>
                          <div class="fw-semibold" id="doctor-name">
-                             ${doctorName}
+                             ${statusValue}
                          </div>
                      </td>
  
                      <td>
-                        <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-                                <button id="button-done" data-id=${appointmentID} class="btn btn-outline-success" type="button">Xong</button>
-                                <button id="button-cancel" data-id=${appointmentID} class="btn btn-outline-warning" type="button">Hủy</button>
-                                <button id="button-delete" data-id=${appointmentID} class="btn btn-outline-danger" type="button">Xóa</button>
-                            <div class="btn-group" role="group">
-                            <button class="btn btn-outline-primary dropdown-toggle" id="btnGroupDrop1" type="button" data-coreui-toggle="dropdown" aria-expanded="false">Dropdown</button>
+                        <div class="btn-group" role="group" aria-label="Button group with nested dropdown">`;
+         let element2 = `<div class="btn-group" role="group">
+                            <button class="btn btn-outline-primary dropdown-toggle" id="btnGroupDrop1" type="button" data-coreui-toggle="dropdown" aria-expanded="false">Khác</button>
                                 <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1" style="">
                                     <li class="dropdown-item"  data-coreui-toggle="collapse" href="#appointment-${appointmentID}"
                                         aria-expanded="false" aria-controls="#appointment-${appointmentID}">Chi tiết</li>
                                     <li class="dropdown-item" id="button-update" data-id=${appointmentID}>Sửa</li>
+                                    `;
+         let element3 = `
                                 </ul>
                             </div>
                         </div>
                      </td>
                  </tr>
- 
- 
                  <tr data-id=${appointmentID} class="collapse" id="appointment-${appointmentID}">
                      <td colspan="9">
                          <table class="table">
@@ -156,11 +170,49 @@ function setup(url, params)
                  </tr>
                  <!-- end EXAMPLE 2 -->
          `;
- 
          
+         let element = element1;
+
+         /**ROLE is from umbrella-corporation/assets/views/appointments.php
+          * MEMBER has 2 buttons: Viết bệnh án & Viết phác đồ điều trị
+          */
+         if( ROLE == "member")
+         {
+            if( status == "processing")
+            {
+                element += 
+                        `<button id="button-done" data-id=${appointmentID} class="btn btn-outline-success" type="button">Xong</button>
+                        <button id="button-cancel" data-id=${appointmentID} class="btn btn-outline-warning" type="button">Hủy</button>
+                        <button id="button-delete" data-id=${appointmentID} class="btn btn-outline-danger" type="button">Xóa</button>`
+            }
+            element += element2+
+                    `<li class="dropdown-item" id="button-create-record" data-id=${appointmentID}>Bệnh án</li>
+                     <li class="dropdown-item" id="button-create-treatments" data-id=${appointmentID}>Phác đồ điều trị</li>` 
+                    +element3;
+         }
+         /** ADMIN & SUPPORTER has DELETE button */
+         if( ROLE != "member")
+         {
+            if( status == "processing")
+            {
+                element += 
+                        `<button id="button-done" data-id=${appointmentID} class="btn btn-outline-success" type="button">Xong</button>
+                        <button id="button-cancel" data-id=${appointmentID} class="btn btn-outline-warning" type="button">Hủy</button>
+                        <button id="button-delete" data-id=${appointmentID} class="btn btn-outline-danger" type="button">Xóa</button>`
+                        + element2
+                        + element3;
+            }
+            else
+            {
+                element += element2
+                    +element3;
+            }
+         }
          $("tbody").append(element);
      }
  }
+
+
 
 /**
  * @author Phong-Kaster
@@ -211,8 +263,8 @@ function setupButton()
         let url = API_URL + "/appointments";
         let today = new Date();
         date = today.getFullYear() + "-" + (today.getMonth()+1) + "-" + today.getDate();
-        let params = { date: date }
-        setup(url, params);
+        let params = { date: date, status:"processing" }
+        setupAppointmentTable(url, params);
 
         let paramsDoctor = {};
         setupDropdownDoctor(paramsDoctor);
@@ -251,7 +303,7 @@ function setupButton()
 
         /**Step 3 - query */
         let url = API_URL + "/appointments";
-        setup(url, params);
+        setupAppointmentTable(url, params);
     });
 }
 
@@ -403,7 +455,6 @@ function setupChooseSpeciality()
 {
     $("#speciality").click(function(){
         let specialityId = $(this).val();
-        console.log("speciality id " + specialityId);
         if(specialityId != null)
         {
             let params = {
@@ -426,6 +477,10 @@ function setupAppointmentActions()
     /**BUTTON DONE */
     $(document).on('click','#button-done',function(){
         let id = $(this).attr("data-id");
+        let url = API_URL+"/appointments/"+id;
+        let method = "patch";
+        let params = { status:"done" };
+        makeAppointmentAction(method, url, id, params );
     });
 
     /**BUTTON CANCEL */
@@ -470,12 +525,13 @@ function setupAppointmentActions()
 }
 
 
-function makeAppointmentAction(method, url, id)
+function makeAppointmentAction(method, url, id, params = [])
 {
     /**Step 1 - make AJAX call */
     $.ajax({
         type: method,
         url: url,
+        data: params,
         dataType: "JSON",
         success: function(resp) {
             if(resp.result == 1)// result = 1
@@ -530,9 +586,5 @@ $(document).ready(function(){
     
 
     /**Step 3 - run setup for the first time open this page */
-    let date = getCurrentDate();
-    let order = { column: "position", dir: "asc" }
-    let params = { date: date, order: order }
-    let url = API_URL + "/appointments";
-    setup(url, params);
+    //this block of code is written in views/appointments.php
 });

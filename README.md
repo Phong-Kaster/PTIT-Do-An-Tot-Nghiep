@@ -492,6 +492,27 @@ bệnh đã đặt thời gian vào khám thích hợp thì HỖ TRỢ VIÊN s�
 
 3. Sửa lại chức năng getAll() trong Appointments Controller để nhiều chi tiết dữ liệu hơn
 
+- **02-11-2022**:
+
+1. Hàm get All của Specialities | Doctors | Appointments Controller giờ sẽ được truy cập bởi 
+tất cả bác sĩ ADMIN | SUPPORTER | MEMBER.
+
+2. Trong phần quản lý THỨ TỰ KHÁM BỆNH
+
+Nếu trạng thái lịch khám bệnh là PROCESSING thì hiển thị đủ 3 nút XONG | HỦY | XÓA
+Nếu trạng thía lịch khám bệnh không là PROCESSING  thì ẩn 3 nút chức năng XONG | HỦY | XÓA
+
+<p align="center">
+    <img src="./API/photo/image4.png" />
+</p>
+
+Nếu bác sĩ đang nhập là MEMBER thì nút KHÁC sẽ có BỆNH ÁN và PHÁC ĐỒ ĐIỀU TRỊ.
+Nếu bác sĩ không là MEMBER thì nút KHÁC sẽ chỉ có CHI TIẾT và SỬA.
+
+<p align="center">
+    <img src="./API/photo/image5.png" width=200 />
+</p>
+
 # [**Controller Timeline**](#controller-timeline)
 
 Phần này mình lưu lại trình tự mình viết đồ án này. Nếu các bạn có nhu cầu tham khảo cách xử lý của mình. Các bạn có thể đọc code theo trình tự 

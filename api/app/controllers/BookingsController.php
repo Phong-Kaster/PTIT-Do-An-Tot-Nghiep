@@ -21,16 +21,7 @@
                 exit;
             }
 
-            /**Step 2 - verify user's role */
-            $valid_roles = ["admin", "supporter"];
-            $role_validation = in_array($AuthUser->get("role"), $valid_roles);
-            if( !$role_validation )
-            {
-                $this->resp->result = 0;
-                $this->resp->msg = "You don't have permission to do this action. Only "
-                .implode(', ', $valid_roles)." can do this action !";
-                $this->jsonecho();
-            }
+            
 
             $request_method = Input::method();
             if($request_method === 'GET')
@@ -57,6 +48,17 @@
             $this->resp->result = 0;
             $AuthUser = $this->getVariable("AuthUser");
             $data = [];
+
+            /**Step 2 - verify user's role */
+            $valid_roles = ["admin", "supporter", "member"];
+            $role_validation = in_array($AuthUser->get("role"), $valid_roles);
+            if( !$role_validation )
+            {
+                $this->resp->result = 0;
+                $this->resp->msg = "You don't have permission to do this action. Only "
+                .implode(', ', $valid_roles)." can do this action !";
+                $this->jsonecho();
+            }
             
 
             /**Step 2 - get filters */
@@ -214,6 +216,16 @@
             $AuthUser = $this->getVariable("AuthUser");
             $data = [];
 
+            /**Step 2 - verify user's role */
+            $valid_roles = ["admin", "supporter"];
+            $role_validation = in_array($AuthUser->get("role"), $valid_roles);
+            if( !$role_validation )
+            {
+                $this->resp->result = 0;
+                $this->resp->msg = "You don't have permission to do this action. Only "
+                .implode(', ', $valid_roles)." can do this action !";
+                $this->jsonecho();
+            }
 
             /**Step 2 - get required data */
             $required_fields = ["service_id", "booking_name", "booking_phone",

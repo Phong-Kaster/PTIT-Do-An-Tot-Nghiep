@@ -438,3 +438,153 @@ Stack trace:
 [01-Nov-2022 16:30:22 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 133
 [01-Nov-2022 16:30:22 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 133
 [01-Nov-2022 16:30:22 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 133
+[02-Nov-2022 03:06:39 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 133
+[02-Nov-2022 03:06:39 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 133
+[02-Nov-2022 03:06:39 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 133
+[02-Nov-2022 03:06:39 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 133
+[02-Nov-2022 03:06:39 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 133
+[02-Nov-2022 03:06:39 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 133
+[02-Nov-2022 03:18:13 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 03:18:13 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 03:18:13 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 03:18:13 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 03:18:13 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 03:18:13 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 03:19:54 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 03:19:54 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 03:19:54 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 03:19:54 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 03:19:54 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 03:19:54 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 03:31:39 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 03:31:39 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 03:31:39 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 03:31:39 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 03:31:39 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 03:31:39 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 03:40:15 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 03:40:15 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 03:40:15 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 03:40:15 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 03:40:15 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 03:40:15 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 03:42:49 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 03:42:49 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 03:42:49 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 03:42:49 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 03:42:49 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 03:42:49 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 03:52:13 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 03:52:13 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 03:52:13 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 03:52:13 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 03:52:13 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 03:52:13 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 03:52:39 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 03:52:39 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 03:52:39 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 03:52:39 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 03:52:39 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 03:52:39 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:25:31 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:25:31 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:25:31 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:25:31 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:25:31 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:25:31 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:33:38 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:33:38 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:33:38 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:33:38 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:33:38 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:33:38 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:33:55 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:33:55 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:33:55 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:33:55 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:33:55 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:33:55 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:36:11 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:36:11 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:36:11 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:36:11 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:36:11 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:36:11 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:38:13 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:38:13 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:38:13 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:38:13 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:38:13 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:38:13 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:38:24 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:38:24 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:38:24 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:38:24 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:38:24 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:38:24 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:46:48 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:46:48 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:46:48 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:46:48 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:46:48 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:46:48 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:51:37 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:51:37 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:51:37 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:51:37 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:51:37 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:51:37 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:56:44 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:56:44 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:56:44 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:56:44 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:56:44 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:56:44 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:59:13 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:59:13 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:59:13 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:59:13 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:59:13 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 04:59:13 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 05:21:46 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 05:21:46 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 05:21:46 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 05:21:46 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 05:21:46 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 05:21:46 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 05:25:04 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 05:25:04 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 05:25:04 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 05:25:04 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 05:25:04 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 05:25:04 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 05:25:13 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 05:25:13 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 05:25:13 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 05:25:13 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 05:25:13 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 05:25:13 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 05:25:28 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 05:25:28 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 05:25:28 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 05:25:28 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 05:25:28 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 05:25:28 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 05:25:34 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 05:25:34 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 05:25:34 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 05:25:34 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 05:25:34 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 05:25:34 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 05:26:17 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 05:26:17 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 05:26:17 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 05:26:17 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 05:26:17 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 05:26:17 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 05:27:34 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 05:27:34 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 05:27:34 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 05:27:34 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 05:27:34 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[02-Nov-2022 05:27:34 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
