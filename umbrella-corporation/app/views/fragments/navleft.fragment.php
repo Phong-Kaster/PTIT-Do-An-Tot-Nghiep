@@ -19,7 +19,7 @@
         <li class="nav-title">Lịch khám bệnh</li>
 
         <li class="nav-item">
-          <a class="nav-link <?= $Nav->activeMenu == "appointment" ? "active" : "" ?>" href="<?= APPURL."/appointment" ?>">
+          <a class="nav-link <?= $Nav->activeMenu == "appointment" ? "active" : "" ?>" href="<?= APPURL."/appointments/?" ?>">
             <i class="nav-icon cil-calendar"></i> 
             Thứ tự lịch khám
           </a>

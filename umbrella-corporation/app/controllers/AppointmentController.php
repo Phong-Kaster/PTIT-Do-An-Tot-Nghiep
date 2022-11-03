@@ -15,16 +15,12 @@
             }
 
             $Route = $this->getVariable("Route");
+            $this->setVariable("id", 0);
             if( isset($Route->params->id) )
             {
                 $this->setVariable("id", $Route->params->id);
-                $this->view("appointment");
             }
-            else
-            {
-                header("Location: ".APPURL."/appointment");
-            }
-            
+            $this->view("appointment");
         }
     }
 ?>

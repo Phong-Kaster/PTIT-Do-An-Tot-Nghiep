@@ -517,7 +517,10 @@ Nếu bác sĩ không là MEMBER thì nút KHÁC sẽ chỉ có CHI TIẾT và S
 
 - **03-11-2022**:
 
-1. Viết xong phần phân trang cho website bằng Javascript kết hợp JQuery
+1. Viết xong phần phân trang cho website bằng Javascript kết hợp JQuery(trước giờ chưa bao giờ làm kĩ 
+phần này nên mất nhiều thời gian quá)
+
+2. Dựng giao diện cho việc thêm và chỉnh sửa THỨ TỰ LỊCH KHÁM
 
 # [**Controller Timeline**](#controller-timeline)
 

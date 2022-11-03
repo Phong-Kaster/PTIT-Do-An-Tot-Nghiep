@@ -3,9 +3,8 @@
           <button class="header-toggler px-md-0 me-md-3" type="button" onclick="coreui.Sidebar.getInstance(document.querySelector('#sidebar')).toggle()">
             <i class="icon icon-lg cil-applications"></i>
           </button><a class="header-brand d-md-none" href="#">
-            <svg width="118" height="46" alt="CoreUI Logo">
-              <use xlink:href="assets/brand/coreui.svg#full"></use>
-            </svg></a>
+          <i width="118" height="46" alt="CoreUI Logo" class="cil-bell"></i></a>
+            
           <ul class="header-nav d-none d-md-flex">
             <li class="nav-item"><a class="nav-link" href="<?= APPURL."/dashboard" ?>">Dashboard</a></li>
             <li class="nav-item"><a class="nav-link" href="<?= APPURL."/doctors" ?>"">Quản lý bác sĩ</a></li>

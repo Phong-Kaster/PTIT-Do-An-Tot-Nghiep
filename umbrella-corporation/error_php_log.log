@@ -1039,3 +1039,19 @@ Stack trace:
 #3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php(23 in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php on line 152
 [03-Nov-2022 03:18:45 UTC] PHP Warning:  require_once(D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation/app/views/fragments/appointments1.fragment.php): failed to open stream: No such file or directory in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointments.php on line 94
 [03-Nov-2022 03:18:45 UTC] PHP Fatal error:  require_once(): Failed opening required 'D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation/app/views/fragments/appointments1.fragment.php' (include_path='D:\xampp\php\PEAR') in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointments.php on line 94
+[03-Nov-2022 13:46:42 UTC] PHP Notice:  Undefined variable: id in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 118
+[03-Nov-2022 13:47:50 UTC] PHP Notice:  Undefined variable: id in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 118
+[03-Nov-2022 13:48:49 UTC] PHP Notice:  Undefined variable: id in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 118
+[03-Nov-2022 13:48:50 UTC] PHP Notice:  Undefined variable: id in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 118
+[03-Nov-2022 13:48:51 UTC] PHP Notice:  Undefined variable: id in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 118
+[03-Nov-2022 13:48:52 UTC] PHP Notice:  Undefined variable: id in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 118
+[03-Nov-2022 13:48:53 UTC] PHP Notice:  Undefined variable: id in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 118
+[03-Nov-2022 13:49:04 UTC] PHP Notice:  Undefined variable: id in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 118
+[03-Nov-2022 13:49:13 UTC] PHP Notice:  Undefined variable: id in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 118
+[03-Nov-2022 13:49:25 UTC] PHP Notice:  Undefined variable: id in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 118
+[03-Nov-2022 13:50:07 UTC] PHP Notice:  Undefined variable: id in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 118
+[03-Nov-2022 13:50:12 UTC] PHP Notice:  Undefined variable: id in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 118
+[03-Nov-2022 13:50:33 UTC] PHP Notice:  Undefined variable: id in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 119
+[03-Nov-2022 13:50:48 UTC] PHP Notice:  Undefined variable: id in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 119
+[03-Nov-2022 13:50:51 UTC] PHP Notice:  Undefined variable: id in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 119
+[03-Nov-2022 13:50:53 UTC] PHP Notice:  Undefined variable: id in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 119

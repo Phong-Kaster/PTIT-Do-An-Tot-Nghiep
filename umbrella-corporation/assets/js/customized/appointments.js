@@ -1,5 +1,9 @@
-
-function getConditionFilter()
+/**
+ * @author Phong-Kaster
+ * @since 03-11-2022
+ * @returns Object params contains filtering conditions
+ */
+function getFilteringCondition()
 {
     let search = $("#search").val();
     let orderDir = $("#order-dir :selected").val() ? $("#order-dir :selected").val() : "desc";
@@ -43,6 +47,8 @@ function setupAppointmentTable(url, params)
     //console.log(params);
     /**Step 1 - set title for the table */
     setupTitle(params);
+
+
     /**Step 2 - call AJAX */
     $.ajax({
       type: "GET",
@@ -74,8 +80,16 @@ function setupAppointmentTable(url, params)
 }
 
 
-
-function pagination(url, totalRecords, records)
+/**
+ * @author Phong-Kaster
+ * @param {String} url 
+ * @param {int} totalRecord 
+ * @param {int} currentRecord is the number of AJAX returns for us.
+ * For instance, total record is 15 records but DEFAULT_LENGTH is 5 
+ * so that AJAX returns first 5 records.
+ * The "currentRecord" is used to calculate next step for AJAX.
+ */
+function pagination(url, totalRecord, currentRecord)
 {
     let buttonPrevious = $("ul#pagination li#button-previous");
     let buttonNext = $("ul#pagination li#button-next");
@@ -85,12 +99,12 @@ function pagination(url, totalRecords, records)
 
     let currentPage = 1;
     let quantityOnePage = DEFAULT_LENGTH;
-    let totalPage = Math.ceil(totalRecords / quantityOnePage);
+    let totalPage = Math.ceil(totalRecord / quantityOnePage);
     let start = 0;
 
     // console.log("=====================================");
-    // console.log("totalRecords: " + totalRecords);
-    // console.log("records: " + records);
+    // console.log("totalRecord: " + totalRecord);
+    // console.log("currentRecord: " + currentRecord);
     // console.log("totalPage: " + totalPage);
     if( totalPage == 1 )
     {
@@ -132,7 +146,7 @@ function pagination(url, totalRecords, records)
             
             /**query */
             start = quantityOnePage*(currentPage-1);
-            let params = getConditionFilter();
+            let params = getFilteringCondition();
             params["start"] = start;
             params["length"] = quantityOnePage;
 
@@ -184,16 +198,16 @@ function pagination(url, totalRecords, records)
                 buttonPrevious.removeClass("disabled");
             }
             /**Step 3 - set up start where query begin returns the result for us */
-            if(records == quantityOnePage && currentPage == 1)
+            if(currentRecord == quantityOnePage && currentPage == 1)
             {
                 start = quantityOnePage;
             }
-            if(records == quantityOnePage && currentPage != 1)
+            if(currentRecord == quantityOnePage && currentPage != 1)
             {
                 start = quantityOnePage*(currentPage-1);
             }
             
-            let params = getConditionFilter();
+            let params = getFilteringCondition();
             params["start"] = start;
             console.log("===next button");
             console.log("currentPage: " + currentPage);
@@ -402,32 +416,32 @@ function pagination(url, totalRecords, records)
  }
 
 
-
+ 
 /**
  * @author Phong-Kaster
  * @since 31-10-2022
  * setup date picker
  */
-function setupDatePicker()
-{
-    let today = new Date();
-    let year = today.getFullYear();
-    let month = today.getMonth()+1;
-    let day = today.getDate();
-    if( month < 10)
-    {
-        month = "0" + month;
-    }
-    if( day < 10)
-    {
-        day = "0" + day;
-    }
-
-    date = year + "-" + month + "-" + day;
-    $("#datepicker").val(date);
-    $("#datepicker").datepicker({ dateFormat: 'yy-mm-dd'});
-}
-
+ function setupDatePicker()
+ {
+     let today = new Date();
+     let year = today.getFullYear();
+     let month = today.getMonth()+1;
+     let day = today.getDate();
+     if( month < 10)
+     {
+         month = "0" + month;
+     }
+     if( day < 10)
+     {
+         day = "0" + day;
+     }
+ 
+     date = year + "-" + month + "-" + day;
+     $("#datepicker").val(date);
+     $("#datepicker").datepicker({ dateFormat: 'yy-mm-dd'});
+ }
+ 
 
 
 /**
@@ -462,7 +476,7 @@ function setupButton()
     /** BUTTON SEARCH*/
     $("#button-search").click(function(){
         /**Step 1 - get filter values */
-        let params = getConditionFilter();
+        let params = getFilteringCondition();
 
         /**Step 2 - query */
         let url = API_URL + "/appointments";
