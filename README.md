@@ -513,6 +513,12 @@ Nếu bác sĩ không là MEMBER thì nút KHÁC sẽ chỉ có CHI TIẾT và S
     <img src="./API/photo/image5.png" width=200 />
 </p>
 
+3. Chỉnh lại bộ câu lệnh SQL script version 4 và thêm một số dữ liệu mẫu để khi copy vào là có thể chạy được luôn. 
+
+- **03-11-2022**:
+
+1. Viết xong phần phân trang cho website bằng Javascript kết hợp JQuery
+
 # [**Controller Timeline**](#controller-timeline)
 
 Phần này mình lưu lại trình tự mình viết đồ án này. Nếu các bạn có nhu cầu tham khảo cách xử lý của mình. Các bạn có thể đọc code theo trình tự 

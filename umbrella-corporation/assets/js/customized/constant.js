@@ -1,6 +1,6 @@
 const API_URL = "http://localhost:8080/PTIT-Do-An-Tot-Nghiep/API";
 const APP_URL = "http://localhost:8080/PTIT-Do-An-Tot-Nghiep/umbrella-corporation";
-
+const DEFAULT_LENGTH = 5;
 /**
  * @author Phong-Kaster
  * @since 01-11-2022

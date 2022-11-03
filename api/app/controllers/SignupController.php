@@ -61,6 +61,7 @@ class SignupController extends Controller
         $active = 1;
         $avatar = Input::post("avatar") ? Input::post("avatar") : "";
         $specialityId = 1;
+        $roomId = 1;
         date_default_timezone_set('Asia/Ho_Chi_Minh');
 
 
@@ -140,6 +141,7 @@ class SignupController extends Controller
                     ->set("create_at", date("Y-m-d H:i:s"))
                     ->set("update_at", date("Y-m-d H:i:s"))
                     ->set("speciality_id", $specialityId)
+                    ->set("room_id", $roomId)
                     ->save();
 
             $this->resp->result = 1;
@@ -156,7 +158,8 @@ class SignupController extends Controller
                 "avatar" => $Doctor->get("avatar"),
                 "create_at" => $Doctor->get("create_at"),
                 "update_at" => $Doctor->get("update_at"),
-                "speciality_id" => (int)$Doctor->get("speciality_id")
+                "speciality_id" => (int)$Doctor->get("speciality_id"),
+                "room_id" => (int)$Doctor->get("room_id")
             );
 
             $data = [

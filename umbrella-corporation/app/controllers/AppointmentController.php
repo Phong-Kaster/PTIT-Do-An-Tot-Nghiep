@@ -14,7 +14,17 @@
                 exit;
             }
 
-            $this->view("appointment");
+            $Route = $this->getVariable("Route");
+            if( isset($Route->params->id) )
+            {
+                $this->setVariable("id", $Route->params->id);
+                $this->view("appointment");
+            }
+            else
+            {
+                header("Location: ".APPURL."/appointment");
+            }
+            
         }
     }
 ?>

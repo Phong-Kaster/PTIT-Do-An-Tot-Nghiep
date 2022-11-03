@@ -1,3 +1,37 @@
+
+function getConditionFilter()
+{
+    let search = $("#search").val();
+    let orderDir = $("#order-dir :selected").val() ? $("#order-dir :selected").val() : "desc";
+    let orderColumn = $("#order-column :selected").val() ? $("#order-column :selected").val() : "position";
+    let status = $("#status :selected").val();
+    let speciality = $("#speciality :selected").val();
+    //let room = $("#room :selected").val();
+    let doctor = $("#doctor :selected").val();
+    //let length = $("#length :selected").val() ? $("#length :selected").val() : DEFAULT_LENGTH;
+    let date = $("#datepicker").val() ? $("#datepicker").val() : getCurrentDate();
+
+
+    /**Step 2 - set up parameters */
+    let order = {
+        "dir": orderDir,
+        "column": orderColumn
+    };
+    let params = {
+        search: search,
+        order: order,
+        length: DEFAULT_LENGTH,
+        speciality: speciality,
+        doctor: doctor,
+        date: date,
+        status: status
+    };
+
+    return params;
+}
+
+
+
 /**
  * @author Phong-Kaster
  * @since 31-10-2022
@@ -6,9 +40,9 @@
  */
 function setupAppointmentTable(url, params)
 {
+    //console.log(params);
     /**Step 1 - set title for the table */
     setupTitle(params);
-
     /**Step 2 - call AJAX */
     $.ajax({
       type: "GET",
@@ -19,6 +53,7 @@ function setupAppointmentTable(url, params)
           if(resp.result == 1)// result = 1
           {
                 createAppointmentTable(resp);
+                pagination(url, resp.quantity, resp.data.length);
           }
           else// result = 0
           {
@@ -28,8 +63,7 @@ function setupAppointmentTable(url, params)
                 icon: 'warning',
                 title: 'Warning',
                 text: msg,
-                showConfirmButton: false,
-                timer: 1500
+                showConfirmButton: true
               });
           }
       },
@@ -37,6 +71,157 @@ function setupAppointmentTable(url, params)
           Swal.fire('Oops...', "Oops! An error occured. Please try again later!", 'error');
       }
     })//end AJAX
+}
+
+
+
+function pagination(url, totalRecords, records)
+{
+    let buttonPrevious = $("ul#pagination li#button-previous");
+    let buttonNext = $("ul#pagination li#button-next");
+    let page = $("ul#pagination li#current-page");
+    buttonNext.removeClass("disabled");
+    buttonPrevious.removeClass("disabled");
+
+    let currentPage = 1;
+    let quantityOnePage = DEFAULT_LENGTH;
+    let totalPage = Math.ceil(totalRecords / quantityOnePage);
+    let start = 0;
+
+    // console.log("=====================================");
+    // console.log("totalRecords: " + totalRecords);
+    // console.log("records: " + records);
+    // console.log("totalPage: " + totalPage);
+    if( totalPage == 1 )
+    {
+        buttonNext.addClass("disabled");
+        buttonPrevious.addClass("disabled");
+        page.text(1);
+    }
+    // if( currentPage == totalPage && totalPage > 1 )
+    // {
+    //     buttonNext.addClass("disabled");
+    //     buttonPrevious.removeClass("disabled");
+    // }
+
+    /***********BUTTON PREVIOUS***********/
+    buttonPrevious.click(function(){
+        if( currentPage == 1)
+        {
+            buttonPrevious.addClass("disabled");
+        }
+        else
+        {
+            currentPage--;
+            page.text(currentPage);
+            if( currentPage < totalPage && currentPage > 1)/**Case 1 - total page == 3 & current page == 2 => enable */
+            {
+                buttonNext.removeClass("disabled");
+            }
+            
+            if( currentPage == 1 && totalPage != 1 )/**Case 2 - total page == currentPage == 1 => disable*/
+            {
+                buttonPrevious.addClass("disabled");
+                buttonNext.removeClass("disabled");
+            }
+            
+            if( currentPage > 1)/**Case 3 - current page > 1 */
+            {
+                buttonPrevious.removeClass("disabled");
+            }
+            
+            /**query */
+            start = quantityOnePage*(currentPage-1);
+            let params = getConditionFilter();
+            params["start"] = start;
+            params["length"] = quantityOnePage;
+
+            /**Step 1 - get filter values */
+            $.ajax({
+                type: "GET",
+                url: url,
+                data: params,
+                dataType: "JSON",
+                success: function(resp) {
+                    if(resp.result == 1)// result = 1
+                    {
+                        createAppointmentTable(resp);
+                    }
+                    else// result = 0
+                    {
+                        console.log(resp.msg);
+                    }
+                },
+                error: function(err) {
+                    console.log(err);
+                }
+            })
+        }
+    });
+
+
+
+    /*************BUTTON NEXT************/
+    buttonNext.click(function(){
+        if( totalPage == currentPage )
+        {
+            buttonNext.addClass("disabled");
+        }
+        else
+        {
+            currentPage++;
+            page.text(currentPage);
+            /**Case 1 - total page == 2 && next current page == 2 => disable NEXT , enable PREVIOUS */
+            if( totalPage > 1 && currentPage == totalPage)
+            {
+                buttonNext.addClass("disabled");
+                buttonPrevious.removeClass("disabled");
+            }
+            /**Case 2 - total page == 3 && next current page == 2 => enable both buttons */
+            if( totalPage > 1 && currentPage < totalPage)
+            {
+                buttonNext.removeClass("disabled");
+                buttonPrevious.removeClass("disabled");
+            }
+            /**Step 3 - set up start where query begin returns the result for us */
+            if(records == quantityOnePage && currentPage == 1)
+            {
+                start = quantityOnePage;
+            }
+            if(records == quantityOnePage && currentPage != 1)
+            {
+                start = quantityOnePage*(currentPage-1);
+            }
+            
+            let params = getConditionFilter();
+            params["start"] = start;
+            console.log("===next button");
+            console.log("currentPage: " + currentPage);
+            console.log("start: " + start);
+            console.log(params);
+            /**Step 2 - call AJAX */
+            $.ajax({
+                type: "GET",
+                url: url,
+                data: params,
+                dataType: "JSON",
+                success: function(resp) {
+                    if(resp.result == 1)// result = 1
+                    {
+                       
+                        createAppointmentTable(resp);
+                    }
+                    else// result = 0
+                    {
+                        console.log(resp.msg);
+                    }
+                },
+                error: function(err) {
+                    console.log(err);
+                }
+            })//end AJAX
+        }
+    })
 }
 
 
@@ -72,13 +257,19 @@ function setupAppointmentTable(url, params)
          switch(status)
          {
             case "processing":
-                statusValue = "Đang xử lý";
+                statusValue = `<div class="badge me-1 rounded-pill bg-dark">
+                                    Đang xử lý
+                               </div>`;
                 break;
             case "done":
-                statusValue = "Hoàn thành";
+                statusValue = `<div class="badge me-1 rounded-pill bg-success">
+                                    Xong
+                                </div>`;
                 break;
             case "cancelled":
-                statusValue = "Hủy bỏ";
+                statusValue = `<div class="badge me-1 rounded-pill bg-warning">
+                                    Hủy bỏ
+                              </div>`;
                 break;
             default:
                 statusValue = "Đang xử lý";
@@ -116,9 +307,7 @@ function setupAppointmentTable(url, params)
  
                      <!-- UPDATE AT -->
                      <td>
-                         <div class="fw-semibold" id="doctor-name">
                              ${statusValue}
-                         </div>
                      </td>
  
                      <td>
@@ -128,7 +317,7 @@ function setupAppointmentTable(url, params)
                                 <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1" style="">
                                     <li class="dropdown-item"  data-coreui-toggle="collapse" href="#appointment-${appointmentID}"
                                         aria-expanded="false" aria-controls="#appointment-${appointmentID}">Chi tiết</li>
-                                    <li class="dropdown-item" id="button-update" data-id=${appointmentID}>Sửa</li>
+                                    <li ><a class="dropdown-item" href="${APP_URL}/appointment/${appointmentID}">Sửa</a></li>
                                     `;
          let element3 = `
                                 </ul>
@@ -261,9 +450,8 @@ function setupButton()
         $("#datepicker").val("");
 
         let url = API_URL + "/appointments";
-        let today = new Date();
-        date = today.getFullYear() + "-" + (today.getMonth()+1) + "-" + today.getDate();
-        let params = { date: date, status:"processing" }
+        date = getCurrentDate();
+        let params = { date: date,  status:"" }
         setupAppointmentTable(url, params);
 
         let paramsDoctor = {};
@@ -274,34 +462,9 @@ function setupButton()
     /** BUTTON SEARCH*/
     $("#button-search").click(function(){
         /**Step 1 - get filter values */
-        let search = $("#search").val();
-        let orderDir = $("#order-dir :selected").val();
-        let orderColumn = $("#order-column :selected").val();
-        let status = $("#status :selected").val();
-        let speciality = $("#speciality :selected").val();
-        //let room = $("#room :selected").val();
-        let doctor = $("#doctor :selected").val();
-        let length = $("#length :selected").val();
-        let date = $("#datepicker").val();
+        let params = getConditionFilter();
 
-
-        /**Step 2 - set up parameters */
-        let order = {
-            "dir": orderDir,
-            "column": orderColumn
-        };
-        let params = {
-            search: search,
-            order: order,
-            length: length,
-            speciality: speciality,
-            doctor: doctor,
-            date: date,
-            status: status
-        };
-
-
-        /**Step 3 - query */
+        /**Step 2 - query */
         let url = API_URL + "/appointments";
         setupAppointmentTable(url, params);
     });
@@ -476,21 +639,6 @@ function setupAppointmentActions()
 {
     /**BUTTON DONE */
     $(document).on('click','#button-done',function(){
-        let id = $(this).attr("data-id");
-        let url = API_URL+"/appointments/"+id;
-        let method = "patch";
-        let params = { status:"done" };
-        makeAppointmentAction(method, url, id, params );
-    });
-
-    /**BUTTON CANCEL */
-    $(document).on('click','#button-cancel',function(){
-        console.log("cancel"); 
-    });
-
-    /**BUTTON DELETE */
-    $(document).on('click','#button-delete',function(){
-        let id = $(this).attr("data-id");
         Swal
         .fire({
             title: 'Bạn chắc chắn muốn thực hiện hành động ngày',
@@ -507,6 +655,69 @@ function setupAppointmentActions()
             {
                 if (result.isConfirmed) 
                 {
+                    let id = $(this).attr("data-id");
+                    let url = API_URL+"/appointments/"+id;
+                    let method = "patch";
+                    let params = { status:"done" };
+                    makeAppointmentAction(method, url, id, params );
+                } 
+                else
+                {
+                    Swal.close();
+                }
+            });
+    });
+
+    /**BUTTON CANCEL */
+    $(document).on('click','#button-cancel',function(){
+        Swal
+        .fire({
+            title: 'Bạn chắc chắn muốn thực hiện hành động ngày',
+            text: "Hành động này không thể khôi phục sau khi thực hiện",
+            icon: 'warning',
+            confirmButtonText: 'Xác nhận',
+            confirmButtonColor: '#FF0000',
+            cancelButtonColor: '#0000FF',
+            cancelButtonText: 'Hủy',
+            reverseButtons: false,
+            showCancelButton: true
+        })
+        .then((result) => 
+            {
+                if (result.isConfirmed) 
+                {
+                    let id = $(this).attr("data-id");
+                    let url = API_URL+"/appointments/"+id;
+                    let method = "patch";
+                    let params = { status:"cancelled" };
+                    makeAppointmentAction(method, url, id, params );
+                } 
+                else
+                {
+                    Swal.close();
+                }
+            });
+    });
+
+    /**BUTTON DELETE */
+    $(document).on('click','#button-delete',function(){
+        Swal
+        .fire({
+            title: 'Bạn chắc chắn muốn thực hiện hành động ngày',
+            text: "Hành động này không thể khôi phục sau khi thực hiện",
+            icon: 'warning',
+            confirmButtonText: 'Xác nhận',
+            confirmButtonColor: '#FF0000',
+            cancelButtonColor: '#0000FF',
+            cancelButtonText: 'Hủy',
+            reverseButtons: false,
+            showCancelButton: true
+        })
+        .then((result) => 
+            {
+                if (result.isConfirmed) 
+                {
+                    let id = $(this).attr("data-id");
                     let url = API_URL+"/appointments/"+id;
                     let method = "delete";
                     makeAppointmentAction(method, url, id );
@@ -536,10 +747,9 @@ function makeAppointmentAction(method, url, id, params = [])
         success: function(resp) {
             if(resp.result == 1)// result = 1
             {
-                if(method = "delete")
-                {
-                    $("tbody").find("tr[data-id="+id+"]").remove();
-                }
+                
+                $("tbody").find("tr[data-id="+id+"]").remove();
+                
 
                 Swal
                 .fire({

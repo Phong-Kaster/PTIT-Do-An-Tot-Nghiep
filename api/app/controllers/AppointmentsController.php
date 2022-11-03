@@ -50,14 +50,14 @@
             /**Step 2 - get filters */
             $order          = Input::get("order");
             $search         = Input::get("search");
-            $length         = Input::get("length") ? (int)Input::get("length") : 10;
+            $length         = Input::get("length") ? (int)Input::get("length") : 5;
             $start          = Input::get("start") ? (int)Input::get("start") : 0;
             $doctor         = Input::get("doctor");// Only ADMIN & SUPPORTER can use this filter.
             $room           = Input::get("room");// Only ADMIN & SUPPORTER can use this filter.
             $date           = Input::get("date");
             $status         = Input::get("status");
             $speciality     = Input::get("speciality");
-
+            $start          = Input::get("start");
             try
             {
                 /**Step 3 - query */
@@ -109,7 +109,6 @@
                         $q->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".patient_name", 'LIKE', $search_query.'%')
                         ->orWhere(TABLE_PREFIX.TABLE_APPOINTMENTS.".patient_phone", 'LIKE', $search_query.'%')
                         ->orWhere(TABLE_PREFIX.TABLE_APPOINTMENTS.".patient_reason", 'LIKE', $search_query.'%')
-                        ->orWhere(TABLE_PREFIX.TABLE_DOCTORS.".status", 'LIKE', $search_query.'%')
                         ->orWhere(TABLE_PREFIX.TABLE_APPOINTMENTS.".status", 'LIKE', $search_query.'%');
                     }); 
                 }
@@ -172,11 +171,16 @@
                     $query->orderBy("id", "desc");
                 } 
     
-                /**Step 3.4 - length filter * start filter*/
-                $query->limit($length ? $length : 10)
+                $res = $query->get();
+                $quantity = count($res);
+
+                /**Step 3.4 - length filter * start filter - pagination 1*/
+                $query->limit($length ? $length : 5)
                     ->offset($start ? $start : 0);
 
-    
+                /**Step 3.4 - length filter * start filter - pagination 2 - no limit*/
+                
+                
                 /**Step 4 */
                 $result = $query->get();
                 foreach($result as $element)
@@ -225,7 +229,7 @@
     
                 /**Step 5 - return */
                 $this->resp->result = 1;
-                $this->resp->quantity = count($result);
+                $this->resp->quantity = $quantity;
                 $this->resp->data = $data;
             }
             catch(Exception $ex)

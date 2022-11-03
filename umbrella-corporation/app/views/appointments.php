@@ -91,7 +91,7 @@
       <!-- end NAVIGATION -->
       
       <!-- CONTENT -->
-      <?php require_once(APPPATH.'/views/fragments/appointment.fragment.php'); ?>
+      <?php require_once(APPPATH.'/views/fragments/appointments.fragment.php'); ?>
       <!-- end CONTENT -->
 
       <!-- FOOTER -->
@@ -114,8 +114,35 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="<?= APPURL."/assets/js/customized/appointments.js?v=".VERSION ?>"></script>
     <script>
-      console.log("appointment");
+        
+        /*************************************************************************
+         * ROLE is used in umbrella-corporation/assets/js/customized/appointment.js
+         * it is used to append 2 options when doctor's role is MEMBER
+         */
+        let ROLE = "<?= $AuthUser->get("role") ?>";
+
+        /******************************************************************/
+        let date = getCurrentDate();
+        let order = {}
+        let role = "<?= $AuthUser->get("role") ?>";
+
+        /**Case 1 - doctor is MEMBER => list appointments by ascending */
+        if( role != "member" )
+        {
+            order = { column: "position", dir: "desc" }
+        }
+        /**Case 2 - doctor is not MEMBER => list appointments by descending */
+        else
+        {
+            order = { column: "position", dir: "asc" }    
+        }
+
+        
+        let params = { date: date, order: order, status:"" }
+        let url = API_URL + "/appointments";
+        setupAppointmentTable(url, params);
     </script>
   </body>
 </html>
