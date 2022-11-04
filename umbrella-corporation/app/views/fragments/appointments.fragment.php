@@ -15,8 +15,8 @@
                                 <button class="btn btn-danger" type="button" id="button-reset">Làm mới</button>
                                 <?php if($AuthUser->get("role") == "admin" || 
                                          $AuthUser->get("role") == "supporter" ): ?>
-                                    <button class="btn btn-success" type="button" href="<?= APPURL."/appointment/create" ?>">Tạo mới</button>
-                                    <button class="btn btn-warning" type="button" href="<?= APPURL."/appointment/arrange" ?>">Sắp xếp thứ tự</button>
+                                    <a class="btn btn-success" type="button" href="<?= APPURL."/appointment/create" ?>">Tạo mới</a>
+                                    <a class="btn btn-warning" type="button" href="<?= APPURL."/appointment/arrange" ?>">Sắp xếp thứ tự</a>
                                 <?php endif; ?>
                             </div>
                         </div><!-- end 1. SEARCH - search -->
@@ -163,8 +163,8 @@
                         <li id="button-next" class="page-item page-link">Next</li>
                     </ul>
               </div>
-            </div>
-            <!-- end APPOINTMENT LIST-->
+            </div><!-- end APPOINTMENT LIST-->
+            
         </div>
     </div>
 </div>

@@ -522,6 +522,16 @@ phần này nên mất nhiều thời gian quá)
 
 2. Dựng giao diện cho việc thêm và chỉnh sửa THỨ TỰ LỊCH KHÁM
 
+- **04-11-2022**
+
+1. Chỉnh sửa giao diện cho 2 nút XÁC NHẬN và HỦY BỎ trong phần chỉnh sửa THỨ TỰ LỊCH KHÁM 
+
+2. Viết jQuery xử lý sự kiện
+
+3. Hoàn thành việc xử lý thêm & sửa thông tin lịch hẹn
+
+4. Dựng giao diện phần sắp xếp thứ tự lịch khám
+
 # [**Controller Timeline**](#controller-timeline)
 
 Phần này mình lưu lại trình tự mình viết đồ án này. Nếu các bạn có nhu cầu tham khảo cách xử lý của mình. Các bạn có thể đọc code theo trình tự 

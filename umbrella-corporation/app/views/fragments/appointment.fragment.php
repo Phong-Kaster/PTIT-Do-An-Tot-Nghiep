@@ -10,7 +10,7 @@
                             <div class="tab-pane p-3 active preview" role="tabpanel" id="preview-1252">
                                 
                             
-                                <div class="row mb-4"><!-- SPECIALITY | DOCTOR -->
+                                <div class="row mb-4"><!--1. SPECIALITY | DOCTOR | DATE-->
                                     <div class="col-md-4"><!-- 1.1 SPECIALITY -->
                                         <label class="form-label" for="speciality">Lọc theo chuyên khoa</label>
                                         <select class="form-select" id="speciality" required="">
@@ -28,37 +28,52 @@
                                         </select>
                                         <div class="invalid-feedback">Please select a valid state.</div>
                                     </div><!-- end 1.2 DOCTOR -->
-                                </div>
+
+                                    <div class="col-md-4"><!--1.3 DATE -->
+                                            <label class="form-label" for="datepicker">Ngày</label>
+                                            <p><input class="form-control rounded" type="text" id="datepicker"></p>
+                                        </div><!-- end 1.3 DATE -->
+                                </div><!-- end 1. SPECIALITY | DOCTOR | DATE -->
 
 
-                                <div class="row mb-4"><!-- 2. PATIENT NAME | PHONE | DATE -->
+                                <div class="row mb-4"><!-- 2. PATIENT ID | PATIENT NAME -->
+                                        <div class="col-md-4"><!--2.1 LENGTH -->
+                                            <div class="mb-3">
+                                                <label class="form-label" for="patient-id">Mã thẻ bảo hiểm y tế</label>
+                                                <input class="form-control" id="patient-id" type="text" placeholder="Nhập 1 nếu là lượt khám thông thường">
+                                            </div>
+                                        </div><!-- end 2.1 LENGTH -->
                                         <div class="col-md-4"><!--2.1 LENGTH -->
                                             <div class="mb-3">
                                                 <label class="form-label" for="patient-name">Tên bệnh nhân</label>
-                                                <input class="form-control" id="patient-name" type="email" placeholder="Nguyễn Văn A">
+                                                <input class="form-control" id="patient-name" type="text" placeholder="Nguyễn Văn A">
                                             </div>
                                         </div><!-- end 2.1 LENGTH -->
-                                        <div class="col-md-4"><!--2.2 PHONE -->
+                                </div><!-- end 2. PATIENT ID | PATIENT NAME -->
+
+
+                                <div class="row mb-4"><!-- 2. PATIENT PHONE | PATIENT BIRTHDAY -->
+                                        <div class="col-md-4"><!--2.2 PATIENT PHONE -->
                                             <div class="mb-3">
                                                 <label class="form-label" for="patient-phone">Số điện thoại</label>
-                                                <input class="form-control" id="patient-phone" type="email" placeholder="">
+                                                <input class="form-control" id="patient-phone" type="number" placeholder="0979.999.999">
                                             </div>
-                                        </div><!-- end 2.2 PHONE -->
-                                        <div class="col-md-4"><!--2.3 DATE -->
-                                            <label class="form-label" for="datepicker">Ngày</label>
-                                            <p><input class="form-control rounded" type="text" id="datepicker"></p>
-                                        </div><!-- end 2.3 DATE -->
-                                </div><!-- end 2. PATIENT NAME | PHONE | DATE -->
+                                        </div><!-- end 2.2 PATIENT PHONE -->
+                                        <div class="col-md-4"><!--2.3 PATIENT BIRTHDAY -->
+                                            <label class="form-label" for="datepicker">Ngày sinh bệnh nhân</label>
+                                            <p><input class="form-control rounded" type="text" id="patient-birthday"></p>
+                                        </div><!-- end 2.3 PATIENT BIRTHDAY -->
+                                </div><!-- end 2. PATIENT PHONE | PATIENT BIRTHDAY -->
+
 
 
                                 <div class="row mb-4"><!-- 3. PATIENT-REASON -->
-                                    <div class="col-md-8">
-                                        <div class="mb-3">
-                                            <label class="form-label" for="patient-reason">Mô tả bệnh lý</label>
-                                            <textarea class="form-control" id="patient-reason" rows="3"></textarea>
-                                        </div>
+                                    <div class="col-md-10">
+                                        <label class="form-label" for="patient-reason">Mô tả bệnh lý</label>
+                                        <textarea class="form-control" id="patient-reason" rows="3"></textarea>
                                     </div>
                                 </div><!-- end 3. PATIENT-REASON -->
+
 
                                 <div class="row mb-4"><!-- 4. APPOINTMENT-TIME | STATUS -->
 
@@ -68,8 +83,8 @@
                                     </div><!-- end 4.1 APPOINTMENT-TIME -->
 
                                     <div class="col-md-4"><!-- 4.2 STATUS -->
-                                        <label class="form-label" for="order-dir">Trạng thái lịch khám </label>
-                                        <select class="form-select" id="order-dir" required="">
+                                        <label class="form-label" for="status">Trạng thái lịch khám </label>
+                                        <select class="form-select" id="status" required="">
                                             <option selected="" disabled="" value="">Chọn...</option>
                                             <option value="processing" class="text-dark text-uppercase font-weight-bold">Đang xử lý</option>
                                             <option value="cancelled" class="text-warning text-uppercase font-weight-bold">Hủy</option>
@@ -79,10 +94,22 @@
                                     </div><!-- 4.2 STATUS -->
                                 </div><!-- end 4. APPOINTMENT-TIME | STATUS -->
 
-                                <div class="row mb-8 center">
-                                        <button class="btn btn-primary btn-lg" type="button">Xác nhận</button>    
-                                        <button class="btn btn-danger btn-lg" type="button">Hủy</button>
-                                </div>
+              
+                                <div class="text-center"><!-- 5. BUTTON CONFIRM, RESET & CANCEL -->
+                                    <button class="btn btn-outline-primary btn-lg btn-block col-sm-2" type="button" id="button-confirm">
+                                        <i class="icon cil-check"></i>
+                                        Xác nhận
+                                    </button>
+                                    <button class="btn btn-outline-success btn-lg btn-block col-sm-2" type="button" id="button-reset">
+                                        <i class="icon cil-paint"></i>
+                                        Làm mới
+                                    </button>
+                                    <button class="btn btn-outline-danger btn-lg btn-block col-sm-2" type="button" id="button-cancel">
+                                        <i class="icon cil-compress"></i>
+                                        Hủy bỏ
+                                    </button>
+                                </div><!-- end 5. BUTTON CONFIRM & CANCEL -->
+
                         </div><!-- end tab-content -->
                     </div><!-- end EXAMPLE -->
                 </div>

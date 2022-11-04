@@ -525,124 +525,6 @@ function setupTitle(params)
 
 
 
-/**
- * @author Phong-Kaster
- * @since 31-10-2022
- * setup dropdown DOCTOR's speciality
- */
- function setupDropdownSpeciality(params)
- {
-     /**Step 1 - make AJAX call */
-     $.ajax({
-         type: "GET",
-         url: API_URL + "/specialities",
-         data: params,
-         dataType: "JSON",
-         success: function(resp) {
-             if(resp.result == 1)// result = 1
-             {
-                 createDropdownSpeciality(resp);
-             }
-             else// result = 0
-             {
-                 console.log(resp.msg);
-             }
-         },
-         error: function(err) {
-             Swal.fire('Oops...', "Oops! An error occured. Please try again later!", 'error');
-         }
-       })//end AJAX
- }
-
-
-
-/**
- * @author Phong-Kaster
- * @since 01-11-2022
- * @param {JSON} resp 
- */
-function createDropdownSpeciality(resp)
-{
-    for(let i = 0; i < resp.data.length; i++)
-    {
-        let id = resp.data[i].id;
-        let name = resp.data[i].name;
-        let element = `<option value="${id}">${name}</option>`;
-        $("#speciality").append(element);
-    }
-}
-
-/**
- * @author Phong-Kaster
- * @since 31-10-2022
- * setup dropdown DOCTOR
- */
- function setupDropdownDoctor(params)
-{
-    /**Step 1 - make AJAX call */
-    $.ajax({
-        type: "GET",
-        url: API_URL + "/doctors",
-        data: params,
-        dataType: "JSON",
-        success: function(resp) {
-            if(resp.result == 1)// result = 1
-            {
-                createDropdownDoctor(resp);
-            }
-            else// result = 0
-            {
-                console.log(resp.msg);
-            }
-        },
-        error: function(err) {
-            Swal.fire('Oops...', "Oops! An error occured. Please try again later!", 'error');
-        }
-    })//end AJAX
-}
-
-
-
-/**
- * @author Phong-Kaster
- * @since 01-11-2022
- * @param {JSON} resp 
- */
- function createDropdownDoctor(resp)
- {
-    $("#doctor").empty();
-    $("#doctor").append(`<option selected="" disabled="" value="">Chọn...</option>`);
-     for(let i = 0; i < resp.data.length; i++)
-     {
-         let id = resp.data[i].id;
-         let name = resp.data[i].name;
-         let element = `<option value="${id}">${name}</option>`;
-         $("#doctor").append(element);
-     }
- }
-
-
-/**
- * @author Phong-Kaster
- * @since 01-11-2022
- * whenever ADMIN or SUPPORTER choose a speciality when this function will query to get
- * all DOCTORS match with the chosen speciality.
- */
-function setupChooseSpeciality()
-{
-    $("#speciality").click(function(){
-        let specialityId = $(this).val();
-        if(specialityId != null)
-        {
-            let params = {
-                speciality: specialityId
-            }
-            setupDropdownDoctor(params);
-        }
-    })
-}
-
-
 
 /**
  * @author Phong-Kaster
@@ -679,7 +561,7 @@ function setupAppointmentActions()
                 {
                     Swal.close();
                 }
-            });
+            });// end Swal
     });
 
     /**BUTTON CANCEL */
@@ -763,27 +645,18 @@ function makeAppointmentAction(method, url, id, params = [])
             {
                 
                 $("tbody").find("tr[data-id="+id+"]").remove();
-                
-
-                Swal
-                .fire({
-                    title: 'Thành công',
-                    text: "Thao tác thực hiện thành công",
-                    icon: 'success',
-                    confirmButtonText: 'Xác nhận',
-                    confirmButtonColor: '#FF0000',
-                    reverseButtons: false
-                });
+                showMessageWithButton('success','Thành công', 'Thao tác thực hiện thành công');
             }
             else// result = 0
             {
-                Swal.fire({
-                    position: 'center',
-                    icon: title,
-                    title: 'Warning',
-                    text: resp.msg,
-                    showConfirmButton: true
-                });
+                // Swal.fire({
+                //     position: 'center',
+                //     icon: title,
+                //     title: 'Warning',
+                //     text: resp.msg,
+                //     showConfirmButton: true
+                // });
+                showMessageWithButton('error','Thất bại', resp.msg);
             }
         },
         error: function(err) {

@@ -653,6 +653,17 @@
                 $this->jsonecho();
             }
 
+            /**Step 5.9 - appointment time*/
+            if( !empty($appointment_time) )
+            {
+                $msg = isAppointmentTimeValid($appointment_time);
+                if( !empty($msg) )
+                {
+                    $this->resp->msg = $msg;
+                    $this->jsonecho();
+                }
+            }
+
             /**Step 6 - save */
             try 
             {

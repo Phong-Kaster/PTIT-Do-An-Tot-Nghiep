@@ -12,7 +12,7 @@
           </ul>
           <ul class="header-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="JavaScript: location.reload(true);">
                 <i class="icon icon-lg cil-bell"></i>
               </a>
             </li>

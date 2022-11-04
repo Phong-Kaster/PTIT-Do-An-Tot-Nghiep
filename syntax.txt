@@ -47,43 +47,15 @@ $.ajax({
     msg = resp.msg;
     if(resp.result == 1)
     {
-        Swal.fire({
-            title: 'Success',
-            text: "Tài khoản đăng kí thành công",
-            icon: 'Success',
-            showCancelButton: true,
-            confirmButtonText: 'Đăng nhập',
-            cancelButtonText: 'Đóng',
-            confirmButtonColor: '#FF0000',
-            cancelButtonColor: '#0000FF',
-            reverseButtons: false
-            }).then((result) => 
-                {
-                if (result.isConfirmed) 
-                {
-                    window.location.replace('<?=APPURL?>/login');
-                } 
-                else
-                {
-                    Swal.close();
-                }
-                });
+        showMessageWithButton('success','Thành công','Yêu cầu đã được hoàn tất !');
     }
     else
     {
-        title = 'error';
-        Swal.fire({
-            position: 'center',
-            icon: title,
-            title: 'Warning',
-            text: msg,
-            showConfirmButton: false,
-            timer: 1500
-        });
+        showMessageWithButton('error','Thất bại', resp.msg);
     }
     },
     error: function(err) {
-    Swal.fire('Oops...', "Oops! An error occured. Please try again later!", 'error');
+        Swal.fire('Oops...', "Oops! An error occured. Please try again later!", 'error');
     }
 });
 
@@ -93,3 +65,29 @@ $.ajax({
 <?php require_once(APPPATH.'/views/fragments/javascript.fragment.php'); ?>
 <!-- PRIVATE JS -->
 <script src="<?= APPURL."/assets/js/customized/x.js?v=".VERSION ?>"></script>
+
+
+### cú pháp tạo xác nhận Swal
+Swal
+.fire({
+    title: 'Bạn chắc chắn muốn thực hiện hành động ngày',
+    text: "Hành động này không thể khôi phục sau khi thực hiện",
+    icon: 'warning',
+    confirmButtonText: 'Xác nhận',
+    confirmButtonColor: '#FF0000',
+    cancelButtonColor: '#0000FF',
+    cancelButtonText: 'Hủy',
+    reverseButtons: false,
+    showCancelButton: true
+})
+.then((result) => 
+    {
+        if (result.isConfirmed) 
+        {
+
+        } 
+        else
+        {
+            Swal.close();
+        }
+    });// end Swal

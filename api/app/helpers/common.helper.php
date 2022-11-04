@@ -632,9 +632,9 @@ function generateRandomString($length = 15) {
 function isBirthdayValid($date)
 {
     $output = "";
-    $year = (int)substr($date, 6);
-    $month = (int)substr($date,3,5);
-    $day = (int)substr($date,0,2);
+    $year = (int)substr($date, 0,4);
+    $month = (int)substr($date,5,8);
+    $day = (int)substr($date,8,10);
 
 
     $yearToday = (int)date("Y");
@@ -758,6 +758,7 @@ function isAppointmentDateValid($appointment_date)
     $year = (int)substr($appointment_date, 0,4);
     $month = (int)substr($appointment_date,5,8);
     $day = (int)substr($appointment_date,8,10);
+
 
     $yearToday = (int)date("Y");
     $monthToday = (int)date("m");

@@ -53,13 +53,7 @@
     <link rel="stylesheet" href="https://unpkg.com/@coreui/icons/css/brand.min.css">
     <link rel="stylesheet" href="https://unpkg.com/@coreui/icons/css/flag.min.css">
 
-
-    <!-- DATETIME PICKER -->
-    <link rel="stylesheet" href="https://www.jqueryscript.net/demo/Clean-jQuery-Date-Time-Picker-Plugin-datetimepicker/jquery.datetimepicker.css"/>
-
-    <!-- chart js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-
+    <link rel="stylesheet" href="/resources/demos/style.css">
 
 
     <!-- Global site tag (gtag.js) - Google Analytics-->
@@ -97,7 +91,7 @@
       <!-- end NAVIGATION -->
       
       <!-- CONTENT -->
-      <?php require_once(APPPATH.'/views/fragments/appointment.fragment.php'); ?>
+      <?php require_once(APPPATH.'/views/fragments/appointmentArrange.fragment.php'); ?>
       <!-- end CONTENT -->
 
       <!-- FOOTER -->
@@ -109,22 +103,8 @@
 
     <!-- GENERAL JS -->
     <?php require_once(APPPATH.'/views/fragments/javascript.fragment.php'); ?>
-    <!-- PRIVATE JS -->
-    <script src="<?= APPURL."/assets/vendors/chart.js/js/chart.min.js?v=".VERSION ?>"></script>
-    <script src="<?= APPURL."/assets/vendors/@coreui/chartjs/js/coreui-chartjs.js?v=".VERSION ?>"></script>
-    <script src="<?= APPURL."/assets/vendors/@coreui/utils/js/coreui-utils.js?v=".VERSION ?>"></script>
 
-    <!-- PRIVATE JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script><!-- DATEPICKER -->
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script><!-- DATEPICKER -->
-
-    <script src="https://www.jqueryscript.net/demo/Clean-jQuery-Date-Time-Picker-Plugin-datetimepicker/jquery.datetimepicker.js"></script><!-- DATETIME PICKER -->
-
-    <script src="<?= APPURL."/assets/js/customized/appointment.js?v=".VERSION ?>"></script>
+    <script src="https://raw.githack.com/SortableJS/Sortable/master/Sortable.js"></script><!-- SortableJS -->
     <script>
       /**Step 1 - prepare parameters */
       let paramsSpeciality = {};
@@ -136,32 +116,11 @@
       setupDropdownDoctor(paramsDoctor);
       setupChooseSpeciality();
 
-      setupDatePicker();
-      setupDatePickerForPatientBirthday()
-      setupTimePicker();
-
-
-      /**Step 3 */
-      let id = <?= $id  ?>;        
-      if( id > 0)
-      {
-        setupAppointmentInfo(id);
-      }
-      setupButton(id);
-
-
-      /**Step 4- When ADMIN or SUPPORTER enters patient_id => website automatically finds out patient information */
-      $(document).on('keypress',function(e) {
-          if(e.which == 13) 
-          {
-             let patient_id = $("#patient-id").val();
-             if( patient_id )
-             {
-                setupPatientInformation(patient_id);
-             }
-          }
+      
+      new Sortable(appointmentList, {
+          animation: 150,
+          ghostClass: 'blue-background-class'
       });
-
     </script>
   </body>
 </html>

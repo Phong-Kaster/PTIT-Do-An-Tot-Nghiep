@@ -52,8 +52,8 @@
             $search         = Input::get("search");
             $length         = Input::get("length") ? (int)Input::get("length") : 10;
             $start          = Input::get("start") ? (int)Input::get("start") : 0;
-            $room           = Input::get("room");// Room_id
-            $speciality_id  = Input::get("speciality");
+            $room_id          = Input::get("room_id");// Room_id
+            $speciality_id  = Input::get("speciality_id");
             try
             {
                 /**Step 3 - query */
@@ -109,9 +109,9 @@
                 } 
 
                 /**Step 3.3 */
-                if( $room )
+                if( $room_id)
                 {
-                    $query->where(TABLE_PREFIX.TABLE_DOCTORS.".room_id", "=", $room);
+                    $query->where(TABLE_PREFIX.TABLE_DOCTORS.".room_id", "=", $room_id);
                 }
                 if( $speciality_id )
                 {
@@ -309,7 +309,7 @@
             // }
 
             /**Step - 3.10 - room validation */
-            $Room = Controller::model("Room", $room_id);
+            $room_id= Controller::model("Room", $room_id);
             if( !$Room->isAvailable() )
             {
                 $this->resp->msg = "Room is not available.";
