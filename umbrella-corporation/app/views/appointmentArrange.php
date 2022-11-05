@@ -79,7 +79,7 @@
     <!-- LEFT NAVIGATION -->
     <?php 
           $Nav = new stdClass;
-          $Nav->activeMenu = "appointment";
+          $Nav->activeMenu = "appointmentArrange";
           require_once(APPPATH.'/views/fragments/navleft.fragment.php');
     ?>
     <!-- end LEFT NAVIGATION -->
@@ -103,7 +103,8 @@
 
     <!-- GENERAL JS -->
     <?php require_once(APPPATH.'/views/fragments/javascript.fragment.php'); ?>
-
+    <!-- PRIVATE JS -->
+    <script src="<?= APPURL."/assets/js/customized/appointmentArrange.js?v=".VERSION ?>"></script>
     <script src="https://raw.githack.com/SortableJS/Sortable/master/Sortable.js"></script><!-- SortableJS -->
     <script>
       /**Step 1 - prepare parameters */

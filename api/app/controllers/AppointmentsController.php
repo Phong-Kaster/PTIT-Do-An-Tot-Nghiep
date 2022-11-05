@@ -52,11 +52,11 @@
             $search         = Input::get("search");
             $length         = Input::get("length") ? (int)Input::get("length") : 5;
             $start          = Input::get("start") ? (int)Input::get("start") : 0;
-            $doctor         = Input::get("doctor");// Only ADMIN & SUPPORTER can use this filter.
-            $room           = Input::get("room");// Only ADMIN & SUPPORTER can use this filter.
+            $doctor_id         = (int)Input::get("doctor_id");// Only ADMIN & SUPPORTER can use this filter.
+            $room_id           = (int)Input::get("room_id");// Only ADMIN & SUPPORTER can use this filter.
             $date           = Input::get("date");
             $status         = Input::get("status");
-            $speciality     = Input::get("speciality");
+            $speciality_id     = (int)Input::get("speciality_id");
             $start          = Input::get("start");
             try
             {
@@ -117,9 +117,9 @@
                 /**Step 3.2 - doctor_id filter - only ADMIN and SUPPORTER can use */
                 $valid_roles = ["admin", "supporter"];
                 $role_validation = in_array($AuthUser->get("role"), $valid_roles);
-                if( $doctor && $role_validation )
+                if( $doctor_id && $role_validation )
                 {
-                    $query->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".doctor_id", "=", $doctor);
+                    $query->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".doctor_id", "=", $doctor_id);
                 }
     
                 /**Step 3.3 - date filter*/
@@ -129,14 +129,14 @@
                 }
 
                 /**Step 3.4 - room filter*/
-                if( $room )
+                if( $room_id )
                 {
-                    $query->where(TABLE_PREFIX.TABLE_DOCTORS.".room_id", "=", $room);
+                    $query->where(TABLE_PREFIX.TABLE_DOCTORS.".room_id", "=", $room_id);
                 }
 
-                if( $speciality )
+                if( $speciality_id )
                 {
-                    $query->where(TABLE_PREFIX.TABLE_SPECIALITIES.".id", "=", $speciality);
+                    $query->where(TABLE_PREFIX.TABLE_SPECIALITIES.".id", "=", $speciality_id);
                 }
                 
                 /**Step 3.5 - date filter*/
@@ -532,8 +532,8 @@
 
 
             /**Step 4 - get data */
-            $doctor_id = Input::post("doctor_id");
-            $patient_id = Input::post("patient_id") ? Input::post("patient_id") : 1;
+            $doctor_id = (int)Input::post("doctor_id");
+            $patient_id = Input::post("patient_id") ? (int)Input::post("patient_id") : 1;
 
             $patient_name = Input::post("patient_name");
             $patient_birthday = Input::post("patient_birthday");

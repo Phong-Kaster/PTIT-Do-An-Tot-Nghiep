@@ -23,6 +23,13 @@
             <i class="nav-icon cil-calendar"></i> 
             Thứ tự lịch khám
           </a>
+
+
+        <li class="nav-item">
+          <a class="nav-link <?= $Nav->activeMenu == "appointmentArrange" ? "active" : "" ?>" href="<?= APPURL."/appointment/arrange/?" ?>">
+            <i class="nav-icon cil-align-left"></i> 
+              Sắp xếp thứ tự
+          </a>
         </li>
             
         <li class="nav-item">

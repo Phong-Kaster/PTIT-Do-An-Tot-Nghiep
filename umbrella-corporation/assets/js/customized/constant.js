@@ -154,7 +154,6 @@ function setupChooseSpeciality()
 {
     $("#speciality").click(function(){
         let specialityId = $(this).val();
-        console.log(`speciality: ${specialityId}`);
         if(specialityId != null)
         {
             let params = {
@@ -203,4 +202,55 @@ function createDropdownRoom(resp)
          let element = `<option value="${id}">${name}</option>`;
          $("#room").append(element);
      }
+ }
+
+
+/**
+ * @author Phong-Kaster
+ * @since 01-11-2022
+ * @param {JSON} params 
+ */
+ function setupTitle(params)
+ {
+     let date = params.date;
+     let doctor = params.doctor;
+     let search = params.search;
+     let status = params.status;
+     let speciality = params.speciality;
+ 
+     let title = "Danh sách khám bệnh";
+     if(date)
+     {
+         title += " -- Ngày: " + date;
+     }
+     if(doctor)
+     {
+         title += " -- Bác sĩ: " + $("#doctor :selected").text()
+     }
+     if(search)
+     {
+         title += " -- Từ khóa: " + search;
+     }
+     if(status)
+     {
+         let statusValue = "Đang xử lý";
+         switch(status)
+         {
+            case "processing":
+                statusValue = "Đang xử lý";
+                break;
+            case "done":
+                statusValue = "Xong";
+                break;
+            case "cancelled":
+                statusValue = "Hủy bỏ";
+                break;
+         }
+         title += " -- Trạng thái: " + statusValue;
+     }
+     if(speciality)
+     {
+         title += " -- Chuyên khoa: " + $("#speciality :selected").text()
+     }
+     $(".row .card-header").first().text(title);
  }

@@ -81,6 +81,7 @@
                     "date" => $Appointment->get("date"),
                     "doctor_id" => (int)$Appointment->get("doctor_id"),
                     "numerical_order" => (int)$Appointment->get("numerical_order"),
+                    "position" => (int) $Appointment->get("position"),
                     "patient_id" => (int)$Appointment->get("patient_id"),
                     "patient_name" => $Appointment->get("patient_name"),
                     "patient_phone" => $Appointment->get("patient_phone"),

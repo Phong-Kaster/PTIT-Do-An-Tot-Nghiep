@@ -217,7 +217,7 @@
          * we can only arrange for today appointments.
          * only doctor's role as ADMIN or SUPPORTER can use
          */
-        private function arrange()
+        private function oldFlowArrange()
         {
             /**Step 1 - declare */
             $this->resp->result = 0;
@@ -314,6 +314,109 @@
                 foreach($positions as $element)
                 {
                     $Appointment = Controller::model("Appointment", $element);
+                    $Appointment->set("position", $position)
+                            ->save();
+                    $position++; 
+                }
+
+                $this->resp->result = 1;
+                $this->resp->msg = "Appointments have been updated their positions";
+            } 
+            catch (\Exception $ex) 
+            {
+                $this->resp->msg = $ex->getMessage();
+            }
+            $this->jsonecho();
+        }
+
+                /**
+         * @author Phong-Kaster
+         * @since 24-10-2022
+         * this function arrange appointment's POSITION
+         * we can only arrange for today appointments.
+         * only doctor's role as ADMIN or SUPPORTER can use
+         */
+        private function arrange()
+        {
+            /**Step 1 - declare */
+            $this->resp->result = 0;
+            $AuthUser = $this->getVariable("AuthUser");
+
+
+            /**Step 2 - check AuthUser role */
+            $valid_roles = ["admin", "supporter"];
+            $role_validation = in_array($AuthUser->get("role"), $valid_roles);
+            if( !$role_validation )
+            {
+                $this->resp->msg = "Only ".implode(', ', $valid_roles)." can arrange appointments";
+                $this->jsonecho();
+            }
+
+            /**Step 3 - get required data */
+            $required_fields = ["doctor_id", "queue"];
+            foreach($required_fields as $field)
+            {
+                if( !Input::post($field) )
+                {
+                    $this->resp->msg = "Missing field: ".$field;
+                    $this->jsonecho();
+                }
+            }
+
+            $doctor_id = Input::post("doctor_id");
+            $type = Input::post("type");
+            $queue = Input::post("queue");
+            $date = Date("d-m-Y");// by default, date is today.
+
+            /**Step 4 - validation */
+            /**Step 4.1 - doctor_id validation */
+            $Doctor = Controller::model("Doctor", $doctor_id);
+            if( !$Doctor->isAvailable() )
+            {
+                $this->resp->msg = "Doctor is not available !";
+                $this->jsonecho();
+            }
+            if( $Doctor->get("active") != 1)
+            {
+                $this->resp->msg = "This doctor account was deactivated. No need this action !";
+                $this->jsonecho();
+            }
+
+            /**Step 4.2 - type validation */
+            // $valid_types = ["normal", "booking"];
+            // $type_validation = in_array($AuthUser->get("role"), $valid_roles);
+            // if( !$role_validation )
+            // {
+            //     $this->resp->msg = "Type is not valid. There are ".count($valid_types)." type: ".implode(', ', $valid_roles)." !";
+            //     $this->jsonecho();
+            // }
+
+            /**Step 4.4 - positions validation*/
+            if( is_array($queue) != 1)
+            {
+                $this->resp->msg = "Queue's format is not valid.";
+                $this->jsonecho();
+            }
+
+
+            $query = DB::table(TABLE_PREFIX.TABLE_APPOINTMENTS)
+                    ->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".status", "=", "processing")
+                    ->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".doctor_id", "=", $doctor_id)
+                    ->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".date", "=", $date);
+            $result = $query->get();
+            
+
+            /**Step 5 - save change */
+            try 
+            {
+                $position = 1;
+                foreach($queue as $element)
+                {
+                    $Appointment = Controller::model("Appointment", (int)$element);
+                    if( $Appointment->get("doctor_id") != $doctor_id )
+                    {
+                        continue;
+                    }
                     $Appointment->set("position", $position)
                             ->save();
                     $position++; 

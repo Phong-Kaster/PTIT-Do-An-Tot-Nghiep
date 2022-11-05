@@ -71,6 +71,12 @@
               <div class="card mb-4">
                 <div class="card-header">
                     Danh sách khám bệnh
+                    <div class="small text-medium-emphasis fw-semibold" id="patient-gender-birthday">
+                        Lưu ý: danh sách này được tính từ bệnh nhân thứ 3 có trạng thái 'Đang xử lý' trở đi
+                    </div>
+                    <div class="small text-medium-emphasis fw-semibold" id="patient-gender-birthday">
+                        Ví dụ: số 1 đang khám và số 2 là người kế tiếp thì ta sẽ sắp xếp từ người thứ 3 trở đi.
+                    </div>
                 </div>
 
                     
@@ -104,81 +110,6 @@
                                 </div><!-- end TITLE -->      
 
                                 <div id="appointmentList" class="list-group col">
-                                    <div class="containe list-group-item"><!-- item -->
-                                        <div class="row">
-                                            <div class="col-sm-1 text-center">
-                                               <div class="text-center"> 10</div>
-                                            </div>
-
-                                            <div class="col-sm-3">
-                                                <div class="fw-semibold" id="patient-name">Jeffrey Dahmer</div>
-                                            </div>
-
-                                            <div class="col-sm-3">
-                                                <div class="clearfix">
-                                                    <div class="fw-semibold" id="patient-reason">Tâm thần phân liệt</div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col">
-                                                <div class="fw-semibold" id="patient-name">01-05-2022</div>
-                                            </div>
-
-                                            <div class="col">
-                                                <div class="fw-semibold" id="patient-name">01-05-2022 09:00</div>
-                                            </div>
-                                        </div>
-                                    </div><!-- end item -->
-                                    <div class="containe list-group-item"><!-- item -->
-                                        <div class="row">
-                                            <div class="col-sm-1 text-center">
-                                               <div class="text-center"> 10</div>
-                                            </div>
-
-                                            <div class="col-sm-3">
-                                                <div class="fw-semibold" id="patient-name">Jeffrey Dahmer</div>
-                                            </div>
-
-                                            <div class="col-sm-3">
-                                                <div class="clearfix">
-                                                    <div class="fw-semibold" id="patient-reason">Tâm thần phân liệt</div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col">
-                                                <div class="fw-semibold" id="patient-name">01-05-2022</div>
-                                            </div>
-
-                                            <div class="col">
-                                                <div class="fw-semibold" id="patient-name">01-05-2022 09:00</div>
-                                            </div>
-                                        </div>
-                                    </div><!-- end item -->
-                                    <div class="containe list-group-item"><!-- item -->
-                                        <div class="row">
-                                            <div class="col-sm-1 text-center">
-                                               <div class="text-center"> 10</div>
-                                            </div>
-
-                                            <div class="col-sm-3">
-                                                <div class="fw-semibold" id="patient-name">Jeffrey Dahmer</div>
-                                            </div>
-
-                                            <div class="col-sm-3">
-                                                <div class="clearfix">
-                                                    <div class="fw-semibold" id="patient-reason">Tâm thần phân liệt</div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col">
-                                                <div class="fw-semibold" id="patient-name">01-05-2022</div>
-                                            </div>
-
-                                            <div class="col">
-                                                <div class="fw-semibold" id="patient-name">01-05-2022 09:00</div>
-                                            </div>
-                                        </div>
-                                    </div><!-- end item -->
                                 </div>
                             </div>
                     </div><!-- end SORTABLE APPOINTMENT LIST -->

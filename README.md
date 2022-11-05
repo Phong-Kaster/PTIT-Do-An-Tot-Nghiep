@@ -522,7 +522,7 @@ phần này nên mất nhiều thời gian quá)
 
 2. Dựng giao diện cho việc thêm và chỉnh sửa THỨ TỰ LỊCH KHÁM
 
-- **04-11-2022**
+- **04-11-2022**:
 
 1. Chỉnh sửa giao diện cho 2 nút XÁC NHẬN và HỦY BỎ trong phần chỉnh sửa THỨ TỰ LỊCH KHÁM 
 
@@ -531,6 +531,10 @@ phần này nên mất nhiều thời gian quá)
 3. Hoàn thành việc xử lý thêm & sửa thông tin lịch hẹn
 
 4. Dựng giao diện phần sắp xếp thứ tự lịch khám
+
+- **05-11-2022**:
+
+1. Hoàn thiện chức năng sắp xếp lịch thứ tự khám.
 
 # [**Controller Timeline**](#controller-timeline)
 

@@ -9,9 +9,9 @@ function getFilteringCondition()
     let orderDir = $("#order-dir :selected").val() ? $("#order-dir :selected").val() : "desc";
     let orderColumn = $("#order-column :selected").val() ? $("#order-column :selected").val() : "position";
     let status = $("#status :selected").val();
-    let speciality = $("#speciality :selected").val();
+    let specialityId = $("#speciality :selected").val();
     //let room = $("#room :selected").val();
-    let doctor = $("#doctor :selected").val();
+    let doctorId = $("#doctor :selected").val();
     //let length = $("#length :selected").val() ? $("#length :selected").val() : DEFAULT_LENGTH;
     let date = $("#datepicker").val() ? $("#datepicker").val() : getCurrentDate();
 
@@ -25,8 +25,8 @@ function getFilteringCondition()
         search: search,
         order: order,
         length: DEFAULT_LENGTH,
-        speciality: speciality,
-        doctor: doctor,
+        speciality_id: specialityId,
+        doctor_id: parseInt(doctorId),
         date: date,
         status: status
     };
@@ -209,10 +209,10 @@ function pagination(url, totalRecord, currentRecord)
             
             let params = getFilteringCondition();
             params["start"] = start;
-            console.log("===next button");
-            console.log("currentPage: " + currentPage);
-            console.log("start: " + start);
-            console.log(params);
+            // console.log("===next button");
+            // console.log("currentPage: " + currentPage);
+            // console.log("start: " + start);
+            // console.log(params);
             /**Step 2 - call AJAX */
             $.ajax({
                 type: "GET",
@@ -477,50 +477,11 @@ function setupButton()
     $("#button-search").click(function(){
         /**Step 1 - get filter values */
         let params = getFilteringCondition();
-
+       
         /**Step 2 - query */
         let url = API_URL + "/appointments";
         setupAppointmentTable(url, params);
     });
-}
-
-
-/**
- * @author Phong-Kaster
- * @since 01-11-2022
- * @param {JSON} params 
- */
-function setupTitle(params)
-{
-    let tile = params.title;
-    let date = params.date;
-    let doctor = params.doctor;
-    let search = params.search;
-    let status = params.status;
-    let speciality = params.speciality;
-
-    let title = "Danh sách khám bệnh";
-    if(date)
-    {
-        title += " - Ngày: " + date;
-    }
-    if(doctor)
-    {
-        title += " - Bác sĩ " + $("#doctor :selected").text()
-    }
-    if(search)
-    {
-        title += " - Từ khóa: " + search;
-    }
-    if(status)
-    {
-        title += " - Trạng thái: " + status
-    }
-    if(speciality)
-    {
-        title += " - Chuyên khoa " + $("#speciality :selected").text()
-    }
-    $(".row .card-header").first().text(title);
 }
 
 
