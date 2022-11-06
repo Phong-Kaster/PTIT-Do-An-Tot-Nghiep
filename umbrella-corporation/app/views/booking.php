@@ -53,7 +53,13 @@
     <link rel="stylesheet" href="https://unpkg.com/@coreui/icons/css/brand.min.css">
     <link rel="stylesheet" href="https://unpkg.com/@coreui/icons/css/flag.min.css">
 
-    <link rel="stylesheet" href="/resources/demos/style.css">
+
+    <!-- DATETIME PICKER -->
+    <link rel="stylesheet" href="https://www.jqueryscript.net/demo/Clean-jQuery-Date-Time-Picker-Plugin-datetimepicker/jquery.datetimepicker.css"/>
+
+    <!-- chart js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
 
 
     <!-- Global site tag (gtag.js) - Google Analytics-->
@@ -79,7 +85,7 @@
     <!-- LEFT NAVIGATION -->
     <?php 
           $Nav = new stdClass;
-          $Nav->activeMenu = "appointmentArrange";
+          $Nav->activeMenu = "appointment";
           require_once(APPPATH.'/views/fragments/navleft.fragment.php');
     ?>
     <!-- end LEFT NAVIGATION -->
@@ -91,7 +97,7 @@
       <!-- end NAVIGATION -->
       
       <!-- CONTENT -->
-      <?php require_once(APPPATH.'/views/fragments/appointmentArrange.fragment.php'); ?>
+      <?php require_once(APPPATH.'/views/fragments/booking.fragment.php'); ?>
       <!-- end CONTENT -->
 
       <!-- FOOTER -->
@@ -103,37 +109,24 @@
 
     <!-- GENERAL JS -->
     <?php require_once(APPPATH.'/views/fragments/javascript.fragment.php'); ?>
-    <!-- PRIVATE JS -->
-    <script src="<?= APPURL."/assets/js/customized/appointmentArrange.js?v=".VERSION ?>"></script>
-    <script src="https://raw.githack.com/SortableJS/Sortable/master/Sortable.js"></script><!-- SortableJS -->
+    <script src="https://www.jqueryscript.net/demo/Clean-jQuery-Date-Time-Picker-Plugin-datetimepicker/jquery.datetimepicker.js"></script><!-- DATETIME PICKER -->
+
+    <script src="<?= APPURL."/assets/js/customized/booking.js?v=".VERSION ?>"></script>
     <script>
-      /**Step 1 - prepare parameters */
-      let paramsSpeciality = {};
-      let paramsDoctor = {};
+        /**Step 1 - set up dropdown */
+        let paramsService = {};
+        setupDropdownService(paramsService);
+        setupTimePicker();
+        
 
+        /**Step 2 - setup booking info */
+        let id = <?= $id  ?>;        
+        
+        setupBookingInfo(id);
+        setupButton(id);
 
-      /**Step 2 - setup necessary filter dropdown */
-      setupDropdownSpeciality(paramsSpeciality);
-      setupDropdownDoctor(paramsDoctor);
-      setupChooseSpeciality();
-
-      // new Sortable(appointmentDisortable, {
-      //     animation: 150,
-      //     sort: false,
-      //     ghostClass: 'blue-background-class'
-      // });
-      new Sortable(appointmentSortable, {
-          animation: 150,
-          ghostClass: 'blue-background-class',
-          filter: ".static",
-          group: {
-            name: 'list'
-          },
-          onMove(e) {
-            return e.related.className.indexOf('static') === -1;          
-          }
-      });
-     
+        /**Step 3 */
+        
     </script>
   </body>
 </html>

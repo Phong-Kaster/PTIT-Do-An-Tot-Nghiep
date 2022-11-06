@@ -538,6 +538,12 @@ phần này nên mất nhiều thời gian quá)
 
 2. Xem - xóa - lọc dữ liệu với LỊCH HẸN khám bệnh.
 
+- **06-11-2022**:
+
+1. Hoàn thiện phân trang | chức năng hủy  tạo thứ tự khám từ lịch hẹn | sửa thông tin LỊCH HẸN.
+
+2. Chức năng sắp xếp lịch hẹn sẽ hiển thông tin của 2 người đang và khám kết tiếp nhưng 
+không thể sắp xếp lịch thứ tự của họ.
 # [**Controller Timeline**](#controller-timeline)
 
 Phần này mình lưu lại trình tự mình viết đồ án này. Nếu các bạn có nhu cầu tham khảo cách xử lý của mình. Các bạn có thể đọc code theo trình tự 

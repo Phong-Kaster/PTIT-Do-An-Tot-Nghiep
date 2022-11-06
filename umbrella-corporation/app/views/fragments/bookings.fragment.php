@@ -108,7 +108,7 @@
                                         <i class="icon cil-people"></i>
                                     </th>
                                     <th>Dịch vụ</th>
-                                    <th>Thời gian hẹn</th>
+                                    <th>Giờ hẹn</th>
                                     <th>Tên người đặt</th>
                                     <th>Tên bệnh nhân</th>
                                     <th>Trạng thái</th>

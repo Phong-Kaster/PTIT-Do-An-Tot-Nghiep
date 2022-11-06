@@ -71,12 +71,6 @@
               <div class="card mb-4">
                 <div class="card-header">
                     Danh sách khám bệnh
-                    <div class="small text-medium-emphasis fw-semibold" id="patient-gender-birthday">
-                        Lưu ý: danh sách này được tính từ bệnh nhân thứ 3 có trạng thái 'Đang xử lý' trở đi
-                    </div>
-                    <div class="small text-medium-emphasis fw-semibold" id="patient-gender-birthday">
-                        Ví dụ: số 1 đang khám và số 2 là người kế tiếp thì ta sẽ sắp xếp từ người thứ 3 trở đi.
-                    </div>
                 </div>
 
                     
@@ -85,6 +79,7 @@
                             <div class="table-responsive">
                                 <div class="container mb-4"><!-- TITLE -->
                                     <div class="row">
+
                                         <div class="col-sm-1 text-center">
                                             <div class="fw-semibold text-center">STT</div>
                                         </div>
@@ -106,14 +101,23 @@
                                         <div class="col">
                                             <div class="fw-semibold" id="patient-name">Thời gian hẹn khám</div>
                                         </div>
-                                    </div>
-                                </div><!-- end TITLE -->      
 
-                                <div id="appointmentList" class="list-group col">
+                                    </div>
+                                </div><!-- end TITLE -->
+                                
+                                <div id="appointmentSortable" class="list-group col">
                                 </div>
                             </div>
                     </div><!-- end SORTABLE APPOINTMENT LIST -->
                 </div>
+                <div class="card-header">
+                        <div class="small text-medium-emphasis fw-semibold">
+                            Lưu ý: danh sách này được tính từ bệnh nhân thứ 3 có trạng thái 'Đang xử lý' trở đi
+                        </div>
+                        <div class="small text-medium-emphasis fw-semibold">
+                            Ví dụ: số 1 đang khám và số 2 là người kế tiếp thì ta sẽ sắp xếp từ người thứ 3 trở đi.
+                        </div>
+                    </div>
               </div>
             </div><!-- end APPOINTMENT LIST-->
             

@@ -147,6 +147,26 @@
       {
         setupAppointmentInfo(id);
       }
+      else
+      {
+          let patientName = "<?= $patientName  ?>";
+          let patientPhone = "<?= $patientPhone  ?>";
+          let patientBirthday = "<?= $patientBirthday  ?>";
+          let patientReason = "<?= $patientReason  ?>";
+          let appointmentTime = "<?= $appointmentTime  ?>";
+          let appointmentDate = "<?= $appointmentDate  ?>";
+
+          let params = {
+            patientName: patientName,
+            patientPhone: patientPhone,
+            patientBirthday: patientBirthday,
+            patientReason: patientReason,
+            appointmentTime: appointmentTime,
+            appointmentDate: appointmentDate
+          }
+          //console.log(params);
+          setupAppointmentInfoWithParameter(params);
+      }
       setupButton(id);
 
 

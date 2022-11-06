@@ -53,8 +53,8 @@
     <link rel="stylesheet" href="https://unpkg.com/@coreui/icons/css/brand.min.css">
     <link rel="stylesheet" href="https://unpkg.com/@coreui/icons/css/flag.min.css">
 
-    <link rel="stylesheet" href="/resources/demos/style.css">
-
+    <!-- chart js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics-->
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965717-3"></script>
@@ -71,69 +71,40 @@
       gtag('config', 'UA-118965717-5');
     </script>
     <link href="<?= APPURL."/assets/vendors/@coreui/chartjs/css/coreui-chartjs.css?v=".VERSION ?>" rel="stylesheet">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-    <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
   </head>
   <body>
-    
-    <!-- LEFT NAVIGATION -->
-    <?php 
-          $Nav = new stdClass;
-          $Nav->activeMenu = "appointmentArrange";
-          require_once(APPPATH.'/views/fragments/navleft.fragment.php');
-    ?>
-    <!-- end LEFT NAVIGATION -->
 
     <!-- CONTENT -->
-    <div class="wrapper d-flex flex-column min-vh-100 bg-light">
-      <!-- TOP NAVIGATION -->
-      <?php require_once(APPPATH.'/views/fragments/navtop.fragment.php'); ?>
-      <!-- end NAVIGATION -->
-      
-      <!-- CONTENT -->
-      <?php require_once(APPPATH.'/views/fragments/appointmentArrange.fragment.php'); ?>
-      <!-- end CONTENT -->
+    <div class="bg-light min-vh-100 d-flex flex-row align-items-center">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <div class="clearfix">
+              <h1 class="float-start display-3 me-4">404</h1>
+              <h4 class="pt-3">Oops! You're lost.</h4>
+              <p class="text-medium-emphasis">The page you are looking for was not found.</p>
+            </div>
 
-      <!-- FOOTER -->
-      <?php require_once(APPPATH.'/views/fragments/footer.fragment.php'); ?>
-      <!-- end FOOTER -->
+           
+          </div>
+
+        </div>
+        <div class="row justify-content-center">
+        <a class="btn btn-outline-primary btn-lg btn-block col-sm-4 text-center" 
+        
+            href="<?= APPURL."/dashboard" ?>">
+            <i class="icon cil-home"></i>
+            Trang chủ
+        </a>
+          
+        </div>
+      </div>
     </div>
     <!-- end CONTENT -->
 
 
     <!-- GENERAL JS -->
     <?php require_once(APPPATH.'/views/fragments/javascript.fragment.php'); ?>
-    <!-- PRIVATE JS -->
-    <script src="<?= APPURL."/assets/js/customized/appointmentArrange.js?v=".VERSION ?>"></script>
-    <script src="https://raw.githack.com/SortableJS/Sortable/master/Sortable.js"></script><!-- SortableJS -->
-    <script>
-      /**Step 1 - prepare parameters */
-      let paramsSpeciality = {};
-      let paramsDoctor = {};
 
-
-      /**Step 2 - setup necessary filter dropdown */
-      setupDropdownSpeciality(paramsSpeciality);
-      setupDropdownDoctor(paramsDoctor);
-      setupChooseSpeciality();
-
-      // new Sortable(appointmentDisortable, {
-      //     animation: 150,
-      //     sort: false,
-      //     ghostClass: 'blue-background-class'
-      // });
-      new Sortable(appointmentSortable, {
-          animation: 150,
-          ghostClass: 'blue-background-class',
-          filter: ".static",
-          group: {
-            name: 'list'
-          },
-          onMove(e) {
-            return e.related.className.indexOf('static') === -1;          
-          }
-      });
-     
-    </script>
   </body>
 </html>

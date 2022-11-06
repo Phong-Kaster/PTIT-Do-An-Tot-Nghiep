@@ -30,7 +30,6 @@ function setupButton()
         }
         setupTitle(titleTable);
 
-
         /**Step 2 - AJAX */
         $.ajax({
             type: "GET",
@@ -38,6 +37,7 @@ function setupButton()
             data: params,
             dataType: "JSON",
             success: function(resp) {
+                console.log(resp);
             if(resp.result == 1)
             {
                 createSortableTable(resp);
@@ -59,7 +59,7 @@ function setupButton()
     $("#button-reset").click(function(){
         $("#doctor").val("");
         $("#speciality").val("");
-        $("#appointmentList").find(".container").remove();
+        $("#appointmentSortable").find(".container").remove();
         setupTitle(params={});
     });
 
@@ -72,7 +72,7 @@ function setupButton()
         queue.push(firstElement);// find function createSortableTable();
         queue.push(secondElement);// find function createSortableTable();
 
-        $("#appointmentList .container").each(function(index){
+        $("#appointmentSortable .container").each(function(index){
             let appointmentId = $(this).attr("data-id");
             queue.push(appointmentId);
         });
@@ -125,8 +125,51 @@ function createSortableTable(resp)
     doctor_id = resp.data[0].doctor.id;
 
 
-    /**Step 2 - draw table */
-    $("#appointmentList").find(".container").remove();
+    /**Step 2 - write 2 current appointments which can not be sortable */
+    $("#appointmentSortable").find(".container").remove();
+    for(i = 0; i < 2;i++)
+    {
+        let element = resp.data[i];
+        let appointmentID = element.id;
+        let title = "Hiện tại";
+        if( i == 1){
+            title = "Kế tiếp";
+        }
+        let patientName = element.patient_name;
+        let patientReason = element.patient_reason;
+        let patientBirthday = element.patient_birthday;
+        let appointmentTime = element.appointment_time;
+        let container = `
+        <div data-id=${appointmentID} class="container list-group-item"><!-- item -->
+        <div class="row static text-success">
+                <div class="col-sm-1 text-center">
+                <div class="text-center">${title}</div>
+                </div>
+
+                <div class="col-sm-3">
+                    <div class="fw-semibold" id="patient-name">${patientName}</div>
+                </div>
+
+                <div class="col-sm-3">
+                    <div class="clearfix">
+                        <div class="fw-semibold" id="patient-reason">${patientReason}</div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="fw-semibold" id="patient-name">${patientBirthday}</div>
+                </div>
+
+                <div class="col">
+                    <div class="fw-semibold" id="patient-name">${appointmentTime}</div>
+                </div>
+            </div>
+        </div><!-- end item -->`;
+
+        $("#appointmentSortable").append(container);
+    }
+    
+    /**Step 3 - write the rest of appointment that can be sortable */
     let size = resp.data.length;
     for(let i = 2; i< size; i++)
     {
@@ -164,9 +207,14 @@ function createSortableTable(resp)
             </div>
         </div><!-- end item -->`;
 
-        $("#appointmentList").append(container);
+        $("#appointmentSortable").append(container);
     }
+
+    
+    
 }
+
+
 
 $(document).ready(function(){
     setupButton();

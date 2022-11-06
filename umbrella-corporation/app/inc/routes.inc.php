@@ -64,3 +64,7 @@ App::addRoute("GET", "/appointment/arrange/?", "AppointmentArrange");
 
 /******************************** BOOKING *********************************/
 App::addRoute("GET", "/bookings/?", "Bookings");
+App::addRoute("GET", "/booking/[i:id]/?", "Booking");
+
+/******************************** Error 404 | 500 *********************************/
+App::addRoute("GET", "/error/?", "Error");

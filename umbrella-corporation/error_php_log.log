@@ -1102,3 +1102,338 @@ Stack trace:
 #3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\index.php(93): App->process()
 #4 {main}
   thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\bookings.php on line 131
+[06-Nov-2022 03:31:53 UTC] PHP Parse error:  syntax error, unexpected ';', expecting ')' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 31
+[06-Nov-2022 03:32:04 UTC] PHP Parse error:  syntax error, unexpected ';', expecting ')' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 31
+[06-Nov-2022 03:35:40 UTC] PHP Warning:  trim() expects at least 1 parameter, 0 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 31
+[06-Nov-2022 03:35:40 UTC] PHP Warning:  trim() expects at least 1 parameter, 0 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 32
+[06-Nov-2022 03:35:40 UTC] PHP Warning:  trim() expects at least 1 parameter, 0 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 33
+[06-Nov-2022 03:35:40 UTC] PHP Warning:  trim() expects at least 1 parameter, 0 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 34
+[06-Nov-2022 03:36:40 UTC] PHP Warning:  rtrim() expects at least 1 parameter, 0 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 31
+[06-Nov-2022 03:36:40 UTC] PHP Warning:  rtrim() expects at least 1 parameter, 0 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 32
+[06-Nov-2022 03:36:40 UTC] PHP Warning:  rtrim() expects at least 1 parameter, 0 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 33
+[06-Nov-2022 03:36:40 UTC] PHP Warning:  rtrim() expects at least 1 parameter, 0 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 34
+[06-Nov-2022 03:45:11 UTC] PHP Notice:  Undefined index: appointmentDate in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 25
+[06-Nov-2022 03:45:11 UTC] PHP Notice:  Undefined index: appointmentTime in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 26
+[06-Nov-2022 03:45:11 UTC] PHP Notice:  Undefined index: patientReason in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 27
+[06-Nov-2022 03:45:11 UTC] PHP Notice:  Undefined index: patientBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 28
+[06-Nov-2022 03:45:11 UTC] PHP Warning:  rtrim() expects at least 1 parameter, 0 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 31
+[06-Nov-2022 03:45:11 UTC] PHP Warning:  rtrim() expects at least 1 parameter, 0 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 32
+[06-Nov-2022 03:45:11 UTC] PHP Warning:  rtrim() expects at least 1 parameter, 0 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 33
+[06-Nov-2022 03:45:11 UTC] PHP Warning:  rtrim() expects at least 1 parameter, 0 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 34
+[06-Nov-2022 03:51:03 UTC] PHP Warning:  rtrim() expects at least 1 parameter, 0 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 33
+[06-Nov-2022 03:51:03 UTC] PHP Warning:  rtrim() expects at least 1 parameter, 0 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 34
+[06-Nov-2022 03:51:03 UTC] PHP Warning:  rtrim() expects at least 1 parameter, 0 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 35
+[06-Nov-2022 03:51:03 UTC] PHP Warning:  rtrim() expects at least 1 parameter, 0 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 36
+[06-Nov-2022 03:51:03 UTC] PHP Warning:  rtrim() expects at least 1 parameter, 0 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 37
+[06-Nov-2022 03:51:03 UTC] PHP Warning:  rtrim() expects at least 1 parameter, 0 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 38
+[06-Nov-2022 03:51:05 UTC] PHP Warning:  rtrim() expects at least 1 parameter, 0 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 33
+[06-Nov-2022 03:51:05 UTC] PHP Warning:  rtrim() expects at least 1 parameter, 0 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 34
+[06-Nov-2022 03:51:05 UTC] PHP Warning:  rtrim() expects at least 1 parameter, 0 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 35
+[06-Nov-2022 03:51:05 UTC] PHP Warning:  rtrim() expects at least 1 parameter, 0 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 36
+[06-Nov-2022 03:51:05 UTC] PHP Warning:  rtrim() expects at least 1 parameter, 0 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 37
+[06-Nov-2022 03:51:05 UTC] PHP Warning:  rtrim() expects at least 1 parameter, 0 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 38
+[06-Nov-2022 03:52:11 UTC] PHP Notice:  Undefined index: patientName in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 27
+[06-Nov-2022 03:52:11 UTC] PHP Notice:  Undefined index: patientPhone in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 28
+[06-Nov-2022 03:52:11 UTC] PHP Warning:  rtrim() expects at least 1 parameter, 0 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 33
+[06-Nov-2022 03:52:11 UTC] PHP Warning:  rtrim() expects at least 1 parameter, 0 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 34
+[06-Nov-2022 03:52:11 UTC] PHP Warning:  rtrim() expects at least 1 parameter, 0 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 35
+[06-Nov-2022 03:52:11 UTC] PHP Warning:  rtrim() expects at least 1 parameter, 0 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 36
+[06-Nov-2022 03:52:11 UTC] PHP Warning:  rtrim() expects at least 1 parameter, 0 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 37
+[06-Nov-2022 03:52:11 UTC] PHP Warning:  rtrim() expects at least 1 parameter, 0 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 38
+[06-Nov-2022 03:53:50 UTC] PHP Warning:  rtrim() expects at least 1 parameter, 0 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 33
+[06-Nov-2022 03:53:50 UTC] PHP Warning:  rtrim() expects at least 1 parameter, 0 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 34
+[06-Nov-2022 03:53:50 UTC] PHP Warning:  rtrim() expects at least 1 parameter, 0 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 35
+[06-Nov-2022 03:53:50 UTC] PHP Warning:  rtrim() expects at least 1 parameter, 0 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 36
+[06-Nov-2022 03:53:50 UTC] PHP Warning:  rtrim() expects at least 1 parameter, 0 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 37
+[06-Nov-2022 03:53:50 UTC] PHP Warning:  rtrim() expects at least 1 parameter, 0 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 38
+[06-Nov-2022 03:54:34 UTC] PHP Warning:  rtrim() expects at least 1 parameter, 0 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 33
+[06-Nov-2022 03:54:34 UTC] PHP Warning:  rtrim() expects at least 1 parameter, 0 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 34
+[06-Nov-2022 03:54:34 UTC] PHP Warning:  rtrim() expects at least 1 parameter, 0 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 35
+[06-Nov-2022 03:54:34 UTC] PHP Warning:  rtrim() expects at least 1 parameter, 0 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 36
+[06-Nov-2022 03:54:34 UTC] PHP Warning:  rtrim() expects at least 1 parameter, 0 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 37
+[06-Nov-2022 03:54:34 UTC] PHP Warning:  rtrim() expects at least 1 parameter, 0 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 38
+[06-Nov-2022 03:56:05 UTC] PHP Notice:  Undefined variable: patientName in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 154
+[06-Nov-2022 03:56:05 UTC] PHP Notice:  Undefined variable: patientPhone in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 155
+[06-Nov-2022 03:56:05 UTC] PHP Notice:  Undefined variable: patientBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 156
+[06-Nov-2022 03:56:05 UTC] PHP Notice:  Undefined variable: patientReason in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 157
+[06-Nov-2022 03:56:05 UTC] PHP Notice:  Undefined variable: appointmentTime in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 158
+[06-Nov-2022 03:56:05 UTC] PHP Notice:  Undefined variable: appointmentDate in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 159
+[06-Nov-2022 03:56:48 UTC] PHP Warning:  rtrim() expects at least 1 parameter, 0 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 39
+[06-Nov-2022 03:56:48 UTC] PHP Warning:  rtrim() expects at least 1 parameter, 0 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 40
+[06-Nov-2022 03:56:48 UTC] PHP Warning:  rtrim() expects at least 1 parameter, 0 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 41
+[06-Nov-2022 03:56:48 UTC] PHP Warning:  rtrim() expects at least 1 parameter, 0 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 42
+[06-Nov-2022 03:56:48 UTC] PHP Warning:  rtrim() expects at least 1 parameter, 0 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 43
+[06-Nov-2022 03:56:48 UTC] PHP Warning:  rtrim() expects at least 1 parameter, 0 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 44
+[06-Nov-2022 04:00:38 UTC] PHP Notice:  Undefined index: appointmentDate in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 25
+[06-Nov-2022 04:00:38 UTC] PHP Notice:  Undefined index: appointmentTime in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 26
+[06-Nov-2022 04:00:38 UTC] PHP Notice:  Undefined index: patientName in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 28
+[06-Nov-2022 04:00:38 UTC] PHP Notice:  Undefined index: patientPhone in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 29
+[06-Nov-2022 04:00:38 UTC] PHP Notice:  Undefined index: patientReason in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 30
+[06-Nov-2022 04:00:38 UTC] PHP Notice:  Undefined index: patientBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 31
+[06-Nov-2022 04:01:02 UTC] PHP Notice:  Undefined index: appointmentDate in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 25
+[06-Nov-2022 04:01:02 UTC] PHP Notice:  Undefined index: appointmentTime in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 26
+[06-Nov-2022 04:01:02 UTC] PHP Notice:  Undefined index: patientName in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 28
+[06-Nov-2022 04:01:02 UTC] PHP Notice:  Undefined index: patientPhone in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 29
+[06-Nov-2022 04:01:02 UTC] PHP Notice:  Undefined index: patientReason in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 30
+[06-Nov-2022 04:01:02 UTC] PHP Notice:  Undefined index: patientBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 31
+[06-Nov-2022 04:03:16 UTC] PHP Notice:  Undefined index: appointmentDate in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 26
+[06-Nov-2022 04:03:16 UTC] PHP Notice:  Undefined index: appointmentTime in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 27
+[06-Nov-2022 04:03:16 UTC] PHP Notice:  Undefined index: patientName in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 29
+[06-Nov-2022 04:03:16 UTC] PHP Notice:  Undefined index: patientPhone in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 30
+[06-Nov-2022 04:03:16 UTC] PHP Notice:  Undefined index: patientReason in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 31
+[06-Nov-2022 04:03:16 UTC] PHP Notice:  Undefined index: patientBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 32
+[06-Nov-2022 04:03:17 UTC] PHP Notice:  Undefined index: appointmentDate in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 26
+[06-Nov-2022 04:03:17 UTC] PHP Notice:  Undefined index: appointmentTime in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 27
+[06-Nov-2022 04:03:17 UTC] PHP Notice:  Undefined index: patientName in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 29
+[06-Nov-2022 04:03:17 UTC] PHP Notice:  Undefined index: patientPhone in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 30
+[06-Nov-2022 04:03:17 UTC] PHP Notice:  Undefined index: patientReason in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 31
+[06-Nov-2022 04:03:17 UTC] PHP Notice:  Undefined index: patientBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 32
+[06-Nov-2022 04:03:17 UTC] PHP Notice:  Undefined index: appointmentDate in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 26
+[06-Nov-2022 04:03:17 UTC] PHP Notice:  Undefined index: appointmentTime in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 27
+[06-Nov-2022 04:03:17 UTC] PHP Notice:  Undefined index: patientName in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 29
+[06-Nov-2022 04:03:17 UTC] PHP Notice:  Undefined index: patientPhone in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 30
+[06-Nov-2022 04:03:17 UTC] PHP Notice:  Undefined index: patientReason in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 31
+[06-Nov-2022 04:03:17 UTC] PHP Notice:  Undefined index: patientBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 32
+[06-Nov-2022 04:03:18 UTC] PHP Notice:  Undefined index: appointmentDate in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 26
+[06-Nov-2022 04:03:18 UTC] PHP Notice:  Undefined index: appointmentTime in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 27
+[06-Nov-2022 04:03:18 UTC] PHP Notice:  Undefined index: patientName in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 29
+[06-Nov-2022 04:03:18 UTC] PHP Notice:  Undefined index: patientPhone in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 30
+[06-Nov-2022 04:03:18 UTC] PHP Notice:  Undefined index: patientReason in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 31
+[06-Nov-2022 04:03:18 UTC] PHP Notice:  Undefined index: patientBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 32
+[06-Nov-2022 04:03:18 UTC] PHP Notice:  Undefined index: appointmentDate in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 26
+[06-Nov-2022 04:03:18 UTC] PHP Notice:  Undefined index: appointmentTime in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 27
+[06-Nov-2022 04:03:18 UTC] PHP Notice:  Undefined index: patientName in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 29
+[06-Nov-2022 04:03:18 UTC] PHP Notice:  Undefined index: patientPhone in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 30
+[06-Nov-2022 04:03:18 UTC] PHP Notice:  Undefined index: patientReason in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 31
+[06-Nov-2022 04:03:18 UTC] PHP Notice:  Undefined index: patientBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 32
+[06-Nov-2022 04:03:19 UTC] PHP Notice:  Undefined index: appointmentDate in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 26
+[06-Nov-2022 04:03:19 UTC] PHP Notice:  Undefined index: appointmentTime in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 27
+[06-Nov-2022 04:03:19 UTC] PHP Notice:  Undefined index: patientName in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 29
+[06-Nov-2022 04:03:19 UTC] PHP Notice:  Undefined index: patientPhone in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 30
+[06-Nov-2022 04:03:19 UTC] PHP Notice:  Undefined index: patientReason in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 31
+[06-Nov-2022 04:03:19 UTC] PHP Notice:  Undefined index: patientBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 32
+[06-Nov-2022 04:03:19 UTC] PHP Notice:  Undefined index: appointmentDate in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 26
+[06-Nov-2022 04:03:19 UTC] PHP Notice:  Undefined index: appointmentTime in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 27
+[06-Nov-2022 04:03:19 UTC] PHP Notice:  Undefined index: patientName in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 29
+[06-Nov-2022 04:03:19 UTC] PHP Notice:  Undefined index: patientPhone in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 30
+[06-Nov-2022 04:03:19 UTC] PHP Notice:  Undefined index: patientReason in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 31
+[06-Nov-2022 04:03:19 UTC] PHP Notice:  Undefined index: patientBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 32
+[06-Nov-2022 04:03:20 UTC] PHP Notice:  Undefined index: appointmentDate in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 26
+[06-Nov-2022 04:03:20 UTC] PHP Notice:  Undefined index: appointmentTime in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 27
+[06-Nov-2022 04:03:20 UTC] PHP Notice:  Undefined index: patientName in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 29
+[06-Nov-2022 04:03:20 UTC] PHP Notice:  Undefined index: patientPhone in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 30
+[06-Nov-2022 04:03:20 UTC] PHP Notice:  Undefined index: patientReason in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 31
+[06-Nov-2022 04:03:20 UTC] PHP Notice:  Undefined index: patientBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 32
+[06-Nov-2022 04:03:20 UTC] PHP Notice:  Undefined index: appointmentDate in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 26
+[06-Nov-2022 04:03:20 UTC] PHP Notice:  Undefined index: appointmentTime in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 27
+[06-Nov-2022 04:03:20 UTC] PHP Notice:  Undefined index: patientName in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 29
+[06-Nov-2022 04:03:20 UTC] PHP Notice:  Undefined index: patientPhone in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 30
+[06-Nov-2022 04:03:20 UTC] PHP Notice:  Undefined index: patientReason in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 31
+[06-Nov-2022 04:03:20 UTC] PHP Notice:  Undefined index: patientBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 32
+[06-Nov-2022 04:03:21 UTC] PHP Notice:  Undefined index: appointmentDate in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 26
+[06-Nov-2022 04:03:21 UTC] PHP Notice:  Undefined index: appointmentTime in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 27
+[06-Nov-2022 04:03:21 UTC] PHP Notice:  Undefined index: patientName in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 29
+[06-Nov-2022 04:03:21 UTC] PHP Notice:  Undefined index: patientPhone in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 30
+[06-Nov-2022 04:03:21 UTC] PHP Notice:  Undefined index: patientReason in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 31
+[06-Nov-2022 04:03:21 UTC] PHP Notice:  Undefined index: patientBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 32
+[06-Nov-2022 04:03:21 UTC] PHP Notice:  Undefined index: appointmentDate in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 26
+[06-Nov-2022 04:03:21 UTC] PHP Notice:  Undefined index: appointmentTime in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 27
+[06-Nov-2022 04:03:21 UTC] PHP Notice:  Undefined index: patientName in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 29
+[06-Nov-2022 04:03:21 UTC] PHP Notice:  Undefined index: patientPhone in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 30
+[06-Nov-2022 04:03:21 UTC] PHP Notice:  Undefined index: patientReason in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 31
+[06-Nov-2022 04:03:21 UTC] PHP Notice:  Undefined index: patientBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 32
+[06-Nov-2022 04:03:22 UTC] PHP Notice:  Undefined index: appointmentDate in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 26
+[06-Nov-2022 04:03:22 UTC] PHP Notice:  Undefined index: appointmentTime in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 27
+[06-Nov-2022 04:03:22 UTC] PHP Notice:  Undefined index: patientName in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 29
+[06-Nov-2022 04:03:22 UTC] PHP Notice:  Undefined index: patientPhone in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 30
+[06-Nov-2022 04:03:22 UTC] PHP Notice:  Undefined index: patientReason in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 31
+[06-Nov-2022 04:03:22 UTC] PHP Notice:  Undefined index: patientBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 32
+[06-Nov-2022 04:03:22 UTC] PHP Notice:  Undefined index: appointmentDate in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 26
+[06-Nov-2022 04:03:22 UTC] PHP Notice:  Undefined index: appointmentTime in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 27
+[06-Nov-2022 04:03:22 UTC] PHP Notice:  Undefined index: patientName in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 29
+[06-Nov-2022 04:03:22 UTC] PHP Notice:  Undefined index: patientPhone in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 30
+[06-Nov-2022 04:03:22 UTC] PHP Notice:  Undefined index: patientReason in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 31
+[06-Nov-2022 04:03:22 UTC] PHP Notice:  Undefined index: patientBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 32
+[06-Nov-2022 04:03:23 UTC] PHP Notice:  Undefined index: appointmentDate in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 26
+[06-Nov-2022 04:03:23 UTC] PHP Notice:  Undefined index: appointmentTime in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 27
+[06-Nov-2022 04:03:23 UTC] PHP Notice:  Undefined index: patientName in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 29
+[06-Nov-2022 04:03:23 UTC] PHP Notice:  Undefined index: patientPhone in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 30
+[06-Nov-2022 04:03:23 UTC] PHP Notice:  Undefined index: patientReason in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 31
+[06-Nov-2022 04:03:23 UTC] PHP Notice:  Undefined index: patientBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 32
+[06-Nov-2022 04:03:23 UTC] PHP Notice:  Undefined index: appointmentDate in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 26
+[06-Nov-2022 04:03:23 UTC] PHP Notice:  Undefined index: appointmentTime in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 27
+[06-Nov-2022 04:03:23 UTC] PHP Notice:  Undefined index: patientName in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 29
+[06-Nov-2022 04:03:23 UTC] PHP Notice:  Undefined index: patientPhone in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 30
+[06-Nov-2022 04:03:23 UTC] PHP Notice:  Undefined index: patientReason in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 31
+[06-Nov-2022 04:03:23 UTC] PHP Notice:  Undefined index: patientBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 32
+[06-Nov-2022 04:03:23 UTC] PHP Notice:  Undefined index: appointmentDate in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 26
+[06-Nov-2022 04:03:23 UTC] PHP Notice:  Undefined index: appointmentTime in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 27
+[06-Nov-2022 04:03:23 UTC] PHP Notice:  Undefined index: patientName in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 29
+[06-Nov-2022 04:03:23 UTC] PHP Notice:  Undefined index: patientPhone in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 30
+[06-Nov-2022 04:03:23 UTC] PHP Notice:  Undefined index: patientReason in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 31
+[06-Nov-2022 04:03:23 UTC] PHP Notice:  Undefined index: patientBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 32
+[06-Nov-2022 04:03:24 UTC] PHP Notice:  Undefined index: appointmentDate in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 26
+[06-Nov-2022 04:03:24 UTC] PHP Notice:  Undefined index: appointmentTime in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 27
+[06-Nov-2022 04:03:24 UTC] PHP Notice:  Undefined index: patientName in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 29
+[06-Nov-2022 04:03:24 UTC] PHP Notice:  Undefined index: patientPhone in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 30
+[06-Nov-2022 04:03:24 UTC] PHP Notice:  Undefined index: patientReason in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 31
+[06-Nov-2022 04:03:24 UTC] PHP Notice:  Undefined index: patientBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 32
+[06-Nov-2022 04:03:24 UTC] PHP Notice:  Undefined index: appointmentDate in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 26
+[06-Nov-2022 04:03:24 UTC] PHP Notice:  Undefined index: appointmentTime in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 27
+[06-Nov-2022 04:03:24 UTC] PHP Notice:  Undefined index: patientName in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 29
+[06-Nov-2022 04:03:24 UTC] PHP Notice:  Undefined index: patientPhone in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 30
+[06-Nov-2022 04:03:24 UTC] PHP Notice:  Undefined index: patientReason in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 31
+[06-Nov-2022 04:03:24 UTC] PHP Notice:  Undefined index: patientBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 32
+[06-Nov-2022 04:03:25 UTC] PHP Notice:  Undefined index: appointmentDate in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 26
+[06-Nov-2022 04:03:25 UTC] PHP Notice:  Undefined index: appointmentTime in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 27
+[06-Nov-2022 04:03:25 UTC] PHP Notice:  Undefined index: patientName in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 29
+[06-Nov-2022 04:03:25 UTC] PHP Notice:  Undefined index: patientPhone in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 30
+[06-Nov-2022 04:03:25 UTC] PHP Notice:  Undefined index: patientReason in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 31
+[06-Nov-2022 04:03:25 UTC] PHP Notice:  Undefined index: patientBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 32
+[06-Nov-2022 04:03:25 UTC] PHP Notice:  Undefined index: appointmentDate in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 26
+[06-Nov-2022 04:03:25 UTC] PHP Notice:  Undefined index: appointmentTime in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 27
+[06-Nov-2022 04:03:25 UTC] PHP Notice:  Undefined index: patientName in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 29
+[06-Nov-2022 04:03:25 UTC] PHP Notice:  Undefined index: patientPhone in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 30
+[06-Nov-2022 04:03:25 UTC] PHP Notice:  Undefined index: patientReason in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 31
+[06-Nov-2022 04:03:25 UTC] PHP Notice:  Undefined index: patientBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 32
+[06-Nov-2022 04:05:29 UTC] PHP Notice:  Undefined index: appointmentDate in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 25
+[06-Nov-2022 04:05:29 UTC] PHP Notice:  Undefined index: appointmentTime in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 26
+[06-Nov-2022 04:05:29 UTC] PHP Notice:  Undefined index: patientName in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 28
+[06-Nov-2022 04:05:29 UTC] PHP Notice:  Undefined index: patientPhone in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 29
+[06-Nov-2022 04:05:29 UTC] PHP Notice:  Undefined index: patientReason in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 30
+[06-Nov-2022 04:05:29 UTC] PHP Notice:  Undefined index: patientBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 31
+[06-Nov-2022 04:05:54 UTC] PHP Notice:  Undefined index: appointmentDate in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 25
+[06-Nov-2022 04:05:54 UTC] PHP Notice:  Undefined index: appointmentTime in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 26
+[06-Nov-2022 04:05:54 UTC] PHP Notice:  Undefined index: patientName in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 28
+[06-Nov-2022 04:05:54 UTC] PHP Notice:  Undefined index: patientPhone in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 29
+[06-Nov-2022 04:05:54 UTC] PHP Notice:  Undefined index: patientReason in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 30
+[06-Nov-2022 04:05:54 UTC] PHP Notice:  Undefined index: patientBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 31
+[06-Nov-2022 04:07:06 UTC] PHP Notice:  Undefined index: appointmentDate in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 25
+[06-Nov-2022 04:07:06 UTC] PHP Notice:  Undefined index: appointmentTime in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 26
+[06-Nov-2022 04:07:06 UTC] PHP Notice:  Undefined index: patientName in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 28
+[06-Nov-2022 04:07:06 UTC] PHP Notice:  Undefined index: patientPhone in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 29
+[06-Nov-2022 04:07:06 UTC] PHP Notice:  Undefined index: patientReason in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 30
+[06-Nov-2022 04:07:06 UTC] PHP Notice:  Undefined index: patientBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 31
+[06-Nov-2022 04:07:06 UTC] PHP Notice:  Undefined variable: patientName in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 154
+[06-Nov-2022 04:07:06 UTC] PHP Notice:  Undefined variable: patientPhone in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 155
+[06-Nov-2022 04:07:06 UTC] PHP Notice:  Undefined variable: patientBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 156
+[06-Nov-2022 04:07:06 UTC] PHP Notice:  Undefined variable: patientReason in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 157
+[06-Nov-2022 04:07:06 UTC] PHP Notice:  Undefined variable: appointmentTime in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 158
+[06-Nov-2022 04:07:06 UTC] PHP Notice:  Undefined variable: appointmentDate in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 159
+[06-Nov-2022 04:08:47 UTC] PHP Notice:  Undefined index: appointmentDate in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 25
+[06-Nov-2022 04:08:47 UTC] PHP Notice:  Undefined index: appointmentTime in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 26
+[06-Nov-2022 04:08:47 UTC] PHP Notice:  Undefined index: patientName in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 28
+[06-Nov-2022 04:08:47 UTC] PHP Notice:  Undefined index: patientPhone in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 29
+[06-Nov-2022 04:08:47 UTC] PHP Notice:  Undefined index: patientReason in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 30
+[06-Nov-2022 04:08:47 UTC] PHP Notice:  Undefined index: patientBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 31
+[06-Nov-2022 04:08:47 UTC] PHP Notice:  Undefined variable: patientName in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 154
+[06-Nov-2022 04:08:47 UTC] PHP Notice:  Undefined variable: patientPhone in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 155
+[06-Nov-2022 04:08:47 UTC] PHP Notice:  Undefined variable: patientBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 156
+[06-Nov-2022 04:08:47 UTC] PHP Notice:  Undefined variable: patientReason in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 157
+[06-Nov-2022 04:08:47 UTC] PHP Notice:  Undefined variable: appointmentTime in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 158
+[06-Nov-2022 04:08:47 UTC] PHP Notice:  Undefined variable: appointmentDate in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 159
+[06-Nov-2022 04:10:00 UTC] PHP Notice:  Undefined index: appointmentDate in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 25
+[06-Nov-2022 04:10:00 UTC] PHP Notice:  Undefined index: appointmentTime in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 26
+[06-Nov-2022 04:10:00 UTC] PHP Notice:  Undefined index: patientName in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 28
+[06-Nov-2022 04:10:00 UTC] PHP Notice:  Undefined index: patientPhone in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 29
+[06-Nov-2022 04:10:00 UTC] PHP Notice:  Undefined index: patientReason in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 30
+[06-Nov-2022 04:10:00 UTC] PHP Notice:  Undefined index: patientBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 31
+[06-Nov-2022 04:10:00 UTC] PHP Notice:  Undefined variable: patientName in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 154
+[06-Nov-2022 04:10:00 UTC] PHP Notice:  Undefined variable: patientPhone in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 155
+[06-Nov-2022 04:10:00 UTC] PHP Notice:  Undefined variable: patientBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 156
+[06-Nov-2022 04:10:00 UTC] PHP Notice:  Undefined variable: patientReason in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 157
+[06-Nov-2022 04:10:00 UTC] PHP Notice:  Undefined variable: appointmentTime in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 158
+[06-Nov-2022 04:10:00 UTC] PHP Notice:  Undefined variable: appointmentDate in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 159
+[06-Nov-2022 04:13:35 UTC] PHP Notice:  Undefined index: appointmentDate in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 25
+[06-Nov-2022 04:13:35 UTC] PHP Notice:  Undefined index: appointmentTime in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 26
+[06-Nov-2022 04:13:35 UTC] PHP Notice:  Undefined index: patientName in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 28
+[06-Nov-2022 04:13:35 UTC] PHP Notice:  Undefined index: patientPhone in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 29
+[06-Nov-2022 04:13:35 UTC] PHP Notice:  Undefined index: patientReason in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 30
+[06-Nov-2022 04:13:35 UTC] PHP Notice:  Undefined index: patientBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 31
+[06-Nov-2022 04:13:35 UTC] PHP Notice:  Undefined variable: patientName in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 154
+[06-Nov-2022 04:13:35 UTC] PHP Notice:  Undefined variable: patientPhone in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 155
+[06-Nov-2022 04:13:35 UTC] PHP Notice:  Undefined variable: patientBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 156
+[06-Nov-2022 04:13:35 UTC] PHP Notice:  Undefined variable: patientReason in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 157
+[06-Nov-2022 04:13:35 UTC] PHP Notice:  Undefined variable: appointmentTime in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 158
+[06-Nov-2022 04:13:35 UTC] PHP Notice:  Undefined variable: appointmentDate in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 159
+[06-Nov-2022 04:15:17 UTC] PHP Notice:  Undefined index: appointmentDate in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 25
+[06-Nov-2022 04:15:17 UTC] PHP Notice:  Undefined index: appointmentTime in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 26
+[06-Nov-2022 04:15:17 UTC] PHP Notice:  Undefined index: patientName in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 28
+[06-Nov-2022 04:15:17 UTC] PHP Notice:  Undefined index: patientPhone in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 29
+[06-Nov-2022 04:15:18 UTC] PHP Notice:  Undefined index: patientReason in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 30
+[06-Nov-2022 04:15:18 UTC] PHP Notice:  Undefined index: patientBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 31
+[06-Nov-2022 04:15:30 UTC] PHP Notice:  Undefined index: appointmentDate in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 25
+[06-Nov-2022 04:15:30 UTC] PHP Notice:  Undefined index: appointmentTime in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 26
+[06-Nov-2022 04:15:30 UTC] PHP Notice:  Undefined index: patientName in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 28
+[06-Nov-2022 04:15:30 UTC] PHP Notice:  Undefined index: patientPhone in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 29
+[06-Nov-2022 04:15:30 UTC] PHP Notice:  Undefined index: patientReason in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 30
+[06-Nov-2022 04:15:30 UTC] PHP Notice:  Undefined index: patientBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 31
+[06-Nov-2022 04:15:50 UTC] PHP Notice:  Undefined index: appointmentTime in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 26
+[06-Nov-2022 04:15:50 UTC] PHP Notice:  Undefined index: patientName in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 28
+[06-Nov-2022 04:15:50 UTC] PHP Notice:  Undefined index: patientPhone in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 29
+[06-Nov-2022 04:15:50 UTC] PHP Notice:  Undefined index: patientReason in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 30
+[06-Nov-2022 04:15:50 UTC] PHP Notice:  Undefined index: patientBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 31
+[06-Nov-2022 04:16:28 UTC] PHP Notice:  Undefined index: appointmentTime in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 26
+[06-Nov-2022 04:16:28 UTC] PHP Notice:  Undefined index: patientName in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 28
+[06-Nov-2022 04:16:28 UTC] PHP Notice:  Undefined index: patientPhone in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 29
+[06-Nov-2022 04:16:28 UTC] PHP Notice:  Undefined index: patientReason in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 30
+[06-Nov-2022 04:16:28 UTC] PHP Notice:  Undefined index: patientBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 31
+[06-Nov-2022 04:17:59 UTC] PHP Notice:  Undefined index: appointmentTime in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 26
+[06-Nov-2022 04:17:59 UTC] PHP Notice:  Undefined index: patientName in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 28
+[06-Nov-2022 04:17:59 UTC] PHP Notice:  Undefined index: patientPhone in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 29
+[06-Nov-2022 04:17:59 UTC] PHP Notice:  Undefined index: patientReason in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 30
+[06-Nov-2022 04:17:59 UTC] PHP Notice:  Undefined index: patientBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 31
+[06-Nov-2022 04:18:16 UTC] PHP Notice:  Undefined index: appointmentTime in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 26
+[06-Nov-2022 04:18:16 UTC] PHP Notice:  Undefined index: patientName in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 28
+[06-Nov-2022 04:18:16 UTC] PHP Notice:  Undefined index: patientPhone in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 29
+[06-Nov-2022 04:18:16 UTC] PHP Notice:  Undefined index: patientReason in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 30
+[06-Nov-2022 04:18:16 UTC] PHP Notice:  Undefined index: patientBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 31
+[06-Nov-2022 04:18:30 UTC] PHP Notice:  Undefined index: appointmentTime in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 26
+[06-Nov-2022 04:18:30 UTC] PHP Notice:  Undefined index: patientName in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 28
+[06-Nov-2022 04:18:30 UTC] PHP Notice:  Undefined index: patientPhone in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 29
+[06-Nov-2022 04:18:30 UTC] PHP Notice:  Undefined index: patientReason in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 30
+[06-Nov-2022 04:18:30 UTC] PHP Notice:  Undefined index: patientBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 31
+[06-Nov-2022 04:19:13 UTC] PHP Notice:  Undefined index: patientPhone in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 29
+[06-Nov-2022 04:19:13 UTC] PHP Notice:  Undefined index: patientReason in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 30
+[06-Nov-2022 04:19:13 UTC] PHP Notice:  Undefined index: patientBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 31
+[06-Nov-2022 04:22:42 UTC] PHP Notice:  Undefined index: appointmentDate in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 25
+[06-Nov-2022 04:22:42 UTC] PHP Notice:  Undefined index: appointmentTime in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 26
+[06-Nov-2022 04:22:42 UTC] PHP Notice:  Undefined index: patientName in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 28
+[06-Nov-2022 04:22:42 UTC] PHP Notice:  Undefined index: patientPhone in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 29
+[06-Nov-2022 04:22:42 UTC] PHP Notice:  Undefined index: patientReason in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 30
+[06-Nov-2022 04:22:42 UTC] PHP Notice:  Undefined index: patientBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 31
+[06-Nov-2022 04:22:44 UTC] PHP Notice:  Undefined index: appointmentDate in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 25
+[06-Nov-2022 04:22:44 UTC] PHP Notice:  Undefined index: appointmentTime in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 26
+[06-Nov-2022 04:22:44 UTC] PHP Notice:  Undefined index: patientName in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 28
+[06-Nov-2022 04:22:44 UTC] PHP Notice:  Undefined index: patientPhone in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 29
+[06-Nov-2022 04:22:44 UTC] PHP Notice:  Undefined index: patientReason in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 30
+[06-Nov-2022 04:22:44 UTC] PHP Notice:  Undefined index: patientBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 31
+[06-Nov-2022 04:23:07 UTC] PHP Notice:  Undefined index: appointmentDate in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 25
+[06-Nov-2022 04:23:07 UTC] PHP Notice:  Undefined index: appointmentTime in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 26
+[06-Nov-2022 04:23:07 UTC] PHP Notice:  Undefined index: patientName in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 28
+[06-Nov-2022 04:23:07 UTC] PHP Notice:  Undefined index: patientPhone in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 29
+[06-Nov-2022 04:23:07 UTC] PHP Notice:  Undefined index: patientReason in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 30
+[06-Nov-2022 04:23:07 UTC] PHP Notice:  Undefined index: patientBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 31
+[06-Nov-2022 04:24:13 UTC] PHP Notice:  Undefined index: appointmentDate in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 25
+[06-Nov-2022 04:24:13 UTC] PHP Notice:  Undefined index: appointmentTime in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 26
+[06-Nov-2022 04:24:13 UTC] PHP Notice:  Undefined index: patientName in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 28
+[06-Nov-2022 04:24:13 UTC] PHP Notice:  Undefined index: patientPhone in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 29
+[06-Nov-2022 04:24:13 UTC] PHP Notice:  Undefined index: patientReason in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 30
+[06-Nov-2022 04:24:13 UTC] PHP Notice:  Undefined index: patientBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\AppointmentController.php on line 31
+[06-Nov-2022 09:12:08 UTC] PHP Fatal error:  Uncaught Error: Class 'BookingController' not found in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\App.php:501
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\App.php(563): App->route()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\index.php(93): App->process()
+#2 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\App.php on line 501
+[06-Nov-2022 09:12:18 UTC] PHP Warning:  require_once(D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation/app/views/booking.php): failed to open stream: No such file or directory in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\Controller.php on line 92
+[06-Nov-2022 09:12:18 UTC] PHP Fatal error:  require_once(): Failed opening required 'D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation/app/views/booking.php' (include_path='D:\xampp\php\PEAR') in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\Controller.php on line 92
+[06-Nov-2022 10:16:49 UTC] PHP Notice:  Undefined variable: patientName in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 152
+[06-Nov-2022 10:16:49 UTC] PHP Notice:  Undefined variable: patientPhone in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 153
+[06-Nov-2022 10:16:49 UTC] PHP Notice:  Undefined variable: patientBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 154
+[06-Nov-2022 10:16:49 UTC] PHP Notice:  Undefined variable: patientReason in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 155
+[06-Nov-2022 10:16:49 UTC] PHP Notice:  Undefined variable: appointmentTime in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 156
+[06-Nov-2022 10:16:49 UTC] PHP Notice:  Undefined variable: appointmentDate in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 157
+[06-Nov-2022 10:22:23 UTC] PHP Warning:  Use of undefined constant APP_URL - assumed 'APP_URL' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\error.php on line 95
+[06-Nov-2022 10:22:32 UTC] PHP Warning:  Use of undefined constant APP_URL - assumed 'APP_URL' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\error.php on line 95
+[06-Nov-2022 10:23:05 UTC] PHP Warning:  Use of undefined constant APP_URL - assumed 'APP_URL' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\error.php on line 95

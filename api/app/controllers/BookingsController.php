@@ -66,7 +66,7 @@
             $search         = Input::get("search");
             $length         = Input::get("length") ? (int)Input::get("length") : 10;
             $start          = Input::get("start") ? (int)Input::get("start") : 0;
-            $date           = Input::get("date");
+            $appointment_date           = Input::get("appointment_date");
             $service_id     = Input::get("service_id");
             $status         = Input::get("status");
 
@@ -127,75 +127,47 @@
                 {
                     $query->where(TABLE_PREFIX.TABLE_BOOKINGS.".status", "=", $status);
                 }
-    
-
+                if($appointment_date)
+                {
+                    $query->where(TABLE_PREFIX.TABLE_BOOKINGS.".appointment_date", "=", $appointment_date);
+                }
+        
                 $res = $query->get();
                 $quantity = count($res);
 
                 /**Step 3.3 - length filter * start filter*/
                 $query->limit($length)
                     ->offset($start);
-    
-    
-                /**Step 4 - if we have date filter => handle like this, instead create new 
-                 * field in database.
-                 */
+
                 $result = $query->get();
 
-                if($date)
+
+                foreach($result as $element)
                 {
-                    foreach($result as $element)
-                    {
-                        $appointment_date = substr($element->appointment_time,0, 10);
-                        if( $date == $appointment_date )
-                        {
-                            $data[] = array(
-                                "id" => (int)$element->id,
-                                "patient_id" => (int)$element->patient_id,
-                                "booking_name" => $element->booking_name,
-                                "booking_phone" => $element->booking_phone,
-                                "name" => $element->name,
-                                "gender" => (int)$element->gender,
-                                "birthday" => $element->birthday,
-                                "address" => $element->address,
-                                "reason" => $element->reason,
-                                "appointment_time" => $element->appointment_time,
-                                "status" => $element->status,
-                                "create_at" => $element->create_at,
-                                "update_at" => $element->update_at,
-                                "service" => array(
-                                    "id" => (int)$element->service_id,
-                                    "name" => $element->service_name
-                                )
-                            );
-                        }
-                    }
+                    $data[] = array(
+                        "id" => (int)$element->id,
+                        "patient_id" => (int)$element->patient_id,
+                        "booking_name" => $element->booking_name,
+                        "booking_phone" => $element->booking_phone,
+                        "name" => $element->name,
+                        "gender" => (int)$element->gender,
+                        "birthday" => $element->birthday,
+                        "address" => $element->address,
+                        "reason" => $element->reason,
+                        "appointment_date" => $element->appointment_date,
+                        "appointment_time" => $element->appointment_time,
+                        "status" => $element->status,
+                        "create_at" => $element->create_at,
+                        "update_at" => $element->update_at,
+                        "service" => array(
+                            "id" => (int)$element->service_id,
+                            "name" => $element->service_name
+                        )
+                    );
                 }
-                else// if date filter is not set, return immediate.
-                {
-                    foreach($result as $element)
-                    {
-                        $data[] = array(
-                            "id" => (int)$element->id,
-                            "patient_id" => (int)$element->patient_id,
-                            "booking_name" => $element->booking_name,
-                            "booking_phone" => $element->booking_phone,
-                            "name" => $element->name,
-                            "gender" => (int)$element->gender,
-                            "birthday" => $element->birthday,
-                            "address" => $element->address,
-                            "reason" => $element->reason,
-                            "appointment_time" => $element->appointment_time,
-                            "status" => $element->status,
-                            "create_at" => $element->create_at,
-                            "update_at" => $element->update_at,
-                            "service" => array(
-                                "id" => (int)$element->service_id,
-                                "name" => $element->service_name
-                            )
-                        );
-                    }
-                }
+
+
+
 
                 
     
@@ -243,7 +215,7 @@
 
             /**Step 2 - get required data */
             $required_fields = ["service_id", "booking_name", "booking_phone",
-                                "name", "appointment_time"];
+                                "name", "appointment_time", "appointment_date"];
             foreach($required_fields as $field)
             {
                 if( !Input::post($field) )
@@ -269,6 +241,7 @@
             $reason = Input::post("reason");
 
             $appointment_time = Input::post("appointment_time");
+            $appointment_date = Input::post("appointment_date");
             $status = "verified";
 
             date_default_timezone_set('Asia/Ho_Chi_Minh');
@@ -350,7 +323,8 @@
             /**Step 4.8 - Reason */
 
             /**Step 4.9 - appointment */
-            $output = isAppointmentTimeValid($appointment_time);
+            $input = $appointment_date." ".$appointment_time;
+            $output = isAppointmentTimeValid($input);
             if( !empty($output) )
             {
                 $this->resp->msg = $output;
@@ -383,6 +357,7 @@
                     ->set("address", $address)
                     ->set("reason", $reason)
                     ->set("appointment_time", $appointment_time)
+                    ->set("appointment_date", $appointment_date)
                     ->set("status", $status)
                     ->set("create_at", $create_at)
                     ->set("update_at", $update_at)
@@ -401,6 +376,7 @@
                     "birthday" => $Booking->get("birthday"),
                     "address" => $Booking->get("address"),
                     "reason" => $Booking->get("reason"),
+                    "appointment_date" => $Booking->get("appointment_date"),
                     "appointment_time" => $Booking->get("appointment_time"),
                     "status" => $Booking->get("status"),
                     "create_at" => $Booking->get("create_at"),

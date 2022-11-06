@@ -271,11 +271,10 @@ function setupBookingTable(url, params)
          let patientName = resp.data[i].name;
          let patientReason = resp.data[i].reason;
          let appointmentTime = resp.data[i].appointment_time;
-
+         let appointmentDate = resp.data[i].appointment_date;
          let gender = resp.data[i].gender == 1 ? "Nam" : "Nữ";
          let patientBirthday = resp.data[i].birthday;
-         let createAt = resp.data[i].create_at;
-         let updateAt = resp.data[i].update_at;
+         let patientID = resp.data[i].patient_id;
          let status = resp.data[i].status;
          let statusValue;
          switch(status)
@@ -302,28 +301,28 @@ function setupBookingTable(url, params)
          element1 = `
                  <!-- EXAMPLE 2 -->
                  <tr data-id=${bookingID} class="align-middle">
-                     <td class="text-center" id="numerical-order">
+                     <td class="text-center" id="bookingID">
                          ${bookingID}
                      </td>
  
                      <td class="fw-semibold">
-                     <div class="fw-semibold">${serviceName}</div>
+                        <div class="fw-semibold">${serviceName}</div>
                      </td>
 
-                     <td class="text-center">
+                     <td class="fw-semibold">
                         <div class="fw-semibold">${appointmentTime}</div>
                      </td>
 
  
-                     <td class="text-center">
+                     <td class="fw-semibold">
                         <div class="fw-semibold">${bookingName}</div>
                      </td>
 
  
 
                      <td>
-                     <div class="fw-semibold" id="patient-name">${patientName}</div>
-                     <div class="small text-medium-emphasis fw-semibold" id="patient-gender-birthday">Ngày sinh: ${patientBirthday}</div>
+                     <div class="fw-semibold" id="patient-name" data-patient-id=${patientID}>${patientName}</div>
+                     <div class="small text-medium-emphasis fw-semibold" id="patient-birthday">Ngày sinh: ${patientBirthday}</div>
                      </td>
 
  
@@ -339,36 +338,35 @@ function setupBookingTable(url, params)
                             <button class="btn btn-outline-primary dropdown-toggle" id="btnGroupDrop1" type="button" data-coreui-toggle="dropdown" aria-expanded="false">Khác</button>
                                 <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1" style="">
                                     <li id="button-create" class="dropdown-item" data-id=${bookingID}  type="button">Tạo thứ tự khám</li>
-                                    <li><a class="dropdown-item" href="${APP_URL}/appointment/${bookingID}">Sửa</a></li>
+                                    <li><a class="dropdown-item" href="${APP_URL}/booking/${bookingID}">Sửa</a></li>
                                     <li><a id="button-delete" 
                                         class="dropdown-item text-danger" 
-                                        data-id="${bookingID}" type="button" >Xóa</a></li>
+                                        data-id="${bookingID}" type="button" >Hủy bỏ</a></li>
                                 </ul>
                             </div>
                         </div>`;
 
             let element3 = `</td>
                  </tr>
-                 <tr data-id=${bookingID} class="collapse" id="appointment-${bookingID}">
+                 <tr data-id=${bookingID} class="collapse" id="booking-${bookingID}">
                      <td colspan="9">
                          <table class="table">
                          <thead>
                              <tr>
+                                <th class="text-center" scope="col">Ngày hẹn</th>
+                                <th class="text-center" scope="col">Giờ hẹn</th>
                                 <th class="text-center" scope="col">Số điện thoại</th>
-                                 <th class="text-center" scope="col">Giới tính bệnh nhân</th>
-                                 <th class="text-center" scope="col">Mô tả</th>
-                                 <th class="text-center" scope="col">Thời gian tạo</th>
-                                 <th class="text-center" scope="col">Cập nhật cuối</th>
+                                <th class="text-center" scope="col">Giới tính bệnh nhân</th>
+                                <th class="text-center" scope="col">Mô tả</th>
                              </tr>
                          </thead>
-                         <tbody>
+                         <tbody id="bookingInfo-${bookingID}">
                              <tr class="align-middle">
-                                 <td class="text-center" id="appointment-id">${bookingPhone}</td>
-                                 <td class="text-center" id="appointment-id">${gender}</td>
-                                 <td class="text-center" id="appointment-id">${patientReason}</td>
-                                 <td class="text-center" id="appointment-id">${createAt}</td>
-                                 <td class="text-center" id="appointment-id">${updateAt}</td>
-
+                                 <td class="text-center" id="appointment-date-${bookingID}">${appointmentDate}</td>
+                                 <td class="text-center" id="appointment-time-${bookingID}">${appointmentTime}</td>
+                                 <td class="text-center" id="booking-phone-${bookingID}">${bookingPhone}</td>
+                                 <td class="text-center" id="patient-gender-${bookingID}">${gender}</td>
+                                 <td class="text-center" id="patient-reason-${bookingID}">${patientReason}</td>
                              </tr>
                          </tbody>
                          </table>
@@ -384,8 +382,8 @@ function setupBookingTable(url, params)
         if( status == "processing")
         {
             element += 
-                    `<button class="btn btn-outline-info"  data-coreui-toggle="collapse" href="#appointment-${bookingID}"
-                        aria-expanded="false" aria-controls="#appointment-${bookingID}">Chi tiết</button>`
+                    `<button class="btn btn-outline-info"  data-coreui-toggle="collapse" href="#booking-${bookingID}"
+                        aria-expanded="false" aria-controls="#booking-${bookingID}">Chi tiết</button>`
                     + element2
                     + element3;
         }
@@ -475,10 +473,80 @@ function setupButton()
              });
          
      });
-     $(document).on('click','#button-update',function(){
-         let id = $(this).attr("data-id");
-         
-     });
+
+
+     
+     /**BUTTON CREATE APPOINTMENT */
+     $(document).on('click','#button-create',function(){
+         let bookingID = $(this).attr("data-id");
+         let appointmentDate =  $(`td#appointment-date-${bookingID}`).first().text();
+         let appointmentTime =  $(`td#appointment-time-${bookingID}`).first().text();
+         let patientReason =  $(`td#patient-reason-${bookingID}`).first().text();
+         let patientPhone =  $(`td#booking-phone-${bookingID}`).first().text();
+         let patientBirthday = $(`tr[data-id="${bookingID}"]`).find("#patient-birthday").first().text().slice(10);
+         let patientName = $(`tr[data-id="${bookingID}"]`).find("#patient-name").first().text();
+
+        /*because these values that jQuery got, have been duplicated.
+        * for instance, appointment date: 
+        */
+        let data = {
+            appointmentDate: appointmentDate,
+            appointmentTime: appointmentTime,
+            patientReason: patientReason,
+            patientBirthday: patientBirthday,
+            patientName: patientName,
+            patientPhone: patientPhone
+        }
+
+
+
+        Swal
+        .fire({
+            title: 'Bạn chắc chắn muốn thực hiện hành động ngày',
+            text: "Tạo thứ tự khám đồng nghĩa sẽ hoàn thành lịch hẹn này",
+            icon: 'warning',
+            confirmButtonText: 'Xác nhận',
+            confirmButtonColor: '#FF0000',
+            cancelButtonColor: '#0000FF',
+            cancelButtonText: 'Hủy',
+            reverseButtons: false,
+            showCancelButton: true
+        })
+        .then((result) => 
+            {
+                if (result.isConfirmed) 
+                {
+                    /*update booking status from PROCESSING to VERIFIED */
+                    $.ajax({
+                        type: "PATCH",
+                        url: `${API_URL}/bookings/${bookingID}`,
+                        data: { newStatus: "verified" },
+                        success: function(resp) {
+                        
+                            
+                            let url = `${APP_URL}/appointment/create?appointmentDate=${appointmentDate}&appointmentTime=${appointmentTime}&patientName=${patientName}&patientPhone=${patientPhone}&patientBirthday=${patientBirthday}&patientReason=${patientReason}`;
+                            url = new URL(url);
+                            window.location = url;
+                        
+                        },
+                        error: function(err) {
+                            showMessageWithButton('error','Thất bại', err);
+                        }
+                    })
+                } 
+                else
+                {
+                    Swal.close();
+                }
+            });// end Swal
+
+    });
+
+
+     /**BUTTON UPDATE */
+    //  $(document).on('click','#button-update',function(){
+    //     let bookingID = $(this).attr("data-id");
+    //  });
  }
 
 

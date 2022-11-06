@@ -306,13 +306,17 @@ function createDropdownService(resp)
 /**
  * @author Phong-Kaster
  * @since 05-11-2022
+ * this function returns PROCESSING bookings today
  */
 function getBookingQuantity()
 {
+    let date = getCurrentDate();
     let params = {
-        date: getCurrentDate(),
+        appointment_date: date,
         status: "processing"
     }
+
+
 
     $.ajax({
         type: "GET",

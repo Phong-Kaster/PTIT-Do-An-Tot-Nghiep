@@ -293,6 +293,22 @@ function setupAppointmentInfo(id)
     });
 }
 
+
+function setupAppointmentInfoWithParameter(resp)
+{
+    let patientName = resp.patientName;
+    let patientPhone = resp.patientPhone;
+    let patientBirthday = resp.patientBirthday;
+    let patientReason = resp.patientReason;
+    let appointmentTime = resp.appointmentDate + " " + resp.appointmentTime;
+    
+    $("#patient-name").val(patientName);
+    $("#patient-phone").val(patientPhone);
+    $("#appointment-time").val(appointmentTime);
+    $("#patient-reason").val(patientReason);
+    $("#patient-birthday").val(patientBirthday);
+}
+
 /**
  * @author Phong-Kaster
  * @since 04-11-2022

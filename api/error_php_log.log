@@ -676,3 +676,13 @@ Stack trace:
 [05-Nov-2022 09:34:06 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
 [05-Nov-2022 09:36:53 UTC] PHP Parse error:  syntax error, unexpected ')' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 124
 [05-Nov-2022 15:30:39 UTC] PHP Notice:  Undefined variable: status in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 126
+[06-Nov-2022 01:37:19 UTC] PHP Parse error:  syntax error, unexpected '$quantity' (T_VARIABLE) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 136
+[06-Nov-2022 01:37:36 UTC] PHP Notice:  Undefined property: stdClass::$appointment_time in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 157
+[06-Nov-2022 01:37:36 UTC] PHP Notice:  Undefined property: stdClass::$appointment_time in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 157
+[06-Nov-2022 01:37:36 UTC] PHP Notice:  Undefined property: stdClass::$appointment_time in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 157
+[06-Nov-2022 01:37:36 UTC] PHP Notice:  Undefined property: stdClass::$appointment_time in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 157
+[06-Nov-2022 01:37:36 UTC] PHP Notice:  Undefined property: stdClass::$appointment_time in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 157
+[06-Nov-2022 01:37:36 UTC] PHP Notice:  Undefined property: stdClass::$appointment_time in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 157
+[06-Nov-2022 01:37:36 UTC] PHP Notice:  Undefined property: stdClass::$appointment_time in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 157
+pp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 157
+[06-Nov-2022 02:02:53 UTC] PHP Parse error:  syntax error, unexpected '$output' (T_VARIABLE) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 327
