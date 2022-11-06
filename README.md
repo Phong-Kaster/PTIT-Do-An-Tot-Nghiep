@@ -536,6 +536,8 @@ phần này nên mất nhiều thời gian quá)
 
 1. Hoàn thiện chức năng sắp xếp lịch thứ tự khám.
 
+2. Xem - xóa - lọc dữ liệu với LỊCH HẸN khám bệnh.
+
 # [**Controller Timeline**](#controller-timeline)
 
 Phần này mình lưu lại trình tự mình viết đồ án này. Nếu các bạn có nhu cầu tham khảo cách xử lý của mình. Các bạn có thể đọc code theo trình tự 

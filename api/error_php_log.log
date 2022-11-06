@@ -670,3 +670,9 @@ Stack trace:
 [03-Nov-2022 06:26:17 UTC] PHP Parse error:  syntax error, unexpected ';' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 53
 [03-Nov-2022 06:26:24 UTC] PHP Parse error:  syntax error, unexpected ';' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 53
 [05-Nov-2022 04:15:08 UTC] PHP Warning:  Use of undefined constant console - assumed 'console' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 61
+[05-Nov-2022 09:34:00 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[05-Nov-2022 09:34:00 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[05-Nov-2022 09:34:06 UTC] PHP Notice:  Undefined property: stdClass::$date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[05-Nov-2022 09:34:06 UTC] PHP Warning:  substr() expects at least 2 parameters, 1 given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 135
+[05-Nov-2022 09:36:53 UTC] PHP Parse error:  syntax error, unexpected ')' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 124
+[05-Nov-2022 15:30:39 UTC] PHP Notice:  Undefined variable: status in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on line 126

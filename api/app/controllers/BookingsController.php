@@ -67,6 +67,8 @@
             $length         = Input::get("length") ? (int)Input::get("length") : 10;
             $start          = Input::get("start") ? (int)Input::get("start") : 0;
             $date           = Input::get("date");
+            $service_id     = Input::get("service_id");
+            $status         = Input::get("status");
 
             try
             {
@@ -115,24 +117,36 @@
                 {
                     $query->orderBy("id", "desc");
                 } 
+
+
+                if($service_id)
+                {
+                    $query->where(TABLE_PREFIX.TABLE_BOOKINGS.".service_id", "=", $service_id);
+                }
+                if($status)
+                {
+                    $query->where(TABLE_PREFIX.TABLE_BOOKINGS.".status", "=", $status);
+                }
     
 
+                $res = $query->get();
+                $quantity = count($res);
 
                 /**Step 3.3 - length filter * start filter*/
-                $query->limit($length ? $length : 10)
-                    ->offset($start ? $start : 0);
+                $query->limit($length)
+                    ->offset($start);
     
-
     
                 /**Step 4 - if we have date filter => handle like this, instead create new 
                  * field in database.
                  */
                 $result = $query->get();
+
                 if($date)
                 {
                     foreach($result as $element)
                     {
-                        $appointment_date = substr($element->date);
+                        $appointment_date = substr($element->appointment_time,0, 10);
                         if( $date == $appointment_date )
                         {
                             $data[] = array(
@@ -188,7 +202,7 @@
     
                 /**Step 5 - return */
                 $this->resp->result = 1;
-                $this->resp->quantity = count($result);
+                $this->resp->quantity = $quantity;
                 $this->resp->data = $data;
             }
             catch(Exception $ex)

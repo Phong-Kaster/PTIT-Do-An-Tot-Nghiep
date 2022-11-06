@@ -26,7 +26,7 @@
                 <div class="card-body pb-0 d-flex justify-content-between align-items-start">
                   <div>
                     <div id="current-appointment-quantity" class="fs-4 fw-semibold">0</div>
-                    <div>Số lượng bệnh nhân hôm nay</div>
+                    <div>Số lượt bệnh nhân hôm nay</div>
                   </div>
                 </div>
                 <div class="c-chart-wrapper mt-3 mx-3" style="height:70px;">
@@ -42,7 +42,7 @@
                 <div class="card-body pb-0 d-flex justify-content-between align-items-start">
                   <div>
                     <div id="current-booking-quantity" class="fs-4 fw-semibold">0</div>
-                    <div>Số lượng lịch hẹn hôm nay</div>
+                    <div>Tổng lịch hẹn hôm nay</div>
                   </div>
                   
                 </div>

@@ -1055,3 +1055,50 @@ Stack trace:
 [03-Nov-2022 13:50:48 UTC] PHP Notice:  Undefined variable: id in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 119
 [03-Nov-2022 13:50:51 UTC] PHP Notice:  Undefined variable: id in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 119
 [03-Nov-2022 13:50:53 UTC] PHP Notice:  Undefined variable: id in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 119
+[05-Nov-2022 09:23:32 UTC] PHP Warning:  Use of undefined constant admin - assumed 'admin' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\fragments\navleft.fragment.php on line 35
+[05-Nov-2022 09:23:34 UTC] PHP Warning:  Use of undefined constant admin - assumed 'admin' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\fragments\navleft.fragment.php on line 35
+[05-Nov-2022 14:32:06 UTC] PHP Notice:  Undefined variable: Settings in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\bookings.php on line 134
+[05-Nov-2022 14:32:06 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\bookings.php:134
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\Controller.php(92): require_once()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\BookingsController.php(17): Controller->view('bookings')
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\App.php(574): BookingsController->process()
+#3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\index.php(93): App->process()
+#4 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\bookings.php on line 134
+[05-Nov-2022 14:32:50 UTC] PHP Notice:  Undefined variable: Settings in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\bookings.php on line 134
+[05-Nov-2022 14:32:50 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\bookings.php:134
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\Controller.php(92): require_once()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\BookingsController.php(17): Controller->view('bookings')
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\App.php(574): BookingsController->process()
+#3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\index.php(93): App->process()
+#4 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\bookings.php on line 134
+[05-Nov-2022 14:33:16 UTC] PHP Notice:  Undefined variable: Settings in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\bookings.php on line 134
+[05-Nov-2022 14:33:16 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\bookings.php:134
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\Controller.php(92): require_once()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\BookingsController.php(17): Controller->view('bookings')
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\App.php(574): BookingsController->process()
+#3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\index.php(93): App->process()
+#4 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\bookings.php on line 134
+[05-Nov-2022 14:34:29 UTC] PHP Notice:  Undefined variable: Settings in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\bookings.php on line 131
+[05-Nov-2022 14:34:29 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\bookings.php:131
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\Controller.php(92): require_once()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\BookingsController.php(17): Controller->view('bookings')
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\App.php(574): BookingsController->process()
+#3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\index.php(93): App->process()
+#4 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\bookings.php on line 131
+[05-Nov-2022 14:34:56 UTC] PHP Notice:  Undefined variable: Settings in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\bookings.php on line 131
+[05-Nov-2022 14:34:56 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\bookings.php:131
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\Controller.php(92): require_once()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\BookingsController.php(17): Controller->view('bookings')
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\App.php(574): BookingsController->process()
+#3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\index.php(93): App->process()
+#4 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\bookings.php on line 131

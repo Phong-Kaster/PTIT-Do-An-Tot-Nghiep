@@ -63,14 +63,7 @@ function setupAppointmentTable(url, params)
           }
           else// result = 0
           {
-              title = 'error';
-              Swal.fire({
-                position: 'center',
-                icon: 'warning',
-                title: 'Warning',
-                text: msg,
-                showConfirmButton: true
-              });
+                showMessageWithButton('error','Thất bại', resp.msg);
           }
       },
       error: function(err) {
@@ -478,6 +471,7 @@ function setupButton()
         /**Step 1 - get filter values */
         let params = getFilteringCondition();
        
+        
         /**Step 2 - query */
         let url = API_URL + "/appointments";
         setupAppointmentTable(url, params);

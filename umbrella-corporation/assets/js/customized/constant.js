@@ -254,3 +254,88 @@ function createDropdownRoom(resp)
      }
      $(".row .card-header").first().text(title);
  }
+
+
+/**
+ * @author Phong-Kaster
+ * @since 05-11-2022
+ */
+function setupDropdownService(params)
+{
+    $.ajax({
+        type: "GET",
+        url: API_URL + "/services",
+        data: params,
+        dataType: "JSON",
+        success: function(resp) {
+            if(resp.result == 1)// result = 1
+            {
+                createDropdownService(resp);
+            }
+            else// result = 0
+            {
+                console.log(resp.msg);
+            }
+        },
+        error: function(err) {
+            Swal.fire('Oops...', "Oops! An error occured. Please try again later!", 'error');
+        }
+    })//end AJAX
+}
+
+
+
+/**
+ * @author Phong-Kaster
+ * @since 05-11-2022
+ */
+function createDropdownService(resp)
+{
+    $("#service").empty();
+    $("#service").append(`<option selected="" disabled="" value="">Chọn...</option>`);
+     for(let i = 0; i < resp.data.length; i++)
+     {
+         let id = resp.data[i].id;
+         let name = resp.data[i].name;
+         let element = `<option value="${id}">${name}</option>`;
+         $("#service").append(element);
+     }
+}
+
+
+/**
+ * @author Phong-Kaster
+ * @since 05-11-2022
+ */
+function getBookingQuantity()
+{
+    let params = {
+        date: getCurrentDate(),
+        status: "processing"
+    }
+
+    $.ajax({
+        type: "GET",
+        url: `${API_URL}/bookings`,
+        data: params,
+        dataType: "JSON",
+        success: function(resp) {
+        if(resp.result == 1)
+        {
+            let quantity = resp.quantity;
+            $("#booking-quantity").text(quantity);
+        }
+        else
+        {
+            showMessageWithButton('error','Thất bại', resp.msg);
+        }
+        },
+        error: function(err) {
+            Swal.fire('Oops...', "Oops! An error occured. Please try again later!", 'error');
+        }
+    });
+}
+
+$(document).ready(function(){
+    getBookingQuantity();
+});

@@ -242,3 +242,31 @@ VALUES (3, 1, 'Bệnh nhân 19', '2022-02-22', 'Mệt mỏi', 0791234567, 19, 19
 
 INSERT INTO `tn_appointments` (doctor_id, patient_id, patient_name, patient_birthday, patient_reason, patient_phone, numerical_order, position, appointment_time, date ,status)
 VALUES (3, 1, 'Bệnh nhân 20', '2022-02-22', 'Mệt mỏi', 0791234567, 20, 20,'', '2022-11-02', 'processing');
+
+
+
+## 7 lịch hẹn khám - BOOKING 
+update `tn_booking`
+set appointment_time = '2022-11-05'
+
+
+INSERT INTO `tn_booking` (service_id, patient_id, booking_name, booking_phone, name, gender, birthday, address, reason, appointment_time ,status)
+VALUES (1, 1, 'Phong', '0794104124', 'Emma', 0, "2000-01-01", "Sweden", "Khám thai định kì", "2022-05-11 09:00", "done");
+
+INSERT INTO `tn_booking` (service_id, patient_id, booking_name, booking_phone, name, gender, birthday, address, reason, appointment_time ,status)
+VALUES (1, 1, 'Phong', '0794104124', 'Jessica', 0, "2000-01-01", "Sweden", "Khám thai định kì", "2022-05-11 09:00", "done");
+
+INSERT INTO `tn_booking` (service_id, patient_id, booking_name, booking_phone, name, gender, birthday, address, reason, appointment_time ,status)
+VALUES (1, 2, 'Phong', '0794104124', 'Jeffrey Dahmer', 0, "2000-01-01", "Sweden", "Khám sức khỏe", "2022-05-11 09:00", "processing");
+
+INSERT INTO `tn_booking` (service_id, patient_id, booking_name, booking_phone, name, gender, birthday, address, reason, appointment_time ,status)
+VALUES (1, 2, 'Phong', '0794104124', 'Johnwick', 0, "2000-01-01", "Sweden", "Khám sức khỏe", "2022-05-11 09:00", "processing");
+
+INSERT INTO `tn_booking` (service_id, patient_id, booking_name, booking_phone, name, gender, birthday, address, reason, appointment_time ,status)
+VALUES (1, 2, 'Phong', '0794104124', 'Jeffrey Snow', 0, "2000-01-01", "Sweden", "Khám sức khỏe", "2022-05-11 09:00", "processing");
+
+INSERT INTO `tn_booking` (service_id, patient_id, booking_name, booking_phone, name, gender, birthday, address, reason, appointment_time ,status)
+VALUES (1, 2, 'Phong', '0794104124', 'John Snow', 0, "2000-01-01", "Sweden", "Khám sức khỏe", "2022-05-11 09:00", "processing");
+
+INSERT INTO `tn_booking` (service_id, patient_id, booking_name, booking_phone, name, gender, birthday, address, reason, appointment_time ,status)
+VALUES (1, 2, 'Phong', '0794104124', 'Bravo', 0, "2000-01-01", "Sweden", "Khám sức khỏe", "2022-05-11 09:00", "processing");

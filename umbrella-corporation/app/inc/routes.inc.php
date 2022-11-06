@@ -61,3 +61,6 @@ App::addRoute("GET", "/appointments/?", "Appointments");
 App::addRoute("GET", "/appointment/?[i:id]/?", "Appointment");
 App::addRoute("GET", "/appointment/create/?", "Appointment");
 App::addRoute("GET", "/appointment/arrange/?", "AppointmentArrange");
+
+/******************************** BOOKING *********************************/
+App::addRoute("GET", "/bookings/?", "Bookings");

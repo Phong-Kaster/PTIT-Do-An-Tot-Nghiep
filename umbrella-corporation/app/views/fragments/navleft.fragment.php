@@ -24,22 +24,25 @@
             Thứ tự lịch khám
           </a>
 
+        <?php if($AuthUser->get("role") == "admin" || 
+            $AuthUser->get("role") == "supporter" ): ?>
 
-        <li class="nav-item">
-          <a class="nav-link <?= $Nav->activeMenu == "appointmentArrange" ? "active" : "" ?>" href="<?= APPURL."/appointment/arrange/?" ?>">
-            <i class="nav-icon cil-align-left"></i> 
-              Sắp xếp thứ tự
-          </a>
-        </li>
-            
-        <li class="nav-item">
-          <a class="nav-link <?= $Nav->activeMenu == "booking" ? "active" : "" ?>" href="<?= APPURL."/booking" ?>">
-            <i class="nav-icon cil-description"></i> 
-            Lịch hẹn
-          </a>
-        </li>
-        <!-- end BOOKING & APPOINTMENTS -->
-
+          <li class="nav-item">
+            <a class="nav-link <?= $Nav->activeMenu == "appointmentArrange" ? "active" : "" ?>" href="<?= APPURL."/appointment/arrange/?" ?>">
+              <i class="nav-icon cil-align-left"></i> 
+                Sắp xếp thứ tự
+            </a>
+          </li>
+        
+          <li class="nav-item">
+            <a class="nav-link <?= $Nav->activeMenu == "booking" ? "active" : "" ?>" href="<?= APPURL."/bookings" ?>">
+              <i class="nav-icon cil-description"></i> 
+              Lịch hẹn
+              <span id="booking-quantity" class="badge badge-sm bg-info ms-auto">0</span>
+            </a>
+          </li><!-- end BOOKING & APPOINTMENTS -->
+        <?php endif; ?>
+          
         <!--ADMIN -->
         <li class="nav-title">Quản trị viên</li>
 
