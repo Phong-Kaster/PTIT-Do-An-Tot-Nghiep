@@ -557,6 +557,8 @@ không thể sắp xếp lịch thứ tự của họ.
 
 5. Chức năng xóa chuyên khoa.
 
+6. Dựng giao diện quản lý bệnh nhân, lọc dữ liệu
+
 # [**Controller Timeline**](#controller-timeline)
 
 Phần này mình lưu lại trình tự mình viết đồ án này. Nếu các bạn có nhu cầu tham khảo cách xử lý của mình. Các bạn có thể đọc code theo trình tự 

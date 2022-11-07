@@ -53,8 +53,14 @@
     <link rel="stylesheet" href="https://unpkg.com/@coreui/icons/css/brand.min.css">
     <link rel="stylesheet" href="https://unpkg.com/@coreui/icons/css/flag.min.css">
 
+
+    <!-- DATETIME PICKER -->
+    <link rel="stylesheet" href="https://www.jqueryscript.net/demo/Clean-jQuery-Date-Time-Picker-Plugin-datetimepicker/jquery.datetimepicker.css"/>
+
     <!-- chart js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+
 
     <!-- Global site tag (gtag.js) - Google Analytics-->
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965717-3"></script>
@@ -72,20 +78,7 @@
     </script>
     <link href="<?= APPURL."/assets/vendors/@coreui/chartjs/css/coreui-chartjs.css?v=".VERSION ?>" rel="stylesheet">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-    <style>
-      div.form
-      {
-          display: block;
-          text-align: center;
-      }
-      form
-      {
-          display: inline-block;
-          margin-left: auto;
-          margin-right: auto;
-          text-align: left;
-      }
-    </style>
+    <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
   </head>
   <body>
     
@@ -104,7 +97,7 @@
       <!-- end NAVIGATION -->
       
       <!-- CONTENT -->
-      <?php require_once(APPPATH.'/views/fragments/specialities.fragment.php'); ?>
+      <?php require_once(APPPATH.'/views/fragments/speciality.fragment.php'); ?>
       <!-- end CONTENT -->
 
       <!-- FOOTER -->
@@ -117,16 +110,17 @@
     <!-- GENERAL JS -->
     <?php require_once(APPPATH.'/views/fragments/javascript.fragment.php'); ?>
     <!-- PRIVATE JS -->
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script><!-- date picker -->
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script><!-- date picker -->
-    <script src="<?= APPURL."/assets/js/customized/specialities.js?v=".VERSION ?>"></script>
+    <script src="https://cdn.ckeditor.com/4.20.0/standard/ckeditor.js"></script><!-- CK Editor -->
+    <script src="<?= APPURL."/assets/js/customized/speciality.js?v=".VERSION ?>"></script>
     <script>
-        let order = { column:"id", dir:"asc"}
-        let params = {
-            order: order,
-            length: DEFAULT_LENGTH
+        /**Step 1 - setup CK Editor for p */
+        CKEDITOR.replace( 'description' );
+
+        let id = <?= $id  ?>;
+        if( id > 0)
+        {
+            setupSpecialityInfo(id);
         }
-        setupSpecialityTable(params);
         setupButton();
     </script>
   </body>

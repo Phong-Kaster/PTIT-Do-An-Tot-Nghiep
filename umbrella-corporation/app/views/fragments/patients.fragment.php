@@ -5,13 +5,6 @@
                 <div class="card-body">
                     <div class="example">
 
-                        <!-- <div class="tab-content rounded-bottom">
-                        <div class="tab-pane p-3 active preview" role="tabpanel" id="preview-927">
-                        <div class="input-group mb-3">
-                            <button type="button" class="btn btn-primary id="button-search">Tìm kiếm</button>
-                            <input class="form-control" type="text" placeholder="Hãy nhập nội dung tìm kiếm" aria-label="Example text with button addon" aria-describedby="button-addon1">
-                        </div> -->
-
                         <div class="col-md-6 mb-3"><!-- 1. SEARCH - search -->
                             <div class="input-group ">
                                 <span class="input-group-text ">
@@ -20,7 +13,7 @@
                                 <input class="form-control" id="search" size="16" type="text" placeholder="Bạn đang cần tìm gì?">
                                 <button id="button-search" class="btn btn-info" type="button">Tìm kiếm</button>
                                 <button id="button-reset" class="btn btn-success" type="button">Làm mới</button>
-                                <a href="<?= APPURL."/speciality/create"?>" class="btn btn-dark" type="button">Tạo mới</a>
+                                <a href="<?= APPURL."/patient/create"?>" class="btn btn-dark" type="button">Tạo mới</a>
                             </div>
                         </div><!-- end 1. SEARCH - search -->
 
@@ -45,8 +38,8 @@
                                 <select class="form-select" id="order-column" required="">
                                     <option selected="" disabled="" value="">Chọn...</option>
                                     <option value="id">ID</option>
-                                    <option value="name">Tên chuyên khoa</option>
-                                    <option value="doctor_quantity">Số lượng bác sĩ</option>
+                                    <option value="name">Tên</option>
+                                    <option value="gender">Giới tính</option>
                                 </select>
                                 <div class="invalid-feedback">Please select a valid state.</div>
                             </div>
@@ -61,7 +54,7 @@
             <div class="col-md-12">
               <div class="card mb-4">
                 <div class="card-header">
-                    Danh sách chuyên khoa
+                    Danh sách bệnh nhân
                 </div>
                     <div class="card-body">
               
@@ -70,18 +63,17 @@
                             <thead class="table-light fw-semibold">
                                 <tr class="align-middle">
                                     <th class="text-center">
-                                        <i class="icon cil-compress"></i>
+                                        <i class="icon cil-people"></i>
                                     </th>
-                                    <th>ID</th>
-                                    <th>Tên chuyên khoa</th>
-                                    <th>Số lượng bác sĩ</th>
-                                    <th>Hành động</th>
+                                    <th>Tên</th>
+                                    <th>Email</th>
+                                    <th>Số điện thoại</th>
                                     <th></th>
                                 </tr>
                             </thead>
 
                             <tbody>
-                            
+                               
                             </tbody>
                         </table>
                     </div>

@@ -54,7 +54,7 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link <?= $Nav->activeMenu == "patient" ? "active" : "" ?>" href="<?= APPURL."/patient" ?>">
+          <a class="nav-link <?= $Nav->activeMenu == "patient" ? "active" : "" ?>" href="<?= APPURL."/patients" ?>">
             <i class="nav-icon cil-disabled"></i> 
               Bệnh nhân
           </a>

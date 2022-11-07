@@ -1,11 +1,11 @@
 /**
- * @author Phong-Kaster
+ * @author Phong-Kaster 
  * @since 07-11-2022
  */
-function setupSpecialityTable(params)
+function setupPatientTable(params)
 {
     /**Step 1 - declare params */
-    let url = `${API_URL}/specialities`;
+    let url = `${API_URL}/patients`;
 
     /**Step 2 - ajax */
     $.ajax({
@@ -16,7 +16,7 @@ function setupSpecialityTable(params)
         success: function(resp) {
         if(resp.result == 1)
         {
-            createSpecialityTable(resp);
+            createPatientTable(resp);
             pagination(url, resp.quantity, resp.data.length);
         }
         else
@@ -31,12 +31,11 @@ function setupSpecialityTable(params)
 }
 
 
-
 /**
  * @author Phong-Kaster
  * @since 07-11-2022
  */
-function createSpecialityTable(resp)
+function createPatientTable(resp)
 {
     let size = resp.data.length;
     if( size == 0)
@@ -47,40 +46,76 @@ function createSpecialityTable(resp)
     for(let i = 0; i< size; i++)
     {
         let element = resp.data[i];
-        let specialityId = element.id;
-        let specialityName = element.name;
-        let specialityDescription = element.description;
-        let specialityDoctorQuantity = element.doctor_quantity;
-        let body = 
-            `<tr data-id=${specialityId} class="align-middle">
-                <td class="text-center" id="speciality-id">
-                    
-                </td>
+        let email = element.email;
+        let phone = element.phone;
+        let name = element.name;
+        let gender = "Nam";
+        if( element.gender != 1)
+        {
+            gender = "Nữ";
+        }
+        let birthday = element.birthday;
+        let address = element.address;
+        let avatar = element.avatar ? element.avatar : "default_avatar.jpg";
+        let createAt = element.create_at;
+        let updateAt = element.update_at;
+        let id = element.id;
+        let body = `
+        <tr data-id="${id}" class="align-middle"><!-- TR -->
+            <td class="text-center">
+                <div class="avatar avatar-md">
+                    <img class="avatar-img" src="${API_URL}/assets/uploads/${avatar}" alt="${name}">
+                </div>
+            </td>
 
-                <td class="fw-semibold">
-                <div class="fw-semibold" id="speciality-id">${specialityId}</div>
-                </td>
+            <td>
+            <div class="fw-semibold" id="patient-name">${name}</div>
+            <div class="small text-medium-emphasis fw-semibold" id="patient-birthday">Ngày sinh: ${birthday}</div>
+            </td>
 
+            <td class="fw-semibold">
+                <div class="fw-semibold" id="patient-email">${email}</div>
+            </td>
 
-                <td>
-                    <div class="fw-semibold" id="speciality-name">${specialityName}</div>
-                </td>
+            <td>
+            <div class="fw-semibold" id="patient-phone">${phone}</div>
+            </td>
 
-                <td>
-                    <div class="fw-semibold" id="speciality-doctor-quantity">${specialityDoctorQuantity}</div>
-                </td>
+            <td>
+                <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                <a href="${APP_URL}/patient/${id}" data-id="${id}" class="btn btn-outline-success" type="button">Sửa</a>
+                <a data-id="${id}" class="btn btn-outline-info" type="button" data-coreui-toggle="collapse" href="#patient-${id}" aria-expanded="false" aria-controls="#appointment-147">Chi tiết</a>
+            </td>
 
-                <td>
-                    <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-                        <a href="${APP_URL}/speciality/${specialityId}" class="btn btn-outline-warning" type="button">Sửa</a>
-                        <button id="button-delete" data-id=${specialityId} class="btn btn-outline-danger" type="button">Xóa</button><div class="btn-group" role="group">
-                    </div>
-                </td>
-            </tr>`;
+        </tr><!-- end TR -->
+
+        <tr data-id="${id}" class="collapse" id="patient-${id}">
+            <td colspan="5">
+                <table class="table">
+                <thead>
+                    <tr>
+                        <th class="text-center" scope="col">Mã thẻ bảo hiểm y tế</th>
+                        <th class="text-center" scope="col">Giới tính</th>
+                        <th class="text-center" scope="col">Địa chỉ</th>
+                        <th class="text-center" scope="col">Khởi tạo</th>
+                        <th class="text-center" scope="col">Cập nhật lần cuối</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="align-middle">
+                        <td class="text-center">${id}</td>
+                        <td class="text-center">${gender}</td>
+                        <td class="text-center">${address}</td>
+                        <td class="text-center">${createAt}</td>
+                        <td class="text-center">${updateAt}</td>
+                    </tr>
+                </tbody>
+                </table>
+            </td>
+        </tr>`;
         $("tbody").append(body);
     }
 }
-
 
 
 /**
@@ -88,27 +123,26 @@ function createSpecialityTable(resp)
  * @since 07-11-2022
  * @returns params to filter data
  */
-function getFilteringCondition()
-{
-    let search         = $("#search").val();
-    let orderDir       = $("#order-dir :selected").val() ? $("#order-dir :selected").val() : "desc";
-    let orderColumn    = $("#order-column :selected").val() ? $("#order-column :selected").val() : "id";
-
-
-    /**Step 2 - set up parameters */
-    let order = {
-        "dir": orderDir,
-        "column": orderColumn
-    };
-    let params = {
-        search: search,
-        order: order,
-        length: DEFAULT_LENGTH
-    };
-
-    return params;
-}
-
+ function getFilteringCondition()
+ {
+     let search         = $("#search").val();
+     let orderDir       = $("#order-dir :selected").val() ? $("#order-dir :selected").val() : "desc";
+     let orderColumn    = $("#order-column :selected").val() ? $("#order-column :selected").val() : "id";
+ 
+ 
+     /**Step 2 - set up parameters */
+     let order = {
+         "dir": orderDir,
+         "column": orderColumn
+     };
+     let params = {
+         search: search,
+         order: order,
+         length: DEFAULT_LENGTH
+     };
+ 
+     return params;
+ }
 
 
 /**
@@ -117,61 +151,6 @@ function getFilteringCondition()
  */
 function setupButton()
 {
-    /**BUTTON DELETE on ELEMENT */
-    $(document).on('click','#button-delete',function(){
-        let id = $(this).attr("data-id");
-
-        Swal
-        .fire({
-            title: 'Bạn chắc chắn muốn thực hiện hành động ngày',
-            text: "Tạo thứ tự khám đồng nghĩa sẽ hoàn thành lịch hẹn này",
-            icon: 'warning',
-            confirmButtonText: 'Xác nhận',
-            confirmButtonColor: '#FF0000',
-            cancelButtonColor: '#0000FF',
-            cancelButtonText: 'Hủy',
-            reverseButtons: false,
-            showCancelButton: true
-        })
-        .then((result) => 
-            {
-                if (result.isConfirmed) 
-                {
-                    /*update booking status from PROCESSING to VERIFIED */
-                    $.ajax({
-                        type: "DELETE",
-                        url: `${API_URL}/specialities/${id}`,
-                        dataType: "JSON",
-                        success: function(resp) {
-                            if( resp.result == 1)
-                            {
-                                showMessageWithButton('success','Thành công', resp.msg);
-                                $(`tbody tr[data-id="${id}"]`).remove();
-                            }
-                            else
-                            {
-                                showMessageWithButton('info','Không thành công', resp.msg);
-                            }
-                            
-                        },
-                        error: function(err) {
-                            showMessageWithButton('error','Thất bại', err);
-                        }
-                    })
-                } 
-                else
-                {
-                    Swal.close();
-                }
-            });// end Swal
-    });
-
-    /**BUTTON SEARCH */
-    $("#button-search").click(function(){
-        let params = getFilteringCondition();
-        setupSpecialityTable(params);
-    })
-
     /**BUTTON RESET */
     $("#button-reset").click(function(){
         $("#search").val("");
@@ -180,12 +159,18 @@ function setupButton()
 
         let order = { column:"id", dir:"asc"}
         let params = {
-            order: order
+            order: order,
+            length: DEFAULT_LENGTH
         }
-        setupSpecialityTable(params);
+        setupPatientTable(params);
+    });
+
+    /**BUTTON SEARCH */
+    $("#button-search").click(function(){
+        let params = getFilteringCondition();
+        setupPatientTable(params);
     })
 }
-
 
 
  /**
@@ -268,7 +253,7 @@ function setupButton()
                   success: function(resp) {
                       if(resp.result == 1)// result = 1
                       {
-                          createSpecialityTable(resp);
+                          createPatientTable(resp);
                       }
                       else// result = 0
                       {
@@ -332,7 +317,7 @@ function setupButton()
                       if(resp.result == 1)// result = 1
                       {
                          
-                          createSpecialityTable(resp);
+                          createPatientTable(resp);
                       }
                       else// result = 0
                       {

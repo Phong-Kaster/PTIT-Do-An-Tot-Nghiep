@@ -92,7 +92,7 @@
     <!-- LEFT NAVIGATION -->
     <?php 
           $Nav = new stdClass;
-          $Nav->activeMenu = "speciality";
+          $Nav->activeMenu = "patient";
           require_once(APPPATH.'/views/fragments/navleft.fragment.php');
     ?>
     <!-- end LEFT NAVIGATION -->
@@ -104,7 +104,7 @@
       <!-- end NAVIGATION -->
       
       <!-- CONTENT -->
-      <?php require_once(APPPATH.'/views/fragments/specialities.fragment.php'); ?>
+      <?php require_once(APPPATH.'/views/fragments/patients.fragment.php'); ?>
       <!-- end CONTENT -->
 
       <!-- FOOTER -->
@@ -119,14 +119,14 @@
     <!-- PRIVATE JS -->
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script><!-- date picker -->
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script><!-- date picker -->
-    <script src="<?= APPURL."/assets/js/customized/specialities.js?v=".VERSION ?>"></script>
+    <script src="<?= APPURL."/assets/js/customized/patients.js?v=".VERSION ?>"></script>
     <script>
         let order = { column:"id", dir:"asc"}
         let params = {
             order: order,
             length: DEFAULT_LENGTH
         }
-        setupSpecialityTable(params);
+        setupPatientTable(params);
         setupButton();
     </script>
   </body>

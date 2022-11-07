@@ -94,7 +94,7 @@ class SpecialitiesController extends Controller
 
 
                 if(in_array($column_name, ["name", "description"])){
-                    $query->orderBy(DB::raw($column_name. " * 1"), $sort);
+                    $query->orderBy(DB::raw(TABLE_PREFIX.TABLE_SPECIALITIES.".".$column_name. " * 1"), $sort);
                 }else{
                     $query->orderBy($column_name, $sort);
                 }
@@ -104,9 +104,12 @@ class SpecialitiesController extends Controller
                 $query->orderBy("id", "desc");
             } 
 
+            $res = $query->get();
+            $quantity = count($res);
+
             /**Step 3.3 - length filter * start filter*/
-            $query->limit($length ? $length : 10)
-                ->offset($start ? $start : 0);
+            $query->limit($length)
+                ->offset($start);
 
 
 
@@ -125,7 +128,7 @@ class SpecialitiesController extends Controller
 
             /**Step 5 - return */
             $this->resp->result = 1;
-            $this->resp->quantity = count($result);
+            $this->resp->quantity = $quantity;
             $this->resp->data = $data;
         }
         catch(Exception $ex)
