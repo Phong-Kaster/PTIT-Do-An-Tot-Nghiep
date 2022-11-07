@@ -326,7 +326,7 @@ function getBookingQuantity()
         success: function(resp) {
         if(resp.result == 1)
         {
-            let quantity = resp.quantity;
+            let quantity = resp.quantity + " mới";
             $("#booking-quantity").text(quantity);
         }
         else

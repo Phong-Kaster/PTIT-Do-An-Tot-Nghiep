@@ -44,12 +44,7 @@
                                 <select class="form-select" id="order-column" required="">
                                     <option selected="" disabled="" value="">Chọn...</option>
                                     <option value="id">ID</option>
-                                    <option value="service_id">Dịch vụ</option>
-                                    <option value="booking_name">Tên người đặt lịch hẹn</option>
-                                    <option value="name">Tên bệnh nhân</option>
-                                    <option value="appointment_time">Ngày hẹn khám</option>
-                                    <option value="create_at">Thời gian tạo</option>
-                                    <option value="update_at">Thời gian cập nhật lần cuối</option>
+                                    <option value="name">Tên chuyên khoa</option>
                                 </select>
                                 <div class="invalid-feedback">Please select a valid state.</div>
                             </div>
@@ -73,7 +68,7 @@
                             <thead class="table-light fw-semibold">
                                 <tr class="align-middle">
                                     <th class="text-center">
-                                        <i class="icon cil-people"></i>
+                                        <i class="icon cil-compress"></i>
                                     </th>
                                     <th>ID</th>
                                     <th>Tên chuyên khoa</th>
@@ -84,6 +79,7 @@
                             </thead>
 
                             <tbody>
+                            
                             </tbody>
                         </table>
                     </div>

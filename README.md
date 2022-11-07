@@ -544,6 +544,19 @@ phần này nên mất nhiều thời gian quá)
 
 2. Chức năng sắp xếp lịch hẹn sẽ hiển thông tin của 2 người đang và khám kết tiếp nhưng 
 không thể sắp xếp lịch thứ tự của họ.
+
+- **07-11-2022**:
+
+1. Sửa một số lỗi khi đặt THỨ TỰ KHÁM BỆNH từ lịch hẹn 
+
+2. Sửa lại cách xử lý khi sắp xếp thứ tự khám bệnh.
+
+3. Đổ dữ liệu chuyên khoa.
+
+4. Bộ lọc tìm kiếm chuyên khoa 
+
+5. Chức năng xóa chuyên khoa.
+
 # [**Controller Timeline**](#controller-timeline)
 
 Phần này mình lưu lại trình tự mình viết đồ án này. Nếu các bạn có nhu cầu tham khảo cách xử lý của mình. Các bạn có thể đọc code theo trình tự 

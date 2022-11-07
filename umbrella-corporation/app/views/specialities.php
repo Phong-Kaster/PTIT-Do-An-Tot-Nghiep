@@ -117,6 +117,16 @@
     <!-- GENERAL JS -->
     <?php require_once(APPPATH.'/views/fragments/javascript.fragment.php'); ?>
     <!-- PRIVATE JS -->
-
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script><!-- date picker -->
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script><!-- date picker -->
+    <script src="<?= APPURL."/assets/js/customized/specialities.js?v=".VERSION ?>"></script>
+    <script>
+        let order = { column:"id", dir:"asc"}
+        let params = {
+            order: order
+        }
+        setupSpecialityTable(params);
+        setupButton();
+    </script>
   </body>
 </html>

@@ -127,56 +127,74 @@ let secondElement;
 let doctor_id;
 function createSortableTable(resp)
 {
-    /**Step 1 - set value for global variable */
-    firstElement = resp.data[0].id;
-    secondElement = resp.data[1].id;
-    doctor_id = resp.data[0].doctor.id;
-
-
-    /**Step 2 - write 2 current appointments which can not be sortable */
-    $("#appointmentSortable").find(".container").remove();
-    for(i = 0; i < 2;i++)
+    /**Step 1 - set value for global variable
+     * first element and second element are the current appointment 
+     * and the next appointment
+     */
+    let loop = 0;
+    if( resp.data[0] )
     {
-        let element = resp.data[i];
-        let appointmentID = element.id;
-        let title = "Hiện tại";
-        if( i == 1){
-            title = "Kế tiếp";
-        }
-        let patientName = element.patient_name;
-        let patientReason = element.patient_reason;
-        let patientBirthday = element.patient_birthday;
-        let appointmentTime = element.appointment_time;
-        let container = `
-        <div data-id=${appointmentID} class="container list-group-item"><!-- item -->
-        <div class="row static text-success">
-                <div class="col-sm-1 text-center">
-                <div class="text-center">${title}</div>
-                </div>
-
-                <div class="col-sm-3">
-                    <div class="fw-semibold" id="patient-name">${patientName}</div>
-                </div>
-
-                <div class="col-sm-3">
-                    <div class="clearfix">
-                        <div class="fw-semibold" id="patient-reason">${patientReason}</div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="fw-semibold" id="patient-name">${patientBirthday}</div>
-                </div>
-
-                <div class="col">
-                    <div class="fw-semibold" id="patient-name">${appointmentTime}</div>
-                </div>
-            </div>
-        </div><!-- end item -->`;
-
-        $("#appointmentSortable").append(container);
+        firstElement = resp.data[0].id;
+        doctor_id = resp.data[0].doctor.id;
+        loop = 1;
+        
+    }
+    if( resp.data[1] )
+    {
+        secondElement = resp.data[1].id;
+        loop = 2;
     }
     
+    
+
+    
+    /**Step 2 - write 2 current appointments which can not be sortable */
+    $("#appointmentSortable").find(".container").remove();
+    if( loop > 0 )
+    {
+        for(i = 0; i < loop;i++)
+        {
+            let element = resp.data[i];
+            let appointmentID = element.id;
+            let title = "Hiện tại";
+            if( i == 1){
+                title = "Kế tiếp";
+            }
+            let patientName = element.patient_name;
+            let patientReason = element.patient_reason;
+            let patientBirthday = element.patient_birthday;
+            let appointmentTime = element.appointment_time;
+            let container = `
+            <div data-id=${appointmentID} class="container list-group-item"><!-- item -->
+            <div class="row static text-success">
+                    <div class="col-sm-1 text-center">
+                    <div class="text-center">${title}</div>
+                    </div>
+    
+                    <div class="col-sm-3">
+                        <div class="fw-semibold" id="patient-name">${patientName}</div>
+                    </div>
+    
+                    <div class="col-sm-3">
+                        <div class="clearfix">
+                            <div class="fw-semibold" id="patient-reason">${patientReason}</div>
+                        </div>
+                    </div>
+    
+                    <div class="col">
+                        <div class="fw-semibold" id="patient-name">${patientBirthday}</div>
+                    </div>
+    
+                    <div class="col">
+                        <div class="fw-semibold" id="patient-name">${appointmentTime}</div>
+                    </div>
+                </div>
+            </div><!-- end item -->`;
+    
+            $("#appointmentSortable").append(container);
+        }    
+    }// end if loop > 0
+   
     /**Step 3 - write the rest of appointment that can be sortable */
     let size = resp.data.length;
     for(let i = 2; i< size; i++)
