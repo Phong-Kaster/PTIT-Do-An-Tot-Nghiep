@@ -117,11 +117,7 @@
       setupDropdownDoctor(paramsDoctor);
       setupChooseSpeciality();
 
-      // new Sortable(appointmentDisortable, {
-      //     animation: 150,
-      //     sort: false,
-      //     ghostClass: 'blue-background-class'
-      // });
+
       new Sortable(appointmentSortable, {
           animation: 150,
           ghostClass: 'blue-background-class',

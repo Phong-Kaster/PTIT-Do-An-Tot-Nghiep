@@ -92,7 +92,7 @@
     <!-- LEFT NAVIGATION -->
     <?php 
           $Nav = new stdClass;
-          $Nav->activeMenu = "booking";
+          $Nav->activeMenu = "speciality";
           require_once(APPPATH.'/views/fragments/navleft.fragment.php');
     ?>
     <!-- end LEFT NAVIGATION -->
@@ -104,7 +104,7 @@
       <!-- end NAVIGATION -->
       
       <!-- CONTENT -->
-      <?php require_once(APPPATH.'/views/fragments/bookings.fragment.php'); ?>
+      <?php require_once(APPPATH.'/views/fragments/specialities.fragment.php'); ?>
       <!-- end CONTENT -->
 
       <!-- FOOTER -->
@@ -117,34 +117,6 @@
     <!-- GENERAL JS -->
     <?php require_once(APPPATH.'/views/fragments/javascript.fragment.php'); ?>
     <!-- PRIVATE JS -->
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script><!-- date picker -->
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script><!-- date picker -->
-    <script src="<?= APPURL."/assets/js/customized/bookings.js?v=".VERSION ?>"></script>
-    <script>
-    $(document).ready(function(){
-        /**Step 1 - prepare parameters */
-        let paramsService = {};
 
-
-        /**Step 2 - setup necessary filter dropdown */
-        setupDropdownService(paramsService);
-        setupDatePicker();
-        setupButton();
-        setupBookingActions();
-
-        let url = API_URL + "/bookings"
-        let appointmentDate = getCurrentDate();
-        let order = { column:"id", dir:"asc"}
-        let paramsBooking = {
-            length: DEFAULT_LENGTH,
-            order: order,
-            appointment_date: appointmentDate,
-            status: "processing"
-        }
-        
-        setupBookingTable(url, paramsBooking);
-        
-    });
-    </script>
   </body>
 </html>

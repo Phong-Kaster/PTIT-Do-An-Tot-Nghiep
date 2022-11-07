@@ -54,40 +54,8 @@
                                 <div class="invalid-feedback">Please select a valid state.</div>
                             </div>
                             <!-- end order[column] -->
-
-                            <!-- order[dir] -->
-                            <div class="col-md-4">
-                                <label class="form-label" for="status">Trạng thái</label>
-                                <select class="form-select" id="status" required="">
-                                    <option selected="" disabled="" value="">Chọn...</option>
-                                    <option value="processing">Đang xử lý</option>
-                                    <option value="verified">Đã xác thực</option>
-                                    <option value="cancelled">Hủy</option>
-                                </select>
-                                <div class="invalid-feedback">Please select a valid state.</div>
-                            </div>
-                            <!-- end order[dir] -->
-                        </div><!-- end 2. ORDER dir | column | STATUS -->
                         
 
-                        <div class="row mb-3"><!-- 3. SERVICE | DATE -->
-                            
-                            <div class="col-md-4"><!-- 3.1 SPECIALITY -->
-                                <label class="form-label" for="service">Sắp xếp theo dịch vụ</label>
-                                <select class="form-select" id="service" required="">
-                                    <option selected="" disabled="" value="">Chọn...</option>
-                                    <!-- <option value="id">ID</option> -->
-                                </select>
-                                <div class="invalid-feedback">Please select a valid state.</div>
-                            </div><!-- end 3.1 SPECIALITY -->
-
-                            <div class="col-md-4"><!--3.2 DATE -->
-                                <label class="form-label" for="order-column">Ngày khám</label>
-                                <p><input class="form-control rounded" type="text" id="datepicker"></p>
-                            </div><!-- end 3.2 DATE -->
-
-                        </div><!-- end  3. SERVICE | DATE -->
-                        
                     </div>
                 </div>
         </div><!-- end SECTION FILTER -->
@@ -96,7 +64,7 @@
             <div class="col-md-12">
               <div class="card mb-4">
                 <div class="card-header">
-                    Danh sách lịch hẹn
+                    Danh sách chuyên khoa
                 </div>
                     <div class="card-body">
               
@@ -107,11 +75,10 @@
                                     <th class="text-center">
                                         <i class="icon cil-people"></i>
                                     </th>
-                                    <th>Dịch vụ</th>
-                                    <th>Giờ hẹn</th>
-                                    <th>Tên người đặt</th>
-                                    <th>Tên bệnh nhân</th>
-                                    <th>Trạng thái</th>
+                                    <th>ID</th>
+                                    <th>Tên chuyên khoa</th>
+                                    <th>Số lượng bác sĩ</th>
+                                    <th>Hành động</th>
                                     <th></th>
                                 </tr>
                             </thead>

@@ -195,7 +195,7 @@ function pagination(url, totalRecord, currentRecord)
      let orderColumn    = $("#order-column :selected").val() ? $("#order-column :selected").val() : "id";
      let status         = $("#status :selected").val() ? $("#status :selected").val() : "";
      let serviceId      = $("#service :selected").val() ? $("#service :selected").val() : "";
-     let date           = $("#datepicker").val() ? $("#datepicker").val() : getCurrentDate();
+     let appointmentDate = $("#datepicker").val() ? $("#datepicker").val() : getCurrentDate();
  
  
      /**Step 2 - set up parameters */
@@ -208,7 +208,7 @@ function pagination(url, totalRecord, currentRecord)
          order: order,
          length: DEFAULT_LENGTH,
          service_id: serviceId,
-         date: date,
+         appointment_date: appointmentDate,
          status: status
      };
  
@@ -415,9 +415,9 @@ function setupButton()
         
 
         let url = API_URL + "/bookings";
-        date = getCurrentDate();
-        $("#datepicker").val(date);
-        let params = { date: date,  status:"" , length:DEFAULT_LENGTH }
+        let appointmentDate = getCurrentDate();
+        $("#datepicker").val(appointmentDate);
+        let params = { appointment_date: appointmentDate,  status:"" , length:DEFAULT_LENGTH }
         setupBookingTable(url, params);
     });
 
@@ -485,6 +485,7 @@ function setupButton()
          let patientPhone =  $(`td#booking-phone-${bookingID}`).first().text();
          let patientBirthday = $(`tr[data-id="${bookingID}"]`).find("#patient-birthday").first().text().slice(10);
          let patientName = $(`tr[data-id="${bookingID}"]`).find("#patient-name").first().text();
+         let patientId = $(`tr[data-id="${bookingID}"]`).find("#patient-name").first().attr("data-patient-id");
 
         /*because these values that jQuery got, have been duplicated.
         * for instance, appointment date: 
@@ -495,9 +496,9 @@ function setupButton()
             patientReason: patientReason,
             patientBirthday: patientBirthday,
             patientName: patientName,
-            patientPhone: patientPhone
+            patientPhone: patientPhone,
+            patientId: patientId
         }
-
 
 
         Swal
@@ -524,7 +525,7 @@ function setupButton()
                         success: function(resp) {
                         
                             
-                            let url = `${APP_URL}/appointment/create?appointmentDate=${appointmentDate}&appointmentTime=${appointmentTime}&patientName=${patientName}&patientPhone=${patientPhone}&patientBirthday=${patientBirthday}&patientReason=${patientReason}`;
+                            let url = `${APP_URL}/appointment/create?appointmentDate=${appointmentDate}&appointmentTime=${appointmentTime}&patientName=${patientName}&patientPhone=${patientPhone}&patientBirthday=${patientBirthday}&patientReason=${patientReason}&patientId=${patientId}`;
                             url = new URL(url);
                             window.location = url;
                         

@@ -891,22 +891,20 @@ function isAppointmentHourValid($appointment_hour, $appointment_date)
 
 
     /**Step 4 - compare with current time */
+    $year = (int)substr($appointment_date, 0,4);
+    $month = (int)substr($appointment_date,5,8);
+    $day = (int)substr($appointment_date,8,10);
+
+    $yearToday = (int)date("Y");
+    $monthToday = (int)date("m");
+    $dayToday = (int)date("d");
+
+    $yearDifference  = $year - $yearToday;
+    $monthDifference = $month - $monthToday;
+    $dayDifference   = $day - $dayToday;
     /**Step 4 - Case 1 - appointment hour < currentHour */
     if( $hour < $currentHour )
     {
-
-        $year = (int)substr($appointment_date, 0,4);
-        $month = (int)substr($appointment_date,5,8);
-        $day = (int)substr($appointment_date,8,10);
-
-        $yearToday = (int)date("Y");
-        $monthToday = (int)date("m");
-        $dayToday = (int)date("d");
-
-        $yearDifference  = $year - $yearToday;
-        $monthDifference = $month - $monthToday;
-        $dayDifference   = $day - $dayToday;
-
         /**Step 4 - Case 1.1 - Appointment date is today or tomorrow? If tomorrow, hour is still valid */
         if( $yearDifference >= 0 && $monthDifference >= 0 )
         {
@@ -940,8 +938,17 @@ function isAppointmentHourValid($appointment_hour, $appointment_date)
     {
         if( $minute <= $currentMinute )
         {
-            $output = "Now is ".date("H:i")." so that appointment hour is not valid. Try again !";
-            return $output;
+            /**Step 4 - Case 2.1 - time now (09:50) & time appointment (09:30) BUT appointment date is tomorrow */
+            if( $yearDifference >= 0 && $monthDifference >= 0 && $dayDifference > 0)
+            {
+                # always correct
+            }
+            else
+            {
+                $output = "Now is ".date("H:i")." so that appointment hour is not valid. Try again !";
+                return $output;
+            }
+           
         }
         else 
         {

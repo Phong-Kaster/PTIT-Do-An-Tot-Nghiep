@@ -142,13 +142,14 @@
 
 
       /**Step 3 */
-      let id = <?= $id  ?>;        
+      let id = <?= $id  ?>;
       if( id > 0)
       {
         setupAppointmentInfo(id);
       }
       else
       {
+          let patientId = "<?= $patientId  ?>";
           let patientName = "<?= $patientName  ?>";
           let patientPhone = "<?= $patientPhone  ?>";
           let patientBirthday = "<?= $patientBirthday  ?>";
@@ -157,6 +158,7 @@
           let appointmentDate = "<?= $appointmentDate  ?>";
 
           let params = {
+            patientId: patientId,
             patientName: patientName,
             patientPhone: patientPhone,
             patientBirthday: patientBirthday,
@@ -164,7 +166,7 @@
             appointmentTime: appointmentTime,
             appointmentDate: appointmentDate
           }
-          //console.log(params);
+          console.log(params);
           setupAppointmentInfoWithParameter(params);
       }
       setupButton(id);

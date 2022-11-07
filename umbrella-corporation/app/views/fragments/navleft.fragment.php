@@ -47,7 +47,7 @@
         <li class="nav-title">Quản trị viên</li>
 
         <li class="nav-item">
-          <a class="nav-link <?= $Nav->activeMenu == "speciality" ? "active" : "" ?>" href="<?= APPURL."/speciality" ?>">
+          <a class="nav-link <?= $Nav->activeMenu == "speciality" ? "active" : "" ?>" href="<?= APPURL."/specialities" ?>">
             <i class="nav-icon cil-medical-cross"></i> 
             Chuyên khoa
           </a>

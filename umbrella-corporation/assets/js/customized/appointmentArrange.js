@@ -73,8 +73,15 @@ function setupButton()
         queue.push(secondElement);// find function createSortableTable();
 
         $("#appointmentSortable .container").each(function(index){
+            /**because i have pushed first element & second element above
+             * so that we skip first index and second index
+             */
+
             let appointmentId = $(this).attr("data-id");
-            queue.push(appointmentId);
+            if( appointmentId != firstElement && appointmentId != secondElement)
+            {
+                queue.push(appointmentId);
+            }
         });
         
 
@@ -83,6 +90,7 @@ function setupButton()
             doctor_id: doctor_id,
             queue: queue
         }
+
 
         $.ajax({
             type: "POST",
@@ -102,7 +110,7 @@ function setupButton()
             error: function(err) {
                 Swal.fire('Oops...', "Oops! An error occured. Please try again later!", 'error');
             }
-        });
+        });// end AJAX
     });
 }
 
@@ -121,7 +129,7 @@ function createSortableTable(resp)
 {
     /**Step 1 - set value for global variable */
     firstElement = resp.data[0].id;
-    secondElement = resp.data[0].id;
+    secondElement = resp.data[1].id;
     doctor_id = resp.data[0].doctor.id;
 
 

@@ -1,4 +1,4 @@
-1. Bảng BOOKING này tách appointment_time thành appointment_date và appointment_time
+1. Loại bỏ bảng NOTIFICATION
 
 create table `tn_specialities`
 (
@@ -103,15 +103,6 @@ create table `tn_treatments`
 	FOREIGN KEY (appointment_id) REFERENCES tn_appointments(id)
 );
 
-create table `tn_notifications`
-(
-	id int AUTO_INCREMENT,
-    doctor_id int,
-    message varchar(255),
-    is_read int,
-    PRIMARY KEY(id),
-    FOREIGN KEY (doctor_id) REFERENCES tn_doctors(id)
-);
 
 create table `tn_services`
 (

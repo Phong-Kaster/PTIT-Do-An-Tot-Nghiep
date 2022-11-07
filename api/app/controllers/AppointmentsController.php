@@ -543,7 +543,11 @@
 
             $numerical_order = "";
             $position = "";
+
             $appointment_time = Input::post("appointment_time") ? Input::post("appointment_time") : "";
+            $date = Date("Y-m-d");// is used to calculate position and numerical order
+            //$today = Date("Y-m-d");// is used for storing the day when this appointment is created
+
             $type = $appointment_time ? "BOOKING appointment" : "NORMAL appointment";
             $status = "processing";// default
             date_default_timezone_set('Asia/Ho_Chi_Minh');
@@ -617,11 +621,22 @@
                 }
             }
 
-            /**Step 5.7 - numerical order - is a ID of patient today - 
+            /**Step 5.7 - appointment time*/
+            if( !empty($appointment_time) )
+            {
+                $msg = isAppointmentTimeValid($appointment_time);
+                if( !empty($msg) )
+                {
+                    $this->resp->msg = $msg;
+                    $this->jsonecho();
+                }
+                $date = substr($appointment_time,0, 10);
+            }
+
+            /**Step 5.8 - numerical order - is a ID of patient today - 
              * For example, i go to hospital and i am patient NO.40.
              * Maybe, i am a booking patient or normal patient.
              */
-            $date = Date("Y-m-d");
             $queryNumericalOrder = DB::table(TABLE_PREFIX.TABLE_APPOINTMENTS)
                     ->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".date", "=", $date)
                     ->orderBy(TABLE_PREFIX.TABLE_APPOINTMENTS.".id", "desc")
@@ -631,8 +646,7 @@
             $quantityNumericalOrder = count($result);
             $numerical_order = $quantityNumericalOrder == 0 ? 1 : $quantityNumericalOrder + 1;// because first value = 0
 
-            /**Step 5.8 - position */
-            $date = Date("Y-m-d");
+            /**Step 5.9 - position */
             $queryPosition = DB::table(TABLE_PREFIX.TABLE_APPOINTMENTS)
                     ->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".doctor_id", "=", $doctor_id)
                     ->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".date", "=", $date)
@@ -642,7 +656,7 @@
             $quantityPosition = count($result);
             $position = $quantityPosition == 0 ? 1 : $quantityPosition + 1;// because first value = 0
 
-            /**Step 5.8 - status */
+            /**Step 5.10 - status */
             $valid_status = ["processing", "done", "cancelled"];
             $status_validation = in_array($status, $valid_status);
             if( !$status_validation )
@@ -653,16 +667,7 @@
                 $this->jsonecho();
             }
 
-            /**Step 5.9 - appointment time*/
-            if( !empty($appointment_time) )
-            {
-                $msg = isAppointmentTimeValid($appointment_time);
-                if( !empty($msg) )
-                {
-                    $this->resp->msg = $msg;
-                    $this->jsonecho();
-                }
-            }
+
 
             /**Step 6 - save */
             try 

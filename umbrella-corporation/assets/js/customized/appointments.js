@@ -339,11 +339,11 @@ function pagination(url, totalRecord, currentRecord)
                              <tr>
                                  <th class="text-center" scope="col">ID</th>
                                  <th class="text-center" scope="col">Ngày khám</th>
-                                 <th class="text-center" scope="col">Mã số</th>
-                                 <th class="text-center" scope="col">Số thự tự</th>
+                                 <th class="text-center" scope="col">Số thứ tự bệnh nhân</th>
+                                 <th class="text-center" scope="col">Thứ tự khám</th>
                                  <th class="text-center" scope="col">Thời gian hẹn khám</th>
                                  <th class="text-center" scope="col">Số điện thoại bệnh nhân</th>
-                                 <th class="text-center" scope="col">Bác sĩ - chuyên viên</th>
+                                 <th class="text-center" scope="col">Bác sĩ</th>
                                  <th class="text-center" scope="col">Khởi tạo</th>
                                  <th class="text-center" scope="col">Cập nhật lần cuối</th>
                              </tr>

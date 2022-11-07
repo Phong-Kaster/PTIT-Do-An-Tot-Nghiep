@@ -64,7 +64,7 @@ Nếu các bạn có nhu cầu muốn tham khảo, hãy ấn vào [**đây**](ht
 # [**Database**](#database)
 
 <p align="center">
-    <img src="./api/photo/database-version-3.png" />
+    <img src="./api/photo/database-version-6.png" />
 </p>
 <h3 align="center">
 

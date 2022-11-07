@@ -63,7 +63,13 @@ class SpecialitiesController extends Controller
         {
             /**Step 3 - query */
             $query = DB::table(TABLE_PREFIX.TABLE_SPECIALITIES)
-                    ->select("*");
+                    ->leftJoin(TABLE_PREFIX.TABLE_DOCTORS, 
+                            TABLE_PREFIX.TABLE_DOCTORS.".speciality_id","=", TABLE_PREFIX.TABLE_SPECIALITIES.".id")
+                    ->groupBy(TABLE_PREFIX.TABLE_SPECIALITIES.".id")
+                    ->select([
+                        TABLE_PREFIX.TABLE_SPECIALITIES.".*",
+                        DB::raw("COUNT(".TABLE_PREFIX.TABLE_DOCTORS.".id) as doctor_quantity") 
+                    ]);
 
             /**Step 3.1 - search filter*/
             $search_query = trim( (string)$search );
@@ -111,7 +117,8 @@ class SpecialitiesController extends Controller
                 $data[] = array(
                     "id" => (int)$element->id,
                     "name" => $element->name,
-                    "description" => $element->description
+                    "description" => $element->description,
+                    "doctor_quantity" => (int)$element->doctor_quantity
                 );
             }
 

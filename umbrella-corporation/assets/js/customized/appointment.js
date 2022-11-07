@@ -179,8 +179,13 @@ function getNecessaryInfo()
     let doctor = $("#doctor :selected").val();
     let patientName = $("#patient-name").val();
     let patientPhone = $("#patient-phone").val();
-    let date = $("#datepicker").val();
+    
     let appointmentTime = $("#appointment-time").val();
+    let date = $("#datepicker").val();
+    if( appointmentTime )
+    {
+        date = appointmentTime.slice(0,10);
+    }
     let patientBirthday = $("#patient-birthday").val();
     let status = $("#status").val();
     let patientReason = $("#patient-reason").val();
@@ -301,12 +306,16 @@ function setupAppointmentInfoWithParameter(resp)
     let patientBirthday = resp.patientBirthday;
     let patientReason = resp.patientReason;
     let appointmentTime = resp.appointmentDate + " " + resp.appointmentTime;
-    
+    let date = resp.appointmentDate;
+    let patientId = resp.patientId;
+
     $("#patient-name").val(patientName);
     $("#patient-phone").val(patientPhone);
     $("#appointment-time").val(appointmentTime);
     $("#patient-reason").val(patientReason);
     $("#patient-birthday").val(patientBirthday);
+    $("#datepicker").val(date);
+    $("#patient-id").val(patientId);
 }
 
 /**
