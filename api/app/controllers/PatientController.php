@@ -151,7 +151,7 @@
 
 
             /**Step 3 - required fields */
-            $required_fields = ["name", "phone", "birthday","gender"];
+            $required_fields = ["name", "phone", "birthday"];
             foreach( $required_fields as $field )
             {
                 if( !Input::put($field))
@@ -170,7 +170,7 @@
             //$create_at = date("Y-m-d H:i:s");
             date_default_timezone_set('Asia/Ho_Chi_Minh');
             $update_at = date("Y-m-d H:i:s");
-            $gender = Input::put("gender");
+            $gender = Input::put("gender") ? Input::put("gender") : 0;
 
             /**Step 4 - validation*/
             /**Step 3.1 - name validation */
@@ -193,9 +193,13 @@
             }
 
             /*Step 3.3 - birthday validation */
-            $yearBirthday = (int)substr($birthday, 6);
-            $monthBirthday = (int)substr($birthday,3,5);
-            $dayBirthday = (int)substr($birthday,0,2);
+            // $yearBirthday = (int)substr($birthday, 6);
+            // $monthBirthday = (int)substr($birthday,3,5);
+            // $dayBirthday = (int)substr($birthday,0,2);
+
+            $yearBirthday = (int)substr($birthday, 0,4);
+            $monthBirthday = (int)substr($birthday,5,8);
+            $dayBirthday = (int)substr($birthday,8,10);
 
 
             $yearToday = (int)date("Y");
@@ -275,6 +279,7 @@
             {
                 $Patient->set("phone",$phone)
                         ->set("name", $name)
+                        ->set("gender", $gender)
                         ->set("birthday", $birthday)
                         ->set("address", $address)
                         ->set("update_at", $update_at)

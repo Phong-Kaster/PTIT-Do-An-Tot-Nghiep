@@ -78,4 +78,3 @@ App::addRoute("GET", "/speciality/create/?", "Speciality");
 /******************************** PATIENT *********************************/
 App::addRoute("GET", "/patients/?", "Patients");
 App::addRoute("GET", "/patient/?[i:id]/?", "Patient");
-App::addRoute("GET", "/patient/create/?", "Patient");

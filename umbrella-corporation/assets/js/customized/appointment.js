@@ -306,7 +306,12 @@ function setupAppointmentInfoWithParameter(resp)
     let patientBirthday = resp.patientBirthday;
     let patientReason = resp.patientReason;
     let appointmentTime = resp.appointmentDate + " " + resp.appointmentTime;
-    let date = resp.appointmentDate;
+    let date = getCurrentDate();
+    if( resp.appointmentDate )
+    {
+        date = resp.appointmentDate;
+    }
+
     let patientId = resp.patientId;
 
     $("#patient-name").val(patientName);

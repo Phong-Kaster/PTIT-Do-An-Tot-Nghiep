@@ -124,7 +124,7 @@ function setupButton()
         Swal
         .fire({
             title: 'Bạn chắc chắn muốn thực hiện hành động ngày',
-            text: "Tạo thứ tự khám đồng nghĩa sẽ hoàn thành lịch hẹn này",
+            text: "Hành động ngày không thể khôi phục sau khi thực hiện",
             icon: 'warning',
             confirmButtonText: 'Xác nhận',
             confirmButtonColor: '#FF0000',

@@ -559,6 +559,14 @@ không thể sắp xếp lịch thứ tự của họ.
 
 6. Dựng giao diện quản lý bệnh nhân, lọc dữ liệu
 
+- **08-11-2022**:
+
+1. Sửa một số lỗi vặt ở dashboard 
+
+2. Chức năng sửa thông tin người bệnh 
+
+3. Chức năng chọn hình ảnh đại diện để xem trước và cập nhật hình đại diện
+
 # [**Controller Timeline**](#controller-timeline)
 
 Phần này mình lưu lại trình tự mình viết đồ án này. Nếu các bạn có nhu cầu tham khảo cách xử lý của mình. Các bạn có thể đọc code theo trình tự 

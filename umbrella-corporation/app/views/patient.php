@@ -53,8 +53,7 @@
     <link rel="stylesheet" href="https://unpkg.com/@coreui/icons/css/brand.min.css">
     <link rel="stylesheet" href="https://unpkg.com/@coreui/icons/css/flag.min.css">
 
-    <!-- chart js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
 
     <!-- Global site tag (gtag.js) - Google Analytics-->
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965717-3"></script>
@@ -71,13 +70,15 @@
       gtag('config', 'UA-118965717-5');
     </script>
     <link href="<?= APPURL."/assets/vendors/@coreui/chartjs/css/coreui-chartjs.css?v=".VERSION ?>" rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
   </head>
   <body>
     
     <!-- LEFT NAVIGATION -->
     <?php 
           $Nav = new stdClass;
-          $Nav->activeMenu = "dashboard";
+          $Nav->activeMenu = "patient";
           require_once(APPPATH.'/views/fragments/navleft.fragment.php');
     ?>
     <!-- end LEFT NAVIGATION -->
@@ -89,7 +90,7 @@
       <!-- end NAVIGATION -->
       
       <!-- CONTENT -->
-      <?php require_once(APPPATH.'/views/fragments/dashboard.fragment.php'); ?>
+      <?php require_once(APPPATH.'/views/fragments/patient.fragment.php'); ?>
       <!-- end CONTENT -->
 
       <!-- FOOTER -->
@@ -102,51 +103,21 @@
     <!-- GENERAL JS -->
     <?php require_once(APPPATH.'/views/fragments/javascript.fragment.php'); ?>
     <!-- PRIVATE JS -->
-    <script src="<?= APPURL."/assets/vendors/chart.js/js/chart.min.js?v=".VERSION ?>"></script>
-    <script src="<?= APPURL."/assets/vendors/@coreui/chartjs/js/coreui-chartjs.js?v=".VERSION ?>"></script>
-    <script src="<?= APPURL."/assets/vendors/@coreui/utils/js/coreui-utils.js?v=".VERSION ?>"></script>
-    <script src="<?= APPURL."/assets/js/customized/dashboard.js?v=".VERSION ?>"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script><!-- DATEPICKER -->
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script><!-- DATEPICKER -->
+    <script src="<?= APPURL."/assets/js/customized/patient.js?v=".VERSION ?>"></script>
     <script>
-        // get number of all appointment include NORMAL and BOOKING 
-        createChartWithAJAX("GET", "<?= API_URL ?>/charts", "appointmentsinlast7days");
-        
-
-        //get a comparable chart between BOOKING and ALL APPOINTMENTS
-        createChartWithAJAX("GET", "<?= API_URL ?>/charts", "appointmentandbookinginlast7days");
-
-
-        //get quantity of doctor
-        let doctorParams = {
-           search: 1
+        let id = "<?= $id ?>";
+        if( id == 0 || id == "")
+        {
+            window.location = "<?= APPURL."/error" ?>";
         }
-        getQuantityWithAJAX("doctor-quantity", "<?= API_URL ?>/doctors", doctorParams);
-
-
-        //get the number of appointments today
-        let date = getCurrentDate();
-        let appointmentParams = {
-            date: date
+        else
+        {
+            setupPatientInfo(id);
         }
-        getQuantityWithAJAX("current-appointment-quantity", "<?= API_URL ?>/appointments", appointmentParams);
-
-
-        //get the number of booking appointment today
-        let bookingParams = {
-          appointment_date: date
-        }
-        getQuantityWithAJAX("current-booking-quantity", "<?= API_URL ?>/bookings", bookingParams);
-
-        
-        //get the number of booking appointment today
-        let cancelledAppointmentParams = {
-            status: "cancelled",
-            date: date
-        }
-        getQuantityWithAJAX("current-cancelled-appointment", "<?= API_URL ?>/appointments", cancelledAppointmentParams);
-
-
-        //get doctor info table
-        getDoctorInfoWithAJAX("<?= API_URL ?>/doctors", doctorParams);
+        setupDatePicker();
+        setupButton();
     </script>
   </body>
 </html>

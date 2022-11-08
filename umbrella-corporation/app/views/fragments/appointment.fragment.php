@@ -31,7 +31,7 @@
 
                                     <div class="col-md-4"><!--1.3 DATE -->
                                             <label class="form-label" for="datepicker">Ngày</label>
-                                            <p><input class="form-control rounded" type="text" id="datepicker"></p>
+                                            <p><input autocomplete="off" class="form-control rounded" type="text" id="datepicker"></p>
                                         </div><!-- end 1.3 DATE -->
                                 </div><!-- end 1. SPECIALITY | DOCTOR | DATE -->
 
@@ -61,7 +61,7 @@
                                         </div><!-- end 2.2 PATIENT PHONE -->
                                         <div class="col-md-4"><!--2.3 PATIENT BIRTHDAY -->
                                             <label class="form-label" for="datepicker">Ngày sinh bệnh nhân</label>
-                                            <p><input class="form-control rounded" type="text" id="patient-birthday"></p>
+                                            <p><input autocomplete="off" class="form-control rounded" type="text" id="patient-birthday"></p>
                                         </div><!-- end 2.3 PATIENT BIRTHDAY -->
                                 </div><!-- end 2. PATIENT PHONE | PATIENT BIRTHDAY -->
 
@@ -79,7 +79,7 @@
 
                                     <div class="col-md-4"><!-- 4.1 APPOINTMENT-TIME -->
                                         <label class="form-label" for="datepicker">Thời gian hẹn khám</label>
-                                        <p><input class="form-control rounded" type="text" id="appointment-time"></p>
+                                        <p><input autocomplete="off" class="form-control rounded" type="text" id="appointment-time"></p>
                                     </div><!-- end 4.1 APPOINTMENT-TIME -->
 
                                     <div class="col-md-4"><!-- 4.2 STATUS -->

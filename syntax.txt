@@ -55,7 +55,8 @@ $.ajax({
     }
     },
     error: function(err) {
-        Swal.fire('Oops...', "Oops! An error occured. Please try again later!", 'error');
+        console.log(err.responseText);
+        showMessageWithButton('error','Thất bại', err);
     }
 });
 

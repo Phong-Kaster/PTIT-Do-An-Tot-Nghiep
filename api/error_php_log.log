@@ -691,3 +691,35 @@ pp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on li
 [06-Nov-2022 15:41:57 UTC] PHP Parse error:  syntax error, unexpected '*' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\SpecialitiesController.php on line 71
 [06-Nov-2022 15:42:47 UTC] PHP Parse error:  syntax error, unexpected '*' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\SpecialitiesController.php on line 71
 [06-Nov-2022 15:45:33 UTC] PHP Parse error:  syntax error, unexpected 'as' (T_AS), expecting ']' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\SpecialitiesController.php on line 71
+[08-Nov-2022 14:45:46 UTC] PHP Parse error:  syntax error, unexpected 'print_r' (T_STRING) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientController.php on line 206
+[08-Nov-2022 21:45:52 Asia/Ho_Chi_Minh] PHP Notice:  Undefined variable: appointment_date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientController.php on line 200
+[08-Nov-2022 21:45:52 Asia/Ho_Chi_Minh] PHP Notice:  Undefined variable: appointment_date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientController.php on line 201
+[08-Nov-2022 21:45:52 Asia/Ho_Chi_Minh] PHP Notice:  Undefined variable: appointment_date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientController.php on line 202
+[08-Nov-2022 21:45:52 Asia/Ho_Chi_Minh] PHP Notice:  Undefined variable: yearBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientController.php on line 204
+[08-Nov-2022 21:45:52 Asia/Ho_Chi_Minh] PHP Notice:  Undefined variable: monthBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientController.php on line 206
+[08-Nov-2022 21:45:52 Asia/Ho_Chi_Minh] PHP Notice:  Undefined variable: dayBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientController.php on line 208
+[08-Nov-2022 21:45:52 Asia/Ho_Chi_Minh] PHP Notice:  Undefined variable: yearBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientController.php on line 215
+[08-Nov-2022 21:45:52 Asia/Ho_Chi_Minh] PHP Notice:  Undefined variable: monthBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientController.php on line 216
+[08-Nov-2022 21:45:52 Asia/Ho_Chi_Minh] PHP Notice:  Undefined variable: dayBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientController.php on line 217
+[08-Nov-2022 21:45:52 Asia/Ho_Chi_Minh] PHP Notice:  Undefined variable: monthBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientController.php on line 222
+[08-Nov-2022 21:45:52 Asia/Ho_Chi_Minh] PHP Notice:  Undefined variable: dayBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientController.php on line 222
+[08-Nov-2022 21:45:52 Asia/Ho_Chi_Minh] PHP Notice:  Undefined variable: yearBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientController.php on line 222
+[08-Nov-2022 21:46:12 Asia/Ho_Chi_Minh] PHP Notice:  Undefined variable: yearBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientController.php on line 204
+[08-Nov-2022 21:46:12 Asia/Ho_Chi_Minh] PHP Notice:  Undefined variable: monthBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientController.php on line 206
+[08-Nov-2022 21:46:12 Asia/Ho_Chi_Minh] PHP Notice:  Undefined variable: dayBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientController.php on line 208
+[08-Nov-2022 21:46:12 Asia/Ho_Chi_Minh] PHP Notice:  Undefined variable: yearBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientController.php on line 215
+[08-Nov-2022 21:46:12 Asia/Ho_Chi_Minh] PHP Notice:  Undefined variable: monthBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientController.php on line 216
+[08-Nov-2022 21:46:12 Asia/Ho_Chi_Minh] PHP Notice:  Undefined variable: dayBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientController.php on line 217
+[08-Nov-2022 21:46:12 Asia/Ho_Chi_Minh] PHP Notice:  Undefined variable: monthBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientController.php on line 222
+[08-Nov-2022 21:46:12 Asia/Ho_Chi_Minh] PHP Notice:  Undefined variable: dayBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientController.php on line 222
+[08-Nov-2022 21:46:12 Asia/Ho_Chi_Minh] PHP Notice:  Undefined variable: yearBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientController.php on line 222
+[08-Nov-2022 15:01:42 UTC] PHP Parse error:  syntax error, unexpected ':' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientController.php on line 173
+[08-Nov-2022 15:01:50 UTC] PHP Parse error:  syntax error, unexpected ':' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientController.php on line 173
+[08-Nov-2022 15:01:58 UTC] PHP Parse error:  syntax error, unexpected ':' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientController.php on line 173
+[08-Nov-2022 22:04:21 Asia/Ho_Chi_Minh] PHP Warning:  Use of undefined constant gender - assumed 'gender' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientController.php on line 173
+[08-Nov-2022 22:04:24 Asia/Ho_Chi_Minh] PHP Warning:  Use of undefined constant gender - assumed 'gender' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientController.php on line 173
+[08-Nov-2022 22:05:08 Asia/Ho_Chi_Minh] PHP Warning:  Use of undefined constant gender - assumed 'gender' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientController.php on line 173
+[08-Nov-2022 22:05:57 Asia/Ho_Chi_Minh] PHP Warning:  Use of undefined constant gender - assumed 'gender' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientController.php on line 173
+[08-Nov-2022 22:07:08 Asia/Ho_Chi_Minh] PHP Warning:  Use of undefined constant gender - assumed 'gender' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientController.php on line 173
+[08-Nov-2022 22:07:52 Asia/Ho_Chi_Minh] PHP Warning:  Use of undefined constant gender - assumed 'gender' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientController.php on line 173
+[08-Nov-2022 22:08:55 Asia/Ho_Chi_Minh] PHP Warning:  Use of undefined constant gender - assumed 'gender' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientController.php on line 173

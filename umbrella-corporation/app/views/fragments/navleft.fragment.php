@@ -61,7 +61,7 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link <?= $Nav->activeMenu == "room" ? "active" : "" ?>" href="<?= APPURL."/room" ?>">
+          <a class="nav-link <?= $Nav->activeMenu == "room" ? "active" : "" ?>" href="<?= APPURL."/rooms" ?>">
           <i class="nav-icon cil-room"></i>
             Phòng khám
           </a>

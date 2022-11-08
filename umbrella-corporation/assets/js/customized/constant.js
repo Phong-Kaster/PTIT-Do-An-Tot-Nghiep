@@ -343,3 +343,83 @@ function getBookingQuantity()
 $(document).ready(function(){
     getBookingQuantity();
 });
+
+
+
+/**
+ * @author Phong-Kaster
+ * @since 08-11-2022
+ * upload avatar and preview it
+ */
+function uploadAvatar()
+{
+    /**
+     * HTML
+     *<div class="row mb-4"><!--1. AVATAR & BUTTON UPLOAD | https://mdbcdn.b-cdn.net/img/new/avatars/5.webp -->
+                <div class="row mb-3 mx-1">
+                    <img id="avatar" src="http://localhost:8080/PTIT-Do-An-Tot-Nghiep/api/assets/uploads/avatar_1_1667399080.png?v=040300" 
+                        class="rounded-circle mb-3" style="width: 200px;" alt="Avatar" />
+                </div>
+                <div class="row col-md-4 mb-3 mx-1">
+                    <input class="mb-4" type="file" id="file" name="filename"
+                    accept="image/png, image/jpeg, image/jpg"/>
+                    <button class="file btn btn-secondary" id="button-avatar" type="button" >Cập nhật ảnh đại diện</button>
+                </div>
+        </div><!-- end 1. AVATAR & BUTTON UPLOAD -->
+     */
+
+    /**PREVIEW BUTTON */
+    document.getElementById('file').onchange = function (evt) {
+        let tgt = evt.target;
+        let files = tgt.files;
+        
+        // FileReader support
+        if (FileReader && files && files.length) 
+        {
+            var fr = new FileReader();
+            fr.onload = function () {
+                document.getElementById('avatar').src = fr.result;
+            }
+            fr.readAsDataURL(files[0]);
+        }
+        
+        // Not supported
+        else {
+            // fallback -- perhaps submit the input to an iframe and temporarily store
+            // them on the server until the user's session ends.
+        }
+    }
+
+    /**BUTTON AVATAR */
+    $("#button-avatar").click(function(){
+        let file = document.getElementById("file").files[0];
+        let formData = new FormData();
+     
+        formData.append("file", file);
+        formData.append("action", "avatar");
+        
+        $.ajax({
+            type: "POST",
+            url: `${API_URL}/doctor/profile`,
+            data: formData,
+            dataType: "JSON",
+            processData: false,
+            contentType: false,
+            success: function(resp) {
+            console.log(resp);
+            if(resp.result == 1)
+            {
+                showMessageWithButton('success','Thành công','Cập nhật ảnh đại diện thành công !');
+            }
+            else
+            {
+                showMessageWithButton('error','Thất bại', resp.msg);
+            }
+            },
+            error: function(err) {
+                console.log(err.responseText);
+                showMessageWithButton('error','Thất bại', err);
+            }
+        });
+    });
+}

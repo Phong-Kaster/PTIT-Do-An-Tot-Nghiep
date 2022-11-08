@@ -146,6 +146,7 @@
       if( id > 0)
       {
         setupAppointmentInfo(id);
+        console.log("setupAppointmentInfo");
       }
       else
       {
@@ -166,7 +167,6 @@
             appointmentTime: appointmentTime,
             appointmentDate: appointmentDate
           }
-          console.log(params);
           setupAppointmentInfoWithParameter(params);
       }
       setupButton(id);
