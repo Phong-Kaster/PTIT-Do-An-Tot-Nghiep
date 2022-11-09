@@ -63,8 +63,10 @@ class RoomsController extends Controller
                                 TABLE_PREFIX.TABLE_DOCTORS.".room_id","=", TABLE_PREFIX.TABLE_ROOMS.".id")
                     ->leftJoin(TABLE_PREFIX.TABLE_SPECIALITIES, 
                                 TABLE_PREFIX.TABLE_SPECIALITIES.".id","=", TABLE_PREFIX.TABLE_DOCTORS.".speciality_id")
+                    ->groupBy(TABLE_PREFIX.TABLE_ROOMS.".id")
                     ->select([
-                        TABLE_PREFIX.TABLE_ROOMS.".*"
+                        DB::raw(TABLE_PREFIX.TABLE_ROOMS.".*"),
+                        DB::raw("COUNT(".TABLE_PREFIX.TABLE_DOCTORS.".id) as doctor_quantity") 
                     ]);
 
             /**Step 3.1 - search filter*/
@@ -90,9 +92,9 @@ class RoomsController extends Controller
 
 
                 if(in_array($column_name, ["name", "location"])){
-                    $query->orderBy(DB::raw($column_name. " * 1"), $sort);
+                    $query->orderBy(DB::raw(TABLE_PREFIX.TABLE_ROOMS.".".$column_name. " * 1"), $sort);
                 }else{
-                    $query->orderBy($column_name, $sort);
+                    $query->orderBy(TABLE_PREFIX.TABLE_ROOMS.".".$column_name, $sort);
                 }
             }
             else 
@@ -106,6 +108,8 @@ class RoomsController extends Controller
             }
 
             $res = $query->get();
+
+
             $quantity = count($res);
 
             
@@ -123,7 +127,8 @@ class RoomsController extends Controller
                 $data[] = array(
                     "id" => (int)$element->id,
                     "name" => $element->name,
-                    "location" => $element->location
+                    "location" => $element->location,
+                    "doctor_quantity" => (int)$element->doctor_quantity
                 );
             }
 

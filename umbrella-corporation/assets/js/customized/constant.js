@@ -199,7 +199,8 @@ function createDropdownRoom(resp)
      {
          let id = resp.data[i].id;
          let name = resp.data[i].name;
-         let element = `<option value="${id}">${name}</option>`;
+         let location = resp.data[i].location;
+         let element = `<option value="${id}">${location}, ${name}</option>`;
          $("#room").append(element);
      }
  }

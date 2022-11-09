@@ -24,7 +24,6 @@ function setupBookingInfo(id)
         url: `${API_URL}/bookings/${id}`,
         dataType: "JSON",
         success: function(resp) {
-            console.log(resp);
         if(resp.result == 1)
         {
             let serviceId = resp.data.service.id;

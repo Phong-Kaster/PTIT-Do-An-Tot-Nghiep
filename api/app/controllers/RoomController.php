@@ -126,13 +126,13 @@
 
             $name = Input::put("name");
             $location = Input::put("location");
-
+            $id = $Route->params->id;
 
             /**Step 3 - check duplicate */
             $query = DB::table(TABLE_PREFIX.TABLE_ROOMS)
             ->where(TABLE_PREFIX.TABLE_ROOMS.".name", "=", $name)
-            ->where(TABLE_PREFIX.TABLE_ROOMS.".location", "=", $location);
-
+            ->where(TABLE_PREFIX.TABLE_ROOMS.".location", "=", $location)
+            ->where(TABLE_PREFIX.TABLE_ROOMS.".id", "!=" , $id);
             $result = $query->get();
             if( count($result) > 0 )
             {

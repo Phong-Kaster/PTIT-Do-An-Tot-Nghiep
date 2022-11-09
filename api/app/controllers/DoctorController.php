@@ -30,6 +30,10 @@
             {
                 $this->delete();
             }
+            else if( $request_method ==='POST' && Input::post("action") == 'avatar')
+            {
+                $this->updateAvatar();
+            }
         }
         
 
@@ -135,7 +139,7 @@
         /**
          * @author Phong-Kaster
          * @since 13-10-2022
-         * update a doctor's information except password & email
+         * update a doctor's information except avatar, password & email
          */
         private function update()
         {
@@ -181,7 +185,6 @@
             $price = Input::put("price") ? Input::put("price") : 100000 ;
             $role = Input::put("role") ? Input::put("role") : "member";
 
-            $avatar = Input::put("avatar")  ? Input::put("avatar") : "default_avatar.jpg";
             $active = Input::put("active");
             
             //$create_at = date("Y-m-d H:i:s");
@@ -268,7 +271,6 @@
                         ->set("price", $price)
                         ->set("role", $role)
                         ->set("active", $active)
-                        ->set("avatar", $avatar)
                         ->set("update_at", $update_at)
                         ->set("speciality_id", $speciality_id)
                         ->set("room_id", $room_id)
@@ -302,6 +304,97 @@
 
         /**
          * @author Phong-Kaster
+         * @since 09-11-2022
+         * update avatar for doctor
+         */
+        private function updateAvatar()
+        {
+            /**Step 0 - declare */
+            $this->resp->result = 0;
+            $Route = $this->getVariable("Route");
+
+            if( !isset($Route->params->id) )
+            {
+                $this->resp->msg = "ID is required !";
+                $this->jsonecho();
+            }
+
+            /**Step 1 - does the doctor exist ? */
+            $Doctor = Controller::model("Doctor", $Route->params->id);
+            if( !$Doctor->isAvailable())
+            {
+                $this->resp->msg = "Doctor is not available. Try again !";
+                $this->jsonecho();
+            }
+            if( $Doctor->get("active") != 1)
+            {
+                $this->resp->msg = "Doctor have been deactivated so that you can not do this action";
+                $this->jsonecho();
+            }
+
+            date_default_timezone_set('Asia/Ho_Chi_Minh');
+            $update_at = date("Y-m-d H:i:s");
+
+            /**Step 2 - check if file is received or not */
+            if (empty($_FILES["file"]) || $_FILES["file"]["size"] <= 0) 
+            {
+                $this->resp->msg = "Photo is not received !";
+                $this->jsonecho();
+            }
+
+            
+            /**Step 3 - check filename extension */
+            $ext = strtolower(pathinfo($_FILES["file"]["name"], PATHINFO_EXTENSION));
+            $allow = ["jpeg", "jpg", "png"];
+            if (!in_array($ext, $allow)) 
+            {
+                $this->resp->msg = __("Only ".join(",", $allow)." files are allowed");
+                $this->jsonecho();
+            }
+
+
+            /**Step 4 - upload file */
+            $date = new DateTime();
+            $timestamp = $date->getTimestamp();
+            $name = "avatar_doctor_".$Doctor->get("id")."_".$timestamp;
+            $directory = UPLOAD_PATH;
+
+
+            if (!file_exists($directory)) {
+                mkdir($directory);
+            }
+            
+            $filepath = $directory . "/" . $name . "." .$ext;
+
+            if (!move_uploaded_file($_FILES["file"]["tmp_name"], $filepath)) 
+            {
+                $this->resp->msg = __("Oops! An error occured. Please try again later!");
+                $this->jsonecho();
+            }
+            
+            /**Step 6 - update photo name for Doctor */
+            try 
+            {
+                $Doctor->set("avatar", $name . "." .$ext)
+                        ->set("update_at", $update_at)
+                        ->save();
+
+                $this->resp->result = 1;
+                $this->resp->msg = __("Avatar has been updated successfully !");
+                $this->resp->url = APPURL."/assets/uploads/".$name . "." .$ext;
+
+            } 
+            catch (\Exception $ex) 
+            {
+                $this->resp->msg = $ex->getMessage();
+            }
+
+            $this->jsonecho();
+        }
+
+
+        /**
+         * @author Phong-Kaster
          * @since 13-10-2022
          * delete a doctor
          * Case 0: can not delete yourself the current account which is logging
@@ -318,6 +411,7 @@
             /**Step 1 - declare */
             $this->resp->result = 0;
             $msg = "Doctor is deactivated successfully";
+            $type = "deactivated";
             $AuthUser = $this->getVariable("AuthUser");
             $Route = $this->getVariable("Route");
 
@@ -390,10 +484,12 @@
                 else 
                 {
                     $Doctor->delete();
+                    $type = "delete";
                     $msg = "Doctor is deleted successfully !";
                 }
 
                 $this->resp->result = 1;
+                $this->resp->type = $type;
                 $this->resp->msg = $msg;
             } 
             catch (\Exception $ex) 

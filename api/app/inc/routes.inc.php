@@ -62,7 +62,7 @@ App::addRoute("GET|PUT|DELETE", "/clinics/[i:id]", "Clinic");
 
 /************************** DOCTOR ******************************/
 App::addRoute("GET|POST", "/doctors", "Doctors");
-App::addRoute("GET|PUT|DELETE", "/doctors/[i:id]", "Doctor");
+App::addRoute("GET|PUT|DELETE|POST", "/doctors/[i:id]", "Doctor");
 
 
 /************************** DOCTOR PROFILE ******************************/

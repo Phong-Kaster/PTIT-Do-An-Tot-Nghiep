@@ -567,6 +567,14 @@ không thể sắp xếp lịch thứ tự của họ.
 
 3. Chức năng chọn hình ảnh đại diện để xem trước và cập nhật hình đại diện
 
+- **09-11-2022**:
+
+1. Tạo | thêm phòng khám mới 
+
+2. Toàn bộ các chức năng thêm - sửa - xóa cho quản lý BÁC SĨ.
+
+3. Phân quyền các menu cho các vai trò ADMIN - MEMBER - SUPPORTER
+
 # [**Controller Timeline**](#controller-timeline)
 
 Phần này mình lưu lại trình tự mình viết đồ án này. Nếu các bạn có nhu cầu tham khảo cách xử lý của mình. Các bạn có thể đọc code theo trình tự 

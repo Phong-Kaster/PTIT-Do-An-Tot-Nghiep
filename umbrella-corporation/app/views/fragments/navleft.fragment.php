@@ -43,7 +43,7 @@
           </li><!-- end BOOKING & APPOINTMENTS -->
         <?php endif; ?>
           
-        <!--ADMIN -->
+        <?php if($AuthUser->get("role") == "admin"): ?><!-- 1. ADMIN ONLY -->
         <li class="nav-title">Quản trị viên</li>
 
         <li class="nav-item">
@@ -53,20 +53,34 @@
           </a>
         </li>
 
-        <li class="nav-item">
-          <a class="nav-link <?= $Nav->activeMenu == "patient" ? "active" : "" ?>" href="<?= APPURL."/patients" ?>">
-            <i class="nav-icon cil-disabled"></i> 
-              Bệnh nhân
-          </a>
-        </li>
 
-        <li class="nav-item">
-          <a class="nav-link <?= $Nav->activeMenu == "room" ? "active" : "" ?>" href="<?= APPURL."/rooms" ?>">
-          <i class="nav-icon cil-room"></i>
-            Phòng khám
-          </a>
-        </li>
 
+          <li class="nav-item">
+            <a class="nav-link <?= $Nav->activeMenu == "doctor" ? "active" : "" ?>" href="<?= APPURL."/doctors" ?>">
+              <i class="nav-icon cil-walk"></i> 
+              Bác sĩ
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link <?= $Nav->activeMenu == "patient" ? "active" : "" ?>" href="<?= APPURL."/patients" ?>">
+              <i class="nav-icon cil-disabled"></i> 
+                Bệnh nhân
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link <?= $Nav->activeMenu == "room" ? "active" : "" ?>" href="<?= APPURL."/rooms" ?>">
+              <i class="nav-icon cil-room"></i>
+                Phòng khám
+            </a>
+          </li>
+        <?php endif; ?><!-- end 1. ADMIN ONLY -->
+
+        <?php if($AuthUser->get("role") == "admin" 
+              || $AuthUser->get("role") == "member"): ?><!-- 2. ADMIN | MEMBER -->
+        <li class="nav-title">Khám chữa bệnh</li>
+        
         <li class="nav-item">
           <a class="nav-link <?= $Nav->activeMenu == "treatment" ? "active" : "" ?>" href="<?= APPURL."/treatment" ?>"">
           <i class="nav-icon cil-balance-scale"></i>
@@ -80,6 +94,7 @@
             Bệnh án
           </a>
         </li>
+        <?php endif; ?><!-- end 2. ADMIN | MEMBER  -->
 
         <!--PERSONAL-->
         <li class="nav-title">Cá nhân</li>

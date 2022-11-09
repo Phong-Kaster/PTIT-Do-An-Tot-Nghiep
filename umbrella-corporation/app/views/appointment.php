@@ -146,7 +146,6 @@
       if( id > 0)
       {
         setupAppointmentInfo(id);
-        console.log("setupAppointmentInfo");
       }
       else
       {

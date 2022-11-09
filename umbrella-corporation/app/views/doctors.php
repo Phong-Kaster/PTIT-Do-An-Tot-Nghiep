@@ -53,8 +53,6 @@
     <link rel="stylesheet" href="https://unpkg.com/@coreui/icons/css/brand.min.css">
     <link rel="stylesheet" href="https://unpkg.com/@coreui/icons/css/flag.min.css">
 
-    <!-- chart js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics-->
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965717-3"></script>
@@ -72,14 +70,14 @@
     </script>
     <link href="<?= APPURL."/assets/vendors/@coreui/chartjs/css/coreui-chartjs.css?v=".VERSION ?>" rel="stylesheet">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-    <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
   </head>
   <body>
     
     <!-- LEFT NAVIGATION -->
     <?php 
           $Nav = new stdClass;
-          $Nav->activeMenu = "appointment";
+          $Nav->activeMenu = "doctor";
           require_once(APPPATH.'/views/fragments/navleft.fragment.php');
     ?>
     <!-- end LEFT NAVIGATION -->
@@ -91,7 +89,7 @@
       <!-- end NAVIGATION -->
       
       <!-- CONTENT -->
-      <?php require_once(APPPATH.'/views/fragments/appointments.fragment.php'); ?>
+      <?php require_once(APPPATH.'/views/fragments/doctors.fragment.php'); ?>
       <!-- end CONTENT -->
 
       <!-- FOOTER -->
@@ -105,40 +103,18 @@
     <?php require_once(APPPATH.'/views/fragments/javascript.fragment.php'); ?>
 
     <!-- PRIVATE JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+      
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-    <script src="<?= APPURL."/assets/js/customized/appointments.js?v=".VERSION ?>"></script>
+    <script src="<?= APPURL."/assets/js/customized/doctors.js?v=".VERSION ?>"></script>
     <script>
-        
-        /*************************************************************************
-         * ROLE is used in umbrella-corporation/assets/js/customized/appointment.js
-         * it is used to append 2 options when doctor's role is MEMBER
-         */
-        let ROLE = "<?= $AuthUser->get("role") ?>";
-
-        /******************************************************************/
-        let date = getCurrentDate();
-        let order = {}
-        let role = "<?= $AuthUser->get("role") ?>";
-
-        /**Case 1 - doctor is MEMBER => list appointments by ascending */
-        if( role != "member" )
-        {
-            order = { column: "position", dir: "desc" }
-        }
-        /**Case 2 - doctor is not MEMBER => list appointments by descending */
-        else
-        {
-            order = { column: "position", dir: "asc" }    
-        }
-
-        
-        let params = { date: date, order: order, status:"" }
-        let url = API_URL + "/appointments";
-        setupAppointmentTable(url, params);
+        let order = { column: "id", dir: "asc" }    
+        let params = { order: order }
+        let url = API_URL + "/doctors";
+        setupDoctorTable(url, params);
+        setupDropdownSpeciality();
+        setupDropdownRoom();
+        setupButton();
     </script>
   </body>
 </html>

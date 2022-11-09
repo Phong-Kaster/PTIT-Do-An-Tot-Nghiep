@@ -54,6 +54,8 @@
             $start          = Input::get("start") ? (int)Input::get("start") : 0;
             $room_id          = Input::get("room_id");// Room_id
             $speciality_id  = Input::get("speciality_id");
+            $active         = Input::get("active") ? (int)Input::get("active") : "";
+  
             try
             {
                 /**Step 3 - query */
@@ -80,8 +82,7 @@
                         $q->where(TABLE_PREFIX.TABLE_DOCTORS.".email", 'LIKE', $search_query.'%')
                         ->orWhere(TABLE_PREFIX.TABLE_DOCTORS.".phone", 'LIKE', $search_query.'%')
                         ->orWhere(TABLE_PREFIX.TABLE_DOCTORS.".name", 'LIKE', $search_query.'%')
-                        ->orWhere(TABLE_PREFIX.TABLE_DOCTORS.".description", 'LIKE', $search_query.'%')
-                        ->orWhere(TABLE_PREFIX.TABLE_DOCTORS.".active", 'LIKE', $search_query.'%');
+                        ->orWhere(TABLE_PREFIX.TABLE_DOCTORS.".description", 'LIKE', $search_query.'%');
                     }); 
                 }
                 
@@ -97,8 +98,8 @@
                     $column_name = str_replace(".", "_", $column_name);
 
 
-                    if(in_array($column_name, ["email", "name", "phone", "speciality_id"])){
-                        $query->orderBy(DB::raw($column_name. " * 1"), $sort);
+                    if(in_array($column_name, ["email", "name", "phone", "speciality_id","create_at", "update_at","price"])){
+                        $query->orderBy(DB::raw(TABLE_PREFIX.TABLE_DOCTORS.".".$column_name. " * 1"), $sort);
                     }else{
                         $query->orderBy($column_name, $sort);
                     }
@@ -117,9 +118,19 @@
                 {
                     $query->where(TABLE_PREFIX.TABLE_DOCTORS.".speciality_id", "=", $speciality_id);
                 }
+
+                if( $active )
+                {
+                    $query->where(TABLE_PREFIX.TABLE_DOCTORS.".active", "=", $active);
+                }
+
+
+                $res = $query->get();
+                $quantity = count($res);
+
                 /**Step 3.4 - length filter * start filter*/
-                $query->limit($length ? $length : 10)
-                    ->offset($start ? $start : 0);
+                $query->limit($length)
+                    ->offset($start);
 
 
 
@@ -155,7 +166,7 @@
 
                 /**Step 5 - return */
                 $this->resp->result = 1;
-                $this->resp->quantity = count($result);
+                $this->resp->quantity = $quantity;
                 $this->resp->data = $data;
             }
             catch(Exception $ex)
@@ -309,7 +320,7 @@
             // }
 
             /**Step - 3.10 - room validation */
-            $room_id= Controller::model("Room", $room_id);
+            $Room = Controller::model("Room", $room_id);
             if( !$Room->isAvailable() )
             {
                 $this->resp->msg = "Room is not available.";

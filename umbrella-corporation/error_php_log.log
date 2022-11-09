@@ -1541,3 +1541,41 @@ Stack trace:
   thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\App.php on line 501
 [08-Nov-2022 08:24:28 UTC] PHP Warning:  Use of undefined constant APIURL - assumed 'APIURL' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\fragments\patient.fragment.php on line 14
 [08-Nov-2022 08:57:17 UTC] PHP Warning:  Use of undefined constant APIURL - assumed 'APIURL' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\fragments\patient.fragment.php on line 15
+[08-Nov-2022 15:31:59 UTC] PHP Warning:  Use of undefined constant APIURL - assumed 'APIURL' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\rooms.php on line 127
+[08-Nov-2022 15:56:06 UTC] PHP Fatal error:  Uncaught Error: Class 'RoomController' not found in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\App.php:501
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\App.php(563): App->route()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\index.php(93): App->process()
+#2 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\App.php on line 501
+[09-Nov-2022 02:14:45 UTC] PHP Fatal error:  Uncaught Error: Class 'RoomController' not found in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\App.php:501
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\App.php(563): App->route()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\index.php(93): App->process()
+#2 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\App.php on line 501
+[09-Nov-2022 03:30:57 UTC] PHP Warning:  require_once(D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation/app/views/rooms.php): failed to open stream: No such file or directory in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\Controller.php on line 92
+[09-Nov-2022 03:30:57 UTC] PHP Fatal error:  require_once(): Failed opening required 'D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation/app/views/rooms.php' (include_path='D:\xampp\php\PEAR') in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\Controller.php on line 92
+[09-Nov-2022 03:31:44 UTC] PHP Warning:  require_once(D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation/app/views/rooms.php): failed to open stream: No such file or directory in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\Controller.php on line 92
+[09-Nov-2022 03:31:44 UTC] PHP Fatal error:  require_once(): Failed opening required 'D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation/app/views/rooms.php' (include_path='D:\xampp\php\PEAR') in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\Controller.php on line 92
+[09-Nov-2022 03:39:29 UTC] PHP Warning:  Use of undefined constant APP_URL - assumed 'APP_URL' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\fragments\rooms.fragment.php on line 23
+[09-Nov-2022 03:39:43 UTC] PHP Warning:  Use of undefined constant APP_URL - assumed 'APP_URL' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\fragments\rooms.fragment.php on line 23
+[09-Nov-2022 03:47:28 UTC] PHP Fatal error:  Uncaught Error: Class 'DoctorsControllerController' not found in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\App.php:501
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\App.php(563): App->route()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\index.php(93): App->process()
+#2 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\App.php on line 501
+[09-Nov-2022 08:41:15 UTC] PHP Fatal error:  Uncaught Error: Class 'DoctorController' not found in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\App.php:501
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\App.php(563): App->route()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\index.php(93): App->process()
+#2 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\App.php on line 501
+[09-Nov-2022 08:43:26 UTC] PHP Notice:  Undefined variable: patientId in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\doctor.php on line 152
+[09-Nov-2022 08:43:26 UTC] PHP Notice:  Undefined variable: patientName in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\doctor.php on line 153
+[09-Nov-2022 08:43:26 UTC] PHP Notice:  Undefined variable: patientPhone in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\doctor.php on line 154
+[09-Nov-2022 08:43:26 UTC] PHP Notice:  Undefined variable: patientBirthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\doctor.php on line 155
+[09-Nov-2022 08:43:26 UTC] PHP Notice:  Undefined variable: patientReason in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\doctor.php on line 156
+[09-Nov-2022 08:43:26 UTC] PHP Notice:  Undefined variable: appointmentTime in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\doctor.php on line 157
+[09-Nov-2022 08:43:26 UTC] PHP Notice:  Undefined variable: appointmentDate in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\doctor.php on line 158

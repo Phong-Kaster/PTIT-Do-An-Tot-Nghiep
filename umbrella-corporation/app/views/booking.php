@@ -124,8 +124,6 @@
         
         setupBookingInfo(id);
         setupButton(id);
-
-        /**Step 3 */
         
     </script>
   </body>

@@ -723,3 +723,24 @@ pp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingsController.php on li
 [08-Nov-2022 22:07:08 Asia/Ho_Chi_Minh] PHP Warning:  Use of undefined constant gender - assumed 'gender' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientController.php on line 173
 [08-Nov-2022 22:07:52 Asia/Ho_Chi_Minh] PHP Warning:  Use of undefined constant gender - assumed 'gender' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientController.php on line 173
 [08-Nov-2022 22:08:55 Asia/Ho_Chi_Minh] PHP Warning:  Use of undefined constant gender - assumed 'gender' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientController.php on line 173
+[08-Nov-2022 15:52:01 UTC] PHP Parse error:  syntax error, unexpected 'TABLE_PREFIX' (T_STRING), expecting ')' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\RoomsController.php on line 67
+[09-Nov-2022 03:01:43 UTC] PHP Notice:  Undefined variable: id in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\RoomController.php on line 135
+[09-Nov-2022 14:37:08 Asia/Ho_Chi_Minh] PHP Notice:  Undefined variable: Room in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DoctorsController.php on line 313
+[09-Nov-2022 14:37:08 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Call to a member function isAvailable() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DoctorsController.php:313
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DoctorsController.php(21): DoctorsController->save()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php(614): DoctorsController->process()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\index.php(72): App->process()
+#3 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DoctorsController.php on line 313
+[09-Nov-2022 08:26:07 UTC] PHP Warning:  Use of undefined constant console - assumed 'console' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DoctorsController.php on line 128
+[09-Nov-2022 08:26:07 UTC] PHP Warning:  log() expects parameter 1 to be float, object given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DoctorsController.php on line 128
+[09-Nov-2022 08:29:28 UTC] PHP Warning:  Use of undefined constant console - assumed 'console' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DoctorsController.php on line 59
+[09-Nov-2022 08:29:28 UTC] PHP Warning:  log() expects parameter 1 to be float, string given in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DoctorsController.php on line 59
+[09-Nov-2022 09:34:39 UTC] PHP Fatal error:  Uncaught Exception: Invalid method in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\Input.php:86
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DoctorController.php(27): Input::__callStatic('action', Array)
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php(614): DoctorController->process()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\index.php(72): App->process()
+#3 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\Input.php on line 86
