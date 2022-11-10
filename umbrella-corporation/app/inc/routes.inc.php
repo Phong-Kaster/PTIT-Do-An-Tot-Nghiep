@@ -90,3 +90,12 @@ App::addRoute("GET", "/room/create/?", "Room");
 App::addRoute("GET", "/doctors/?", "Doctors");
 App::addRoute("GET", "/doctor/?[i:id]/?", "Doctor");
 App::addRoute("GET", "/doctor/create/?", "Doctor");
+
+
+/******************************** SPECIALITY *********************************/
+App::addRoute("GET", "/personal/?", "Personal");
+App::addRoute("GET", "/personal/update/?", "PersonalUpdate");
+
+
+/******************************** SECURITY *********************************/
+App::addRoute("GET", "/security/?", "Security");

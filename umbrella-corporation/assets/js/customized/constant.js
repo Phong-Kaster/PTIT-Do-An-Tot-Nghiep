@@ -332,7 +332,8 @@ function getBookingQuantity()
         }
         else
         {
-            showMessageWithButton('error','Thất bại', resp.msg);
+            console.log(resp.msg);
+            // showMessageWithButton('error','Thất bại', resp.msg);
         }
         },
         error: function(err) {
@@ -341,9 +342,7 @@ function getBookingQuantity()
     });
 }
 
-$(document).ready(function(){
-    getBookingQuantity();
-});
+
 
 
 
@@ -424,3 +423,8 @@ function uploadAvatar()
         });
     });
 }
+
+
+$(document).ready(function(){
+    getBookingQuantity();
+});

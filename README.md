@@ -575,6 +575,12 @@ không thể sắp xếp lịch thứ tự của họ.
 
 3. Phân quyền các menu cho các vai trò ADMIN - MEMBER - SUPPORTER
 
+- **10-11-2022**:
+
+1. Xem thông tin cá nhân 
+
+2. Cập nhật ảnh đại diện & thông tin cá nhân 
+
 # [**Controller Timeline**](#controller-timeline)
 
 Phần này mình lưu lại trình tự mình viết đồ án này. Nếu các bạn có nhu cầu tham khảo cách xử lý của mình. Các bạn có thể đọc code theo trình tự 

@@ -358,6 +358,10 @@
          * @author Phong-Kaster
          * @since 14-10-2022
          * update personal information
+         * doctor can only update these following fields:
+         * 1. NAME
+         * 2. PHONE
+         * 3. DESCRIPTION
          */
         private function changeInformation()
         {
@@ -374,7 +378,7 @@
 
 
             /**Step 2 - get required field */
-            $required_field = ["phone", "name", "price", "speciality_id", "room_id"];
+            $required_field = ["phone", "name"];
             foreach($required_field as $field)
             {
                 if( !Input::post($field) )
@@ -393,7 +397,7 @@
             $name = Input::post("name");
             $description = Input::post("description") ? Input::post("description") : "Bác sĩ ".$name;
 
-            $price = Input::post("price") ? Input::post("price") : 100000 ;
+            //$price = Input::post("price") ? Input::post("price") : 100000 ;
             //$role = Input::post("role") ? Input::post("role") : "member";
 
             //$avatar = "default_avatar.jpg"; $this->changeAvatar();
@@ -403,9 +407,9 @@
             date_default_timezone_set('Asia/Ho_Chi_Minh');
             $update_at = date("Y-m-d H:i:s");
 
-            $speciality_id = Input::post("speciality_id");
+            //$speciality_id = Input::post("speciality_id");
             //$clinic_id = Input::post("clinic_id");
-            $room_id = Input::post("room_id");
+            //$room_id = Input::post("room_id");
 
             /**Step 3 - validation */
             /**Step 3.1 - name  validation*/
@@ -428,25 +432,25 @@
             }
 
             /**Step 3.3 -  price validation */
-            $price_validation = isNumber($price);
-            if( !$price_validation )
-            {
-                $this->resp->msg = "This is not a valid price. Please, try again !";
-                $this->jsonecho();
-            }
-            if( $price < 100000 )
-            {
-                $this->resp->msg = "Price must greater than 100.000 !";
-                $this->jsonecho();
-            }
+            // $price_validation = isNumber($price);
+            // if( !$price_validation )
+            // {
+            //     $this->resp->msg = "This is not a valid price. Please, try again !";
+            //     $this->jsonecho();
+            // }
+            // if( $price < 100000 )
+            // {
+            //     $this->resp->msg = "Price must greater than 100.000 !";
+            //     $this->jsonecho();
+            // }
 
             /**Step 3.8 - speciality validation */
-            $Speciality = Controller::model("Speciality", $speciality_id);
-            if( !$Speciality->isAvailable() )
-            {
-                $this->resp->msg = "Speciality is not available.";
-                $this->jsonecho();
-            }
+            // $Speciality = Controller::model("Speciality", $speciality_id);
+            // if( !$Speciality->isAvailable() )
+            // {
+            //     $this->resp->msg = "Speciality is not available.";
+            //     $this->jsonecho();
+            // }
 
             /**Step 3.9 - clinic validation */
             // $Clinic = Controller::model("Clinic", $clinic_id);
@@ -457,12 +461,12 @@
             // }
 
             /**Step 3.10 - speciality validation */
-            $Room = Controller::model("Room", $room_id);
-            if( !$Room->isAvailable() )
-            {
-                $this->resp->msg = "Room is not available.";
-                $this->jsonecho();
-            }
+            // $Room = Controller::model("Room", $room_id);
+            // if( !$Room->isAvailable() )
+            // {
+            //     $this->resp->msg = "Room is not available.";
+            //     $this->jsonecho();
+            // }
 
             /**Step 4 - save*/
             try 
@@ -470,10 +474,6 @@
                 $AuthUser->set("phone", $phone)
                         ->set("name", $name)
                         ->set("description", $description)
-                        ->set("price", $price)
-                        ->set("update_at", $update_at)
-                        ->set("speciality_id", $speciality_id)
-                        ->set("room_id", $room_id)
                         ->set("update_at", $update_at)
                         ->save();
 

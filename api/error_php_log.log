@@ -744,3 +744,4 @@ Stack trace:
 #2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\index.php(72): App->process()
 #3 {main}
   thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\Input.php on line 86
+[10-Nov-2022 11:50:42 Asia/Ho_Chi_Minh] PHP Notice:  Undefined variable: price in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DoctorProfileController.php on line 431

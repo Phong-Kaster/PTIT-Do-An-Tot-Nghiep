@@ -1579,3 +1579,15 @@ Stack trace:
 [09-Nov-2022 08:43:26 UTC] PHP Notice:  Undefined variable: patientReason in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\doctor.php on line 156
 [09-Nov-2022 08:43:26 UTC] PHP Notice:  Undefined variable: appointmentTime in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\doctor.php on line 157
 [09-Nov-2022 08:43:26 UTC] PHP Notice:  Undefined variable: appointmentDate in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\doctor.php on line 158
+[10-Nov-2022 04:07:19 UTC] PHP Notice:  Undefined variable: id in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\personal.php on line 108
+[10-Nov-2022 04:08:23 UTC] PHP Notice:  Undefined variable: id in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\personal.php on line 108
+[10-Nov-2022 04:08:59 UTC] PHP Notice:  Undefined variable: id in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\personal.php on line 108
+[10-Nov-2022 04:09:09 UTC] PHP Notice:  Undefined variable: id in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\personal.php on line 108
+[10-Nov-2022 04:13:28 UTC] PHP Notice:  Undefined variable: id in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\personal.php on line 108
+[10-Nov-2022 04:14:06 UTC] PHP Notice:  Undefined variable: id in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\personal.php on line 108
+[10-Nov-2022 04:14:16 UTC] PHP Notice:  Undefined variable: id in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\personal.php on line 108
+[10-Nov-2022 04:14:35 UTC] PHP Notice:  Undefined variable: id in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\personal.php on line 108
+[10-Nov-2022 04:14:46 UTC] PHP Notice:  Undefined variable: id in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\personal.php on line 108
+[10-Nov-2022 04:15:32 UTC] PHP Notice:  Undefined variable: id in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\personal.php on line 108
+[10-Nov-2022 04:15:37 UTC] PHP Notice:  Undefined variable: id in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\personal.php on line 108
+[10-Nov-2022 04:16:22 UTC] PHP Notice:  Undefined variable: id in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\personal.php on line 108

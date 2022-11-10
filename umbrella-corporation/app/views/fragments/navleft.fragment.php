@@ -57,7 +57,7 @@
 
           <li class="nav-item">
             <a class="nav-link <?= $Nav->activeMenu == "doctor" ? "active" : "" ?>" href="<?= APPURL."/doctors" ?>">
-              <i class="nav-icon cil-walk"></i> 
+              <i class="nav-icon cil-people"></i> 
               Bác sĩ
             </a>
           </li>
@@ -90,7 +90,7 @@
 
         <li class="nav-item">
           <a class="nav-link <?= $Nav->activeMenu == "record" ? "active" : "" ?>" href="<?= APPURL."/appointment-record" ?>">
-          <i class="nav-icon cil-shield-alt"></i>
+          <i class="nav-icon cil-justify-left"></i>
             Bệnh án
           </a>
         </li>
@@ -101,25 +101,25 @@
 
 
             <li class="nav-item">
-              <a class="nav-link <?= $Nav->activeMenu == "personal" ? "active" : "" ?>" href="<?= APPURL."/personal-information" ?>" target="_top">
+              <a class="nav-link <?= $Nav->activeMenu == "personal" ? "active" : "" ?>" href="<?= APPURL."/personal" ?>" target="_top">
                 <i class="nav-icon cil-dialpad"></i> 
-                Thay đổi thông tin cá nhân
+                Thông tin cá nhân
               </a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link <?= $Nav->activeMenu == "password" ? "active" : "" ?>" href="<?= APPURL."/password" ?>" target="_top">
-                <i class="nav-icon cil-keyboard"></i> 
-                Thay đổi mật khẩu
+              <a class="nav-link <?= $Nav->activeMenu == "password" ? "active" : "" ?>" href="<?= APPURL."/security" ?>" target="_top">
+                <i class="nav-icon cil-shield-alt"></i> 
+                Bảo mật
               </a>
             </li>
 
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link <?= $Nav->activeMenu == "avatar" ? "active" : "" ?>" href="<?= APPURL."/avatar" ?>" target="_top">
                 <i class="nav-icon cil-soccer"></i> 
                 Thay đổi ảnh đại diện
               </a>
-            </li>
+            </li> -->
 
         </li>
 

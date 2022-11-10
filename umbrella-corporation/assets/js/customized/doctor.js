@@ -172,11 +172,7 @@ function setupButton(id)
     $("#button-save").click(function(){
         let params = getNecessaryInfo();
 
-        console.log(method);
-        console.log(id);
-        console.log(url);
-        console.log(params);
-        
+
         $.ajax({
             type: method,
             url: url,
