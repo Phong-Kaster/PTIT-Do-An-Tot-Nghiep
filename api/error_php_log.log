@@ -745,3 +745,11 @@ Stack trace:
 #3 {main}
   thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\Input.php on line 86
 [10-Nov-2022 11:50:42 Asia/Ho_Chi_Minh] PHP Notice:  Undefined variable: price in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DoctorProfileController.php on line 431
+[12-Nov-2022 03:45:02 UTC] PHP Parse error:  syntax error, unexpected '}' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentRecordsController.php on line 93
+[12-Nov-2022 03:47:35 UTC] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentRecordsController.php on line 307
+[12-Nov-2022 03:47:44 UTC] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentRecordsController.php on line 307
+[12-Nov-2022 03:48:26 UTC] PHP Warning:  Use of undefined constant TABLE_DOCTOR - assumed 'TABLE_DOCTOR' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentRecordsController.php on line 81
+[12-Nov-2022 03:48:26 UTC] PHP Warning:  Use of undefined constant TABLE_DOCTOR - assumed 'TABLE_DOCTOR' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentRecordsController.php on line 82
+[12-Nov-2022 13:19:26 UTC] PHP Parse error:  syntax error, unexpected '}' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentRecordController.php on line 112
+[12-Nov-2022 14:30:38 UTC] PHP Warning:  Use of undefined constant TABLE_SPECIALITY - assumed 'TABLE_SPECIALITY' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentRecordsController.php on line 130
+[12-Nov-2022 14:30:38 UTC] PHP Warning:  Use of undefined constant TABLE_SPECIALITY - assumed 'TABLE_SPECIALITY' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentRecordsController.php on line 130

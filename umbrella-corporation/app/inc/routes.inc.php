@@ -99,3 +99,8 @@ App::addRoute("GET", "/personal/update/?", "PersonalUpdate");
 
 /******************************** SECURITY *********************************/
 App::addRoute("GET", "/security/?", "Security");
+
+
+/******************************** APPOINTMENT RECORD *********************************/
+App::addRoute("GET", "/appointment-records/?", "AppointmentRecords");
+App::addRoute("GET", "/appointment-record/?", "AppointmentRecord");

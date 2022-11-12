@@ -57,22 +57,44 @@
             $search         = Input::get("search");
             $length         = Input::get("length") ? (int)Input::get("length") : 10;
             $start          = Input::get("start") ? (int)Input::get("start") : 0;
-    
+            $doctor_id      = Input::get("doctor_id");
+            $speciality_id  = Input::get("speciality_id");
+            $date           = Input::get("date");
+
+
             try
             {
                 /**Step 3 - query */
                 $query = DB::table(TABLE_PREFIX.TABLE_APPOINTMENT_RECORDS)
-                        ->select([
-                            TABLE_PREFIX.TABLE_APPOINTMENT_RECORDS.".*"
-                        ]);
+                            ->leftJoin(TABLE_PREFIX.TABLE_APPOINTMENTS, 
+                                    TABLE_PREFIX.TABLE_APPOINTMENTS.".id", "=", TABLE_PREFIX.TABLE_APPOINTMENT_RECORDS.".appointment_id")
+                            ->leftJoin(TABLE_PREFIX.TABLE_DOCTORS,
+                                     TABLE_PREFIX.TABLE_DOCTORS.".id", "=", TABLE_PREFIX.TABLE_APPOINTMENTS.".doctor_id")
+                            ->leftJoin(TABLE_PREFIX.TABLE_SPECIALITIES,
+                                     TABLE_PREFIX.TABLE_SPECIALITIES.".id", "=", TABLE_PREFIX.TABLE_DOCTORS.".speciality_id")
+                            ->select([
+                                DB::raw(TABLE_PREFIX.TABLE_APPOINTMENT_RECORDS.".*"),
+
+                                DB::raw(TABLE_PREFIX.TABLE_APPOINTMENTS.".id as appointment_id"),
+                                DB::raw(TABLE_PREFIX.TABLE_APPOINTMENTS.".patient_id as patient_id"),
+                                DB::raw(TABLE_PREFIX.TABLE_APPOINTMENTS.".patient_name as patient_name"),
+                                DB::raw(TABLE_PREFIX.TABLE_APPOINTMENTS.".patient_birthday as patient_birthday"),
+                                DB::raw(TABLE_PREFIX.TABLE_APPOINTMENTS.".patient_reason as patient_reason"),
+                                DB::raw(TABLE_PREFIX.TABLE_APPOINTMENTS.".date as date"),
+                                DB::raw(TABLE_PREFIX.TABLE_APPOINTMENTS.".status as status"),
+
+                                DB::raw(TABLE_PREFIX.TABLE_DOCTORS.".id as doctor_id"),
+                                DB::raw(TABLE_PREFIX.TABLE_DOCTORS.".name as doctor_name"),
+
+                                DB::raw(TABLE_PREFIX.TABLE_SPECIALITIES.".id as speciality_id"),
+                                DB::raw(TABLE_PREFIX.TABLE_SPECIALITIES.".name as speciality_name"),
+                            ]);
                 
                         
                 /**Step 3.0 - if the doctor is MEMBER => he just only see these appointments created by him */
                 if($AuthUser->get("role") == "member")
                 {
-                    $query->leftJoin(TABLE_PREFIX.TABLE_APPOINTMENTS, 
-                                    TABLE_PREFIX.TABLE_APPOINTMENTS.".id", "=", TABLE_PREFIX.TABLE_APPOINTMENT_RECORDS.".appointment_id")
-                        ->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".doctor_id", "=", $AuthUser->get("id"));
+                    $query->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".doctor_id", "=", $AuthUser->get("id"));
                 }
 
 
@@ -101,9 +123,10 @@
                     $column_name = str_replace(".", "_", $column_name);
     
     
-                    if(in_array($column_name, ["appointment_id","create_at","update_at"])){
-                        $query->orderBy(DB::raw($column_name. " * 1"), $sort);
-                    }else{
+                    if(in_array($column_name, ["create_at","update_at", "id"])){
+                        $query->orderBy(DB::raw(TABLE_PREFIX.TABLE_APPOINTMENT_RECORDS.".".$column_name. " * 1"), $sort);
+                    }
+                    else{
                         $query->orderBy($column_name, $sort);
                     }
                 }
@@ -112,9 +135,23 @@
                     $query->orderBy("id", "desc");
                 } 
     
+                /**Step 3.4 - filter */
+                if( $doctor_id )
+                {
+                    $query->where(TABLE_PREFIX.TABLE_DOCTORS.".id", "=", $doctor_id);
+                }
+                if( $speciality_id )
+                {
+                    $query->where(TABLE_PREFIX.TABLE_SPECIALITIES.".id", "=", $speciality_id);
+                }
+                if( $date )
+                {
+                    $query->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".date", "=", $date);
+                }
+
                 /**Step 3.4 - length filter * start filter*/
-                $query->limit($length ? $length : 10)
-                    ->offset($start ? $start : 0);
+                $query->limit($length)
+                    ->offset($start);
     
     
     
@@ -124,13 +161,29 @@
                 {
                     $data[] = array(
                         "id" => (int)$element->id,
-                        "appointment_id" => (int)$element->appointment_id,
                         "reason" => $element->reason,
                         "description" => $element->description,
                         "status_before" => $element->status_before,
                         "status_after" => $element->status_after,
                         "create_at" => $element->create_at,
-                        "update_at" => $element->update_at
+                        "update_at" => $element->update_at,
+                        "appointment" => array(
+                            "id" => (int)$element->appointment_id,
+                            "patient_id" => (int)$element->patient_id,
+                            "patient_name" => $element->patient_name,
+                            "patient_birthday" => $element->patient_birthday,
+                            "patient_reason" => $element->patient_reason,
+                            "date" => $element->date,
+                            "status" => $element->status
+                        ),
+                        "doctor" => array(
+                            "id" => (int)$element->doctor_id,
+                            "name" => $element->doctor_name
+                        ),
+                        "speciality" => array(
+                            "id" => (int)$element->speciality_id,
+                            "name" => $element->speciality_name
+                        )
                     );
                 }
     
@@ -271,7 +324,8 @@
                 {
                     $AppointmentRecord = Controller::model("AppointmentRecord");
                     $msg = "Appointment record has been CREATE successfully";
-                    $Appointment->set("create_at", $create_at);
+                    $AppointmentRecord->set("create_at", $create_at)
+                                ->set("update_at", $update_at);
                 }
                 /**Case 2: the appointment has its record => UPDATE  */
                 else

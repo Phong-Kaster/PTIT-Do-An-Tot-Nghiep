@@ -89,7 +89,7 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link <?= $Nav->activeMenu == "record" ? "active" : "" ?>" href="<?= APPURL."/appointment-record" ?>">
+          <a class="nav-link <?= $Nav->activeMenu == "record" ? "active" : "" ?>" href="<?= APPURL."/appointment-records" ?>">
           <i class="nav-icon cil-justify-left"></i>
             Bệnh án
           </a>

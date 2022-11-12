@@ -262,7 +262,7 @@ Dưới đây là cơ sở dữ liệu mà mình phát triển lên từ Đồ �
 Sau đó thì thay đổi suy nghĩ để chuyển qua làm học thay thế tốt nghiệp.
 
 <p align="center">
-    <img src="./document/eshop-diagram.png" />
+    <img src="./photo/eshop-diagram.png" />
 </p>
 <h3 align="center">
 
@@ -588,6 +588,8 @@ không thể sắp xếp lịch thứ tự của họ.
 2. Cập nhật ảnh đại diện & thông tin cá nhân 
 
 3. Chức năng thay đổi mật khẩu cá nhân
+
+- **11-11-2022**: Viết báo cáo đồ án tốt nghiệp định kì lần 2
 
 # [**Controller Timeline**](#controller-timeline)
 

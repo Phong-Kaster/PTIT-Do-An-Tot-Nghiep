@@ -53,8 +53,14 @@
     <link rel="stylesheet" href="https://unpkg.com/@coreui/icons/css/brand.min.css">
     <link rel="stylesheet" href="https://unpkg.com/@coreui/icons/css/flag.min.css">
 
+
+    <!-- DATETIME PICKER -->
+    <link rel="stylesheet" href="https://www.jqueryscript.net/demo/Clean-jQuery-Date-Time-Picker-Plugin-datetimepicker/jquery.datetimepicker.css"/>
+
     <!-- chart js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+
 
     <!-- Global site tag (gtag.js) - Google Analytics-->
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965717-3"></script>
@@ -71,13 +77,15 @@
       gtag('config', 'UA-118965717-5');
     </script>
     <link href="<?= APPURL."/assets/vendors/@coreui/chartjs/css/coreui-chartjs.css?v=".VERSION ?>" rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
   </head>
   <body>
     
     <!-- LEFT NAVIGATION -->
     <?php 
           $Nav = new stdClass;
-          $Nav->activeMenu = "dashboard";
+          $Nav->activeMenu = "record";
           require_once(APPPATH.'/views/fragments/navleft.fragment.php');
     ?>
     <!-- end LEFT NAVIGATION -->
@@ -89,7 +97,7 @@
       <!-- end NAVIGATION -->
       
       <!-- CONTENT -->
-      <?php require_once(APPPATH.'/views/fragments/dashboard.fragment.php'); ?>
+      <?php require_once(APPPATH.'/views/fragments/appointmentRecord.fragment.php'); ?>
       <!-- end CONTENT -->
 
       <!-- FOOTER -->
@@ -101,52 +109,36 @@
 
     <!-- GENERAL JS -->
     <?php require_once(APPPATH.'/views/fragments/javascript.fragment.php'); ?>
-    <!-- PRIVATE JS -->
-    <script src="<?= APPURL."/assets/vendors/chart.js/js/chart.min.js?v=".VERSION ?>"></script>
-    <script src="<?= APPURL."/assets/vendors/@coreui/chartjs/js/coreui-chartjs.js?v=".VERSION ?>"></script>
-    <script src="<?= APPURL."/assets/vendors/@coreui/utils/js/coreui-utils.js?v=".VERSION ?>"></script>
-    <script src="<?= APPURL."/assets/js/customized/dashboard.js?v=".VERSION ?>"></script>
+    <script src="https://cdn.ckeditor.com/4.20.0/standard/ckeditor.js"></script><!-- CK Editor -->
+    <script src="<?= APPURL."/assets/js/customized/appointmentRecord.js?v=".VERSION ?>"></script>
     <script>
-        // get number of all appointment include NORMAL and BOOKING 
-        createChartWithAJAX("GET", "<?= API_URL ?>/charts", "appointmentsinlast7days");
+        /**Step 1 - setup CK Editor */
+        CKEDITOR.replace( 'description' );
+
+
+        /**Step 2 - if we need UPDATE | CREATE => setup appointmentRecord info */
+        let id = <?= $id  ?>;
+        let appointmentId = <?= $appointmentId  ?>;
+        /**Step 2 - Case 1 - find appointment record with its ID */
+        if(id > 0)
+        {
+            setupAppointmentRecordInfo("id",id);
+        }
+        /**Step 2 - Case 2 - find appointment record with its appointment ID */
+        else if( appointmentId > 0)
+        {
+            setupAppointmentRecordInfo("appointment_id",appointmentId);
+        }
+        else
+        {
+           showMessageWithButton('error', 'Thất bại', 'Không tìm thấy yêu cầu tương ứng');
+           window.location = `${APP_URL}/dashboard`;
+        }
         
 
-        //get a comparable chart between BOOKING and ALL APPOINTMENTS
-        createChartWithAJAX("GET", "<?= API_URL ?>/charts", "appointmentandbookinginlast7days");
+        /**Step 3 - setup button */
+        setupButton();
 
-
-        //get quantity of doctor
-        let doctorParams = {
-           active: 1
-        }
-        getQuantityWithAJAX("doctor-quantity", "<?= API_URL ?>/doctors", doctorParams);
-
-
-        //get the number of appointments today
-        let date = getCurrentDate();
-        let appointmentParams = {
-            date: date
-        }
-        getQuantityWithAJAX("current-appointment-quantity", "<?= API_URL ?>/appointments", appointmentParams);
-
-
-        //get the number of booking appointment today
-        let bookingParams = {
-          appointment_date: date
-        }
-        getQuantityWithAJAX("current-booking-quantity", "<?= API_URL ?>/bookings", bookingParams);
-
-        
-        //get the number of booking appointment today
-        let cancelledAppointmentParams = {
-            status: "cancelled",
-            date: date
-        }
-        getQuantityWithAJAX("current-cancelled-appointment", "<?= API_URL ?>/appointments", cancelledAppointmentParams);
-
-
-        //get doctor info table
-        getDoctorInfoWithAJAX("<?= API_URL ?>/doctors", doctorParams);
     </script>
   </body>
 </html>

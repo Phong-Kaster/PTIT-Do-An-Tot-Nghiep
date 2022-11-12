@@ -51,6 +51,10 @@
          * @author Phong-Kaster
          * @since 23-10-2022
          * Read an appointment record info by ID
+         * Because each appointment has only one record so that this function 
+         * supports find appointment record with 2 options
+         * 1. Find appointment record with its ID
+         * 2. Find appointment record with its appointment_id
          */
         private function getById()
         {
@@ -66,28 +70,111 @@
                 $this->jsonecho();
             }
 
-            /**Step 3 */
+            /**Step 3 - query*/
             try 
             {
-                $AppointmentRecord = Controller::model("AppointmentRecord", $Route->params->id);
-                if( !$AppointmentRecord->isAvailable() )
+                // $AppointmentRecord = Controller::model("AppointmentRecord", $Route->params->id);
+                // if( !$AppointmentRecord->isAvailable() )
+                // {
+                //     $this->resp->msg = "AppointmentRecord is not available";
+                //     $this->jsonecho();
+                // }
+
+                
+
+
+                $query = DB::table(TABLE_PREFIX.TABLE_APPOINTMENT_RECORDS)
+                            ->leftJoin(TABLE_PREFIX.TABLE_APPOINTMENTS, 
+                                    TABLE_PREFIX.TABLE_APPOINTMENTS.".id", "=", TABLE_PREFIX.TABLE_APPOINTMENT_RECORDS.".appointment_id")
+                            ->leftJoin(TABLE_PREFIX.TABLE_DOCTORS,
+                                     TABLE_PREFIX.TABLE_DOCTORS.".id", "=", TABLE_PREFIX.TABLE_APPOINTMENTS.".doctor_id")
+                            ->leftJoin(TABLE_PREFIX.TABLE_SPECIALITIES,
+                                     TABLE_PREFIX.TABLE_SPECIALITIES.".id", "=", TABLE_PREFIX.TABLE_DOCTORS.".speciality_id")
+                            ->select([
+                                DB::raw(TABLE_PREFIX.TABLE_APPOINTMENT_RECORDS.".*"),
+
+                                DB::raw(TABLE_PREFIX.TABLE_APPOINTMENTS.".id as appointment_id"),
+                                DB::raw(TABLE_PREFIX.TABLE_APPOINTMENTS.".patient_id as patient_id"),
+                                DB::raw(TABLE_PREFIX.TABLE_APPOINTMENTS.".patient_name as patient_name"),
+                                DB::raw(TABLE_PREFIX.TABLE_APPOINTMENTS.".patient_birthday as patient_birthday"),
+                                DB::raw(TABLE_PREFIX.TABLE_APPOINTMENTS.".patient_reason as patient_reason"),
+                                DB::raw(TABLE_PREFIX.TABLE_APPOINTMENTS.".date as date"),
+                                DB::raw(TABLE_PREFIX.TABLE_APPOINTMENTS.".status as status"),
+
+                                DB::raw(TABLE_PREFIX.TABLE_DOCTORS.".id as doctor_id"),
+                                DB::raw(TABLE_PREFIX.TABLE_DOCTORS.".name as doctor_name"),
+
+                                DB::raw(TABLE_PREFIX.TABLE_SPECIALITIES.".id as speciality_id"),
+                                DB::raw(TABLE_PREFIX.TABLE_SPECIALITIES.".name as speciality_name"),
+                            ]);
+
+                /**Step 4 - query with option */
+                /**Case 1 - get with ID */
+                $type = Input::get("type") ? Input::get("type") : "id";
+                if( $type == "id")
                 {
-                    $this->resp->msg = "AppointmentRecord is not available";
+                    $query->where(TABLE_PREFIX.TABLE_APPOINTMENT_RECORDS.".id", "=", $Route->params->id);
+                }
+                /**Case 2 - get with appointment_id */
+                if( $type == "appointment_id")
+                {
+                    $query->where(TABLE_PREFIX.TABLE_APPOINTMENT_RECORDS.".appointment_id", "=", $Route->params->id);
+                }
+
+
+
+                /**Step 5 - return */
+                $result = $query->get();
+                if( count($result) == 0 )
+                {
+                    $this->resp->msg = "There is no appointment record found by ".$type." so that we CREATE a new one !";
                     $this->jsonecho();
                 }
+                $element = $result[0];
+
+
+
+                /**Step 6 - if appointment's status != PROCESSING => cancel */
+                $Appointment = Controller::model("Appointment", $element->appointment_id);
+                if( !$Appointment )
+                {
+                    $this->resp->msg = "Appointment does not exist !";
+                    $this->jsonecho();
+                }
+                // if( $Appointment->get("status") != "processing" )
+                // {
+                //     $this->resp->msg = "Appointment's status is ".$Appointment->get("status")." so that you can't do this action";
+                //     $this->jsonecho();
+                // }
 
 
                 $this->resp->result = 1;
                 $this->resp->msg = "Action successfully !";
                 $this->resp->data = array(
-                    "id" => (int)$AppointmentRecord->get("id"),
-                    "appointment_id" => (int)$AppointmentRecord->get("appointment_id"),
-                    "reason" => $AppointmentRecord->get("reason"),
-                    "description" => $AppointmentRecord->get("description"),
-                    "status_before" => $AppointmentRecord->get("status_before"),
-                    "status_after" => $AppointmentRecord->get("status_after"),
-                    "create_at" => $AppointmentRecord->get("create_at"),
-                    "update_at" => $AppointmentRecord->get("update_at")
+                        "id" => (int)$element->id,
+                        "reason" => $element->reason,
+                        "description" => $element->description,
+                        "status_before" => $element->status_before,
+                        "status_after" => $element->status_after,
+                        "create_at" => $element->create_at,
+                        "update_at" => $element->update_at,
+                        "appointment" => array(
+                            "id" => (int)$element->appointment_id,
+                            "patient_id" => (int)$element->patient_id,
+                            "patient_name" => $element->patient_name,
+                            "patient_birthday" => $element->patient_birthday,
+                            "patient_reason" => $element->patient_reason,
+                            "date" => $element->date,
+                            "status" => $element->status
+                        ),
+                        "doctor" => array(
+                            "id" => (int)$element->doctor_id,
+                            "name" => $element->doctor_name
+                        ),
+                        "speciality" => array(
+                            "id" => (int)$element->speciality_id,
+                            "name" => $element->speciality_name
+                        )
                 );
             } 
             catch (\Exception $ex) 

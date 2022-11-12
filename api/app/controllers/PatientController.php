@@ -52,6 +52,12 @@
                 $this->jsonecho();
             }
 
+            if( $AuthUser->get("role") != "admin" )
+            {
+                $this->resp->msg = "You are not logging !";
+                $this->jsonecho();
+            }
+
 
 
             /**Step 2 - check ID*/
@@ -125,7 +131,7 @@
 
 
             //Only doctors have the field of "role"
-            if( !$AuthUser->get("role") )
+            if( $AuthUser->get("role") != "admin" )
             {
                 $this->resp->msg = "You does not have permission to use this API !";
                 $this->jsonecho();

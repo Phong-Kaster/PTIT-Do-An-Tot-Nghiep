@@ -71,13 +71,15 @@
       gtag('config', 'UA-118965717-5');
     </script>
     <link href="<?= APPURL."/assets/vendors/@coreui/chartjs/css/coreui-chartjs.css?v=".VERSION ?>" rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
   </head>
   <body>
     
     <!-- LEFT NAVIGATION -->
     <?php 
           $Nav = new stdClass;
-          $Nav->activeMenu = "dashboard";
+          $Nav->activeMenu = "record";
           require_once(APPPATH.'/views/fragments/navleft.fragment.php');
     ?>
     <!-- end LEFT NAVIGATION -->
@@ -89,7 +91,7 @@
       <!-- end NAVIGATION -->
       
       <!-- CONTENT -->
-      <?php require_once(APPPATH.'/views/fragments/dashboard.fragment.php'); ?>
+      <?php require_once(APPPATH.'/views/fragments/appointmentRecords.fragment.php'); ?>
       <!-- end CONTENT -->
 
       <!-- FOOTER -->
@@ -101,52 +103,47 @@
 
     <!-- GENERAL JS -->
     <?php require_once(APPPATH.'/views/fragments/javascript.fragment.php'); ?>
+
     <!-- PRIVATE JS -->
-    <script src="<?= APPURL."/assets/vendors/chart.js/js/chart.min.js?v=".VERSION ?>"></script>
-    <script src="<?= APPURL."/assets/vendors/@coreui/chartjs/js/coreui-chartjs.js?v=".VERSION ?>"></script>
-    <script src="<?= APPURL."/assets/vendors/@coreui/utils/js/coreui-utils.js?v=".VERSION ?>"></script>
-    <script src="<?= APPURL."/assets/js/customized/dashboard.js?v=".VERSION ?>"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="<?= APPURL."/assets/js/customized/appointmentRecords.js?v=".VERSION ?>"></script>
     <script>
-        // get number of all appointment include NORMAL and BOOKING 
-        createChartWithAJAX("GET", "<?= API_URL ?>/charts", "appointmentsinlast7days");
+        /**Step 1 - setup dropdown */
+        let order = { column:"id", dir:"asc"}
+        let params = { order: order };
+        setupDropdownDoctor(params);
+        setupDropdownSpeciality(params);
         
 
-        //get a comparable chart between BOOKING and ALL APPOINTMENTS
-        createChartWithAJAX("GET", "<?= API_URL ?>/charts", "appointmentandbookinginlast7days");
 
+        /*************************************************************************
+         * ROLE is used in umbrella-corporation/assets/js/customized/appointment.js
+         * it is used to append 2 options when doctor's role is MEMBER
+         */
+        let ROLE = "<?= $AuthUser->get("role") ?>";
 
-        //get quantity of doctor
-        let doctorParams = {
-           active: 1
-        }
-        getQuantityWithAJAX("doctor-quantity", "<?= API_URL ?>/doctors", doctorParams);
-
-
-        //get the number of appointments today
+        /******************************************************************/
         let date = getCurrentDate();
-        let appointmentParams = {
-            date: date
+        let role = "<?= $AuthUser->get("role") ?>";
+        /**Doctor is MEMBER => list appointments by descending */
+        if( role == "member")
+        {
+            order = { column: "id", dir: "desc" }
         }
-        getQuantityWithAJAX("current-appointment-quantity", "<?= API_URL ?>/appointments", appointmentParams);
-
-
-        //get the number of booking appointment today
-        let bookingParams = {
-          appointment_date: date
-        }
-        getQuantityWithAJAX("current-booking-quantity", "<?= API_URL ?>/bookings", bookingParams);
+        
 
         
-        //get the number of booking appointment today
-        let cancelledAppointmentParams = {
-            status: "cancelled",
-            date: date
-        }
-        getQuantityWithAJAX("current-cancelled-appointment", "<?= API_URL ?>/appointments", cancelledAppointmentParams);
-
-
-        //get doctor info table
-        getDoctorInfoWithAJAX("<?= API_URL ?>/doctors", doctorParams);
+        /**Step 3 - draw record table */
+        params = { date: date, order: order, status:"" }
+        let url = API_URL + "/appointment-records";
+        setupRecordTable(url, params);
+        setupDatePicker();
+        setupButton();
+        setupChooseSpeciality();
     </script>
   </body>
 </html>

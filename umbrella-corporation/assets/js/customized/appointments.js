@@ -285,8 +285,8 @@ function pagination(url, totalRecord, currentRecord)
          element1 = `
                  <!-- EXAMPLE 2 -->
                  <tr data-id=${appointmentID} class="align-middle">
-                     <td class="text-center" id="numerical-order">
-                         ${numericalOrder}
+                     <td class="text-center" id="appointment-id">
+                         ${appointmentID}
                      </td>
  
                      <td class="fw-semibold">
@@ -372,7 +372,7 @@ function pagination(url, totalRecord, currentRecord)
          /**ROLE is from umbrella-corporation/assets/views/appointments.php
           * MEMBER has 2 buttons: Viết bệnh án & Viết phác đồ điều trị
           */
-         if( ROLE == "member")
+         if( ROLE == "member" || ROLE =="admin")
          {
             if( status == "processing")
             {
@@ -382,7 +382,7 @@ function pagination(url, totalRecord, currentRecord)
                         <button id="button-delete" data-id=${appointmentID} class="btn btn-outline-danger" type="button">Xóa</button>`
             }
             element += element2+
-                    `<li class="dropdown-item" id="button-create-record" data-id=${appointmentID}>Bệnh án</li>
+                    `<li> <a class="dropdown-item" href="${APP_URL}/appointment-record/?appointmentId=${appointmentID}">Bệnh án</a></li>
                      <li class="dropdown-item" id="button-create-treatments" data-id=${appointmentID}>Phác đồ điều trị</li>` 
                     +element3;
          }
