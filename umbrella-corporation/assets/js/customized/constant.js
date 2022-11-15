@@ -214,17 +214,17 @@ function createDropdownRoom(resp)
  function setupTitle(params)
  {
      let date = params.date;
-     let doctor = params.doctor;
+     let doctor_id = params.doctor_id;
      let search = params.search;
      let status = params.status;
-     let speciality = params.speciality;
+     let speciality_id = params.speciality_id;
  
      let title = "Danh sách khám bệnh";
      if(date)
      {
          title += " -- Ngày: " + date;
      }
-     if(doctor)
+     if(doctor_id)
      {
          title += " -- Bác sĩ: " + $("#doctor :selected").text()
      }
@@ -249,10 +249,11 @@ function createDropdownRoom(resp)
          }
          title += " -- Trạng thái: " + statusValue;
      }
-     if(speciality)
+     if(speciality_id)
      {
          title += " -- Chuyên khoa: " + $("#speciality :selected").text()
      }
+
      $(".row .card-header").first().text(title);
  }
 

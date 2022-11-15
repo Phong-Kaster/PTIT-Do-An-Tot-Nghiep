@@ -382,8 +382,8 @@ function pagination(url, totalRecord, currentRecord)
                         <button id="button-delete" data-id=${appointmentID} class="btn btn-outline-danger" type="button">Xóa</button>`
             }
             element += element2+
-                    `<li> <a class="dropdown-item" href="${APP_URL}/appointment-record/?appointmentId=${appointmentID}">Bệnh án</a></li>
-                     <li class="dropdown-item" id="button-create-treatments" data-id=${appointmentID}>Phác đồ điều trị</li>` 
+                    `<li> <a class="dropdown-item" href="${APP_URL}/appointment-record/?appointmentId=${appointmentID}">Viết bệnh án</a></li>
+                     <li><a class="dropdown-item" href="${APP_URL}/treatments/${appointmentID}">Viết phác đồ điều trị - đơn thuốc</a></li>` 
                     +element3;
          }
          /** ADMIN & SUPPORTER has DELETE button */

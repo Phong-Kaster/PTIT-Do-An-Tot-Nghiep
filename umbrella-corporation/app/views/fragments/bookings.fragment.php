@@ -96,7 +96,7 @@
             <div class="col-md-12">
               <div class="card mb-4">
                 <div class="card-header">
-                    Danh sách lịch hẹn
+                    Danh sách phác đồ điều trị - đơn thuốc
                 </div>
                     <div class="card-body">
               

@@ -26,7 +26,8 @@
 - [**Timeline**](#timeline)
   - [**Phase 0: 01-09-2022 to 28-09-2022**](#phase-0-01-09-2022-to-28-09-2022)
   - [**Phase 1: 19-09-2022 to 25-10-2022**](#phase-1-19-09-2022-to-25-10-2022)
-  - [**Phase 2: 26-10-2022 to xx-11-2022**](#phase-2-26-10-2022-to-xx-11-2022)
+  - [**Phase 2: 26-10-2022 to 13-11-2022**](#phase-2-26-10-2022-to-13-11-2022)
+  - [**Phase 3: 15-11-2022 to xx-xx-2022**](#phase-3-15-11-2022-to-xx-xx-2022)
 - [**Controller Timeline**](#controller-timeline)
 - [**Special Thanks**](#special-thanks)
 - [**Made with 💘 and PHP <img src="https://www.vectorlogo.zone/logos/php/php-horizontal.svg" width="60">**](#made-with--and-php-)
@@ -59,7 +60,7 @@ cho người thân trong gia đình như ông, bà, bố, mẹ & không nhất t
 # [**API Document**](#api-document)
 
 Mình có soạn thảo và liệt kê chi tiết cách sử dụng các chức năng mà mình đã xây dựng thành tài liệu.
-Nếu các bạn có nhu cầu muốn tham khảo, hãy ấn vào [**đây**](https://github.com/Phong-Kaster/PTIT-Do-An-Tot-Nghiep/tree/main/document#readme) để đọc chi tiết cách sử dụng API này.
+Nếu các bạn có nhu cầu muốn tham khảo, hãy ấn vào [**đây**](https://github.com/Phong-Kaster/PTIT-Do-An-Tot-Nghiep-API-Document) để đọc chi tiết cách sử dụng API này.
 
 # [**Database**](#database)
 
@@ -423,7 +424,7 @@ Các đơn thuốc hay hướng dẫn này chỉ được thay đổi khi appoin
 
 1. Viết báo cáo định kì lần 1
 
-## [**Phase 2: 26-10-2022 to xx-11-2022**](#phase-2-26-10-2022-to-xx-11-2022)
+## [**Phase 2: 26-10-2022 to 13-11-2022**](#phase-2-26-10-2022-to-13-11-2022)
 
 (1) Mục tiêu: giai đoạn này viết website với các API đã được xây dựng ở bên trên
 
@@ -590,6 +591,24 @@ không thể sắp xếp lịch thứ tự của họ.
 3. Chức năng thay đổi mật khẩu cá nhân
 
 - **11-11-2022**: Viết báo cáo đồ án tốt nghiệp định kì lần 2
+  
+- **12-11-2022**: Chức năng quản lý bệnh án
+
+- **13-11-2022**: Hoàn thành chức năng LẬP PHÁC ĐỒ ĐIỀU TRỊ - ĐƠN THUỐC.
+
+- **14-11-2022**: Nghỉ ngơi 
+
+## [**Phase 3: 15-11-2022 to xx-xx-2022**](#phase-3-15-11-12022-to-xx-xx-2022)
+
+(1) Mục tiêu: giai đoạn này viết ứng dụng Android và hoàn tất đồ án
+
+(2) Uớc tính: 20 ngày
+
+(3) Thực tế: 
+
+- **15-11-2022**: Dựng thư mục Android và màn hình đăng nhập
+
+
 
 # [**Controller Timeline**](#controller-timeline)
 

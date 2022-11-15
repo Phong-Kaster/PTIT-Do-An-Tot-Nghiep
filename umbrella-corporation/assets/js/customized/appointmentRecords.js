@@ -32,6 +32,10 @@
  */
 function setupRecordTable(url, params)
 {
+    /**Step 1 - set title for table */
+    setupTitle(params);
+
+
      /**Step 2 - call AJAX */
      $.ajax({
         type: "GET",
@@ -43,7 +47,7 @@ function setupRecordTable(url, params)
             {
                   createRecordTable(resp);
                   setupButton(resp);
-                  //pagination(url, resp.quantity, resp.data.length);
+                  pagination(url, resp.quantity, resp.data.length);
             }
             else// result = 0
             {
@@ -524,6 +528,9 @@ function setupButton()
         let order = { column:"id", dir:"asc"};
         let params = { order:order, date: date }
         setupRecordTable(url, params);
+
+        params = {order:order};
+        setupDropdownDoctor(params);
     });
 
 
@@ -533,7 +540,6 @@ function setupButton()
         /**Step 1 - get filter values */
         let params = getFilteringCondition();
         
-        console.log(params);
         
         /**Step 2 - query */
         let url = API_URL + "/appointment-records";

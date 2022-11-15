@@ -9,7 +9,6 @@
                             <div class="input-group ">
                                 <span class="input-group-text ">
                                 <i class="icon cil-magnifying-glass"></i></span>
-                               
                                 <input class="form-control" id="search" size="16" type="text" placeholder="Bạn đang cần tìm gì?">
                                 <button class="btn btn-primary" type="button" id="button-search">Tìm kiếm</button>
                                 <button class="btn btn-danger" type="button" id="button-reset">Làm mới</button>
@@ -103,7 +102,7 @@
 
         <!-- APPOINTMENT RECORD -->
         <div class="modal fade" id="record" tabindex="-1" aria-labelledby="record" style="display: none;" aria-hidden="true">
-            <div class="modal-dialog modal-fullscreen">
+            <div class="modal-dialog modal-xl">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title h4" id="title">
@@ -126,7 +125,7 @@
             <div class="col-md-12">
               <div class="card mb-4">
                 <div class="card-header">
-                    Danh sách khám bệnh
+                    Danh sách bệnh án
                 </div>
                     <div class="card-body">
               

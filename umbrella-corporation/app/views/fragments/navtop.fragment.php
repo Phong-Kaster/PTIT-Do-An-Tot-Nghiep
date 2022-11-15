@@ -68,9 +68,32 @@
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb my-0 ms-2">
               <li class="breadcrumb-item">
-                <span>
-                  <?= $Nav->activeMenu ? strtoupper($Nav->activeMenu) : "Dashboard" ?>
-                </span>
+                
+                  <?php if($Nav->activeMenu  == "dashboard"): ?>
+                    <span> Dashboard </span>
+                  <?php elseif( $Nav->activeMenu  == "appointment"): ?>
+                    <span> Thứ tự lịch khám </span>
+                  <?php elseif( $Nav->activeMenu  == "booking"): ?>
+                    <span> Lịch hẹn </span>
+                  <?php elseif( $Nav->activeMenu  == "speciality"): ?>
+                    <span> Quản lý chuyên khoa </span>
+                  <?php elseif( $Nav->activeMenu  == "doctor"): ?>
+                    <span> Quản lý bác sĩ </span>
+                  <?php elseif( $Nav->activeMenu  == "patient"): ?>
+                    <span> Quản lý bệnh nhân </span>
+                  <?php elseif( $Nav->activeMenu  == "room"): ?>
+                    <span> Quản lý phòng khám </span>
+                  <?php elseif( $Nav->activeMenu  == "treatment"): ?>
+                    <span> Quản lý phác đồ điều trị - đơn thuốc </span>
+                  <?php elseif( $Nav->activeMenu  == "record"): ?>
+                    <span> Quản lý bệnh án </span>
+                  <?php elseif( $Nav->activeMenu  == "personal"): ?>
+                    <span> Thông tin cá nhân </span>
+                  <?php elseif( $Nav->activeMenu  == "security"): ?>
+                    <span> Bảo mật </span>
+                  <?php endif; ?>
+                  
+                
               </li>
               <!-- <li class="breadcrumb-item active">
                 <span>

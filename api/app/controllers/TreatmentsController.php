@@ -52,24 +52,27 @@
             $data = [];
             
 
+
             /**Step 2 - get filters */
             $order          = Input::get("order");
             $search         = Input::get("search");
             $length         = Input::get("length") ? (int)Input::get("length") : 10;
             $start          = Input::get("start") ? (int)Input::get("start") : 0;
-    
+            $appointment_id = Input::get("appointment_id");
+
             try
             {
                 /**Step 3 - query */
                 $query = DB::table(TABLE_PREFIX.TABLE_TREATMENTS)
+                        ->leftJoin(TABLE_PREFIX.TABLE_APPOINTMENTS,
+                                    TABLE_PREFIX.TABLE_APPOINTMENTS.".id", "=", TABLE_PREFIX.TABLE_TREATMENTS.".appointment_id")
                         ->select([
                             TABLE_PREFIX.TABLE_TREATMENTS.".*"
                         ]);
                 
                 if($AuthUser->get("role") == "member")
                 {
-                    $query->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".id", "=", TABLE_PREFIX.TABLE_TREATMENTS.".appointment_id")
-                        ->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".doctor_id", "=", $AuthUser->get("id"));
+                    $query->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".doctor_id", "=", $AuthUser->get("id"));
                 }
     
                 /**Step 3.1 - search filter*/
@@ -106,7 +109,16 @@
                 {
                     $query->orderBy("id", "desc");
                 } 
-    
+                
+                if( $appointment_id )
+                {
+                    $query->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".id", "=", $appointment_id);
+                }
+
+
+                $res = $query->get();
+                $quantity = count($res);
+
                 /**Step 3.4 - length filter * start filter*/
                 $query->limit($length ? $length : 10)
                     ->offset($start ? $start : 0);
@@ -131,7 +143,7 @@
     
                 /**Step 5 - return */
                 $this->resp->result = 1;
-                $this->resp->quantity = count($result);
+                $this->resp->quantity = $quantity;
                 $this->resp->data = $data;
             }
             catch(Exception $ex)
