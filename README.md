@@ -608,7 +608,13 @@ không thể sắp xếp lịch thứ tự của họ.
 
 - **15-11-2022**: Dựng thư mục Android và màn hình đăng nhập
 
+- **16-11-2022**:
 
+1. Android - Tích hợp Firebase để đăng nhập bằng số điện thoại 
+
+2. Android - Tích hợp Google API để đăng nhập bằng tài khoản Google
+
+2. API - Xử lý yêu cầu đăng nhập bằng tài khoản Google
 
 # [**Controller Timeline**](#controller-timeline)
 
@@ -680,6 +686,8 @@ Phần này mình lưu lại trình tự mình viết đồ án này. Nếu các
 32. Room Controller
 
 33. Charts Controller
+
+34. Login With Google Controller
 
 # [**Special Thanks**](#special-thanks)
 

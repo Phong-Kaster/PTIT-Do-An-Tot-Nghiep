@@ -33,6 +33,9 @@ App::addRoute("GET|POST", "/".$langslug."?/?", "Index");
 /************************** LOGIN******************************/
 App::addRoute("GET|POST", "/".$langslug."?/login/?", "Login");
 
+/************************** LOGIN******************************/
+App::addRoute("GET|POST", "/".$langslug."?/login/google/?", "LoginWithGoogle");
+
 // 
 //  Remove or comment following line to completely 
 //  disable signup page. This might be useful in case 
@@ -118,5 +121,5 @@ App::addRoute("GET|PUT|DELETE", "/rooms/[i:id]/?", "Room");
 App::addRoute("GET|POST", "/appointment-queue/?", "AppointmentQueue");
 App::addRoute("GET|POST", "/appointment-queue-now/?", "AppointmentQueueNow");
 
-/************************** charts ******************************/
+/************************** CHART ******************************/
 App::addRoute("GET", "/charts/?", "Charts");
