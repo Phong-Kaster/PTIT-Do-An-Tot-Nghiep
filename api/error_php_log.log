@@ -753,3 +753,11 @@ Stack trace:
 [12-Nov-2022 13:19:26 UTC] PHP Parse error:  syntax error, unexpected '}' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentRecordController.php on line 112
 [12-Nov-2022 14:30:38 UTC] PHP Warning:  Use of undefined constant TABLE_SPECIALITY - assumed 'TABLE_SPECIALITY' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentRecordsController.php on line 130
 [12-Nov-2022 14:30:38 UTC] PHP Warning:  Use of undefined constant TABLE_SPECIALITY - assumed 'TABLE_SPECIALITY' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentRecordsController.php on line 130
+[16-Nov-2022 13:36:37 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method stdClass::get() in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\LoginController.php:202
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\LoginController.php(54): LoginController->loginByPatient()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\LoginController.php(19): LoginController->login()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php(614): LoginController->process()
+#3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\index.php(72): App->process()
+#4 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\LoginController.php on line 202

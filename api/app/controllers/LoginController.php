@@ -189,12 +189,21 @@ class LoginController extends Controller
                 "create_at" => $Patient->get("create_at"),
                 "update_at" => $Patient->get("update_at")
             );
-
-            // don't need update $password again
         }
         /**Step 3 - Case 2 - if this patient logins again, we will return JWT token & his/her information except password */
         else 
         {
+            /**is password correct ? */
+            $hashPassword = $result[0]->password;
+            if( !password_verify($password, $hashPassword ) )
+            {
+                $this->resp->msg = "Your email or password is incorrect. Try again !";
+                $this->jsonecho();
+            }
+
+
+            
+            /**yes, WELCOME BACK */
             $msg = "Welcome back to UMBRELLA CORPORATION, ".$result[0]->name." !";
             $data = array(
                 "id"    => (int)$result[0]->id,

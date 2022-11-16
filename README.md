@@ -614,7 +614,9 @@ không thể sắp xếp lịch thứ tự của họ.
 
 2. Android - Tích hợp Google API để đăng nhập bằng tài khoản Google
 
-2. API - Xử lý yêu cầu đăng nhập bằng tài khoản Google
+3. API - Xử lý yêu cầu đăng nhập bằng tài khoản Google
+
+4. Hoàn thiện chức năng đăng nhập cho ứng dụng Android
 
 # [**Controller Timeline**](#controller-timeline)
 
