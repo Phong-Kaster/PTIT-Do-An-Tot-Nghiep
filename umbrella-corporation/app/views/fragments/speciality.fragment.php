@@ -9,10 +9,19 @@
                     <div class="example">
                             <div class="tab-pane p-3 active preview" role="tabpanel" id="preview-1252">
                                 
+                                <div class="row mb-4"><!--0. IMAGE & BUTTON UPLOAD | https://mdbcdn.b-cdn.net/img/new/avatars/5.webp -->
+                                        <div class="row mb-3 mx-1">
+                                            <img id="avatar" src="https://mdbcdn.b-cdn.net/img/new/avatars/5.webp" 
+                                                style="width: 200px;" alt="Avatar" />
+                                        </div>
+                                        <div class="row col-md-4 mb-3 mx-1">
+                                            <input class="mb-4" type="file" id="file" name="filename"
+                                            accept="image/png, image/jpeg, image/jpg"/>
+                                            <button class="file btn btn-secondary" id="button-avatar" type="button" >Cập nhật ảnh đại diện</button>
+                                        </div>
+                                </div><!-- end 0. IMAGE & BUTTON UPLOAD -->
                             
                                 <div class="row mb-4"><!--1. SPECIALITY ID-->
-                                    
-
                                     <div class="col-md-4"><!--2.1 LENGTH -->
                                         <div class="mb-3">
                                             <label class="form-label" for="id">Mã chuyên khoa</label>

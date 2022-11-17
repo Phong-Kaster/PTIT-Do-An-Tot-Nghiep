@@ -109,7 +109,8 @@
             {
                 $data[] = array(
                     "id" => (int)$element->id,
-                    "name" => $element->name
+                    "name" => $element->name,
+                    "image" => $element->image
                 );
             }
 
@@ -176,6 +177,7 @@
         /**Step 4 - create*/
         $Service = Controller::model("Service");
         $Service->set("name", $name)
+                ->set("image", 'default_avatar.jpg')
                     ->save();
         
 

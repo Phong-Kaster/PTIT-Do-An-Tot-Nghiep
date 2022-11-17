@@ -1,4 +1,4 @@
-1. Loại bỏ bảng NOTIFICATION
+1. Thêm avatar cho tn_specialities và tn_services
 
 create table `tn_specialities`
 (
@@ -147,8 +147,8 @@ INSERT INTO `tn_rooms` (name, location)
 VALUES ('Phòng 101', 'Khu A, tầng 1');
 
 
-INSERT INTO `tn_specialities` (name, description)
-VALUES ('Unknown', 'Chưa phân loại chuyên khoa');
+INSERT INTO `tn_specialities` (name, description, image)
+VALUES ('Unknown', 'Chưa phân loại chuyên khoa', '');
 
 ############################################################################
 ## bác sĩ với 3 vai trò khác nhau: ADMIN - SUPPORTER - MEMBER

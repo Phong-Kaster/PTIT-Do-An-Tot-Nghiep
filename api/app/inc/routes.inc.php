@@ -55,7 +55,7 @@ App::addRoute("GET|POST", "/password-reset/[i:id]?", "PasswordReset");
 
 /************************** SPECIALITY ******************************/
 App::addRoute("GET|POST", "/specialities", "Specialities");
-App::addRoute("GET|PUT|DELETE", "/specialities/[i:id]", "Speciality");
+App::addRoute("GET|PUT|DELETE|POST", "/specialities/[i:id]", "Speciality");
 
 
 /************************** CLINIC ******************************/
@@ -86,7 +86,7 @@ App::addRoute("GET|POST", "/patient/profile", "PatientProfile");
 
 /************************** SERVICE ******************************/
 App::addRoute("GET|POST", "/services", "Services");
-App::addRoute("GET|PUT|DELETE", "/services/[i:id]", "Service");
+App::addRoute("GET|PUT|DELETE|POST", "/services/[i:id]", "Service");
 
 
 /************************** DOCTOR AND SERVICE ******************************/

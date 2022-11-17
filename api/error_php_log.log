@@ -761,3 +761,11 @@ Stack trace:
 #3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\index.php(72): App->process()
 #4 {main}
   thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\LoginController.php on line 202
+[17-Nov-2022 07:58:49 UTC] PHP Notice:  Undefined property: stdClass::$image in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\SpecialitiesController.php on line 125
+[17-Nov-2022 07:58:49 UTC] PHP Notice:  Undefined property: stdClass::$image in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\SpecialitiesController.php on line 125
+[17-Nov-2022 07:58:49 UTC] PHP Notice:  Undefined property: stdClass::$image in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\SpecialitiesController.php on line 125
+[17-Nov-2022 07:58:49 UTC] PHP Notice:  Undefined property: stdClass::$image in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\SpecialitiesController.php on line 125
+[17-Nov-2022 07:58:49 UTC] PHP Notice:  Undefined property: stdClass::$image in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\SpecialitiesController.php on line 125
+[17-Nov-2022 07:58:49 UTC] PHP Notice:  Undefined property: stdClass::$image in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\SpecialitiesController.php on line 125
+[17-Nov-2022 07:58:49 UTC] PHP Notice:  Undefined property: stdClass::$image in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\SpecialitiesController.php on line 125
+[17-Nov-2022 07:58:49 UTC] PHP Notice:  Undefined property: stdClass::$image in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\SpecialitiesController.php on line 125

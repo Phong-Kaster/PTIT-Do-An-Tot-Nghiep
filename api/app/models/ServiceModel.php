@@ -65,7 +65,8 @@
 	    public function extendDefaults()
 	    {
 	    	$defaults = array(
-                "name" => ""
+                "name" => "",
+				"image" => ""
 	    	);
 
 
@@ -89,7 +90,8 @@
 	    	$id = DB::table(TABLE_PREFIX.TABLE_SERVICES)
 		    	->insert(array(
 		    		"id" => null,
-		    		"name" => $this->get("name")
+		    		"name" => $this->get("name"),
+					"image" => $this->get("image")
 		    	));
 
 	    	$this->set("id", $id);
@@ -111,7 +113,8 @@
 	    	$id = DB::table(TABLE_PREFIX.TABLE_SERVICES)
 	    		->where("id", "=", $this->get("id"))
 		    	->update(array(
-		    		"name" => $this->get("name")
+		    		"name" => $this->get("name"),
+					"image" => $this->get("image")
 		    	));
 
 	    	return $this;

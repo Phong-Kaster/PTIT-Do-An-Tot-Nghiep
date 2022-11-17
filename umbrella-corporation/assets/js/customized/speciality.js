@@ -15,11 +15,13 @@ function setupSpecialityInfo(id)
             let id = resp.data.id;
             let name = resp.data.name;
             let description = resp.data.description;
+            let image = resp.data.image ? resp.data.image : 'default_avatar.jpg';
 
 
             $("#id").val(id);
             $("#name").val(name);
             $("#description").val(description);
+            $("#avatar").attr("src", `${API_URL}/assets/uploads/${image}`);
         }
         else
         {
@@ -50,7 +52,7 @@ function reset()
  * @since 07-11-2022
  * setup button
  */
-function setupButton()
+function setupButton(id)
 {
     /**BUTTON CANCEL */
     $("#button-cancel").click(function(){
@@ -107,6 +109,65 @@ function setupButton()
         }
         //console.log(description);
         sendAJAXrequest(method, url, data);
+    });
+
+
+
+    /**PREVIEW BUTTON */
+    document.getElementById('file').onchange = function (evt) {
+        let tgt = evt.target;
+        let files = tgt.files;
+        
+        // FileReader support
+        if (FileReader && files && files.length) 
+        {
+            var fr = new FileReader();
+            fr.onload = function () {
+                document.getElementById('avatar').src = fr.result;
+            }
+            fr.readAsDataURL(files[0]);
+        }
+        
+        // Not supported
+        else {
+            // fallback -- perhaps submit the input to an iframe and temporarily store
+            // them on the server until the user's session ends.
+        }
+    }
+    
+
+
+    /**BUTTON AVATAR */
+    $("#button-avatar").click(function(){
+        let file = document.getElementById("file").files[0];
+        let formData = new FormData();
+        
+        formData.append("file", file);
+        formData.append("action", "avatar");
+        
+        $.ajax({
+            type: "POST",
+            url: `${API_URL}/specialities/${id}`,
+            data: formData,
+            dataType: "JSON",
+            processData: false,
+            contentType: false,
+            success: function(resp) {
+            if(resp.result == 1)
+            {
+                showMessageWithButton('success','Thành công','Cập nhật ảnh đại diện thành công !');
+                //$("img.avatar-img").attr("src", resp.url);
+            }
+            else
+            {
+                showMessageWithButton('error','Thất bại', resp.msg);
+            }
+            },
+            error: function(err) {
+                console.log(err.responseText);
+                showMessageWithButton('error','Thất bại', err);
+            }
+        });
     });
 }
 

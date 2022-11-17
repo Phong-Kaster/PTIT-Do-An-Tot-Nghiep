@@ -10,12 +10,12 @@
                 header("Location: ".APPURL."/login");
                 exit;
             }
-            if( $AuthUser->get("role") != "admin" )
-            {
-                $this->resp->result = 0;
-                $this->resp->msg = "You are not admin & you can't do this action !";
-                $this->jsonecho();
-            }
+            // if( $AuthUser->get("role") != "admin" )
+            // {
+            //     $this->resp->result = 0;
+            //     $this->resp->msg = "You are not admin & you can't do this action !";
+            //     $this->jsonecho();
+            // }
 
             $request_method = Input::method();
             if($request_method === 'GET')
@@ -50,11 +50,11 @@
             $Route = $this->getVariable("Route");
 
 
-            if( $AuthUser->get("role") != "admin" )
-            {
-                $this->resp->msg = "You are not admin & you can't do this action !";
-                $this->jsonecho();
-            }
+            // if( $AuthUser->get("role") != "admin" )
+            // {
+            //     $this->resp->msg = "You are not admin & you can't do this action !";
+            //     $this->jsonecho();
+            // }
 
 
 
@@ -146,6 +146,13 @@
             /**Step 0 - declare */
             $this->resp->result = 0;
             $Route = $this->getVariable("Route");
+            $AuthUser = $this->getVariable("AuthUser");
+
+            if( $AuthUser->get("role") != "admin" )
+            {
+                $this->resp->msg = "You are not admin & you can't do this action !";
+                $this->jsonecho();
+            }
 
             if( !isset($Route->params->id) )
             {
@@ -312,6 +319,13 @@
             /**Step 0 - declare */
             $this->resp->result = 0;
             $Route = $this->getVariable("Route");
+            $AuthUser = $this->getVariable("AuthUser");
+
+            if( $AuthUser->get("role") != "admin" )
+            {
+                $this->resp->msg = "You are not admin & you can't do this action !";
+                $this->jsonecho();
+            }
 
             if( !isset($Route->params->id) )
             {

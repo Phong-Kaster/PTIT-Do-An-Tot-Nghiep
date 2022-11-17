@@ -121,7 +121,7 @@
         {
             setupSpecialityInfo(id);
         }
-        setupButton();
+        setupButton(id);
     </script>
   </body>
 </html>

@@ -28,6 +28,19 @@
             {
                 $this->delete();
             }
+            else if( $request_method === 'POST')
+            {
+                if( Input::post("action") == 'avatar' )
+                {
+                    $this->updateAvatar();
+                }
+                else
+                {
+                    $this->resp->result = 0;
+                    $this->resp->msg = "This request is not valid";
+                    $this->jsonecho();
+                }
+            }
         }
 
 
@@ -76,7 +89,8 @@
                 $this->resp->data = array(
                     "id" => (int)$Speciality->get("id"),
                     "name" => $Speciality->get("name"),
-                    "description" => $Speciality->get("description")
+                    "description" => $Speciality->get("description"),
+                    "image" => $Speciality->get("image")
                 );
             }
             catch(Exception $ex)
@@ -149,7 +163,8 @@
                 $this->resp->data = array(
                     "id" => (int)$Speciality->get("id"),
                     "name" => $Speciality->get("name"),
-                    "description" => $Speciality->get("description")
+                    "description" => $Speciality->get("description"),
+                    "image" => $Speciality->get("image")
                 );
             } 
             catch (\Exception $ex) 
@@ -225,6 +240,97 @@
             {
                 $this->resp->msg = $ex->getMessage();
             }
+            $this->jsonecho();
+        }
+
+
+        /**
+         * @author Phong-Kaster
+         * @since 17-11-2022
+         * update image for speciality
+         */
+        private function updateAvatar()
+        {
+            /**Step 1 */
+            $this->resp->result = 0;
+            $AuthUser = $this->getVariable("AuthUser");
+            $Route = $this->getVariable("Route");
+
+            /**Step 2 - only ADMIN can do this action */
+            if( $AuthUser->get("role") != 'admin' )
+            {
+                $this->resp->msg = "Only admin can do this action";
+                $this->jsonecho();
+            }
+
+            /**Step 3 - check speciality exist ? */
+            if( !isset($Route->params->id) )
+            {
+                $this->resp->msg = "ID is required !";
+                $this->jsonecho();
+            }
+            $Speciality = Controller::model("Speciality", $Route->params->id);
+            if( !$Speciality->isAvailable() )
+            {
+                $this->resp->msg = "Speciality is not available";
+                $this->jsonecho();
+            }
+
+
+
+            /**Step 4 - check if file is received or not */
+            if (empty($_FILES["file"]) || $_FILES["file"]["size"] <= 0) 
+            {
+                $this->resp->msg = "Photo is not received !";
+                $this->jsonecho();
+            }
+
+            
+            /**Step 3 - check filename extension */
+            $ext = strtolower(pathinfo($_FILES["file"]["name"], PATHINFO_EXTENSION));
+            $allow = ["jpeg", "jpg", "png"];
+            if (!in_array($ext, $allow)) 
+            {
+                $this->resp->msg = __("Only ".join(",", $allow)." files are allowed");
+                $this->jsonecho();
+            }
+
+
+            /**Step 4 - upload file */
+            $date = new DateTime();
+            $timestamp = $date->getTimestamp();
+            $name = "speciality_".$Speciality->get("id")."_".$timestamp;
+            $directory = UPLOAD_PATH;
+
+
+            if (!file_exists($directory)) {
+                mkdir($directory);
+            }
+            
+            $filepath = $directory . "/" . $name . "." .$ext;
+
+            if (!move_uploaded_file($_FILES["file"]["tmp_name"], $filepath)) 
+            {
+                $this->resp->msg = __("Oops! An error occured. Please try again later!");
+                $this->jsonecho();
+            }
+            
+            /**Step 6 - update photo name for AuthUser */
+            try 
+            {
+                $Speciality->set("image", $name . "." .$ext)
+                        ->save();
+
+                $this->resp->result = 1;
+                $this->resp->msg = __("Image has been updated successfully !");
+                $this->resp->url = APPURL."/assets/uploads/".$name . "." .$ext;
+
+            } 
+            catch (\Exception $ex) 
+            {
+                $this->resp->msg = $ex->getMessage();
+            }
+
             $this->jsonecho();
         }
     } 

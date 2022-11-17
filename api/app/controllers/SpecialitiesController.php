@@ -42,15 +42,15 @@ class SpecialitiesController extends Controller
         
 
         /**Step 2 - verify user's role */
-        $valid_roles = ["admin", "supporter", "member"];
-        $role_validation = in_array($AuthUser->get("role"), $valid_roles);
-        if( !$role_validation )
-        {
-            $this->resp->result = 0;
-            $this->resp->msg = "You don't have permission to do this action. Only "
-            .implode(', ', $valid_roles)." can do this action !";
-            $this->jsonecho();
-        }
+        // $valid_roles = ["admin", "supporter", "member"];
+        // $role_validation = in_array($AuthUser->get("role"), $valid_roles);
+        // if( !$role_validation )
+        // {
+        //     $this->resp->result = 0;
+        //     $this->resp->msg = "You don't have permission to do this action. Only "
+        //     .implode(', ', $valid_roles)." can do this action !";
+        //     $this->jsonecho();
+        // }
 
 
         /**Step 2 - get filters */
@@ -121,7 +121,8 @@ class SpecialitiesController extends Controller
                     "id" => (int)$element->id,
                     "name" => $element->name,
                     "description" => $element->description,
-                    "doctor_quantity" => (int)$element->doctor_quantity
+                    "doctor_quantity" => (int)$element->doctor_quantity,
+                    "image" => $element->image
                 );
             }
 
@@ -189,6 +190,7 @@ class SpecialitiesController extends Controller
         $Speciality = Controller::model("Speciality");
         $Speciality->set("name", $name)
                     ->set("description", $description)
+                    ->set("image", "default_avatar.jpg")
                     ->save();
         
 
@@ -198,7 +200,8 @@ class SpecialitiesController extends Controller
         $this->resp->data = array(
             "id" => (int)$Speciality->get("id"),
             "name" => $Speciality->get("name"),
-            "description" => $Speciality->get("description")
+            "description" => $Speciality->get("description"),
+            "image" => $Speciality->get("image")
         );
         $this->jsonecho();
     }

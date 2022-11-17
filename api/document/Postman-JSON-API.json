@@ -232,13 +232,50 @@
 							]
 						},
 						"url": {
-							"raw": "{{ENDPOINT_URL}}/api/login",
+							"raw": "{{ENDPOINT_URL}}/login",
 							"host": [
 								"{{ENDPOINT_URL}}"
 							],
 							"path": [
-								"api",
 								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Patient With Google",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "type",
+									"value": "patient",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "phongkaster100@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "111111",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ENDPOINT_URL}}/login/google",
+							"host": [
+								"{{ENDPOINT_URL}}"
+							],
+							"path": [
+								"login",
+								"google"
 							]
 						}
 					},
@@ -254,7 +291,7 @@
 							"formdata": [
 								{
 									"key": "email",
-									"value": "phongkaster2@gmail.com",
+									"value": "phongkaster@gmail.com",
 									"description": "n18dccn147@student.ptithcm.edu.vn",
 									"type": "text"
 								},
@@ -504,13 +541,13 @@
 							}
 						],
 						"url": {
-							"raw": "{{ENDPOINT_URL}}/patients/1",
+							"raw": "{{ENDPOINT_URL}}/patients/2",
 							"host": [
 								"{{ENDPOINT_URL}}"
 							],
 							"path": [
 								"patients",
-								"1"
+								"2"
 							]
 						}
 					},
@@ -542,7 +579,7 @@
 								},
 								{
 									"key": "birthday",
-									"value": "01-05-2022",
+									"value": "2022-05-01",
 									"type": "text"
 								},
 								{
@@ -552,20 +589,19 @@
 								},
 								{
 									"key": "gender",
-									"value": "1",
+									"value": "0",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "{{ENDPOINT_URL}}/api/patients/1",
+							"raw": "{{ENDPOINT_URL}}/patients/2",
 							"host": [
 								"{{ENDPOINT_URL}}"
 							],
 							"path": [
-								"api",
 								"patients",
-								"1"
+								"2"
 							]
 						}
 					},
@@ -583,14 +619,13 @@
 							}
 						],
 						"url": {
-							"raw": "{{ENDPOINT_URL}}/api/patients/1",
+							"raw": "{{ENDPOINT_URL}}/patients/2",
 							"host": [
 								"{{ENDPOINT_URL}}"
 							],
 							"path": [
-								"api",
 								"patients",
-								"1"
+								"2"
 							]
 						}
 					},
@@ -620,12 +655,11 @@
 							}
 						],
 						"url": {
-							"raw": "{{ENDPOINT_URL}}/api/patient/profile",
+							"raw": "{{ENDPOINT_URL}}/patient/profile",
 							"host": [
 								"{{ENDPOINT_URL}}"
 							],
 							"path": [
-								"api",
 								"patient",
 								"profile"
 							]
@@ -1040,10 +1074,15 @@
 								"key": "Authorization",
 								"value": "{{ACCESS_TOKEN}}",
 								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "",
+								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "{{ENDPOINT_URL}}/doctors?order[dir]&order[column]&search=&length&start&room_id=&speciality_id=2",
+							"raw": "{{ENDPOINT_URL}}/doctors?order[dir]&order[column]&search=&length&start=&room_id=&speciality_id=&active=",
 							"host": [
 								"{{ENDPOINT_URL}}"
 							],
@@ -1069,7 +1108,7 @@
 								},
 								{
 									"key": "start",
-									"value": null
+									"value": ""
 								},
 								{
 									"key": "room_id",
@@ -1077,7 +1116,11 @@
 								},
 								{
 									"key": "speciality_id",
-									"value": "2"
+									"value": ""
+								},
+								{
+									"key": "active",
+									"value": ""
 								}
 							]
 						}
@@ -1096,13 +1139,13 @@
 							}
 						],
 						"url": {
-							"raw": "{{ENDPOINT_URL}}/doctors/3",
+							"raw": "{{ENDPOINT_URL}}/doctors/7",
 							"host": [
 								"{{ENDPOINT_URL}}"
 							],
 							"path": [
 								"doctors",
-								"3"
+								"7"
 							]
 						}
 					},
@@ -1171,19 +1214,18 @@
 								},
 								{
 									"key": "room_id",
-									"value": "3",
+									"value": "2",
 									"description": "mandatory",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "{{ENDPOINT_URL}}/api/doctors",
+							"raw": "{{ENDPOINT_URL}}/doctors",
 							"host": [
 								"{{ENDPOINT_URL}}"
 							],
 							"path": [
-								"api",
 								"doctors"
 							]
 						}
@@ -1247,18 +1289,17 @@
 								},
 								{
 									"key": "room_id",
-									"value": "3",
+									"value": "2",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "{{ENDPOINT_URL}}/api/doctors/2",
+							"raw": "{{ENDPOINT_URL}}/doctors/2",
 							"host": [
 								"{{ENDPOINT_URL}}"
 							],
 							"path": [
-								"api",
 								"doctors",
 								"2"
 							]
@@ -1278,14 +1319,52 @@
 							}
 						],
 						"url": {
-							"raw": "{{ENDPOINT_URL}}/api/doctors/3",
+							"raw": "{{ENDPOINT_URL}}/doctors/3",
 							"host": [
 								"{{ENDPOINT_URL}}"
 							],
 							"path": [
-								"api",
 								"doctors",
 								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Avatar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ACCESS_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "action",
+									"value": "avatar",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/D:/xampp/htdocs/PTIT-Do-An-Thuc-Tap/photo/Blue.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ENDPOINT_URL}}/doctors/7",
+							"host": [
+								"{{ENDPOINT_URL}}"
+							],
+							"path": [
+								"doctors",
+								"7"
 							]
 						}
 					},
@@ -1303,7 +1382,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "{{ACCESS_TOKEN_MEMBER}}",
+								"value": "{{ACCESS_TOKEN}}",
 								"type": "text"
 							},
 							{
@@ -1371,12 +1450,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{ENDPOINT_URL}}/api/doctor/profile",
+							"raw": "{{ENDPOINT_URL}}/doctor/profile",
 							"host": [
 								"{{ENDPOINT_URL}}"
 							],
 							"path": [
-								"api",
 								"doctor",
 								"profile"
 							]
@@ -1391,7 +1469,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "{{ACCESS_TOKEN_MEMBER}}",
+								"value": "{{ACCESS_TOKEN}}",
 								"type": "text"
 							},
 							{
@@ -1474,7 +1552,7 @@
 								{
 									"key": "price",
 									"value": "125000",
-									"description": "mandatory",
+									"description": "no mandatory",
 									"type": "text"
 								},
 								{
@@ -1491,12 +1569,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{ENDPOINT_URL}}/api/doctor/profile",
+							"raw": "{{ENDPOINT_URL}}/doctor/profile",
 							"host": [
 								"{{ENDPOINT_URL}}"
 							],
 							"path": [
-								"api",
 								"doctor",
 								"profile"
 							]
@@ -1526,7 +1603,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{ENDPOINT_URL}}/specialities?order[column]=doctor_quantity&order[dir]=desc&start=&length=&search=",
+							"raw": "{{ENDPOINT_URL}}/specialities?order[column]=id&order[dir]=desc&start=&length=&search=",
 							"host": [
 								"{{ENDPOINT_URL}}"
 							],
@@ -1536,7 +1613,7 @@
 							"query": [
 								{
 									"key": "order[column]",
-									"value": "doctor_quantity"
+									"value": "id"
 								},
 								{
 									"key": "order[dir]",
@@ -1556,6 +1633,35 @@
 									"key": "search",
 									"value": ""
 								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ACCESS_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{ENDPOINT_URL}}/specialities/10",
+							"host": [
+								"{{ENDPOINT_URL}}"
+							],
+							"path": [
+								"specialities",
+								"10"
 							]
 						}
 					},
@@ -1600,35 +1706,6 @@
 							],
 							"path": [
 								"specialities"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Read By ID",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "{{ACCESS_TOKEN}}",
-								"type": "text"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/x-www-form-urlencoded",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "{{ENDPOINT_URL}}/specialities/10",
-							"host": [
-								"{{ENDPOINT_URL}}"
-							],
-							"path": [
-								"specialities",
-								"10"
 							]
 						}
 					},
@@ -1690,13 +1767,52 @@
 							}
 						],
 						"url": {
-							"raw": "{{ENDPOINT_URL}}/specialities/2",
+							"raw": "{{ENDPOINT_URL}}/specialities/4",
 							"host": [
 								"{{ENDPOINT_URL}}"
 							],
 							"path": [
 								"specialities",
-								"2"
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Image",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ACCESS_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "action",
+									"value": "avatar",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/phong/Downloads/co-xuong-khop.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ENDPOINT_URL}}/specialities/3",
+							"host": [
+								"{{ENDPOINT_URL}}"
+							],
+							"path": [
+								"specialities",
+								"3"
 							]
 						}
 					},
@@ -1742,12 +1858,11 @@
 							}
 						],
 						"url": {
-							"raw": "{{ENDPOINT_URL}}/api/services/1",
+							"raw": "{{ENDPOINT_URL}}/services/1",
 							"host": [
 								"{{ENDPOINT_URL}}"
 							],
 							"path": [
-								"api",
 								"services",
 								"1"
 							]
@@ -1776,19 +1891,62 @@
 							"urlencoded": [
 								{
 									"key": "name",
-									"value": "Khám tổng quát",
+									"value": "Khám tổng quát 1",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "{{ENDPOINT_URL}}/api/services",
+							"raw": "{{ENDPOINT_URL}}/services",
 							"host": [
 								"{{ENDPOINT_URL}}"
 							],
 							"path": [
-								"api",
 								"services"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Image",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ACCESS_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "action",
+									"value": "avatar",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/phong/Downloads/co-xuong-khop.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ENDPOINT_URL}}/services/14",
+							"host": [
+								"{{ENDPOINT_URL}}"
+							],
+							"path": [
+								"services",
+								"14"
 							]
 						}
 					},
@@ -1827,12 +1985,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{ENDPOINT_URL}}/api/services/1",
+							"raw": "{{ENDPOINT_URL}}/services/1",
 							"host": [
 								"{{ENDPOINT_URL}}"
 							],
 							"path": [
-								"api",
 								"services",
 								"1"
 							]
@@ -1852,12 +2009,11 @@
 							}
 						],
 						"url": {
-							"raw": "{{ENDPOINT_URL}}/api/services/2",
+							"raw": "{{ENDPOINT_URL}}/services/2",
 							"host": [
 								"{{ENDPOINT_URL}}"
 							],
 							"path": [
-								"api",
 								"services",
 								"2"
 							]
@@ -1872,6 +2028,9 @@
 			"item": [
 				{
 					"name": "Read All",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"method": "GET",
 						"header": [
@@ -1881,19 +2040,28 @@
 								"type": "text"
 							}
 						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "order[column]",
+									"value": "name",
+									"type": "text"
+								},
+								{
+									"key": "order[dir]",
+									"value": "desc",
+									"type": "text"
+								}
+							]
+						},
 						"url": {
-							"raw": "{{ENDPOINT_URL}}/rooms?speciality_id=",
+							"raw": "{{ENDPOINT_URL}}/rooms",
 							"host": [
 								"{{ENDPOINT_URL}}"
 							],
 							"path": [
 								"rooms"
-							],
-							"query": [
-								{
-									"key": "speciality_id",
-									"value": ""
-								}
 							]
 						}
 					},
@@ -1918,12 +2086,11 @@
 							"urlencoded": []
 						},
 						"url": {
-							"raw": "{{ENDPOINT_URL}}/api/rooms/1",
+							"raw": "{{ENDPOINT_URL}}/rooms/1",
 							"host": [
 								"{{ENDPOINT_URL}}"
 							],
 							"path": [
-								"api",
 								"rooms",
 								"1"
 							]
@@ -1947,7 +2114,7 @@
 							"urlencoded": [
 								{
 									"key": "name",
-									"value": "Phòng 102",
+									"value": "Phòng 103",
 									"type": "text"
 								},
 								{
@@ -1958,12 +2125,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{ENDPOINT_URL}}/api/rooms",
+							"raw": "{{ENDPOINT_URL}}/rooms",
 							"host": [
 								"{{ENDPOINT_URL}}"
 							],
 							"path": [
-								"api",
 								"rooms"
 							]
 						}
@@ -1986,7 +2152,7 @@
 							"urlencoded": [
 								{
 									"key": "name",
-									"value": "Phòng 102",
+									"value": "Phòng 104",
 									"type": "text"
 								},
 								{
@@ -1997,14 +2163,13 @@
 							]
 						},
 						"url": {
-							"raw": "{{ENDPOINT_URL}}/api/rooms/2",
+							"raw": "{{ENDPOINT_URL}}/rooms/1",
 							"host": [
 								"{{ENDPOINT_URL}}"
 							],
 							"path": [
-								"api",
 								"rooms",
-								"2"
+								"1"
 							]
 						}
 					},
@@ -2022,14 +2187,13 @@
 							}
 						],
 						"url": {
-							"raw": "{{ENDPOINT_URL}}/api/rooms/2",
+							"raw": "{{ENDPOINT_URL}}/rooms/4",
 							"host": [
 								"{{ENDPOINT_URL}}"
 							],
 							"path": [
-								"api",
 								"rooms",
-								"2"
+								"4"
 							]
 						}
 					},
@@ -2249,7 +2413,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{ENDPOINT_URL}}/bookings?appointment_date=2022-11-07&service_id=&order[dir]=&order[column]&status=",
+							"raw": "{{ENDPOINT_URL}}/bookings?appointment_date=2022-11-08&service_id=&order[dir]=&order[column]&status=",
 							"host": [
 								"{{ENDPOINT_URL}}"
 							],
@@ -2259,7 +2423,7 @@
 							"query": [
 								{
 									"key": "appointment_date",
-									"value": "2022-11-07"
+									"value": "2022-11-08"
 								},
 								{
 									"key": "service_id",
@@ -2499,12 +2663,11 @@
 							}
 						],
 						"url": {
-							"raw": "{{ENDPOINT_URL}}/api/treatments?search=&order[dir]=&order[column]&length&start",
+							"raw": "{{ENDPOINT_URL}}/treatments?search=&order[dir]=&order[column]&length=&start&appointment_id=153",
 							"host": [
 								"{{ENDPOINT_URL}}"
 							],
 							"path": [
-								"api",
 								"treatments"
 							],
 							"query": [
@@ -2522,11 +2685,15 @@
 								},
 								{
 									"key": "length",
-									"value": null
+									"value": ""
 								},
 								{
 									"key": "start",
 									"value": null
+								},
+								{
+									"key": "appointment_id",
+									"value": "153"
 								}
 							]
 						}
@@ -2540,19 +2707,18 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "{{ACCESS_TOKEN_MEMBER}}",
+								"value": "{{ACCESS_TOKEN}}",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "{{ENDPOINT_URL}}/api/treatments/7",
+							"raw": "{{ENDPOINT_URL}}/treatments/143",
 							"host": [
 								"{{ENDPOINT_URL}}"
 							],
 							"path": [
-								"api",
 								"treatments",
-								"7"
+								"143"
 							]
 						}
 					},
@@ -2565,7 +2731,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "{{ACCESS_TOKEN_MEMBER}}",
+								"value": "{{ACCESS_TOKEN}}",
 								"type": "text"
 							}
 						],
@@ -2574,7 +2740,7 @@
 							"urlencoded": [
 								{
 									"key": "appointment_id",
-									"value": "33",
+									"value": "153",
 									"type": "text"
 								},
 								{
@@ -2605,12 +2771,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{ENDPOINT_URL}}/api/treatments",
+							"raw": "{{ENDPOINT_URL}}/treatments",
 							"host": [
 								"{{ENDPOINT_URL}}"
 							],
 							"path": [
-								"api",
 								"treatments"
 							]
 						}
@@ -2624,7 +2789,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "{{ACCESS_TOKEN_MEMBER}}",
+								"value": "{{ACCESS_TOKEN}}",
 								"type": "text"
 							}
 						],
@@ -2653,20 +2818,19 @@
 								},
 								{
 									"key": "instruction",
-									"value": "uống vào trước mỗi bữa ăn 30 phút",
+									"value": "uống vào trước mỗi bữa ăn 30 phút, không uống nhiều hơn 3 viên mỗi ngày",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "{{ENDPOINT_URL}}/api/treatments/7",
+							"raw": "{{ENDPOINT_URL}}/treatments/1",
 							"host": [
 								"{{ENDPOINT_URL}}"
 							],
 							"path": [
-								"api",
 								"treatments",
-								"7"
+								"1"
 							]
 						}
 					},
@@ -2679,19 +2843,18 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "{{ACCESS_TOKEN_MEMBER}}",
+								"value": "{{ACCESS_TOKEN}}",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "{{ENDPOINT_URL}}/api/treatments/7",
+							"raw": "{{ENDPOINT_URL}}/treatments/4",
 							"host": [
 								"{{ENDPOINT_URL}}"
 							],
 							"path": [
-								"api",
 								"treatments",
-								"7"
+								"4"
 							]
 						}
 					},
@@ -2709,18 +2872,54 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "{{ACCESS_TOKEN_MEMBER}}",
+								"value": "{{ACCESS_TOKEN}}",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "{{ENDPOINT_URL}}/api/appointment-records",
+							"raw": "{{ENDPOINT_URL}}/appointment-records",
 							"host": [
 								"{{ENDPOINT_URL}}"
 							],
 							"path": [
-								"api",
 								"appointment-records"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read By ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ACCESS_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "type",
+									"value": "id",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ENDPOINT_URL}}/appointment-records/1",
+							"host": [
+								"{{ENDPOINT_URL}}"
+							],
+							"path": [
+								"appointment-records",
+								"1"
 							]
 						}
 					},
@@ -2733,7 +2932,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "{{ACCESS_TOKEN_MEMBER}}",
+								"value": "{{ACCESS_TOKEN}}",
 								"type": "text"
 							}
 						],
@@ -2742,7 +2941,7 @@
 							"urlencoded": [
 								{
 									"key": "appointment_id",
-									"value": "33",
+									"value": "143",
 									"type": "text"
 								},
 								{
@@ -2768,12 +2967,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{ENDPOINT_URL}}/api/appointment-records",
+							"raw": "{{ENDPOINT_URL}}/appointment-records",
 							"host": [
 								"{{ENDPOINT_URL}}"
 							],
 							"path": [
-								"api",
 								"appointment-records"
 							]
 						}
@@ -2787,7 +2985,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "{{ACCESS_TOKEN_MEMBER}}",
+								"value": "{{ACCESS_TOKEN}}",
 								"type": "text"
 							}
 						],
@@ -2796,7 +2994,7 @@
 							"urlencoded": [
 								{
 									"key": "appointment_id",
-									"value": "33",
+									"value": "143",
 									"type": "text"
 								},
 								{
@@ -2822,12 +3020,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{ENDPOINT_URL}}/api/appointment-records/1",
+							"raw": "{{ENDPOINT_URL}}/appointment-records/1",
 							"host": [
 								"{{ENDPOINT_URL}}"
 							],
 							"path": [
-								"api",
 								"appointment-records",
 								"1"
 							]
@@ -2872,7 +3069,7 @@
 							"urlencoded": []
 						},
 						"url": {
-							"raw": "{{ENDPOINT_URL}}/appointments?search=&order[dir]=asc&order[column]=position&date=2022-11-08&status=processing&length=20&start=&speciality_id=&room_id=&doctor_id=3",
+							"raw": "{{ENDPOINT_URL}}/appointments?search=&order[dir]=asc&order[column]=position&date=&status=processing&length=20&start=&speciality_id=&room_id=&doctor_id=3",
 							"host": [
 								"{{ENDPOINT_URL}}"
 							],
@@ -2894,7 +3091,7 @@
 								},
 								{
 									"key": "date",
-									"value": "2022-11-08"
+									"value": ""
 								},
 								{
 									"key": "status",
@@ -2973,7 +3170,7 @@
 							"urlencoded": [
 								{
 									"key": "doctor_id",
-									"value": "3",
+									"value": "1",
 									"description": "mandatory",
 									"type": "text"
 								},
@@ -3015,7 +3212,7 @@
 								},
 								{
 									"key": "appointment_time",
-									"value": "2022-11-08 09:00",
+									"value": "",
 									"description": "optional",
 									"type": "text"
 								},
@@ -3478,11 +3675,6 @@
 		{
 			"key": "ACCESS_TOKEN_SUPPORTER",
 			"value": "ACCESSN_TOKEN_SUPPORTER",
-			"type": "string"
-		},
-		{
-			"key": "ACCESS_TOKEN_MEMBER",
-			"value": "ACCESS_TOKEN_MEMBER",
 			"type": "string"
 		}
 	]
