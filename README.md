@@ -65,7 +65,7 @@ Nếu các bạn có nhu cầu muốn tham khảo, hãy ấn vào [**đây**](ht
 # [**Database**](#database)
 
 <p align="center">
-    <img src="./photo/database-version-6.png" />
+    <img src="./photo/database-version-7.png" />
 </p>
 <h3 align="center">
 
@@ -625,6 +625,14 @@ không thể sắp xếp lịch thứ tự của họ.
 2. Thêm trường image cho Service và Speciality trong API và Website.
 
 3. Dựng giao diện Trang chủ cho Android
+
+- **18-11-2022**: Nghiên cứu cách Android gửi yêu cầu tới Server mỗi 5 phút.
+
+- **19-11-2022**: Nghiên cứu thành công IntentService để gửi yêu cầu tới Server mỗi 5 phút - Chức năng khó nhất đã được giải quyết
+
+- **20-11-2022**: 
+
+1. Tạo màn hình hiển thị thông tin cá nhân của bác sĩ
 
 # [**Controller Timeline**](#controller-timeline)
 
