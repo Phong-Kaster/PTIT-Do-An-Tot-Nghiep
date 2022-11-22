@@ -257,7 +257,6 @@ class App
                     // $decoded = Firebase\JWT\JWT::decode($accessToken, EC_SALT, array('HS256'));
                     $decoded = Firebase\JWT\JWT::decode($accessToken, new Firebase\JWT\Key(EC_SALT, 'HS256'));
                     $AuthenticatedUser = Controller::Model($keyword, $decoded->id);
-
                     if( $keyword == "Doctor" && $AuthenticatedUser->get("active") != 1 )
                     {
                         return null;

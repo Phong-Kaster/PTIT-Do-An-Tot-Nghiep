@@ -123,6 +123,7 @@
                         "address" => $element->address,
                         "reason" => $element->reason,
                         "appointment_time" => $element->appointment_time,
+                        "appointment_date" => $element->appointment_date,
                         "status" => $element->status,
                         "create_at" => $element->create_at,
                         "update_at" => $element->update_at,
@@ -162,7 +163,7 @@
 
             /**Step 2 - get required data */
             $required_fields = ["service_id", "booking_name", "booking_phone",
-                                "name", "appointment_time"];
+                                "name", "appointment_time", "appointment_date"];
             foreach($required_fields as $field)
             {
                 if( !Input::post($field) )
@@ -187,6 +188,7 @@
             $reason = Input::post("reason");
 
             $appointment_time = Input::post("appointment_time");
+            $appointment_date = Input::post("appointment_date");
             $status = "processing";
 
             date_default_timezone_set('Asia/Ho_Chi_Minh');
@@ -260,7 +262,8 @@
             /**Step 4.8 - Reason */
 
             /**Step 4.9 - appointment */
-            $output = isAppointmentTimeValid($appointment_time);
+            $input = $appointment_date." ".$appointment_time;
+            $output = isAppointmentTimeValid($input);
             if( !empty($output) )
             {
                 $this->resp->msg = $output;
@@ -293,6 +296,7 @@
                     ->set("address", $address)
                     ->set("reason", $reason)
                     ->set("appointment_time", $appointment_time)
+                    ->set("appointment_date", $appointment_date)
                     ->set("status", $status)
                     ->set("create_at", $create_at)
                     ->set("update_at", $update_at)
@@ -312,6 +316,7 @@
                     "address" => $Booking->get("address"),
                     "reason" => $Booking->get("reason"),
                     "appointment_time" => $Booking->get("appointment_time"),
+                    "appointment_date" => $Booking->get("appointment_date"),
                     "status" => $Booking->get("status"),
                     "create_at" => $Booking->get("create_at"),
                     "update_at" => $Booking->get("update_at"),

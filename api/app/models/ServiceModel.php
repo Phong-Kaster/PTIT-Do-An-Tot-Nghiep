@@ -66,7 +66,8 @@
 	    {
 	    	$defaults = array(
                 "name" => "",
-				"image" => ""
+				"image" => "",
+				"description" => ""
 	    	);
 
 
@@ -91,7 +92,8 @@
 		    	->insert(array(
 		    		"id" => null,
 		    		"name" => $this->get("name"),
-					"image" => $this->get("image")
+					"image" => $this->get("image"),
+					"description" => $this->get("description")
 		    	));
 
 	    	$this->set("id", $id);
@@ -114,7 +116,8 @@
 	    		->where("id", "=", $this->get("id"))
 		    	->update(array(
 		    		"name" => $this->get("name"),
-					"image" => $this->get("image")
+					"image" => $this->get("image"),
+					"description" => $this->get("description")
 		    	));
 
 	    	return $this;

@@ -30,7 +30,7 @@
   - [**Phase 3: 15-11-2022 to xx-xx-2022**](#phase-3-15-11-2022-to-xx-xx-2022)
 - [**Controller Timeline**](#controller-timeline)
 - [**Special Thanks**](#special-thanks)
-- [**Made with 💘 and PHP <img src="https://www.vectorlogo.zone/logos/php/php-horizontal.svg" width="60">**](#made-with--and-php-)
+- [**Made with 💘 and PHP **](#made-with--and-php-)
 
 # [**Introduction**](#introduction)
 
@@ -633,6 +633,22 @@ không thể sắp xếp lịch thứ tự của họ.
 - **20-11-2022**: 
 
 1. Tạo màn hình hiển thị thông tin cá nhân của bác sĩ
+
+- **21-11-2022**:
+
+1. Tạo màn hình hiển thị thông tin chuyên khoa
+
+2. Màn hình tìm kiếm thông tin
+
+- **22-11-2022**:
+
+1. Thêm description cho bảng `tn_services`
+
+2. Sửa lại layout cho các kết quả tìm kiếm trong màn hình tìm kiếm thông tin
+
+3. Sửa lại luồng xử lý khi bệnh nhân đăng nhập bằng số điện thoại di động
+
+4. Thiết kế giao diện màn hình đặt lịch khám.
 
 # [**Controller Timeline**](#controller-timeline)
 

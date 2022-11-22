@@ -56,13 +56,6 @@
             $AuthUser = $this->getVariable("AuthUser");
             $Route = $this->getVariable("Route");
 
-            if( $AuthUser->get("role") != "admin" )
-            {
-                $this->resp->msg = "You are not admin & you can't do this action !";
-                $this->jsonecho();
-            }
-
-
 
             /**Step 2 - check ID*/
             if( !isset($Route->params->id) )

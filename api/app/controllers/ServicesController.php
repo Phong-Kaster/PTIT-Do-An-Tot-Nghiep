@@ -44,13 +44,13 @@
         $data = [];
         
 
-        $valid_roles = ["admin", "supporter"];
-        $role_validation = in_array($AuthUser->get("role"), $valid_roles);
-        if( !$role_validation )
-        {
-            $this->resp->msg = "You are not admin or supporter & you can't do this action !";
-            $this->jsonecho();
-        }
+        // $valid_roles = ["admin", "supporter"];
+        // $role_validation = in_array($AuthUser->get("role"), $valid_roles);
+        // if( !$role_validation )
+        // {
+        //     $this->resp->msg = "You are not admin or supporter & you can't do this action !";
+        //     $this->jsonecho();
+        // }
 
 
         /**Step 2 - get filters */
@@ -110,7 +110,8 @@
                 $data[] = array(
                     "id" => (int)$element->id,
                     "name" => $element->name,
-                    "image" => $element->image
+                    "image" => $element->image,
+                    "description" => $element->description
                 );
             }
 
@@ -159,7 +160,7 @@
             }
         }
         $name = Input::post("name");
-
+        $description = Input::post("description");
 
 
         /**Step 3 - check duplicate */
@@ -178,6 +179,7 @@
         $Service = Controller::model("Service");
         $Service->set("name", $name)
                 ->set("image", 'default_avatar.jpg')
+                ->set("description", $description)
                     ->save();
         
 
@@ -186,7 +188,9 @@
         $this->resp->msg = "Service is created successfully !";
         $this->resp->data = array(
             "id" => (int)$Service->get("id"),
-            "name" => $Service->get("name")
+            "name" => $Service->get("name"),
+            "image" => $Service->get("image"),
+            "description" => $Service->get("description")
         );
         $this->jsonecho();
     }

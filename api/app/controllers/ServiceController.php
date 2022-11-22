@@ -62,13 +62,13 @@
 
 
             /** is the role have permission ? */
-            $valid_roles = ["admin", "supporter"];
-            $role_validation = in_array($AuthUser->get("role"), $valid_roles);
-            if( !$role_validation )
-            {
-                $this->resp->msg = "You are  not admin or supporter & you can't do this action !";
-                $this->jsonecho();
-            }
+            // $valid_roles = ["admin", "supporter"];
+            // $role_validation = in_array($AuthUser->get("role"), $valid_roles);
+            // if( !$role_validation )
+            // {
+            //     $this->resp->msg = "You are  not admin or supporter & you can't do this action !";
+            //     $this->jsonecho();
+            // }
 
 
 
@@ -97,7 +97,8 @@
                 $this->resp->data = array(
                     "id" => (int)$Service->get("id"),
                     "name" => $Service->get("name"),
-                    "image" => $Service->get("image")
+                    "image" => $Service->get("image"),
+                    "description"=> $Service->get("description")
                 );
             }
             catch(Exception $ex)
@@ -169,7 +170,8 @@
                 $this->resp->data = array(
                     "id" => (int)$Service->get("id"),
                     "name" => $Service->get("name"),
-                    "image" => $Service->get("image")
+                    "image" => $Service->get("image"),
+                    "description"=> $Service->get("description")
                 );
             } 
             catch (\Exception $ex) 

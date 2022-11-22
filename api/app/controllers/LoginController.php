@@ -137,6 +137,7 @@ class LoginController extends Controller
         $this->resp->result = 0;
         $password = Input::post("password");
         $phone = Input::post("phone");
+        $hashPassword = "";
         $data = [];
 
         /**Step 2 - is phone number correct format ? */
@@ -189,6 +190,8 @@ class LoginController extends Controller
                 "create_at" => $Patient->get("create_at"),
                 "update_at" => $Patient->get("update_at")
             );
+
+            $hashPassword = $Patient->get("password");
         }
         /**Step 3 - Case 2 - if this patient logins again, we will return JWT token & his/her information except password */
         else 
@@ -218,15 +221,15 @@ class LoginController extends Controller
                 "update_at" => $result[0]->update_at
             );
 
-            // need update $password again
-            $password = $result[0]->password;
+            // // need update $password again
+            // $password = $result[0]->password;
         }
 
 
 
 
         $payload = $data;
-        $payload["hashPass"] = md5($password);
+        $payload["hashPass"] = md5($hashPassword);
         $payload["iat"] = time();
         $jwt = Firebase\JWT\JWT::encode($payload, EC_SALT, 'HS256');
 
