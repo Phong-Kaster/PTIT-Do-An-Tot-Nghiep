@@ -921,19 +921,19 @@ function isAppointmentHourValid($appointment_hour, $appointment_date)
             }
             else 
             {
-                $output = "Now is ".date("H:i")." so that appointment hour is not valid. Try again !";
+                $output = "Now is ".date("H:i")." so that appointment time is not valid. Try again !";
                 return $output;
             }
         }
         /**Step 4 - Case 1.2 - Appointment date is previous days => INCORRECT */
         else
         {
-            $output = "Now is ".date("H:i")." so that appointment hour is not valid. Try again !";
+            $output = "Now is ".date("H:i")." so that appointment time is not valid. Try again !";
             return $output;
         }
         
     }
-    /**Step 4 - Case 2 - appointment hour == currentHour */
+    /**Step 4 - Case 2 - appointment time == currentHour */
     else if( $hour == $currentHour )
     {
         if( $minute <= $currentMinute )
@@ -945,7 +945,7 @@ function isAppointmentHourValid($appointment_hour, $appointment_date)
             }
             else
             {
-                $output = "Now is ".date("H:i")." so that appointment hour is not valid. Try again !";
+                $output = "Now is ".date("H:i")." so that appointment time is not valid. Try again !";
                 return $output;
             }
            

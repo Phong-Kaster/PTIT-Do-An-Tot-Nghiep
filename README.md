@@ -644,11 +644,19 @@ không thể sắp xếp lịch thứ tự của họ.
 
 1. Thêm description cho bảng `tn_services`
 
-2. Sửa lại layout cho các kết quả tìm kiếm trong màn hình tìm kiếm thông tin
+2. Android - Sửa lại layout cho các kết quả tìm kiếm trong màn hình tìm kiếm thông tin
 
-3. Sửa lại luồng xử lý khi bệnh nhân đăng nhập bằng số điện thoại di động
+3. Android - Sửa lại luồng xử lý khi bệnh nhân đăng nhập bằng số điện thoại di động
 
-4. Thiết kế giao diện màn hình đặt lịch khám.
+4. Android - Thiết kế giao diện màn hình đặt lịch khám.
+
+- **23-11-2022**:
+
+1. Android - Tách Booking Activity thành 2 fragment riêng biệt.
+
+2. Android - hoàn thiện chức năng Booking
+
+3. Android - màn hình hướng dẫn thủ tục khám bệnh tích hợp Google Map
 
 # [**Controller Timeline**](#controller-timeline)
 
