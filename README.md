@@ -65,7 +65,7 @@ Nếu các bạn có nhu cầu muốn tham khảo, hãy ấn vào [**đây**](ht
 # [**Database**](#database)
 
 <p align="center">
-    <img src="./photo/database-version-7.png" />
+    <img src="./photo/database-version-9.png" />
 </p>
 <h3 align="center">
 
@@ -658,6 +658,12 @@ không thể sắp xếp lịch thứ tự của họ.
 
 3. Android - màn hình hướng dẫn thủ tục khám bệnh tích hợp Google Map
 
+- **24-11-2022**:
+
+1. API - thêm bảng notification và xử lý đọc thông báo cho BỆNH NHÂN
+
+2. Android - hoàn thiện màn hình hướng dẫn thủ tục khám bệnh
+
 # [**Controller Timeline**](#controller-timeline)
 
 Phần này mình lưu lại trình tự mình viết đồ án này. Nếu các bạn có nhu cầu tham khảo cách xử lý của mình. Các bạn có thể đọc code theo trình tự 
@@ -730,6 +736,10 @@ Phần này mình lưu lại trình tự mình viết đồ án này. Nếu các
 33. Charts Controller
 
 34. Login With Google Controller
+
+35. Patient Notifications Controller 
+
+36. Patient Notification Controller
 
 # [**Special Thanks**](#special-thanks)
 

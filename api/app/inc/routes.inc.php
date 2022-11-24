@@ -123,3 +123,8 @@ App::addRoute("GET|POST", "/appointment-queue-now/?", "AppointmentQueueNow");
 
 /************************** CHART ******************************/
 App::addRoute("GET", "/charts/?", "Charts");
+
+
+/*************************** PATIENT NOTIFICATION ************************** */
+App::addRoute("GET|POST", "/patient/notifications/?", "PatientNotifications");
+App::addRoute("GET|POST", "/patient/notifications/mark-as-read/[i:id]/?", "PatientNotification");

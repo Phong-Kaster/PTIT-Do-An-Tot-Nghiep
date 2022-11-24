@@ -302,6 +302,19 @@
                     ->set("update_at", $update_at)
                     ->save();
                 
+
+                $Notification = Controller::model("Notification");
+                $notificationMessage = "Chúc mừng bạn! Lịch hẹn khám lúc ".$appointment_time." ngày ".$appointment_date." đã được tạo thành công!";
+                $Notification->set("message", $notificationMessage)
+                        ->set("record_id", $Booking->get("id") )
+                        ->set("record_type", "booking")
+                        ->set("is_read", 0)
+                        ->set("patient_id", $AuthUser->get("id"))
+                        ->set("create_at", $create_at)
+                        ->set("update_at", $update_at)
+                        ->save();
+
+
                 $this->resp->result = 1;
                 $this->resp->msg = "Congratulation, ".$AuthUser->get("name")."! This booking at "
                                     .$Booking->get("appointment_time")

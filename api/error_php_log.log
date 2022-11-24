@@ -769,3 +769,16 @@ Stack trace:
 [17-Nov-2022 07:58:49 UTC] PHP Notice:  Undefined property: stdClass::$image in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\SpecialitiesController.php on line 125
 [17-Nov-2022 07:58:49 UTC] PHP Notice:  Undefined property: stdClass::$image in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\SpecialitiesController.php on line 125
 [17-Nov-2022 07:58:49 UTC] PHP Notice:  Undefined property: stdClass::$image in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\SpecialitiesController.php on line 125
+[24-Nov-2022 02:52:37 UTC] PHP Parse error:  syntax error, unexpected 'process' (T_STRING), expecting variable (T_VARIABLE) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientNotificationsController.php on line 9
+[24-Nov-2022 02:52:51 UTC] PHP Parse error:  syntax error, unexpected '}' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientNotificationsController.php on line 73
+[24-Nov-2022 09:54:58 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Call to undefined method PDOStatement::get() in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientNotificationsController.php:108
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientNotificationsController.php(33): PatientNotificationsController->markAllAsRead()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php(613): PatientNotificationsController->process()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\index.php(72): App->process()
+#3 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientNotificationsController.php on line 108
+[24-Nov-2022 02:59:06 UTC] PHP Parse error:  syntax error, unexpected 'process' (T_STRING), expecting variable (T_VARIABLE) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientNotificationController.php on line 9
+[24-Nov-2022 02:59:34 UTC] PHP Parse error:  syntax error, unexpected '$this' (T_VARIABLE) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientNotificationController.php on line 61
+[24-Nov-2022 02:59:56 UTC] PHP Parse error:  syntax error, unexpected '?>', expecting function (T_FUNCTION) or const (T_CONST) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientNotificationController.php on line 77
+[24-Nov-2022 03:00:17 UTC] PHP Parse error:  syntax error, unexpected '?>', expecting function (T_FUNCTION) or const (T_CONST) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientNotificationController.php on line 78
