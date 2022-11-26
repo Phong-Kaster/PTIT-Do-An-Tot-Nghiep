@@ -126,5 +126,10 @@ App::addRoute("GET", "/charts/?", "Charts");
 
 
 /*************************** PATIENT NOTIFICATION ************************** */
-App::addRoute("GET|POST", "/patient/notifications/?", "PatientNotifications");
+App::addRoute("GET|POST|PUT", "/patient/notifications/?", "PatientNotifications");
 App::addRoute("GET|POST", "/patient/notifications/mark-as-read/[i:id]/?", "PatientNotification");
+
+
+/*************************** PATIENT APPOINTMENT ************************** */
+App::addRoute("GET", "/patient/appointments/?", "PatientAppointments");
+App::addRoute("GET", "/patient/appointments/[i:id]/?", "PatientAppointment");

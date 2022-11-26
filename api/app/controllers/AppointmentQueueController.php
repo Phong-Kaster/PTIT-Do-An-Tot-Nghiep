@@ -53,7 +53,7 @@
             $this->resp->result = 0;
             $AuthUser = $this->getVariable("AuthUser");
             $data = [];
-            $msg = "";
+            $msg = "All appointments";
 
 
             /**Step 2 - get filters */
@@ -62,7 +62,7 @@
             $search         = Input::get("search");
             $length         = Input::get("length") ? (int)Input::get("length") : 10;
             $start          = Input::get("start") ? (int)Input::get("start") : 0;
-            $doctor         = Input::get("doctor");// Only ADMIN & SUPPORTER can use this filter.
+            $doctor_id         = Input::get("doctor_id");// Only ADMIN & SUPPORTER can use this filter.
             $room           = Input::get("room");// Only ADMIN & SUPPORTER can use this filter.
             $date           = Input::get("date");
             $status         = Input::get("status");
@@ -74,28 +74,35 @@
                             TABLE_PREFIX.TABLE_APPOINTMENTS.".*"
                         ]);
 
-            switch($type){
-                case "all":
-                    $msg = "All appointments";
-                    break;
-                case "normal":
-                    $msg = "Normal appointments";
-                    $query->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".appointment_time", "=" , "");
-                    break;
-                case "booking":
-                    $msg = "Booking appointments";
-                    $query->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".appointment_time", "!=", "");
-                    break;
-                default:
-                    $msg = "All appointments";
-            }
+            // switch($type){
+            //     case "all":
+            //         $msg = "All appointments";
+            //         break;
+            //     case "normal":
+            //         $msg = "Normal appointments";
+            //         $query->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".appointment_time", "=" , "");
+            //         break;
+            //     case "booking":
+            //         $msg = "Booking appointments";
+            //         $query->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".appointment_time", "!=", "");
+            //         break;
+            //     default:
+            //         $msg = "All appointments";
+            // }
 
             try
             {
-                /**Step 3.0 - role - as MEMBER, he/she only see appointments that has been assigned to him/her. */
+                /**Step 3.0 - 
+                 * role as ADMIN or SUPPORTER can pass doctor_id to filter
+                 * PATIENT can also pass doctor_id to filter
+                 * role - as MEMBER, he/she only see appointments that has been assigned to him/her. */
                 $valid_roles = ["admin", "supporter"];
                 $role_validation = in_array($AuthUser->get("role"), $valid_roles);
-                if( !$role_validation )
+                if( $role_validation || !$AuthUser->get("role"))
+                {
+                    $query->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".doctor_id", "=", $doctor_id);
+                }
+                else
                 {
                     $query->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".doctor_id", "=", $AuthUser->get("id"));
                 }
@@ -122,12 +129,12 @@
                 /**Step 3.3 - doctor_id filter - only ADMIN and SUPPORTER can use */
                 $valid_roles = ["admin", "supporter"];
                 $role_validation = in_array($AuthUser->get("role"), $valid_roles);
-                if( $doctor && $role_validation )
+                if( $doctor_id && $role_validation )
                 {
-                    $query->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".doctor_id", "=", $doctor);
+                    $query->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".doctor_id", "=", $doctor_id);
 
-                    $msg .= " - doctor ID: ".$doctor;
-                    $Doctor = Controller::model("Doctor", $doctor);
+                    $msg .= " - doctor ID: ".$doctor_id;
+                    $Doctor = Controller::model("Doctor", $doctor_id);
                     if( $Doctor->isAvailable() )
                     {
                         $msg .= " - ".$Doctor->get("name");

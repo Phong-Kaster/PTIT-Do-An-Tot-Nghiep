@@ -664,6 +664,20 @@ không thể sắp xếp lịch thứ tự của họ.
 
 2. Android - hoàn thiện màn hình hướng dẫn thủ tục khám bệnh
 
+3. Android - màn hình hiện thị chi tiết thông tin BOOKING
+
+4. Android - xử lý để cập nhật trạng thái thông báo & số lượng thông báo chưa đọc
+
+- **25-11-2022**:
+
+1. API - Thêm patient appointments để người bệnh xem thông tin lịch khám
+
+- **26-11-2022**:
+
+1. Android - Thiết kế giao diện hiển thị lịch khám.
+
+2. Android - Hoàn thiện tính năng nhắc thông báo cho bệnh nhân khi có lịch khám.
+
 # [**Controller Timeline**](#controller-timeline)
 
 Phần này mình lưu lại trình tự mình viết đồ án này. Nếu các bạn có nhu cầu tham khảo cách xử lý của mình. Các bạn có thể đọc code theo trình tự 
@@ -740,6 +754,10 @@ Phần này mình lưu lại trình tự mình viết đồ án này. Nếu các
 35. Patient Notifications Controller 
 
 36. Patient Notification Controller
+
+37. Patient Appointments Controller 
+
+38. Patient Appointment Controller
 
 # [**Special Thanks**](#special-thanks)
 

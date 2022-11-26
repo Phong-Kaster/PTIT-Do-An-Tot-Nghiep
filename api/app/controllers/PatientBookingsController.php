@@ -64,6 +64,7 @@
                             TABLE_PREFIX.TABLE_BOOKINGS.".*",
                             DB::raw(TABLE_PREFIX.TABLE_SERVICES.".id as service_id"),
                             DB::raw(TABLE_PREFIX.TABLE_SERVICES.".name as service_name"),
+                            DB::raw(TABLE_PREFIX.TABLE_SERVICES.".image as service_image"),
                         ]);
 
                 /**Step 3.1 - search filter*/
@@ -129,7 +130,8 @@
                         "update_at" => $element->update_at,
                         "service" => array(
                             "id" => (int)$element->service_id,
-                            "name" => $element->service_name
+                            "name" => $element->service_name,
+                            "image" => $element->service_image
                         )
                     );
                 }
@@ -196,6 +198,17 @@
             $update_at = date("Y-m-d H:i:s");
 
             /**Step 4 - validation */
+            $query = DB::table(TABLE_PREFIX.TABLE_BOOKINGS)
+                    ->where(TABLE_PREFIX.TABLE_BOOKINGS.".patient_id", "=", $AuthUser->get("id"))
+                    ->where(TABLE_PREFIX.TABLE_BOOKINGS.".status", "=", "processing")
+                    ->where(TABLE_PREFIX.TABLE_BOOKINGS.".appointment_date", "=", $appointment_date);
+            $result = $query->get();
+            if( count($result) > 0)
+            {
+                $this->resp->msg = "Mỗi bệnh nhân trong một ngày chỉ có thể tạo một lịch hẹn. Để tiếp tục, bạn cần khám hoặc hủy lịch hẹn trước đó trong cùng ngày!";
+                $this->jsonecho();
+            }
+
             /**Step 4.1 - service validation */
             $Service = Controller::model("Service", $service_id);
             if( !$Service->isAvailable() )
@@ -304,7 +317,10 @@
                 
 
                 $Notification = Controller::model("Notification");
-                $notificationMessage = "Chúc mừng bạn! Lịch hẹn khám lúc ".$appointment_time." ngày ".$appointment_date." đã được tạo thành công!";
+
+                $serviceName = $Service->get("name");
+
+                $notificationMessage = "Chúc mừng bạn! Lịch hẹn khám ".$serviceName." lúc ".$appointment_time." ngày ".$appointment_date." đã được tạo thành công!";
                 $Notification->set("message", $notificationMessage)
                         ->set("record_id", $Booking->get("id") )
                         ->set("record_type", "booking")

@@ -498,6 +498,10 @@
          *
          * Thay vào đó, họ tới bệnh viện thì mới bắt đầu phát số. Nếu họ bị bệnh đặc biệt, ví dụ: bệnh trĩ.... hoặc người 
          * bệnh đã đặt thời gian vào khám thích hợp thì HỖ TRỢ VIÊN sẽ tiến hành sắp xếp thứ tự khám cho họ
+         * 
+         * Mỗi bệnh nhân trong một ngày chỉ được phép có duy nhất một lịch khám bệnh. Nếu muốn được khám 
+         * tiếp bệnh khác, bệnh nhân cần hoàn thành việc khám bệnh hiện tại thì mới được đăng kí khám sang 
+         * các bệnh khác.
          */
         private function newFlow()
         {
@@ -632,6 +636,23 @@
                 }
                 $date = substr($appointment_time,0, 10);
             }
+
+            /**Step 5.6 - one patient has only one appointment at the time. 
+             * If he/she wanna take other exam, he/she must complete the current exam first
+             */
+            $queryNumberOfAppointment = DB::table(TABLE_PREFIX.TABLE_APPOINTMENTS)
+                        ->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".patient_id", "=", $patient_id)
+                        ->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".date", "=" , $date)
+                        ->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".status", "=", "processing");
+            
+            $resultNumberOfAppointment = $queryNumberOfAppointment->get();
+            if( count($resultNumberOfAppointment) > 0)
+            {
+                $this->resp->msg = "This patient is having a processing appointment ! He(she) must complete this appointment to continue";
+                $this->jsonecho();
+            }
+
+
 
             /**Step 5.8 - numerical order - is a ID of patient today - 
              * For example, i go to hospital and i am patient NO.40.

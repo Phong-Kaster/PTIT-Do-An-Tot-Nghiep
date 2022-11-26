@@ -54,13 +54,9 @@
                         ->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".date", "=", $date)
                         ->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".status", "=", "processing")
                         ->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".doctor_id", "=", $doctor_id)
-                        ->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".appointment_time", "=", "")
                         ->orderBy(TABLE_PREFIX.TABLE_APPOINTMENTS.".position", "asc")
-                        ->limit(2);
+                        ->limit(3);
             $resultNormal = $queryNormal->get();
-
-            print_r("\ncurrent ".$resultNormal[0]->id);
-            print_r("\n next ".$resultNormal[1]->id);
         }
     }
 ?>

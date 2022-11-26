@@ -32,6 +32,10 @@
             {
                 $this->markAllAsRead();
             }
+            if( $request_method === 'PUT')
+            {
+                $this->createNotification();
+            }
         }
 
         /**
@@ -52,7 +56,7 @@
                 $query = DB::table(TABLE_PREFIX.TABLE_NOTIFICATIONS)
                     ->where(TABLE_PREFIX.TABLE_NOTIFICATIONS.".patient_id", "=", $patient_id)
                     ->limit(20)
-                    ->orderBy(TABLE_PREFIX.TABLE_NOTIFICATIONS.".create_at", "desc");
+                    ->orderBy(TABLE_PREFIX.TABLE_NOTIFICATIONS.".id", "desc");
                 $result = $query->get();
 
                 $quantityUnread = 0;
@@ -120,6 +124,59 @@
             {
                 $this->resp->msg = $ex->getMessage();
             }
+            $this->jsonecho();
+        }
+
+
+        /**
+         * @since 26-11-2022
+         * create new notification
+         */
+        private function createNotification()
+        {
+            $this->resp->result = 0;
+            $AuthUser = $this->getVariable("AuthUser");
+
+            $required_fields = ["message", "record_id", "record_type"];
+            foreach( $required_fields as $field)
+            {
+                if( !Input::put($field) )
+                {
+                    $this->resp->msg = "Missing field ".$field;
+                    $this->jsonecho();
+                } 
+            }
+
+            date_default_timezone_set('Asia/Ho_Chi_Minh');
+            $create_at = date("Y-m-d H:i:s");
+            $update_at = date("Y-m-d H:i:s");
+            $message = Input::put("message");
+            $record_id = Input::put("record_id");
+            $record_type = Input::put("record_type");
+            $is_read = 0;
+            $patient_id = $AuthUser->get("id");
+
+
+            try 
+            {
+                $Notification = Controller::model("Notification");
+                $Notification->set("message", $message)
+                ->set("record_id", $record_id )
+                ->set("record_type", $record_type)
+                ->set("is_read",  $is_read)
+                ->set("patient_id", $patient_id)
+                ->set("create_at", $create_at)
+                ->set("update_at", $update_at)
+                ->save();
+
+                $this->resp->result = 1;
+                $this->resp->msg = "Notification has been created successfully !";
+            } 
+            catch (\Exception $ex) 
+            {
+                $this->resp->msg = $ex->getMessage();
+            }
+
             $this->jsonecho();
         }
     }

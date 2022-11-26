@@ -249,6 +249,8 @@
             $update_at = date("Y-m-d H:i:s");
 
             /**Step 4 - validation */
+
+
             /**Step 4.1 - does the patient exist ?*/
             $Patient = Controller::model("Patient", $patient_id);
             if( !$Patient->isAvailable() )

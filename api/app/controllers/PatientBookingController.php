@@ -87,17 +87,20 @@
                     "patient_id" => (int)$Booking->get("patient_id"),
                     "booking_name" => $Booking->get("booking_name"),
                     "booking_phone" => $Booking->get("booking_phone"),
+                    "name" => $Booking->get("name"),
                     "gender" => (int)$Booking->get("gender"),
                     "birthday" => $Booking->get("birthday"),
                     "address" => $Booking->get("address"),
                     "reason" => $Booking->get("reason"),
+                    "appointment_date" => $Booking->get("appointment_date"),
                     "appointment_time" => $Booking->get("appointment_time"),
                     "status" => $Booking->get("status"),
                     "create_at" => $Booking->get("create_at"),
                     "update_at" => $Booking->get("update_at"),
                     "service" => array(
                         "id" => (int)$Service->get("id"),
-                        "name" => $Service->get("name")
+                        "name" => $Service->get("name"),
+                        "image" => $Service->get("image")
                     )
                 );
             }
@@ -161,6 +164,23 @@
             
             /**Step 5 - save change */
             $Booking->set("status", "cancelled")
+                    ->set("update_at", $update_at)
+                    ->save();
+
+
+            $Notification = Controller::model("Notification");
+            $Service = Controller::model("Service", $Booking->get("service_id"));
+            $serviceName = $Service->get("name");
+            $date = $Booking->get("appointment_date");
+            $time = $Booking->get("appointment_time");
+            
+            $notificationMessage = "Lịch hẹn khám ".$serviceName." lúc ".$time." ngày ".$date." đã được hủy bỏ thành công!";
+            $Notification->set("message", $notificationMessage)
+                    ->set("record_id", $Booking->get("id") )
+                    ->set("record_type", "booking")
+                    ->set("is_read", 0)
+                    ->set("patient_id", $AuthUser->get("id"))
+                    ->set("create_at", $update_at)
                     ->set("update_at", $update_at)
                     ->save();
             

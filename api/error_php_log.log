@@ -782,3 +782,106 @@ Stack trace:
 [24-Nov-2022 02:59:34 UTC] PHP Parse error:  syntax error, unexpected '$this' (T_VARIABLE) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientNotificationController.php on line 61
 [24-Nov-2022 02:59:56 UTC] PHP Parse error:  syntax error, unexpected '?>', expecting function (T_FUNCTION) or const (T_CONST) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientNotificationController.php on line 77
 [24-Nov-2022 03:00:17 UTC] PHP Parse error:  syntax error, unexpected '?>', expecting function (T_FUNCTION) or const (T_CONST) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientNotificationController.php on line 78
+[25-Nov-2022 15:43:30 Asia/Ho_Chi_Minh] PHP Notice:  Undefined variable: appointment_time in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientBookingController.php on line 171
+[25-Nov-2022 15:43:30 Asia/Ho_Chi_Minh] PHP Notice:  Undefined variable: appointment_date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientBookingController.php on line 171
+[25-Nov-2022 15:43:30 Asia/Ho_Chi_Minh] PHP Notice:  Undefined variable: create_at in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientBookingController.php on line 177
+[25-Nov-2022 08:46:29 UTC] PHP Deprecated:  The behavior of unparenthesized expressions containing both '.' and '+'/'-' will change in PHP 8: '+'/'-' will take a higher precedence in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientBookingController.php on line 171
+[25-Nov-2022 08:46:37 UTC] PHP Deprecated:  The behavior of unparenthesized expressions containing both '.' and '+'/'-' will change in PHP 8: '+'/'-' will take a higher precedence in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientBookingController.php on line 171
+[25-Nov-2022 08:46:50 UTC] PHP Deprecated:  The behavior of unparenthesized expressions containing both '.' and '+'/'-' will change in PHP 8: '+'/'-' will take a higher precedence in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientBookingController.php on line 171
+[25-Nov-2022 08:47:50 UTC] PHP Deprecated:  The behavior of unparenthesized expressions containing both '.' and '+'/'-' will change in PHP 8: '+'/'-' will take a higher precedence in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientBookingController.php on line 171
+[25-Nov-2022 08:49:10 UTC] PHP Deprecated:  The behavior of unparenthesized expressions containing both '.' and '+'/'-' will change in PHP 8: '+'/'-' will take a higher precedence in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientBookingController.php on line 171
+[25-Nov-2022 08:49:36 UTC] PHP Deprecated:  The behavior of unparenthesized expressions containing both '.' and '+'/'-' will change in PHP 8: '+'/'-' will take a higher precedence in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientBookingController.php on line 171
+[25-Nov-2022 08:50:46 UTC] PHP Parse error:  syntax error, unexpected '$notificationMessage' (T_VARIABLE) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientBookingController.php on line 173
+[25-Nov-2022 15:51:06 Asia/Ho_Chi_Minh] PHP Notice:  Undefined variable: create_at in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientBookingController.php on line 179
+[25-Nov-2022 15:53:02 Asia/Ho_Chi_Minh] PHP Notice:  Undefined variable: create_at in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientBookingController.php on line 179
+[25-Nov-2022 15:56:02 Asia/Ho_Chi_Minh] PHP Notice:  Undefined variable: create_at in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientBookingController.php on line 179
+[25-Nov-2022 15:59:58 Asia/Ho_Chi_Minh] PHP Notice:  Undefined variable: create_at in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientBookingController.php on line 179
+[25-Nov-2022 16:01:59 Asia/Ho_Chi_Minh] PHP Notice:  Undefined variable: create_at in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientBookingController.php on line 179
+[25-Nov-2022 16:55:31 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'tn_appointments' at line 1 in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php:152
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php(152): PDOStatement->execute()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php(130): Pixie\QueryBuilder\QueryBuilderHandler->statement('tn_appointments', Array)
+#2 [internal function]: Pixie\QueryBuilder\QueryBuilderHandler->query('tn_appointments')
+#3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\AliasFacade.php(33): call_user_func_array(Array, Array)
+#4 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\control in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php on line 152
+[25-Nov-2022 16:57:18 Asia/Ho_Chi_Minh] PHP Notice:  Undefined variable: query in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 648
+[25-Nov-2022 16:57:18 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php:648
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php(27): AppointmentsController->newFlow()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php(613): AppointmentsController->process()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\index.php(72): App->process()
+#3 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 648
+[25-Nov-2022 17:07:42 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'tn_appointments.appointment_date' in 'where clause' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php:152
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php(152): PDOStatement->execute()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php(173): Pixie\QueryBuilder\QueryBuilderHandler->statement('SELECT * FROM `...', Array)
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientBookingsController.php(205): Pixie\QueryBuilder\QueryBuilderHandler->get()
+#3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientBookingsController.php(33): PatientBookingsController->save()
+#4 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php(613): PatientBookingsController->process()
+#5 D:\xampp\htdoc in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php on line 152
+[25-Nov-2022 17:08:11 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'tn_appointments.appointment_date' in 'where clause' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php:152
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php(152): PDOStatement->execute()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php(173): Pixie\QueryBuilder\QueryBuilderHandler->statement('SELECT * FROM `...', Array)
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientBookingsController.php(205): Pixie\QueryBuilder\QueryBuilderHandler->get()
+#3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientBookingsController.php(33): PatientBookingsController->save()
+#4 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php(613): PatientBookingsController->process()
+#5 D:\xampp\htdoc in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php on line 152
+[25-Nov-2022 11:32:30 UTC] PHP Fatal error:  Uncaught Error: Class 'PatientAppointmentsController' not found in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php:541
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php(603): App->route()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\index.php(72): App->process()
+#2 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php on line 541
+[25-Nov-2022 11:32:42 UTC] PHP Fatal error:  Uncaught Error: Class 'PatientAppointmentsController' not found in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php:541
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php(603): App->route()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\index.php(72): App->process()
+#2 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php on line 541
+[25-Nov-2022 11:33:18 UTC] PHP Fatal error:  Uncaught Error: Class 'PatientAppointmentsController' not found in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php:541
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php(603): App->route()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\index.php(72): App->process()
+#2 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php on line 541
+[25-Nov-2022 11:34:15 UTC] PHP Fatal error:  Uncaught Error: Class 'PatientAppointmentsController' not found in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php:541
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php(603): App->route()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\index.php(72): App->process()
+#2 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php on line 541
+[25-Nov-2022 11:37:06 UTC] PHP Fatal error:  Uncaught Error: Class 'PatientAppointmentController' not found in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php:541
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php(603): App->route()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\index.php(72): App->process()
+#2 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php on line 541
+[26-Nov-2022 08:30:07 UTC] PHP Notice:  Undefined offset: 0 in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentQueueNowController.php on line 62
+[26-Nov-2022 08:30:07 UTC] PHP Notice:  Trying to get property 'id' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentQueueNowController.php on line 62
+[26-Nov-2022 08:30:07 UTC] PHP Notice:  Undefined offset: 1 in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentQueueNowController.php on line 63
+[26-Nov-2022 08:30:07 UTC] PHP Notice:  Trying to get property 'id' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentQueueNowController.php on line 63
+[26-Nov-2022 09:21:05 UTC] PHP Notice:  Undefined offset: 0 in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentQueueNowController.php on line 62
+[26-Nov-2022 09:21:05 UTC] PHP Notice:  Trying to get property 'id' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentQueueNowController.php on line 62
+[26-Nov-2022 09:21:05 UTC] PHP Notice:  Undefined offset: 1 in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentQueueNowController.php on line 63
+[26-Nov-2022 09:21:05 UTC] PHP Notice:  Trying to get property 'id' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentQueueNowController.php on line 63
+[26-Nov-2022 13:46:19 UTC] PHP Parse error:  syntax error, unexpected ';' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientNotificationsController.php on line 40
+[26-Nov-2022 13:48:31 UTC] PHP Notice:  Undefined variable: field in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientNotificationsController.php on line 147
+[26-Nov-2022 13:48:31 UTC] PHP Notice:  Undefined variable: field in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientNotificationsController.php on line 149
+[26-Nov-2022 20:49:09 Asia/Ho_Chi_Minh] PHP Notice:  Undefined variable: AuthUser in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientNotificationsController.php on line 161
+[26-Nov-2022 20:49:09 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientNotificationsController.php:161
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientNotificationsController.php(36): PatientNotificationsController->createNotification()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php(613): PatientNotificationsController->process()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\index.php(72): App->process()
+#3 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientNotificationsController.php on line 161
+[26-Nov-2022 20:49:28 Asia/Ho_Chi_Minh] PHP Notice:  Undefined variable: Notification in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientNotificationsController.php on line 167
+[26-Nov-2022 20:49:28 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Call to a member function set() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientNotificationsController.php:167
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientNotificationsController.php(36): PatientNotificationsController->createNotification()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php(613): PatientNotificationsController->process()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\index.php(72): App->process()
+#3 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientNotificationsController.php on line 167
