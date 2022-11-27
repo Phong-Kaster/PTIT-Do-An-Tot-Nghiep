@@ -678,6 +678,10 @@ không thể sắp xếp lịch thứ tự của họ.
 
 2. Android - Hoàn thiện tính năng nhắc thông báo cho bệnh nhân khi có lịch khám.
 
+- **27-11-2022**:
+
+1. Android - màn hình xem chi tiết lịch hẹn
+
 # [**Controller Timeline**](#controller-timeline)
 
 Phần này mình lưu lại trình tự mình viết đồ án này. Nếu các bạn có nhu cầu tham khảo cách xử lý của mình. Các bạn có thể đọc code theo trình tự 

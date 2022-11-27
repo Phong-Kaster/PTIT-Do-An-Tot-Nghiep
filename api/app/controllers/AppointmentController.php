@@ -73,13 +73,15 @@
                     $this->jsonecho();
                 }
 
+                $Doctor = Controller::model("Doctor", $Appointment->get("doctor_id"));
+                $Speciality = Controller::model("Speciality", $Doctor->get("speciality_id"));
+                $Room = Controller::model("Room", $Doctor->get("room_id"));
 
                 $this->resp->result = 1;
                 $this->resp->msg = "Action successfully !";
                 $this->resp->data = array(
                     "id" => (int)$Appointment->get("id"),
                     "date" => $Appointment->get("date"),
-                    "doctor_id" => (int)$Appointment->get("doctor_id"),
                     "numerical_order" => (int)$Appointment->get("numerical_order"),
                     "position" => (int) $Appointment->get("position"),
                     "patient_id" => (int)$Appointment->get("patient_id"),
@@ -91,7 +93,23 @@
                     "appointment_time" => $Appointment->get("appointment_time"),
                     "status" => $Appointment->get("status"),
                     "create_at" => $Appointment->get("create_at"),
-                    "update_at" => $Appointment->get("update_at")
+                    "update_at" => $Appointment->get("update_at"),
+                    "doctor" => array(
+                        "id" => (int)$Doctor->get("id"),
+                        "name" => $Doctor->get("name"),
+                        "avatar" => $Doctor->get("avatar")
+                    ),
+                    "speciality" => array(
+                        "id" => (int)$Speciality->get("id"),
+                        "name" => $Speciality->get("name"),
+                        "image" => $Speciality->get("image"),
+                        "description" => $Speciality->get("description")
+                    ),
+                    "room" => array(
+                        "id" => (int) $Room->get("id"),
+                        "name" => $Room->get("name"),
+                        "location" => $Room->get("location")
+                    )
                 );
             } 
             catch (\Exception $ex) 
