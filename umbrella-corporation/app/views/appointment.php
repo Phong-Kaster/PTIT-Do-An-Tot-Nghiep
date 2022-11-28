@@ -123,7 +123,7 @@
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script><!-- DATEPICKER -->
 
     <script src="https://www.jqueryscript.net/demo/Clean-jQuery-Date-Time-Picker-Plugin-datetimepicker/jquery.datetimepicker.js"></script><!-- DATETIME PICKER -->
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js" integrity="sha512-AIOTidJAcHBH2G/oZv9viEGXRqDNmfdPVPYOYKGy3fti0xIplnlgMHUGfuNRzC6FkzIo0iIxgFnr9RikFxK+sw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="<?= APPURL."/assets/js/customized/appointment.js?v=".VERSION ?>"></script>
     <script>
       /**Step 1 - prepare parameters */

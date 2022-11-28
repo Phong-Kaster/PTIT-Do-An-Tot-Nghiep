@@ -197,6 +197,7 @@
                         "numerical_order" => (int)$element->numerical_order,
                         "id" => (int)$element->id,
                         "patient_id" => (int)$element->patient_id,
+                        "patient_name" => $element->patient_name,
                         "doctor_id" => (int)$element->doctor_id,
                         "appointment_time" => $element->appointment_time,
                         "status" => $element->status,

@@ -885,3 +885,21 @@ Stack trace:
 #2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\index.php(72): App->process()
 #3 {main}
   thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientNotificationsController.php on line 167
+[28-Nov-2022 02:03:42 UTC] PHP Parse error:  syntax error, unexpected 'leftJoin' (T_STRING) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentQueueController.php on line 73
+[28-Nov-2022 09:21:59 UTC] PHP Parse error:  syntax error, unexpected ';' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentController.php on line 448
+[28-Nov-2022 09:22:44 UTC] PHP Parse error:  syntax error, unexpected ';' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentController.php on line 448
+[28-Nov-2022 09:49:03 UTC] PHP Parse error:  syntax error, unexpected '$this' (T_VARIABLE) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientRecordController.php on line 108
+[28-Nov-2022 09:49:23 UTC] PHP Parse error:  syntax error, unexpected '$this' (T_VARIABLE) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientRecordController.php on line 108
+[28-Nov-2022 09:50:00 UTC] PHP Notice:  Undefined variable: Route in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientRecordController.php on line 52
+[28-Nov-2022 09:50:00 UTC] PHP Notice:  Trying to get property 'params' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientRecordController.php on line 52
+[28-Nov-2022 09:50:00 UTC] PHP Notice:  Trying to get property 'id' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientRecordController.php on line 52
+[28-Nov-2022 09:51:58 UTC] PHP Notice:  Undefined variable: AppointmentRecord in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientRecordController.php on line 99
+[28-Nov-2022 09:51:58 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientRecordController.php:99
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientRecordController.php(30): PatientRecordController->getById()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php(613): PatientRecordController->process()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\index.php(72): App->process()
+#3 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientRecordController.php on line 99
+[28-Nov-2022 09:56:47 UTC] PHP Notice:  Undefined property: stdClass::$name in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientRecordController.php on line 118
+[28-Nov-2022 09:56:47 UTC] PHP Notice:  Undefined property: stdClass::$avatar in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientRecordController.php on line 119

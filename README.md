@@ -680,7 +680,13 @@ không thể sắp xếp lịch thứ tự của họ.
 
 - **27-11-2022**:
 
-1. Android - màn hình xem chi tiết lịch hẹn
+1. Android - màn hình xem thông lịch khám
+
+- **28-11-2022**:
+
+1. Android - thêm danh sách hàng đợi vào màn hình thông tin lịch khám
+
+2. API - Thêm Patient Records & Patient Record Controller để người dùng xem lại bệnh án của mình.
 
 # [**Controller Timeline**](#controller-timeline)
 
@@ -762,6 +768,10 @@ Phần này mình lưu lại trình tự mình viết đồ án này. Nếu các
 37. Patient Appointments Controller 
 
 38. Patient Appointment Controller
+
+39. Patient Records Controller 
+
+40. Patient Record Controller
 
 # [**Special Thanks**](#special-thanks)
 

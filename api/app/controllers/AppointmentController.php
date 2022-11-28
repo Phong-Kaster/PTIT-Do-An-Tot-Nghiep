@@ -363,6 +363,7 @@
             $Route = $this->getVariable("Route");
             $today = Date("Y-m-d");
             date_default_timezone_set('Asia/Ho_Chi_Minh');
+            $create_at = date("Y-m-d H:i:s");
             $update_at = date("Y-m-d H:i:s");
 
             /**Step 2 - check the appointment is being changed ! */
@@ -433,12 +434,37 @@
                 $this->jsonecho();
             }
 
+            /**Step 5 - prepare notification for PATIENT */
+            $AnotherDoctor = Controller::model("Doctor", $Appointment->get("doctor_id") );
+            $AnotherDoctorName = $AnotherDoctor->get("name");
+            $message = "";
+            if( $new_status == "done")
+            {
+                
+                $message = "Chúc mừng bạn! Lượt khám của bạn với bác sĩ ".$AnotherDoctorName." đã hoàn thành. Bạn có thể xem lại kết luận của bác sĩ trong phần lịch sử khám bệnh";
+            }
+            else if( $new_status == "cancelled")
+            {
+                $message = "Lượt khám của bạn đã bị hủy do bạn không có mặt đúng thời gian!";
+            }
+
             /**Step 5 - save */
             try 
             {
                 $Appointment->set("status", $new_status)
                             ->set("update_at", $update_at)
                             ->save();
+
+                $Notification = Controller::model("Notification");
+                $Notification->set("message", $message)
+                            ->set("record_id", $Appointment->get("id") )
+                            ->set("record_type", "appointment")
+                            ->set("is_read", 0)
+                            ->set("patient_id", $Appointment->get("patient_id"))
+                            ->set("create_at", $create_at)
+                            ->set("update_at", $update_at)
+                            ->save();
+                
 
                 $this->resp->result = 1;
                 $this->resp->msg = "The status of appointment has been updated successfully !";

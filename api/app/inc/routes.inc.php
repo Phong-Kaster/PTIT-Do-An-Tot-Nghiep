@@ -133,3 +133,7 @@ App::addRoute("GET|POST", "/patient/notifications/mark-as-read/[i:id]/?", "Patie
 /*************************** PATIENT APPOINTMENT ************************** */
 App::addRoute("GET", "/patient/appointments/?", "PatientAppointments");
 App::addRoute("GET", "/patient/appointments/[i:id]/?", "PatientAppointment");
+
+/*************************** PATIENT APPOINTMENT ************************** */
+App::addRoute("GET", "/patient/appointments/records/?", "PatientRecords");
+App::addRoute("GET", "/patient/appointments/records/[i:id]/?", "PatientRecord");
