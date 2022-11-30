@@ -903,3 +903,7 @@ Stack trace:
   thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientRecordController.php on line 99
 [28-Nov-2022 09:56:47 UTC] PHP Notice:  Undefined property: stdClass::$name in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientRecordController.php on line 118
 [28-Nov-2022 09:56:47 UTC] PHP Notice:  Undefined property: stdClass::$avatar in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientRecordController.php on line 119
+[30-Nov-2022 03:17:25 UTC] PHP Notice:  Undefined variable: search in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientTreatmentsController.php on line 83
+[30-Nov-2022 03:17:25 UTC] PHP Notice:  Undefined variable: order in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientTreatmentsController.php on line 95
+[30-Nov-2022 03:17:25 UTC] PHP Notice:  Undefined variable: length in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientTreatmentsController.php on line 127
+[30-Nov-2022 03:17:25 UTC] PHP Notice:  Undefined variable: start in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientTreatmentsController.php on line 128

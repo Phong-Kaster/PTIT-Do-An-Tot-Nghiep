@@ -137,3 +137,7 @@ App::addRoute("GET", "/patient/appointments/[i:id]/?", "PatientAppointment");
 /*************************** PATIENT APPOINTMENT ************************** */
 App::addRoute("GET", "/patient/appointments/records/?", "PatientRecords");
 App::addRoute("GET", "/patient/appointments/records/[i:id]/?", "PatientRecord");
+
+/*************************** PATIENT TREATMENT ************************** */
+App::addRoute("GET", "/patient/treatments/[i:id]?", "PatientTreatments");// id is the appointment's ID
+App::addRoute("GET", "/patient/treatment/[i:id]/?", "PatientTreatment");// id is the treatment's ID

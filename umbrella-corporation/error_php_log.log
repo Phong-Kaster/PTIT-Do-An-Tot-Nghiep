@@ -1637,3 +1637,33 @@ Stack trace:
   thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\App.php on line 501
 [13-Nov-2022 02:21:01 UTC] PHP Warning:  require_once(D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation/app/views/fragments/treatments.fragment.php): failed to open stream: No such file or directory in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\treatments.php on line 93
 [13-Nov-2022 02:21:01 UTC] PHP Fatal error:  require_once(): Failed opening required 'D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation/app/views/fragments/treatments.fragment.php' (include_path='D:\xampp\php\PEAR') in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\treatments.php on line 93
+[28-Nov-2022 14:34:38 UTC] PHP Fatal error:  Uncaught Error: Class 'TreatmentController' not found in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\App.php:501
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\App.php(563): App->route()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\index.php(93): App->process()
+#2 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\App.php on line 501
+[28-Nov-2022 14:34:47 UTC] PHP Fatal error:  Uncaught Error: Class 'TreatmentController' not found in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\App.php:501
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\App.php(563): App->route()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\index.php(93): App->process()
+#2 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\App.php on line 501
+[28-Nov-2022 14:36:26 UTC] PHP Fatal error:  Uncaught Error: Class 'TreatmentController' not found in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\App.php:501
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\App.php(563): App->route()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\index.php(93): App->process()
+#2 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\App.php on line 501
+[28-Nov-2022 14:37:15 UTC] PHP Fatal error:  Uncaught Error: Class 'TreatmentController' not found in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\App.php:501
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\App.php(563): App->route()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\index.php(93): App->process()
+#2 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\App.php on line 501
+[28-Nov-2022 14:39:34 UTC] PHP Fatal error:  Uncaught Error: Class 'TreatmentController' not found in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\App.php:501
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\App.php(563): App->route()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\index.php(93): App->process()
+#2 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\App.php on line 501

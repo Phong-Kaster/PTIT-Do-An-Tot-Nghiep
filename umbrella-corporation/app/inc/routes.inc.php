@@ -1,4 +1,4 @@
-<?php 
+    <?php 
 // Language slug
 // 
 // Will be used theme routes

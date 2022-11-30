@@ -127,7 +127,7 @@
         /**Case 1 - doctor is MEMBER => list appointments by ascending */
         if( role != "member" )
         {
-            order = { column: "position", dir: "desc" }
+            order = { column: "position", dir: "asc" }
         }
         /**Case 2 - doctor is not MEMBER => list appointments by descending */
         else

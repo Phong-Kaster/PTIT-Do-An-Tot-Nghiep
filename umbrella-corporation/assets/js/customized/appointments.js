@@ -636,6 +636,8 @@ $(document).ready(function(){
     setupChooseSpeciality();
     setupAppointmentActions();
     
+    $("#order-dir").val("asc");
+    $("#order-column").val("position");
 
     /**Step 3 - run setup for the first time open this page */
     //this block of code is written in views/appointments.php

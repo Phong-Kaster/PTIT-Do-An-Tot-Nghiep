@@ -688,6 +688,20 @@ không thể sắp xếp lịch thứ tự của họ.
 
 2. API - Thêm Patient Records & Patient Record Controller để người dùng xem lại bệnh án của mình.
 
+3. Android - màn hình xem bệnh án theo lượt khám
+
+- **29-11-2022**: Chuẩn bị báo cáo định kì lần 3
+
+- **30-11-2022**: 
+
+1. Android - Thêm Swipe Refresh Layout vào màn hình thông tin lịch khám
+
+2. Android - Màn hình liệt kê lịch sử khám bệnh 
+
+3. Android - giao diện menu trong mục cá nhân
+
+4. Android - giao diện xem phác đồ điều trị
+
 # [**Controller Timeline**](#controller-timeline)
 
 Phần này mình lưu lại trình tự mình viết đồ án này. Nếu các bạn có nhu cầu tham khảo cách xử lý của mình. Các bạn có thể đọc code theo trình tự 
@@ -772,6 +786,8 @@ Phần này mình lưu lại trình tự mình viết đồ án này. Nếu các
 39. Patient Records Controller 
 
 40. Patient Record Controller
+
+41. Patient Treatments Controller
 
 # [**Special Thanks**](#special-thanks)
 
