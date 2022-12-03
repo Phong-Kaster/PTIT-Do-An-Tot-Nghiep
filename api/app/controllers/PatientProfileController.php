@@ -44,7 +44,7 @@
                         break;
                     default:
                         $this->resp->result = 0;
-                        $this->resp->msg = "You action is not valid. There are valid actions: personal, password & avatar ";
+                        $this->resp->msg = "Your action is ".$action." & it's not valid. There are valid actions: personal, password & avatar ";
                         $this->jsonecho();
                 }
             }
@@ -404,6 +404,18 @@
                 $this->resp->result = 1;
                 $this->resp->msg = __("Avatar has been updated successfully !");
                 $this->resp->url = APPURL."/assets/uploads/".$name . "." .$ext;
+                $this->resp->data = array(
+                    "id"    => (int)$AuthUser->get("id"),
+                    "email" => $AuthUser->get("email"),
+                    "phone" => $AuthUser->get("phone"),
+                    "name" => $AuthUser->get("name"),
+                    "gender" => (int)$AuthUser->get("gender"),
+                    "birthday" => $AuthUser->get("birthday"),
+                    "address" => $AuthUser->get("address"),
+                    "avatar" => $AuthUser->get("avatar"),
+                    "create_at" => $AuthUser->get("create_at"),
+                    "update_at" => $AuthUser->get("update_at")
+                );
 
             } 
             catch (\Exception $ex) 

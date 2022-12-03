@@ -27,7 +27,7 @@
   - [**Phase 0: 01-09-2022 to 28-09-2022**](#phase-0-01-09-2022-to-28-09-2022)
   - [**Phase 1: 19-09-2022 to 25-10-2022**](#phase-1-19-09-2022-to-25-10-2022)
   - [**Phase 2: 26-10-2022 to 13-11-2022**](#phase-2-26-10-2022-to-13-11-2022)
-  - [**Phase 3: 15-11-2022 to xx-xx-2022**](#phase-3-15-11-2022-to-xx-xx-2022)
+  - [**Phase 3: 15-11-2022 to 03-12-2022**](#phase-3-15-11-2022-to-03-12-2022)
 - [**Controller Timeline**](#controller-timeline)
 - [**Special Thanks**](#special-thanks)
 - [**Made with 💘 and PHP **](#made-with--and-php-)
@@ -598,13 +598,15 @@ không thể sắp xếp lịch thứ tự của họ.
 
 - **14-11-2022**: Nghỉ ngơi 
 
-## [**Phase 3: 15-11-2022 to xx-xx-2022**](#phase-3-15-11-12022-to-xx-xx-2022)
+## [**Phase 3: 15-11-2022 to 03-12-2022**](#phase-3-15-11-12022-to-03-12-2022)
 
 (1) Mục tiêu: giai đoạn này viết ứng dụng Android và hoàn tất đồ án
 
 (2) Uớc tính: 20 ngày
 
-(3) Thực tế: 
+(3) Thực tế: 25 ngày để hoàn thiện toàn bộ các chức năng chính của toàn bộ ứng dụng Android này.
+Thời gian còn lại tính từ ngày 05-12-2022 trở đi sẽ được dùng để chỉnh sửa lại một số chức năng 
+cho đẹp hơn. Sau này nếu có ai đó tham khảo code mình làm sẽ dễ đọc dễ làm quen hơn
 
 - **15-11-2022**: Dựng thư mục Android và màn hình đăng nhập
 
@@ -701,6 +703,18 @@ không thể sắp xếp lịch thứ tự của họ.
 3. Android - giao diện menu trong mục cá nhân
 
 4. Android - giao diện xem phác đồ điều trị
+
+5. Android - chế độ ban đêm & hỗ trợ đa ngôn ngữ
+
+- **01-12-2022**: Tối ưu chức năng lịch sử khám bệnh
+
+- **02-12-2022**:
+
+1. Android - giao diện và chức năng cập nhật thông tin cá nhân
+
+2. Android - chức năng cập nhật ảnh đại diện
+
+- **03-12-2022**: Hoàn thiện chức năng gửi email
 
 # [**Controller Timeline**](#controller-timeline)
 
