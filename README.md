@@ -207,19 +207,29 @@ Giờ chúng ta sẽ đi vào các mốc thời gian quan trọng mà mình đã
 - **Từ 24-12-2022 đến 26-12-2022**: Bảo vệ đồ án tốt nghiệp trước hội đồng nhà trường tại Quận 1 
 & nộp 03 cuốn tóm tắt đề tài tại Hội đồng chấm bảo vệ đồ án tốt nghiệp tại Quận 1
 
-- **05-01-2023**: nộp 02 quyển bìa cứng đã có chữ ký xác nhận của Giáo Viên Hướng Dẫn và Giáo Viên Phản Biện) 
+- **05-01-2023**: nộp 02 quyển bìa cứng đã có chữ ký xác nhận của Giáo Viên Hướng Dẫn và Giáo Viên Phản Biện
 và file dữ liệu tại Văn Phòng Khoa Quận 9
 
 
 
-> Quy tắc đặt tên áp dụng cho cả 3 lần - Lớp (mã chữ)_Mã sinh viên(3 số cuối)_Họ và tên _BCDK1
+(*) Quy tắc đặt tên áp dụng cho cả 3 lần - Lớp (mã chữ)_Mã sinh viên(3 số cuối)_Họ và tên _BCDK1
 > 
 > VD: CP_147_NguyenThanhPhong_BCĐK1
 >
 > Lưu ý: đặt tên file giống hướng dẫn, đặt sai sẽ bị thống kê không nộp báo cáo định kỳ, cấm nộp cuốn báo cáo cuối kỳ.
+>
+> Link: https://drive.google.com/drive/folders/1uIiNBMOLkPi9sHxEU5y7fqAoXa8bKaOT
 
+
+(*) Quy tắc đặt tên cho thư mục chứa đồ án tốt nghiệp 
 > Tên folder:  Lớp (mã chữ)_Mã sinh viên(3 số cuối)_Họ và tên _BCCK
+>
 > VD: CP_147_NguyenThanhPhong_BCCK
+> 
+> Link: https://drive.google.com/drive/folders/16T43kMyM_4VS9ESoapeT1pfPyi87SSUy
+
+
+(*) Link nộp đồ án trên Google Drive thì phải tới ngày nộp nhà trường sẽ gửi qua Email, những link bên trên chỉ có hiệu lực mới khóa D18 của Phong.
 
 # [**Post Script**](#post-script)
 
