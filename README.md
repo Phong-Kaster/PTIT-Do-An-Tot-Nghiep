@@ -200,13 +200,27 @@ Giờ chúng ta sẽ đi vào các mốc thời gian quan trọng mà mình đã
 
 - **30-11-2022**: Nộp báo cáo đồ án tốt nghiệp lần 3
 
-- **09-12-2022**: Nộp đồ án tốt nghiệp
+- **02-12-2022**: Lớp trưởng nhận phiếu giao nhiệm vụ tại Văn Phòng Khoa Quận 9
+
+- **Từ 05-12-2022 đến 09-12-2022**: Nộp file báo cáo lên Google Drive trước khi bảo vệ đồ án
+
+- **Từ 24-12-2022 đến 26-12-2022**: Bảo vệ đồ án tốt nghiệp trước hội đồng nhà trường tại Quận 1 
+& nộp 03 cuốn tóm tắt đề tài tại Hội đồng chấm bảo vệ đồ án tốt nghiệp tại Quận 1
+
+- **05-01-2023**: nộp 02 quyển bìa cứng đã có chữ ký xác nhận của Giáo Viên Hướng Dẫn và Giáo Viên Phản Biện) 
+và file dữ liệu tại Văn Phòng Khoa Quận 9
+
+
 
 > Quy tắc đặt tên áp dụng cho cả 3 lần - Lớp (mã chữ)_Mã sinh viên(3 số cuối)_Họ và tên _BCDK1
 > 
 > VD: CP_147_NguyenThanhPhong_BCĐK1
 >
 > Lưu ý: đặt tên file giống hướng dẫn, đặt sai sẽ bị thống kê không nộp báo cáo định kỳ, cấm nộp cuốn báo cáo cuối kỳ.
+
+> Tên folder:  Lớp (mã chữ)_Mã sinh viên(3 số cuối)_Họ và tên _BCCK
+> VD: CP_147_NguyenThanhPhong_BCCK
+
 # [**Post Script**](#post-script)
 
 ### [**05-10-2022**](#)
@@ -715,6 +729,11 @@ cho đẹp hơn. Sau này nếu có ai đó tham khảo code mình làm sẽ d�
 2. Android - chức năng cập nhật ảnh đại diện
 
 - **03-12-2022**: Hoàn thiện chức năng gửi email
+
+- **04-12-2022**: Chủ nhật rồi, gác lại âu lo thôi
+
+- **05-12-2022**: Nghiên cứu thành công cách tạo lời nhắc thực hiện phác đồ điều trị bằng ứng dụng
+Đồng hồ mặc định trên mọi thiết bị di động.
 
 # [**Controller Timeline**](#controller-timeline)
 

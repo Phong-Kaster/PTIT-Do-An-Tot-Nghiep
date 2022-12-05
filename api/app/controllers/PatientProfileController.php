@@ -116,6 +116,8 @@
 
             $birthday = Input::post("birthday");
             $address = Input::post("address");
+
+            date_default_timezone_set('Asia/Ho_Chi_Minh');
             $update_at = date("Y-m-d H:i:s");
             
 
@@ -398,7 +400,11 @@
             /**Step 6 - update photo name for AuthUser */
             try 
             {
+                date_default_timezone_set('Asia/Ho_Chi_Minh');
+                $update_at = date("Y-m-d H:i:s");
+
                 $AuthUser->set("avatar", $name . "." .$ext)
+                        ->set("update_at", $update_at)
                         ->save();
 
                 $this->resp->result = 1;
