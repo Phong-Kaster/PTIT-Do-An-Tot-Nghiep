@@ -758,6 +758,8 @@ Chính thức hoàn thành siêu phẩm của một huyền thoại PTIT.
 
 3. API - Thêm và xóa ảnh cung cấp để dành cho phía bệnh nhân
 
+4. Web - Chức năng xem hồ sơ bệnh án do bệnh nhân cung cấp dưới dạng hình ảnh.
+
 # [**Controller Timeline**](#controller-timeline)
 
 Phần này mình lưu lại trình tự mình viết đồ án này. Nếu các bạn có nhu cầu tham khảo cách xử lý của mình. Các bạn có thể đọc code theo trình tự 

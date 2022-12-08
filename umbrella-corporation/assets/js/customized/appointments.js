@@ -260,6 +260,7 @@ function pagination(url, totalRecord, currentRecord)
          let createAt = resp.data[i].create_at;
          let updateAt = resp.data[i].update_at;
          let status = resp.data[i].status;
+         let bookingId = resp.data[i].booking_id;
          let statusValue;
          switch(status)
          {
@@ -324,6 +325,7 @@ function pagination(url, totalRecord, currentRecord)
                                 <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1" style="">
                                     <li class="dropdown-item"  data-coreui-toggle="collapse" href="#appointment-${appointmentID}"
                                         aria-expanded="false" aria-controls="#appointment-${appointmentID}">Chi tiết</li>
+                                    <li ><a class="dropdown-item" href="${APP_URL}/booking/photos/${bookingId}">Xem hồ sơ bệnh án</a></li>
                                     <li ><a class="dropdown-item" href="${APP_URL}/appointment/${appointmentID}">Sửa</a></li>
                                     `;
          let element3 = `
