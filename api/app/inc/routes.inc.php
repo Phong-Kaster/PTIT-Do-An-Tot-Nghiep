@@ -141,3 +141,7 @@ App::addRoute("GET", "/patient/appointments/records/[i:id]/?", "PatientRecord");
 /*************************** PATIENT TREATMENT ************************** */
 App::addRoute("GET", "/patient/treatments/[i:id]?", "PatientTreatments");// id is the appointment's ID
 App::addRoute("GET", "/patient/treatment/[i:id]/?", "PatientTreatment");// id is the treatment's ID
+
+/*************************** BOOKING PHOTO ************************** */
+App::addRoute("GET|POST", "/booking/photos/[i:id]/?", "BookingPhotos");// id is the the booking's ID
+App::addRoute("GET|DELETE", "/booking/photo/[i:id]/?", "BookingPhoto");// id IS the photo'ID

@@ -188,6 +188,7 @@
                     $data[] = array(
                         "id" => (int)$element->id,
                         "date" => $element->date,
+                        "booking_id" => (int)$element->booking_id,
                         "numerical_order" => (int)$element->numerical_order,
                         "position" => (int)$element->position,
                         "patient_id" => (int)$element->patient_id,
@@ -559,7 +560,25 @@
             $create_at = date("Y-m-d H:i:s");
             $update_at = date("Y-m-d H:i:s");
 
+            $booking_id = Input::post("booking_id") ? Input::post("booking_id") : 0;
+
             /**Step 5 - validation */
+            if( $booking_id > 0)
+            {
+                $Booking = Controller::model("Booking", $booking_id);
+                if( !$Booking->isAvailable() || $Booking->get("status") != "processing")
+                {
+                    $this->resp->msg = "This Booking does not exist !";
+                    $this->jsonecho();
+                }
+                if( $Booking->get("patient_id") != $patient_id)
+                {
+                    $this->resp->msg = "The patient of booking does not match with patient ID";
+                    $this->jsonecho();
+                }
+            }
+            
+
             /**Step 5.1 - doctor validation */
             $Doctor = Controller::model("Doctor", $doctor_id);
             if( !$Doctor->isAvailable() )
@@ -695,6 +714,7 @@
             {
                 $Appointment = Controller::model("Appointment");
                 $Appointment->set("doctor_id", $doctor_id)
+                        ->set("booking_id", $booking_id)
                         ->set("patient_id", $patient_id)
                         ->set("patient_name", $patient_name)
                         ->set("patient_birthday", $patient_birthday)
@@ -713,6 +733,7 @@
                 $this->resp->data = array(
                     "id" => (int) $Appointment->get("id"),
                     "date"          => $Appointment->get("date"),
+                    "booking_id"    => (int) $Appointment->get("booking_id"),
                     "doctor_id" => (int) $Appointment->get("doctor_id"),
                     "numerical_order" =>  (int)$Appointment->get("numerical_order"),
                     "position" => (int) $Appointment->get("position"),

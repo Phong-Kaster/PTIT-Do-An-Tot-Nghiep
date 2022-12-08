@@ -752,7 +752,11 @@ Chính thức hoàn thành siêu phẩm của một huyền thoại PTIT.
 
 - **08-12-2022**: 
 
-1. Thêm bảng booking_photo để làm chức năng cung cấp bệnh án trước khi khám bệnh.
+1. API - Thêm bảng booking_photo để làm chức năng cung cấp bệnh án trước khi khám bệnh.
+
+2. API - Thêm Booking Photos và Booking Photo xem toàn bộ ảnh của một booking
+
+3. API - Thêm và xóa ảnh cung cấp để dành cho phía bệnh nhân
 
 # [**Controller Timeline**](#controller-timeline)
 
@@ -840,6 +844,10 @@ Phần này mình lưu lại trình tự mình viết đồ án này. Nếu các
 40. Patient Record Controller
 
 41. Patient Treatments Controller
+
+42. Booking Photos Controller 
+
+43. Booking Photo Controller
 
 # [**Special Thanks**](#special-thanks)
 

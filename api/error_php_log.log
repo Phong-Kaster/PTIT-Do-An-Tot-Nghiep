@@ -907,3 +907,64 @@ Stack trace:
 [30-Nov-2022 03:17:25 UTC] PHP Notice:  Undefined variable: order in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientTreatmentsController.php on line 95
 [30-Nov-2022 03:17:25 UTC] PHP Notice:  Undefined variable: length in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientTreatmentsController.php on line 127
 [30-Nov-2022 03:17:25 UTC] PHP Notice:  Undefined variable: start in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\PatientTreatmentsController.php on line 128
+[08-Dec-2022 08:32:48 UTC] PHP Parse error:  syntax error, unexpected '"numerical_order"' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 192
+[08-Dec-2022 09:11:34 UTC] PHP Warning:  Use of undefined constant result - assumed 'result' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php on line 93
+[08-Dec-2022 09:11:34 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php on line 93
+[08-Dec-2022 09:13:40 UTC] PHP Notice:  Undefined variable: element in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php on line 95
+[08-Dec-2022 09:13:40 UTC] PHP Notice:  Trying to get property 'id' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php on line 95
+[08-Dec-2022 09:13:40 UTC] PHP Notice:  Undefined variable: element in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php on line 96
+[08-Dec-2022 09:13:40 UTC] PHP Notice:  Trying to get property 'patient_id' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php on line 96
+[08-Dec-2022 09:13:40 UTC] PHP Notice:  Undefined variable: element in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php on line 97
+[08-Dec-2022 09:13:40 UTC] PHP Notice:  Trying to get property 'booking_name' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php on line 97
+[08-Dec-2022 09:13:40 UTC] PHP Notice:  Undefined variable: element in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php on line 98
+[08-Dec-2022 09:13:40 UTC] PHP Notice:  Trying to get property 'booking_phone' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php on line 98
+[08-Dec-2022 09:13:40 UTC] PHP Notice:  Undefined variable: element in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php on line 99
+[08-Dec-2022 09:13:40 UTC] PHP Notice:  Trying to get property 'name' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php on line 99
+[08-Dec-2022 09:13:40 UTC] PHP Notice:  Undefined variable: element in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php on line 100
+[08-Dec-2022 09:13:40 UTC] PHP Notice:  Trying to get property 'gender' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php on line 100
+[08-Dec-2022 09:13:40 UTC] PHP Notice:  Undefined variable: element in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php on line 101
+[08-Dec-2022 09:13:40 UTC] PHP Notice:  Trying to get property 'birthday' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php on line 101
+[08-Dec-2022 09:13:40 UTC] PHP Notice:  Undefined variable: element in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php on line 102
+[08-Dec-2022 09:13:40 UTC] PHP Notice:  Trying to get property 'address' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php on line 102
+[08-Dec-2022 09:13:40 UTC] PHP Notice:  Undefined variable: element in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php on line 103
+[08-Dec-2022 09:13:40 UTC] PHP Notice:  Trying to get property 'reason' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php on line 103
+[08-Dec-2022 09:13:40 UTC] PHP Notice:  Undefined variable: element in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php on line 104
+[08-Dec-2022 09:13:40 UTC] PHP Notice:  Trying to get property 'appointment_date' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php on line 104
+[08-Dec-2022 09:13:40 UTC] PHP Notice:  Undefined variable: element in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php on line 105
+[08-Dec-2022 09:13:40 UTC] PHP Notice:  Trying to get property 'appointment_time' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php on line 105
+[08-Dec-2022 09:13:40 UTC] PHP Notice:  Undefined variable: element in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php on line 106
+[08-Dec-2022 09:13:40 UTC] PHP Notice:  Trying to get property 'status' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php on line 106
+[08-Dec-2022 09:13:40 UTC] PHP Notice:  Undefined variable: element in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php on line 107
+[08-Dec-2022 09:13:40 UTC] PHP Notice:  Trying to get property 'create_at' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php on line 107
+[08-Dec-2022 09:13:40 UTC] PHP Notice:  Undefined variable: element in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php on line 108
+[08-Dec-2022 09:13:40 UTC] PHP Notice:  Trying to get property 'update_at' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php on line 108
+[08-Dec-2022 09:13:40 UTC] PHP Notice:  Undefined variable: element in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php on line 110
+[08-Dec-2022 09:13:40 UTC] PHP Notice:  Trying to get property 'service_id' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php on line 110
+[08-Dec-2022 09:13:40 UTC] PHP Notice:  Undefined variable: element in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php on line 111
+[08-Dec-2022 09:13:40 UTC] PHP Notice:  Trying to get property 'service_name' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php on line 111
+[08-Dec-2022 09:14:50 UTC] PHP Notice:  Undefined property: BookingModel::$id in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php on line 97
+[08-Dec-2022 09:14:50 UTC] PHP Notice:  Undefined property: BookingModel::$patient_id in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php on line 98
+[08-Dec-2022 09:14:50 UTC] PHP Notice:  Undefined property: BookingModel::$booking_name in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php on line 99
+[08-Dec-2022 09:14:50 UTC] PHP Notice:  Undefined property: BookingModel::$booking_phone in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php on line 100
+[08-Dec-2022 09:14:50 UTC] PHP Notice:  Undefined property: BookingModel::$name in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php on line 101
+[08-Dec-2022 09:14:50 UTC] PHP Notice:  Undefined property: BookingModel::$gender in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php on line 102
+[08-Dec-2022 09:14:50 UTC] PHP Notice:  Undefined property: BookingModel::$birthday in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php on line 103
+[08-Dec-2022 09:14:50 UTC] PHP Notice:  Undefined property: BookingModel::$address in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php on line 104
+[08-Dec-2022 09:14:50 UTC] PHP Notice:  Undefined property: BookingModel::$reason in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php on line 105
+[08-Dec-2022 09:14:50 UTC] PHP Notice:  Undefined property: BookingModel::$appointment_date in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php on line 106
+[08-Dec-2022 09:14:50 UTC] PHP Notice:  Undefined property: BookingModel::$appointment_time in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php on line 107
+[08-Dec-2022 09:14:50 UTC] PHP Notice:  Undefined property: BookingModel::$status in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php on line 108
+[08-Dec-2022 09:14:50 UTC] PHP Notice:  Undefined property: BookingModel::$create_at in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php on line 109
+[08-Dec-2022 09:14:50 UTC] PHP Notice:  Undefined property: BookingModel::$update_at in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php on line 110
+[08-Dec-2022 09:14:50 UTC] PHP Notice:  Undefined property: ServiceModel::$id in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php on line 112
+[08-Dec-2022 09:14:50 UTC] PHP Notice:  Undefined property: ServiceModel::$name in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php on line 113
+[08-Dec-2022 09:17:23 UTC] PHP Notice:  Undefined property: BookingModel::$id in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php on line 97
+[08-Dec-2022 09:17:23 UTC] PHP Notice:  Undefined property: BookingModel::$patient_id in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php on line 98
+[08-Dec-2022 09:17:23 UTC] PHP Notice:  Undefined property: BookingModel::$booking_name in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php on line 99
+[08-Dec-2022 09:33:27 UTC] PHP Fatal error:  Uncaught Error: Call to a member function set() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php:207
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php(37): BookingPhotosController->upload()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php(613): BookingPhotosController->process()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\index.php(72): App->process()
+#3 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php on line 207
