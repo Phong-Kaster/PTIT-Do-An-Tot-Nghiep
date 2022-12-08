@@ -65,7 +65,7 @@ Nếu các bạn có nhu cầu muốn tham khảo, hãy ấn vào [**đây**](ht
 # [**Database**](#database)
 
 <p align="center">
-    <img src="./photo/database-version-9.png" />
+    <img src="./photo/database-version-10.png" />
 </p>
 <h3 align="center">
 
@@ -211,10 +211,13 @@ Giờ chúng ta sẽ đi vào các mốc thời gian quan trọng mà mình đã
 và file dữ liệu tại Văn Phòng Khoa Quận 9
 
 
-
 (*) Quy tắc đặt tên áp dụng cho cả 3 lần - Lớp (mã chữ)_Mã sinh viên(3 số cuối)_Họ và tên _BCDK1
 > 
 > VD: CP_147_NguyenThanhPhong_BCĐK1
+>
+> VD: CP_147_NguyenThanhPhong_BCĐK2
+>
+> VD: CP_147_NguyenThanhPhong_BCĐK3
 >
 > Lưu ý: đặt tên file giống hướng dẫn, đặt sai sẽ bị thống kê không nộp báo cáo định kỳ, cấm nộp cuốn báo cáo cuối kỳ.
 >
@@ -229,7 +232,7 @@ và file dữ liệu tại Văn Phòng Khoa Quận 9
 > Link: https://drive.google.com/drive/folders/16T43kMyM_4VS9ESoapeT1pfPyi87SSUy
 
 
-(*) Link nộp đồ án trên Google Drive thì phải tới ngày nộp nhà trường sẽ gửi qua Email, những link bên trên chỉ có hiệu lực mới khóa D18 của Phong.
+(*) Link nộp đồ án trên Google Drive thì phải tới ngày nộp nhà trường sẽ gửi qua Email, những link bên trên chỉ có hiệu lực với khóa D18 của Phong.
 
 # [**Post Script**](#post-script)
 
@@ -744,6 +747,8 @@ cho đẹp hơn. Sau này nếu có ai đó tham khảo code mình làm sẽ d�
 
 - **05-12-2022**: Nghiên cứu thành công cách tạo lời nhắc thực hiện phác đồ điều trị bằng ứng dụng
 Đồng hồ mặc định trên mọi thiết bị di động.
+
+Chính thức hoàn thành siêu phẩm của một huyền thoại PTIT.
 
 # [**Controller Timeline**](#controller-timeline)
 
