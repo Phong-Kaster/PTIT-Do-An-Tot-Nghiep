@@ -750,6 +750,10 @@ cho đẹp hơn. Sau này nếu có ai đó tham khảo code mình làm sẽ d�
 
 Chính thức hoàn thành siêu phẩm của một huyền thoại PTIT.
 
+- **08-12-2022**: 
+
+1. Thêm bảng booking_photo để làm chức năng cung cấp bệnh án trước khi khám bệnh.
+
 # [**Controller Timeline**](#controller-timeline)
 
 Phần này mình lưu lại trình tự mình viết đồ án này. Nếu các bạn có nhu cầu tham khảo cách xử lý của mình. Các bạn có thể đọc code theo trình tự 
