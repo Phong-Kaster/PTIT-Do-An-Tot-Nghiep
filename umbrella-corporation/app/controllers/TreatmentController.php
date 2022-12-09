@@ -8,8 +8,23 @@
     {
         public function process()
         {
-            print_r("<h1>Cần làm một cái bảng hiện thị các appointment rồi chọn vào thì 
-            sẽ nhảy sang trang khác để xem các phác đồ điều trị</h1>");
+            $AuthUser = $this->getVariable("AuthUser");
+            if (!$AuthUser){
+                header("Location: ".APPURL."/login");
+                exit;
+            }
+
+
+
+            $valid_roles = ["admin", "member"];
+            $role_validation = in_array($AuthUser->get("role"), $valid_roles);
+            if( !$role_validation )
+            {
+                header("Location: ".APPURL."/dashboard");
+                exit;
+            }
+
+            $this->view("treatment");
         }
     }
 ?>

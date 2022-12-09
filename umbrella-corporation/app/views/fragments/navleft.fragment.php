@@ -75,6 +75,13 @@
                 Phòng khám
             </a>
           </li>
+
+          <li class="nav-item">
+            <a class="nav-link <?= $Nav->activeMenu == "service" ? "active" : "" ?>" href="<?= APPURL."/services" ?>">
+              <i class="nav-icon cil-task"></i>
+                Dịch vụ
+            </a>
+          </li>
         <?php endif; ?><!-- end 1. ADMIN ONLY -->
 
         <?php if($AuthUser->get("role") == "admin" 

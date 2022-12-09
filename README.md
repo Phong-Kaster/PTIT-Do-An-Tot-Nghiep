@@ -28,6 +28,7 @@
   - [**Phase 1: 19-09-2022 to 25-10-2022**](#phase-1-19-09-2022-to-25-10-2022)
   - [**Phase 2: 26-10-2022 to 13-11-2022**](#phase-2-26-10-2022-to-13-11-2022)
   - [**Phase 3: 15-11-2022 to 03-12-2022**](#phase-3-15-11-2022-to-03-12-2022)
+  - [**Phase 4: 08-12-2022 to 11-12-2022**](#phase-4-08-12-2022-to-11-12-2022)
 - [**Controller Timeline**](#controller-timeline)
 - [**Special Thanks**](#special-thanks)
 - [**Made with 💘 and PHP **](#made-with--and-php-)
@@ -750,6 +751,15 @@ cho đẹp hơn. Sau này nếu có ai đó tham khảo code mình làm sẽ d�
 
 Chính thức hoàn thành siêu phẩm của một huyền thoại PTIT.
 
+## [**Phase 4: 08-12-2022 to 11-12-2022**](#phase-4-08-12-2022-to-11-12-2022)
+
+(1) Mục tiêu: bổ sung một số chức năng còn thiếu. Đặc biệt là chức năng bổ sung hồ 
+sơ bệnh án trước khi khám của bệnh nhân do thầy Hào nhắc nên mình mới nhớ ra
+
+(2) Uớc tính: 4 ngày
+
+(3) Thực tế: 
+
 - **08-12-2022**: 
 
 1. API - Thêm bảng booking_photo để làm chức năng cung cấp bệnh án trước khi khám bệnh.
@@ -759,6 +769,10 @@ Chính thức hoàn thành siêu phẩm của một huyền thoại PTIT.
 3. API - Thêm và xóa ảnh cung cấp để dành cho phía bệnh nhân
 
 4. Web - Chức năng xem hồ sơ bệnh án do bệnh nhân cung cấp dưới dạng hình ảnh.
+
+- **09-12-2022**:
+
+1. Web - Chức năng xem phác đồ điều trị
 
 # [**Controller Timeline**](#controller-timeline)
 
