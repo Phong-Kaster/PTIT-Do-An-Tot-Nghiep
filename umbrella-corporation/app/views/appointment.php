@@ -149,6 +149,7 @@
       }
       else
       {
+
           let patientId = "<?= $patientId  ?>";
           let patientName = "<?= $patientName  ?>";
           let patientPhone = "<?= $patientPhone  ?>";
@@ -156,6 +157,10 @@
           let patientReason = "<?= $patientReason  ?>";
           let appointmentTime = "<?= $appointmentTime  ?>";
           let appointmentDate = "<?= $appointmentDate  ?>";
+          let bookingId = "<?= $bookingId  ?>";
+
+          console.log("appointment.php");
+          console.log("booking id: " + bookingId);
 
           let params = {
             patientId: patientId,
@@ -164,7 +169,8 @@
             patientBirthday: patientBirthday,
             patientReason: patientReason,
             appointmentTime: appointmentTime,
-            appointmentDate: appointmentDate
+            appointmentDate: appointmentDate,
+            bookingId: bookingId
           }
           setupAppointmentInfoWithParameter(params);
       }

@@ -143,5 +143,6 @@ App::addRoute("GET", "/patient/treatments/[i:id]?", "PatientTreatments");// id i
 App::addRoute("GET", "/patient/treatment/[i:id]/?", "PatientTreatment");// id is the treatment's ID
 
 /*************************** BOOKING PHOTO ************************** */
-App::addRoute("GET|POST", "/booking/photos/[i:id]/?", "BookingPhotos");// id is the the booking's ID
+App::addRoute("GET", "/booking/photos/[i:id]/?", "BookingPhotos");// id is the the booking's ID
+App::addRoute("POST", "/booking/upload-photo/?", "BookingPhotoUpload");// used to upload photo of booking id
 App::addRoute("GET|DELETE", "/booking/photo/[i:id]/?", "BookingPhoto");// id IS the photo'ID

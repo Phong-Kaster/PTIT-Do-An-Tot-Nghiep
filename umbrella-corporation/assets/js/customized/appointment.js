@@ -174,6 +174,7 @@ function setupButton(id)
  * @since 04-11-2022
  * get necessary info
  */
+let bookingId = 0;
 function getNecessaryInfo()
 {
     let doctor = $("#doctor :selected").val();
@@ -200,7 +201,8 @@ function getNecessaryInfo()
         appointment_time: appointmentTime,
         status: status,
         patient_birthday: patientBirthday,
-        patient_id: patientId
+        patient_id: patientId,
+        booking_id: bookingId
     }
 
     return data;
@@ -301,6 +303,11 @@ function setupAppointmentInfo(id)
 
 function setupAppointmentInfoWithParameter(resp)
 {
+    bookingId = resp.bookingId;
+    console.log("setupAppointmentInfoWithParameter");
+    console.log("bookingId: " + bookingId);
+
+    
     let patientName = resp.patientName;
     let patientPhone = resp.patientPhone;
     let patientBirthday = resp.patientBirthday;

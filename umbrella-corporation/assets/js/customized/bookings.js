@@ -497,7 +497,8 @@ function setupButton()
             patientBirthday: patientBirthday,
             patientName: patientName,
             patientPhone: patientPhone,
-            patientId: patientId
+            patientId: patientId,
+            bookingId: bookingID
         }
 
 
@@ -525,7 +526,7 @@ function setupButton()
                         success: function(resp) {
                         
                             
-                            let url = `${APP_URL}/appointment/create?appointmentDate=${appointmentDate}&appointmentTime=${appointmentTime}&patientName=${patientName}&patientPhone=${patientPhone}&patientBirthday=${patientBirthday}&patientReason=${patientReason}&patientId=${patientId}`;
+                            let url = `${APP_URL}/appointment/create?bookingId=${bookingID}&appointmentDate=${appointmentDate}&appointmentTime=${appointmentTime}&patientName=${patientName}&patientPhone=${patientPhone}&patientBirthday=${patientBirthday}&patientReason=${patientReason}&patientId=${patientId}`;
                             url = new URL(url);
                             window.location = url;
                         

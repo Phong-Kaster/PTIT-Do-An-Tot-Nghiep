@@ -16,6 +16,7 @@
 
             $Route = $this->getVariable("Route");
             $this->setVariable("id", 0);
+            $this->setVariable("bookingId", "");
             $this->setVariable("appointmentDate", "");
             $this->setVariable("appointmentTime", "");
             $this->setVariable("patientId", "");
@@ -33,6 +34,8 @@
             }
             else
             {
+                
+                $bookingId = isset($_GET['bookingId']) ? $_GET['bookingId'] : "" ;
                 $appointmentDate = isset($_GET['appointmentDate']) ? $_GET['appointmentDate'] : "" ;
                 $appointmentTime = isset($_GET['appointmentTime']) ? $_GET['appointmentTime'] : "";
 
@@ -42,6 +45,7 @@
                 $patientReason = isset($_GET['patientReason']) ? $_GET['patientReason'] : "";
                 $patientBirthday = isset($_GET['patientBirthday']) ? $_GET['patientBirthday'] : "" ;
 
+                // print_r($bookingId);
                 // print_r($patientId);
                 // print_r($appointmentDate);
                 // print_r($appointmentTime);
@@ -58,6 +62,7 @@
                 $this->setVariable("patientPhone", $patientPhone);
                 $this->setVariable("patientReason", $patientReason);
                 $this->setVariable("patientBirthday", $patientBirthday);
+                $this->setVariable("bookingId", $bookingId);
                 $this->view("appointment");
             }
            

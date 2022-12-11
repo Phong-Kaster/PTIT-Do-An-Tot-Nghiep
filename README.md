@@ -770,9 +770,19 @@ sơ bệnh án trước khi khám của bệnh nhân do thầy Hào nhắc nên 
 
 4. Web - Chức năng xem hồ sơ bệnh án do bệnh nhân cung cấp dưới dạng hình ảnh.
 
-- **09-12-2022**:
+- **09-12-2022**: Web - Chức năng xem phác đồ điều trị
 
-1. Web - Chức năng xem phác đồ điều trị
+- **10-12-2022**:
+
+1. Android - Chức năng xem lịch sử đặt lịch hẹn 
+
+2. Android - Chức năng đăng ảnh để cung cấp cho bác sĩ xem đơn thuốc, bệnh án trước đó trong phần xem lịch sử đặt lịch hẹn 
+
+- **11-12-2022**:
+
+1. Android - Chức năng đăng ảnh để cung cấp cho bác sĩ sau khi đã tạo xong lịch hẹn
+
+2. Web - Chỉnh sửa lại phần tạo lịch khám dựa vào lịch hẹn.
 
 # [**Controller Timeline**](#controller-timeline)
 

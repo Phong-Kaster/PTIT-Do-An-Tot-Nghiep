@@ -968,3 +968,5 @@ Stack trace:
 #2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\index.php(72): App->process()
 #3 {main}
   thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php on line 207
+[10-Dec-2022 13:25:39 UTC] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php on line 82
+[10-Dec-2022 13:58:51 UTC] PHP Parse error:  syntax error, unexpected '?>', expecting function (T_FUNCTION) or const (T_CONST) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotoUploadController.php on line 148

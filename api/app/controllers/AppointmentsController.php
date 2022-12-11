@@ -566,9 +566,14 @@
             if( $booking_id > 0)
             {
                 $Booking = Controller::model("Booking", $booking_id);
-                if( !$Booking->isAvailable() || $Booking->get("status") != "processing")
+                if( !$Booking->isAvailable())
                 {
-                    $this->resp->msg = "This Booking does not exist !";
+                    $this->resp->msg = "This booking does not exist !";
+                    $this->jsonecho();
+                }
+                if( !$Booking->get("status") == "cancelled")
+                {
+                    $this->resp->msg = "This booking has been cancelled !";
                     $this->jsonecho();
                 }
                 if( $Booking->get("patient_id") != $patient_id)
