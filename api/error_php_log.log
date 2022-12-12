@@ -970,3 +970,101 @@ Stack trace:
   thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php on line 207
 [10-Dec-2022 13:25:39 UTC] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotosController.php on line 82
 [10-Dec-2022 13:58:51 UTC] PHP Parse error:  syntax error, unexpected '?>', expecting function (T_FUNCTION) or const (T_CONST) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\BookingPhotoUploadController.php on line 148
+[12-Dec-2022 07:56:51 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method DoctorsAndServicesController::getAll() in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DoctorsAndServicesController.php:31
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php(613): DoctorsAndServicesController->process()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\index.php(72): App->process()
+#2 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DoctorsAndServicesController.php on line 31
+[12-Dec-2022 07:57:02 UTC] PHP Warning:  Use of undefined constant TABLE_SERVICE - assumed 'TABLE_SERVICE' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DoctorsAndServicesController.php on line 137
+[12-Dec-2022 07:59:04 UTC] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DoctorsAndServicesController.php on line 133
+[12-Dec-2022 08:41:18 UTC] PHP Warning:  Use of undefined constant TABLE_DOCTORS_AND_SERVICES - assumed 'TABLE_DOCTORS_AND_SERVICES' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\models\DoctorAndServiceModel.php on line 90
+[12-Dec-2022 09:15:39 UTC] PHP Parse error:  syntax error, unexpected 'DB' (T_STRING), expecting ']' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DoctorsAndServicesController.php on line 95
+[12-Dec-2022 09:16:45 UTC] PHP Parse error:  syntax error, unexpected 'DB' (T_STRING), expecting ']' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DoctorsAndServicesController.php on line 95
+[12-Dec-2022 09:16:51 UTC] PHP Parse error:  syntax error, unexpected 'DB' (T_STRING), expecting ']' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DoctorsAndServicesController.php on line 95
+[12-Dec-2022 09:17:27 UTC] PHP Parse error:  syntax error, unexpected 'DB' (T_STRING), expecting ']' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DoctorsAndServicesController.php on line 95
+[12-Dec-2022 09:17:44 UTC] PHP Parse error:  syntax error, unexpected 'DB' (T_STRING), expecting ']' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DoctorsAndServicesController.php on line 93
+[12-Dec-2022 09:18:19 UTC] PHP Parse error:  syntax error, unexpected 'DB' (T_STRING), expecting ']' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DoctorsAndServicesController.php on line 95
+[12-Dec-2022 09:18:44 UTC] PHP Parse error:  syntax error, unexpected 'DB' (T_STRING), expecting ']' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DoctorsAndServicesController.php on line 92
+[12-Dec-2022 09:19:14 UTC] PHP Parse error:  syntax error, unexpected 'DB' (T_STRING), expecting ']' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DoctorsAndServicesController.php on line 95
+[12-Dec-2022 09:19:35 UTC] PHP Parse error:  syntax error, unexpected 'DB' (T_STRING), expecting ']' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DoctorsAndServicesController.php on line 95
+[12-Dec-2022 09:19:44 UTC] PHP Notice:  Undefined property: stdClass::$doctor_avatar in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DoctorsAndServicesController.php on line 109
+[12-Dec-2022 10:34:23 UTC] PHP Parse error:  syntax error, unexpected 'private' (T_PRIVATE), expecting end of file in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DoctorsAndServicesNotReadyController.php on line 39
+[12-Dec-2022 10:34:41 UTC] PHP Fatal error:  Uncaught Error: Class 'DoctorsAndServicesNotReadyController' not found in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php:541
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php(603): App->route()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\index.php(72): App->process()
+#2 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php on line 541
+[12-Dec-2022 10:39:04 UTC] PHP Parse error:  syntax error, unexpected '?>', expecting function (T_FUNCTION) or const (T_CONST) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DoctorsAndServicesNotReadyController.php on line 135
+[12-Dec-2022 10:39:52 UTC] PHP Parse error:  syntax error, unexpected '?>', expecting function (T_FUNCTION) or const (T_CONST) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DoctorsAndServicesNotReadyController.php on line 135
+[12-Dec-2022 10:40:54 UTC] PHP Fatal error:  Uncaught Error: Object of class stdClass could not be converted to string in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php:149
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php(149): PDOStatement->bindValue(1, Object(stdClass), 2)
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php(173): Pixie\QueryBuilder\QueryBuilderHandler->statement('SELECT `tn_doct...', Array)
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DoctorsAndServicesNotReadyController.php(97): Pixie\QueryBuilder\QueryBuilderHandler->get()
+#3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DoctorsAndServicesNotReadyController.php(31): DoctorsAndServicesNotReadyController->getAll()
+#4 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php(613): DoctorsAndServicesNotReadyController->process()
+#5 D: in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php on line 149
+[12-Dec-2022 10:41:33 UTC] PHP Fatal error:  Uncaught Error: Object of class stdClass could not be converted to string in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php:149
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php(149): PDOStatement->bindValue(1, Object(stdClass), 2)
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php(173): Pixie\QueryBuilder\QueryBuilderHandler->statement('SELECT `tn_doct...', Array)
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DoctorsAndServicesNotReadyController.php(96): Pixie\QueryBuilder\QueryBuilderHandler->get()
+#3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DoctorsAndServicesNotReadyController.php(31): DoctorsAndServicesNotReadyController->getAll()
+#4 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php(613): DoctorsAndServicesNotReadyController->process()
+#5 D: in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php on line 149
+[12-Dec-2022 10:45:02 UTC] PHP Fatal error:  Uncaught Error: Object of class stdClass could not be converted to string in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php:149
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php(149): PDOStatement->bindValue(1, Object(stdClass), 2)
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php(173): Pixie\QueryBuilder\QueryBuilderHandler->statement('SELECT `tn_doct...', Array)
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DoctorsAndServicesNotReadyController.php(96): Pixie\QueryBuilder\QueryBuilderHandler->get()
+#3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DoctorsAndServicesNotReadyController.php(31): DoctorsAndServicesNotReadyController->getAll()
+#4 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php(613): DoctorsAndServicesNotReadyController->process()
+#5 D: in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php on line 149
+[12-Dec-2022 10:46:57 UTC] PHP Fatal error:  Uncaught Error: Object of class stdClass could not be converted to string in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php:149
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php(149): PDOStatement->bindValue(1, Object(stdClass), 2)
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php(173): Pixie\QueryBuilder\QueryBuilderHandler->statement('SELECT `tn_doct...', Array)
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DoctorsAndServicesNotReadyController.php(98): Pixie\QueryBuilder\QueryBuilderHandler->get()
+#3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DoctorsAndServicesNotReadyController.php(31): DoctorsAndServicesNotReadyController->getAll()
+#4 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php(613): DoctorsAndServicesNotReadyController->process()
+#5 D: in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php on line 149
+[12-Dec-2022 10:47:28 UTC] PHP Fatal error:  Uncaught Error: Object of class stdClass could not be converted to string in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php:149
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php(149): PDOStatement->bindValue(1, Object(stdClass), 2)
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php(173): Pixie\QueryBuilder\QueryBuilderHandler->statement('SELECT `tn_doct...', Array)
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DoctorsAndServicesNotReadyController.php(96): Pixie\QueryBuilder\QueryBuilderHandler->get()
+#3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DoctorsAndServicesNotReadyController.php(31): DoctorsAndServicesNotReadyController->getAll()
+#4 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php(613): DoctorsAndServicesNotReadyController->process()
+#5 D: in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php on line 149
+[12-Dec-2022 10:53:30 UTC] PHP Fatal error:  Uncaught Error: Object of class stdClass could not be converted to string in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php:149
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php(149): PDOStatement->bindValue(1, Object(stdClass), 2)
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php(173): Pixie\QueryBuilder\QueryBuilderHandler->statement('SELECT `tn_doct...', Array)
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DoctorsAndServicesNotReadyController.php(97): Pixie\QueryBuilder\QueryBuilderHandler->get()
+#3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DoctorsAndServicesNotReadyController.php(31): DoctorsAndServicesNotReadyController->getAll()
+#4 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php(613): DoctorsAndServicesNotReadyController->process()
+#5 D: in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php on line 149
+[12-Dec-2022 10:57:04 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ';' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DoctorsAndServicesNotReadyController.php on line 85
+[12-Dec-2022 10:57:20 UTC] PHP Notice:  Undefined property: stdClass::$id in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DoctorsAndServicesNotReadyController.php on line 84
+[12-Dec-2022 11:01:16 UTC] PHP Notice:  Undefined property: stdClass::$id in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DoctorsAndServicesNotReadyController.php on line 107
+[12-Dec-2022 11:01:16 UTC] PHP Notice:  Undefined property: stdClass::$name in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DoctorsAndServicesNotReadyController.php on line 108
+[12-Dec-2022 11:01:16 UTC] PHP Notice:  Undefined property: stdClass::$avatar in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DoctorsAndServicesNotReadyController.php on line 109
+[12-Dec-2022 11:01:16 UTC] PHP Notice:  Undefined property: stdClass::$phone in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DoctorsAndServicesNotReadyController.php on line 110
+[12-Dec-2022 11:01:16 UTC] PHP Notice:  Undefined property: stdClass::$email in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DoctorsAndServicesNotReadyController.php on line 111
+[12-Dec-2022 11:01:16 UTC] PHP Notice:  Undefined property: stdClass::$speciality_id in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DoctorsAndServicesNotReadyController.php on line 113
+[12-Dec-2022 11:01:16 UTC] PHP Notice:  Undefined property: stdClass::$speciality_name in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DoctorsAndServicesNotReadyController.php on line 114
+[12-Dec-2022 11:01:16 UTC] PHP Notice:  Undefined property: stdClass::$id in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DoctorsAndServicesNotReadyController.php on line 107
+[12-Dec-2022 11:01:16 UTC] PHP Notice:  Undefined property: stdClass::$name in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DoctorsAndServicesNotReadyController.php on line 108
+[12-Dec-2022 11:01:16 UTC] PHP Notice:  Undefined property: stdClass::$avatar in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DoctorsAndServicesNotReadyController.php on line 109
+[12-Dec-2022 11:01:16 UTC] PHP Notice:  Undefined property: stdClass::$phone in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DoctorsAndServicesNotReadyController.php on line 110
+[12-Dec-2022 11:01:16 UTC] PHP Notice:  Undefined property: stdClass::$email in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DoctorsAndServicesNotReadyController.php on line 111
+[12-Dec-2022 11:01:16 UTC] PHP Notice:  Undefined property: stdClass::$speciality_id in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DoctorsAndServicesNotReadyController.php on line 113
+[12-Dec-2022 11:01:16 UTC] PHP Notice:  Undefined property: stdClass::$speciality_name in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DoctorsAndServicesNotReadyController.php on line 114
+[12-Dec-2022 11:02:03 UTC] PHP Fatal error:  Uncaught Error: Class 'DoctorsAndServicesNotReadyController' not found in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php:541
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php(603): App->route()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\index.php(72): App->process()
+#2 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php on line 541

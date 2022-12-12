@@ -137,7 +137,7 @@
                 $this->jsonecho();
             }
             
-            $required_fields = ["name"];
+            $required_fields = ["name", "description"];
             foreach( $required_fields as $field)
             {
                 if( !Input::put($field) )
@@ -148,6 +148,7 @@
             }
 
             $name = Input::put("name");
+            $description = Input::put("description");
 
 
             /**Step 3 - check exist*/
@@ -163,6 +164,7 @@
             try 
             {
                 $Service->set("name", $name)
+                    ->set("description", $description)
                     ->save();
 
                 $this->resp->result = 1;

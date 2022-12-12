@@ -62,7 +62,7 @@
             <td>
                 <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
                     <a href="${APP_URL}/service/${id}" class="btn btn-outline-success" type="button">Sửa thông tin</a>
-                    <a href="${APP_URL}/service/doctor/${id}" class="btn btn-outline-primary" type="button">Danh sách bác sĩ</a>
+                    <a href="${APP_URL}/service-and-doctor/${id}" class="btn btn-outline-primary" type="button">Danh sách bác sĩ</a>
                     <button id="button-delete" data-id="${id}" class="btn btn-outline-danger" type="button">Xoá</button>
                 </div>
             </td>
@@ -324,7 +324,7 @@ function setupButton()
                         if(resp.result == 1)
                         {
                             showMessageWithButton('success','Thành công','Yêu cầu đã được hoàn tất !');
-                            $(`#tbody tr[data-id="${id}"]`).remove();
+                            $(`tbody tr[data-id="${id}"]`).remove();
                         }
                         else
                         {

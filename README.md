@@ -22,6 +22,7 @@
 - [**Post Script**](#post-script)
     - [**05-10-2022**](#05-10-2022)
     - [**20-10-2022**](#20-10-2022)
+  - [\[**12-12-2022**\]](#12-12-2022)
 - [**Bonus**](#bonus)
 - [**Timeline**](#timeline)
   - [**Phase 0: 01-09-2022 to 28-09-2022**](#phase-0-01-09-2022-to-28-09-2022)
@@ -205,11 +206,15 @@ Giờ chúng ta sẽ đi vào các mốc thời gian quan trọng mà mình đã
 
 - **Từ 05-12-2022 đến 09-12-2022**: Nộp file báo cáo lên Google Drive trước khi bảo vệ đồ án
 
+- **12-12-2022**: Nhà trường công bố danh sách giáo viên phản biến trước khi chấm đồ án
+
+- **Từ 12-12-2022 đến 22-12-2022**: Sinh viên tự liên hệ với giáo viên phản biện để chấm.
+
 - **Từ 24-12-2022 đến 26-12-2022**: Bảo vệ đồ án tốt nghiệp trước hội đồng nhà trường tại Quận 1 
 & nộp 03 cuốn tóm tắt đề tài tại Hội đồng chấm bảo vệ đồ án tốt nghiệp tại Quận 1
 
-- **05-01-2023**: nộp 02 quyển bìa cứng đã có chữ ký xác nhận của Giáo Viên Hướng Dẫn và Giáo Viên Phản Biện
-và file dữ liệu tại Văn Phòng Khoa Quận 9
+- **05-01-2023**: nộp 02 quyển bìa cứng đã có chữ ký xác nhận của Giáo Viên Hướng Dẫn và 
+Giáo Viên Phản Biện và file dữ liệu tại Văn Phòng Khoa Quận 9.
 
 
 (*) Quy tắc đặt tên áp dụng cho cả 3 lần - Lớp (mã chữ)_Mã sinh viên(3 số cuối)_Họ và tên _BCDK1
@@ -284,6 +289,11 @@ Việc hủy kết quả học tập tưởng chừng chỉ là đòn hù của 
 đã chứng kiến việc nộp học phí muộn mà kết quả học tập 1 học kì bị hủy và bạn đó phải học lại những môn của kì đó rồi. Do vậy dĩ nhiên 
 là nộp chậm học phí cho đồ án ( học môn thay thế ) không phải là một lời đe dọa ạ. Méo hiểu sao tiền thì thu nhanh và không bớt 
 một đồng nhưng việc giải nhân tiền học bổng và sửa chữa cơ sở vật chất thì.... Nói chung là chán lắm, không muốn nói nữa🥱🥱🥱🥱
+
+## [**12-12-2022**]
+
+TUI, NGUYỄN THÀNH PHONG, XIN TRÂN TRỌNG THÔNG BÁO VỚI TOÀN THỂ QUÝ ZỊ 🔊🔊🔊 NGÀY HÔM NAY, 
+TỨC NGÀY 12-12-2022, TÔI ĐÃ CHÍNH THỨC HOÀN THÀNH ĐỒ ÁN TỐT NGHIỆP CỦA MÌNH VÀ 100% YÊU CẦU CỦA THẦY NGUYỄN ANH HÀO ✌✌
 
 # [**Bonus**](#bonus)
 
@@ -787,6 +797,8 @@ sơ bệnh án trước khi khám của bệnh nhân do thầy Hào nhắc nên 
 - **12-12-2022**:
   
 1. Web - Chức năng quản lí các dịch vụ
+
+2. Web - Chức năng tạo/ sửa thông tin dịch vụ
 
 # [**Controller Timeline**](#controller-timeline)
 

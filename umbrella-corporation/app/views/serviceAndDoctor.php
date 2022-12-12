@@ -82,7 +82,7 @@
     <!-- LEFT NAVIGATION -->
     <?php 
           $Nav = new stdClass;
-          $Nav->activeMenu = "service";
+          $Nav->activeMenu = "serviceAndDoctor";
           require_once(APPPATH.'/views/fragments/navleft.fragment.php');
     ?>
     <!-- end LEFT NAVIGATION -->
@@ -94,7 +94,7 @@
       <!-- end NAVIGATION -->
       
       <!-- CONTENT -->
-      <?php require_once(APPPATH.'/views/fragments/service.fragment.php'); ?>
+      <?php require_once(APPPATH.'/views/fragments/serviceAndDoctor.fragment.php'); ?>
       <!-- end CONTENT -->
 
       <!-- FOOTER -->
@@ -106,16 +106,18 @@
 
     <!-- GENERAL JS -->
     <?php require_once(APPPATH.'/views/fragments/javascript.fragment.php'); ?>
-    <script src="https://cdn.ckeditor.com/4.20.0/standard/ckeditor.js"></script><!-- CK Editor -->
-    <script src="<?= APPURL."/assets/js/customized/service.js?v=".VERSION ?>"></script>
+
+    <script src="<?= APPURL."/assets/js/customized/serviceAndDoctor.js?v=".VERSION ?>"></script>
+    
     <script>
-        CKEDITOR.replace( 'description' );
         let id = <?= $id  ?>;
         if( id > 0)
         {
-            setupServiceInfo(id);
+            setupServiceAndDoctorTable(id);
+            setupButton(id);
+            setupDropdownDoctorReady(id);
         }
-        setupButton(id);    
+
     </script>
   </body>
 </html>

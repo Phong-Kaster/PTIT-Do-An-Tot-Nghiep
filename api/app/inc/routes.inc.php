@@ -90,7 +90,8 @@ App::addRoute("GET|PUT|DELETE|POST", "/services/[i:id]", "Service");
 
 
 /************************** DOCTOR AND SERVICE ******************************/
-App::addRoute("GET|POST", "/doctors-and-services/[i:id]", "DoctorsAndServices");
+App::addRoute("GET|POST|DELETE", "/doctors-and-services/[i:id]", "DoctorsAndServices");
+App::addRoute("GET", "/doctors-and-services-ready/[i:id]", "DoctorsAndServicesReady");
 
 
 /************************** PATIENT BOOKING ******************************/

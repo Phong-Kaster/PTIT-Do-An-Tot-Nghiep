@@ -115,7 +115,10 @@ App::addRoute("GET", "/booking/photos/[i:id]/?", "BookingPhotos");
 
 
 
-/******************************** ROOMS *********************************/
+/******************************** SERVICE *********************************/
 App::addRoute("GET", "/services/?", "Services");
 App::addRoute("GET", "/service/?[i:id]/?", "Service");
 App::addRoute("GET", "/service/create/?", "Service");
+
+/******************************** SERVICE AND DOCTOR *********************************/
+App::addRoute("GET", "/service-and-doctor/[i:id]/?", "ServiceAndDoctor");
