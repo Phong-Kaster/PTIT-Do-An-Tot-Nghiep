@@ -97,9 +97,13 @@
                 $query->orderBy("id", "desc");
             } 
 
+            
+            $res = $query->get();
+            $quantity = count($res);
+
             /**Step 3.3 - length filter * start filter*/
-            $query->limit($length ? $length : 10)
-                ->offset($start ? $start : 0);
+            $query->limit($length)
+                ->offset($start);
 
 
 
@@ -118,7 +122,7 @@
 
             /**Step 5 - return */
             $this->resp->result = 1;
-            $this->resp->quantity = count($result);
+            $this->resp->quantity = $quantity;
             $this->resp->data = $data;
         }
         catch(Exception $ex)

@@ -83,6 +83,8 @@
                     <span> Quản lý bệnh nhân </span>
                   <?php elseif( $Nav->activeMenu  == "room"): ?>
                     <span> Quản lý phòng khám </span>
+                  <?php elseif( $Nav->activeMenu  == "service"): ?>
+                    <span> Quản lý dịch vụ </span>
                   <?php elseif( $Nav->activeMenu  == "treatment"): ?>
                     <span> Quản lý phác đồ điều trị - đơn thuốc </span>
                   <?php elseif( $Nav->activeMenu  == "record"): ?>

@@ -80,7 +80,7 @@ App::addRoute("GET", "/patients/?", "Patients");
 App::addRoute("GET", "/patient/?[i:id]/?", "Patient");
 
 
-/******************************** SPECIALITY *********************************/
+/******************************** ROOMS *********************************/
 App::addRoute("GET", "/rooms/?", "Rooms");
 App::addRoute("GET", "/room/?[i:id]/?", "Room");
 App::addRoute("GET", "/room/create/?", "Room");
@@ -92,7 +92,7 @@ App::addRoute("GET", "/doctor/?[i:id]/?", "Doctor");
 App::addRoute("GET", "/doctor/create/?", "Doctor");
 
 
-/******************************** SPECIALITY *********************************/
+/******************************** PERSONAL *********************************/
 App::addRoute("GET", "/personal/?", "Personal");
 App::addRoute("GET", "/personal/update/?", "PersonalUpdate");
 
@@ -111,5 +111,11 @@ App::addRoute("GET", "/treatments/[i:id]/?", "Treatments");// read by id
 App::addRoute("GET", "/treatment/?", "Treatment");// read all
 
 /******************************** BOOKING PHOTO *********************************/
-/******************************** TREATMENT *********************************/
 App::addRoute("GET", "/booking/photos/[i:id]/?", "BookingPhotos");
+
+
+
+/******************************** ROOMS *********************************/
+App::addRoute("GET", "/services/?", "Services");
+App::addRoute("GET", "/service/?[i:id]/?", "Service");
+App::addRoute("GET", "/service/create/?", "Service");

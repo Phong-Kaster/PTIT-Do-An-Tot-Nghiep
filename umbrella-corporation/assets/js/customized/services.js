@@ -1,86 +1,79 @@
  /**
  * @author Phong-Kaster
- * @since 08-11-2022
+ * @since 12-12-2022
  * @param {} url is the API_URL to make AJAX
  * this function always get rooms created today
  */
-  function setupRoomTable(url, params)
-  {  
-      /**Step 2 - call AJAX */
-      $.ajax({
-        type: "GET",
-        url: url,
-        data: params,
-        dataType: "JSON",
-        success: function(resp) {
-            if(resp.result == 1)// result = 1
-            {
-                  createRoomTable(resp);
-                  pagination(url, resp.quantity, resp.data.length);
-            }
-            else// result = 0
-            {
-                  showMessageWithButton('error','Thất bại', resp.msg);
-            }
-        },
-        error: function(err) {
-            Swal.fire('Oops...', "Oops! An error occured. Please try again later!", 'error');
-        }
-      })//end AJAX
-  }
+ function setupServiceTable(url, params)
+ {  
+     /**Step 2 - call AJAX */
+     $.ajax({
+       type: "GET",
+       url: url,
+       data: params,
+       dataType: "JSON",
+       success: function(resp) {
+           if(resp.result == 1)// result = 1
+           {
+                 createServiceTable(resp);
+                 pagination(url, resp.quantity, resp.data.length);
+           }
+           else// result = 0
+           {
+                 showMessageWithButton('error','Thất bại', resp.msg);
+           }
+       },
+       error: function(err) {
+           Swal.fire('Oops...', "Oops! An error occured. Please try again later!", 'error');
+       }
+     })//end AJAX
+ }
 
-/**
+ /**
  * @author Phong-Kaster
  * @since 31-10-2022
  * setup date picker
  */
- function createRoomTable(resp)
+ function createServiceTable(resp)
  {
     $("tbody").empty();// empty the table
      /** loop resp to append into table */
      for(let i=0; i< resp.data.length; i++)
      {
+         let image = resp.data[i].image != "" > 0 ? resp.data[i].image : "default_service.jpg";
          let id = resp.data[i].id;
          let name = resp.data[i].name;
-         let location = resp.data[i].location;
-         let doctorQuantity = resp.data[i].doctor_quantity;
          let body = `
-         <tr data-id="${id}" class="align-middle">
+         <tr data-id=${id} class="align-middle"><!-- TR -->
+            <td class="text-center">
+                <div>
+                    <img height="100" src="${API_URL}/assets/uploads/${image}" alt="image">
+                </div>
+            </td>
 
+            <td>
+                <div class="fw-semibold" id="name">${id}</div>
+            </td>
 
-                <td class="text-center">
-                    <div class="fw-semibold" id="id">${id}</div>
-                </td>
+            <td class="fw-semibold">
+                <div class="fw-semibold" id="name">${name}</div>
+            </td>
 
-
-                <td>
-                    <div class="fw-semibold" id="location">${location}</div>
-                </td>
-
-                <td>
-                    <div class="fw-semibold" id="name">${name}</div>
-                </td>
-
-                <td>
-                    <div class="fw-semibold" id="id">${doctorQuantity}</div>
-                </td>
-
-                <td>
-                    <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-                        <a href="${APP_URL}/room/${id}" class="btn btn-outline-warning" type="button">Sửa</a>
-                        <button id="button-delete" data-id="${id}" class="btn btn-outline-danger" type="button">Xóa</button><div class="btn-group" role="group">
-                    </div>
-                </div></td>
-            </tr>`;
+            <td>
+                <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                    <a href="${APP_URL}/service/${id}" class="btn btn-outline-success" type="button">Sửa thông tin</a>
+                    <a href="${APP_URL}/service/doctor/${id}" class="btn btn-outline-primary" type="button">Danh sách bác sĩ</a>
+                    <button id="button-delete" data-id="${id}" class="btn btn-outline-danger" type="button">Xoá</button>
+                </div>
+            </td>
+        </tr>`;
 
          
          $("tbody").append(body);
      }
  }
 
-
-
-  /**
+   /**
  * @author Phong-Kaster
  * @param {String} url 
  * @param {int} totalRecord 
@@ -159,7 +152,7 @@ function pagination(url, totalRecord, currentRecord)
                 success: function(resp) {
                     if(resp.result == 1)// result = 1
                     {
-                        createRoomTable(resp);
+                        createServiceTable(resp);
                     }
                     else// result = 0
                     {
@@ -223,7 +216,7 @@ function pagination(url, totalRecord, currentRecord)
                     if(resp.result == 1)// result = 1
                     {
                        
-                        createRoomTable(resp);
+                        createServiceTable(resp);
                     }
                     else// result = 0
                     {
@@ -238,34 +231,38 @@ function pagination(url, totalRecord, currentRecord)
     })
 }
 
+
  /**
  * @author Phong-Kaster
- * @since 08-11-2022
+ * @since 12-12-2022
  * @returns Object params contains filtering conditions
  */
-function getFilteringCondition()
-{
-    let search         = $("#search").val() ? $("#service :selected").val() : "";
-    let orderDir       = $("#order-dir :selected").val() ? $("#order-dir :selected").val() : "desc";
-    let orderColumn    = $("#order-column :selected").val() ? $("#order-column :selected").val() : "id";
+ function getFilteringCondition()
+ {
+     let search         = $("#search").val() ? $("#service :selected").val() : "";
+     let orderDir       = $("#order-dir :selected").val() ? $("#order-dir :selected").val() : "asc";
+     let orderColumn    = $("#order-column :selected").val() ? $("#order-column :selected").val() : "id";
+ 
+ 
+     /**Step 2 - set up parameters */
+     let order = {
+         "dir": orderDir,
+         "column": orderColumn
+     };
+     let params = {
+         search: search,
+         order: order,
+         length: DEFAULT_LENGTH,
+     };
+ 
+     return params;
+ }
 
-
-    /**Step 2 - set up parameters */
-    let order = {
-        "dir": orderDir,
-        "column": orderColumn
-    };
-    let params = {
-        search: search,
-        order: order,
-        length: DEFAULT_LENGTH,
-    };
-
-    return params;
-}
-
-
-
+ /**
+  * @author Phong-Kaster
+  * @since 12-12-2022
+  * setup button
+  */
 function setupButton()
 {
     /**BUTTON RESET */
@@ -273,8 +270,6 @@ function setupButton()
         $("#search").val("");
         $("#order-dir").val("");
         $("#order-column").val("");
-        $("#status").val("");
-        $("#service").val("");
         
 
         let order = { column:"id", dir:"asc"}
@@ -282,7 +277,7 @@ function setupButton()
             order: order,
             length: DEFAULT_LENGTH
         }
-        setupRoomTable(url, params);
+        setupServiceTable(url, params);
     });
 
 
@@ -294,61 +289,58 @@ function setupButton()
        
         
         /**Step 2 - query */
-        let url = API_URL + "/rooms";
-        setupRoomTable(url, params);
+        let url = API_URL + "/services";
+        setupServiceTable(url, params);
     });
 
 
 
     /**BUTTON DELETE */
     $(document).on('click','#button-delete',function(){
-    Swal
-    .fire({
-        title: 'Bạn chắc chắn muốn thực hiện hành động ngày',
-        text: "Hành động này không thể khôi phục sau khi thực hiện",
-        icon: 'warning',
-        confirmButtonText: 'Xác nhận',
-        confirmButtonColor: '#FF0000',
-        cancelButtonColor: '#0000FF',
-        cancelButtonText: 'Hủy',
-        reverseButtons: false,
-        showCancelButton: true
-    })
-    .then((result) => 
-        {
-            if (result.isConfirmed) 
+        Swal
+        .fire({
+            title: 'Bạn chắc chắn muốn thực hiện hành động ngày',
+            text: "Hành động này không thể khôi phục sau khi thực hiện",
+            icon: 'warning',
+            confirmButtonText: 'Xác nhận',
+            confirmButtonColor: '#FF0000',
+            cancelButtonColor: '#0000FF',
+            cancelButtonText: 'Hủy',
+            reverseButtons: false,
+            showCancelButton: true
+        })
+        .then((result) => 
             {
-                let id = $(this).attr("data-id");
-                let url = API_URL+"/rooms/"+id;
-                let method = "delete";
-                $.ajax({
-                    type: method,
-                    url: url,
-                    dataType: "JSON",
-                    success: function(resp) {
-                    if(resp.result == 1)
-                    {
-                        showMessageWithButton('success','Thành công','Yêu cầu đã được hoàn tất !');
-                        $(`tbody tr[data-id="${id}"]`).remove();
-                    }
-                    else
-                    {
-                        showMessageWithButton('error','Thất bại', resp.msg);
-                    }
-                    },
-                    error: function(err) {
-                        console.log(err.responseText);
-                        showMessageWithButton('error','Thất bại', err);
-                    }
-                });
-            } 
-            else
-            {
-                Swal.close();
-            }
-        });
-    
-});
-   
-}
-
+                if (result.isConfirmed) 
+                {
+                    let id = $(this).attr("data-id");
+                    let url = API_URL+"/services/"+id;
+                    let method = "delete";
+                    $.ajax({
+                        type: method,
+                        url: url,
+                        dataType: "JSON",
+                        success: function(resp) {
+                        if(resp.result == 1)
+                        {
+                            showMessageWithButton('success','Thành công','Yêu cầu đã được hoàn tất !');
+                            $(`#tbody tr[data-id="${id}"]`).remove();
+                        }
+                        else
+                        {
+                            showMessageWithButton('error','Thất bại', resp.msg);
+                        }
+                        },
+                        error: function(err) {
+                            console.log(err.responseText);
+                            showMessageWithButton('error','Thất bại', err);
+                        }
+                    });
+                } 
+                else
+                {
+                    Swal.close();
+                }
+            });/**end Swal */
+    });/** end BUTTON DELETE */
+}// end FUNCTION

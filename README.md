@@ -784,6 +784,10 @@ sơ bệnh án trước khi khám của bệnh nhân do thầy Hào nhắc nên 
 
 2. Web - Chỉnh sửa lại phần tạo lịch khám dựa vào lịch hẹn.
 
+- **12-12-2022**:
+  
+1. Web - Chức năng quản lí các dịch vụ
+
 # [**Controller Timeline**](#controller-timeline)
 
 Phần này mình lưu lại trình tự mình viết đồ án này. Nếu các bạn có nhu cầu tham khảo cách xử lý của mình. Các bạn có thể đọc code theo trình tự 

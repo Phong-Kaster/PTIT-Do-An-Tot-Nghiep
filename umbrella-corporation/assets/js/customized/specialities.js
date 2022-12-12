@@ -48,14 +48,18 @@ function createSpecialityTable(resp)
     {
         let element = resp.data[i];
         let specialityId = element.id;
+        let specialityImage = element.image.length > 0 ? element.image : "default_service.png";
         let specialityName = element.name;
         let specialityDescription = element.description;
         let specialityDoctorQuantity = element.doctor_quantity;
         let body = 
             `<tr data-id=${specialityId} class="align-middle">
-                <td class="text-center" id="speciality-id">
-                    
+                <td class="text-center">
+                    <div>
+                        <img height="100" src="${API_URL}/assets/uploads/${specialityImage}" alt="image">
+                    </div>
                 </td>
+
 
                 <td class="fw-semibold">
                 <div class="fw-semibold" id="speciality-id">${specialityId}</div>
