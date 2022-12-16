@@ -1697,3 +1697,40 @@ Stack trace:
 #1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\index.php(93): App->process()
 #2 {main}
   thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\App.php on line 501
+[14-Dec-2022 01:27:37 UTC] PHP Notice:  Trying to get property 'result' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\App.php on line 243
+[14-Dec-2022 01:27:40 UTC] PHP Notice:  Trying to get property 'result' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\App.php on line 243
+[14-Dec-2022 01:27:40 UTC] PHP Notice:  Trying to get property 'result' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\App.php on line 243
+[14-Dec-2022 01:27:44 UTC] PHP Notice:  Trying to get property 'result' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\App.php on line 243
+[14-Dec-2022 01:47:15 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\DashboardController.php:12
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\App.php(574): DashboardController->process()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\index.php(93): App->process()
+#2 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\DashboardController.php on line 12
+[14-Dec-2022 01:47:54 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\fragments\navleft.fragment.php:27
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\dashboard.php(81): require_once()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\Controller.php(92): require_once('D:\\xampp\\htdocs...')
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\DashboardController.php(18): Controller->view('dashboard')
+#3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\App.php(574): DashboardController->process()
+#4 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\index.php(93): App->process()
+#5 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\fragments\navleft.fragment.php on line 27
+[14-Dec-2022 01:50:42 UTC] PHP Notice:  Undefined variable: accessToken in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\LoginController.php on line 52
+[14-Dec-2022 01:50:44 UTC] PHP Notice:  Undefined variable: accessToken in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\LoginController.php on line 52
+[14-Dec-2022 01:50:55 UTC] PHP Notice:  Undefined variable: accessToken in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\LoginController.php on line 52
+[14-Dec-2022 01:51:06 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\LoginController.php:54) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\LoginController.php on line 57
+[14-Dec-2022 01:51:06 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\LoginController.php:54) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\LoginController.php on line 62
+[14-Dec-2022 01:51:55 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\LoginController.php:54) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\LoginController.php on line 57
+[14-Dec-2022 01:53:50 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\LoginController.php:57) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\LoginController.php on line 64
+[14-Dec-2022 01:55:22 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\LoginController.php:57) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\LoginController.php on line 58
+[14-Dec-2022 01:55:22 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\LoginController.php:57) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\LoginController.php on line 62
+[14-Dec-2022 02:00:33 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type stdClass as array in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\LoginController.php:49
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\LoginController.php(23): LoginController->login()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\core\App.php(574): LoginController->process()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\index.php(93): App->process()
+#3 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\LoginController.php on line 49
+[14-Dec-2022 02:14:03 UTC] PHP Notice:  Undefined property: stdClass::$data in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\LoginController.php on line 49
+[14-Dec-2022 02:14:03 UTC] PHP Notice:  Trying to get property 'name' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\LoginController.php on line 49

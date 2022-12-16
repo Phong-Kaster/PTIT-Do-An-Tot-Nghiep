@@ -26,16 +26,12 @@ class LoginController extends Controller
     }
 
 
-    /**
-     * Login
-     * @return void
-     */
+
     private function login()
     {
         $email = Input::post("email");
         $password = Input::post("password");
         $remember = Input::post("remember");
-
 
         if ($email && $password) 
         {
@@ -50,14 +46,14 @@ class LoginController extends Controller
                 ]);
 
                 $resp = @json_decode($resp->getBody());
-                
+
                 if($resp->result == 1){
+
                     
                     $accessToken = $resp->accessToken;
                     $exp = $remember ? time()+86400*30 : 0;
 
                     setcookie("accessToken", $accessToken, $exp, "/");
-
                     if($remember) {
                         setcookie("mplrmm", "1", $exp, "/");
                     } else {

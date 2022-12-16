@@ -22,7 +22,7 @@
 - [**Post Script**](#post-script)
     - [**05-10-2022**](#05-10-2022)
     - [**20-10-2022**](#20-10-2022)
-  - [\[**12-12-2022**\]](#12-12-2022)
+  - [\[\*\*12-12-2022#)](#12-12-2022)
 - [**Bonus**](#bonus)
 - [**Timeline**](#timeline)
   - [**Phase 0: 01-09-2022 to 28-09-2022**](#phase-0-01-09-2022-to-28-09-2022)
@@ -290,7 +290,7 @@ Việc hủy kết quả học tập tưởng chừng chỉ là đòn hù của 
 là nộp chậm học phí cho đồ án ( học môn thay thế ) không phải là một lời đe dọa ạ. Méo hiểu sao tiền thì thu nhanh và không bớt 
 một đồng nhưng việc giải nhân tiền học bổng và sửa chữa cơ sở vật chất thì.... Nói chung là chán lắm, không muốn nói nữa🥱🥱🥱🥱
 
-## [**12-12-2022**]
+## [**12-12-2022#)
 
 TUI, NGUYỄN THÀNH PHONG, XIN TRÂN TRỌNG THÔNG BÁO VỚI TOÀN THỂ QUÝ ZỊ 🔊🔊🔊 NGÀY HÔM NAY, 
 TỨC NGÀY 12-12-2022, TÔI ĐÃ CHÍNH THỨC HOÀN THÀNH ĐỒ ÁN TỐT NGHIỆP CỦA MÌNH VÀ 100% YÊU CẦU CỦA THẦY NGUYỄN ANH HÀO ✌✌
@@ -799,6 +799,8 @@ sơ bệnh án trước khi khám của bệnh nhân do thầy Hào nhắc nên 
 1. Web - Chức năng quản lí các dịch vụ
 
 2. Web - Chức năng tạo/ sửa thông tin dịch vụ
+
+- **16-12-2022**: Soạn Power Point để tóm tắt đề tài & kiểm tra lần cuối ứng dụng Android.
 
 # [**Controller Timeline**](#controller-timeline)
 

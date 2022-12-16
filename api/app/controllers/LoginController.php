@@ -97,7 +97,6 @@ class LoginController extends Controller
             "email" => $Doctor->get("email"),
             "phone" => $Doctor->get("phone"),
             "name" => $Doctor->get("name"),
-            "description" => $Doctor->get("description"),
             "price" => (int)$Doctor->get("price"),
             "role" => $Doctor->get("role"),
             "active" => (int)$Doctor->get("active"),
