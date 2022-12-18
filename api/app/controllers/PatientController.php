@@ -52,11 +52,16 @@
                 $this->jsonecho();
             }
 
-            if( $AuthUser->get("role") != "admin" )
+            $valid_roles = ["admin", "supporter"];
+            $role_validation = in_array($AuthUser->get("role"), $valid_roles);
+            if( !$role_validation )
             {
-                $this->resp->msg = "You are not logging !";
+                $this->resp->result = 0;
+                $this->resp->msg = "You don't have permission to do this action. Only "
+                .implode(', ', $valid_roles)." can do this action !";
                 $this->jsonecho();
             }
+
 
 
 

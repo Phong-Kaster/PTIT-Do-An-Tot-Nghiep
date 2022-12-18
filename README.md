@@ -32,7 +32,7 @@
   - [**Phase 4: 08-12-2022 to 11-12-2022**](#phase-4-08-12-2022-to-11-12-2022)
 - [**Controller Timeline**](#controller-timeline)
 - [**Special Thanks**](#special-thanks)
-- [**Made with 💘 and PHP **](#made-with--and-php-)
+- [Made with 💘 and PHP ](#made-with--and-php-)
 
 # [**Introduction**](#introduction)
 
@@ -67,7 +67,7 @@ Nếu các bạn có nhu cầu muốn tham khảo, hãy ấn vào [**đây**](ht
 # [**Database**](#database)
 
 <p align="center">
-    <img src="./photo/database-version-10.png" />
+    <img src="./photo/database-version-10-prototype.png" />
 </p>
 <h3 align="center">
 
@@ -210,7 +210,10 @@ Giờ chúng ta sẽ đi vào các mốc thời gian quan trọng mà mình đã
 
 - **Từ 12-12-2022 đến 22-12-2022**: Sinh viên tự liên hệ với giáo viên phản biện để chấm.
 
-- **18-12-2022**: Báo cáo với giáo viên hướng dẫn.
+- **18-12-2022**: Báo cáo với giáo viên hướng dẫn(thầy Nguyễn Anh Hào) và giáo viên phản biện(Với mình là thầy Huỳnh Trung Trụ).
+
+Lưu ý: Mỗi giáo viên phản biện sẽ có hình thức chấm khác nhau. Thầy Trụ thì online nhưng có thầy cô khác thì phải lên trực tiếp trường 
+để chấm.
 
 - **Từ 24-12-2022 đến 26-12-2022**: Bảo vệ đồ án tốt nghiệp trước hội đồng nhà trường tại Quận 1 
 & nộp 03 cuốn tóm tắt đề tài tại Hội đồng chấm bảo vệ đồ án tốt nghiệp tại Quận 1
@@ -804,6 +807,8 @@ sơ bệnh án trước khi khám của bệnh nhân do thầy Hào nhắc nên 
 
 - **16-12-2022**: Soạn Power Point để tóm tắt đề tài & kiểm tra lần cuối ứng dụng Android.
 
+- **18-12-2022**: Kiểm tra lại lần cuối trước khi báo cáo hôm nay với cả giáo viên hướng dẫn ( thầy Hào) và giáo viên phản biện ( thầy Trụ ).
+
 # [**Controller Timeline**](#controller-timeline)
 
 Phần này mình lưu lại trình tự mình viết đồ án này. Nếu các bạn có nhu cầu tham khảo cách xử lý của mình. Các bạn có thể đọc code theo trình tự 
@@ -909,4 +914,4 @@ Phần này mình lưu lại trình tự mình viết đồ án này. Nếu các
         </tr>    
 </table>
  
-# [**Made with 💘 and PHP <img src="https://www.vectorlogo.zone/logos/php/php-horizontal.svg" width="60">**](#made-with-love-and-php)
+# [Made with 💘 and PHP <img src="https://www.vectorlogo.zone/logos/php/php-horizontal.svg" width="60">](#made-with-love-and-php)
