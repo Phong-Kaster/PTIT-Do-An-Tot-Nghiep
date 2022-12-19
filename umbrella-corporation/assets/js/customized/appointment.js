@@ -123,7 +123,16 @@ function setupButton(id)
                 if (result.isConfirmed) 
                 {
                     info = getNecessaryInfo();
-                    sendAppointmentRequest(method, url, info);
+
+                    let doctorId = info["doctor_id"];
+                    if( doctorId > 0)
+                    {
+                        isDoctorBusy(method, url, info);
+                    }
+                    else
+                    {
+                        sendAppointmentRequest(method, url, info); 
+                    } 
                 } 
                 else
                 {
@@ -194,6 +203,7 @@ function getNecessaryInfo()
     let patientReason = $("#patient-reason").val();
     let patientId = $("#patient-id").val();
     serviceId = $("#service").val();
+    doctorId = $("#doctor").val();
 
     let data = {
         doctor_id: doctor,
@@ -377,7 +387,7 @@ function setupPatientInformation(patient_id)
 
 /**
  * @author Phong-Kaster
- * @since 05-11-2022
+ * @since 18-12-2022
  */
 function setupDropdownService2()
 {
@@ -406,7 +416,7 @@ function setupDropdownService2()
 
 /**
  * @author Phong-Kaster
- * @since 05-11-2022
+ * @since 18-12-2022
  */
 function createDropdownService2(resp)
 {
@@ -425,7 +435,7 @@ function createDropdownService2(resp)
 
 /**
  * @author Phong-Kaster
- * @since 31-10-2022
+ * @since 18-12-2022
  * setup dropdown DOCTOR
  */
 function setupDropdownDoctor2()
@@ -472,4 +482,68 @@ function setupDropdownDoctor2()
          $("#doctor").append(element);
      }
     $("#doctor").val(doctorId);
+ }
+
+
+
+ /**
+  * @author Phong-Kaster
+  * @since 19-12-2022
+  * gửi yêu cầu với id của bác sĩ để kiểm tra xem bác sĩ này có bận không?
+  */
+ function isDoctorBusy(method, url, info)
+ {
+    /**Step 1 - gui ajax kiem tra xem bac si co nhieu benh nhan khong */
+    let doctorId = info["doctor_id"];
+
+
+    $.ajax({
+        type: "GET",
+        url: `${API_URL}/is-doctor-busy/${doctorId}`,
+        dataType: "JSON",
+        success: function(resp) 
+        {
+            let msg = resp.msg;
+            let result = resp.result;
+            console.log(result);
+            console.log(msg);
+            /**Case 1: bác sĩ sẵn sàng tiếp nhận bệnh nhân thì tạo lịch khám luôn */
+            if(resp.result == 1)
+            {
+                sendAppointmentRequest(method, url, info);
+            }
+            /**Case 2: bác sĩ đang có nhiều bệnh nhân thì cân nhắc về việc chọn bác sĩ khác */
+            else
+            {
+                Swal
+                .fire({
+                    title: msg,
+                    text: 'Nếu bệnh nhân mong muốn khám với bác sĩ, nhấn Tiếp tục. Nếu bệnh nhân muốn tiết kiệm thời gian hãy chọn Nhu cầu khám bệnh phù hợp cho bệnh nhân',
+                    icon: 'question',
+                    confirmButtonText: 'Tiếp tục',
+                    confirmButtonColor: '#FF0000',
+                    cancelButtonColor: '#0000FF',
+                    cancelButtonText: 'Để hệ thống lựa chọn',
+                    reverseButtons: false,
+                    showCancelButton: true
+                })
+                .then((result) => 
+                    {
+                        if (result.isConfirmed) 
+                        {
+                            sendAppointmentRequest(method, url, info);
+                        } 
+                        else
+                        {
+                            info["doctor_id"] = 0;
+                            sendAppointmentRequest(method, url, info);
+                        }
+                    });// end Swal
+            }
+        },
+        error: function(err) {
+            console.log(err.responseText);
+            showMessageWithButton('error','Thất bại', err);
+        }
+    });
  }
