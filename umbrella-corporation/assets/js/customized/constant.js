@@ -134,6 +134,7 @@ function createDropdownSpeciality(resp)
  {
     $("#doctor").empty();
     $("#doctor").append(`<option selected="" disabled="" value="">Chọn...</option>`);
+    $("#doctor").append(`<option  value="0">Để hệ thống lựa chọn</option>`);
      for(let i = 0; i < resp.data.length; i++)
      {
          let id = resp.data[i].id;
@@ -141,6 +142,7 @@ function createDropdownSpeciality(resp)
          let element = `<option value="${id}">${name}</option>`;
          $("#doctor").append(element);
      }
+    //  console.log("setupDropdownDoctor done !");
  }
 
 
@@ -302,6 +304,7 @@ function createDropdownService(resp)
          let element = `<option value="${id}">${name}</option>`;
          $("#service").append(element);
      }
+    //  console.log("setup Dropdown Service done !");
 }
 
 

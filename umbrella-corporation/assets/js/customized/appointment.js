@@ -175,6 +175,8 @@ function setupButton(id)
  * get necessary info
  */
 let bookingId = 0;
+let serviceId = 0;
+let doctorId = 0;
 function getNecessaryInfo()
 {
     let doctor = $("#doctor :selected").val();
@@ -191,6 +193,7 @@ function getNecessaryInfo()
     let status = $("#status").val();
     let patientReason = $("#patient-reason").val();
     let patientId = $("#patient-id").val();
+    serviceId = $("#service").val();
 
     let data = {
         doctor_id: doctor,
@@ -202,7 +205,9 @@ function getNecessaryInfo()
         status: status,
         patient_birthday: patientBirthday,
         patient_id: patientId,
-        booking_id: bookingId
+        booking_id: bookingId,
+        service_id: serviceId,
+        doctor_id: doctorId
     }
 
     return data;
@@ -304,8 +309,8 @@ function setupAppointmentInfo(id)
 function setupAppointmentInfoWithParameter(resp)
 {
     bookingId = resp.bookingId;
-    console.log("setupAppointmentInfoWithParameter");
-    console.log("bookingId: " + bookingId);
+    serviceId = resp.serviceId;
+    doctorId = resp.doctorId;
 
     
     let patientName = resp.patientName;
@@ -328,6 +333,12 @@ function setupAppointmentInfoWithParameter(resp)
     $("#patient-birthday").val(patientBirthday);
     $("#datepicker").val(date);
     $("#patient-id").val(patientId);
+    $("#service").val(serviceId);
+    $("#doctor").val(doctorId);
+
+    /**Run 2 functions to select what PATIENT have chosen from mobile */
+    setupDropdownService2();
+    setupDropdownDoctor2();
 }
 
 /**
@@ -362,3 +373,103 @@ function setupPatientInformation(patient_id)
         }
     });
 }
+
+
+/**
+ * @author Phong-Kaster
+ * @since 05-11-2022
+ */
+function setupDropdownService2()
+{
+    $.ajax({
+        type: "GET",
+        url: API_URL + "/services",
+        data: {length: 100},
+        dataType: "JSON",
+        success: function(resp) {
+            if(resp.result == 1)// result = 1
+            {
+                createDropdownService2(resp);
+            }
+            else// result = 0
+            {
+                console.log(resp.msg);
+            }
+        },
+        error: function(err) {
+            Swal.fire('Oops...', "Oops! An error occured. Please try again later!", 'error');
+        }
+    })//end AJAX
+}
+
+
+
+/**
+ * @author Phong-Kaster
+ * @since 05-11-2022
+ */
+function createDropdownService2(resp)
+{
+    $("#service").empty();
+    $("#service").append(`<option selected="" disabled="" value="">Chọn...</option>`);
+     for(let i = 0; i < resp.data.length; i++)
+     {
+         let id = resp.data[i].id;
+         let name = resp.data[i].name;
+         let element = `<option value="${id}">${name}</option>`;
+         $("#service").append(element);
+     }
+     $("#service").val(serviceId);
+}
+
+
+/**
+ * @author Phong-Kaster
+ * @since 31-10-2022
+ * setup dropdown DOCTOR
+ */
+function setupDropdownDoctor2()
+{
+    /**Step 1 - make AJAX call */
+    $.ajax({
+        type: "GET",
+        url: API_URL + "/doctors",
+        data: {length: 100},
+        dataType: "JSON",
+        success: function(resp) {
+            if(resp.result == 1)// result = 1
+            {
+                createDropdownDoctor2(resp);
+            }
+            else// result = 0
+            {
+                console.log(resp.msg);
+            }
+        },
+        error: function(err) {
+            Swal.fire('Oops...', "Oops! An error occured. Please try again later!", 'error');
+        }
+    })//end AJAX
+}
+
+
+
+/**
+ * @author Phong-Kaster
+ * @since 18-12-2022
+ * @param {JSON} resp 
+ */
+ function createDropdownDoctor2(resp)
+ {
+    $("#doctor").empty();
+    $("#doctor").append(`<option selected="" disabled="" value="">Chọn...</option>`);
+    $("#doctor").append(`<option  value="0">Để hệ thống lựa chọn</option>`);
+     for(let i = 0; i < resp.data.length; i++)
+     {
+         let id = resp.data[i].id;
+         let name = resp.data[i].name;
+         let element = `<option value="${id}">${name}</option>`;
+         $("#doctor").append(element);
+     }
+    $("#doctor").val(doctorId);
+ }

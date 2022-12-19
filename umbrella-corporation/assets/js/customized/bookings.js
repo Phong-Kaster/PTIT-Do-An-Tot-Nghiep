@@ -264,6 +264,8 @@ function setupBookingTable(url, params)
      /** loop resp to append into table */
      for(let i=0; i< resp.data.length; i++)
      {
+         let serviceId = resp.data[i].service.id;
+         let doctorId = resp.data[i].doctor_id;
          let bookingID = resp.data[i].id;
          let serviceName = resp.data[i].service.name;
          let bookingName = resp.data[i].booking_name;
@@ -301,6 +303,14 @@ function setupBookingTable(url, params)
          element1 = `
                  <!-- EXAMPLE 2 -->
                  <tr data-id=${bookingID} class="align-middle">
+                    <td hidden class="text-center" id="serviceID">
+                        ${serviceId}
+                    </td>
+
+                    <td hidden class="text-center" id="doctorID">
+                        ${doctorId}
+                    </td>
+
                      <td class="text-center" id="bookingID">
                          ${bookingID}
                      </td>
@@ -479,6 +489,8 @@ function setupButton()
      /**BUTTON CREATE APPOINTMENT */
      $(document).on('click','#button-create',function(){
          let bookingID = $(this).attr("data-id");
+         let doctorId = $(`tr[data-id="${bookingID}"]`).find("#doctorID").first().text().trim();
+         let serviceId = $(`tr[data-id="${bookingID}"]`).find("#serviceID").first().text().trim();
          let appointmentDate =  $(`td#appointment-date-${bookingID}`).first().text();
          let appointmentTime =  $(`td#appointment-time-${bookingID}`).first().text();
          let patientReason =  $(`td#patient-reason-${bookingID}`).first().text();
@@ -486,6 +498,8 @@ function setupButton()
          let patientBirthday = $(`tr[data-id="${bookingID}"]`).find("#patient-birthday").first().text().slice(10);
          let patientName = $(`tr[data-id="${bookingID}"]`).find("#patient-name").first().text();
          let patientId = $(`tr[data-id="${bookingID}"]`).find("#patient-name").first().attr("data-patient-id");
+
+
 
         /*because these values that jQuery got, have been duplicated.
         * for instance, appointment date: 
@@ -526,7 +540,7 @@ function setupButton()
                         success: function(resp) {
                         
                             
-                            let url = `${APP_URL}/appointment/create?bookingId=${bookingID}&appointmentDate=${appointmentDate}&appointmentTime=${appointmentTime}&patientName=${patientName}&patientPhone=${patientPhone}&patientBirthday=${patientBirthday}&patientReason=${patientReason}&patientId=${patientId}`;
+                            let url = `${APP_URL}/appointment/create?serviceId=${serviceId}&doctorId=${doctorId}&bookingId=${bookingID}&appointmentDate=${appointmentDate}&appointmentTime=${appointmentTime}&patientName=${patientName}&patientPhone=${patientPhone}&patientBirthday=${patientBirthday}&patientReason=${patientReason}&patientId=${patientId}`;
                             url = new URL(url);
                             window.location = url;
                         

@@ -504,7 +504,7 @@
          * tiếp bệnh khác, bệnh nhân cần hoàn thành việc khám bệnh hiện tại thì mới được đăng kí khám sang 
          * các bệnh khác.
          */
-        private function newFlow()
+        private function oldFlow2()
         {
             /**Step 1 */
             $this->resp->result = 0;
@@ -760,5 +760,393 @@
             $this->jsonecho();
         }
 
+
+        /**
+         * @author Phong-Kaster
+         * @since 18-12-2022
+         * Lần này lịch hẹn sẽ có 2 cách để được tạo ra
+         * Trường hợp 1: gửi tới 1 ID của service, hệ thống sẽ tìm bác sĩ có số lượng bệnh nhân ít nhất để trả về
+         * Trường hợp 2: gửi tới 1 ID của doctor, hệ thống tạo ra bác sĩ và lấy số như oldFlow 2 bên trên
+         */
+        private function newFlow()
+        {
+            /**Step 1 */
+            $this->resp->result = 0;
+            $AuthUser = $this->getVariable("AuthUser");
+
+
+            /**Step 2 - verify user's role */
+            $valid_roles = ["admin", "supporter"];
+            $role_validation = in_array($AuthUser->get("role"), $valid_roles);
+            if( !$role_validation )
+            {
+                $this->resp->result = 0;
+                $this->resp->msg = "You don't have permission to do this action. Only "
+                .implode(', ', $valid_roles)." can do this action !";
+                $this->jsonecho();
+            }
+
+
+            /**Step 3 - get required fields*/
+            $required_fields = ["patient_name", "patient_birthday",
+                                "patient_reason"];
+            foreach($required_fields as $field)
+            {
+                if( !Input::post($field) )
+                {
+                    $this->resp->msg = "Missing field: ".$field;
+                    $this->jsonecho();
+                }
+            }
+
+
+            /**Step 4 - get data */
+            $service_id = (int)Input::post("service_id");
+            $doctor_id = (int)Input::post("doctor_id");
+            $patient_id = Input::post("patient_id") ? (int)Input::post("patient_id") : 1;
+
+            $patient_name = Input::post("patient_name");
+            $patient_birthday = Input::post("patient_birthday");
+
+            $patient_reason = Input::post("patient_reason");
+            $patient_phone = Input::post("patient_phone");
+
+            $numerical_order = "";
+            $position = "";
+
+            $appointment_time = Input::post("appointment_time") ? Input::post("appointment_time") : "";
+            $date = Date("Y-m-d");// is used to calculate position and numerical order
+            //$today = Date("Y-m-d");// is used for storing the day when this appointment is created
+
+            $type = $appointment_time ? "BOOKING appointment" : "NORMAL appointment";
+            $status = "processing";// default
+            date_default_timezone_set('Asia/Ho_Chi_Minh');
+
+            $create_at = date("Y-m-d H:i:s");
+            $update_at = date("Y-m-d H:i:s");
+
+            $booking_id = Input::post("booking_id") ? Input::post("booking_id") : 0;
+
+            /**Step 5 - validation */
+            if( $booking_id > 0)
+            {
+                $Booking = Controller::model("Booking", $booking_id);
+                if( !$Booking->isAvailable())
+                {
+                    $this->resp->msg = "This booking does not exist !";
+                    $this->jsonecho();
+                }
+                if( !$Booking->get("status") == "cancelled")
+                {
+                    $this->resp->msg = "This booking has been cancelled !";
+                    $this->jsonecho();
+                }
+                if( $Booking->get("patient_id") != $patient_id)
+                {
+                    $this->resp->msg = "The patient of booking does not match with patient ID";
+                    $this->jsonecho();
+                }
+            }
+            
+            /**Step 5.1 - validation service id & doctor id */
+            if( $service_id == 0 && $doctor_id == 0 )
+            {
+                $this->resp->msg = "Để khởi tạo lượt khám, cần cung cấp nhu cầu khám bệnh hoặc tên bác sĩ";
+                $this->jsonecho();
+            }
+
+            /**Step 5.1.1 - Service validation */
+            if( $service_id > 0)
+            {
+                $Service = Controller::model("Service", $service_id);
+                if( !$Service->isAvailable() )
+                {
+                    $this->resp->msg = "This service does not exist !";
+                    $this->jsonecho();
+                }
+            }
+
+            /**Step 5.1.2 - Case 1 - Trường hợp chỉ định cả service_id lấn doctor_id thì giữ nguyên doctor_id */
+            if( $service_id > 0 && $doctor_id > 0)
+            {
+                # doctor_id is still the same as its origin
+            }
+            /**Step 5.1.2 - Case 2 - Trường hợp chỉ định service_id nhưng không chỉ định doctor_id thì 
+             * sẽ tìm ra bác sĩ có số lượng bệnh nhân ít nhất ở thời điểm hiện tại để lấy ra
+             */
+            if( $service_id > 0 && $doctor_id == 0)
+            {
+                $doctor_id = $this->getTheLaziestDoctor($service_id);
+            }
+            
+
+            /**Step 5.1b - doctor validation */
+            $Doctor = Controller::model("Doctor", $doctor_id);
+            if( !$Doctor->isAvailable() )
+            {
+                $this->resp->msg = "This doctor does not exist !";
+                $this->jsonecho();
+            }
+            if( $Doctor->get("active") != 1)
+            {
+                $this->resp->msg = "This doctor was deactivated !";
+                $this->jsonecho();
+            }
+            if( $Doctor->get("role") == "supporter")
+            {
+                $this->resp->msg = "The role of doctor ".$Doctor->get("name")." is ".$Doctor->get("role").". You can't assign appointment to SUPPORTER";
+                $this->jsonecho();
+            }
+
+            /**Step 5.3 - patient validation - patient with ID = 1 is default. In case, 
+             * patient have not logged in Android application.
+             */
+            if( $patient_id != 1)
+            {
+                $Patient = Controller::model("Patient", $patient_id);
+                if( !$Patient->isAvailable() )
+                {
+                    $this->resp->msg = "This patient does not exist !";
+                    $this->jsonecho();
+                }
+            }
+
+            /**Step 5.4 - patient name validation */
+            $patient_name_validation = isVietnameseName($patient_name);
+            if( $patient_name_validation == 0 ){
+                $this->resp->msg = "( Booking name ) Vietnamese name only has letters and space";
+                $this->jsonecho();
+            }
+
+            /**Step 5.5 - patient birthday validation */
+            $msg = isBirthdayValid($patient_birthday);
+            if( !empty($msg) )
+            {
+                $this->resp->msg = $msg;
+                $this->jsonecho();
+            }
+            
+            /**Step 5.6 - patient reason */
+
+            /**Step 5.7 - patient phone */
+            if( $patient_phone )
+            {
+                if( strlen($patient_phone) < 10 )
+                {
+                    $this->resp->msg = "Patient phone number has at least 10 number !";
+                    $this->jsonecho();
+                }
+        
+                $patient_phone_validation = isNumber($patient_phone);
+                if( !$patient_phone_validation )
+                {
+                    $this->resp->msg = "Patient phone number is not a valid phone number. Please, try again !";
+                    $this->jsonecho();
+                }
+            }
+
+            /**Step 5.8 - appointment time*/
+            if( !empty($appointment_time) )
+            {
+                $msg = isAppointmentTimeValid($appointment_time);
+                if( !empty($msg) )
+                {
+                    $this->resp->msg = $msg;
+                    $this->jsonecho();
+                }
+                $date = substr($appointment_time,0, 10);
+            }
+
+            /**Step 5.9 - one patient has only one appointment at the time. 
+             * If he/she wanna take other exam, he/she must complete the current exam first
+             */
+            $queryNumberOfAppointment = DB::table(TABLE_PREFIX.TABLE_APPOINTMENTS)
+                        ->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".patient_id", "=", $patient_id)
+                        ->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".date", "=" , $date)
+                        ->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".status", "=", "processing");
+            
+            $resultNumberOfAppointment = $queryNumberOfAppointment->get();
+            if( count($resultNumberOfAppointment) > 0)
+            {
+                $this->resp->msg = "Bệnh nhân cần hoàn thành lượt khám hiện tại để tiếp tục lượt khám mới !";
+                $this->jsonecho();
+            }
+
+
+
+            /**Step 5.10 - numerical order - is a ID of patient today - 
+             * For example, i go to hospital and i am patient NO.40.
+             * Maybe, i am a booking patient or normal patient.
+             */
+            $queryNumericalOrder = DB::table(TABLE_PREFIX.TABLE_APPOINTMENTS)
+                    ->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".date", "=", $date)
+                    ->orderBy(TABLE_PREFIX.TABLE_APPOINTMENTS.".id", "desc")
+                    ->select("*");
+
+            $result = $queryNumericalOrder->get();
+            $quantityNumericalOrder = count($result);
+            $numerical_order = $quantityNumericalOrder == 0 ? 1 : $quantityNumericalOrder + 1;// because first value = 0
+
+            /**Step 5.11 - position */
+            $queryPosition = DB::table(TABLE_PREFIX.TABLE_APPOINTMENTS)
+                    ->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".doctor_id", "=", $doctor_id)
+                    ->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".date", "=", $date)
+                    ->orderBy(TABLE_PREFIX.TABLE_APPOINTMENTS.".id", "desc")
+                    ->select("*");
+            $result = $queryPosition->get();
+            $quantityPosition = count($result);
+            $position = $quantityPosition == 0 ? 1 : $quantityPosition + 1;// because first value = 0
+
+
+            /**Step 5.12 - status */
+            $valid_status = ["processing", "done", "cancelled"];
+            $status_validation = in_array($status, $valid_status);
+            if( !$status_validation )
+            {
+                $this->resp->result = 0;
+                $this->resp->msg = "You don't have permission to do this action. Only "
+                .implode(', ', $valid_status)." can do this action !";
+                $this->jsonecho();
+            }
+
+
+
+            /**Step 6 - save */
+            try 
+            {
+                $Appointment = Controller::model("Appointment");
+                $Appointment->set("doctor_id", $doctor_id)
+                        ->set("booking_id", $booking_id)
+                        ->set("patient_id", $patient_id)
+                        ->set("patient_name", $patient_name)
+                        ->set("patient_birthday", $patient_birthday)
+                        ->set("patient_reason", $patient_reason)
+                        ->set("patient_phone", $patient_phone)
+                        ->set("numerical_order", $numerical_order)
+                        ->set("position", $position)
+                        ->set("appointment_time", $appointment_time)
+                        ->set("date", $date)
+                        ->set("status", $status)
+                        ->set("create_at", $create_at)
+                        ->set("update_at", $update_at)
+                        ->save();
+                $this->resp->result = 1;
+                $this->resp->msg = $type." has been created with patient No.".$numerical_order." with position: ".$position;
+                $this->resp->data = array(
+                    "id" => (int) $Appointment->get("id"),
+                    "date"          => $Appointment->get("date"),
+                    "booking_id"    => (int) $Appointment->get("booking_id"),
+                    "doctor_id" => (int) $Appointment->get("doctor_id"),
+                    "numerical_order" =>  (int)$Appointment->get("numerical_order"),
+                    "position" => (int) $Appointment->get("position"),
+                    "patient_id" => (int) $Appointment->get("patient_id"),
+                    "patient_name" => $Appointment->get("patient_name"),
+                    "patient_birthday" =>  $Appointment->get("patient_birthday"),
+                    "patient_reason" =>  $Appointment->get("patient_reason"),
+                    "patient_phone" =>  $Appointment->get("patient_phone"),
+                    "appointment_time" => $Appointment->get("appointment_time"),
+                    "status" =>  $Appointment->get("status"),
+                    "create_at" =>  $Appointment->get("create_at"),
+                    "update_at" =>  $Appointment->get("update_at")
+                );
+            } 
+            catch (\Exception $ex) 
+            {
+                $this->resp->result = $ex->getMessage();
+            }
+            $this->jsonecho();
+        }
+
+
+        /**
+         * @since 18-12-2022
+         * truyền vào một service id và sẽ tìm ra bác sĩ hiện tại đang có ít bệnh nhân nhất phải
+         * khám nhất ở thời điểm.
+         * Kết quả trả về là ID của bác sĩ đó
+         */
+        private function getTheLaziestDoctor($serviceId)
+        {
+            /**Step 1 - khai báo cú pháp */
+            $doctorWithQuantity = [];
+            $query = DB::table(TABLE_PREFIX.TABLE_DOCTORS)
+
+                    ->leftJoin(TABLE_PREFIX.TABLE_DOCTOR_AND_SERVICE,
+                                TABLE_PREFIX.TABLE_DOCTOR_AND_SERVICE.".doctor_id", "=", TABLE_PREFIX.TABLE_DOCTORS.".id")
+
+                    ->leftJoin(TABLE_PREFIX.TABLE_SERVICES,
+                                TABLE_PREFIX.TABLE_SERVICES.".id", "=", TABLE_PREFIX.TABLE_DOCTOR_AND_SERVICE.".service_id")
+                    ->where(TABLE_PREFIX.TABLE_SERVICES.".id", "=", $serviceId)
+                    ->orderBy(TABLE_PREFIX.TABLE_DOCTORS.".id", "asc")
+                    ->select(
+                        DB::raw(TABLE_PREFIX.TABLE_DOCTORS.".id as doctor_id")
+                    );
+            
+            $result = $query->get();
+            
+            /**Step 2 - tìm các doctorId với số lượng bệnh nhân hiện khám trong ngày */
+            foreach($result as $element)
+            {
+                $doctorWithQuantity[] = array(
+                    "doctorId" => (int)$element->doctor_id,
+                    "quantity"=> (int)$this->getCurrentAppointmentQuantityByDoctorId($element->doctor_id)
+                );
+            }
+
+            /**Step 3 - đẩy các quantity vào các một mảng và trả ra quantitySmallest - tức số lượng bệnh nhân mà 1 bác sĩ 
+             * nào đó đang khám là ít nhất
+             */
+            $quantity = array();
+            for($i=0; $i < count($doctorWithQuantity); $i++)
+            {
+                $element = $doctorWithQuantity[$i];
+                $elementQuantity = $element["quantity"];
+                array_push($quantity, $elementQuantity);
+            }
+            $quantitySmallest = min($quantity);
+
+            /**Step 4 - dùng quantity smallest để lấy ra ID của bác sĩ đó
+             * Nếu có 2 người trở lên có cùng số bệnh nhân thì lấy ra bác sĩ đầu tiên
+             */
+            $output = 0;
+            for($i=0; $i < count($doctorWithQuantity); $i++)
+            {
+                $element = $doctorWithQuantity[$i];
+                $elementQuantity = $element["quantity"];
+                if( $elementQuantity == $quantitySmallest)
+                {
+                    $output = $element["doctorId"];
+                }
+                
+            }
+
+            $this->resp->doctorWithQuantity = $doctorWithQuantity;
+            return $output;
+        }
+
+        /**
+         * @author Phong-Kaster
+         * @since 19-12-2022
+         * hàm này sẽ tìm ra số lượng bệnh nhân hiện tại của bác sĩ trong 
+         * ngày hôm nay và lượt khám đang là processing
+         * trả về số lượng
+         */
+        private function getCurrentAppointmentQuantityByDoctorId($doctorId)
+        {
+            $today = Date("Y-m-d");// is used for storing the day when this appointment is created
+            $query = DB::table(TABLE_PREFIX.TABLE_DOCTORS)
+
+                    ->leftJoin(TABLE_PREFIX.TABLE_APPOINTMENTS,
+                                TABLE_PREFIX.TABLE_APPOINTMENTS.".doctor_id", "=", TABLE_PREFIX.TABLE_DOCTORS.".id")
+
+                    ->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".doctor_id", "=", $doctorId)
+                    ->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".status", "=", "processing")
+                    ->where(TABLE_PREFIX.TABLE_APPOINTMENTS.".date", "=", $today)
+                    ->select(
+                        DB::raw("COUNT(".TABLE_PREFIX.TABLE_APPOINTMENTS.".id) as quantity")
+                    );
+            $result = $query->get();
+            $output = $result[0]->quantity;
+            return $output;  
+        }
     }
 ?>

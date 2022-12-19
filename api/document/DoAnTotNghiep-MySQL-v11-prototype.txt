@@ -1,5 +1,5 @@
-1. Loại bỏ cột name, birthday, address ( thông tin cá nhân của bệnh nhân ) trong bảng booking
-2. Loại bỏ các cột patient_name, patient_birthday, patient_phone trong bảng appointment
+1. Thêm bảng drug để lưu tên thuốc.
+2. Thêm doctor_id vào bảng BOOKING.
 
 create table `tn_specialities`
 (
@@ -126,8 +126,8 @@ create table `tn_booking`
 (
 	id int AUTO_INCREMENT,
 	service_id int,
+	doctor_id int,
 	patient_id int,
-	booking_id int,
 	reason varchar(255),
 	appointment_date varchar(10),
 	appointment_hour varchar(5),
@@ -161,4 +161,11 @@ create table `tn_booking_photo`
 	booking_id int,
 	PRIMARY KEY(id),
 	FOREIGN KEY (booking_id) REFERENCES tn_booking(id)
+);
+
+create table `tn_drugs`
+(
+	id int AUTO_INCREMENT,
+	name varchar(255),
+	PRIMARY KEY(id)
 );

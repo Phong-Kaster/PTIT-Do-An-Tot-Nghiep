@@ -626,8 +626,8 @@ function makeAppointmentAction(method, url, id, params = [])
 $(document).ready(function(){
 
     /**Step 1 - prepare parameters */
-    let paramsSpeciality = {};
-    let paramsDoctor = {};
+    let paramsSpeciality = {length:100};
+    let paramsDoctor = {length:100};
 
 
     /**Step 2 - setup necessary filter dropdown */

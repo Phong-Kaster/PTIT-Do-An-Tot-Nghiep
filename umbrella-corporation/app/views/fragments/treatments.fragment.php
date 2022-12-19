@@ -37,10 +37,18 @@
                                 <input class="form-control" disabled id="id" type="text">
                             </div><!-- end NAME -->
 
-                            <div class="mb-6"><!-- NAME -->
-                                <label class="col-form-label" for="name">Tên</label>
-                                <input class="form-control" id="name" type="text">
-                            </div><!-- end NAME -->
+                            
+
+                            <div class="mb-6"><!-- TYPE -->
+                                <label class="col-form-label" for="name">Tên thuốc</label>
+                            </div><!-- end TYPE -->
+                            <div class="mb-6"><!-- TYPE -->
+                                <select class="js-example-basic-single" id="name" name="state">
+                                    
+                                </select>
+                                <div class="invalid-feedback">Please select a valid state.</div>
+                            </div>
+                            
 
                             <div class="mb-6"><!-- TYPE -->
                                 <label class="col-form-label" for="type">Hình thức thực hiện</label>

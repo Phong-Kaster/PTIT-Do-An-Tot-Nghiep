@@ -6,13 +6,43 @@
                 </div>
 
                 <div class="card-body">
+                    <p class="text-medium-emphasis small">
+                        Để tạo lượt khám cho bệnh nhân, có 2 phương thức như sau:
+                        <p class="text-medium-emphasis small">
+                            1. Nếu bệnh nhân đến khám trực tiếp, hãy chọn mục 
+                            <code> Nhu cầu khám bệnh </code>, hệ thống sẽ lựa chọn bác sĩ phù hợp để bệnh nhân được khám sớm nhất có thể
+                        </p>
+                        <p class="text-medium-emphasis small">
+                            2. Nếu bệnh nhân đặt khám online và chỉ định bác sĩ thì sẽ được xếp khám với bác sĩ đó.
+                        </p>
+                        <p class="text-medium-emphasis small">
+                            Trường hợp vừa chọn yêu cầu khám bệnh vừa chỉ định bác sĩ thì hệ thống sẽ ưu tiên xếp khám với bác sĩ đó.
+                        </p>
+                        <p class="text-medium-emphasis small">
+                            Trường hợp vừa bệnh nhân đặt khám online muốn khám sớm nhất có thể, hãy lựa chọn <code> Để hệ thống lựa chọn </code> và chọn Yêu cầu khám bệnh tương ứng.
+                        </p>
+                    </p>
                     <div class="example">
                             <div class="tab-pane p-3 active preview" role="tabpanel" id="preview-1252">
                                 
-                            
+                                <div class="row mb-4"><!-- SERVICE-->
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="service"><code>Phương thức 1: </code> Tạo theo nhu cầu khám bệnh</label>
+                                        <select class="form-select" id="service" required="">
+                                            <option selected="" disabled="" value="">Chọn...</option>
+                                            <option value="0">Để hệ thống lựa chọn</option>
+                                        </select>
+                                        <div class="invalid-feedback">Please select a valid state.</div>
+                                    </div>
+                                </div><!-- end SERVICE-->
+
+                                <p>
+                                    <code>Phương thức 2: </code> Chỉ định bác sĩ
+                                </p>
+
                                 <div class="row mb-4"><!--1. SPECIALITY | DOCTOR | DATE-->
                                     <div class="col-md-4"><!-- 1.1 SPECIALITY -->
-                                        <label class="form-label" for="speciality">Lọc theo chuyên khoa</label>
+                                    <label class="form-label" for="speciality">Chuyên khoa</label>
                                         <select class="form-select" id="speciality" required="">
                                             <option selected="" disabled="" value="">Chọn...</option>
                                             <!-- <option value="id">ID</option> -->
@@ -24,7 +54,7 @@
                                         <label class="form-label" for="doctor">Bác sĩ</label>
                                         <select class="form-select" id="doctor" required="">
                                             <option selected="" disabled="" value="">Chọn...</option>
-                                            <!-- <option value="id">ID</option> -->
+                                            <option value="0">Để hệ thống lựa chọn</option>
                                         </select>
                                         <div class="invalid-feedback">Please select a valid state.</div>
                                     </div><!-- end 1.2 DOCTOR -->

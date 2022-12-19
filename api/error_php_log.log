@@ -1068,3 +1068,131 @@ Stack trace:
 #1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\index.php(72): App->process()
 #2 {main}
   thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php on line 541
+[18-Dec-2022 09:42:13 UTC] PHP Notice:  Undefined variable: Booking in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DrugsController.php on line 196
+[18-Dec-2022 09:42:13 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DrugsController.php:196
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DrugsController.php(32): DrugsController->save()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php(613): DrugsController->process()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\index.php(72): App->process()
+#3 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\DrugsController.php on line 196
+[18-Dec-2022 14:10:12 UTC] PHP Parse error:  syntax error, unexpected ';', expecting ')' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 1093
+[18-Dec-2022 21:10:26 Asia/Ho_Chi_Minh] PHP Warning:  Use of undefined constant TABLE_APPOINMENTS - assumed 'TABLE_APPOINMENTS' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 1075
+[18-Dec-2022 21:10:26 Asia/Ho_Chi_Minh] PHP Warning:  Use of undefined constant TABLE_APPOINMENTS - assumed 'TABLE_APPOINMENTS' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 1076
+[18-Dec-2022 21:10:26 Asia/Ho_Chi_Minh] PHP Warning:  Use of undefined constant TABLE_APPOINMENTS - assumed 'TABLE_APPOINMENTS' (this will throw an Error in a future version of PHP) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 1083
+[18-Dec-2022 21:10:26 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Call to undefined method Pixie\QueryBuilder\QueryBuilderHandler::havingBy() in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php:1085
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php(880): AppointmentsController->getTheLaziestDoctor(5)
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php(27): AppointmentsController->newFlow()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php(613): AppointmentsController->process()
+#3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\index.php(72): App->process()
+#4 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 1085
+[18-Dec-2022 21:11:01 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Call to undefined method Pixie\QueryBuilder\QueryBuilderHandler::havingBy() in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php:1085
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php(880): AppointmentsController->getTheLaziestDoctor(5)
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php(27): AppointmentsController->newFlow()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php(613): AppointmentsController->process()
+#3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\index.php(72): App->process()
+#4 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 1085
+[18-Dec-2022 21:11:11 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Pixie\QueryBuilder\QueryBuilderHandler::having(), 1 passed in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 1085 and at least 3 expected in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php:576
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php(1085): Pixie\QueryBuilder\QueryBuilderHandler->having('patient_number')
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php(880): AppointmentsController->getTheLaziestDoctor(5)
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php(27): AppointmentsController->newFlow()
+#3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php(613): AppointmentsController->process()
+#4 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\index.php(72): App->process()
+#5 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php on line 576
+[18-Dec-2022 21:12:20 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'as patient_number FROM `tn_doctors` LEFT JOIN `tn_appointments` ON `tn_appoin...' at line 1 in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php:152
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php(152): PDOStatement->execute()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php(173): Pixie\QueryBuilder\QueryBuilderHandler->statement('SELECT tn_docto...', Array)
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php(1087): Pixie\QueryBuilder\QueryBuilderHandler->get()
+#3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsCont in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php on line 152
+[18-Dec-2022 21:12:32 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'as patient_number FROM `tn_doctors` LEFT JOIN `tn_appointments` ON `tn_appoin...' at line 1 in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php:152
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php(152): PDOStatement->execute()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php(173): Pixie\QueryBuilder\QueryBuilderHandler->statement('SELECT tn_docto...', Array)
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php(1087): Pixie\QueryBuilder\QueryBuilderHandler->get()
+#3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsCont in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php on line 152
+[18-Dec-2022 21:13:35 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'as patient_number FROM `tn_doctors` LEFT JOIN `tn_appointments` ON `tn_appoin...' at line 1 in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php:152
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php(152): PDOStatement->execute()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php(173): Pixie\QueryBuilder\QueryBuilderHandler->statement('SELECT tn_docto...', Array)
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php(1086): Pixie\QueryBuilder\QueryBuilderHandler->get()
+#3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsCont in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php on line 152
+[18-Dec-2022 21:14:01 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'tn_doctorsid' in 'on clause' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php:152
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php(152): PDOStatement->execute()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php(173): Pixie\QueryBuilder\QueryBuilderHandler->statement('SELECT tn_docto...', Array)
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php(1086): Pixie\QueryBuilder\QueryBuilderHandler->get()
+#3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php(880): AppointmentsController->getTheLaziestDoctor(5)
+#4 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php(27): AppointmentsController->newFlow()
+#5 D:\xam in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php on line 152
+[18-Dec-2022 21:16:14 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Pixie\QueryBuilder\QueryBuilderHandler::having(), 1 passed in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 1085 and at least 3 expected in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php:576
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php(1085): Pixie\QueryBuilder\QueryBuilderHandler->having(Object(Pixie\QueryBuilder\Raw))
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php(880): AppointmentsController->getTheLaziestDoctor(1)
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php(27): AppointmentsController->newFlow()
+#3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php(613): AppointmentsController->process()
+#4 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\index.php(72): App->process()
+#5 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php on line 576
+[18-Dec-2022 21:16:34 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Pixie\QueryBuilder\QueryBuilderHandler::having(), 1 passed in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 1085 and at least 3 expected in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php:576
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php(1085): Pixie\QueryBuilder\QueryBuilderHandler->having('patient_number')
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php(880): AppointmentsController->getTheLaziestDoctor(1)
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php(27): AppointmentsController->newFlow()
+#3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php(613): AppointmentsController->process()
+#4 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\index.php(72): App->process()
+#5 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php on line 576
+[19-Dec-2022 08:50:38 Asia/Ho_Chi_Minh] PHP Notice:  Undefined property: stdClass::$appointment_quantity in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 1098
+[19-Dec-2022 09:50:03 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '*) as quantity FROM `tn_doctors` LEFT JOIN `tn_appointments` ON `tn_appointme...' at line 1 in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php:152
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php(152): PDOStatement->execute()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php(173): Pixie\QueryBuilder\QueryBuilderHandler->statement('SELECT COUNT(tn...', Array)
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php(1120): Pixie\QueryBuilder\QueryBuilderHandler->get()
+#3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsCont in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php on line 152
+[19-Dec-2022 09:51:15 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '*) as quantity FROM `tn_doctors` LEFT JOIN `tn_appointments` ON `tn_appointme...' at line 1 in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php:152
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php(152): PDOStatement->execute()
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php(173): Pixie\QueryBuilder\QueryBuilderHandler->statement('SELECT COUNT(tn...', Array)
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php(1120): Pixie\QueryBuilder\QueryBuilderHandler->get()
+#3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsCont in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\vendor\usmanhalalit\pixie\src\Pixie\QueryBuilder\QueryBuilderHandler.php on line 152
+[19-Dec-2022 09:59:38 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'quantity' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 1100
+[19-Dec-2022 09:59:38 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'quantity' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 1100
+[19-Dec-2022 09:59:38 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'quantity' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 1100
+[19-Dec-2022 09:59:53 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'quantity' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 1100
+[19-Dec-2022 09:59:53 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'quantity' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 1100
+[19-Dec-2022 09:59:53 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'quantity' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 1100
+[19-Dec-2022 10:00:50 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'quantity' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 1100
+[19-Dec-2022 10:00:50 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'quantity' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 1100
+[19-Dec-2022 10:00:50 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'quantity' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 1100
+[19-Dec-2022 10:01:21 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'quantity' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 1100
+[19-Dec-2022 10:01:21 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'quantity' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 1100
+[19-Dec-2022 10:01:21 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'quantity' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 1100
+[19-Dec-2022 10:02:32 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'quantity' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 1102
+[19-Dec-2022 10:02:32 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'quantity' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 1102
+[19-Dec-2022 10:02:32 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'quantity' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 1102
+[19-Dec-2022 10:08:12 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'quantity' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 1099
+[19-Dec-2022 10:08:12 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'quantity' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 1099
+[19-Dec-2022 10:08:12 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'quantity' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 1099
+[19-Dec-2022 10:08:31 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Call to a member function get() on array in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php:1099
+Stack trace:
+#0 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php(880): AppointmentsController->getTheLaziestDoctor(1)
+#1 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php(27): AppointmentsController->newFlow()
+#2 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\core\App.php(613): AppointmentsController->process()
+#3 D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\index.php(72): App->process()
+#4 {main}
+  thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 1099
+[19-Dec-2022 10:08:45 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'quantity' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 1099
+[19-Dec-2022 10:08:45 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'quantity' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 1099
+[19-Dec-2022 10:08:45 Asia/Ho_Chi_Minh] PHP Notice:  Trying to get property 'quantity' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\AppointmentsController.php on line 1099
+[19-Dec-2022 04:05:30 UTC] PHP Parse error:  syntax error, unexpected '}' in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\isDoctorBusyController.php on line 92
+[19-Dec-2022 04:06:00 UTC] PHP Parse error:  syntax error, unexpected 'return' (T_RETURN) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\isDoctorBusyController.php on line 102
+[19-Dec-2022 04:06:35 UTC] PHP Parse error:  syntax error, unexpected 'return' (T_RETURN) in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\isDoctorBusyController.php on line 103
+[19-Dec-2022 04:06:46 UTC] PHP Notice:  Undefined variable: doctor_id in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\isDoctorBusyController.php on line 48
+[19-Dec-2022 04:07:01 UTC] PHP Notice:  Undefined variable: output in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\api\app\controllers\isDoctorBusyController.php on line 103

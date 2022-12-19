@@ -72,6 +72,7 @@
     <link href="<?= APPURL."/assets/vendors/@coreui/chartjs/css/coreui-chartjs.css?v=".VERSION ?>" rel="stylesheet">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" /><!-- SELECT 2 -->
   </head>
   <body>
     
@@ -106,8 +107,6 @@
     <!-- PRIVATE JS -->
     <script src="<?= APPURL."/assets/js/customized/treatments.js?v=".VERSION ?>"></script>
     <script>
-
-
         /**Step 1 - setup treatment info with ID below is the appointment ID */
         let id = <?= $id  ?>;        
         if( id == 0 )
@@ -119,7 +118,63 @@
             setupTreatmentTable(id);
         }
         setupButton();
-        
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script><!-- SELECT 2 -->
+    <script>
+      $(document).ready(function() {
+        /**
+         * @author Phong-Kaster
+         * @since 18-12-2022
+         */
+        function setupDropdownDrug()
+        {
+            $.ajax({
+                type: "GET",
+                url: API_URL + "/drugs",
+                dataType: "JSON",
+                success: function(resp) {
+                    // console.log(resp.result);
+                    // console.log(resp.msg);
+                    if(resp.result == 1)// result = 1
+                    {
+                        createDropdownDrug(resp);
+                    }
+                    else// result = 0
+                    {
+                        console.log(resp.msg);
+                    }
+                },
+                error: function(err) {
+                    Swal.fire('Oops...', "Oops! An error occured. Please try again later!", 'error');
+                }
+            })//end AJAX
+        }
+
+          /**
+           * @author Phong-Kaster
+           * @since 18-12-2022
+           */
+          function createDropdownDrug(resp)
+          {
+              $("#name").empty();
+              $("#name").append(`<option selected="" disabled="" value="">Chọn...</option>`);
+              for(let i = 0; i < resp.data.length; i++)
+              {
+                  let id = resp.data[i].id;
+                  let name = resp.data[i].name;
+                  let element = `<option value="${name}">${name}</option>`;
+                  $("#name").append(element);
+              }
+          }
+
+
+        setupDropdownDrug();
+          
+
+        $('.js-example-basic-single').select2({
+          dropdownParent: $("#form")
+        });
+    });
     </script>
   </body>
 </html>

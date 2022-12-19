@@ -246,18 +246,18 @@
 
 
             /**Step 4.7 - purpose */
-            $purpose_validation = isVietnameseName($purpose);
-            if( $purpose_validation == 0 ){
-                $this->resp->msg = "Purpose only has letters and space";
-                $this->jsonecho();
-            }
+            // $purpose_validation = isVietnameseName($purpose);
+            // if( $purpose_validation == 0 ){
+            //     $this->resp->msg = "Purpose only has letters and space";
+            //     $this->jsonecho();
+            // }
 
             /**Step 4.8 - instruction */
-            $instruction_validation = isAddress($instruction);
-            if( $instruction_validation == 0 ){
-                $this->resp->msg = "Instruction only has letters and space";
-                $this->jsonecho();
-            }
+            // $instruction_validation = isAddress($instruction);
+            // if( $instruction_validation == 0 ){
+            //     $this->resp->msg = "Instruction only has letters and space";
+            //     $this->jsonecho();
+            // }
 
             try 
             {

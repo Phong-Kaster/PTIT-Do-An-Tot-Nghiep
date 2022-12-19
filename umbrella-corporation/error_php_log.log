@@ -1734,3 +1734,6 @@ Stack trace:
   thrown in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\LoginController.php on line 49
 [14-Dec-2022 02:14:03 UTC] PHP Notice:  Undefined property: stdClass::$data in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\LoginController.php on line 49
 [14-Dec-2022 02:14:03 UTC] PHP Notice:  Trying to get property 'name' of non-object in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\controllers\LoginController.php on line 49
+[18-Dec-2022 11:51:57 UTC] PHP Notice:  Undefined variable: doctorId in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 162
+[18-Dec-2022 11:53:09 UTC] PHP Notice:  Undefined variable: doctorId in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 162
+[18-Dec-2022 11:53:42 UTC] PHP Notice:  Undefined variable: doctorId in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 162

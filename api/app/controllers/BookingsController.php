@@ -146,6 +146,7 @@
                 {
                     $data[] = array(
                         "id" => (int)$element->id,
+                        "doctor_id" => (int)$element->doctor_id, 
                         "patient_id" => (int)$element->patient_id,
                         "booking_name" => $element->booking_name,
                         "booking_phone" => $element->booking_phone,
@@ -167,11 +168,6 @@
                 }
 
 
-
-
-                
-    
-    
                 /**Step 5 - return */
                 $this->resp->result = 1;
                 $this->resp->quantity = $quantity;
@@ -227,6 +223,7 @@
 
 
             /**Step 3 - get data*/
+            $doctor_id = Input::post("doctor_id") ? Input::post("doctor_id") : 0;
             $patient_id = Input::post("patient_id") ? Input::post("patient_id") : 1;
             $service_id = Input::post("service_id");
             $booking_name = Input::post("booking_name");
@@ -259,7 +256,7 @@
                 $this->jsonecho();
             }
 
-            /**Step 4.1 - service validation */
+            /**Step 4.2 - service validation */
             $Service = Controller::model("Service", $service_id);
             if( !$Service->isAvailable() )
             {
@@ -267,7 +264,7 @@
                 $this->jsonecho();
             }
 
-            /**Step 4.2 - Booking Name */
+            /**Step 4.3 - Booking Name */
             $booking_name_validation = isVietnameseName($booking_name);
             if( $booking_name_validation == 0 ){
                 $this->resp->msg = "( Booking name ) Vietnamese name only has letters and space";
@@ -346,10 +343,23 @@
                 $this->jsonecho();
             }
 
+            /**Step 4.11 - Doctor */
+            if( $doctor_id > 0)
+            {
+                $Doctor = Controller::model("Doctor", $doctor_id);
+                if( !$Doctor->isAvailable() )
+                {
+                    $this->resp->msg = "Doctor is not available";
+                    $this->jsonecho();
+                }
+            }
+            
+
             try 
             {
                 $Booking = Controller::model("Booking");
-                $Booking->set("service_id", $service_id)
+                $Booking->set("doctor_id", $doctor_id)
+                    ->set("service_id", $service_id)
                     ->set("patient_id", $patient_id)
                     ->set("booking_name", $booking_name)
                     ->set("booking_phone", $booking_phone)
@@ -371,6 +381,8 @@
                                     ." which has been created successfully by you.";
                 $this->resp->data = array(
                     "id" => (int)$Booking->get("id"),
+                    "doctor_id" => (int)$Booking->get("doctor_id"),
+                    "patient_id" => (int)$Booking->get("patient_id"),
                     "booking_name" => $Booking->get("booking_name"),
                     "booking_phone" => $Booking->get("booking_phone"),
                     "name" => $Booking->get("name"),

@@ -34,7 +34,8 @@
             }
             else
             {
-                
+                $doctorId = isset($_GET['doctorId']) ? $_GET['doctorId'] : "" ;
+                $serviceId = isset($_GET['serviceId']) ? $_GET['serviceId'] : "" ;
                 $bookingId = isset($_GET['bookingId']) ? $_GET['bookingId'] : "" ;
                 $appointmentDate = isset($_GET['appointmentDate']) ? $_GET['appointmentDate'] : "" ;
                 $appointmentTime = isset($_GET['appointmentTime']) ? $_GET['appointmentTime'] : "";
@@ -63,6 +64,8 @@
                 $this->setVariable("patientReason", $patientReason);
                 $this->setVariable("patientBirthday", $patientBirthday);
                 $this->setVariable("bookingId", $bookingId);
+                $this->setVariable("serviceId", $serviceId);
+                $this->setVariable("doctorId", $doctorId);
                 $this->view("appointment");
             }
            

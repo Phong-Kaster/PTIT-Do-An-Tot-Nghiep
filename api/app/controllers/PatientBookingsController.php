@@ -115,6 +115,7 @@
                 {
                     $data[] = array(
                         "id" => (int)$element->id,
+                        "doctor_id" => (int)$element->doctor_id,
                         "patient_id" => (int)$element->patient_id,
                         "booking_name" => $element->booking_name,
                         "booking_phone" => $element->booking_phone,
@@ -154,6 +155,9 @@
          * @author Phong-Kaster
          * @since 18-10-2022
          * create a new paint
+         * bệnh nhân có thể đặt lịch hẹn(booking) tùy thích nhưng chỉ có 1 lượt khám (appointment)
+         * duy nhất tại mọi 
+         * thời điểm, bệnh nhân phải hoàn thành xong lượt khám hiện tại thì mới được đặt khám tiếp.
          */
         private function save()
         {
@@ -177,6 +181,7 @@
 
 
             /**Step 3 - get data*/
+            $doctor_id = Input::post("doctor_id");
             $service_id = Input::post("service_id");
             $booking_name = Input::post("booking_name") ? Input::post("booking_name") : $AuthUser->get("name");
 
@@ -198,17 +203,6 @@
             $update_at = date("Y-m-d H:i:s");
 
             /**Step 4 - validation */
-            $query = DB::table(TABLE_PREFIX.TABLE_BOOKINGS)
-                    ->where(TABLE_PREFIX.TABLE_BOOKINGS.".patient_id", "=", $AuthUser->get("id"))
-                    ->where(TABLE_PREFIX.TABLE_BOOKINGS.".status", "=", "processing")
-                    ->where(TABLE_PREFIX.TABLE_BOOKINGS.".appointment_date", "=", $appointment_date);
-            $result = $query->get();
-            if( count($result) > 0)
-            {
-                $this->resp->msg = "Mỗi bệnh nhân trong một ngày chỉ có thể tạo một lịch hẹn. Để tiếp tục, bạn cần khám hoặc hủy lịch hẹn trước đó trong cùng ngày!";
-                $this->jsonecho();
-            }
-
             /**Step 4.1 - service validation */
             $Service = Controller::model("Service", $service_id);
             if( !$Service->isAvailable() )
@@ -216,6 +210,31 @@
                 $this->resp->msg = "Service is not available";
                 $this->jsonecho();
             }
+
+            $query = DB::table(TABLE_PREFIX.TABLE_BOOKINGS)
+                    
+                    ->where(TABLE_PREFIX.TABLE_BOOKINGS.".patient_id", "=", $AuthUser->get("id"))
+                    ->where(TABLE_PREFIX.TABLE_BOOKINGS.".status", "=", "processing")
+                    ->where(TABLE_PREFIX.TABLE_BOOKINGS.".appointment_date", "=", $appointment_date)
+                    ->where(TABLE_PREFIX.TABLE_BOOKINGS.".service_id", "=", $Service->get("id"));
+            $result = $query->get();
+            if( count($result) > 0)
+            {
+                $this->resp->msg = "Bạn đã có lịch hẹn với nhu cầu khám ".$Service->get("name")." rồi !";
+                $this->jsonecho();
+            }
+
+            /**Step 4.2 - doctorId validation */
+            if($doctor_id > 0)
+            {
+                $Doctor = Controller::model("Doctor", $doctor_id);
+                if( !$Doctor->isAvailable() )
+                {
+                    $this->resp->msg = "Doctor is not available";
+                    $this->jsonecho();
+                }
+            }
+            
 
             /**Step 4.2 - Booking Name */
             $booking_name_validation = isVietnameseName($booking_name);
@@ -299,7 +318,8 @@
             try 
             {
                 $Booking = Controller::model("Booking");
-                $Booking->set("service_id", $service_id)
+                $Booking->set("doctor_id", $doctor_id)
+                    ->set("service_id", $service_id)
                     ->set("patient_id", $AuthUser->get("id"))
                     ->set("booking_name", $booking_name)
                     ->set("booking_phone", $booking_phone)
@@ -337,6 +357,7 @@
                                     ." which has been created successfully by you. ";
                 $this->resp->data = array(
                     "id" => (int)$Booking->get("id"),
+                    "doctor_id" => (int)$Booking->get("doctor_id"),
                     "booking_name" => $Booking->get("booking_name"),
                     "booking_phone" => $Booking->get("booking_phone"),
                     "name" => $Booking->get("name"),

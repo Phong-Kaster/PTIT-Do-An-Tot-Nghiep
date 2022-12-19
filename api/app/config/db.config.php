@@ -32,3 +32,4 @@ define("TABLE_NOTIFICATIONS", "notifications");
 define("TABLE_ROOMS", "rooms");
 
 define("TABLE_BOOKING_PHOTOS", "booking_photo");
+define("TABLE_DRUGS", "drugs");

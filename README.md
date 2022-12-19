@@ -23,6 +23,7 @@
     - [**05-10-2022**](#05-10-2022)
     - [**20-10-2022**](#20-10-2022)
   - [**12-12-2022**](#12-12-2022)
+  - [**18-12-2022**](#18-12-2022)
 - [**Bonus**](#bonus)
 - [**Timeline**](#timeline)
   - [**Phase 0: 01-09-2022 to 28-09-2022**](#phase-0-01-09-2022-to-28-09-2022)
@@ -30,6 +31,7 @@
   - [**Phase 2: 26-10-2022 to 13-11-2022**](#phase-2-26-10-2022-to-13-11-2022)
   - [**Phase 3: 15-11-2022 to 03-12-2022**](#phase-3-15-11-2022-to-03-12-2022)
   - [**Phase 4: 08-12-2022 to 11-12-2022**](#phase-4-08-12-2022-to-11-12-2022)
+  - [**Phase 5: 16-12-2022 to xx-12-2022**](#phase-5-16-12-2022-to-xx-12-2022)
 - [**Controller Timeline**](#controller-timeline)
 - [**Special Thanks**](#special-thanks)
 - [Made with 💘 and PHP ](#made-with--and-php-)
@@ -67,7 +69,7 @@ Nếu các bạn có nhu cầu muốn tham khảo, hãy ấn vào [**đây**](ht
 # [**Database**](#database)
 
 <p align="center">
-    <img src="./photo/database-version-10-prototype.png" />
+    <img src="./photo/database-version-11-prototype.png" />
 </p>
 <h3 align="center">
 
@@ -299,6 +301,11 @@ một đồng nhưng việc giải nhân tiền học bổng và sửa chữa c�
 
 TUI, NGUYỄN THÀNH PHONG, XIN TRÂN TRỌNG THÔNG BÁO VỚI TOÀN THỂ QUÝ ZỊ 🔊🔊🔊 NGÀY HÔM NAY, 
 TỨC NGÀY 12-12-2022, TÔI ĐÃ CHÍNH THỨC HOÀN THÀNH ĐỒ ÁN TỐT NGHIỆP CỦA MÌNH VÀ 100% YÊU CẦU CỦA THẦY NGUYỄN ANH HÀO ✌✌
+
+## [**18-12-2022**](#)
+
+Làm đúng ý thầy Hào thì lại sai ý thầy giáo phản biện. Chán vãi l*n, giờ lại phải è cổ ra sửa lại 
+cho đúng.
 
 # [**Bonus**](#bonus)
 
@@ -805,9 +812,14 @@ sơ bệnh án trước khi khám của bệnh nhân do thầy Hào nhắc nên 
 
 2. Web - Chức năng tạo/ sửa thông tin dịch vụ
 
+## [**Phase 5: 16-12-2022 to xx-12-2022**](#phase-5-16-12-2022-to-xx-12-2022)
+
 - **16-12-2022**: Soạn Power Point để tóm tắt đề tài & kiểm tra lần cuối ứng dụng Android.
 
 - **18-12-2022**: Kiểm tra lại lần cuối trước khi báo cáo hôm nay với cả giáo viên hướng dẫn ( thầy Hào) và giáo viên phản biện ( thầy Trụ ).
+
+- **19-12-2022**: Thêm cơ chế tự động lựa chọn bác sĩ phù hợp với nhu cầu khám bệnh.
+Từ nay sẽ không phải chỉ định bằng tay nếu không bắt buộc
 
 # [**Controller Timeline**](#controller-timeline)
 

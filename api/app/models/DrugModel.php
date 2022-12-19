@@ -7,7 +7,7 @@
 	 * 
 	 */
 	
-	class BookingModel extends DataEntry
+	class DrugModel extends DataEntry
 	{	
 		/**
 		 * Extend parents constructor and select entry
@@ -28,11 +28,15 @@
 	     */
 	    public function select($uniqid)
 	    {
-	    	$col = "id";
+	    	if (is_int($uniqid) || ctype_digit($uniqid)) {
+	    		$col = $uniqid > 0 ? "id" : null;
+	    	} else {
+	    		$col = "name";
+	    	}
 
 
 	    	if ($col) {
-		    	$query = DB::table(TABLE_PREFIX.TABLE_BOOKINGS)
+		    	$query = DB::table(TABLE_PREFIX.TABLE_DRUGS)
 			    	      ->where($col, "=", $uniqid)
 			    	      ->limit(1)
 			    	      ->select("*");
@@ -61,21 +65,7 @@
 	    public function extendDefaults()
 	    {
 	    	$defaults = array(
-				"doctor_id" => "",
-                "patient_id" => "",
-				"service_id" => "",
-				"booking_name" => "",
-				"booking_phone" => "",
-				"name" => "",
-				"gender" => "",
-				"birthday" => "",
-				"address" => "",
-				"reason" => "",
-				"appointment_date" => "",
-				"appointment_time" => "",
-				"status" => "",
-				"create_at" => "",
-				"update_at" => ""
+                "name" => ""
 	    	);
 
 
@@ -96,24 +86,10 @@
 
 	    	$this->extendDefaults();
 
-	    	$id = DB::table(TABLE_PREFIX.TABLE_BOOKINGS)
+	    	$id = DB::table(TABLE_PREFIX.TABLE_DRUGS)
 		    	->insert(array(
 		    		"id" => null,
-					"doctor_id" => $this->get("doctor_id"),
-		    		"patient_id" => $this->get("patient_id"),
-					"service_id" => $this->get("service_id"),
-					"booking_name" => $this->get("booking_name"),
-					"booking_phone" => $this->get("booking_phone"),
-					"name" => $this->get("name"),
-					"gender" => $this->get("gender"),
-					"birthday" => $this->get("birthday"),
-					"address" => $this->get("address"),
-					"reason" => $this->get("reason"),
-                    "appointment_date" => $this->get("appointment_date"),
-                    "appointment_time" => $this->get("appointment_time"),
-					"status" => $this->get("status"),
-					"create_at" => $this->get("create_at"),
-					"update_at" => $this->get("update_at")
+		    		"name" => $this->get("name")
 		    	));
 
 	    	$this->set("id", $id);
@@ -132,24 +108,10 @@
 
 	    	$this->extendDefaults();
 
-	    	$id = DB::table(TABLE_PREFIX.TABLE_BOOKINGS)
+	    	$id = DB::table(TABLE_PREFIX.TABLE_DRUGS)
 	    		->where("id", "=", $this->get("id"))
 		    	->update(array(
-					"doctor_id" => $this->get("doctor_id"),
-					"patient_id" => $this->get("patient_id"),
-					"service_id" => $this->get("service_id"),
-					"booking_name" => $this->get("booking_name"),
-					"booking_phone" => $this->get("booking_phone"),
-					"name" => $this->get("name"),
-					"gender" => $this->get("gender"),
-					"birthday" => $this->get("birthday"),
-					"address" => $this->get("address"),
-					"reason" => $this->get("reason"),
-                    "appointment_date" => $this->get("appointment_date"),
-                    "appointment_time" => $this->get("appointment_time"),
-					"status" => $this->get("status"),
-					"create_at" => $this->get("create_at"),
-					"update_at" => $this->get("update_at")
+		    		"name" => $this->get("name")
 		    	));
 
 	    	return $this;
@@ -164,7 +126,7 @@
 	    	if(!$this->isAvailable())
 	    		return false;
 
-	    	DB::table(TABLE_PREFIX.TABLE_BOOKINGS)
+	    	DB::table(TABLE_PREFIX.TABLE_DRUGS)
             ->where("id", "=", $this->get("id"))->delete();
 	    	$this->is_available = false;
 	    	return true;
