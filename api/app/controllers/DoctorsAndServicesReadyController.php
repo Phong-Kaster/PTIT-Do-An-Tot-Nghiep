@@ -84,9 +84,10 @@
                         return $item->doctor_id;
                         }, $doctorNotReady);
 
+                
+
                     /**Step 5 - get doctor who are NOT working with this service */
                     $query = DB::table(TABLE_PREFIX.TABLE_DOCTORS)
-                            ->whereNotIn(TABLE_PREFIX.TABLE_DOCTORS.".id", $IDs)
 
                             ->leftJoin(TABLE_PREFIX.TABLE_SPECIALITIES,
                                         TABLE_PREFIX.TABLE_SPECIALITIES.".id", "=", TABLE_PREFIX.TABLE_DOCTORS.".speciality_id")
@@ -95,6 +96,10 @@
                                 DB::raw(TABLE_PREFIX.TABLE_SPECIALITIES.".id as speciality_id"),
                                 DB::raw(TABLE_PREFIX.TABLE_SPECIALITIES.".name as speciality_name"),
                             ]);
+                    if( count($IDs) > 0)
+                    {
+                        $query->whereNotIn(TABLE_PREFIX.TABLE_DOCTORS.".id", $IDs);
+                    }
                     
                     $doctorReady = $query->get();
                     $quantity = count($doctorReady);

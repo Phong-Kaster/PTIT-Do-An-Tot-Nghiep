@@ -168,7 +168,7 @@
 
 
             /**Step 2 - get required data */
-            $required_fields = ["service_id", "booking_name", "booking_phone",
+            $required_fields = ["booking_name", "booking_phone",
                                 "name", "appointment_time", "appointment_date"];
             foreach($required_fields as $field)
             {
@@ -181,8 +181,8 @@
 
 
             /**Step 3 - get data*/
-            $doctor_id = Input::post("doctor_id");
-            $service_id = Input::post("service_id");
+            $doctor_id = (int)Input::post("doctor_id");
+            $service_id = Input::post("service_id") != null ? (int)Input::post("service_id") : 1;
             $booking_name = Input::post("booking_name") ? Input::post("booking_name") : $AuthUser->get("name");
 
             $booking_phone = Input::post("booking_phone") ? Input::post("booking_phone") : $AuthUser->get("phone");
@@ -204,6 +204,13 @@
 
             /**Step 4 - validation */
             /**Step 4.1 - service validation */
+            if( $service_id == 0 && $doctor_id == 0)
+            {
+                $this->resp->msg = "Bạn cần chọn bác sĩ hoặc nhu cầu khám bệnh để tạo lịch hẹn !";
+                $this->jsonecho();
+            }
+
+
             $Service = Controller::model("Service", $service_id);
             if( !$Service->isAvailable() )
             {
@@ -212,17 +219,20 @@
             }
 
             $query = DB::table(TABLE_PREFIX.TABLE_BOOKINGS)
-                    
-                    ->where(TABLE_PREFIX.TABLE_BOOKINGS.".patient_id", "=", $AuthUser->get("id"))
-                    ->where(TABLE_PREFIX.TABLE_BOOKINGS.".status", "=", "processing")
-                    ->where(TABLE_PREFIX.TABLE_BOOKINGS.".appointment_date", "=", $appointment_date)
-                    ->where(TABLE_PREFIX.TABLE_BOOKINGS.".service_id", "=", $Service->get("id"));
+                ->where(TABLE_PREFIX.TABLE_BOOKINGS.".patient_id", "=", $AuthUser->get("id"))
+                ->where(TABLE_PREFIX.TABLE_BOOKINGS.".status", "=", "processing")
+                ->where(TABLE_PREFIX.TABLE_BOOKINGS.".appointment_date", "=", $appointment_date)
+                ->where(TABLE_PREFIX.TABLE_BOOKINGS.".service_id", "=", $Service->get("id"));
             $result = $query->get();
             if( count($result) > 0)
             {
                 $this->resp->msg = "Bạn đã có lịch hẹn với nhu cầu khám ".$Service->get("name")." rồi !";
                 $this->jsonecho();
             }
+            
+            
+
+            
 
             /**Step 4.2 - doctorId validation */
             if($doctor_id > 0)

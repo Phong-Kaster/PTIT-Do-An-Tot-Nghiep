@@ -147,7 +147,7 @@ function setupDropdownDoctorReady(id)
     /**Step 1 - make AJAX call */
     $.ajax({
         type: "GET",
-        url: API_URL + "/doctors-and-services-ready/" +id,
+        url: `${API_URL}/doctors-and-services-ready/${id}`,
         dataType: "JSON",
         success: function(resp) {
             if(resp.result == 1)// result = 1

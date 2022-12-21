@@ -55,7 +55,7 @@
             $room_id          = Input::get("room_id");// Room_id
             $speciality_id  = Input::get("speciality_id");
             $active         = Input::get("active") ? (int)Input::get("active") : "";
-  
+            $service_id     = Input::get("service_id");
             try
             {
                 /**Step 3 - query */
@@ -63,7 +63,12 @@
                         ->leftJoin(TABLE_PREFIX.TABLE_SPECIALITIES, 
                                     TABLE_PREFIX.TABLE_SPECIALITIES.".id","=", TABLE_PREFIX.TABLE_DOCTORS.".speciality_id")
                         ->leftJoin(TABLE_PREFIX.TABLE_ROOMS, 
-                                    TABLE_PREFIX.TABLE_ROOMS.".id","=", TABLE_PREFIX.TABLE_DOCTORS.".room_id")       
+                                    TABLE_PREFIX.TABLE_ROOMS.".id","=", TABLE_PREFIX.TABLE_DOCTORS.".room_id")
+                        ->leftJoin(TABLE_PREFIX.TABLE_DOCTOR_AND_SERVICE,
+                                    TABLE_PREFIX.TABLE_DOCTOR_AND_SERVICE.".doctor_id", "=", TABLE_PREFIX.TABLE_DOCTORS.".id")
+                        ->leftJoin(TABLE_PREFIX.TABLE_SERVICES,
+                                    TABLE_PREFIX.TABLE_SERVICES.".id", "=", TABLE_PREFIX.TABLE_DOCTOR_AND_SERVICE.".service_id")
+                        ->groupBy(TABLE_PREFIX.TABLE_DOCTORS.".id")     
                         ->select([
                             TABLE_PREFIX.TABLE_DOCTORS.".*",
                             DB::raw(TABLE_PREFIX.TABLE_SPECIALITIES.".id as speciality_id"),
@@ -116,12 +121,16 @@
                 }
                 if( $speciality_id )
                 {
-                    $query->where(TABLE_PREFIX.TABLE_DOCTORS.".speciality_id", "=", $speciality_id);
+                    $query->where(TABLE_PREFIX.TABLE_SPECIALITIES.".id", "=", $speciality_id);
                 }
 
                 if( $active )
                 {
                     $query->where(TABLE_PREFIX.TABLE_DOCTORS.".active", "=", $active);
+                }
+                if( $service_id)
+                {
+                    $query->where(TABLE_PREFIX.TABLE_SERVICES.".id", "=", $service_id);
                 }
 
 

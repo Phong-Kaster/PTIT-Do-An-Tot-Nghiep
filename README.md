@@ -818,8 +818,19 @@ sơ bệnh án trước khi khám của bệnh nhân do thầy Hào nhắc nên 
 
 - **18-12-2022**: Kiểm tra lại lần cuối trước khi báo cáo hôm nay với cả giáo viên hướng dẫn ( thầy Hào) và giáo viên phản biện ( thầy Trụ ).
 
-- **19-12-2022**: Thêm cơ chế tự động lựa chọn bác sĩ phù hợp với nhu cầu khám bệnh.
+- **19-12-2022**: 
+1. Thêm cơ chế tự động lựa chọn bác sĩ phù hợp với nhu cầu khám bệnh.
 Từ nay sẽ không phải chỉ định bằng tay nếu không bắt buộc
+
+2. Android - Thêm nút tạo lịch hẹn với profile của bác sĩ
+
+- **20-12-2022**: Android - Thêm mục "Cẩm nang" và "Tạp chí sức khỏe" trên màn hình chính
+
+- **21-12-2022**:
+
+1. Android - Thêm layout với kích thước hiển thị khác nhau cho "Cẩm nang" và "Tạp chí sức khỏe"
+
+2. Web & API - mục phác đồ điều trị thêm cột "repeat_days" và "repeat_time"
 
 # [**Controller Timeline**](#controller-timeline)
 
