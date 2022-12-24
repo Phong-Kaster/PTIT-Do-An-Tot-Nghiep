@@ -1,0 +1,168 @@
+create table `tn_specialities`
+(
+	id int primary key AUTO_INCREMENT,
+	name varchar(30),
+	description varchar(255),
+	image varchar(255)
+);
+
+create table `tn_rooms`
+(
+	id int AUTO_INCREMENT,
+	name varchar(15),
+	location varchar(255),
+	PRIMARY KEY(id)
+);
+
+create table `tn_doctors`
+(
+	id int AUTO_INCREMENT,
+	email varchar(255),
+	phone varchar(15),
+	password varchar(255),
+	name varchar(50),
+	description varchar(255),
+	price int,
+	role varchar(10),
+	active int,
+	avatar varchar(255),
+	create_at datetime,
+	update_at datetime,
+	speciality_id int,
+	room_id int,
+	recovery_token varchar(255),
+	PRIMARY KEY(id),
+	FOREIGN KEY (speciality_id) REFERENCES tn_specialities(id),
+	FOREIGN KEY (room_id) REFERENCES tn_rooms(id)
+);
+
+create table `tn_patients`
+(
+	id int AUTO_INCREMENT,
+	email varchar(255),
+	phone varchar(15),
+	password varchar(255),
+	name varchar(50),
+	gender int,
+	birthday varchar(10),
+	address varchar(255),
+	avatar varchar(255),
+	create_at datetime,
+	update_at datetime,
+	PRIMARY KEY(id)
+);
+
+
+
+create table `tn_appointments`
+(
+	id int AUTO_INCREMENT,
+	booking_id int,
+	doctor_id int,
+    patient_id int,
+	numerical_order int,
+	position int,
+	appointment_time varchar(20),
+    date varchar(10),
+	status varchar(15),
+	create_at datetime,
+	update_at datetime,
+	PRIMARY KEY(id),
+	FOREIGN KEY (doctor_id) REFERENCES tn_doctors(id),
+    FOREIGN KEY (patient_id) REFERENCES tn_patients(id)
+);
+
+create table `tn_appointment_records`
+(
+	id int AUTO_INCREMENT,
+	appointment_id int,
+	reason varchar(100),
+	description text,
+	status_before varchar(255),
+	status_after varchar(255),
+	create_at datetime,
+	update_at datetime,
+	PRIMARY KEY(id),
+	FOREIGN KEY (appointment_id) REFERENCES tn_appointments(id)
+);
+
+create table `tn_treatments`
+(
+	id int AUTO_INCREMENT,
+	appointment_id int,
+	name varchar(50),
+	type varchar(20),
+	times int,
+	purpose varchar(50),
+	instruction varchar(255),
+	repeat_days varchar(255),
+	repeat_time varchar(5),
+	PRIMARY KEY(id),
+	FOREIGN KEY (appointment_id) REFERENCES tn_appointments(id)
+);
+
+
+create table `tn_services`
+(
+	id int AUTO_INCREMENT,
+    name varchar(255),
+	image varchar(255),
+	description TEXT,
+	PRIMARY KEY(id)
+);
+
+create table `tn_doctor_and_service`
+(
+	id int AUTO_INCREMENT,
+	service_id int,
+	doctor_id int,
+	PRIMARY KEY(id),
+    FOREIGN KEY (doctor_id) REFERENCES tn_doctors(id),
+	FOREIGN KEY (service_id) REFERENCES tn_services(id)
+);
+
+create table `tn_booking`
+(
+	id int AUTO_INCREMENT,
+	service_id int,
+	patient_id int,
+	appointment_date varchar(10),
+	appointment_hour varchar(5),
+	status varchar(15),
+	create_at datetime,
+	update_at datetime,
+	PRIMARY KEY(id),
+	FOREIGN KEY (patient_id) REFERENCES tn_patients(id),
+	FOREIGN KEY (service_id) REFERENCES tn_services(id)
+);
+
+
+create table `tn_notifications`
+(
+	id int AUTO_INCREMENT,
+	message TEXT,
+	record_id int,
+	record_type varchar(20),
+	patient_id int,
+	is_read int,
+	create_at datetime,
+	update_at datetime,
+	PRIMARY KEY(id),
+	FOREIGN KEY (patient_id) REFERENCES tn_patients(id)
+);
+
+create table `tn_booking_photo`
+(
+	id int AUTO_INCREMENT,
+	url varchar(255),
+	booking_id int,
+	PRIMARY KEY(id),
+	FOREIGN KEY (booking_id) REFERENCES tn_booking(id)
+);
+
+create table `tn_drugs`
+(
+	id int AUTO_INCREMENT,
+	name varchar(255),
+	PRIMARY KEY(id)
+);

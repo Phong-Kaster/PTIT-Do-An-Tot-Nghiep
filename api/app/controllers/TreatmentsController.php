@@ -136,7 +136,9 @@
                         "type" => $element->type,
                         "times" => (int)$element->times,
                         "purpose" => $element->purpose,
-                        "instruction" => $element->instruction
+                        "instruction" => $element->instruction,
+                        "repeat_days" => $element->repeat_days,
+                        "repeat_time" => $element->repeat_time,
                     );
                 }
     
@@ -185,6 +187,8 @@
             $times = Input::post("times");
             $purpose = Input::post("purpose");
             $instruction = Input::post("instruction");
+            $repeat_days = Input::post("repeat_days") ? Input::post("repeat_days") : "Thực hiện một lần";
+            $repeat_time = Input::post("repeat_time") ? Input::post("repeat_time") : "Bác sĩ không chỉ định";
 
 
             /**Step 4 - validation */
@@ -268,6 +272,8 @@
                         ->set("times", $times)
                         ->set("purpose", $purpose)
                         ->set("instruction", $instruction)
+                        ->set("repeat_days", $repeat_days)
+                        ->set("repeat_time", $repeat_time)
                         ->save();
 
                 $this->resp->result = 1;
@@ -279,7 +285,9 @@
                     "type" => $Treatment->get("type"),
                     "times" => (int)$Treatment->get("times"),
                     "purpose" => $Treatment->get("purpose"),
-                    "instruction" => $Treatment->get("instruction")
+                    "instruction" => $Treatment->get("instruction"),
+                    "repeat_days" => $Treatment->get("repeat_days"),
+                    "repeat_time" => $Treatment->get("repeat_time")
                 );
                 $this->jsonecho();
             } 

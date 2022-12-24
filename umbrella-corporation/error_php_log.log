@@ -1737,3 +1737,7 @@ Stack trace:
 [18-Dec-2022 11:51:57 UTC] PHP Notice:  Undefined variable: doctorId in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 162
 [18-Dec-2022 11:53:09 UTC] PHP Notice:  Undefined variable: doctorId in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 162
 [18-Dec-2022 11:53:42 UTC] PHP Notice:  Undefined variable: doctorId in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 162
+[22-Dec-2022 09:47:39 UTC] PHP Notice:  Undefined variable: serviceId in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 166
+[22-Dec-2022 09:47:39 UTC] PHP Notice:  Undefined variable: doctorId in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 167
+[23-Dec-2022 05:07:47 UTC] PHP Notice:  Undefined variable: serviceId in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 166
+[23-Dec-2022 05:07:47 UTC] PHP Notice:  Undefined variable: doctorId in D:\xampp\htdocs\PTIT-Do-An-Tot-Nghiep\umbrella-corporation\app\views\appointment.php on line 167

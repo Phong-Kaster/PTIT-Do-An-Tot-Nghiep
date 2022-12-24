@@ -70,7 +70,9 @@
                 "type" => "",
                 "times" => "",
                 "purpose" => "",
-                "instruction" => ""
+                "instruction" => "",
+				"repeat_days" => "",
+				"repeat_time" => ""
 	    	);
 
 
@@ -99,7 +101,9 @@
                     "type" => $this->get("type"),
                     "times" => $this->get("times"),
                     "purpose" => $this->get("purpose"),
-                    "instruction" => $this->get("instruction")
+                    "instruction" => $this->get("instruction"),
+					"repeat_days" => $this->get("repeat_days"),
+					"repeat_time" => $this->get("repeat_time"),
 		    	));
 
 	    	$this->set("id", $id);
@@ -126,7 +130,9 @@
                     "type" => $this->get("type"),
                     "times" => $this->get("times"),
                     "purpose" => $this->get("purpose"),
-                    "instruction" => $this->get("instruction")
+                    "instruction" => $this->get("instruction"),
+					"repeat_days" => $this->get("repeat_days"),
+					"repeat_time" => $this->get("repeat_time")
 		    	));
 
 	    	return $this;

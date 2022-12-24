@@ -95,7 +95,9 @@
                         "type" => $element->type,
                         "times" => (int)$element->times,
                         "purpose" => $element->purpose,
-                        "instruction" => $element->instruction
+                        "instruction" => $element->instruction,
+                        "repeat_days" => $element->repeat_days,
+                        "repeat_time" => $element->repeat_time
                     );
                 }
     

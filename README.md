@@ -832,6 +832,12 @@ Từ nay sẽ không phải chỉ định bằng tay nếu không bắt buộc
 
 2. Web & API - mục phác đồ điều trị thêm cột "repeat_days" và "repeat_time"
 
+- **22-12-2022**: Android - hoàn thiện lần cuối cùng.
+
+- **23-12-2022**: Soạn lại power point để chuẩn bị báo cáo 
+
+- **24-12-2022**: Hoàn thiện lần cuối cùng power point
+
 # [**Controller Timeline**](#controller-timeline)
 
 Phần này mình lưu lại trình tự mình viết đồ án này. Nếu các bạn có nhu cầu tham khảo cách xử lý của mình. Các bạn có thể đọc code theo trình tự 

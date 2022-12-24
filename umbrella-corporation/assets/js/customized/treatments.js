@@ -115,6 +115,8 @@ function getNecessaryInfo()
     let times = $("#form #times").val();
     let purpose = $("#form #purpose").val();
     let instruction = $("#form #instruction").val();
+    let repeatDays = $("#form #repeatDays").val();
+    let repeatTime = $("#form #repeatTime").val();
 
     let params = {
         appointment_id: appointmentId,
@@ -122,7 +124,9 @@ function getNecessaryInfo()
         type: type,
         times: times,
         purpose: purpose,
-        instruction: instruction
+        instruction: instruction,
+        repeat_days: repeatDays,
+        repeat_time: repeatTime
     }
 
     return params;
@@ -258,6 +262,7 @@ function setupButton()
         let params = getNecessaryInfo();
         let id = $("#form #id").val();
 
+        console.log(params);
 
         /**SET METHOD AND URL */
         method = "PUT";

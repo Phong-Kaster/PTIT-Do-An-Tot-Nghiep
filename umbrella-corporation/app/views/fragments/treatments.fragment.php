@@ -32,49 +32,70 @@
                     </div>
                     <div class="modal-body">
                         <form>
-                        <div class="mb-6"><!-- NAME -->
+                        <div hidden class="mb-6"><!-- NAME -->
                                 <label class="col-form-label" for="id">ID</label>
                                 <input class="form-control" disabled id="id" type="text">
-                            </div><!-- end NAME -->
+                        </div><!-- end NAME -->
 
-                            
+                        <div><!-- TYPE -->
+                            <label class="col-form-label" for="name">Tên thuốc</label>
+                        </div><!-- end TYPE -->
+                        
+                        <div><!-- TYPE -->
+                            <select class="js-example-basic-single" id="name" name="state">
+                            </select>
+                            <div class="invalid-feedback">Please select a valid state.</div>
+                        </div>
 
-                            <div class="mb-6"><!-- TYPE -->
-                                <label class="col-form-label" for="name">Tên thuốc</label>
-                            </div><!-- end TYPE -->
-                            <div class="mb-6"><!-- TYPE -->
-                                <select class="js-example-basic-single" id="name" name="state">
-                                    
-                                </select>
-                                <div class="invalid-feedback">Please select a valid state.</div>
+
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    <label class="col-form-label" for="type">Hình thức thực hiện</label>
+                                    <select class="form-select" id="type" required="">
+                                        <option selected="" value="Uống">Uống</option>
+                                        <option value="Tiêm">Tiêm</option>
+                                        <option value="Truyền nước">Truyền nước</option>
+                                    </select>
+                                    <div class="invalid-feedback">Please select a valid state.</div>
+                                </div>
+
+                                <div class="col">
+                                    <label class="col-form-label" for="times">Số lần thực hiện</label>
+                                    <input class="form-control" id="times" type="number">
+                                </div>
                             </div>
-                            
 
-                            <div class="mb-6"><!-- TYPE -->
-                                <label class="col-form-label" for="type">Hình thức thực hiện</label>
-                                <select class="form-select" id="type" required="">
-                                    <option selected="" value="Uống">Uống</option>
-                                    <option value="Tiêm">Tiêm</option>
-                                </select>
-                                <div class="invalid-feedback">Please select a valid state.</div>
-                            </div><!-- end TYPE -->
+                            <div class="row"><!-- LỊCH UỐNG THUỐC & THỜI GIAN UỐNG THUỐC -->
+                                <div class="col">
+                                        <label class="form-label" for="repeatDays">Lịch uống thuốc</label>
+                                        <select class="form-select" id="repeatDays" required="">
+                                            <option selected>Hàng ngày</option>
+                                            <option>Một lần</option>
+                                            <option>Từ thứ 2 đến thứ 6</option>
+                                            <option>Các ngày chẵn trong tuần ( T2 - 4 - 6)</option>
+                                            <option>Các ngày lẻ trong tuần ( T3 - 5 - 7)</option>
+                                        </select>
+                                    <div class="invalid-feedback">Please select a valid state.</div>
+                                </div>
+
+                                <div class="col">
+                                    <label class="col-form-label" for="repeatTime">Thời gian uống thuốc</label>
+                                    <input class="form-control" id="repeatTime" type="text"></input>
+                                </div>
+                            </div><!-- end LỊCH UỐNG THUỐC & THỜI GIAN UỐNG THUỐC -->
 
 
-                            <div class="mb-6"><!-- TIMES -->
-                                <label class="col-form-label" for="times">Số lần thực hiện</label>
-                                <input class="form-control" id="times" type="number">
-                            </div><!-- end TIMES -->
-
-
-                            <div class="mb-6"><!-- PURPOSE -->
+                            <div class="row">
                                 <label class="col-form-label" for="purpose">Tác dụng</label>
                                 <textarea class="form-control" id="purpose" type="text"></textarea>
-                            </div><!-- end PURPOSE -->
+                            </div>
 
-                            <div class="mb-6"><!-- INSTRUCTION -->
+                            <div class="row">
                                 <label class="col-form-label" for="instruction">Hướng dẫn</label>
                                 <textarea class="form-control" id="instruction" type="text"></textarea>
-                            </div><!-- end INSTRUCTION -->
+                            </div>
+                        </div>
 
                             
                         </form>

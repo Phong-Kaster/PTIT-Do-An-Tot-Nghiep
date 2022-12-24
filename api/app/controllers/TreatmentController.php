@@ -79,7 +79,9 @@
                     "type" => $Treatment->get("type"),
                     "times" => (int)$Treatment->get("times"),
                     "purpose" => $Treatment->get("purpose"),
-                    "instruction" => $Treatment->get("instruction")
+                    "instruction" => $Treatment->get("instruction"),
+                    "repeat_days" => $Treatment->get("repeat_days"),
+                    "repeat_time" => $Treatment->get("repeat_time")
                 );
             }
             catch(Exception $ex)
@@ -149,6 +151,8 @@
             $times = Input::put("times");
             $purpose = Input::put("purpose");
             $instruction = Input::put("instruction");
+            $repeat_days = Input::post("repeat_days") ? Input::post("repeat_days") : "Thực hiện một lần";
+            $repeat_time = Input::post("repeat_time") ? Input::post("repeat_time") : "Bác sĩ không chỉ định";
 
 
             /**Step 4 - check exist*/
@@ -216,7 +220,9 @@
                     "type" => $Treatment->get("type"),
                     "times" => (int)$Treatment->get("times"),
                     "purpose" => $Treatment->get("purpose"),
-                    "instruction" => $Treatment->get("instruction")
+                    "instruction" => $Treatment->get("instruction"),
+                    "repeat_days" => $Treatment->get("repeat_days"),
+                    "repeat_time" => $Treatment->get("repeat_time")
                 );
             } 
             catch (\Exception $ex) 

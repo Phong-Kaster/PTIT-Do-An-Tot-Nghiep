@@ -77,7 +77,9 @@
                     "type" => $Treatment->get("type"),
                     "times" => (int)$Treatment->get("times"),
                     "purpose" => $Treatment->get("purpose"),
-                    "instruction" => $Treatment->get("instruction")
+                    "instruction" => $Treatment->get("instruction"),
+                    "repeat_time" => $Treatment->get("repeat_time"),
+                    "repeat_days" => $Treatment->get("repeat_days")
                 );
             }
             catch(Exception $ex)

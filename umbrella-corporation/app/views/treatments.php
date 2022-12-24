@@ -53,7 +53,7 @@
     <link rel="stylesheet" href="https://unpkg.com/@coreui/icons/css/brand.min.css">
     <link rel="stylesheet" href="https://unpkg.com/@coreui/icons/css/flag.min.css">
 
-
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
 
     <!-- Global site tag (gtag.js) - Google Analytics-->
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965717-3"></script>
@@ -120,6 +120,7 @@
         setupButton();
     </script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script><!-- SELECT 2 -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
     <script>
       $(document).ready(function() {
         /**
@@ -157,7 +158,7 @@
           function createDropdownDrug(resp)
           {
               $("#name").empty();
-              $("#name").append(`<option selected="" disabled="" value="">Chọn...</option>`);
+              $("#name").append(`<option selected="" disabled="" value="">Hãy lựa chọn tên thuốc chỉ định</option>`);
               for(let i = 0; i < resp.data.length; i++)
               {
                   let id = resp.data[i].id;
@@ -173,6 +174,19 @@
 
         $('.js-example-basic-single').select2({
           dropdownParent: $("#form")
+        });
+
+        $('#repeatTime').timepicker({
+            timeFormat: 'h:mm p',
+            interval: 60,
+            minTime: '00',
+            maxTime: '06:00pm',
+            defaultTime: '09',
+            startTime: '6:00',
+            dynamic: false,
+            dropdown: true,
+            scrollbar: true,
+            zindex: 9999999
         });
     });
     </script>
