@@ -24,6 +24,9 @@
     - [**20-10-2022**](#20-10-2022)
   - [**12-12-2022**](#12-12-2022)
   - [**18-12-2022**](#18-12-2022)
+  - [**24-12-2022**](#24-12-2022)
+  - [**26-12-2022**](#26-12-2022)
+  - [**28-12-2022**](#28-12-2022)
 - [**Bonus**](#bonus)
 - [**Timeline**](#timeline)
   - [**Phase 0: 01-09-2022 to 28-09-2022**](#phase-0-01-09-2022-to-28-09-2022)
@@ -61,6 +64,18 @@ sắp xếp lịch khám bệnh giữa bác sĩ và bệnh nhân.
 **Android** - Ứng dụng để bệnh nhân đặt lịch khám bệnh, theo dõi phác đồ điều trị và bệnh án của mình. Có thể đặt lịch khám bệnh
 cho người thân trong gia đình như ông, bà, bố, mẹ & không nhất thiết người khám bệnh phải là bản thân mình.
 
+Chúng ta sẽ cân phân tích đề tài kĩ hơn vì rất dễ gây nhầm lẫn. Cụ thể chính thầy hướng dẫn và thầy giáo 
+phản biện đồ án của mình đã nghĩ thành 2 hướng khác nhau:
+
+**Thầy Nguyễn Anh Hào - giáo viên hướng dẫn**: ứng dụng chỉ để bệnh nhân cung cấp thông tin cá nhân & rút ngắn thời gian khám bệnh. 
+Vẫn có chức năng đặt lịch hẹn khám nhưng chỉ để cung cấp thông tin cá nhân, nhằm rút ngắn thời gian khám của bác sĩ. Hoạt động trên 
+nguyên tắc `ai đến trước thì được khám trước`, không chấp nhận việc đặt giờ trả tiền trước để vào khám. Điều này ưu tiên 
+những bệnh nhân nghèo, không thông thạo các thao tác trên di động, ưu tiên những người đã bỏ thời gian ra xếp hàng để khám bệnh.
+
+**Thầy Huỳnh Trung Trụ - giáo viên phản biện**: ứng dụng là đặt lịch hẹn với bác sĩ. Tức cho chọn chuyên khoa, chọn bác sĩ khám bệnh trước & dĩ nhiên 
+là chọn giờ khám luôn. Hoạt động trên nguyên tắc `tôi đặt lịch hẹn thì đúng giờ đó tui phải được vào khám`.
+
+Như trên thì lý luận của 2 thầy đều đúng và Phong thì thiết kế chương trình theo giáo viên hướng dẫn của mình.👼👼👼
 # [**API Document**](#api-document)
 
 Mình có soạn thảo và liệt kê chi tiết cách sử dụng các chức năng mà mình đã xây dựng thành tài liệu.
@@ -306,6 +321,39 @@ TỨC NGÀY 12-12-2022, TÔI ĐÃ CHÍNH THỨC HOÀN THÀNH ĐỒ ÁN TỐT NGH
 
 Làm đúng ý thầy Hào thì lại sai ý thầy giáo phản biện. Chán vãi l*n, giờ lại phải è cổ ra sửa lại 
 cho đúng.
+
+## [**24-12-2022**](#)
+
+Hôm nay mới thực sự là xong !
+
+## [**26-12-2022**](#)
+
+LỄ BẢO VỀ ĐỒ ÁN TỐT NGHIỆP ĐẠI HỌC CHÍNH QUY 
+NGÀY CÔNG NGHỆ THÔNG TIN, AN TOÀN THÔNG TIN & CÔNG NGHỆ ĐA PHƯƠNG TIỆN - KHÓA HỌC 2018-2022
+
+<p align="center">
+    <img src="./photo/ngay-le-bao-ve-do-an.jpg" />
+</p>
+
+Tui, Nguyễn Thành Phong đã chính thức xuất sắc hoàn thành đồ án tốt nghiệp với đánh giá 
+XUẤT SẮC, điểm quy đổi là 9.2 
+
+## [**28-12-2022**](#)
+
+Hôm nay, là đã 2 ngày trôi qua kể từ buổi lễ bảo vệ đồ án tốt nghiệp của mình. Vậy là chặng 
+đường 4 năm rưỡi ngồi trên giảng đường đại học đã kết thúc. Một chương mới trong cuộc đời đang 
+mở ra. Cháy hết mình nào 🔥🔥🔥.
+
+Với đánh giá đồ án thuộc loại XUẤT SẮC và điểm là 9.2. Mình cảm thấy rất tự hào về chính những 
+thành tựu mình đã đạt được. Thời gian làm đồ án cũng thuộc dạng là ngắn. Mình ước tính khoảng 2 tháng rưỡi.
+Mình đã xây dựng được trọn bộ API + Website + ứng dụng Android để thực hiện đồ án này.
+
+Thực sự với riêng bản thân mình thì quãng thời gian thực tập & tốt nghiệp khá là căng thẳng. Khi ngày nào 
+mình cũng phải ngồi làm việc 10-12 tiếng mỗi ngày để kịp thời hoàn thiện được đồ án này. Đó là một khoảng thời gian 
+khó khăn cho dù mình đã chuẩn bị tâm lý từ rất sớm.
+
+Tuy nhiên, với việc bảo vệ đồ án thành công thì mình cảm thấy những khó khăn vừa qua chỉ như 1 khoảnh khắc trong cuộc đời.
+Mọi nỗ lực đã được đền đáp xứng đáng. Tự hào là 2 từ duy nhất lúc này mình cảm nhận khi viết những dòng lưu bút ngày.
 
 # [**Bonus**](#bonus)
 
@@ -780,7 +828,10 @@ sơ bệnh án trước khi khám của bệnh nhân do thầy Hào nhắc nên 
 
 (2) Uớc tính: 4 ngày
 
-(3) Thực tế: 
+(3) Thực tế: 21 ngày. Sau khi giáo viên hướng dẫn và giáo viên thực tập góp ý thì phải sửa 
+hơi bị nhiều, chủ yếu là thêm mới các tính năng và chỉnh lại 1 số chỗ cho đúng với nghiệp vụ.
+Nhưng với đánh giá đồ án là XUẤT SẮC và điểm số là 9.2 thì mình hoàn toàn hài lòng & có quyền 
+tự hào về những gì đạt được
 
 - **08-12-2022**: 
 

@@ -505,8 +505,8 @@ function setupDropdownDoctor2()
         {
             let msg = resp.msg;
             let result = resp.result;
-            console.log(result);
-            console.log(msg);
+            // console.log(result);
+            // console.log(msg);
             /**Case 1: bác sĩ sẵn sàng tiếp nhận bệnh nhân thì tạo lịch khám luôn */
             if(resp.result == 1)
             {

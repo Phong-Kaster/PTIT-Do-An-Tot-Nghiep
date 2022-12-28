@@ -200,8 +200,8 @@
 
 
       /**Step 5 - set up dropdown service & dropdown doctor with Select2 */
-      $("#service").select2();
-      $("#doctor").select2();
+      // $("#service").select2();
+      // $("#doctor").select2();
     </script>
   </body>
 </html>
