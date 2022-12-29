@@ -1,4 +1,5 @@
-<h1 align="center">Đồ án tốt nghiệp - Học viện Công nghệ Bưu chính viễn thông <br/>
+<h1 align="center"> Học viện Công nghệ Bưu chính viễn thông <br/>
+    Đồ án tốt nghiệp - 
     Ứng dụng Android hỗ trợ bệnh nhân đăng ký khám và điều trị bệnh 
 </h1>
 
@@ -33,8 +34,8 @@
   - [**Phase 1: 19-09-2022 to 25-10-2022**](#phase-1-19-09-2022-to-25-10-2022)
   - [**Phase 2: 26-10-2022 to 13-11-2022**](#phase-2-26-10-2022-to-13-11-2022)
   - [**Phase 3: 15-11-2022 to 03-12-2022**](#phase-3-15-11-2022-to-03-12-2022)
-  - [**Phase 4: 08-12-2022 to 11-12-2022**](#phase-4-08-12-2022-to-11-12-2022)
-  - [**Phase 5: 16-12-2022 to xx-12-2022**](#phase-5-16-12-2022-to-xx-12-2022)
+  - [**Phase 4: 08-12-2022 to 12-12-2022**](#phase-4-08-12-2022-to-12-12-2022)
+  - [**Phase 5: 16-12-2022 to 24-12-2022**](#phase-5-16-12-2022-to-24-12-2022)
 - [**Controller Timeline**](#controller-timeline)
 - [**Special Thanks**](#special-thanks)
 - [Made with 💘 and PHP ](#made-with--and-php-)
@@ -48,6 +49,13 @@ Niên khóa 2018-2023.
 Lời đầu tiên mình xin chào các bạn và cảm ơn tất cả các bạn đang ở đây. Trong tài liệu này mình sẽ chia sẻ tất cả những gì các bạn cần biết khi làm đồ án 
 tốt nghiệp và đề tài do mình thực hiện để các bạn có thể tham khảo. Mình hi vọng phần tài liệu mình viết tiếp theo đây 
 sẽ hỗ trợ phần nào cho các bạn khi bước tới ngưỡng cửa quan trọng của cuộc đời mình - tốt nghiệp đại học.
+
+Đề tài của mình có tổng cộng 3 thành phần chính là 
+[API](#), 
+[website](https://github.com/Phong-Kaster/PTIT-Do-An-Tot-Nghiep-Website) và 
+[ứng dụng Android](https://github.com/Phong-Kaster/PTIT-Do-An-Tot-Nghiep-Android).
+
+Các bạn đang đọc phần API của đồ án này.
 
 # [**Topic**](#topic)
 
@@ -84,7 +92,7 @@ Nếu các bạn có nhu cầu muốn tham khảo, hãy ấn vào [**đây**](ht
 # [**Database**](#database)
 
 <p align="center">
-    <img src="./photo/database-version-11-prototype.png" />
+    <img src="./photo/database-version-12-prototype.png" />
 </p>
 <h3 align="center">
 
@@ -97,8 +105,7 @@ Tớ sẽ giải thích qua về ý nghĩa các bảng xuất hiện trong datab
 
 **BẢNG BOOKING** - bảng này chứa các lịch hẹn mà bệnh nhân đăng ký khám bệnh.
 
-**BẢNG APPOINTMENTS** - bảng này chứa lịch hẹn thực tế với bác sĩ. Bảng Booking mới chỉ là cuộc hẹn của bệnh 
-nhân & họ hoàn toàn có thể hủy lịch hẹn. Nhưng bản Appointment thì sẽ lưu thứ tự khám thực tế của các bệnh nhân với số thứ tự.
+**BẢNG APPOINTMENTS** - bảng này chứa thứ tự lượt khám thực tế của trong ngày của các bác sĩ
 
 **BẢNG TREATMENTS** - bảng này chứa phác đồ điều trị sau khi đã khám xong. Phác đồ điều trị là hướng
 dẫn mà bệnh nhân phải tuân thủ như: lịch uống thuốc, lịch tái khám,.....
@@ -116,6 +123,9 @@ khám thai, xét nghiệm PCR COVID-19,...
 
 **BẢNG DOCTOR AND SERVICE** - thể hiện mối quan hệ một nhiều. Khi một bác sĩ có thể phục vụ nhiều 
 loại hình dịch vụ khác nhau. Ví dụ, một bác sĩ chuyên khoa Nội tổng hợp thì vẫn có thể khám về Da liệu.
+
+**BẢNG DRUGS** - bảng này chứa tên các loại thuốc. Bác sĩ chỉ cần nhập các chữ cái
+đầu trong tên thuốc bởi trong thực tế thì sẽ không để bác sĩ nhập tay tên thuốc có thể dẫn tới nhầm lẫn.
 
 # [**Document**](#document)
 
@@ -223,7 +233,7 @@ Giờ chúng ta sẽ đi vào các mốc thời gian quan trọng mà mình đã
 
 - **Từ 05-12-2022 đến 09-12-2022**: Nộp file báo cáo lên Google Drive trước khi bảo vệ đồ án
 
-- **12-12-2022**: Nhà trường công bố danh sách giáo viên phản biến trước khi chấm đồ án
+- **12-12-2022**: Nhà trường công bố danh sách giáo viên phản biện trước khi chấm đồ án
 
 - **Từ 12-12-2022 đến 22-12-2022**: Sinh viên tự liên hệ với giáo viên phản biện để chấm.
 
@@ -234,6 +244,8 @@ Lưu ý: Mỗi giáo viên phản biện sẽ có hình thức chấm khác nhau
 
 - **Từ 24-12-2022 đến 26-12-2022**: Bảo vệ đồ án tốt nghiệp trước hội đồng nhà trường tại Quận 1 
 & nộp 03 cuốn tóm tắt đề tài tại Hội đồng chấm bảo vệ đồ án tốt nghiệp tại Quận 1
+
+- **26-12-2022**: lễ bảo vệ đồ án tốt nghiệp chính thức niên khóa 2018-2023.
 
 - **05-01-2023**: nộp 02 quyển bìa cứng đã có chữ ký xác nhận của Giáo Viên Hướng Dẫn và 
 Giáo Viên Phản Biện và file dữ liệu tại Văn Phòng Khoa Quận 9.
@@ -821,17 +833,14 @@ cho đẹp hơn. Sau này nếu có ai đó tham khảo code mình làm sẽ d�
 
 Chính thức hoàn thành siêu phẩm của một huyền thoại PTIT.
 
-## [**Phase 4: 08-12-2022 to 11-12-2022**](#phase-4-08-12-2022-to-11-12-2022)
+## [**Phase 4: 08-12-2022 to 12-12-2022**](#phase-4-08-12-2022-to-12-12-2022)
 
 (1) Mục tiêu: bổ sung một số chức năng còn thiếu. Đặc biệt là chức năng bổ sung hồ 
 sơ bệnh án trước khi khám của bệnh nhân do thầy Hào nhắc nên mình mới nhớ ra
 
 (2) Uớc tính: 4 ngày
 
-(3) Thực tế: 21 ngày. Sau khi giáo viên hướng dẫn và giáo viên thực tập góp ý thì phải sửa 
-hơi bị nhiều, chủ yếu là thêm mới các tính năng và chỉnh lại 1 số chỗ cho đúng với nghiệp vụ.
-Nhưng với đánh giá đồ án là XUẤT SẮC và điểm số là 9.2 thì mình hoàn toàn hài lòng & có quyền 
-tự hào về những gì đạt được
+(3) Thực tế: 5 ngày.
 
 - **08-12-2022**: 
 
@@ -863,7 +872,13 @@ tự hào về những gì đạt được
 
 2. Web - Chức năng tạo/ sửa thông tin dịch vụ
 
-## [**Phase 5: 16-12-2022 to xx-12-2022**](#phase-5-16-12-2022-to-xx-12-2022)
+## [**Phase 5: 16-12-2022 to 24-12-2022**](#phase-5-16-12-2022-to-24-12-2022)
+
+(1) Mục tiêu: chuẩn bị các thứ cuối cùng trước ngày lễ bảo vệ đồ án
+
+(2) Uớc tính: Không có ước tính vì đây là quãng thời gian không nằm trong kế hoạch
+
+(3) Thực tế: 9 ngày.
 
 - **16-12-2022**: Soạn Power Point để tóm tắt đề tài & kiểm tra lần cuối ứng dụng Android.
 
@@ -873,7 +888,7 @@ tự hào về những gì đạt được
 1. Thêm cơ chế tự động lựa chọn bác sĩ phù hợp với nhu cầu khám bệnh.
 Từ nay sẽ không phải chỉ định bằng tay nếu không bắt buộc
 
-2. Android - Thêm nút tạo lịch hẹn với profile của bác sĩ
+1. Android - Thêm nút tạo lịch hẹn với profile của bác sĩ
 
 - **20-12-2022**: Android - Thêm mục "Cẩm nang" và "Tạp chí sức khỏe" trên màn hình chính
 
