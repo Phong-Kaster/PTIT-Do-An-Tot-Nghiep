@@ -28,6 +28,7 @@
   - [**24-12-2022**](#24-12-2022)
   - [**26-12-2022**](#26-12-2022)
   - [**28-12-2022**](#28-12-2022)
+- [**29-12-2022**](#29-12-2022)
 - [**Bonus**](#bonus)
 - [**Timeline**](#timeline)
   - [**Phase 0: 01-09-2022 to 28-09-2022**](#phase-0-01-09-2022-to-28-09-2022)
@@ -127,9 +128,21 @@ loại hình dịch vụ khác nhau. Ví dụ, một bác sĩ chuyên khoa Nội
 **BẢNG DRUGS** - bảng này chứa tên các loại thuốc. Bác sĩ chỉ cần nhập các chữ cái
 đầu trong tên thuốc bởi trong thực tế thì sẽ không để bác sĩ nhập tay tên thuốc có thể dẫn tới nhầm lẫn.
 
+>Fact 1: Để đến được phiên bản cuối cùng của database này mình đã trải quả tổng cộng 12 lần sửa đổi. 
+>
+>
+>Fact 2: Trong thư mục photo của dự án này, với phiên bản database từ 10 đến 12, các bạn sẽ thấy có 2
+kiểu ảnh. Kiểu có hậu tố prototype là theo thiết kế dạng chuẩn 3 (và cũng là các kiểu mà thầy 
+sẽ thích hơn). 
+>
+>Ngược lại, với các phiên bản không có đuôi prototype như `database-version-12.png` chẳng hạn
+thì mới thực sự là database thật của mình. Mình thiết kế theo hướng này vì ban đầu mình 
+cũng suy nghĩ hướng của thầy Trụ và mình định làm chức năng đăng ký hộ cho người nhà. Tức người đăng ký và 
+người khám bệnh là khác nhau
+
 # [**Document**](#document)
 
-Khi tải repository này về, bạn sẽ thấy một thư mục tên `document`. Trong thư mục này, mình 
+Khi tải repository này về, bạn sẽ thấy một thư mục tên `document` nằm trong thư mục api. Trong thư mục này, mình 
 để lại cho các bạn một số tài liệu quan trọng
 
 - **Danh-sach-de-tai-tot-nghiep** - là tệp tin excel tổng hợp lại toàn bộ các đề tài của từng sinh khóa D18
@@ -140,6 +153,10 @@ Khi tải repository này về, bạn sẽ thấy một thư mục tên `documen
 và gửi cho các sinh viên thầy hướng dẫn. Không biết các giáo viên khác có gửi không nữa😅😅
 
 - **README.md** - là một tệp tin markdown khác, mình tạo ra nó để mô tả cách đọc và sử dụng API do mình viết.
+
+- **Các file DoAnTotNghiep-MySQL-v(x).txt** - với x là số thứ tự - đây chính là file để khởi tạo 
+database và dữ liệu đi kèm ban đầu. `DoAnTotNghiep-MySQL-v12.txt` là file tạo database phien bản cuối cùng
+của mình.
 
 # [**Features**](#features)
 
@@ -344,7 +361,7 @@ LỄ BẢO VỀ ĐỒ ÁN TỐT NGHIỆP ĐẠI HỌC CHÍNH QUY
 NGÀY CÔNG NGHỆ THÔNG TIN, AN TOÀN THÔNG TIN & CÔNG NGHỆ ĐA PHƯƠNG TIỆN - KHÓA HỌC 2018-2022
 
 <p align="center">
-    <img src="./photo/ngay-le-bao-ve-do-an.jpg" />
+    <img src="./photo/ngay-le-bao-ve-do-an.jpg" width="600px"/>
 </p>
 
 Tui, Nguyễn Thành Phong đã chính thức xuất sắc hoàn thành đồ án tốt nghiệp với đánh giá 
@@ -366,6 +383,24 @@ khó khăn cho dù mình đã chuẩn bị tâm lý từ rất sớm.
 
 Tuy nhiên, với việc bảo vệ đồ án thành công thì mình cảm thấy những khó khăn vừa qua chỉ như 1 khoảnh khắc trong cuộc đời.
 Mọi nỗ lực đã được đền đáp xứng đáng. Tự hào là 2 từ duy nhất lúc này mình cảm nhận khi viết những dòng lưu bút ngày.
+
+# [**29-12-2022**](#)
+
+Cuối cùng thì sau bao ngày chờ mong thì học bổng Xuất sắc cũng đã xướng tên Nguyễn Thành Phong tui.
+Zui 😍😍😎😎. 
+
+<p align="center">
+    <img src="./photo/HocBongCuoiCung.png">
+</p>
+<h3 align="center">
+
+***Học bổng Xuất sắc học kì 2 - năm học 2021-2022***
+</h3>
+
+>Fact: Mình có tổng cộng 3 lần đạt học bổng vào các năm 
+>* Học kì 2 - năm học 2020-2021( tức kì 2 năm 4 ) - học bổng giỏi
+>* Học kì 1 - năm học 2021-2022( tức kì 1 năm 4 ) - học bổng giỏi 
+>* Học kì 2 - năm học 2021-2022( tức kì 2 năm 4 ) - học bổng xuất sắc
 
 # [**Bonus**](#bonus)
 
@@ -398,6 +433,8 @@ Sau đó thì thay đổi suy nghĩ để chuyển qua làm học thay thế t�
 Trong đó có một tuần mình chưa làm gì bởi vấn đề tâm lý sau khi nghỉ việc
 
 - **19-09-2022**: Thiết kế cơ sở dữ liệu với nhiều bảng nhằm triển khai các chức năng phức tạp hơn
+
+- **03-10-2022**: Chính thức nghỉ việc tại GeoComply - công ty đầu tiên trong sự nghiệp của mình😥😥😥😥😥😥😥😥
 
 - **04-10-2022**: Thiết kế cơ sở dữ liệu theo đề tài nhà trường giao.
 
