@@ -28,7 +28,7 @@
   - [**24-12-2022**](#24-12-2022)
   - [**26-12-2022**](#26-12-2022)
   - [**28-12-2022**](#28-12-2022)
-- [**29-12-2022**](#29-12-2022)
+  - [**29-12-2022**](#29-12-2022)
 - [**Bonus**](#bonus)
 - [**Timeline**](#timeline)
   - [**Phase 0: 01-09-2022 to 28-09-2022**](#phase-0-01-09-2022-to-28-09-2022)
@@ -51,12 +51,15 @@ Lời đầu tiên mình xin chào các bạn và cảm ơn tất cả các bạ
 tốt nghiệp và đề tài do mình thực hiện để các bạn có thể tham khảo. Mình hi vọng phần tài liệu mình viết tiếp theo đây 
 sẽ hỗ trợ phần nào cho các bạn khi bước tới ngưỡng cửa quan trọng của cuộc đời mình - tốt nghiệp đại học.
 
-Đề tài của mình có tổng cộng 3 thành phần chính là 
-[API](#), 
-[website](https://github.com/Phong-Kaster/PTIT-Do-An-Tot-Nghiep-Website) và 
-[ứng dụng Android](https://github.com/Phong-Kaster/PTIT-Do-An-Tot-Nghiep-Android).
+Đồ án tốt nghiệp này có tất cả là 3 thành phần bao gồm:
 
-Các bạn đang đọc phần API của đồ án này.
+* [**API**](#) (Hiện tại)
+
+* [**Website**](https://github.com/Phong-Kaster/PTIT-Do-An-Tot-Nghiep-Website)
+  
+* [**Ứng dụng Android**](https://github.com/Phong-Kaster/PTIT-Do-An-Tot-Nghiep-Android)
+
+Dự án các bạn đang đọc được sử dụng để mô tả chi tiết phần `API` và các chức năng nổi bật của website. Ngoài ra mình cũng mô tả chi tiết về các lưu ý và các mốc thời gian cần biết khi các bạn được làm đồ án tốt nghiệp 
 
 # [**Topic**](#topic)
 
@@ -117,7 +120,7 @@ dẫn mà bệnh nhân phải tuân thủ như: lịch uống thuốc, lịch t�
 
 **BẢNG SPECIALITIES** - bảng này thể hiện tên chuyên khoa của bác sĩ. Ví dụ: Nội khoa, Răng - hàm - mặt,..
 
-**BẢNG NOTIFICATIONS** - mỗi khi một lịch khám thực tế được thực hiện với bác sĩ. Bảng này sẽ chứa thông báo cho bác sĩ đó. 
+**BẢNG NOTIFICATIONS** - chứa lịch sử thông báo của bệnh nhân
 
 **BẢNG SERVICES** - chứa tên các dịch vụ mà ứng dụng hỗ trợ. Ví dụ: Khám sức khỏe tổng quát,
 khám thai, xét nghiệm PCR COVID-19,...
@@ -384,7 +387,7 @@ khó khăn cho dù mình đã chuẩn bị tâm lý từ rất sớm.
 Tuy nhiên, với việc bảo vệ đồ án thành công thì mình cảm thấy những khó khăn vừa qua chỉ như 1 khoảnh khắc trong cuộc đời.
 Mọi nỗ lực đã được đền đáp xứng đáng. Tự hào là 2 từ duy nhất lúc này mình cảm nhận khi viết những dòng lưu bút ngày.
 
-# [**29-12-2022**](#)
+## [**29-12-2022**](#)
 
 Cuối cùng thì sau bao ngày chờ mong thì học bổng Xuất sắc cũng đã xướng tên Nguyễn Thành Phong tui.
 Zui 😍😍😎😎. 
