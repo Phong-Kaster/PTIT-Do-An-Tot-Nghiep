@@ -142,6 +142,11 @@ sẽ thích hơn).
 thì mới thực sự là database thật của mình. Mình thiết kế theo hướng này vì ban đầu mình 
 cũng suy nghĩ hướng của thầy Trụ và mình định làm chức năng đăng ký hộ cho người nhà. Tức người đăng ký và 
 người khám bệnh là khác nhau
+>
+>Tuy nhiên trong quá trình mình làm thì cũng khá là khó hiểu khi hàng tuần mình đều chủ động 
+>gửi báo cáo cho thầy Hào về những gì mình làm thì không hiểu sao thầy Hào không xem qua database dẫn 
+>tới ngày phản biện với giáo viên hướng dẫn thì thầy mới nói cho mình nên mình sửa không kịp. Tuy nhiên, 
+hên là về mặt logic vẫn không bị sai. Nếu các bạn tham khảo hãy tham khảo sơ đồ bên trên nhé 😎😎
 
 # [**Document**](#document)
 
