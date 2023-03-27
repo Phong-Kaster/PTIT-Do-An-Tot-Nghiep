@@ -29,6 +29,7 @@
   - [**26-12-2022**](#26-12-2022)
   - [**28-12-2022**](#28-12-2022)
   - [**29-12-2022**](#29-12-2022)
+  - [**27-03-2023**](#27-03-2023)
 - [**Bonus**](#bonus)
 - [**Timeline**](#timeline)
   - [**Phase 0: 01-09-2022 to 28-09-2022**](#phase-0-01-09-2022-to-28-09-2022)
@@ -324,6 +325,10 @@ Vậy mà đùng một cái, nhà trường **từ chối hết tất cả đơn
 Mình đã đánh đổi bằng việc kết thúc sớm chương trình thực tập tại GeoComply ngày 03/10/2022 để đánh đổi bằng việc học thay thế cho khỏe thân.
  Ai dè giờ vẫn phải làm đồ án tốt nghiệp. Chán thực sự chán 😣😣
 
+> Mình mới viết ra một bài viết về tổng quan quá trình từ lúc đi thực tập tới khi tốt nghiệp ở 
+> [**đây**](https://github.com/Phong-Kaster/PTIT-Thuc-Tap-va-Tot-Nghiep). Các bạn có thể đọc để biết 
+> thêm về học kì cuối cùng tại PTIT nhé.
+
 ### [**20-10-2022**](#)
 
 Chúc mừng ngày Phụ nữ Việt Nam 2022 
@@ -406,9 +411,23 @@ Zui 😍😍😎😎.
 </h3>
 
 >Fact: Mình có tổng cộng 3 lần đạt học bổng vào các năm 
->* Học kì 2 - năm học 2020-2021( tức kì 2 năm 4 ) - học bổng giỏi
+>* Học kì 2 - năm học 2020-2021( tức kì 2 năm 3 ) - học bổng giỏi
 >* Học kì 1 - năm học 2021-2022( tức kì 1 năm 4 ) - học bổng giỏi 
 >* Học kì 2 - năm học 2021-2022( tức kì 2 năm 4 ) - học bổng xuất sắc
+
+## [**27-03-2023**](#)
+
+😖😞 Buồn ghê, thất nghiệp đã gần 2 tháng rồi. Chưa bao giờ tui nghĩ mình lại
+phải đối mặt với khủng hoảng này sớm tới vậy.
+
+
+Tui học đâu tệ, tui làm việc không hề cẩu thả, qua loa
+
+
+Tại sao trò đời lại khắc nghiệt với tui vậy nhỉ? 
+
+Nhưng tui sẽ không sống mòn đâu. Vì tui bất bại, tui không thể bị cản phá 🐂, kỉ luật đã tạo nên nội lực này, suốt cuộc đời này sẽ luôn là vậy.
+Trí tuệ sẽ trưởng thành trong học tập, nhân cách sẽ trưởng thành trong bão tố.
 
 # [**Bonus**](#bonus)
 
