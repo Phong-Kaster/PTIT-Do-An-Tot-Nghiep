@@ -167,6 +167,18 @@ và gửi cho các sinh viên thầy hướng dẫn. Không biết các giáo vi
 database và dữ liệu đi kèm ban đầu. `DoAnTotNghiep-MySQL-v12.txt` là file tạo database phien bản cuối cùng
 của mình.
 
+- **Các file báo cáo đồ án** - gồm 5 file với tiền tố `CP_147_NguyenThanhPhong` là các file báo cáo đồ án tốt nghiệp định kì theo các mốc thời gian 
+của nhà trường. Với file có tên `TomTatDeTai` là một power point tóm tắt các ý chính của đề tài, mình dùng nó để trình 
+bày ngắn gọn đề tài trong ngày bảo vệ đồ án tốt nghiệp
+
+<p align="center">
+    <img src="./photo/vi_tri_thu_muc_document.png" />
+</p>
+<h3 align="center">
+
+***Mở thư mục API rồi chọn thư mục document để tìm các tài liệu bên trên nha ✌😎***
+</h3>
+
 # [**Features**](#features)
 
 Phần này mình sẽ liệt kê các tính năng chính và quan trọng mà API này có thể thực hiện.
